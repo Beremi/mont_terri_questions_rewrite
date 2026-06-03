@@ -1,0 +1,257 @@
+\begingroup
+\scriptsize
+\renewcommand{\arraystretch}{1.08}
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.13\textwidth} L{0.29\textwidth} L{0.38\textwidth} L{0.12\textwidth}@{}}
+\caption{Granular model-facing questions and proposed answers from the current repository evidence.}
+\label{tab:explicit-question-answers}\\
+\toprule
+Area & Granular question & Proposed answer from current evidence & Status or gate\\
+\midrule
+\endfirsthead
+\toprule
+Area & Granular question & Proposed answer from current evidence & Status or gate\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Hydraulic boundary &
+Which mathematical pressure boundary inventory should the model state? &
+Use \(\pl=p_\square=1.5\,\mathrm{MPa}\) on
+\(\Gamma_\square=\Gamma_A\cup\Gamma_B\cup\Gamma_C\cup\Gamma_D\), and
+\(\pl=p_E(t)\) on the niche boundary \(\Gamma_E\). &
+Reference inventory.\\
+Hydraulic boundary &
+Which pressure Dirichlet conditions are attached in the checked run-local XML? &
+The checked \path{02_process_variables_TRM.xml} attaches pressure Dirichlet data to
+\path{cd-a_top} through \path{bc_top_pressure} and to \path{cd-a_niche4} through
+\path{open_niche_seasonal}.  It does not explicitly attach left/right/bottom
+pressure boundaries in that file. &
+Implementation consistency gate.\\
+Hydraulic boundary &
+Are the outer-square pressure boundaries time-dependent? &
+No.  The square-boundary pressure is the constant value \(p_\square=1.5\,\mathrm{MPa}\).
+The only time-dependent hydraulic boundary in the current pressure inventory is the
+open-niche curve \(p_E(t)\). &
+Established.\\
+Hydraulic boundary &
+What does the negative niche-pressure curve mean? &
+The values are OGS liquid-pressure values in the Richards sign convention.  Because
+\(\pc=-\pl\), negative \(\pl\) represents positive suction/capillary pressure, not a
+separate pressure variable. &
+Established convention.\\
+Hydraulic boundary &
+What is known about the active niche curve \(p_E(t)\)? &
+\path{open_niche_seasonal} is a \texttt{CurveScaled} parameter with unit scaling
+factor.  The curve has 845 tabulated values, spans \(0\) to
+\(1.3482\times10^8\,\mathrm{s}\), and ranges from about \(-5.23\) to
+\(-53.24\,\mathrm{MPa}\). &
+Numerically known.\\
+Hydraulic boundary &
+What remains unknown about the active niche curve \(p_E(t)\)? &
+The current repository evidence does not close the source sensors, workbook columns,
+filtering, smoothing, interpolation, time origin, and uncertainty for the active
+curve. &
+Boundary-input provenance gate.\\
+Mechanical boundary &
+Which displacement constraints are active on the square boundary? &
+The model fixes \(u_x=0\) on \(\Gamma_A\cup\Gamma_B\) through
+\path{cd-a_left}/\path{cd-a_right}, and fixes \(u_y=0\) on
+\(\Gamma_C\cup\Gamma_D\) through \path{cd-a_top}/\path{cd-a_bottom}. &
+Established.\\
+Mechanical boundary &
+What mechanical condition is used on the niche boundary? &
+No displacement or traction condition is prescribed on \(\Gamma_E\) in the active
+boundary-condition block.  The niche is therefore natural mechanically in the
+current formulation. &
+Established.\\
+Mechanical boundary &
+Is the top mechanical load active? &
+No.  The \path{load_top} parameter is defined in the parameter file, but the
+Neumann top-load boundary block is commented out in the process-variable XML. &
+Inactive XML entry.\\
+Thermal boundary &
+Which temperature boundary and initial value are active? &
+\(\TT=298.15\,\mathrm{K}\) is prescribed on \path{bulk_all}, and
+\(\TT(\xx,0)=298.15\,\mathrm{K}\).  This constrains temperature to be homogeneous
+and constant in the active model, although the TRM heat equation remains present in
+the project. &
+Established fixed context.\\
+Initial state &
+What is the active initial pressure field? &
+\path{ic_pressure} is a function, but its vertical term is multiplied by zero.
+The active initial liquid pressure is spatially uniform
+\(1.5\,\mathrm{MPa}\). &
+Established.\\
+Initial state &
+Does the initial pressure encode post-excavation drainage near the niche? &
+No.  The current input has no heterogeneous initial drainage field from RH/suction,
+direct pressure, nearby boreholes, or excavation history. &
+Initial-state gate.\\
+Initial state &
+Does the model simulate staged excavation or gradual unloading? &
+No.  The computation starts from the already-open 2D geometry, with
+\(\uu(\xx,0)=\bm{0}\), no active initial stress tensor, and no active top load. &
+Established limitation.\\
+Initial state &
+How should early pressure or displacement transients be interpreted? &
+They may mix physical drainage with adjustment from the prescribed numerical initial
+state.  Hard mechanical validation needs a prestress and excavation-reference
+decision first. &
+Interpretation gate.\\
+OGS inputs &
+Which OGS process and primary variables define the active model? &
+The active process is \texttt{THERMO\_RICHARDS\_MECHANICS} with primary variables
+\path{displacement}, \path{pressure}, and \path{temperature}.  The finite-element
+orders are 2, 1, and 1, respectively. &
+Established.\\
+OGS inputs &
+Which governing terms are explicitly inactive? &
+The current formulation has zero specific body force, no explicit vapor-transport
+phase terms, no active hydraulic source term, no active initial stress, and no
+active top load. &
+Established limitation.\\
+OGS inputs &
+Which parameter family is released in the first workflow? &
+Only the intrinsic-permeability tensor field supplied through \path{k_i_rd} is
+released as the first material field.  The current release audit keeps porosity,
+retention, mechanics, thermal parameters, boundaries, and initialization fixed or
+gated. &
+Release policy.\\
+OGS inputs &
+How are permeability and porosity passed to OGS? &
+The run-local project uses \texttt{MeshElement} fields: \path{k_i_rd} for
+intrinsic permeability and \path{n_rd} for porosity.  The audited \path{n_rd} field
+is spatially constant at \(0.105\). &
+Established input mapping.\\
+OGS inputs &
+Are retention and relative permeability fitted now? &
+No.  Saturation uses the fixed van Genuchten law with \(S_{lr}=0.1\),
+\(S_{gr}=0\), \(m=0.45\), and \(p_b=10\,\mathrm{MPa}\).  Relative permeability uses
+the matching fixed van Genuchten/Mualem-type law with minimum \(10^{-25}\). &
+Fixed constitutive context.\\
+OGS inputs &
+Are mechanical parameters fitted now? &
+No.  Orthotropic elasticity, \(\alpha_B=1\), Bishop exponent 1, and
+saturation-dependent swelling are active but fixed.  Elastic-parameter release
+requires hydro-mechanical residuals plus prestress/excavation policy. &
+Gated.\\
+OGS inputs &
+Are thermal or liquid properties fitted now? &
+No.  Density, viscosity, heat capacities, thermal conductivities, and thermal
+expansivity are fixed XML inputs.  The \path{CTE}=1254.74 value remains a provenance
+caveat rather than a calibrated thermal-expansion value. &
+Fixed with caveat.\\
+OGS inputs &
+Should any material parameter be time-dependent in this first pass? &
+No.  Time-dependent \(\KK(\xx,t)\), porosity, retention, fracture closure, and
+healing/sealing inputs are excluded until repeated same-support evidence separates
+material evolution from boundary forcing, saturation state, and spatial
+heterogeneity. &
+Deferred.\\
+Model outputs &
+Which VTU arrays are requested in the run-local workflow? &
+The required run-local output arrays are \path{pressure}, \path{saturation},
+\path{temperature}, \path{displacement}, and \path{porosity}. &
+Established.\\
+Model outputs &
+Which process secondary variables are available but not required outputs here? &
+\path{velocity}, \path{sigma}, \path{epsilon}, and \path{swelling_stress} are
+process secondary variables.  They can be requested or sampled only with an
+explicit output and interpretation policy. &
+Available, not current required outputs.\\
+Model outputs &
+Is permeability an OGS state output? &
+No.  \(\KK\) is an input mesh field, not a dynamic state variable.  Permeability
+comparisons must sample or average the mesh field with the correct support and
+direction operator. &
+Input field.\\
+Model outputs &
+How should OGS water content be formed from outputs? &
+The model-side mobile water-content proxy is
+\(\theta=\por\Sl\), using porosity and liquid saturation.  This is not automatically
+the same as total measured water content. &
+Post-processing operator.\\
+Model outputs &
+How are output times tied to observations or boundary curves? &
+The run starts at \(t=0\), identified by comments as 18 September 2019, and ends at
+\(1.4\times10^8\,\mathrm{s}\).  Measurements require an explicit date-to-model-time
+conversion and interpolation or matching rule. &
+Time-mapping gate.\\
+Model outputs &
+When does an OGS field become a residual? &
+Only after an observation operator defines the measured quantity, support, time
+mapping, units, reference convention, and uncertainty.  Otherwise the OGS field is
+only a diagnostic or model state. &
+Residual-definition gate.\\
+Material field &
+What does intrinsic permeability describe materially? &
+\(\KK(\xx)\) describes effective Darcy mobility of the clay/EDZ continuum before
+relative permeability and viscosity are applied.  It is the base hydraulic material
+field in the current inversion stage. &
+Released base field.\\
+Material field &
+How does hydraulic conductivity relate to permeability? &
+Hydraulic conductivity is derived from intrinsic permeability, relative
+permeability, liquid density, viscosity, saturation state, and the chosen
+head/gravity convention.  It is not an independent base field in the current OGS
+input. &
+Derived quantity.\\
+Material field &
+What does porosity describe and how does OGS use it? &
+\(\por(\xx)\) is the effective pore-volume fraction used in storage, thermal mixing,
+and \(\theta=\por\Sl\).  It is represented by \path{n_rd}, but the current field is
+constant and not released. &
+Fixed support field.\\
+Material field &
+What do saturation and retention describe? &
+\(\Sl\) is the liquid occupancy of the OGS pore space.  It is computed from
+\(\pc=-\pl\) through the fixed retention law, and it controls storage,
+relative-permeability mobility, swelling, and water-content post-processing. &
+Derived state plus fixed law.\\
+Material field &
+What does relative permeability describe? &
+\(k_{\mathrm{rel}}(\Sl)\) reduces liquid mobility under unsaturated conditions.  It
+multiplies \(\KK/\mu_l\) in the Darcy velocity and is fixed by the current material
+law. &
+Fixed derived law.\\
+Material field &
+Is storativity a separate released field? &
+No.  Storage behaviour follows from porosity, saturation derivative, liquid
+compressibility/density, and mechanical volumetric coupling.  A separate
+storativity field would be a new modelling choice. &
+Derived/gated.\\
+Material field &
+How do Biot and Bishop fields enter the model? &
+The fixed Biot coefficient is \(\alpha_B=1\), and the Bishop power law with exponent
+1 gives \(b(\Sl)=\Sl\).  Together they scale the pore-pressure term in the
+mechanical balance. &
+Fixed coupling law.\\
+Material field &
+What is the elastic field description? &
+The active mechanical model uses fixed orthotropic linear elasticity with
+\(E=(13.8,6.0,13.8)\,\mathrm{GPa}\), \(G=(4.79,2.46,4.79)\,\mathrm{GPa}\), and
+\(\nu=(0.44,0.22,0.44)\). &
+Fixed constitutive field.\\
+Material field &
+Does the same bedding angle control mechanics, permeability, and electrical
+anisotropy? &
+The repository evidence supports bedding orientation as important context for
+permeability candidates, but it does not prove that Darcy, mechanical, and
+electrical anisotropy must share one hard angle in this chapter. &
+Structural-prior gate.\\
+Material field &
+What role do swelling fields have? &
+The model includes a fixed saturation-dependent swelling law with \(1\,\mathrm{MPa}\)
+swelling pressures in each direction and \(0.1\leq \Sl\leq1\) limits.  It is active
+physics but not a released parameter family. &
+Fixed active law.\\
+Material field &
+How should faults, cracks, and EDZ features be classified here? &
+They are not active discrete OGS geometry or separate material classes in this
+chapter.  They can become structural priors, masks, equivalent fields, or scenarios
+only after their source geometry, scale, aperture meaning, and 3D-to-2D projection
+are defined. &
+External field gate.\\
+\end{longtable}
+\endgroup

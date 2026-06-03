@@ -1,0 +1,80 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.17\textwidth} L{0.27\textwidth} L{0.24\textwidth} L{0.22\textwidth}@{}}
+\caption{Material and constitutive fields in the active model or tied to OGS fields.}
+\label{tab:material-fields}\\
+\toprule
+Field & Material meaning & Relation to other fields & OGS role in the current workflow\\
+\midrule
+\endfirsthead
+\toprule
+Field & Material meaning & Relation to other fields & OGS role in the current workflow\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Intrinsic permeability tensor \(\KK(\xx)\) &
+Clay/EDZ effective Darcy mobility before relative permeability and viscosity are
+applied.  It is the main hydraulic material field for the present inversion. &
+Hydraulic conductivity is derived from \(\KK\), liquid density, viscosity, relative
+permeability, and saturation state; it is not an independent base field here. &
+Run-local \texttt{MeshElement} field \texttt{k\_i\_rd}.  Current release gates allow
+permeability magnitude changes while tensor shape remains staged.\\
+Porosity \(\por(\xx)\) &
+Effective pore-volume fraction used by the OGS continuum model. &
+Water content is \(\theta=\por\Sl\) only for the mobile/OGS liquid storage; NMR,
+ERT, and Taupe/TDR may also see bound/interlayer water or calibration offsets. &
+Run-local \texttt{MeshElement} field \texttt{n\_rd}, fixed at \(0.105\) in the
+current field package.  Not released as an unknown yet.\\
+Saturation \(\Sl\) and retention \(S_l(p_c)\) &
+Liquid occupancy of the OGS pore space, governed by a retention law. &
+\(p_c=-\pl\) under the active gas/reference convention; the same law controls
+storage derivative and water-content output. &
+Fixed OGS van Genuchten saturation law with \(S_{lr}=0.1\), \(S_{gr}=0\),
+exponent \(m=0.45\), and \(p_b=10\,\mathrm{MPa}\).\\
+Relative permeability \(k_{\mathrm{rel}}(\Sl)\) &
+Reduction of liquid mobility in unsaturated conditions. &
+Multiplies \(\KK/\mu_l\) in Darcy velocity; should not be fitted independently of
+retention without a release decision. &
+Fixed OGS van Genuchten relative-permeability law with the same residual
+saturations, exponent \(0.45\), and minimum \(10^{-25}\).\\
+Biot and Bishop coupling &
+Poromechanical coupling between pore pressure, saturation, and stress. &
+\(\alpha_B=1\) and \(b(\Sl)=\Sl\) reduce the pore-stress scaling to \(\Sl\pl\II\). &
+Fixed XML parameter \texttt{biot}=1 and \texttt{BishopsPowerLaw} exponent 1.\\
+Orthotropic elasticity \(\CC\) &
+Directional stiffness of Opalinus Clay in the 2D mechanical approximation. &
+Controls stress/displacement response together with pore pressure, saturation,
+swelling, and any prestress assumption. &
+Fixed orthotropic linear elasticity: \(E=(13.8,6.0,13.8)\) GPa,
+\(G=(4.79,2.46,4.79)\) GPa, \(\nu=(0.44,0.22,0.44)\).  Mechanical release is gated.\\
+Swelling stress/strain &
+Saturation-driven mechanical source representing swelling response. &
+Coupled to saturation and constrained by mechanical boundary assumptions; can mimic
+deformation from pressure changes if released prematurely. &
+Active fixed saturation-dependent swelling law with \(1.0\) MPa swelling
+pressures in all directions and limits \(S_l\in[0.1,1]\).\\
+Thermal and liquid properties &
+Solid/liquid storage, conductivity, density, viscosity, and isothermal coupling
+context. &
+In the full XML, liquid density depends linearly on \(T\) and \(\pl\), and thermal
+expansion can enter THM coupling.  In the active reduction, \(T=T_0\), so only the
+pressure part of density varies. &
+Fixed XML constants/laws.  The \texttt{CTE}=1254.74 value is a provenance caveat and
+should not be interpreted as a calibrated thermal-expansion coefficient.\\
+Fault, fracture, crack, and EDZ fields &
+Structural features that may localize permeability, porosity, stiffness, or aperture. &
+Measured aperture could imply hydraulic aperture or local permeability only after
+scale, clay-contact, and 3D-to-2D projection assumptions are accepted. &
+Not an active OGS geometry/material class in this chapter.  They remain structural
+priors, masks, scenarios, or qualitative diagnostics until source data are resolved.\\
+Time-dependent material fields &
+Possible healing, sealing, fracture closure, or EDZ evolution over the multi-year
+experiment. &
+Could appear as \(K(\xx,t)\), \(n(\xx,t)\), retention changes, or boundary/input
+changes, but may be confounded with forcing and saturation state. &
+Excluded from the first static permeability-field workflow.  Release requires
+same-support repeated evidence and state-output diagnostics.\\
+\end{longtable}
+\endgroup

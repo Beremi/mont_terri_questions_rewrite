@@ -1,0 +1,36 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.13\textwidth} L{0.19\textwidth} L{0.20\textwidth} L{0.38\textwidth}@{}}
+\caption{Initial conditions used by the active TRM process.}
+\label{tab:initial-conditions}\\
+\toprule
+Variable & XML parameter & Active value & Interpretation and modelling gate\\
+\midrule
+\endfirsthead
+\toprule
+Variable & XML parameter & Active value & Interpretation and modelling gate\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\(\uu(\xx,0)\) & \texttt{ic\_displacement} & \((0,0)\,\mathrm{m}\) &
+The model starts from zero displacement on the already open two-dimensional geometry.
+No excavation/driving phase is represented explicitly.\\
+\(\pl(\xx,0)\) & \texttt{ic\_pressure} &
+\(1.5\times 10^{6}\,\mathrm{Pa}\) everywhere &
+The XML function contains a vertical term multiplied by zero, therefore the active
+initial liquid pressure is spatially uniform.  This remains a gate for pressure
+history: no post-excavation drained niche field is encoded.\\
+\(\TT(\xx,0)\) & \texttt{ic\_temperature} &
+\(298.15\,\mathrm{K}\) &
+The model is initialized at \(T_0\).  Together with the \texttt{bulk\_all}
+temperature Dirichlet condition, this enforces homogeneous constant temperature in
+the active parametrization.\\
+\(\sig_0\) & \texttt{ic\_sigma0} &
+Defined but inactive &
+The file defines in-situ stress-like expressions, but the process XML comments out
+the initial-stress reference.  Prestress is therefore a provenance question, not an
+active initial condition in the present run.\\
+\end{longtable}
+\endgroup

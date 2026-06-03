@@ -1,0 +1,77 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.15\textwidth} L{0.27\textwidth} L{0.25\textwidth} L{0.23\textwidth}@{}}
+\caption{Mapping between mathematical quantities and the OGS realization.}
+\label{tab:ogs-field-mapping}\\
+\toprule
+Mathematical quantity & OGS block, tag, or field & Input realization & Output or downstream use\\
+\midrule
+\endfirsthead
+\toprule
+Mathematical quantity & OGS block, tag, or field & Input realization & Output or downstream use\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\(\uu\) &
+Process variable \texttt{displacement} in \path{02_process_variables_TRM.xml}. &
+Two components, polynomial order 2, initial parameter \texttt{ic\_displacement};
+component-wise Dirichlet supports on the outer square. &
+Run-local VTU array \texttt{displacement}.  Mechanical observations need a
+reference-zero and support operator.\\
+\(\pl\) &
+Process variable \texttt{pressure}. &
+One component, polynomial order 1, initial parameter \texttt{ic\_pressure};
+Dirichlet pressure data on the reference hydraulic supports. &
+Run-local VTU array \texttt{pressure}.  Pressure measurements and RH-derived
+suction require sign and reference-pressure conventions.\\
+\(\TT\) &
+Process variable \texttt{temperature}. &
+One component, polynomial order 1, initial parameter \texttt{ic\_temperature};
+Dirichlet temperature parameter \texttt{bc\_temperature\_outside}. &
+Run-local VTU array \texttt{temperature}.  In the active parametrization it is
+constrained to \(T_0=298.15\,\mathrm{K}\), so thermal gradients and temperature-change
+terms vanish.\\
+\(\KK\) &
+Medium property \texttt{permeability}, parameter \texttt{k\_i}. &
+Run-local \texttt{MeshElement} field \texttt{k\_i\_rd} on the projected bulk mesh.
+The source package also contains a constant tensor fallback. &
+Not a dynamic state variable.  Observation operators sample or average the mesh
+field for pulse-test permeability comparisons.\\
+\(\por\) &
+Medium property \texttt{porosity}, parameter \texttt{phi}. &
+Run-local \texttt{MeshElement} field \texttt{n\_rd}; current field package is
+spatially constant at \(0.105\). &
+Run-local VTU array \texttt{porosity}.  Used with saturation to form
+\(\theta=\por\Sl\).\\
+\(\Sl\) &
+Medium property \texttt{saturation} and process secondary variable. &
+Computed by \texttt{SaturationVanGenuchten} from \(\pc=-\pl\); not prescribed as a
+primary variable. &
+Run-local VTU array \texttt{saturation}.  Main state field for water-content
+observation operators.\\
+\(k_{\mathrm{rel}}\) &
+Medium property \texttt{relative\_permeability}. &
+Computed by the OGS van Genuchten relative-permeability law; fixed parameters in
+the reference setup. &
+Usually not exported as a required VTU field.  It affects pressure and saturation
+through Darcy mobility.\\
+\(\vl\) and \(\ql\) &
+Secondary variable \texttt{velocity}. &
+Computed from \(\KK\), \(k_{\mathrm{rel}}\), \(\mu_l\), and \(\grad\pl\). &
+Available from the process if requested.  Flux residuals require an explicit
+Darcy-velocity versus pore-velocity convention.\\
+\(\sig\), \(\eps\), swelling stress &
+Secondary variables \texttt{sigma}, \texttt{epsilon}, and \texttt{swelling\_stress}. &
+Computed from the orthotropic elasticity law, Bishop/Biot coupling, thermal strain,
+and saturation-dependent swelling. &
+Available from the process if requested.  Current HM measurements remain gated by
+prestress, excavation, and reference-zero decisions.\\
+\(p_E(t)\) &
+\texttt{open\_niche\_seasonal} and \texttt{open\_niche\_seasonal\_curve}. &
+\texttt{CurveScaled} parameter with unit scaling factor 1.0. &
+Active boundary forcing in the reference setup.  Its measurement provenance,
+filtering, and uncertainty remain open.\\
+\end{longtable}
+\endgroup

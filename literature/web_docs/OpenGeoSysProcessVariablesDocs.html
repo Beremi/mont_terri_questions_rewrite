@@ -1,0 +1,1161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  
+
+
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.147.9">
+
+<meta name="description" content="OpenGeoSys">
+<meta name="author" content="OpenGeoSys Community">
+<title>Process variables</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+<link rel="stylesheet" href='/6.5.7/css/all.css'>
+<link rel="stylesheet" href='/6.5.7/css/fontawesome.css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js"></script>
+<link rel="stylesheet" href='/6.5.7/pagefind/pagefind-ui.css'>
+<script src='/6.5.7/pagefind/pagefind-ui.js'></script>
+<script>
+  
+  const ogstools_url = "https:\/\/ogstools.opengeosys.org\/0.7.1\/";
+  const doxygen_url = "https:\/\/doxygen.opengeosys.org\/6.5.7\/";
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      pageSize: 20,
+      mergeFilter: {
+        resource: "OGS"
+      },
+      processResult: function (result) {
+        
+        result.meta.title = result.meta.title.replace(/#$/, '');
+        
+        if (result.meta.image) {
+          if (result.meta.image.startsWith("../../_images/")) {
+            const cleanedPath = result.meta.image.replace(/^(\.\.\/)+/, '');
+            result.meta.image = ogstools_url + cleanedPath;
+          }
+          if (result.url.startsWith("/docs/") && !(result.meta.image.startsWith("/docs/") || result.meta.image.startsWith("http"))) {
+            result.meta.image = result.url + result.meta.image;
+          }
+          if (result.meta.image.startsWith("doxygen.svg")) {
+            result.meta.image = doxygen_url + "doxygen.svg";
+          }
+        }
+        return result;
+      },
+      mergeIndex: [{
+        bundlePath: ogstools_url + "pagefind",
+        mergeFilter: {
+          resource: "OGSTools"
+        }
+      },
+      {
+        bundlePath: doxygen_url + "pagefind",
+        mergeFilter: {
+          resource: "Doxygen"
+        }
+      }]
+    });
+  });
+</script>
+
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: "ams", 
+      processEnvironments: true, 
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  
+  
+</head>
+
+<body class="selection:bg-yellow-200">
+  
+
+
+
+
+<div class="py-2 px-2 md:px-4">
+  <div x-data="{ mobileMenuOpen: false }" class="relative bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div
+        x-data="useDocsVersioning('6.5.7', 'https://www.opengeosys.org/_static/versions.json')"
+        x-init="init()">
+
+        <template x-if="preferred && isOutdated()">
+          <div class="w-full bg-yellow-50 border-b border-300 px-4 py-2 text-sm flex justify-between items-center">
+            <div>
+              You are viewing documentation for version
+              <strong x-text="currentVersion"></strong>.
+              The latest stable version is
+              <strong x-text="preferred.version"></strong>.
+            </div>
+            <a :href="buildTargetURL(preferred.version)"
+              class="ml-4 inline-flex items-center rounded-md bg-yellow-300 hover:bg-yellow-400 px-3 py-1 font-medium">
+              Switch to latest release
+            </a>
+          </div>
+        </template>
+      </div>
+      <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div class="lg:w-0 lg:flex-1 text-lg lg:text-xl xl:text-2xl">
+          <a href="https://www.opengeosys.org/6.5.7/" class="flex ">
+            Open<span class="text-brand-500">GeoSys</span>
+          </a>
+        </div>
+        <div class="-mr-2 -my-2 md:hidden">
+          <button @click="mobileMenuOpen = true" type="button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <nav class="hidden md:flex space-x-10">
+
+          
+          
+          <a href="/6.5.7/releases/"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Releases</a>
+          
+          
+          <a href="/6.5.7/docs/"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Docs</a>
+          
+          
+          <a href="/6.5.7/publications/"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Publications</a>
+          
+          
+          <a href="https://discourse.opengeosys.org"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Discourse</a>
+          
+          
+          <a href="https://gitlab.opengeosys.org/ogs/ogs"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Source Code</a>
+          
+
+        </nav>
+        <div class="flex items-center justify-end space-x-4 md:space-x-8 flex-1 lg:w-0">
+          <div x-data="useDocsVersioning('6.5.7', 'https://www.opengeosys.org/_static/versions.json')"
+  x-init="init()" class="relative inline-block text-left">
+
+  <button @click="open = !open" type="button"
+    class="inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50">
+    <span x-text="'Version: ' + currentVersion"></span>
+    <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7l3-3 3 3m0 6l-3 3-3-3" />
+    </svg>
+  </button>
+
+  <div x-show="open" @click.away="open = false"
+    class="absolute right-0 z-10 mt-1 w-44 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+    <ul class="py-1 text-sm text-gray-700">
+      <template x-for="v in versions" :key="v.version">
+        <li>
+          <a :href="buildTargetURL(v.version)" class="block px-3 py-1.5 hover:bg-gray-100"
+            :class="v.version === currentVersion ? 'font-semibold text-blue-600' : ''" x-text="v.version">
+          </a>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function normalizeURL(url) {
+    return url.endsWith("/") ? url : url + "/";
+  }
+
+  function semverCompareDesc(a, b) {
+    const special = ["dev", "latest", "main", "master"];
+    const aIsSpecial = special.includes(a);
+    const bIsSpecial = special.includes(b);
+
+    if (aIsSpecial && !bIsSpecial) return -1;
+    if (!aIsSpecial && bIsSpecial) return 1;
+    if (aIsSpecial && bIsSpecial) return a.localeCompare(b);
+
+    const pa = a.split('.').map(Number);
+    const pb = b.split('.').map(Number);
+    for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+      const diff = (pb[i] || 0) - (pa[i] || 0);
+      if (diff !== 0) return diff;
+    }
+    return 0;
+  }
+
+  function useDocsVersioning(currentVersion, versionsUrl) {
+    return {
+      open: false,
+      currentVersion,
+      versions: [],
+      preferred: null,
+      isMRPreview: false,
+      mrBase: null,
+
+      async init() {
+        try {
+          const response = await fetch(versionsUrl);
+          if (!response.ok) throw new Error("Failed to fetch versions.json");
+
+          const data = await response.json();
+          data.sort((a, b) => semverCompareDesc(a.version, b.version));
+
+          this.versions = data;
+          this.preferred = data.find(v => v.preferred);
+
+          
+          const mrMatch = location.hostname === "ogs.ogs.xyz"
+            && /^\/ogs\/mr-\d+\//.test(location.pathname);
+
+          if (mrMatch) {
+            this.isMRPreview = true;
+            
+            const prefix = location.pathname.match(/^\/ogs\/mr-\d+\//)[0];
+            this.mrBase = normalizeURL(location.origin + prefix);
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      },
+
+      isOutdated() {
+        if (this.isMRPreview) return true;
+        return this.preferred && this.currentVersion !== this.preferred.version;
+      },
+
+      buildTargetURL(targetVersion) {
+        const currentFull = window.location.href;
+        const currentPath = window.location.pathname + window.location.search + window.location.hash;
+
+        if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+          const targetEntry = this.versions.find(v => v.version === targetVersion);
+          if (!targetEntry) return currentFull;
+          return normalizeURL(targetEntry.url) + currentPath.replace(/^\/+/, "");
+        }
+
+        if (this.isMRPreview) {
+          const targetEntry = this.versions.find(v => v.version === targetVersion);
+          if (!targetEntry) return currentFull;
+          const toBase = normalizeURL(targetEntry.url);
+          const relative = currentFull.slice(this.mrBase.length);
+          return toBase + relative;
+        }
+
+        const targetEntry = this.versions.find(v => v.version === targetVersion);
+        if (!targetEntry) return currentFull;
+        const toBase = normalizeURL(targetEntry.url);
+
+        
+        const currentEntry = this.versions.find(v => currentFull.startsWith(normalizeURL(v.url)));
+        if (currentEntry) {
+          const fromBase = normalizeURL(currentEntry.url);
+          const relative = currentFull.slice(fromBase.length);
+          return toBase + relative;
+        }
+
+        
+        return toBase;
+      }
+    };
+  }
+</script>
+          <a href="#" id="nav-link-search">
+            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div x-description="Mobile menu, show/hide based on mobile menu state." x-show="mobileMenuOpen"
+      x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95"
+      x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
+      x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+      class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-10" style="display: none;">
+      <div class="rounded-lg shadow-lg">
+        <div class="rounded-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+          <div class="pt-5 pb-6 px-5 space-y-6">
+            <div class="flex items-center justify-between border-b">
+              <div>
+                <a href="/">Open<span class="text-brand-500">GeoSys</span></a>
+              </div>
+              <div class="-mr-2">
+                <button @click="mobileMenuOpen = false" type="button"
+                  class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div>
+              <nav class="grid gap-y-8">
+                
+                
+                <a href="/6.5.7/releases/"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Releases
+                </a>
+                
+                
+                
+                <a href="/6.5.7/docs/"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Docs
+                </a>
+                
+                
+                
+                <a href="/6.5.7/publications/"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Publications
+                </a>
+                
+                
+                
+                <a href="https://discourse.opengeosys.org"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Discourse
+                </a>
+                
+                
+                
+                <a href="https://gitlab.opengeosys.org/ogs/ogs"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Source Code
+                </a>
+                
+                
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <div class="xl:container xl:mx-auto px-2">
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex">
+
+  
+
+
+
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+<div class="md:flex md:shrink-0">
+  <nav class="w-48 md:w-64 lg:w-72 pl-2 pr-4 mt-1 text-sm lg:text-base overflow-y-auto h-screen sticky top-0">
+    
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2  font-bold text-brand-500">
+
+          <a href="/6.5.7/docs/userguide/basics/5-mins-ogs/">
+            User Guide
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/devguide/getting-started/introduction/">
+            Developer Guide
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/tutorials/">
+            Tutorials
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/benchmarks/">
+            Benchmarks
+          </a>
+        </div>
+      
+    
+      
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/tools/getting-started/overview/">
+            Tools &amp; Workflows
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/featurematrix/bundle/">
+            Feature Matrix
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/processes/overview/introduction/">
+            Process information
+          </a>
+        </div>
+      
+    
+      
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/hub">
+            DigBen &amp; EURAD Model Hub
+          </a>
+        </div>
+      
+    
+      
+      
+    
+      
+      
+    
+    <hr class="mt-3">
+    
+    <ul>
+      
+      
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/userguide/basics/5-mins-ogs/">
+          
+        
+        
+            <span >
+              BASICS
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+        
+        
+        <li class="mt-6 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/intro/">
+          
+        
+        
+            <span  class="text-brand-500" >
+              PROJECT FILE - BUILDING BLOCKS
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-down"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+          
+
+  
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/intro/" >
+          Overview
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/meshes/" >
+          Meshes
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/processes/" >
+          Processes
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/media/" >
+          Media
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/parameters/" >
+          Parameters
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/time_loop/" >
+          Time loop
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 bg-gray-100 rounded-lg">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/process_variables/"  class="text-brand-500" >
+          Process variables
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/boundary_conditions/" >
+          Boundary conditions
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/nonlinear_solvers/" >
+          Nonlinear solvers
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/linear_solvers/" >
+          Linear solvers
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/curves/" >
+          Curves
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/test_definitions/" >
+          Test definitions
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/geometry/" >
+          Geometry
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/misc/scaling_source_term/" >
+          Scaling source term
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/misc/constitutive_relations/" >
+          Constitutive relations
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+  
+
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/userguide/features/main/">
+          
+        
+        
+            <span >
+              OPENGEOSYS FEATURES
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/userguide/troubleshooting/debugging/">
+          
+        
+        
+            <span >
+              TROUBLESHOOTING
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+    </ul>
+    
+      <hr class="mt-3">
+    
+  </nav>
+</div>
+
+
+  <div class="overflow-y-auto focus:outline-none">
+
+    
+
+    
+
+    <div class="mx-auto py-2 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-4">
+      <h1 class="text-3xl font-extrabold sm:text-4xl mb-8">Process variables</h1>
+      
+      <div class="flex justify-center">
+        <div class="invisible mb-8 bg-gray-200 shadow rounded-lg px-2 py-1 w-auto" id="os-selector">
+          <span class="text-gray-600">Select OS:</span>
+          <a class="btn mx-1" id="btn-win"><i class="fab fa-windows"></i><span class="hidden sm:inline">
+              Windows</span></a>
+          <a class="btn mx-1" id="btn-linux"><i class="fab fa-linux"></i><span class="hidden sm:inline">
+              Linux</span></a>
+          <a class="btn mx-1" id="btn-mac"><i class="fab fa-apple"></i><span class="hidden sm:inline"> macOS</span></a>
+        </div>
+      </div>
+      
+
+      
+
+      <div class="section-docs prose prose-sm lg:prose max-w-none lg:max-w-none">
+
+
+        
+
+        
+
+        
+
+        <div class="grid auto-cols-max grid-flow-col justify-around">
+
+          
+        </div>
+
+        <p>All &ldquo;process parameters&rdquo; defined in the &ldquo;Process&rdquo; section have to be addressed here (see <a href="/docs/userguide/blocks/processes/">processes</a>).</p>
+
+
+<div class="relative">
+  
+  <div class="" id="code-block-0">
+    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;process_variable&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>&#34;process_variable&#34;<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;components&gt;</span>integer<span style="color:#f92672">&lt;/components&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;order&gt;</span>integer<span style="color:#f92672">&lt;/order&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;initial_condition&gt;</span>variable_name<span style="color:#f92672">&lt;/initial_condition&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;boundary_conditions&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;boundary_condition&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;type&gt;</span>Dirichlet<span style="color:#f92672">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;mesh&gt;</span>Temp_Dis_mesh_boundary<span style="color:#f92672">&lt;/mesh&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;component&gt;</span>1<span style="color:#f92672">&lt;/component&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;parameter&gt;</span>dirichlet0<span style="color:#f92672">&lt;/parameter&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/boundary_condition&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/boundary_conditions&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/process_variable&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <button class="copy-code-btn absolute top-0 right-0 py-1 px-2 bg-slate-200 rounded-tr-md text-xs"
+    data-clipboard-target="#code-block-0">
+    Copy
+  </button>
+</div>
+<p>The block <code>&lt;process_variable&gt;</code> has be defined separately for each process variable defined in <a href="/docs/userguide/blocks/processes/#process-variables">Block &ldquo;Process/Process variables&rdquo;</a>.</p>
+<!-- TODO: Explain the little example above in a little bit more detail or give a link to a tutorial. -->
+<p>There are three major blocks in this one.
+Two of them are mandatory, in following order:</p>
+<ul>
+<li><a href="/docs/userguide/blocks/process_variables/#initial-conditions">Initial conditions</a></li>
+<li><a href="/docs/userguide/blocks/process_variables/#boundary-conditions">Boundary conditions</a></li>
+</ul>
+<p>and optionally:</p>
+<ul>
+<li><a href="/docs/userguide/blocks/process_variables/#sources">Source terms</a></li>
+</ul>
+<p>can be defined.</p>
+<p>The tag <components> refers to how many directional components a variable has, for example, displacement in a 2D THM process
+will have 2 components (for x and y directions).</p>
+<p><code>&lt;initial_conditions&gt;</code>tag should contain the name of variable defined in <a href="/docs/userguide/blocks/parameters/">parameters block</a>.</p>
+<h2 id="initial-conditions">Initial conditions</h2>
+<p>Initial conditions define the state of the primary variables in the domain at $t=0$.
+Each process will require a different set of them, see <a href="/docs/userguide/blocks/processes/#process-variables">process variables</a>
+for more details.</p>
+<p>For example, the value of initial temperature can be defined in <a href="/docs/userguide/blocks/parameters/">parameters block</a> and
+called from <code>&lt;process_variable&gt; &lt;/process_variable&gt;</code> by the content of <code>&lt;name&gt; &lt;/name&gt;</code> tag.
+See following example:</p>
+
+
+<div class="relative">
+  
+  <div class="" id="code-block-1">
+    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>temperature<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;initial_condition&gt;</span>initial_temperature<span style="color:#f92672">&lt;/initial_condition&gt;</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;parameter&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;name&gt;</span>initial_temperature<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;type&gt;</span>Constant<span style="color:#f92672">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;value&gt;</span>273.15<span style="color:#f92672">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/parameter&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <button class="copy-code-btn absolute top-0 right-0 py-1 px-2 bg-slate-200 rounded-tr-md text-xs"
+    data-clipboard-target="#code-block-1">
+    Copy
+  </button>
+</div>
+<h2 id="boundary-conditions">Boundary conditions</h2>
+<p>The two most commonly used boundary condition types are <a href="/docs/userguide/blocks/boundary_conditions/#dirichlet">Dirichlet</a> and <a href="/docs/userguide/blocks/boundary_conditions/#neumann">Neumann</a>.
+The first one can be used to set boundary conditions to a set value, Neumann can be used for flow (e.g., water or energy).
+For more details on both issues, see <a href="/docs/userguide/blocks/process_variables/#sources">sources</a>.
+For simulations which require more complicated values at boundaries (for example spatially variable), <a href="/docs/userguide/blocks/boundary_conditions/#python">Python boundary conditions</a> can be used.</p>
+<p>It is possible to define a source at the boundaries of the simulation domain using boundary conditions.
+For more details, see <a href="/docs/userguide/blocks/boundary_conditions/#setting-source-term-at-a-boundary">Setting source term at a boundary</a></p>
+<h2 id="sources">Sources</h2>
+<p>Source terms are optional.
+There are two ways how sources can be defined in the project file: as boundary condition or as source term.</p>
+<h3 id="source-term">Source term</h3>
+<p>There are following types available: nodal, volumetric.</p>
+
+
+<div class="relative">
+  
+  <div class="" id="code-block-2">
+    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;source_term&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;geometrical_set&gt;</span>geometry<span style="color:#f92672">&lt;/geometrical_set&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;geometry&gt;</span>inner<span style="color:#f92672">&lt;/geometry&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;type&gt;</span>Nodal<span style="color:#f92672">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;parameter&gt;</span>pressure_source_term<span style="color:#f92672">&lt;/parameter&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/source_term&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <button class="copy-code-btn absolute top-0 right-0 py-1 px-2 bg-slate-200 rounded-tr-md text-xs"
+    data-clipboard-target="#code-block-2">
+    Copy
+  </button>
+</div>
+<h3 id="source-as-boundary-condition">Source as boundary condition</h3>
+<p>Defining it as boundary condition can be done in the same way as it was described in the paragraph above.</p>
+<h3 id="scaling-a-source">Scaling a source</h3>
+<p>Neumann boundary condition should be scaled by the surface of the source:</p>
+$$ Q_{scaled} = Q_{term} / a $$<p>where $Q$ is source term, $a$ and resulting unit is power over scaling surface area or length depending on dimension (e.g., $[W / L^{dim-1}]$).
+For example if the source is 2D, the scaling factor $a$ will be the length of it&rsquo;s circumference (or the relevant part of it,
+if the source is at the boundary of the domain) and similarly in 3D case, the relevant area.
+If the mesh is axially symmetric, it has to be considered that it is fully symmetric.
+The 2D source will be rotated by $360°$.
+For example a rectangular source at the axis of symmetry, will have to be considered as a cylinder.
+Then, for scaling the surface of the cylinder has to be used, not the relevant part of the circumference of the rectangle.</p>
+<p>If a source is placed on the axially symmetrical boundary and has radius equal to 0, it has to be defined as boundary condition
+not as source term.
+If radius is non zero, it can be defined using source term.</p>
+<p>For more detailed description see <a href="/docs/userguide/blocks/misc/scaling_source_term/">scaling a source term</a>.</p>
+
+      </div>
+
+      <hr class="border my-4">
+      
+
+
+
+
+<div class="flex text-sm mb-4" data-pagefind-ignore>
+  <div class="w-1/2">
+    
+    
+    
+    <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/time_loop/" title="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/time_loop/">
+      <div class="mb-1"><i class="far fa-arrow-left"></i> Previous</div>
+      <div class="italic">
+        Time loop
+      </div>
+    </a>
+    
+    
+  </div>
+  <div class="w-1/2 text-right">
+    
+    
+    
+    <div class="tr">
+      <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/boundary_conditions/" title="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/boundary_conditions/">
+        <div class="mb-1">Next <i class="far fa-arrow-right"></i></div>
+        <div class="italic">
+          Boundary conditions
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+
+      
+
+<div class="mt-20 text-sm text-gray-700 prose prose-sm max-w-none" data-pagefind-ignore>
+    <p>This article was written by Feliks Kiszkurno. If you are missing something or you find an error please <a href="mailto:info@opengeosys.org">let us know</a>.<br>
+        Generated with <a href="https://gohugo.io">Hugo</a> 0.147.9
+        
+          in CI job <a href="https://gitlab.opengeosys.org/ogs/ogs/-/jobs/683680">683680</a>
+        
+        |
+        
+        Last revision: December 20, 2025
+          <em>
+            
+                <br>
+                Commit: chore: fix spelling mistakes <a href="https://gitlab.opengeosys.org/ogs/ogs/-/commit/fbc5f730">fbc5f730</a>
+                &nbsp;| <a href="https://gitlab.opengeosys.org/ogs/ogs/-/edit/master/web/content/docs/userguide/blocks/process_variables.md">Edit this page on <i class="fab fa-gitlab"></i></a>
+            
+          </em>
+        
+    </p>
+</div>
+
+    </div>
+  </div>
+
+  
+</div>
+
+
+    </div>
+
+    
+    
+
+    <footer class="text-gray-700 body-font" data-pagefind-ignore="all">
+  <div class="px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 mb-0">© 2026
+      OpenGeoSys Community, <a href="/imprint">Privacy policy / Legal statements / Impressum</a></p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+
+      <a class="ml-3" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0"
+          src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" data-pagefind-ignore="all" />
+      </a>
+      <a class="ml-3" href="https://www.netlify.com">
+        <img style="height: 31px;" src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
+          alt="Deploys by Netlify" data-pagefind-ignore="all" />
+      </a>
+    </span>
+  </div>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+
+
+<script type="text/javascript" src="https://www.opengeosys.org/6.5.7/bundle.25e381ca2ebf4830122003ca54a9271beb33f57e0ab27e2b3ed06074297737d8.js" integrity="sha256-JeOByi6/SDASIAPKVKknG&#43;sz9X4Ksn4rPtBgdCl3N9g="
+  media="screen"></script>
+
+
+
+
+    <div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+          <header class="modal__header">
+            <h2 class="modal__title" id="modal-2-title">
+              Search
+            </h2>
+          </header>
+          <main class="modal__content" id="modal-2-content">
+            <div id="search"></div>
+          </main>
+          <footer class="modal__footer">
+            <button class="modal__btn modal__btn-primary" data-micromodal-close=""
+              aria-label="Close this dialog window">Close</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.20\textwidth} L{0.16\textwidth} L{0.16\textwidth} L{0.38\textwidth}@{}}
+\caption{Unknowns and OGS output fields used in the reference model.}
+\label{tab:unknown-output-fields}\\
+\toprule
+Field & Symbol & Unit & Mathematical meaning and OGS status\\
+\midrule
+\endfirsthead
+\toprule
+Field & Symbol & Unit & Mathematical meaning and OGS status\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Displacement &
+\(\uu=(u_x,u_y)\) &
+\(\mathrm{m}\) &
+Primary mechanical unknown and run-local output field.  It describes deformation of
+the continuum slice relative to the chosen numerical initial state.\\
+Liquid pressure &
+\(\pl\) &
+\(\mathrm{Pa}\) &
+Primary hydraulic unknown and run-local output field.  In the Richards convention
+used here, negative liquid pressure means positive suction relative to the
+gas/reference pressure.\\
+Temperature &
+\(\TT\) &
+\(\mathrm{K}\) &
+Primary thermal unknown in the full TRM process and run-local output field.  In the
+active parametrization it is constrained to \(T_0=298.15\,\mathrm{K}\) throughout the
+domain and time interval.\\
+Liquid saturation &
+\(\Sl\) &
+-- &
+Secondary OGS state/output field computed from pressure through the retention law.
+It is the mobile OGS liquid occupancy of the pore volume, not total
+hydrogen-bearing water in the clay.\\
+\end{longtable}
+\endgroup
+
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.20\textwidth} L{0.16\textwidth} L{0.16\textwidth} L{0.38\textwidth}@{}}
+\caption{Material fields and constitutive inputs to the active model.}
+\label{tab:material-input-fields}\\
+\toprule
+Input field or parameter & Symbol & Unit & Material meaning and OGS role\\
+\midrule
+\endfirsthead
+\toprule
+Input field or parameter & Symbol & Unit & Material meaning and OGS role\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Intrinsic permeability &
+\(\KK(\xx)\) &
+\(\mathrm{m^2}\) &
+Material tensor controlling Darcy mobility before multiplication by relative
+permeability and division by viscosity.  The current workflow supplies it through
+the run-local mesh field \texttt{k\_i\_rd}.\\
+Porosity &
+\(\por(\xx)\) &
+-- &
+Continuum pore-volume fraction used in storage, thermal mixing, and the
+model-side water-content proxy.  It is supplied through \texttt{n\_rd} and is fixed
+at \(0.105\) in the current field package.\\
+Elasticity tensor &
+\(\CC\) &
+\(\mathrm{Pa}\) &
+Orthotropic linear-elastic stiffness used in the mechanical constitutive law.  It is
+a fixed constitutive input, not a released field in the present workflow.\\
+Biot coefficient and Bishop law &
+\(\alpha_B\), \(b(\Sl)\) &
+-- &
+Fixed pore-pressure coupling inputs.  In the active XML, \(\alpha_B=1\) and
+\(b(\Sl)=\Sl\).\\
+Liquid properties &
+\(\rho_l^0(\pl)\), \(\mu_l\) &
+\(\mathrm{kg\,m^{-3}}\), \(\mathrm{Pa\,s}\) &
+Liquid density and viscosity used in storage and Darcy mobility.  Under the active
+isothermal constraint, density depends on pressure but not on temperature.\\
+\end{longtable}
+\endgroup
+
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.20\textwidth} L{0.16\textwidth} L{0.16\textwidth} L{0.38\textwidth}@{}}
+\caption{Intermediate and derived quantities used by equations and observation operators.}
+\label{tab:intermediate-derived-fields}\\
+\toprule
+Quantity & Symbol & Unit & Mathematical meaning\\
+\midrule
+\endfirsthead
+\toprule
+Quantity & Symbol & Unit & Mathematical meaning\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Capillary pressure &
+\(\pc=-\pl\) &
+\(\mathrm{Pa}\) &
+Retention-curve argument under the active sign convention.\\
+Relative permeability &
+\(k_{\mathrm{rel}}(\Sl)\) &
+-- &
+Saturation-dependent mobility reduction in the liquid phase.  It is computed from
+the fixed relative-permeability law, not fitted independently.\\
+Darcy velocity and mass flux &
+\(\vl\), \(\ql=\rho_l\vl\) &
+\(\mathrm{m\,s^{-1}}\), \(\mathrm{kg\,m^{-2}\,s^{-1}}\) &
+Derived hydraulic transport quantities.  They are not pore velocity unless divided
+by an explicitly chosen pore-volume factor.\\
+Strain and stress &
+\(\eps(\uu)\), \(\sig\) &
+--, \(\mathrm{Pa}\) &
+Mechanical fields derived from displacement, orthotropic elasticity, swelling strain,
+and Bishop/Biot pore-pressure coupling.\\
+Swelling strain or stress contribution &
+\(\eps^{\mathrm{sw}}\), \(p_{\mathrm{sw}}\) &
+--, \(\mathrm{Pa}\) &
+Saturation-dependent mechanical contribution used inside the active constitutive
+law.\\
+Volumetric water-content proxy &
+\(\theta=\por\Sl\) &
+-- &
+Model-derived mobile-water proxy.  It needs an observation operator before it can be
+compared with NMR, ERT, or Taupe/TDR.\\
+\end{longtable}
+\endgroup

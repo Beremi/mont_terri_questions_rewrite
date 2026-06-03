@@ -1,0 +1,31 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.20\textwidth} L{0.16\textwidth} L{0.23\textwidth} L{0.31\textwidth}@{}}
+\caption{Parameters introduced by the Darcy, retention, and relative-permeability equations.}
+\label{tab:hydraulic-retention-parameters}\\
+\toprule
+XML name or law & Symbol & Active value & Role in Equations~\eqref{eq:darcy}--\eqref{eq:relative-permeability}\\
+\midrule
+\endfirsthead
+\toprule
+XML name or law & Symbol & Active value & Role\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\texttt{k\_i}/\texttt{k\_i\_rd} & \(\KK\) &
+Baseline tensor \(\begin{bmatrix}1.0&0\\0&0.4\end{bmatrix}10^{-19}\,\mathrm{m^2}\);
+run-local mesh field varies magnitude &
+Intrinsic permeability tensor in Darcy velocity.\\
+\texttt{eta} & \(\mu_l\) &
+\(1.0\times10^{-3}\,\mathrm{Pa\,s}\) &
+Liquid viscosity in Darcy mobility.\\
+VG saturation law & \(S_{lr},S_{gr},m,p_b\) &
+\(0.1,0,0.45,10\,\mathrm{MPa}\) &
+Retention curve \(S_l(p_c)\) with \(p_c=-p_l\).\\
+VG relative permeability & \(k_{\mathrm{rel}}\), \(k_{\min}\) &
+same residual saturations and \(m=0.45\), with \(k_{\min}=10^{-25}\) &
+Unsaturated mobility reduction multiplying \(\KK/\mu_l\).\\
+\end{longtable}
+\endgroup

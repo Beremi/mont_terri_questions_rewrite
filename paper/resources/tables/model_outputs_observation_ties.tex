@@ -1,0 +1,70 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.17\textwidth} L{0.21\textwidth} L{0.25\textwidth} L{0.27\textwidth}@{}}
+\caption{Model outputs and observation-facing quantities.}
+\label{tab:outputs-observation-ties}\\
+\toprule
+Quantity & OGS status & Measurement tie & Required operator or gate\\
+\midrule
+\endfirsthead
+\toprule
+Quantity & OGS status & Measurement tie & Required operator or gate\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\(\pl\) &
+Primary variable and run-local VTU output. &
+Direct pressure or mini-piezometer data, pressure-boundary audit, and pressure
+diagnostics. &
+Reference convention, elevation/head conversion, gauge/absolute convention, and 2D
+projection error must be explicit.\\
+\(\uu\) &
+Primary variable and run-local VTU output. &
+Geoscope, crackometer, levelling, extensometer, laser-scan, and deformation screens. &
+Reference-zero, sign convention, support geometry, and whether displacement can be
+used as a hard residual are unresolved.\\
+\(\TT\) &
+Primary variable and run-local VTU output. &
+Constrained field for the present isothermal workflow. &
+Thermal residuals are not active; \(\TT=T_0\) fixes thermal gradients and
+temperature-change terms.\\
+\(\Sl\) &
+Secondary variable and run-local VTU output. &
+Water-content streams after transformation: NMR, Taupe/TDR, and ERT-derived moisture. &
+Must be converted to \(\theta=\por\Sl\) or another accepted observable; bound-water and
+calibration policies remain gates.\\
+\(\por\) &
+Material field and run-local VTU output. &
+Support for \(\theta=\por\Sl\), not an observed active unknown yet. &
+Current \(\por=0.105\) support must be retained unless NMR/ERT/Taupe policies justify a
+porosity release.\\
+\(\KK\) or \(e^\top\KK e\) &
+Input field, not a state output unless sampled from mesh data. &
+Pulse-test permeability/transmissibility interpretations. &
+Interval orientation, support averaging, gas/slip correction, and duplicate-support
+likelihood policy are required.\\
+\(\vl\), \(\ql\) &
+Secondary velocity available from OGS; flux can be derived. &
+Hydraulic diagnostics and possible flow-rate checks if such data are supplied. &
+Use Darcy velocity, not pore velocity, unless an observation operator explicitly
+requires division by \(\por\Sl\).\\
+\(\sig,\eps\), swelling stress &
+Secondary variables available from the process. &
+Mechanical plausibility, crack/deformation interpretation, and prestress audit. &
+Initial stress and excavation unloading are not active; mechanical conclusions need
+separate staged-model or post-excavation assumptions.\\
+\(\theta=\por\Sl\) &
+Post-processing product. &
+NMR and Taupe/TDR water-content comparison; ERT if transformed through a
+water-content/resistivity relation. &
+Decide absolute versus bias-corrected versus trend/anomaly comparison and handle
+bound/interlayer water.\\
+Resistivity or log-resistivity proxy &
+Observation-model product, not an OGS state variable. &
+ERT inversion fields. &
+Requires Archie/clay-specific transform, pore-water conductivity/salinity treatment,
+surface conduction, anisotropy, support aggregation, and covariance policy.\\
+\end{longtable}
+\endgroup

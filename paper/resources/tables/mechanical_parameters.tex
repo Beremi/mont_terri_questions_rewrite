@@ -1,0 +1,42 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.20\textwidth} L{0.16\textwidth} L{0.25\textwidth} L{0.29\textwidth}@{}}
+\caption{Parameters introduced by the quasi-static mechanics equations.}
+\label{tab:mechanical-parameters}\\
+\toprule
+XML name or law & Symbol & Active value & Role in Equations~\eqref{eq:momentum}--\eqref{eq:constitutive-mechanics}\\
+\midrule
+\endfirsthead
+\toprule
+XML name or law & Symbol & Active value & Role\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\texttt{specific\_body\_force} & \(\bm{f}\) &
+\((0,0)\) &
+Body force is disabled in the momentum equation.\\
+\texttt{biot} & \(\alpha_B\) &
+\(1\) &
+Pore-pressure coupling in the effective stress term.\\
+\texttt{BishopsPowerLaw} & \(b(S_l)\) &
+\(S_l\) &
+Effective-stress scaling because the configured exponent is one.\\
+\texttt{E} & \(E_i\) &
+\((13.8,6.0,13.8)\,\mathrm{GPa}\) &
+Orthotropic Young moduli in \(\CC\).\\
+\texttt{G} & \(G_i\) &
+\((4.79,2.46,4.79)\,\mathrm{GPa}\) &
+Orthotropic shear moduli in \(\CC\).\\
+\texttt{nu} & \(\nu_i\) &
+\((0.44,0.22,0.44)\) &
+Orthotropic Poisson ratios in \(\CC\).\\
+swelling stress rate & \(p_{\mathrm{sw}}\) &
+\(1.0\,\mathrm{MPa}\) in each direction &
+Saturation-dependent swelling law with exponents one and limits \(0.1\le S_l\le1\).\\
+\texttt{ic\_sigma0}, \texttt{load\_top} & \(\sig_0\), top load &
+Defined but inactive &
+Prestress and top traction are provenance entries, not active mechanical inputs.\\
+\end{longtable}
+\endgroup

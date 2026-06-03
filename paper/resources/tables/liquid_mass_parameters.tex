@@ -1,0 +1,32 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.20\textwidth} L{0.16\textwidth} L{0.25\textwidth} L{0.29\textwidth}@{}}
+\caption{Parameters introduced by the liquid mass balance and density law.}
+\label{tab:liquid-mass-parameters}\\
+\toprule
+XML name or law & Symbol & Active value & Role in Equations~\eqref{eq:mass-balance}--\eqref{eq:liquid-density}\\
+\midrule
+\endfirsthead
+\toprule
+XML name or law & Symbol & Active value & Role\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\texttt{phi}/\texttt{n\_rd} & \(\por\) &
+\(0.105\) in the current field package &
+Porosity in liquid storage, retention derivative, thermal mixing, and
+\(\theta=\por S_l\).\\
+liquid density law & \(\rho_l(T,p_l)\) &
+\(1095[1-5\times10^{-4}(T-298.15)+3.2\times10^{-10}(p_l-7.5\times10^6)]\) &
+Full TRM density law.  Under the active isothermal constraint it reduces to
+\(\rho_l^0(p_l)\) in Equation~\eqref{eq:isothermal-density}.\\
+\texttt{biot} & \(\alpha_B\) &
+\(1\) &
+Couples volumetric strain and pore pressure to hydraulic storage and mechanics.\\
+hydraulic source & \(Q_H\) &
+No separate active source in the process file &
+Retained as the standard equation slot, but not used as an additional forcing term.\\
+\end{longtable}
+\endgroup

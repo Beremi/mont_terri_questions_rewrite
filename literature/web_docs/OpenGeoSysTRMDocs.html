@@ -1,0 +1,1435 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  
+
+
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.147.9">
+
+<meta name="description" content="OpenGeoSys">
+<meta name="author" content="OpenGeoSys Community">
+<title>Thermo-Richards-Mechanics Process</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+<link rel="stylesheet" href='/6.5.7/css/all.css'>
+<link rel="stylesheet" href='/6.5.7/css/fontawesome.css'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js"></script>
+<link rel="stylesheet" href='/6.5.7/pagefind/pagefind-ui.css'>
+<script src='/6.5.7/pagefind/pagefind-ui.js'></script>
+<script>
+  
+  const ogstools_url = "https:\/\/ogstools.opengeosys.org\/0.7.1\/";
+  const doxygen_url = "https:\/\/doxygen.opengeosys.org\/6.5.7\/";
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      pageSize: 20,
+      mergeFilter: {
+        resource: "OGS"
+      },
+      processResult: function (result) {
+        
+        result.meta.title = result.meta.title.replace(/#$/, '');
+        
+        if (result.meta.image) {
+          if (result.meta.image.startsWith("../../_images/")) {
+            const cleanedPath = result.meta.image.replace(/^(\.\.\/)+/, '');
+            result.meta.image = ogstools_url + cleanedPath;
+          }
+          if (result.url.startsWith("/docs/") && !(result.meta.image.startsWith("/docs/") || result.meta.image.startsWith("http"))) {
+            result.meta.image = result.url + result.meta.image;
+          }
+          if (result.meta.image.startsWith("doxygen.svg")) {
+            result.meta.image = doxygen_url + "doxygen.svg";
+          }
+        }
+        return result;
+      },
+      mergeIndex: [{
+        bundlePath: ogstools_url + "pagefind",
+        mergeFilter: {
+          resource: "OGSTools"
+        }
+      },
+      {
+        bundlePath: doxygen_url + "pagefind",
+        mergeFilter: {
+          resource: "Doxygen"
+        }
+      }]
+    });
+  });
+</script>
+
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: "ams", 
+      processEnvironments: true, 
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  
+  
+</head>
+
+<body class="selection:bg-yellow-200">
+  
+
+
+
+
+<div class="py-2 px-2 md:px-4">
+  <div x-data="{ mobileMenuOpen: false }" class="relative bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div
+        x-data="useDocsVersioning('6.5.7', 'https://www.opengeosys.org/_static/versions.json')"
+        x-init="init()">
+
+        <template x-if="preferred && isOutdated()">
+          <div class="w-full bg-yellow-50 border-b border-300 px-4 py-2 text-sm flex justify-between items-center">
+            <div>
+              You are viewing documentation for version
+              <strong x-text="currentVersion"></strong>.
+              The latest stable version is
+              <strong x-text="preferred.version"></strong>.
+            </div>
+            <a :href="buildTargetURL(preferred.version)"
+              class="ml-4 inline-flex items-center rounded-md bg-yellow-300 hover:bg-yellow-400 px-3 py-1 font-medium">
+              Switch to latest release
+            </a>
+          </div>
+        </template>
+      </div>
+      <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div class="lg:w-0 lg:flex-1 text-lg lg:text-xl xl:text-2xl">
+          <a href="https://www.opengeosys.org/6.5.7/" class="flex ">
+            Open<span class="text-brand-500">GeoSys</span>
+          </a>
+        </div>
+        <div class="-mr-2 -my-2 md:hidden">
+          <button @click="mobileMenuOpen = true" type="button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <nav class="hidden md:flex space-x-10">
+
+          
+          
+          <a href="/6.5.7/releases/"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Releases</a>
+          
+          
+          <a href="/6.5.7/docs/"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Docs</a>
+          
+          
+          <a href="/6.5.7/publications/"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Publications</a>
+          
+          
+          <a href="https://discourse.opengeosys.org"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Discourse</a>
+          
+          
+          <a href="https://gitlab.opengeosys.org/ogs/ogs"
+            class="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">Source Code</a>
+          
+
+        </nav>
+        <div class="flex items-center justify-end space-x-4 md:space-x-8 flex-1 lg:w-0">
+          <div x-data="useDocsVersioning('6.5.7', 'https://www.opengeosys.org/_static/versions.json')"
+  x-init="init()" class="relative inline-block text-left">
+
+  <button @click="open = !open" type="button"
+    class="inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50">
+    <span x-text="'Version: ' + currentVersion"></span>
+    <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7l3-3 3 3m0 6l-3 3-3-3" />
+    </svg>
+  </button>
+
+  <div x-show="open" @click.away="open = false"
+    class="absolute right-0 z-10 mt-1 w-44 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+    <ul class="py-1 text-sm text-gray-700">
+      <template x-for="v in versions" :key="v.version">
+        <li>
+          <a :href="buildTargetURL(v.version)" class="block px-3 py-1.5 hover:bg-gray-100"
+            :class="v.version === currentVersion ? 'font-semibold text-blue-600' : ''" x-text="v.version">
+          </a>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function normalizeURL(url) {
+    return url.endsWith("/") ? url : url + "/";
+  }
+
+  function semverCompareDesc(a, b) {
+    const special = ["dev", "latest", "main", "master"];
+    const aIsSpecial = special.includes(a);
+    const bIsSpecial = special.includes(b);
+
+    if (aIsSpecial && !bIsSpecial) return -1;
+    if (!aIsSpecial && bIsSpecial) return 1;
+    if (aIsSpecial && bIsSpecial) return a.localeCompare(b);
+
+    const pa = a.split('.').map(Number);
+    const pb = b.split('.').map(Number);
+    for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+      const diff = (pb[i] || 0) - (pa[i] || 0);
+      if (diff !== 0) return diff;
+    }
+    return 0;
+  }
+
+  function useDocsVersioning(currentVersion, versionsUrl) {
+    return {
+      open: false,
+      currentVersion,
+      versions: [],
+      preferred: null,
+      isMRPreview: false,
+      mrBase: null,
+
+      async init() {
+        try {
+          const response = await fetch(versionsUrl);
+          if (!response.ok) throw new Error("Failed to fetch versions.json");
+
+          const data = await response.json();
+          data.sort((a, b) => semverCompareDesc(a.version, b.version));
+
+          this.versions = data;
+          this.preferred = data.find(v => v.preferred);
+
+          
+          const mrMatch = location.hostname === "ogs.ogs.xyz"
+            && /^\/ogs\/mr-\d+\//.test(location.pathname);
+
+          if (mrMatch) {
+            this.isMRPreview = true;
+            
+            const prefix = location.pathname.match(/^\/ogs\/mr-\d+\//)[0];
+            this.mrBase = normalizeURL(location.origin + prefix);
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      },
+
+      isOutdated() {
+        if (this.isMRPreview) return true;
+        return this.preferred && this.currentVersion !== this.preferred.version;
+      },
+
+      buildTargetURL(targetVersion) {
+        const currentFull = window.location.href;
+        const currentPath = window.location.pathname + window.location.search + window.location.hash;
+
+        if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+          const targetEntry = this.versions.find(v => v.version === targetVersion);
+          if (!targetEntry) return currentFull;
+          return normalizeURL(targetEntry.url) + currentPath.replace(/^\/+/, "");
+        }
+
+        if (this.isMRPreview) {
+          const targetEntry = this.versions.find(v => v.version === targetVersion);
+          if (!targetEntry) return currentFull;
+          const toBase = normalizeURL(targetEntry.url);
+          const relative = currentFull.slice(this.mrBase.length);
+          return toBase + relative;
+        }
+
+        const targetEntry = this.versions.find(v => v.version === targetVersion);
+        if (!targetEntry) return currentFull;
+        const toBase = normalizeURL(targetEntry.url);
+
+        
+        const currentEntry = this.versions.find(v => currentFull.startsWith(normalizeURL(v.url)));
+        if (currentEntry) {
+          const fromBase = normalizeURL(currentEntry.url);
+          const relative = currentFull.slice(fromBase.length);
+          return toBase + relative;
+        }
+
+        
+        return toBase;
+      }
+    };
+  }
+</script>
+          <a href="#" id="nav-link-search">
+            <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div x-description="Mobile menu, show/hide based on mobile menu state." x-show="mobileMenuOpen"
+      x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95"
+      x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in"
+      x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+      class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-10" style="display: none;">
+      <div class="rounded-lg shadow-lg">
+        <div class="rounded-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+          <div class="pt-5 pb-6 px-5 space-y-6">
+            <div class="flex items-center justify-between border-b">
+              <div>
+                <a href="/">Open<span class="text-brand-500">GeoSys</span></a>
+              </div>
+              <div class="-mr-2">
+                <button @click="mobileMenuOpen = false" type="button"
+                  class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div>
+              <nav class="grid gap-y-8">
+                
+                
+                <a href="/6.5.7/releases/"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Releases
+                </a>
+                
+                
+                
+                <a href="/6.5.7/docs/"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Docs
+                </a>
+                
+                
+                
+                <a href="/6.5.7/publications/"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Publications
+                </a>
+                
+                
+                
+                <a href="https://discourse.opengeosys.org"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Discourse
+                </a>
+                
+                
+                
+                <a href="https://gitlab.opengeosys.org/ogs/ogs"
+                  class="text-base leading-6 font-medium text-gray-900 -m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                  Source Code
+                </a>
+                
+                
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <div class="xl:container xl:mx-auto px-2">
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex">
+
+  
+
+
+
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+<div class="md:flex md:shrink-0">
+  <nav class="w-48 md:w-64 lg:w-72 pl-2 pr-4 mt-1 text-sm lg:text-base overflow-y-auto h-screen sticky top-0">
+    
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/userguide/basics/5-mins-ogs/">
+            User Guide
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/devguide/getting-started/introduction/">
+            Developer Guide
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/tutorials/">
+            Tutorials
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/benchmarks/">
+            Benchmarks
+          </a>
+        </div>
+      
+    
+      
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/tools/getting-started/overview/">
+            Tools &amp; Workflows
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/docs/featurematrix/bundle/">
+            Feature Matrix
+          </a>
+        </div>
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2  font-bold text-brand-500">
+
+          <a href="/6.5.7/docs/processes/overview/introduction/">
+            Process information
+          </a>
+        </div>
+      
+    
+      
+      
+    
+      
+      
+        <div
+          class=" text-gray-700 hover:text-gray-900 mb-2 ">
+
+          <a href="/6.5.7/hub">
+            DigBen &amp; EURAD Model Hub
+          </a>
+        </div>
+      
+    
+      
+      
+    
+      
+      
+    
+    <hr class="mt-3">
+    
+    <ul>
+      
+      
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/overview/introduction/">
+          
+        
+        
+            <span >
+              OVERVIEW
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/heat-transport/heat_transport_bhe/">
+          
+        
+        
+            <span >
+              HEAT TRANSPORT
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/steady-state-diffusion/steadystatediffusion/">
+          
+        
+        
+            <span >
+              STEADY STATE DIFFUSION
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/liquid-flow/liquidflow/">
+          
+        
+        
+            <span >
+              LIQUID FLOW (GROUNDWATER FLOW)
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/multiphase/multiphase_flow_overview/">
+          
+        
+        
+            <span >
+              MULTIPHASE
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/richards-flow/richardsflow/">
+          
+        
+        
+            <span >
+              RICHARDS FLOW
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/component-transport/hydro-component/">
+          
+        
+        
+            <span >
+              COMPONENT TRANSPORT
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/heat-conduction/heatconduction/">
+          
+        
+        
+            <span >
+              HEAT CONDUCTION
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/small-deformation/smalldeformation/">
+          
+        
+        
+            <span >
+              SMALL DEFORMATION
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+        
+        
+        <li class="mt-6 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/thermal-processes/thm/">
+          
+        
+        
+            <span  class="text-brand-500" >
+              THERMAL PROCESSES
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-down"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+          
+
+  
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/processes/thermal-processes/thm/" >
+          Thermo Hydro Mechanics Process
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 bg-gray-100 rounded-lg">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/processes/thermal-processes/trm/"  class="text-brand-500" >
+          Thermo-Richards-Mechanics Process
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+      
+        <li
+        class="p-1 mr-1 text-gray-700 hover:text-gray-900">
+
+        
+
+        <a href="https://www.opengeosys.org/6.5.7/docs/processes/thermal-processes/hydro-thermal/" >
+          Hydro-Thermal Process
+        </a>
+      </li>
+      
+      
+
+  
+
+    
+  
+
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/large-deformation/f-bar/">
+          
+        
+        
+            <span >
+              LARGE DEFORMATION
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+        
+        
+        
+          
+        
+        
+        
+        <li class="mt-3 tracking-wide font-bold">
+        
+          
+            <a href="https://www.opengeosys.org/6.5.7/docs/processes/shared-content/effective-porosity-mixing/">
+          
+        
+        
+            <span >
+              SHARED CONTENT
+              
+                <span class="hidden lg:inline"><i class="fal fa-caret-right"></i></span>
+              
+            </span>
+        
+          </a>
+        
+        </li>
+        
+      
+    </ul>
+    
+      <hr class="mt-3">
+    
+  </nav>
+</div>
+
+
+  <div class="overflow-y-auto focus:outline-none">
+
+    
+
+    
+
+    <div class="mx-auto py-2 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-4">
+      <h1 class="text-3xl font-extrabold sm:text-4xl mb-8">Thermo-Richards-Mechanics Process</h1>
+      
+
+      
+
+      <div class="section-docs prose prose-sm lg:prose max-w-none lg:max-w-none">
+
+
+        
+
+        
+
+        
+
+        <div class="grid auto-cols-max grid-flow-col justify-around">
+
+          
+        </div>
+
+        <p>This page describes Thermo-Richards-Mechanics Process (TRM)</p>
+<div class="note">
+<h3 id="work-in-progress">Work in progress</h3>
+<p>This page is a work in progress.</p>
+<p>It was published in this state to make existing content available to users and highlight missing parts to contributors.</p>
+<p><strong>Contributors:</strong> please see Documentation Contribution Guide to contribute to the documentation.</p>
+<p><strong>Users:</strong> the content of this page has been verified and is correct. Please return later for more content!</p>
+</div>
+<h2 id="introduction">Introduction</h2>
+<h2 id="theoretical-background">Theoretical background</h2>
+<p>Global assembler for the monolithic scheme of the non-isothermal Richards flow coupled with mechanics.</p>
+<h3 id="governing-equations-without-vapor-diffusion">Governing equations without vapor diffusion</h3>
+<p>The energy balance equation is given by:</p>
+$$
+(\rho c_p)^{eff}\dot T -
+\nabla (\mathbf{k}_T^{eff} \nabla T)+\rho^l c_p^l \nabla T \cdot
+\mathbf{v}^l
+= Q_T
+$$<p>with $T$ the temperature, $(\rho c_p)^{eff}$ the effective volumetric heat capacity, $\mathbf{k}_T^{eff}$ the effective thermal conductivity, $\rho^l$ the density of liquid, $c_p^l$ the specific heat capacity of liquid, $\mathbf{v}^l$ the liquid velocity, and $Q_T$ the point heat source.</p>
+<p>The effective volumetric heat can be considered as a composite of the contributions of solid phase and the liquid phase as
+</p>
+$$
+(\rho c_p)^{eff} = (1-\phi) \rho^s c_p^s + S^l \phi \rho^l c_p^l
+$$<p>
+with $\phi$ the porosity, $S^l$  the liquid saturation, $\rho^s$ the solid density, and $c_p^s$ the specific heat capacity of solid. Similarly, the effective thermal conductivity is given by:
+</p>
+$$
+\mathbf{k}_T^{eff} = (1-\phi) \mathbf{k}_T^s + S^l \phi k_T^l \mathbf I
+$$<p>where $\mathbf{k}_T^s$ is the thermal conductivity tensor of solid, $k_T^l$ is the thermal conductivity of liquid, and $\mathbf I$ is the identity tensor.</p>
+<p>The mass balance equation is given by:
+</p>
+$$
+\begin{eqnarray*}{
+ \left(S^l\beta - \phi\frac{\partial S}{\partial p_c}\right) \rho^l\dot p - S \left( \frac{\partial \rho^l}{\partial T} + \rho^l(\alpha_B -S) \alpha_T^s \right)\dot T\\
++\nabla (\rho^l \mathbf{v}^l) + S \alpha_B \rho^l \nabla \cdot \dot{\mathbf u}= Q_H
+ }
+ \end{eqnarray*}
+ $$<p>where $p$ is the pore pressure, $p_c$ is the capillary pressure, which is $-p$ under the single phase assumption, $\beta$ is a composite coefficient by the liquid compressibility and solid compressibility, $\alpha_B$ is the Biot&rsquo;s constant, $\alpha_T^s$ is the linear thermal expansivity of solid, $Q_H$ is the point source or sink term,  $\mathbf u$ is the displacement, and $H(S-1)$ is the Heaviside function.
+The liquid velocity $\mathbf{v}^l$ is described by the Darcy&rsquo;s law as
+</p>
+$$
+ \mathbf{v}^l=-\frac{{\mathbf k} k_{ref}}{\mu} (\nabla p - \rho^l \mathbf g)
+ $$<p>with ${\mathbf k}$ the intrinsic permeability, $k_{ref}$ the relative permeability, $\mathbf g$ the gravitational force.</p>
+<p>The momentum balance equation takes the form of
+</p>
+$$
+ \nabla (\mathbf{\sigma}-b(S)\alpha_B p^l \mathbf I) +\mathbf f=0
+ $$<p>with $\mathbf{\sigma}$ the effective stress tensor, $b(S)$ the Bishop model, $\mathbf f$ the body force, and $\mathbf I$ the identity.
+The primary unknowns of the momentum balance equation are the displacement $\mathbf u$, which is associated with the stress by the generalized Hook&rsquo;s law as
+</p>
+$$
+ {\dot {\mathbf {\sigma}}} = C {\dot {\mathbf \epsilon}}^e
+ = C ( {\dot {\mathbf \epsilon}} - {\dot {\mathbf \epsilon}}^T
+ -{\dot {\mathbf \epsilon}}^p - {\dot {\mathbf \epsilon}}^{sw}-\cdots )
+ $$<p>with $C$ the forth order elastic tensor,
+${\dot {\mathbf \epsilon}}$ the total strain rate,
+${\dot {\mathbf \epsilon}}^e$ the elastic strain rate,
+${\dot {\mathbf \epsilon}}^T$ the thermal strain rate,
+${\dot {\mathbf \epsilon}}^p$ the plastic strain rate,
+${\dot {\mathbf \epsilon}}^{sw}$ the swelling strain rate.</p>
+<p>The strain tensor is given by displacement vector as
+</p>
+$$
+ \mathbf \epsilon =
+ \frac{1}{2} \left((\nabla \mathbf u)^{\text T}+\nabla \mathbf u\right)
+ $$<p>where the superscript ${\text T}$ means transpose.</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="supported-phases">Supported phases</h3>
+<ul>
+<li>Aqueous liquid</li>
+<li>Solid</li>
+</ul>
+<h2 id="input-variables-and-parameters">Input variables and parameters</h2>
+<p>List of medium properties required by TRM process.</p>
+<h3 id="medium-phase-properties">Medium phase properties</h3>
+<p>Those properties are defined on the phase level for each medium. See <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/media/#phases">phase properties</a> for more details on defining them.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Property name</th>
+          <th>Mandatory</th>
+          <th>Constant</th>
+          <th>Function</th>
+          <th>Linear</th>
+          <th>Parameter</th>
+          <th>Other</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Bulk modulus</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Density</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Latent heat</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>LatentWaterVapourLatentHeat</td>
+      </tr>
+      <tr>
+          <td>Specific heat capacity</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Storage</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Swelling stress rate</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>SaturationDependentSwelling</td>
+      </tr>
+      <tr>
+          <td>Thermal conductivity</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Thermal diffusion enhancement factor</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Vapour density</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>WaterVapourDensity</td>
+      </tr>
+      <tr>
+          <td>Vapour diffusion</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>VapourDiffusionFEBEX</td>
+      </tr>
+      <tr>
+          <td>Thermal expansivity</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Thermo-osmosis coefficient</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="medium-properties">Medium properties</h3>
+<p>Those properties are defined on medium level. See <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/media/#properties">medium properties</a> for more details on defining them.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Property name</th>
+          <th>Mandatory</th>
+          <th>Constant</th>
+          <th>Function</th>
+          <th>Curve</th>
+          <th>Parameter</th>
+          <th>Other</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Biot coefficient</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Bishop effective stress</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>BishopPowerLaw, BishopSturationCutoff</td>
+      </tr>
+      <tr>
+          <td>Permeability</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>PermeabilityOrthotropicPowerLaw</td>
+      </tr>
+      <tr>
+          <td>Porosity</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>PorosityFromMassBalance</td>
+      </tr>
+      <tr>
+          <td>Relative permeability</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>RelPermBrooksCorey, RelativePermeabilityVanGenuchten</td>
+      </tr>
+      <tr>
+          <td>Saturation</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>SaturationLiakopoulos, SaturationVanGenuchten</td>
+      </tr>
+      <tr>
+          <td>Storage</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Thermal conductivity</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td><a href="#thermal-porosity-mixing">EffectiveThermalConductivityPorosityMixing</a></td>
+      </tr>
+      <tr>
+          <td>Transport porosity</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>No</td>
+          <td>TransportPorosityFromMassBalance</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="input-parameters-in-the-project-file">Input parameters in the project file</h2>
+<p>TRM process has to be declared in the project file in the processes block. For example in following way:</p>
+
+
+<div class="relative">
+  
+  <div class="" id="code-block-0">
+    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;processes&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;process&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;type&gt;</span>THERMO_RICHARDS_MECHANICS<span style="color:#f92672">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/process&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/processes&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <button class="copy-code-btn absolute top-0 right-0 py-1 px-2 bg-slate-200 rounded-tr-md text-xs"
+    data-clipboard-target="#code-block-0">
+    Copy
+  </button>
+</div>
+<h3 id="process-variables">Process variables</h3>
+<p>Following process variables are available in TRM process:</p>
+<ul>
+<li><code>temperature</code></li>
+<li><code>pressure</code></li>
+<li><code>displacement</code></li>
+</ul>
+<p>For more details, see <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/process_variables/">Process variables</a>.</p>
+<h3 id="example-of-full-section-defining-trm-process">Example of full section defining TRM process</h3>
+<p>For more detailed description of tags used in this snippet, please see <a href="https://www.opengeosys.org/6.5.7/docs/userguide/blocks/processes/#process-variables">Processes</a>.</p>
+
+
+<div class="relative">
+  
+  <div class="" id="code-block-1">
+    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>  <span style="color:#f92672">&lt;processes&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;process&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;name&gt;</span>BodyForceTest<span style="color:#f92672">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;type&gt;</span>THERMO_RICHARDS_MECHANICS<span style="color:#f92672">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;mass_lumping&gt;</span>false<span style="color:#f92672">&lt;/mass_lumping&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;integration_order&gt;</span>3<span style="color:#f92672">&lt;/integration_order&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;constitutive_relation</span> <span style="color:#75af00">id=</span><span style="color:#d88200">&#34;0&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/constitutive_relation&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;process_variables&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;temperature&gt;</span>temperature<span style="color:#f92672">&lt;/temperature&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;pressure&gt;</span>pressure<span style="color:#f92672">&lt;/pressure&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;displacement&gt;</span>displacement<span style="color:#f92672">&lt;/displacement&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/process_variables&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;secondary_variables&gt;</span>
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/secondary_variables&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;specific_body_force&gt;</span>0 -9.81<span style="color:#f92672">&lt;/specific_body_force&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;apply_body_force_for_deformation&gt;</span>false<span style="color:#f92672">&lt;/apply_body_force_for_deformation&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;initial_stress&gt;</span>Initial_stress<span style="color:#f92672">&lt;/initial_stress&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/process&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/processes&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <button class="copy-code-btn absolute top-0 right-0 py-1 px-2 bg-slate-200 rounded-tr-md text-xs"
+    data-clipboard-target="#code-block-1">
+    Copy
+  </button>
+</div>
+<p>For more information on tags <code>&lt;apply_body_force_to_deformation&gt;</code> and <code>&lt;mass_lumping&gt;</code> see section <a href="#features">Features</a> at this page.</p>
+<h2 id="features">Features</h2>
+<h3 id="specific-body-force">Specific body force</h3>
+<h3 id="mass-lumping">Mass lumping</h3>
+<p>The diagonal lumping of the mass matrix of the Richards equation can be using by adding following tag to the <code>&lt;process&gt; &lt;/process&gt;</code> block:</p>
+
+
+<div class="relative">
+  
+  <div class="" id="code-block-2">
+    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;mass_lumping&gt;</span>true<span style="color:#f92672">&lt;/mass_lumping&gt;</span></span></span></code></pre></div>
+  </div>
+  
+  <button class="copy-code-btn absolute top-0 right-0 py-1 px-2 bg-slate-200 rounded-tr-md text-xs"
+    data-clipboard-target="#code-block-2">
+    Copy
+  </button>
+</div>
+<h3 id="applying-body-force-on-deformation">Applying body force on deformation</h3>
+<h3 id="thermal-porosity-mixing">Thermal porosity mixing</h3>
+<p>TRM can automatically obtain thermal conductivity for the medium based on thermal conductivities of phases and porosity.</p>
+<p>See <a href="https://www.opengeosys.org/6.5.7/docs/processes/shared-content/effective-porosity-mixing/">Thermal conductivity: effective porosity mixing</a> for more information.</p>
+<h4 id="examples">Examples</h4>
+<h2 id="available-benchmarks">Available benchmarks</h2>
+<p>To gain more insight into TRM process, you can investigate <a href="https://www.opengeosys.org/6.5.7/docs/benchmarks/thermo-richards-mechanics/">TRM benchmarks</a>.</p>
+<h2 id="references">References</h2>
+
+      </div>
+
+      <hr class="border my-4">
+      
+
+
+
+
+<div class="flex text-sm mb-4" data-pagefind-ignore>
+  <div class="w-1/2">
+    
+    
+    
+    <a href="https://www.opengeosys.org/6.5.7/docs/processes/thermal-processes/thm/" title="https://www.opengeosys.org/6.5.7/docs/processes/thermal-processes/thm/">
+      <div class="mb-1"><i class="far fa-arrow-left"></i> Previous</div>
+      <div class="italic">
+        Thermo Hydro Mechanics Process
+      </div>
+    </a>
+    
+    
+  </div>
+  <div class="w-1/2 text-right">
+    
+    
+    
+    <div class="tr">
+      <a href="https://www.opengeosys.org/6.5.7/docs/processes/thermal-processes/hydro-thermal/" title="https://www.opengeosys.org/6.5.7/docs/processes/thermal-processes/hydro-thermal/">
+        <div class="mb-1">Next <i class="far fa-arrow-right"></i></div>
+        <div class="italic">
+          Hydro-Thermal Process
+        </div>
+      </a>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+
+      
+
+<div class="mt-20 text-sm text-gray-700 prose prose-sm max-w-none" data-pagefind-ignore>
+    <p>This article was written by Feliks Kiszkurno, Wenqing Wang. If you are missing something or you find an error please <a href="mailto:info@opengeosys.org">let us know</a>.<br>
+        Generated with <a href="https://gohugo.io">Hugo</a> 0.147.9
+        
+          in CI job <a href="https://gitlab.opengeosys.org/ogs/ogs/-/jobs/683680">683680</a>
+        
+        |
+        
+        Last revision: December 20, 2025
+          <em>
+            
+                <br>
+                Commit: chore: fix spelling mistakes <a href="https://gitlab.opengeosys.org/ogs/ogs/-/commit/fbc5f730">fbc5f730</a>
+                &nbsp;| <a href="https://gitlab.opengeosys.org/ogs/ogs/-/edit/master/web/content/docs/processes/thermal-processes/TRM/index.md">Edit this page on <i class="fab fa-gitlab"></i></a>
+            
+          </em>
+        
+    </p>
+</div>
+
+    </div>
+  </div>
+
+  
+</div>
+
+
+    </div>
+
+    
+    
+
+    <footer class="text-gray-700 body-font" data-pagefind-ignore="all">
+  <div class="px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 mb-0">© 2026
+      OpenGeoSys Community, <a href="/imprint">Privacy policy / Legal statements / Impressum</a></p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+
+      <a class="ml-3" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0"
+          src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" data-pagefind-ignore="all" />
+      </a>
+      <a class="ml-3" href="https://www.netlify.com">
+        <img style="height: 31px;" src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
+          alt="Deploys by Netlify" data-pagefind-ignore="all" />
+      </a>
+    </span>
+  </div>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+
+
+<script type="text/javascript" src="https://www.opengeosys.org/6.5.7/bundle.25e381ca2ebf4830122003ca54a9271beb33f57e0ab27e2b3ed06074297737d8.js" integrity="sha256-JeOByi6/SDASIAPKVKknG&#43;sz9X4Ksn4rPtBgdCl3N9g="
+  media="screen"></script>
+
+
+
+
+    <div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+          <header class="modal__header">
+            <h2 class="modal__title" id="modal-2-title">
+              Search
+            </h2>
+          </header>
+          <main class="modal__content" id="modal-2-content">
+            <div id="search"></div>
+          </main>
+          <footer class="modal__footer">
+            <button class="modal__btn modal__btn-primary" data-micromodal-close=""
+              aria-label="Close this dialog window">Close</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

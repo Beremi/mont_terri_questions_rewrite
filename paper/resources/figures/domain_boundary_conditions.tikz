@@ -1,0 +1,35 @@
+\begin{tikzpicture}[scale=0.72, every node/.style={font=\small}]
+  \coordinate (A) at (-5,-5);
+  \coordinate (B) at (5,-5);
+  \coordinate (C) at (5,5);
+  \coordinate (D) at (-5,5);
+
+  \fill[gray!6] (A) rectangle (C);
+  \draw[thick] (A) rectangle (C);
+
+  \draw[red!70!black, very thick] (-5,-5) -- (-5,5);
+  \draw[red!70!black, very thick] (5,-5) -- (5,5);
+  \draw[red!70!black, very thick] (-5,5) -- (5,5);
+  \draw[red!70!black, very thick] (-5,-5) -- (5,-5);
+
+  \node[red!70!black, anchor=east] at (-5.25,0) {$\Gamma_A$};
+  \node[red!70!black, anchor=west] at (5.25,0) {$\Gamma_B$};
+  \node[red!70!black, anchor=south] at (0,5.25) {$\Gamma_C$};
+  \node[red!70!black, anchor=north] at (0,-5.25) {$\Gamma_D$};
+
+  \draw[orange!80!black, line width=1.1pt] (0,0) circle (1.25);
+  \node[orange!80!black, align=center] at (0,0)
+    {$\Gamma_E$};
+
+  \foreach \y in {-3.6,-2.2,-0.8,0.8,2.2,3.6} {
+    \draw[-{Stealth[length=2.0mm]}, blue!70!black] (-5.35,\y) -- (-5.02,\y);
+    \draw[-{Stealth[length=2.0mm]}, blue!70!black] (5.35,\y) -- (5.02,\y);
+  }
+  \foreach \x in {-3.6,-2.2,-0.8,0.8,2.2,3.6} {
+    \draw[-{Stealth[length=2.0mm]}, blue!70!black] (\x,5.35) -- (\x,5.02);
+    \draw[-{Stealth[length=2.0mm]}, blue!70!black] (\x,-5.35) -- (\x,-5.02);
+  }
+
+  \draw[dashed, gray!70] (-5,0) -- (5,0);
+  \draw[dashed, gray!70] (0,-5) -- (0,5);
+\end{tikzpicture}

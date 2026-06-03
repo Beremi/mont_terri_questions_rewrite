@@ -1,0 +1,73 @@
+\documentclass[11pt,a4paper]{report}
+
+\usepackage[a4paper,margin=15mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage[hypcap=false]{caption}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\usetikzlibrary{arrows.meta,calc,patterns}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\uu}{\bm{u}}
+\newcommand{\xx}{\bm{x}}
+\newcommand{\nn}{\bm{n}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\grad}{\nabla}
+\newcommand{\divv}{\nabla\!\cdot}
+\newcommand{\eps}{\bm{\varepsilon}}
+\newcommand{\sig}{\bm{\sigma}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\KK}{\bm{K}}
+\newcommand{\II}{\bm{I}}
+\newcommand{\vl}{\bm{v}_{l}}
+\newcommand{\ql}{\bm{q}_{l}}
+\newcommand{\Sl}{S_l}
+\newcommand{\pc}{p_c}
+\newcommand{\pl}{p_l}
+\newcommand{\TT}{T}
+\newcommand{\por}{n}
+
+\title{Mont Terri CD-A Niche 4 OGS Model Notes\\
+\large Chapter 1: Mathematical TRM Model and OGS Realization}
+\author{Local modelling note}
+\date{\today}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\maketitle
+
+\begin{abstract}
+This note records the CD-A Niche 4 model in two layers.  The first layer is the
+mathematical Thermo--Richards--Mechanics model: physical setting, unknowns,
+constitutive assumptions, governing equations, boundary data, and initial state.
+The second layer is the OGS realization of the same model: project-file blocks,
+mesh fields, XML parameters, output arrays, and observation-facing quantities.
+This separation is deliberate.  It lets us discuss the model as a scientific object
+before we decide which material fields, boundary curves, and measurement operators
+are safe to release for inversion or validation.
+\end{abstract}
+
+\clearpage
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\tableofcontents
+
+\clearpage
+\pagenumbering{arabic}
+\input{sections/chapter_01_ogs_model}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

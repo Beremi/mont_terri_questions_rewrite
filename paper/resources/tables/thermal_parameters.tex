@@ -1,0 +1,39 @@
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}L{0.20\textwidth} L{0.16\textwidth} L{0.23\textwidth} L{0.31\textwidth}@{}}
+\caption{Parameters introduced by the heat balance and thermal mixing equations.}
+\label{tab:thermal-parameters}\\
+\toprule
+XML name or law & Symbol & Active value & Role in Equations~\eqref{eq:heat-balance}--\eqref{eq:thermal-mixing}\\
+\midrule
+\endfirsthead
+\toprule
+XML name or law & Symbol & Active value & Role\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\texttt{rho\_s} & \(\rho_s\) &
+\(2.52\times10^3\,\mathrm{kg\,m^{-3}}\) &
+Solid density in effective heat storage.\\
+\texttt{c\_p\_s} & \(c_s\) &
+\(1254.74\,\mathrm{J\,kg^{-1}K^{-1}}\) &
+Solid heat capacity in effective heat storage.\\
+\texttt{kappa\_th\_s} & \(k_s\) &
+\(2.156\,\mathrm{W\,m^{-1}K^{-1}}\) &
+Solid thermal conductivity in effective mixing.\\
+\texttt{c\_p\_l} & \(c_l\) &
+\(4160\,\mathrm{J\,kg^{-1}K^{-1}}\) &
+Liquid heat capacity in storage and advective heat transport.\\
+\texttt{kappa\_l} & \(k_l\) &
+\(0.6\,\mathrm{W\,m^{-1}K^{-1}}\) &
+Liquid thermal conductivity in effective mixing.\\
+\texttt{CTE} & \(\alpha_T^s\) &
+\(1254.74\) in XML &
+Thermal-expansivity parameter used by OGS; value and unit remain a provenance caveat.\\
+thermal source & \(Q_T\) &
+No separate active source in the process file &
+Retained as the standard equation slot, but not used as an additional forcing term.\\
+\end{longtable}
+\endgroup

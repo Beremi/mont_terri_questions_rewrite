@@ -1,0 +1,570 @@
+\chapter{Mathematical TRM Model and OGS Realization}
+\label{chap:ogs-model}
+
+\section{Purpose and Evidence Boundary}
+\label{sec:purpose-evidence}
+
+We use a two-layer description of the CD-A Niche 4 reference model.  The first
+layer is the mathematical Thermo--Richards--Mechanics (TRM) model: domain, unknowns,
+constitutive laws, boundary data, and initial state.  The second layer is the OGS
+realization of that model through project-file blocks, XML parameters, mesh fields,
+curves, time stepping, and VTU outputs.  This order is deliberate.  It fixes the
+scientific model before we discuss how each field is passed into OGS or read from
+OGS results.
+
+The reference evidence is the transferred CD-A Niche 4 projection model under
+\path{SOTA_OGS_Mont_Terri_work/GESA_model_original/projection_on_mesh_2025-09-05},
+the run-local permeability-field inputs, and the local formulation and run-input
+audits
+\citep[projection XML and project file]{GesaProjectionModel2025}
+\citep[Source Copies and Active Model Features]{ModelAudit2026}
+\citep[summary and checks]{FormulationAudit2026}
+\citep[checks and mesh table]{RunInputAudit2026}.
+For the equations we use the OGS TRM formulation without vapor diffusion, the
+coupled THM notation of \citet[Sec.~2.1--2.3, Eqs.~1, 7--9]{Wang2009THM},
+and the OGS documentation
+\citep[``Governing equations without vapor diffusion'']{OpenGeoSysTRMDocs}.
+If the local files contain an inactive parameter, commented block, or
+implementation mismatch, we record it as a gate.  We do not promote such entries
+into the active physics.
+
+\section{Physical Setting and Modelled Phenomena}
+\label{sec:physical-setting}
+
+The CD-A experiment studies the coupled response of Opalinus Clay around twin niches
+in the Mont Terri Rock Laboratory.  The relevant rock is a bedded claystone with
+strong hydro-mechanical coupling, structural controls, and a near-niche excavation
+damaged zone (EDZ).  The CD-A work focuses on humidity-driven water-content,
+pressure, and deformation evolution in the formation
+\citep[abstract]{Ziefle2021CDA}
+\citep[abstract, Sec.~2, Table~1]{Ziefle2024Characterization}
+\citep[abstract and Secs.~1--2]{WaterContentEDZ2024}.  Broader Mont Terri
+studies show that Opalinus Clay stiffness, strength, pore-pressure response, and
+damage-zone development depend on suction, bedding, in-situ stress, and fault or
+fracture structure \citep[abstract, Secs.~2--3.3]{Amann2017Opalinus}.  EDZ
+studies further show that hydraulic conductivity and fracture aperture can differ
+by orders of magnitude from the intact claystone and can evolve through swelling,
+closure, and self-sealing
+\citep[abstract and Sec.~3.1.1]{Hale2021EDZ}
+\citep[abstract, Secs.~2.1--2.5]{Marschall2017EDZ}.
+
+The reference OGS model represents a controlled subset of this physics.  It includes
+Richards pressure diffusion, capillary retention, relative permeability, porosity
+storage, orthotropic linear elasticity, Biot/Bishop pore-stress coupling,
+saturation-dependent swelling stress, and heat-balance terms.  It does not
+explicitly represent vapor diffusion, discrete fracture flow, chemical alteration,
+sealing/healing kinetics, staged excavation, or full three-dimensional fault
+geometry.  These omissions matter near the niche and in the EDZ, but they remain
+external gates or later scenario fields in this chapter.
+
+\section{Mathematical Model}
+\label{sec:mathematical-model}
+
+\subsection{Domain, Unknowns, and State Fields}
+\label{sec:domain-unknowns}
+
+Let \(\Omega\subset\mathbb{R}^2\) be the current two-dimensional CD-A Niche 4 slice,
+and let \(I=[0,t_{\mathrm{end}}]\) be the simulated time interval.  The primary
+unknowns are displacement \(\uu:\Omega\times I\rightarrow\mathbb{R}^2\), liquid
+pressure \(\pl:\Omega\times I\rightarrow\mathbb{R}\), and temperature
+\(\TT:\Omega\times I\rightarrow\mathbb{R}\).  Liquid saturation, Darcy velocity,
+stress, strain, swelling stress, and water-content proxies are state-dependent or
+post-processed quantities.  Tables~\ref{tab:unknown-output-fields}--\ref{tab:intermediate-derived-fields}
+separate the notation into unknown and output fields, material input fields, and
+intermediate or derived quantities before they enter the equations.
+
+\input{resources/tables/mathematical_variables.tex}
+
+We assume a single liquid phase in a porous solid, Richards-type capillary pressure
+closure, no explicit gas-pressure unknown, and no active vapor diffusion.  The
+reference body force is zero.  Temperature is retained in the full TRM statement
+because it is an OGS primary variable and appears in density, heat storage, and
+thermo-mechanical coupling
+\citep[``Governing equations without vapor diffusion'' and ``Process variables'']{OpenGeoSysTRMDocs}.
+Section~\ref{sec:isothermal-reduced-model} then records the reduced isothermal
+model implied by the current temperature constraints
+\citep[process-variable and boundary-condition check]{FormulationAudit2026}.
+
+\subsection{Liquid Flow, Retention, and Relative Permeability}
+\label{sec:darcy-retention}
+
+The liquid velocity is the Darcy velocity.  With the specific body force disabled,
+the reference equation is
+\begin{equation}
+  \vl
+  =
+  -\frac{k_{\mathrm{rel}}(\Sl)}{\mu_l}\,\KK\,\grad \pl ,
+  \qquad
+  \ql=\rho_l\vl .
+  \label{eq:darcy}
+\end{equation}
+The permeability tensor \(\KK\) is intrinsic permeability in \(\mathrm{m^2}\).  It
+is not hydraulic conductivity.  Hydraulic conductivity is a derived quantity after
+choosing liquid density, viscosity, relative permeability, and saturation state.  The
+factor \(\por\Sl\) belongs to storage, thermal mixing, and the water-content proxy;
+it is not part of the Darcy velocity in \eqref{eq:darcy}.
+
+The active pressure convention is
+\begin{equation}
+  \pc := -\pl .
+  \label{eq:capillary-pressure}
+\end{equation}
+Negative liquid pressure therefore means positive suction/capillary pressure under
+the gas/reference convention used by the Richards formulation.  For \(\pc>0\), the
+configured van Genuchten retention law is
+\begin{equation}
+  S_e(\pc)
+  =
+  \left[1+\left(\frac{\pc}{p_b}\right)^{1/(1-m)}\right]^{-m},
+  \qquad
+  \Sl
+  =
+  S_{lr} + (1-S_{lr}-S_{gr}) S_e ,
+  \label{eq:vg-saturation}
+\end{equation}
+and the corresponding Mualem--van Genuchten relative-permeability law is
+\begin{equation}
+  k_{\mathrm{rel}}(\Sl)
+  =
+  \max\!\left(
+    k_{\min},
+    S_e^{1/2}
+    \left[1-\left(1-S_e^{1/m}\right)^m\right]^2
+  \right).
+  \label{eq:relative-permeability}
+\end{equation}
+This closure follows the standard van Genuchten and Mualem forms
+\citep[p.~892, Eqs.~2--3 and p.~893, Eq.~8]{VanGenuchten1980}
+\citep[pp.~513--515, Eqs.~1--2, 14, and 21]{Mualem1976}.  In the present workflow
+these retention and relative-permeability parameters are fixed model structure, not
+released calibration fields
+\citep[saturation and relative-permeability checks]{FormulationAudit2026}.
+
+\input{resources/tables/hydraulic_retention_parameters.tex}
+
+\subsection{Liquid Mass Balance}
+\label{sec:mass-balance}
+
+The no-vapor liquid mass equation can be written as
+\begin{equation}
+\left(
+  \Sl\beta_l
+  - \por\frac{\partial \Sl}{\partial \pc}
+\right)\rho_l\,\dot{\pl}
+-
+\Sl
+\left(
+  \frac{\partial \rho_l}{\partial \TT}
+  + \rho_l(\alpha_B-\Sl)\alpha_T^s
+\right)\dot{\TT}
++
+\divv(\rho_l\vl)
++
+\Sl\alpha_B\rho_l\,\divv\dot{\uu}
+= Q_H .
+\label{eq:mass-balance}
+\end{equation}
+The equation shows why permeability, retention, porosity, density, temperature, and
+mechanical volumetric strain cannot be interpreted independently.  In particular,
+changing the boundary pressure curve or the retention law can mimic a change in
+permeability through the desaturation timing.  The active XML does not add a
+separate hydraulic source term, so \(Q_H\) is retained only as the standard equation
+slot \citep[``Governing equations without vapor diffusion'']{OpenGeoSysTRMDocs}
+\citep[density and no-vapor checks]{FormulationAudit2026}.
+
+The liquid density is pressure- and temperature-dependent:
+\begin{equation}
+  \rho_l(\TT,\pl)
+  =
+  1095
+  \left[
+    1
+    -5\times 10^{-4}(\TT-298.15)
+    +3.2\times10^{-10}(\pl-7.5\times10^6)
+  \right].
+  \label{eq:liquid-density}
+\end{equation}
+Thus pressure storage, saturation storage, thermal density coupling, and mechanical
+volumetric coupling belong to the full TRM statement.  Under the current active
+temperature constraints, the temperature-dependent parts reduce as stated in
+Section~\ref{sec:isothermal-reduced-model}.
+
+\input{resources/tables/liquid_mass_parameters.tex}
+
+\subsection{Quasi-static Mechanics}
+\label{sec:mechanics-equation}
+
+The mechanical balance is quasi-static:
+\begin{equation}
+  \divv\!\left(\sig - b(\Sl)\alpha_B\pl\II\right) + \bm{f} = \bm{0}.
+  \label{eq:momentum}
+\end{equation}
+The Bishop stress factor \(b(\Sl)\) represents the saturation-dependent weighting of
+the pore-pressure term in unsaturated effective stress
+\citep[bibliographic record, no DOI found]{Bishop1959EffectiveStress}.  For the
+reference setup, the OGS Bishop law has exponent one and the Biot coefficient is
+one, so \(b(\Sl)=\Sl\) and \(\alpha_B=1\) after substitution
+\citep[TRM momentum equation and media-property table]{OpenGeoSysTRMDocs}
+\citep[Bishop-law and Biot-coefficient checks]{FormulationAudit2026}.  We keep the symbolic form
+in \eqref{eq:momentum} because it makes the coupling assumptions explicit.
+
+The effective stress follows orthotropic linear elasticity with thermal and swelling
+strain contributions:
+\begin{equation}
+  \sig
+  =
+  \CC:
+  \left(
+    \eps(\uu)
+    -\eps^T(\TT)
+    -\eps^{\mathrm{sw}}(\Sl)
+  \right),
+  \qquad
+  \eps(\uu)=\frac{1}{2}\left(\grad\uu+\grad\uu^\top\right).
+  \label{eq:constitutive-mechanics}
+\end{equation}
+This is not a staged excavation model.  The current mechanics model starts from the
+already open two-dimensional geometry and has no active initial stress tensor or
+active top load.  Any future mechanical residual therefore requires a separate
+decision about prestress, excavation unloading, and the reference displacement state
+\citep[inactive-parameter and orthotropic-elasticity checks]{FormulationAudit2026}.
+
+\input{resources/tables/mechanical_parameters.tex}
+
+\subsection{Heat Balance}
+\label{sec:heat-balance}
+
+The heat balance in the TRM process is
+\begin{equation}
+  (\rho c_p)^{\mathrm{eff}}\dot{\TT}
+  -
+  \divv\!\left(\bm{k}_T^{\mathrm{eff}}\grad\TT\right)
+  +
+  \rho_l c_l\,\grad\TT\cdot\vl
+  =
+  Q_T .
+  \label{eq:heat-balance}
+\end{equation}
+The effective heat storage and thermal conductivity use porosity and saturation
+mixing:
+\begin{equation}
+  (\rho c_p)^{\mathrm{eff}}
+  =
+  (1-\por)\rho_s c_s + \por\Sl\rho_l c_l ,
+  \qquad
+  \bm{k}_T^{\mathrm{eff}}
+  =
+  (1-\por)k_s\II + \por\Sl k_l\II .
+  \label{eq:thermal-mixing}
+\end{equation}
+The active temperature initial and boundary values are both \(298.15\,\mathrm{K}\).
+In the checked XML, the temperature Dirichlet condition is attached to
+\path{bulk_all}.  The run-input audit records \path{bulk_all.vtu} with the same
+point and cell counts as the bulk mesh, so this boundary support should be read as a
+domain-wide temperature constraint for the active run
+\citep[process-variable and boundary-condition check]{FormulationAudit2026}
+\citep[mesh table]{RunInputAudit2026}.  Thermal parameters are therefore fixed
+coupling context rather than released thermal calibration fields.
+The \texttt{CTE}=1254.74 XML value remains a provenance caveat because it is
+numerically identical to \texttt{c\_p\_s} and carries a heat-capacity-like XML
+comment \citep[CTE provenance caveat]{FormulationAudit2026}.
+
+\input{resources/tables/thermal_parameters.tex}
+
+\subsection{Isothermal Reduced Model for the Active Parametrization}
+\label{sec:isothermal-reduced-model}
+
+The active OGS process is still TRM, and \(\TT\) is still a primary variable in the
+project file.  However, the active initial and boundary data prescribe
+\begin{equation}
+  \TT(\xx,t)=T_0:=298.15\,\mathrm{K}
+  \quad \text{for all } \xx\in\Omega,\; t\in I .
+  \label{eq:isothermal-constraint}
+\end{equation}
+Therefore
+\begin{equation}
+  \dot{\TT}=0,
+  \qquad
+  \grad\TT=\bm{0},
+  \qquad
+  \eps^T(\TT)-\eps^T(T_0)=\bm{0}.
+  \label{eq:isothermal-zero-terms}
+\end{equation}
+Flow and displacement changes do not generate temperature changes in this active
+model, because the temperature degree of freedom is constrained.  The heat equation
+is solved by the constant field and does not add an independent evolution equation
+for the present parametrization
+\citep[TRM heat equation and process-variable list]{OpenGeoSysTRMDocs}
+\citep[process-variable and boundary-condition check]{FormulationAudit2026}.
+
+For interpretation and parameter fitting, the active model can therefore be read as
+an isothermal Richards--mechanics model with primary unknowns \((\uu,\pl)\).  The
+liquid density reduces from \eqref{eq:liquid-density} to
+\begin{equation}
+  \rho_l^{0}(\pl)
+  =
+  1095
+  \left[
+    1
+    +3.2\times10^{-10}(\pl-7.5\times10^6)
+  \right],
+  \label{eq:isothermal-density}
+\end{equation}
+so density can still vary with pressure, but not with temperature.  The liquid mass
+balance becomes
+\begin{equation}
+\left(
+  \Sl\beta_l
+  - \por\frac{\partial \Sl}{\partial \pc}
+\right)\rho_l^{0}\,\dot{\pl}
++
+\divv(\rho_l^{0}\vl)
++
+\Sl\alpha_B\rho_l^{0}\,\divv\dot{\uu}
+= Q_H ,
+\label{eq:isothermal-mass-balance}
+\end{equation}
+with the same Darcy velocity \eqref{eq:darcy}, retention law
+\eqref{eq:vg-saturation}, and relative-permeability law
+\eqref{eq:relative-permeability}.  The mechanical balance keeps the same
+pore-pressure coupling, while the thermal-strain increment drops out:
+\begin{equation}
+  \divv\!\left(\sig - b(\Sl)\alpha_B\pl\II\right) + \bm{f} = \bm{0},
+  \qquad
+  \sig
+  =
+  \CC:
+  \left(
+    \eps(\uu)
+    -\eps^{\mathrm{sw}}(\Sl)
+  \right).
+  \label{eq:isothermal-mechanics}
+\end{equation}
+This reduced form is not a different OGS project.  It is the mathematical model that
+the current TRM project realizes once the homogeneous constant temperature
+constraint is applied.
+
+\subsection{Mathematical Boundary and Initial Data}
+\label{sec:mathematical-boundary-initial}
+
+Let the outer square boundary be
+\[
+  \Gamma_\square:=\Gamma_A\cup\Gamma_B\cup\Gamma_C\cup\Gamma_D,
+\]
+and let \(\Gamma_E\) denote the open-niche boundary.  The reference mathematical
+hydraulic boundary inventory is
+\begin{equation}
+  \pl = p_\square = 1.5\times10^6\,\mathrm{Pa}
+  \quad \text{on } \Gamma_\square,
+  \qquad
+  \pl = p_E(t)
+  \quad \text{on } \Gamma_E .
+  \label{eq:hydraulic-bc}
+\end{equation}
+Thus the reference mathematical boundary inventory uses a Dirichlet hydraulic
+condition on all four sides of the square.  The niche boundary is the only
+time-dependent hydraulic Dirichlet boundary.  The negative values of \(p_E(t)\) are
+interpreted through \eqref{eq:capillary-pressure}: they are liquid-pressure values
+corresponding to positive suction
+\citep[Sec.~3, Eqs.~1--2]{WaterContentEDZ2024}
+\citep[pressure-boundary check]{FormulationAudit2026}.
+
+The mechanical boundary inventory is component-wise kinematic support on the outer
+square,
+\begin{equation}
+  u_x=0 \quad \text{on } \Gamma_A\cup\Gamma_B,
+  \qquad
+  u_y=0 \quad \text{on } \Gamma_C\cup\Gamma_D,
+  \label{eq:mechanical-bc}
+\end{equation}
+with natural tangential components and natural niche traction in the current model.
+The thermal boundary is \(\TT=298.15\,\mathrm{K}\) on the thermal support used by the
+OGS setup.  The initial conditions are
+\begin{equation}
+  \uu(\xx,0)=\bm{0},\qquad
+  \pl(\xx,0)=1.5\times10^6\,\mathrm{Pa},\qquad
+  \TT(\xx,0)=298.15\,\mathrm{K}.
+  \label{eq:initial-state}
+\end{equation}
+The pressure expression in the XML contains a vertical term multiplied by zero.
+Consequently, the active initial pressure field is spatially uniform and does not
+encode a drained near-niche post-excavation pressure field
+\citep[initial-condition check]{FormulationAudit2026}.
+
+\section{OGS System Realization}
+\label{sec:ogs-system}
+
+\subsection{Project Blocks and Process Variables}
+\label{sec:ogs-project-blocks}
+
+The OGS realization is the \texttt{THERMO\_RICHARDS\_MECHANICS} process in
+\path{01_processes_TRM.xml}.  The project assigns polynomial order 2 to displacement
+and order 1 to pressure and temperature.  The same process block exposes
+\texttt{velocity}, \texttt{saturation}, \texttt{sigma}, \texttt{epsilon}, and
+\texttt{swelling\_stress} as secondary variables.  Gravity is off because
+\texttt{specific\_body\_force} is \texttt{0 0}
+\citep[``Process variables'']{OpenGeoSysTRMDocs}
+\citep[initial and boundary-condition structure]{OpenGeoSysProcessVariablesDocs}
+\citep[body-force check]{FormulationAudit2026}.
+
+Table~\ref{tab:ogs-field-mapping} maps the mathematical quantities to the OGS
+blocks, parameters, mesh fields, and output arrays.  This table is the bridge between
+the mathematical model and the file-level system.  It also prevents us from treating
+an observation operator, such as NMR water content or ERT resistivity, as if it were
+an OGS primary variable.
+
+\input{resources/tables/ogs_field_mapping.tex}
+
+\subsection{Mesh and Boundary Supports}
+\label{sec:mesh-boundary-supports}
+
+The transferred project uses boundary submeshes \path{cd-a_left},
+\path{cd-a_right}, \path{cd-a_top}, \path{cd-a_bottom}, and \path{cd-a_niche4}.
+Figure~\ref{fig:domain-bc} gives the schematic notation for these supports.  The
+figure is only a notation aid; the boundary-condition table below gives the
+model-facing mapping to XML tags and prescribed data.
+
+\begin{center}
+  \centering
+  \input{resources/figures/domain_boundary_conditions.tikz}
+  \captionof{figure}{Schematic boundary-condition map for the reference
+  two-dimensional model.  The outer square boundary is denoted by
+  \(\Gamma_A\cup\Gamma_B\cup\Gamma_C\cup\Gamma_D\), and the niche boundary is
+  denoted by \(\Gamma_E\).}
+  \label{fig:domain-bc}
+\end{center}
+
+\input{resources/tables/boundary_conditions.tex}
+
+The table states the required reference boundary inventory: constant hydraulic
+Dirichlet data on all four sides of the square and a time-dependent niche pressure
+curve.  The local formulation audit records a file-level consistency gate.  In the
+checked run-local \path{02_process_variables_TRM.xml}, explicit pressure Dirichlet
+conditions are attached to \path{cd-a_top} and \path{cd-a_niche4}
+\citep[pressure-boundary check]{FormulationAudit2026}.
+Therefore the left, right, and bottom square-pressure conditions must either be
+attached in the reference OGS setup or documented as a preprocessing/generated-project
+step.  This gate does not change the mathematical boundary inventory in
+\eqref{eq:hydraulic-bc}; it states what the implementation must prove.
+
+\subsection{Material Fields and OGS Inputs}
+\label{sec:material-fields-ogs-inputs}
+
+The OGS parameter block can define constants, functions, curve-scaled data, and mesh
+element or mesh node fields
+\citep[sections ``CurveScaled'', ``Function'', and ``MeshElement and MeshNode'']{OpenGeoSysParametersDocs}.
+The current run-local workflow uses \texttt{MeshElement} parameters for intrinsic
+permeability and porosity.  The intrinsic permeability tensor is supplied through
+\texttt{k\_i\_rd}; this is the active material field whose magnitude is varied in
+the present inversion workflow.  Porosity is supplied through \texttt{n\_rd}, but in
+the current field package all cells have value \(0.105\).  This is a mesh-field
+representation of fixed support, not a released porosity inversion
+\citep[intrinsic-permeability and porosity mesh-field checks]{FormulationAudit2026}
+\citep[opening release policy]{ReleaseGateAudit2026}.
+
+\input{resources/tables/material_fields.tex}
+
+The material-field question is therefore not only which constants appear in XML.
+For each field we need to know its material meaning, whether it is a base field or a
+derived field, whether it is independent enough to release, and how OGS consumes it.
+In the first workflow, \(\KK(\xx)\) is the only released base material field.
+Hydraulic conductivity, water content, storativity, resistivity, and flux are
+derived from \(\KK\), \(\por\), \(\Sl\), fluid properties, and observation
+operators \citep[Darcy law and effective-storage equation]{OpenGeoSysTRMDocs}
+\citep[Sec.~3, Eq.~3]{WaterContentEDZ2024}.
+
+\subsection{Initial Conditions, Time Grid, and Outputs}
+\label{sec:initial-time-output}
+
+The initial-condition XML entries realize \eqref{eq:initial-state}.  The time-step
+file comments identify \(t=0\) with 18 September 2019.  The active grid starts at
+zero seconds, uses fixed Backward Euler stepping, and ends at
+\(1.4\times10^8\,\mathrm{s}\).  The first block uses 365 steps of 864,000 s, and
+the second block uses 365 steps of 1,314,900 s.  The output schedule is intended to
+match the monthly ERT cadence after the first output
+\citep[Active Model Features and Provenance]{ModelAudit2026}.
+
+\input{resources/tables/initial_conditions.tex}
+
+This initial state is a numerical post-excavation state.  It is not a simulation of
+the initial excavation or gradual niche unloading.  In mechanics, \texttt{ic\_sigma0}
+is defined but not connected as active initial stress, and \texttt{load\_top} remains
+inside a commented top-load block.  In hydraulics, the initial pressure is uniform
+and does not reconstruct local near-niche drainage from nearby holes, RH/suction, or
+direct pressure measurements.  Early transients may therefore mix physical drainage
+with adjustment from the prescribed initial state
+\citep[inactive-parameter and initial-condition checks]{FormulationAudit2026}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{resources/figures/ogs_solver_snapshots.png}
+  \caption{Final-state snapshots from the current permeability-field OGS run at
+  \(t=1.4\times10^8\) s.  The panels show liquid pressure, liquid saturation, and
+  displacement magnitude from the run-local VTU output.  The figure is a diagnostic
+  visualization of the active solver state; it is not itself a measurement residual.}
+  \label{fig:ogs-solver-snapshots}
+\end{figure}
+
+\subsection{Model Outputs and Observation Operators}
+\label{sec:model-outputs-observation-operators}
+
+The OGS output layer must stay separate from measurement-specific observation
+operators.  The run-local workflow requests pressure, saturation, temperature,
+displacement, and porosity.  These arrays are model states or fixed support fields,
+not residuals by themselves.  A residual exists only after an observation operator
+defines the measured quantity, support, time mapping, unit convention, reference
+state, and uncertainty.  Permeability comparisons are a separate case: they sample or
+average the input tensor field, because permeability is not a dynamic state output
+\citep[run-local output-variable check]{FormulationAudit2026}
+\citep[required-output and projected-field checks]{RunInputAudit2026}.
+
+\input{resources/tables/model_outputs_observation_ties.tex}
+
+\section{Model-facing Question Inventory and Proposed Answers}
+\label{sec:question-inventory-gates}
+
+The source inventory contains many measurement-specific questions
+\citep[Secs.~1--3]{QuestionInventory2026}.  This pass keeps only the questions that
+define the model itself: boundary conditions, initial conditions, OGS inputs, OGS
+outputs, and material or constitutive field descriptions.
+Table~\ref{tab:explicit-question-answers} keeps those questions granular and gives
+the strongest proposed answer supported by the current repository evidence.
+
+\input{resources/tables/question_answers.tex}
+
+\section{Open Modelling Gates Carried Forward}
+\label{sec:open-gates}
+
+This chapter defines the mathematical model and its OGS realization.  It leaves the
+following model-facing gates open rather than hiding them inside later residual or
+inversion choices.
+
+\begin{enumerate}[leftmargin=1.4em]
+  \item The pressure-boundary implementation must be reconciled with the reference
+  boundary inventory.  The intended mathematical model has \(\pl=p_\square\) on all
+  four outer sides and \(p_E(t)\) on the niche; the checked XML evidence must either
+  implement that inventory directly or document the preprocessing step that does.
+  \item The provenance of \(p_E(t)\) must be recovered.  We know the active curve and
+  its numerical range, but not the source measurements, filtering, interpolation,
+  uncertainty, date convention, or extension policy.
+  \item The excavation and prestress interpretation must be decided before
+  mechanical residuals are treated as hard evidence.  The present setup is an
+  already-open, kinematically constrained 2D model without active initial stress or
+  active top load.
+  \item The initial pressure field is uniform in the active input.  Direct pressure,
+  hydraulic-head, RH/suction, or excavation-history evidence near 18 September 2019
+  would be needed to justify a heterogeneous post-excavation initial field.
+  \item The first released material field should remain the intrinsic-permeability
+  tensor magnitude field unless staged release gates justify porosity, retention,
+  tensor shape, mechanical, boundary, or time-dependent fields.
+  \item Derived quantities must stay labelled as derived.  Hydraulic conductivity,
+  water content, storativity, flux, stress, strain, and resistivity require their
+  defining fields and operators before they are used in comparisons.
+  \item Fault, fracture, crack, EDZ, and healing/sealing information should enter the
+  OGS model only as explicit structural priors, masks, equivalent fields, or scenario
+  inputs after the source geometry, scale, and 3D-to-2D projection are defined.
+\end{enumerate}
+
+In this form, the chapter gives us a reproducible model baseline.  Later chapters can
+discuss measurement packages and inversion decisions without redefining the PDE model
+or silently moving inactive XML parameters into the active physics.

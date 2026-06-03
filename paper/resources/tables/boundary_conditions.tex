@@ -1,0 +1,56 @@
+\begin{center}
+\begingroup
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{3pt}
+\captionof{table}{Boundary-set notation, XML tags, and prescribed mechanical/hydraulic data.}
+\label{tab:boundary-conditions}
+\begin{tabular}{@{}L{0.15\textwidth} L{0.26\textwidth} L{0.22\textwidth} L{0.29\textwidth}@{}}
+\toprule
+Boundary set & XML tag name and parameter & Mechanical BC & Hydraulic BC\\
+\midrule
+\(\Gamma_A\) &
+\path{cd-a_left}; \path{bc_displacement}; reference square-pressure parameter
+\path{bc_pressure_outside}. &
+Dirichlet \(u_x=0\); tangential component natural. &
+Dirichlet \(\pl=p_\square\), \(p_\square=1.5\times10^6\,\mathrm{Pa}\).\\
+\(\Gamma_B\) &
+\path{cd-a_right}; \path{bc_displacement}; reference square-pressure parameter
+\path{bc_pressure_outside}. &
+Dirichlet \(u_x=0\); tangential component natural. &
+Dirichlet \(\pl=p_\square\), \(p_\square=1.5\times10^6\,\mathrm{Pa}\).\\
+\(\Gamma_C\) &
+\path{cd-a_top}; \path{bc_displacement}; \path{bc_top_pressure}. &
+Dirichlet \(u_y=0\); tangential component natural; \path{load_top} inactive. &
+Dirichlet \(\pl=p_\square\), \(p_\square=1.5\times10^6\,\mathrm{Pa}\).\\
+\(\Gamma_D\) &
+\path{cd-a_bottom}; \path{bc_displacement}; reference square-pressure parameter
+\path{bc_pressure_outside}. &
+Dirichlet \(u_y=0\); tangential component natural. &
+Dirichlet \(\pl=p_\square\), \(p_\square=1.5\times10^6\,\mathrm{Pa}\).\\
+\(\Gamma_A\cup\Gamma_B\) &
+\path{cd-a_left}, \path{cd-a_right}. &
+Compact mechanics notation: \(u_x=0\). &
+Part of the square hydraulic Dirichlet boundary
+\(\pl=p_\square\).\\
+\(\Gamma_C\cup\Gamma_D\) &
+\path{cd-a_top}, \path{cd-a_bottom}. &
+Compact mechanics notation: \(u_y=0\). &
+Part of the square hydraulic Dirichlet boundary
+\(\pl=p_\square\).\\
+\(\Gamma_\square=\Gamma_A\cup\Gamma_B\cup\Gamma_C\cup\Gamma_D\) &
+\path{cd-a_left}, \path{cd-a_right}, \path{cd-a_top}, \path{cd-a_bottom}. &
+Outer-box kinematic support, component-wise. &
+Dirichlet \(\pl=p_\square=1.5\times10^6\,\mathrm{Pa}\) on all four sides of the
+outer square in the reference boundary inventory.  Checked run-local XML attachment
+for left/right/bottom remains a consistency gate.\\
+\(\Gamma_E\) &
+\path{cd-a_niche4}; \path{open_niche_seasonal};
+\path{open_niche_seasonal_curve}; \path{pressure_scaling_factor}. &
+No prescribed displacement or traction in the active boundary-condition block. &
+Dirichlet \(\pl=p_E(t)\).  The curve has 845 tabulated values, spans \(0\) to
+\(1.3482\times10^8\) s, and ranges from about \(-5.23\) to \(-53.24\) MPa.\\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
