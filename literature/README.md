@@ -16,6 +16,8 @@ Files:
 - `nonavailable_dois.md`: DOI-backed references that remained unavailable after this pass.
 - `citation_evidence.md`: source locations checked against the chapter claims.
 - `paper_claim_audit.md`: section/table-level claim audit for the current paper.
+- `public_gap_search_2_10.md`: public-source search notes for unresolved
+  Section 2.10 measurement gates.
 - `fulltexts/`: downloaded or copied PDF fulltexts.
 - `web_docs/`: downloaded official OGS documentation pages.
 - `local_sources/`: local Markdown/XML project sources copied from the neighboring project workspace.
