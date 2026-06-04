@@ -88,8 +88,10 @@ model implied by the current temperature constraints
 \subsection{Liquid Flow, Retention, and Relative Permeability}
 \label{sec:darcy-retention}
 
-The liquid velocity is the Darcy velocity.  With the specific body force disabled,
-the reference equation is
+The liquid velocity is the Darcy velocity.  Here \(k_{\mathrm{rel}}\) is relative
+permeability, \(\mu_l\) is liquid viscosity, \(\KK\) is intrinsic permeability,
+\(\rho_l\) is liquid density, and \(\ql\) is liquid mass flux.  With the specific
+body force disabled, the reference equation is
 \begin{equation}
   \vl
   =
@@ -111,7 +113,10 @@ The active pressure convention is
 \end{equation}
 Negative liquid pressure therefore means positive suction/capillary pressure under
 the gas/reference convention used by the Richards formulation.  For \(\pc>0\), the
-configured van Genuchten retention law is
+configured van Genuchten retention law is written with effective saturation \(S_e\).
+The parameters \(S_{lr}\), \(S_{gr}\), \(m\), and \(p_b\) are the residual liquid
+saturation, residual gas saturation, retention exponent, and pressure scale listed in
+Table~\ref{tab:hydraulic-retention-parameters}:
 \begin{equation}
   S_e(\pc)
   =
@@ -122,7 +127,8 @@ configured van Genuchten retention law is
   S_{lr} + (1-S_{lr}-S_{gr}) S_e ,
   \label{eq:vg-saturation}
 \end{equation}
-and the corresponding Mualem--van Genuchten relative-permeability law is
+and the corresponding Mualem--van Genuchten relative-permeability law uses the lower
+cutoff \(k_{\min}\):
 \begin{equation}
   k_{\mathrm{rel}}(\Sl)
   =
@@ -145,7 +151,10 @@ released calibration fields
 \subsection{Liquid Mass Balance}
 \label{sec:mass-balance}
 
-The no-vapor liquid mass equation can be written as
+The no-vapor liquid mass equation can be written as follows.  Overdots denote time
+derivatives.  The coefficient \(\beta_l\) is the pressure-derivative slot associated
+with the liquid-density law, \(\alpha_B\) is the Biot coefficient, \(\alpha_T^s\) is
+the solid thermal-expansivity parameter, and \(Q_H\) is the hydraulic source slot:
 \begin{equation}
 \left(
   \Sl\beta_l
@@ -194,7 +203,9 @@ Section~\ref{sec:isothermal-reduced-model}.
 \subsection{Quasi-static Mechanics}
 \label{sec:mechanics-equation}
 
-The mechanical balance is quasi-static:
+The mechanical balance is quasi-static.  The vector \(\bm{f}\) is the body-force
+term, \(b(\Sl)\) is the Bishop saturation factor, and \(\alpha_B\) is the Biot
+coefficient:
 \begin{equation}
   \divv\!\left(\sig - b(\Sl)\alpha_B\pl\II\right) + \bm{f} = \bm{0}.
   \label{eq:momentum}
@@ -216,7 +227,7 @@ strain contributions:
   \CC:
   \left(
     \eps(\uu)
-    -\eps^T(\TT)
+    -\eps^{\mathrm{th}}(\TT)
     -\eps^{\mathrm{sw}}(\Sl)
   \right),
   \qquad
@@ -234,7 +245,9 @@ decision about prestress, excavation unloading, and the reference displacement s
 \subsection{Heat Balance}
 \label{sec:heat-balance}
 
-The heat balance in the TRM process is
+Let \((\rho c_p)^{\mathrm{eff}}\) be effective heat storage and
+\(\bm{k}_T^{\mathrm{eff}}\) the effective thermal-conductivity tensor.  With liquid
+heat capacity \(c_l\) and thermal source slot \(Q_T\), the TRM heat balance is
 \begin{equation}
   (\rho c_p)^{\mathrm{eff}}\dot{\TT}
   -
@@ -287,7 +300,7 @@ Therefore
   \qquad
   \grad\TT=\bm{0},
   \qquad
-  \eps^T(\TT)-\eps^T(T_0)=\bm{0}.
+  \eps^{\mathrm{th}}(\TT)-\eps^{\mathrm{th}}(T_0)=\bm{0}.
   \label{eq:isothermal-zero-terms}
 \end{equation}
 Flow and displacement changes do not generate temperature changes in this active
@@ -425,6 +438,17 @@ and order 1 to pressure and temperature.  The same process block exposes
 \citep[``Process variables'']{OpenGeoSysTRMDocs}
 \citep[initial and boundary-condition structure]{OpenGeoSysProcessVariablesDocs}
 \citep[body-force check]{FormulationAudit2026}.
+
+The time-loop files bind this process to Backward Euler time discretization, fixed
+time stepping, and the nonlinear solver \texttt{basic\_newton}.  The nonlinear solver
+is a Newton solver with at most 150 iterations and delegates linear systems to
+\texttt{general\_linear\_solver}, which uses \texttt{PardisoLU}.  The convergence
+criterion is component-wise \(\Delta x\) in the \(L^2\) norm, with absolute tolerance
+\(10^{-10}\) and relative tolerance \(10^{-8}\) for each primary-variable component.
+These settings define the numerical realization of the frozen TRM equations; they do
+not change the governing equations or the released material-field policy
+\citep[Active Model Features and Provenance]{ModelAudit2026}
+\citep[projection XML and project file]{GesaProjectionModel2025}.
 
 Table~\ref{tab:ogs-field-mapping} maps the mathematical quantities to the OGS
 blocks, parameters, mesh fields, and output arrays.  This table is the bridge between

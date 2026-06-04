@@ -22,9 +22,17 @@ liquid density law & \(\rho_l(T,p_l)\) &
 \(1095[1-5\times10^{-4}(T-298.15)+3.2\times10^{-10}(p_l-7.5\times10^6)]\) &
 Full TRM density law.  Under the active isothermal constraint it reduces to
 \(\rho_l^0(p_l)\) in Equation~\eqref{eq:isothermal-density}.\\
+pressure slope in liquid density law & \(\beta_l\) &
+\(3.2\times10^{-10}\,\mathrm{Pa}^{-1}\) relative pressure slope in the linear density law &
+Used in the pressure-storage slot of Equation~\eqref{eq:mass-balance}; not a
+separately released calibration parameter.\\
 \texttt{biot} & \(\alpha_B\) &
 \(1\) &
 Couples volumetric strain and pore pressure to hydraulic storage and mechanics.\\
+solid thermal expansivity & \(\alpha_T^s\) &
+\texttt{CTE}=1254.74 in XML &
+Appears in the thermal-coupling term of Equation~\eqref{eq:mass-balance}; value and
+unit remain the CTE provenance caveat recorded in Table~\ref{tab:thermal-parameters}.\\
 hydraulic source & \(Q_H\) &
 No separate active source in the process file &
 Retained as the standard equation slot, but not used as an additional forcing term.\\

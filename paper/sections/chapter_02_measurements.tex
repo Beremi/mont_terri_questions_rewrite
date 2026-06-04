@@ -185,6 +185,9 @@ response of the intrinsic permeability tensor,
   =
   \sum_{c\in\mathcal C_i} w_{ic}\,\mathbf e_i^\top\KK_c\mathbf e_i .
 \]
+Here \(\mathcal C_i\) is the set of OGS cells sampled by row \(i\),
+\(w_{ic}\) are support weights, \(\mathbf e_i\) is the interval or borehole-axis unit
+direction, and \(\KK_c\) is the cell-wise intrinsic-permeability tensor.
 This residual acts on the material field used by Darcy's law, so permeability
 changes also affect pressure diffusion, saturation evolution, NMR water-content
 predictions, ERT resistivity predictions, and Taupe/TDR trends.
@@ -314,6 +317,9 @@ The measured water content is reported in vol.\%; in the model we use the fracti
   \approx
   \por\Sl .
 \]
+Here \(\theta_{\mathrm{bound}}\) represents NMR-visible bound or interlayer water not
+carried as an OGS mobile-liquid state, and \(\epsilon_{\mathrm{NMR}}\) represents
+measurement and observation-model error.
 The active objective uses raw absolute \(\theta\) on the accepted mapped subset.
 The preferred next policy is a within-label anomaly residual, because it removes
 constant station or bound-water offsets before comparing model and measurement
@@ -454,6 +460,9 @@ followed by
   -
   \log_{10}\rho_{\mathrm{ERT}} .
 \]
+Here \(\rho_{\Omega\mathrm{m}}\) denotes electrical resistivity in
+\(\Omega\,\mathrm{m}\), and \(\mathcal O_{\mathrm{ERT}}\) denotes the projection or
+aggregation from the OGS field to the inverted ERT support.
 The empirical relation is the current local default over the calibrated range
 \(0.01\le\theta\le0.18\).  It should not be interpreted as a universal
 Opalinus-Clay water-content law.
@@ -572,9 +581,10 @@ unit is confirmed, the model comparison is the standardized trend
   \qquad
   \theta_{\mathrm{model}}=\por\Sl ,
 \]
-where hats denote a within-series normalization by sensor and EDZ band.  If a
-calibration is supplied, the same support can become an absolute water-content or
-dielectric residual.
+where hats denote a within-series normalization by sensor and EDZ band, and
+\(T_{\mathrm{Taupe}}\) denotes the source Taupe/TDR series value rather than OGS
+temperature \(\TT\).  If a calibration is supplied, the same support can become an
+absolute water-content or dielectric residual.
 
 \paragraph{Uncertainty and reliability.}
 The trend operator is ready as a diagnostic, but absolute residual weights are not.
@@ -675,8 +685,10 @@ The source unit is RH in percent.  The local conversion uses
   \frac{\rho_lRT}{M_w}\ln(\mathrm{RH}),
 \]
 where RH is a fraction, \(T=298.15\,\mathrm{K}\), and
-\(\rho_l=1095\,\mathrm{kg\,m^{-3}}\).  Since \(\ln(\mathrm{RH})<0\), the converted
-liquid pressure is negative in the same suction convention used by the active
+\(\rho_l=1095\,\mathrm{kg\,m^{-3}}\).  The constants \(R\) and \(M_w\) are the molar
+gas constant and molar mass of water used by the local Kelvin conversion.  Since
+\(\ln(\mathrm{RH})<0\), the converted liquid pressure is negative in the same
+suction convention used by the active
 open-niche curve.  This is consistent with \(p_c=-\pl\) in the Richards model
 \citep[pp.~448--452]{Thomson1871Kelvin}
 \citep[Sec.~3, Eqs.~1--2]{WaterContentEDZ2024}.
@@ -1095,9 +1107,9 @@ measure surface differences, and auxiliary streams describe boundary or quality
 context; each source export must confirm the exact quantity.}
 \gqPair{gqGate}{Gate}
 {How should crackmeters tie to OGS?}
-{Compare to relative displacement \((\uu_a-\uu_b)\cdot\mathbf n\), near-crack
-strain, or a crack-aperture diagnostic only after the component and sign convention
-are known.}
+{Compare to relative displacement \((\uu_a-\uu_b)\cdot\nn\), where \(\nn\) is the
+local crack-normal or instrument-axis direction, near-crack strain, or a
+crack-aperture diagnostic only after the component and sign convention are known.}
 \gqPair{gqPolicy}{Policy}
 {Can visible cracks justify permeability changes?}
 {Yes as an EDZ/fracture prior or scenario, but not as a weighted residual unless a

@@ -937,9 +937,10 @@ confirm the measurement type, not the CD-A residual weight.}
 \mqPair{mqGate}{Gate}
 {What OGS quantity could a crackmeter residual compare to?}
 {Depending on instrument definition, it could compare to relative displacement
-\((\uu(\xx_a)-\uu(\xx_b))\cdot\mathbf n\), projected near-crack strain, or a
-special displacement-jump/crack-aperture variable.  The current continuum model does
-not provide a crack-aperture state by default.}
+\((\uu(\xx_a)-\uu(\xx_b))\cdot\nn\), where \(\nn\) is the local crack-normal or
+instrument-axis direction, projected near-crack strain, or a special
+displacement-jump/crack-aperture variable.  The current continuum model does not
+provide a crack-aperture state by default.}
 \mqPair{mqGate}{Gate}
 {What missing metadata changes the sign of the inverse signal?}
 {Zero date, positive opening/closure sign, instrument axis, temperature correction,

@@ -148,6 +148,19 @@ excavation-reference decision first.}
 {The active process is \texttt{THERMO\_RICHARDS\_MECHANICS} with primary variables
 \path{displacement}, \path{pressure}, and \path{temperature}.  The finite-element
 orders are 2, 1, and 1, respectively.}
+\qaPair{qaEstablished}{Established}
+{Which source hierarchy defines the equations and active implementation?}
+{The active implementation is the checked transferred OGS project and run-local input
+audit.  The equation notation follows the OGS TRM documentation and the
+Wang--Kosakowski--Kolditz TRM notation used in the report.  If notation and checked
+XML differ, the XML/audit defines the active CD-A run and the mismatch is recorded as
+a gate.}
+\qaPair{qaChecked}{Checked input}
+{Which numerical time-loop and solver settings are active?}
+{The current run uses Backward Euler, fixed time stepping from \(0\) to
+\(1.4\times10^8\,\mathrm{s}\), \texttt{basic\_newton} with maximum 150 iterations,
+component-wise \(\Delta x\) convergence tolerances \(10^{-10}\) absolute and
+\(10^{-8}\) relative, and the \texttt{PardisoLU} linear solver.}
 \qaPair{qaCaveat}{Caveat}
 {Which governing terms are explicitly inactive?}
 {The current formulation has zero specific body force, no explicit vapor-transport
@@ -159,6 +172,11 @@ active top load.}
 released as the first material field.  The current release audit keeps porosity,
 retention, mechanics, thermal parameters, boundaries, and initialization fixed or
 gated.}
+\qaPair{qaPolicy}{Release policy}
+{How do candidate-run parameter changes enter OGS?}
+{They enter through run-local mesh fields or generated XML/input replacements, such as
+\path{k_i_rd} in the packaged candidate mesh.  They are not silent edits to the
+governing equations or to the exchanged source-model provenance.}
 \qaPair{qaEstablished}{Established}
 {How are permeability and porosity passed to OGS?}
 {The run-local project uses \texttt{MeshElement} fields: \path{k_i_rd} for

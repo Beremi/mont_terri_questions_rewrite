@@ -79,7 +79,7 @@ Biot coefficient and Bishop law &
 Fixed pore-pressure coupling inputs.  In the active XML, \(\alpha_B=1\) and
 \(b(\Sl)=\Sl\).\\
 Liquid properties &
-\(\rho_l^0(\pl)\), \(\mu_l\) &
+\(\rho_l(\TT,\pl)\), \(\rho_l^0(\pl)\), \(\mu_l\) &
 \(\mathrm{kg\,m^{-3}}\), \(\mathrm{Pa\,s}\) &
 Liquid density and viscosity used in storage and Darcy mobility.  Under the active
 isothermal constraint, density depends on pressure but not on temperature.\\
@@ -106,6 +106,11 @@ Capillary pressure &
 \(\pc=-\pl\) &
 \(\mathrm{Pa}\) &
 Retention-curve argument under the active sign convention.\\
+Effective saturation &
+\(S_e(\pc)\) &
+-- &
+Normalized saturation variable used by the van Genuchten retention and
+relative-permeability laws.\\
 Relative permeability &
 \(k_{\mathrm{rel}}(\Sl)\) &
 -- &
@@ -117,10 +122,10 @@ Darcy velocity and mass flux &
 Derived hydraulic transport quantities.  They are not pore velocity unless divided
 by an explicitly chosen pore-volume factor.\\
 Strain and stress &
-\(\eps(\uu)\), \(\sig\) &
+\(\eps(\uu)\), \(\eps^{\mathrm{th}}(\TT)\), \(\sig\) &
 --, \(\mathrm{Pa}\) &
 Mechanical fields derived from displacement, orthotropic elasticity, swelling strain,
-and Bishop/Biot pore-pressure coupling.\\
+thermal strain, and Bishop/Biot pore-pressure coupling.\\
 Swelling strain or stress contribution &
 \(\eps^{\mathrm{sw}}\), \(p_{\mathrm{sw}}\) &
 --, \(\mathrm{Pa}\) &
