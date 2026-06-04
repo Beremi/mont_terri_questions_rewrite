@@ -1,6 +1,35 @@
 \chapter{Measurements and OGS Observation Links}
 \label{chap:measurements}
 
+\definecolor{gqQuestionBg}{gray}{0.93}
+\definecolor{gqReady}{HTML}{1B7F3A}
+\definecolor{gqDiagnostic}{HTML}{087F8C}
+\definecolor{gqPolicy}{HTML}{6F42C1}
+\definecolor{gqGate}{HTML}{D97706}
+\definecolor{gqBlocked}{HTML}{B42318}
+\newcommand{\gqStatus}[2]{\textcolor{#1}{\textbf{#2}}}
+\newcommand{\gqPair}[4]{%
+  \rowcolor{gqQuestionBg}%
+  \multicolumn{2}{@{}L{0.94\textwidth}@{}}{\textbf{Question.} #3}\\*%
+  \gqStatus{#1}{#2} & #4\\%
+  \addlinespace[0.42em]%
+}
+\newcommand{\gqGroundingTable}[3]{%
+  \Needspace{14\baselineskip}%
+  \begin{center}%
+  \footnotesize%
+  \renewcommand{\arraystretch}{1.16}%
+  \setlength{\tabcolsep}{4pt}%
+  \captionof{table}{#2}%
+  \label{#1}%
+  \begin{tabular}{@{}L{0.17\textwidth} L{0.77\textwidth}@{}}%
+  \toprule%
+  #3%
+  \bottomrule%
+  \end{tabular}%
+  \end{center}%
+}
+
 \section{Purpose and Evidence Boundary}
 \label{sec:measurement-purpose}
 
@@ -167,6 +196,55 @@ experimental/evaluation uncertainty, not a proof that every support conflict is
 resolved.  Same-support rows can differ by several log10 units, so outlier policy,
 support aggregation, and endpoint recovery remain active gates.
 
+\subsubsection*{Current computational use.}
+With the local data available now, the defensible use is a direct material-field
+likelihood on the mapped positive BCD-A32/A33 rows.  The nitrogen pulse-test value
+is treated as a noisy scalar observation of the liquid-equivalent intrinsic
+permeability used by Darcy flow.  The observation operator is the interval average
+of \(\mathbf e^\top\KK\mathbf e\) over the mapped support, evaluated in log10 space.
+This is the best current transfer from a gas pulse test to OGS \(\KK\): keep the
+reported value as intrinsic permeability in \(\mathrm{m^2}\), keep the gas/slip
+interpretation caveat visible, and absorb unresolved gas-to-liquid and support
+interpretation errors through a conservative log-space uncertainty and
+duplicate-aware weighting
+\citep[abstract]{Klinkenberg1941}
+\citep[abstract and Secs.~2.2, 3.2]{Marschall2005}
+\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+
+This stream directly constrains only \(\KK(\xx)\) or its released
+parameterization.  It does not independently constrain pressure, saturation,
+porosity, retention, or relative permeability.  If the unresolved gas correction,
+interval support, tensor direction, or duplicate policy is wrong, an inverse run
+will express that error as false spatial heterogeneity in \(\KK\).
+
+\subsubsection*{Grounding questions.}
+\gqGroundingTable{tab:grounding-permeability}
+{Grounding questions for direct permeability pulse tests.}
+{
+\gqPair{gqReady}{Ready}
+{How should the nitrogen pulse test be linked to OGS \(\KK\)?}
+{As an interval-scale observation of liquid-equivalent intrinsic permeability
+\(\mathbf e^\top\KK\mathbf e\), in \(\mathrm{m^2}\), not as hydraulic
+conductivity, relative permeability, or saturation.}
+\gqPair{gqGate}{Gate}
+{Was a Klinkenberg or gas-slip correction already applied?}
+{Not proven locally; the provider must state the correction, gas pressure range,
+temperature, leakage screening, and fitting method for each interpreted row.}
+\gqPair{gqGate}{Gate}
+{Is the 10 cm interval operator accepted for inversion?}
+{Provisionally yes for BCD-A32/A33; final use needs accepted endpoints, cell
+weights, and a policy for older BCD-A24/A25/A26/A27/BFM-D19 rows.}
+\gqPair{gqPolicy}{Policy}
+{How should repeated or conflicting supports be weighted?}
+{Use duplicate-aware or robust weights until the collaborator confirms whether
+repeated rows are independent tests, reprocessed duplicates, or evidence of real
+time evolution.}
+\gqPair{gqGate}{Gate}
+{What would fully ground this likelihood?}
+{A row-level table with endpoints, direction, date, gas interpretation metadata,
+quality flags, support group id, and accepted log-space uncertainty.}
+}
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.98\textwidth]{resources/figures/measurement_permeability_campaigns.png}
@@ -249,6 +327,63 @@ of 287 rows exceed the same bound.  Reported confidence intervals and an uncerta
 floor are useful, but they do not solve the semantic difference between total
 NMR-visible water and mobile OGS liquid.
 
+\subsubsection*{Current computational use.}
+With the local data available now, NMR can be used as a provisional
+water-content-state comparison, preferably as a within-label trend/anomaly
+likelihood rather than a raw absolute likelihood.  The current OGS state supplies
+\(\theta_{\mathrm{model}}=\por\Sl\).  The NMR value should be treated as total
+NMR-visible water unless the source processing proves a mobile/free-water cut.
+The safest current observation model is therefore
+\[
+  \theta_{\mathrm{NMR}}^{\mathrm{obs}}
+  =
+  \por\Sl
+  + b_{\mathrm{label}}
+  + b_{\mathrm{campaign}}
+  + \epsilon ,
+\]
+or the equivalent anomaly model after subtracting stable label/campaign offsets.
+This matches the local evidence that many NMR rows exceed the fixed OGS porosity
+and the cited clay/NMR caveat that NMR-visible water can include bound or
+interlayer water
+\citep[Sec.~4.2]{WaterContentEDZ2024}
+\citep[Secs.~1 and 2.5]{Cui2022DualScaleNMR}
+\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+
+The inverse role is to constrain pressure/saturation evolution after the boundary
+and permeability field drive \(\Sl\).  NMR alone cannot separate porosity,
+retention, mobile fraction, and bound-water offset.  Releasing those at the same
+time without priors would let the inverse problem fit the same water-content
+residual in several physically different ways.
+
+\subsubsection*{Grounding questions.}
+\gqGroundingTable{tab:grounding-nmr}
+{Grounding questions for NMR water-content measurements.}
+{
+\gqPair{gqGate}{Gate}
+{What exactly does the supplied NMR value measure?}
+{Treat it as total NMR-visible volumetric water content for now; provider
+confirmation is needed for any mobile/free-water interpretation.}
+\gqPair{gqPolicy}{Policy}
+{How should NMR be linked to OGS output now?}
+{Compare to \(\theta=\por\Sl\) only through a bias or anomaly observation model,
+not as raw mobile water everywhere.}
+\gqPair{gqGate}{Gate}
+{Can bound/interlayer water be anchored simply?}
+{Yes, if collaborators confirm that the bound-water offset is approximately
+constant by label, material class, depth, or campaign; then it can be a nuisance
+offset rather than an OGS state.}
+\gqPair{gqGate}{Gate}
+{Could bound water be post-processed from OGS saturation?}
+{Only if a supported relation is supplied; otherwise it should remain a constant or
+hierarchical observation offset, not a fitted material field.}
+\gqPair{gqGate}{Gate}
+{What would fully ground NMR residuals?}
+{Source units, T2/mobile-water cut policy, calibration and detuning flags,
+label/campaign offsets, support coordinates, confidence-interval conversion, and a
+rule for rows where \(\theta_{\mathrm{obs}}>\por\).}
+}
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.98\textwidth]{resources/figures/measurement_nmr_data.png}
@@ -329,6 +464,58 @@ the exact tunnel/niche support mask, the 35 cm rock-depth convention, and the
 uncertainty/correlation model.  Without a covariance or aggregation rule, dense
 neighbouring inversion cells would overweight one physical field image.
 
+\subsubsection*{Current computational use.}
+With the local data available now, ERT should remain a diagnostic field and
+candidate future likelihood.  The best current operator is the explicit
+post-processing chain
+\[
+  \Sl \rightarrow \theta=\por\Sl
+  \rightarrow \rho_{\Omega\mathrm{m}}=1.108\,\theta^{-1.58}
+  \rightarrow \mathcal O_{\mathrm{ERT}}\rho
+  \rightarrow \log_{10}\rho ,
+\]
+using the provisional coordinate transform and near-niche mask only for
+diagnostics.  This keeps the empirical CD-A water--resistivity relation separate
+from the OGS hydraulic state, and it prevents the inverted ERT mesh from being
+mistaken for independent point measurements
+\citep[pp.~54--56]{Archie1942}
+\citep[abstract and Secs.~2--4]{Revil1998ShalySands}
+\citep[Secs.~4.1--4.3]{WaterContentEDZ2024}
+\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+
+For inversion, ERT mainly constrains the saturation/water-content pattern and
+therefore tests permeability, boundary forcing, and retention indirectly.  Its
+dense cells share electrodes, inversion regularization, and projection errors.
+Without aggregation or covariance, ERT would dominate the objective numerically
+while adding much less independent information than the row count suggests.
+
+\subsubsection*{Grounding questions.}
+\gqGroundingTable{tab:grounding-ert}
+{Grounding questions for ERT resistivity measurements.}
+{
+\gqPair{gqDiagnostic}{Diagnostic}
+{What ERT value should be compared?}
+{Use log10 resistivity as the first defensible comparison; relative change or
+water-content products need separate source confirmation.}
+\gqPair{gqDiagnostic}{Diagnostic}
+{How does ERT tie to OGS now?}
+{Through \(\theta=\por\Sl\) and the local empirical resistivity transform, followed
+by a mesh/support projection.}
+\gqPair{gqGate}{Gate}
+{Does bound water conduct like free water?}
+{Not settled; clay surface conduction and bound/interlayer water are explicit gates
+before absolute water-content inversion.}
+\gqPair{gqGate}{Gate}
+{Does electrical anisotropy matter?}
+{Possibly; bedding, fractures, and permeability anisotropy may affect electrical
+response, but no accepted electrical-anisotropy operator exists locally.}
+\gqPair{gqGate}{Gate}
+{What would fully ground ERT likelihood use?}
+{Accepted coordinate transform, VTK field meaning, near-niche mask, reference date,
+bad timestep flags, bad electrode flags, aggregation or covariance, and a confirmed
+resistivity--water relation with uncertainty.}
+}
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.98\textwidth]{resources/figures/measurement_ert_data.png}
@@ -395,6 +582,51 @@ The missing items are the workbook unit, calibration equations, baseline convent
 sensor and band uncertainties, and whether bound/interlayer water affects the
 dielectric response in the same way as mobile pore water.
 
+\subsubsection*{Current computational use.}
+With the local data available now, Taupe/TDR can be used as a same-sensor,
+same-band trend diagnostic for mapped A3/A4 supports.  The current operator should
+band-average \(\theta_{\mathrm{model}}=\por\Sl\) over the corresponding EDZ-depth
+support, subtract a series baseline, standardize within sensor and band, and compare
+only the timing, sign, and relative amplitude of changes.  This avoids pretending
+that the workbook unit is already an absolute volumetric water content or dielectric
+permittivity.  The literature supports the general TDR water-content link, while
+the local Taupe stream still needs CD-A-specific calibration before absolute use
+\citep[review and Secs.~1--2]{Robinson2003TDRReview}
+\citep[Taupe/TDR technical slides]{TaupeISU2026Local}
+\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+
+The inverse role is indirect: Taupe/TDR can help reject permeability or boundary
+candidates that produce the wrong wetting/drying trend near the EDZ.  It cannot yet
+identify absolute saturation, porosity, retention, or bound-water response because
+the sensor unit and calibration are still open.
+
+\subsubsection*{Grounding questions.}
+\gqGroundingTable{tab:grounding-taupe}
+{Grounding questions for Taupe/TDR measurements.}
+{
+\gqPair{gqGate}{Gate}
+{What does the Taupe workbook value represent?}
+{Unknown locally; treat it as a source-unit dielectric/water-content proxy until
+calibrated units are confirmed.}
+\gqPair{gqDiagnostic}{Diagnostic}
+{How should Taupe/TDR be linked to OGS now?}
+{Compare standardized EDZ-band trends against band-averaged
+\(\theta=\por\Sl\) changes for A3/A4.}
+\gqPair{gqGate}{Gate}
+{Can it become an absolute residual?}
+{Yes, if calibration equations map the workbook value to volumetric water content,
+apparent relative permittivity, or another modelled quantity with uncertainty.}
+\gqPair{gqPolicy}{Policy}
+{How should bands and sensors be weighted?}
+{As correlated groups by sensor, cable, band, and time until covariance or
+independent-noise assumptions are supplied.}
+\gqPair{gqGate}{Gate}
+{What would fully ground Taupe/TDR use?}
+{Unit definition, calibration constants, baseline date, support geometry by band,
+temperature, salinity, or conductivity corrections if used, quality flags, and
+sensor-band covariance.}
+}
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.98\textwidth]{resources/figures/measurement_taupe_data.png}
@@ -456,6 +688,51 @@ time range and finds large differences between RH-derived pressure candidates an
 the active curve.  Therefore \(p_E(t)\) should remain an existing OGS input, not a
 verified RH-derived forcing, until the source sensors, filtering, smoothing, time
 origin, interpolation, and extension policy are reconstructed.
+
+\subsubsection*{Current computational use.}
+With the local data available now, RH/suction should be used as boundary-forcing
+provenance and uncertainty information for the open-niche pressure curve, not as an
+independent interior residual.  The current best transfer is to convert screened RH
+records to a Kelvin pressure candidate with the stated constants, compare that
+candidate to the active XML curve \(p_E(t)\), and represent the mismatch as a
+boundary-condition gate or scenario envelope.  This is grounded in the local curve
+script, local RH audit, and the CD-A water-content/RH formulation where negative
+liquid pressure represents suction through the chosen pressure convention
+\citep[pp.~448--452]{Thomson1871Kelvin}
+\citep[Sec.~3, Eqs.~1--2]{WaterContentEDZ2024}
+\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+
+In the inverse problem, uncertain \(p_E(t)\) is dangerous because permeability,
+retention, and boundary suction all control similar drying/wetting transients.
+If the boundary curve is treated as exact while its provenance is unresolved, the
+fit can falsely compensate by changing \(\KK(\xx)\) or retention parameters.
+
+\subsubsection*{Grounding questions.}
+\gqGroundingTable{tab:grounding-rh}
+{Grounding questions for RH/suction and pressure-boundary forcing.}
+{
+\gqPair{gqPolicy}{Policy}
+{Is RH an OGS input or output comparison?}
+{Primarily an input-side boundary source or audit for \(p_E(t)\), not an interior
+OGS output residual.}
+\gqPair{gqReady}{Ready}
+{How is RH converted to model pressure?}
+{By the Kelvin equation with RH as a fraction, a stated temperature, density, gas
+constant, molar mass convention, and \(p_c=-\pl\) sign convention.}
+\gqPair{gqGate}{Gate}
+{Which sensors define the open-niche boundary?}
+{RH5/RH6 are the cleanest local candidates, but final use needs explicit sensor
+selection, filtering, high-RH/low-outlier handling, and time alignment.}
+\gqPair{gqReady}{Ready}
+{Why can \(p_E(t)\) be negative?}
+{In this Richards convention it is liquid pressure relative to the gas/atmospheric
+reference; negative \(\pl\) corresponds to positive suction or capillary pressure.}
+\gqPair{gqGate}{Gate}
+{What would fully ground the pressure boundary?}
+{Source table, sensor selection, smoothing/filtering, interpolation and
+extrapolation rules, calendar time origin, sign/unit convention, and a covariance
+or scenario envelope for boundary uncertainty.}
+}
 
 \begin{figure}[htbp]
   \centering
@@ -524,6 +801,53 @@ maintenance/failure flags, and raw-file provenance.  The 2D model error may be
 significant if a mini-piezometer samples a local 3D feature or lies outside the
 effective support of the modeled slice.
 
+\subsubsection*{Current computational use.}
+With the local data available now, direct pressure measurements are a blocked but
+high-value future residual.  The source-slide trends prove that the stream exists
+and has physically meaningful evolution, but the paper does not yet have the
+machine-readable export needed for fitting.  Once that export is available, the
+operator should be a direct sample or support average of OGS \(\pl(\xx,t)\), or a
+hydraulic-head comparison after elevation and reference-pressure conversion.  This
+would directly test whether the far-field pressure, open-niche boundary curve,
+initial pressure field, and fitted permeability field are mutually consistent
+\citep[Table~1]{Ziefle2024Characterization}
+\citep[Secs.~2.4 and 3.2]{Graebling2022VEIS}
+\citep[PDF p.~32]{CDATDSlides2026Local}
+\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+
+The most important current modelling use is not to fit the slide image.  It is to
+request the pressure export in a form that closes the pressure-reference ambiguity.
+Confusing absolute pressure, gauge pressure, hydraulic head, suction, or capillary
+pressure would shift the residual and can force incorrect changes in boundary
+pressure, initial pressure, or \(\KK(\xx)\).
+
+\subsubsection*{Grounding questions.}
+\gqGroundingTable{tab:grounding-pressure}
+{Grounding questions for direct pressure measurements.}
+{
+\gqPair{gqBlocked}{Blocked}
+{Do direct pore-pressure measurements exist for this model?}
+{Yes as a documented mini-piezometer stream and source-slide trend; no
+residual-ready local numeric export is present yet.}
+\gqPair{gqGate}{Gate}
+{How should pressure be linked to OGS?}
+{Compare to \(\pl(\xx,t)\) or hydraulic head only after units, elevation,
+absolute/gauge/reference convention, and sensor support are known.}
+\gqPair{gqGate}{Gate}
+{Can pressure data constrain initial and boundary conditions?}
+{Yes; it can separate boundary-condition error from permeability-field error and
+test the post-excavation initial pressure state.}
+\gqPair{gqGate}{Gate}
+{What 2D-model caveat is needed?}
+{Each sensor may sample a 3D hydraulic path or feature outside the modeled slice;
+the export must support a defensible 3D-to-2D comparison rule.}
+\gqPair{gqBlocked}{Blocked}
+{What would fully ground pressure residuals?}
+{Sensor coordinates, screened interval/depth/elevation, timestamps, raw units,
+pressure reference, calibration/maintenance flags, uncertainty, and raw-file
+provenance.}
+}
+
 \FloatBarrier
 \section{Faults, Fractures, and Crack Geometry}
 \label{sec:measurement-faults}
@@ -569,6 +893,53 @@ only after the projection policy is explicit: which 3D feature intersects the 2D
 slice, what width/support is assigned, whether it changes \(\KK\), \(\por\), EDZ
 classification, or only the prior covariance, and which uncertainty represents
 projection error.
+
+\subsubsection*{Current computational use.}
+With the local data available now, large faults and fracture geometry should enter
+as structural priors, masks, or scenario definitions rather than residuals.  The
+local \texttt{.dat}/Tecplot geometry gives source-frame structural zones, and the
+public CD-A characterization supports the relevance of faults and fractured zones,
+but geometry alone does not define hydraulic aperture, permeability contrast, or a
+time-dependent material change.  The best current use is to construct alternative
+2D projection scenarios: no fault effect, a projected EDZ/fault mask, a local
+permeability-basis support, or a covariance modifier for \(\KK\) and possibly
+\(\por\) or tensor orientation
+\citep[Sec.~3 and Fig.~4]{Ziefle2024Characterization}
+\citep[PDF p.~5]{HermesInput2024Local}
+\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+
+For inversion, the key discipline is not to turn fault geometry into a fake
+measurement.  A fault can guide where material fields are allowed to vary.  It
+becomes a residual only if a numeric aperture, displacement, pressure response, or
+other measured value is supplied with units, time, support, and an observation
+operator.
+
+\subsubsection*{Grounding questions.}
+\gqGroundingTable{tab:grounding-faults}
+{Grounding questions for large faults and fracture geometry.}
+{
+\gqPair{gqDiagnostic}{Diagnostic}
+{What does the large-fault source measure?}
+{Currently it is structural geometry; no accepted residual-ready aperture,
+displacement, or hydraulic-effect table is present.}
+\gqPair{gqPolicy}{Policy}
+{How should faults tie to OGS now?}
+{As projected structural priors, EDZ/fault masks, permeability-basis supports,
+tensor-orientation context, or scenario fields.}
+\gqPair{gqGate}{Gate}
+{Can a fault modify permeability or porosity?}
+{Yes as a scenario or prior, but hard modification needs independent evidence from
+permeability, ERT, pressure, NMR/Taupe trends, or crack/HM data.}
+\gqPair{gqGate}{Gate}
+{How should 3D geometry be reduced to the 2D slice?}
+{By an explicit intersection, influence-band, or nearest-distance projection with
+effective width and uncertainty; otherwise it remains a caveat.}
+\gqPair{gqGate}{Gate}
+{What would fully ground quantitative fault use?}
+{Exact source file, coordinates and units, feature identities, 3D-to-2D projection,
+width/support, target fields \((\KK,\por,\mathrm{EDZ})\), time-dependence
+assumption, and independent hydraulic or mechanical evidence.}
+}
 
 \FloatBarrier
 \section{Geoscope, Crackometer, and Other HM Monitoring}
@@ -688,20 +1059,63 @@ settlement at CDA-O1 \((-2.1\,\mathrm{mm})\), and largest uplift at CDA-C4
 \((+1.3\,\mathrm{mm})\), but it still lacks the full survey table and reference-frame
 metadata needed for weighting \citep[PDF pp.~5--6]{Levelling2026Local}.
 
-\FloatBarrier
-\section{Measurement Questions and Answers}
-\label{sec:measurement-question-answers}
+\subsubsection*{Current computational use.}
+With the local data available now, niche-surface cracks and other HM streams should
+mostly be validation gates, qualitative priors, or future residual packages.  The
+crackmeter source plot can test whether a model candidate gives plausible opening
+or closure trends only after the measured component, zero date, sign convention,
+instrument axis, and support are known.  Extensometers, convergence, miniprisma,
+levelling, and laser scans have clear OGS displacement ties, but the current
+workflow keeps mechanical parameters and prestress fixed.  Therefore these streams
+should first reject mechanically implausible hydraulic candidates, support
+EDZ/fracture scenarios, or define quality/disturbance flags; they should not yet
+drive a coupled HM calibration
+\citep[Table~1]{Ziefle2024Characterization}
+\citep[abstract and Sec.~2]{Ziefle2017SeasonalHM}
+\citep[PDF p.~4 and p.~8]{TDMinutes2026Local}
+\citep[other-HM numeric-source audit]{GeneratedAuditSuite2026}.
 
-Table~\ref{tab:measurement-question-answers} keeps the measurement questions
-granular.  It follows the same structure used above: meaning, position, time,
-measured quantity and processing, units, OGS tie, and uncertainty.  Ready rows are
-usable in the current workflow.  Diagnostic rows can be plotted or compared but
-should not yet receive likelihood weight.  Gate and blocked rows state exactly what
-stream-specific evidence would still be needed before that measurement can ground
-the OGS model as an input, residual, material prior, structural scenario, or
-quality filter.  The final block in each stream is the inverse-problem check: it
-states which unknowns or states the stream can actually constrain, which nuisance
-terms or covariance blocks are needed, and what computational failure would occur if
-the stream were weighted before that information is fixed.
+If numeric exports are supplied, the operators are standard but stream-specific:
+extensometers use projected displacement or strain along an instrument axis;
+convergence uses point-pair displacement; crackmeters use relative displacement or
+crack opening; levelling uses vertical displacement; laser scans use registered
+surface differences with masks and registration covariance.  Auxiliary climate,
+door, temperature, evapometer, or Geoscope context should enter as boundary
+provenance, quality flags, or disturbance filters rather than interior residuals.
 
-\input{resources/tables/measurement_questions.tex}
+\subsubsection*{Grounding questions.}
+\gqGroundingTable{tab:grounding-other-hm}
+{Grounding questions for Geoscope, crackometer, and other HM monitoring.}
+{
+\gqPair{gqGate}{Gate}
+{What does each HM stream measure?}
+{Extensometers measure axial deformation, crackmeters measure crack opening or
+relative displacement, levelling measures vertical displacement, laser scans
+measure surface differences, and auxiliary streams describe boundary or quality
+context; each source export must confirm the exact quantity.}
+\gqPair{gqGate}{Gate}
+{How should crackmeters tie to OGS?}
+{Compare to relative displacement \((\uu_a-\uu_b)\cdot\mathbf n\), near-crack
+strain, or a crack-aperture diagnostic only after the component and sign convention
+are known.}
+\gqPair{gqPolicy}{Policy}
+{Can visible cracks justify permeability changes?}
+{Yes as an EDZ/fracture prior or scenario, but not as a weighted residual unless a
+measured aperture or displacement operator is supplied.}
+\gqPair{gqDiagnostic}{Diagnostic}
+{How should levelling, extensometers, and laser scans be used now?}
+{As diagnostic HM validation or rejection gates for candidate permeability and
+boundary scenarios, because mechanical parameter release is not currently
+grounded.}
+\gqPair{gqPolicy}{Policy}
+{Which other measurements can enter the OGS workflow?}
+{Any exported pressure, displacement, strain, crack-width, laser, climate,
+temperature, evapometer, geology, or support-geometry stream can enter as an input,
+residual, prior, mask, quality filter, or caveat once its support, time, units, and
+uncertainty are explicit.}
+\gqPair{gqBlocked}{Blocked}
+{What would fully ground HM residuals?}
+{Machine-readable values with timestamps or survey epochs, coordinates/supports,
+units, reference-zero and sign conventions, instrument axes, failure/quality flags,
+uncertainty or covariance, and a 3D-to-2D comparison policy.}
+}
