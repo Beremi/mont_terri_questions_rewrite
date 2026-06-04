@@ -699,6 +699,9 @@ usable in the current workflow.  Diagnostic rows can be plotted or compared but
 should not yet receive likelihood weight.  Gate and blocked rows state exactly what
 stream-specific evidence would still be needed before that measurement can ground
 the OGS model as an input, residual, material prior, structural scenario, or
-quality filter.
+quality filter.  The final block in each stream is the inverse-problem check: it
+states which unknowns or states the stream can actually constrain, which nuisance
+terms or covariance blocks are needed, and what computational failure would occur if
+the stream were weighted before that information is fixed.
 
 \input{resources/tables/measurement_questions.tex}

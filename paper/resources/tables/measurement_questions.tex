@@ -30,7 +30,9 @@ distinguish ready residuals, diagnostics, policy decisions, gates, and blocked
 streams.  In each stream, the original current-answer rows are followed by a
 separated block of additional single-topic questions needed for OGS grounding.
 Where the project-specific answer is still unavailable, the row states the current
-local/public evidence boundary and the missing provider or modelling decision.}
+local/public evidence boundary and the missing provider or modelling decision.  The
+inverse-problem check rows make the observation operator, covariance, nuisance terms,
+and identifiability risks explicit.}
 \label{tab:measurement-question-answers}
 
 \noindent\textbf{Answer-status legend.}\par\smallskip
@@ -114,6 +116,25 @@ accepted covariance or grouping rules.}
 {The stream must be classified as an OGS input, output residual, material prior,
 structural scenario, support mask, quality filter, or caveat before it can receive
 weight.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqPolicy}{Policy}
+{What must a row contain before an inverse run may use it?}
+{For computation, each row must define
+\((y_i,t_i,\mathcal S_i,u_i,h_i,\sigma_i,g_i,q_i)\): measured value, time or epoch,
+spatial support, unit/reference convention, observation operator, uncertainty or
+covariance block, grouping/duplicate id, and quality flag.  A coordinate alone is
+not enough.}
+\mqPair{mqPolicy}{Policy}
+{How should incomplete rows enter candidate comparisons?}
+{They should stay inactive metadata, diagnostics, priors, masks, or qualitative
+caveats.  They should not be silently mapped to nearest cells, assigned default
+weights, or mixed into objective values until the missing tuple fields are explicit.}
+\mqPair{mqGate}{Gate}
+{What inverse-problem failure does support uncertainty create?}
+{It moves the Jacobian support.  The same residual may then select a different
+permeability feature, boundary correction, or state trajectory.  If support is
+uncertain, compare support scenarios or inflate/model the support error rather than
+treating the row as exact.}
 \bottomrule
 \end{longtable}
 
@@ -215,6 +236,25 @@ inactive unless their support and policy gates are reopened.}
 {BCD-A24, BCD-A25, BCD-A26, BCD-A27, and BFM-D19 rows are retained visibly but
 excluded as \texttt{missing\_segment\_geometry}; 98 positive rows would need labelled
 endpoints or an accepted digitized trace before activation.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqReady}{Ready}
+{Which unknowns does the permeability likelihood constrain directly?}
+{It constrains the released intrinsic-permeability field, practically
+\(\log_{10}\KK\) or its parameterization, through directional interval averages.
+It does not directly constrain pressure, saturation, porosity, retention, or
+relative permeability; those are only affected through forward propagation after
+\(\KK\) changes.}
+\mqPair{mqGate}{Gate}
+{What can bias the fitted permeability field if left unresolved?}
+{Gas-to-liquid interpretation, missing Klinkenberg/slip metadata, pressure-transient
+sensitivity beyond a 10 cm interval, endpoint geometry, anisotropy angle, and
+same-support conflicts can all be absorbed falsely as spatial heterogeneity in
+\(\KK(\xx)\).}
+\mqPair{mqPolicy}{Policy}
+{What is the minimum final-use policy for this stream?}
+{Before final promotion, record whether the first-pass interval operator is accepted,
+whether repeated support groups use row weights, group weights, or a robust
+likelihood, and whether historical rows are excluded, recovered, or superseded.}
 \bottomrule
 \end{longtable}
 
@@ -318,6 +358,24 @@ targets.}
 {How should rows with \(\theta_{\mathrm{obs}}>n\) be used?}
 {They should not be used as raw absolute mobile-water residuals until the
 bound-water or bias policy is accepted.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqGate}{Gate}
+{Which forward state does an NMR residual actually depend on?}
+{It depends on \(\theta_{\mathrm{model}}=\por\Sl(p,\mathrm{retention})\) sampled at
+the NMR support and time.  Therefore it can constrain pressure/saturation dynamics
+and boundary forcing through the flow model, but it cannot by itself separate
+porosity, retention, mobile fraction, and bound-water offset.}
+\mqPair{mqPolicy}{Policy}
+{What nuisance parameters are needed for absolute NMR use?}
+{At minimum, an observation model such as
+\(\theta_{\mathrm{obs}}=\por\Sl+b_{\mathrm{label}}+b_{\mathrm{campaign}}+\epsilon\)
+or a mobile-fraction/T2 cut-off policy.  Without those nuisance terms, the inverse
+run may compensate bound water by changing permeability or saturation.}
+\mqPair{mqGate}{Gate}
+{What data-leakage risk must be avoided?}
+{If NMR is used to calibrate an ERT water--resistivity relation, the same NMR rows
+should not also be treated as independent validation of the ERT-derived water state
+without accounting for shared information and correlated errors.}
 \bottomrule
 \end{longtable}
 
@@ -468,6 +526,26 @@ sources for these CD-A VTK cells.}
 {What temporal covariance is assigned to ERT timesteps?}
 {No temporal covariance is accepted.  Time grouping and sampling tolerance remain
 part of the ERT likelihood gate.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqDiagnostic}{Diagnostic}
+{What is the computational ERT observation operator?}
+{It is the composite map
+\(\KK,\por,\mathrm{BC},\mathrm{IC}\mapsto \Sl(\xx,t)\mapsto
+\theta=\por\Sl\mapsto\rho(\theta)\mapsto\mathcal O_{\mathrm{ERT}}\rho\).  The
+current table only has the diagnostic last three pieces; final inversion needs the
+projection and covariance accepted.}
+\mqPair{mqGate}{Gate}
+{Why can dense ERT fields dominate an inverse problem incorrectly?}
+{Adjacent inverted cells share electrodes, regularization, and inversion smoothing.
+Counting thousands of cells as independent residuals would artificially overwhelm
+permeability and NMR data.  ERT needs block covariance, aggregation, or grouped
+weights before objective use.}
+\mqPair{mqGate}{Gate}
+{Which ERT uncertainties are mathematically confounded?}
+{The exponent in \(\rho(\theta)\), surface conductivity, pore-fluid conductivity,
+porosity, bound-water conduction, electrical anisotropy, and coordinate projection
+can all create similar log-resistivity residuals.  Releasing them together without
+priors would be non-identifiable.}
 \bottomrule
 \end{longtable}
 
@@ -558,6 +636,22 @@ calibration, uncertainty, and bound-water/dielectric interpretation are accepted
 \mqPair{mqGate}{Gate}
 {Should Taupe/TDR be compared as a standardized anomaly?}
 {This is the current safe diagnostic policy before absolute calibration is known.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqDiagnostic}{Diagnostic}
+{What does the current Taupe/TDR residual retain and discard?}
+{The standardized trend residual retains timing, sign, and relative amplitude within
+each sensor--band series.  It discards absolute water content and most between-band
+offset information, so it cannot identify absolute saturation or porosity.}
+\mqPair{mqGate}{Gate}
+{What would be required for absolute Taupe/TDR likelihood use?}
+{A calibrated map from workbook value to either \(\theta\), dielectric permittivity,
+or another modelled proxy; a support operator for each band; temperature/salinity or
+conductivity corrections if needed; and grouped sensor--band covariance.}
+\mqPair{mqGate}{Gate}
+{What inverse-problem risk comes from using all Taupe bands independently?}
+{Bands from the same cable, date, and borehole share calibration and environmental
+errors.  Treating them as independent rows would over-weight one instrument and could
+force permeability changes that merely fit a correlated Taupe drift.}
 \bottomrule
 \end{longtable}
 
@@ -650,6 +744,23 @@ local RH data extend to 2025-09-04.}
 {What uncertainty is assigned to \(p_E(t)\)?}
 {No accepted boundary-forcing uncertainty is assigned.  The RH candidate envelope has
 p50 pressure spread about 2.10 MPa, but it is not an accepted likelihood model.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqDiagnostic}{Diagnostic}
+{Is RH a residual or a forcing parameter in the inverse problem?}
+{Primarily a forcing-parameter source.  If used computationally, RH should define or
+constrain the open-niche boundary curve \(p_E(t)\) with uncertainty; it should not be
+counted again as an independent state residual against the same imposed curve.}
+\mqPair{mqGate}{Gate}
+{Why is RH boundary uncertainty crucial for permeability inversion?}
+{Boundary suction and permeability both control drying/wetting transients.  If
+\(p_E(t)\) is treated as exact when it is uncertain, the inverse run can attribute
+boundary-forcing error to the permeability field or retention parameters.}
+\mqPair{mqGate}{Gate}
+{What is the minimum computational representation of \(p_E(t)\)?}
+{A dated curve with time origin, interpolation/extrapolation, smoothing/filtering
+history, sensor selection, Kelvin constants, sign convention, and a covariance or
+scenario envelope.  Without this, \(p_E(t)\) is a frozen model input with caveats, not
+an inferred boundary condition.}
 \bottomrule
 \end{longtable}
 
@@ -742,6 +853,23 @@ initial field.}
 {Can the 2D model represent the sampled hydraulic path?}
 {Unknown.  This depends on whether each mini-piezometer samples a path close to the
 2D slice or a 3D feature that the current model cannot represent.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqGate}{Gate}
+{What would the pressure observation operator be?}
+{After support and reference convention are known, it is a direct sample or support
+average of OGS \(\pl(\xx,t)\), or a converted hydraulic head.  The residual must use
+the same absolute/gauge/head convention and elevation datum as the sensor export.}
+\mqPair{mqGate}{Gate}
+{What computational error is most dangerous here?}
+{A pressure offset error.  Confusing absolute pressure, gauge pressure, suction, or
+head would shift every residual and could force the inversion to compensate by
+changing far-field Dirichlet pressure, niche forcing, initial pressure, or
+permeability.}
+\mqPair{mqGate}{Gate}
+{Why are pressure measurements valuable if completed?}
+{They could separate boundary-condition error from permeability-field error and test
+whether the initial/post-excavation pressure state is plausible.  That separation is
+not available from water-content data alone.}
 \bottomrule
 \end{longtable}
 
@@ -805,6 +933,23 @@ supports a permeability anomaly.}
 {What uncertainty should be assigned to crackmeter values?}
 {No instrument uncertainty or covariance is available locally.  Public sources
 confirm the measurement type, not the CD-A residual weight.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqGate}{Gate}
+{What OGS quantity could a crackmeter residual compare to?}
+{Depending on instrument definition, it could compare to relative displacement
+\((\uu(\xx_a)-\uu(\xx_b))\cdot\mathbf n\), projected near-crack strain, or a
+special displacement-jump/crack-aperture variable.  The current continuum model does
+not provide a crack-aperture state by default.}
+\mqPair{mqGate}{Gate}
+{What missing metadata changes the sign of the inverse signal?}
+{Zero date, positive opening/closure sign, instrument axis, temperature correction,
+and the mapped crack support.  Without them, a modelled closure could be scored as
+opening, or vice versa.}
+\mqPair{mqGate}{Gate}
+{How should crack evidence affect permeability candidates now?}
+{Only as a qualitative or prior check: visible/measured cracks can justify testing a
+local EDZ/fracture permeability scenario, but should not be a weighted residual until
+the displacement/aperture operator and uncertainty are defined.}
 \bottomrule
 \end{longtable}
 
@@ -878,6 +1023,23 @@ metadata are missing.}
 {The May 2026 minutes identify horizontal/vertical extensometer failures in the
 closed niche after September 2025.  Until the numeric export supplies flags, those
 post-failure records should be excluded or treated as quality-blocked.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqGate}{Gate}
+{What mechanical observation operators are needed for full HM use?}
+{Extensometers need projected displacement or strain along instrument axes;
+convergence needs point-pair displacement; miniprisma and levelling need survey-frame
+point displacement; laser scans need surface-difference operators with masks and
+registration covariance.}
+\mqPair{mqGate}{Gate}
+{Can these HM streams calibrate permeability in the current frozen workflow?}
+{Not directly.  With mechanical parameters and prestress mostly frozen, HM streams
+are better used as validation or rejection gates.  Calibrating permeability from HM
+requires an accepted coupled sensitivity path and mechanical uncertainty model.}
+\mqPair{mqGate}{Gate}
+{What would make HM residuals numerically defensible?}
+{A machine-readable export with value, epoch, support, frame, sign, reference zero,
+quality/failure flags, and covariance, plus an explicit 3D-to-2D comparison policy
+for each instrument type.}
 \bottomrule
 \end{longtable}
 
@@ -966,6 +1128,24 @@ physics scenarios.}
 {Use permeability pulse tests, ERT high-resistivity/fracture indications, pressure
 response, NMR/Taupe trends, or visible crack/HM evidence.  Geometry alone is not
 enough for a hard anomaly.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqPolicy}{Policy}
+{How can a fault enter the inverse problem without becoming a fake residual?}
+{As a structural prior, local basis mask, covariance modifier, scenario field, or
+fixed material-field perturbation.  It should not contribute a residual unless a
+measured aperture, displacement, pressure response, or other numeric value with an
+operator is available.}
+\mqPair{mqGate}{Gate}
+{What is the main identifiability risk of fault-informed inversion?}
+{A 2D permeability anomaly can fit the effect of a 3D fault, a boundary error, or an
+unmodelled fracture path.  Without projection uncertainty and independent evidence,
+the inversion may overfit geometry rather than identify a real material field.}
+\mqPair{mqGate}{Gate}
+{What final decision is needed before using faults quantitatively?}
+{Choose whether each feature is hard input, prior/covariance support, candidate
+scenario, or excluded caveat; define its 2D intersection, effective width, target
+field \((\KK,\por,\mathrm{EDZ},\theta_{\mathrm{anis}})\), and time-dependence
+assumption.}
 \bottomrule
 \end{longtable}
 
@@ -1033,6 +1213,22 @@ blocker is instead calibration/support/provenance.}
 {The current request packages identify BGR/Gesa or the responsible measurement
 provider as the source for Geoscope/HM exports, RH boundary provenance, Taupe
 calibration, ERT transform/covariance, and older permeability endpoints.}
+\mqSeparator{Inverse-problem computation check}
+\mqPair{mqPolicy}{Policy}
+{What triage rule decides whether a newly found stream is usable?}
+{First classify it as input, state residual, parameter prior, structural scenario,
+support mask, quality filter, or explanatory caveat.  Then require an observation
+operator and uncertainty before it can change an objective value.}
+\mqPair{mqGate}{Gate}
+{What should happen if a stream has values but no covariance?}
+{Do not assign default unit weights.  Use it as a diagnostic, derive a conservative
+uncertainty from documented precision, or run sensitivity scenarios until a provider
+or modelling-team covariance decision exists.}
+\mqPair{mqGate}{Gate}
+{What audit record is required when a stream becomes active?}
+{Record raw source, processed table, row count, accepted support, time convention,
+unit/reference conversion, observation operator, covariance/grouping, quality filters,
+and whether it shares information with another stream.}
 \bottomrule
 \end{longtable}
 \endgroup
