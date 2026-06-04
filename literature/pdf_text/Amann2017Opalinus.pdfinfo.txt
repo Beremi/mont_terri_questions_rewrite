@@ -1,0 +1,20 @@
+Title:           Geomechanical behaviour of Opalinus Clay at multiple scales: results from Mont Terri rock laboratory (Switzerland)
+Subject:         Swiss Journal of Geosciences, doi:10.1007/s00015-016-0245-0
+Keywords:        Clay shale,Excavation damaged zone,Undrained shear strength,Pore-pressure response,Suction,Tectonic structures,Nuclear waste disposal
+Author:          Florian Amann
+Creator:         Springer
+Producer:        Acrobat Distiller 10.1.8 (Windows)
+CreationDate:    Thu Feb 16 06:27:56 2017 CET
+ModDate:         Sat Apr  1 11:17:16 2017 CEST
+Custom Metadata: yes
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            AcroForm
+JavaScript:      no
+Pages:           21
+Encrypted:       no
+Page size:       595.276 x 790.866 pts
+Page rot:        0
+File size:       5596233 bytes

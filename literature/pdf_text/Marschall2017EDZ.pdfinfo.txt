@@ -1,0 +1,20 @@
+Title:           Hydro-mechanical evolution of the EDZ as transport path for radionuclides and gas: insights from the Mont Terri rock laboratory (Switzerland)
+Subject:         Swiss Journal of Geosciences, doi:10.1007/s00015-016-0246-z
+Keywords:        Thermo-hydro-mechanical (THM) processes,Excavation damaged zone (EDZ),EDZ self-sealing,Opalinus clay,THM modelling,Geological disposal of nuclear waste
+Author:          Paul Marschall
+Creator:         Springer
+Producer:        Acrobat Distiller 10.1.8 (Windows)
+CreationDate:    Thu Feb 16 09:12:02 2017 CET
+ModDate:         Sat Apr  1 11:19:13 2017 CEST
+Custom Metadata: yes
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            AcroForm
+JavaScript:      no
+Pages:           22
+Encrypted:       no
+Page size:       595.276 x 790.866 pts
+Page rot:        0
+File size:       7469817 bytes

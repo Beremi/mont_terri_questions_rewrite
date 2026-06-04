@@ -1,0 +1,1216 @@
+Swiss J Geosci (2017) 110:151–171
+DOI 10.1007/s00015-016-0245-0
+
+
+
+
+Geomechanical behaviour of Opalinus Clay at multiple scales:
+results from Mont Terri rock laboratory (Switzerland)
+Florian Amann1 • Katrin M. Wild1 • Simon Loew1 • Salina Yong2 •
+Reto Thoeny3 • Erik Frank4
+
+
+
+
+Received: 5 April 2016 / Accepted: 9 December 2016 / Published online: 16 February 2017
+ Swiss Geological Society 2017
+
+
+Abstract The paper represents a summary about our                       mechanically coupled behaviour of this material. Strong
+research projects conducted between 2003 and 2015 related               hydro-mechanically coupled processes may explain the
+to the mechanical behaviour of Opalinus Clay at Mont                    stability of cores and tunnel excavations in the short term.
+Terri. The research summarized covers a series of labora-               Pore-pressure effects may cause effective stress states that
+tory and field tests that address the brittle failure behaviour         favour stability in the short term but may cause longer-term
+of Opalinus Clay, its undrained and effective strength, the             deformations and damage as the pore-pressure dissipates.
+dependency of petro-physical and mechanical properties on               In-situ observations show that macroscopic fracturing is
+total suction, hydro-mechanically coupled phenomena and                 strongly influenced by bedding planes and faults planes. In
+the development of a damage zone around excavations. On                 tunnel sections where opening or shearing along bedding
+the laboratory scale, even simple laboratory tests are dif-             planes or faults planes is kinematically free, the induced
+ficult to interpret and uncertainties remain regarding the              fracture type is strongly dependent on the fault plane fre-
+representativeness of the results. We show that suction may             quency and orientation. A transition from extensional
+develop rapidly after core extraction and substantially                 macroscopic failure to shearing can be observed with
+modifies the strength, stiffness, and petro-physical prop-              increasing fault plane frequency. In zones around the
+erties of Opalinus Clay. Consolidated undrained tests per-              excavation where bedding plane shearing/shearing along
+formed on fully saturated specimens revealed a relatively               tectonic fault planes is kinematically restrained, primary
+small true cohesion and confirmed the strong hydro-                     extensional type fractures develop. In addition, hetero-
+                                                                        geneities such as single tectonic fault planes or fault zones
+                                                                        substantially modify the stress redistribution and thus
+Editorial handling: P. Bossart and A. G. Milnes.                        control zones around the excavation where new fractures
+                                                                        may form.
+This is paper #7 of the Mont Terri Special Issue of the Swiss Journal
+of Geosciences (see Bossart et al. 2017, Table 3 and Fig. 7).
+                                                                        Keywords Clay shale  Excavation damaged zone 
+& Florian Amann                                                         Undrained shear strength  Pore-pressure response 
+  florian.amann@erdw.ethz.ch                                            Suction  Tectonic structures  Nuclear waste disposal
+1
+    Institute of Geology, Engineering Geology, Swiss Federal
+    Institute of Technology, Zurich, Sonneggstrasse 5,
+    8092 Zurich, Switzerland                                            1 Introduction
+2
+    Knight Piésold Ltd., Suite 1400 - 750 West Pender,
+    Vancouver V6C 2T8, British Columbia, Canada                         Our scientific research on the geomechanical behaviour of
+3                                                                       Opalinus Clay that we conducted in the past decade
+    Grundwasserschutz und Entsorgung, AF-Consult Switzerland
+    AG, Täfernstrasse 26, 5405 Baden, Switzerland                      addresses fundamental behavioural aspects, associated with
+4                                                                       the short-term behaviour (i.e. the behaviour during the
+    Sektion Geologie (GEOL), Eidgenössisches Nuklear-
+    Sicherheitsinspektorat (ENSI), Industriestrasse 19,                 excavation) and the longer-term behaviour (i.e. the beha-
+    5200 Brugg, Switzerland                                             viour during the open drift phase) of the material in close
+152                                                                                                                F. Amann et al.
+
+
+vicinity to a drift, and factors that influence the development      material at the transition between stiff soil and weak rock,
+of an excavation damaged zone (EDZ). The attempt was and             by integrating the results gained in the various scientific
+is to contribute to an improved understanding of (1) the             experiments that were conducted over the past decade and
+governing mechanical behaviour of Opalinus Clay, (2) the             have provided insights on the complexity of the geome-
+dependency of its geomechanical and petro-physical prop-             chanical behaviour and factors that affect the development
+erties on the effective stress state, (3) its strength at a satu-    of an EDZ in the short and longer term.
+rated state, (4) the short-term pore-pressure evolution during
+triaxial testing and tunnel excavation, (5) the processes and
+geological factors that control the formation of an EDZ, (6)         2 Opalinus Clay at the Mont Terri Rock
+the influence of tectonic structures at multiple scales on the         laboratory
+EDZ, and (7) the influence of excess pore-pressures dissi-
+pation on the EDZ and tunnel deformations. The scale of              Lithologically, Opalinus Clay at the Mont Terri Rock
+investigations spans from laboratory experiments at the cm-          laboratory (Fig. 2) can be divided into several facies: car-
+to dm-scale to in situ experiments on the dm- to m-scale.            bonate-rich, sandy, and shaly (Thury and Bossart 1999). In
+    An overview of the experiments related to the conducted          this contribution, the shaly facies of Opalinus Clay at the
+scientific research is given in Fig. 1. The work comprises a         Mont Terri Rock Laboratory is discussed. Opalinus Clay
+series of laboratory experiments, conducted to characterize          shows a pronounced micro-fabric of the clayey matrix,
+the geomechanical properties and behaviour of intact Opali-          forming a distinct macroscopic bedding, which is related to
+nus Clay, spanning from unconsolidated undrained (UU)                a complex history of sedimentation, burial, physical com-
+shear tests (Amann et al. 2011, 2012a), unconfined compres-          paction, development of diagenetic bonding, uplift, tec-
+sion and indirect tensile strength tests on specimens equili-        tonic faulting, and erosion (Van Loon et al. 2004;
+brated at various relative humidity (RH) (Wild et al. 2015c),        Marschall et al. 2005). The maximum burial depth at the
+and consolidated undrained (CU) and drained (CD) triaxial            level of the Mont Terri Rock Laboratory was estimated to
+tests on fully re-saturated specimens (Wild et al. 2015a).           be 1350 m in the late Tertiary (Mazurek et al. 2006). The
+Furthermore, three in situ experiments were carried out. An          present overburden ranges from 230 to 330 m (Thury and
+overcoring experiment was used to study the evolution of a           Bossart 1999). The complex geological and tectonic history
+BDZ in intact rock in situ (Kupferschmied et al. 2015).              of Opalinus Clay caused a compact structure and inter-
+Additionally, two mine-by experiments at the Mont Terri              particle bonding. However, no diagenetic cements that fill
+Rock laboratory were conducted, which focused on the                 the pore space (such as pyrite, siderite, or calcite cement)
+interrelationships between pre-existing faults (i.e. faults          have been found in the shaly facies (Nagra 2002). There-
+planes and fault zones characterized by a high fault plane           fore, bonding is probably more related to recrystallization
+density) and excavation-induced damage at the macro and              of clay particles and adhesion from molecular bonds.
+micro-scale (Yong et al. 2010, 2013; Thoeny 2014). These                Opalinus Clay from the shaly facies mainly consists of
+experiments included detailed structural and kinematic anal-         clay minerals (i.e. 27–78% clay minerals composed of
+ysis using a broad range of in situ characterisation and mon-        15–30% illite, 5–20% illite/smectite mixed layer phases,
+itoring methods, supplemented by 3D numerical modelling.             3–18% chlorite, and 15–22% kaolinite), and non-clay
+    The focus of this contribution is on the characterization        minerals (e.g. 10–27% quartz, 0.3–5% feldspar, 0.9–1.4%
+of the complex mechanical behaviour of Opalinus Clay, a              pyrite, and 0.8% organic matter) with a variable range of
+                                                                     grain sizes (Mazurek 1998; Thury and Bossart 1999; Nagra
+  laboratory experiments     in-situ experiments                     2002; Klinkenberg et al. 2009). Furthermore, carbonate
+       unconsolidated
+                                                                     bioclasts are often found (13% carbonate content). The
+                                 overcoring            intact rock
+         undrained           experiment for BDZ-                     water loss porosity of the shaly facies is in the order of
+      compression tests           evoluon             rock mass     15–19% (Bossart 2008; Amann et al. 2011, 2012a; Wild
+                                                                     et al. 2015c).
+                           EZ-B mine-by experiment
+                            (inﬂuence of small scale                    Structurally, the bedding is well-developed and the most
+                                                                     pronounced feature at the Mont Terri Rock Laboratory. It
+                            the EDZ development)                     dips towards the southeast with an angle varying between
+   consolidated drained                                              30 at the northernmost contact to 50 at the southernmost
+                           RC mine-by experiment
+      and undrained
+    compression tests                                                contact (Bossart et al. 2017). Prominent tectonic features at
+                                                                     the Mont Terri Rock Laboratory consist of three minor
+                            the EDZ development)
+                                                                     tectonic fault planes and a larger thrust fault (Main Fault).
+Fig. 1 Experiments conducted at the Chair of Engineering Geology     A detailed analysis of the tectonic setting is given in
+at ETH Zurich in the past decade                                     Nussbaum et al. (2011).
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                                                                              153
+
+       Alsace Molasse                       NNW                                                                                                                   SSE
+                                          m. a. s. l
+       Reuchette Formation
+                                         1000                                                                           Main Fault     Mont Terri
+
+                                                    Courgenay                                                                                                 St-Ursanne
+       Courgenay Formation                                                                        Mont Terri                         rock laboratory
+                                                                                                   tunnel
+       Vellerat Formation
+
+       St-Ursanne Formation               500
+
+       Baerschwil Formation
+
+       Ifenthal Formation
+                                            0
+       Hauptrogenstein
+
+       Passwang Formation
+                                         -500
+       Opalinus Clay
+
+       Staffelegg Formation
+                                     -1000                                     Permo-Carboniferous sediments ?
+       Klettgau Formation
+
+       Bänkerjoch Formation
+
+       Schinznach Formation          -1500
+
+       Zeglingen Formation
+                                                0               500   1000        1500         2000      2500    3000        3500       4000           4500   5000 m
+       Kaiseraugst Formation
+
+       Permo-Carboniferous sediments ?                                Thrust planes
+
+       Basement undifferentiated                                      Extensional faults
+
+
+Fig. 2 Geological cross-section of the Mont Terri anticline and location of the Mont Terri rock laboratory (Nussbaum et al. 2017, this volume)
+
+
+3 Laboratory experiments                                                                   addition, micro-seismic emissions were captured during the
+                                                                                           unconfined compression tests utilizing four piezoelectric
+Three series of laboratory experiments to characterize the                                 transducers. More details of the testing procedure and the
+hydro-mechanical behaviour and properties of Opalinus                                      laboratory set-up are given in Amann et al. (2011) and
+Clay have been carried out in the reporting period. A first                                (2012a).
+series investigated the brittle failure behaviour of Opalinus                                 The study revealed essential insights into the behaviour of
+Clay under unconsolidated undrained conditions. A second                                   Opalinus Clay in UU tests that demonstrate that Opalinus
+series focused on the influence of suction on petro-physical                               Clay shares similarities with both brittle rocks and stiff soils.
+and mechanical properties. In a third series of laboratory                                 It was shown that the onset of yielding/dilatancy is associ-
+tests, we analysed the hydro-mechanical coupled behaviour                                  ated with the formation of micro-cracks that emanate mea-
+of Opalinus Clay utilizing consolidated undrained and                                      sureable micro-seismic signals. This behaviour is typical for
+drained tests including pore-pressure measurements.                                        brittle rocks. On the other hand, Opalinus Clay deforms in a
+                                                                                           highly non-linear fashion, indicating yielding of the material
+3.1 The undrained shear strength of Opalinus Clay                                          long before the differential stress reaches the peak strength.
+                                                                                           The non-linearity of the stress–axial strain curve starts at the
+In 2010, we performed a series of unconsolidated undrained                                 onset of dilatancy, which is unusual for brittle rocks but
+(UU) compression tests on Opalinus Clay specimens                                          typical for soils, in particular clays. However, dilatancy is
+(Amann et al. 2011, 2012a). The study focused on the brittle                               suppressed at increasing confining stresses. At low confining
+failure behaviour of Opalinus Clay in a confining stress range                             stresses the volume of the specimens at peak strength was
+that is relevant for the near field of tunnel excavations in                               similar to the volume of the specimens at the start of the
+Opalinus Clay at the Mont Terri Rock Laboratory (i.e.                                      compression test (Fig. 3a). This behaviour is typical for both
+0–4 MPa). Significant efforts were made to test the speci-                                 brittle rock types and over-consolidated clays. Furthermore,
+mens as close as possible to the natural water content, which                              the differential stress at the onset of dilatancy was inde-
+required a specimen preparation procedure that allowed                                     pendent of the confining stress (Fig. 3b), indicating breaking
+testing approximately 30 min after core extraction from the                                of cohesive bonds that leads to the mobilization of frictional
+vacuum-evacuated foil. The specimens were loaded normal                                    resistance. The independency of the differential stress at the
+to the bedding orientation (S-specimens). Both axial and                                   onset of micro-cracking and the mobilization of frictional
+radial strains were monitored at the specimen’s surface. In                                resistance at the onset of dilatancy have been observed for
+154                                                                                                                                                              F. Amann et al.
+
+Fig. 3 a Axial stress–                                  18.0                                                              14.0
+volumetric strain curves before                                 a                                                                  b
+                                                        16.0
+failure for different confining                                                           σ3 = 4.03 MPa                   12.0                        failure strength
+stresses. b Failure strength and                        14.0
+onset of dilatancy in                                                                                                     10.0
+
+
+
+
+                                   axial stress (MPa)
+dependency of the confining                             12.0    σ3 = 1.03 MPa
+stress. Adapted from Amann                                                                                                 8.0
+                                                        10.0    σ3 = 0.23 MPa
+et al. (2012a), 27/30, copyright
+Springer-Verlag 2011, with                               8.0                                                               6.0
+permission of Springer                                                                          σ3 = 2.03 MPa
+                                                         6.0
+                                                                                                                           4.0
+                                                         4.0
+                                                                                    σ3 = 0.53 MPa                          2.0
+                                                         2.0
+                                                                           σ3 = 0.00 MPa
+                                                         0.0                                                               0.0
+                                                            0.00     0.04         0.08         0.12     0.16    0.20             0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5
+                                                                            volumetric strain (%)                                            conﬁning stress (MPa)
+
+
+many brittle rock types (Martin 1997; Amann et al. 2011),                                             et al. (2015). Bishop and Eldin (1950) proposed, based on
+but also for remoulded clays (Schmertmann and Osterberg                                               theoretical considerations and experiments on sands, that
+1960).                                                                                                two potential factors may account for a high undrained
+   The study also revealed values of the unconfined com-                                              friction angles: (1) the specimens contain entrapped air,
+pressive strength (UCS) of specimens loaded normal to                                                 which increases the compressibility of the pore fluid sub-
+bedding between 4.5 and 8.0 MPa (Amann et al. 2011).                                                  stantially, and (2) excessive negative pore-pressure evolves
+Further tests on specimens loaded parallel to bedding                                                 under undrained shearing at low normal stresses due to the
+revealed UCS values between 9.0 and 11.0 MPa at natural                                               dilatant structure of the soil and causes pore-water cavita-
+water content (Wild et al. 2015c). Based on these values,                                             tion. For the latter case, the undrained friction angle at low
+Opalinus Clay at its natural water content can be classified                                          normal stresses is approximately the same as the effective
+as a very weak (R1) to weak (R2) rock according to ISRM                                               friction angle (Bishop and Eldin 1950). At high normal
+classification (Fig. 4) (ISRM 1979).                                                                  stresses, cavitation does not occur and the failure envelope
+   A further outcome of this study was a strong non-linear                                            for typical soils indicates an undrained friction angle of 0
+failure envelope (Fig. 3b). The simplified bi-linear fit used                                         or a low undrained friction angle. The sharp transition from
+by Amann et al. (2012a) revealed a high undrained friction                                            a high undrained friction angle to an undrained friction
+angle of / = 43 and an apparent cohesion of 2 MPa at                                                 angle of zero depends, according to Bishop and Eldin
+low confinement (i.e. \1 MPa). For higher confining                                                   (1950), on the undrained shearing resistance and the
+stresses (i.e. [1 MPa), where dilatancy of the material was                                           effective consolidation pressure. In addition, Amann et al.
+suppressed, the undrained friction angle was reduced to /                                             (2015) postulated that the concept of ‘‘/ = 0’’ applies
+= 11 and the apparent cohesion increased to 4 MPa.                                                   only for soils and rocks where Skempton’s pore-pressure
+   Saturated clays often exhibit an undrained friction angle                                          coefficient B is unity. For B \ 1, as in the case of Opalinus
+of zero degree. However, undrained friction angles [0                                                Clay (Aristorenas 1992; Wild et al. 2015a), the undrained
+have been measured in UU tests and have been discussed in                                             friction angle is larger than zero. Thus, for the Opalinus
+detail by Bishop and Eldin (1950), Golder and Skempton                                                Clay specimens measured at low confining stresses in the
+(1948) and for the specific data discussed above by Amann                                             series of UU tests described above, the frictional resistance
+
+
+Fig. 4 ISRM classes based on                                         rock - UCS (MPa)
+the UCS of the material                                             0.25                         1                        5                           25         50        100
+(according to ISRM 1979). The
+UCS for Opalinus Clay at its                                                 extremely                  very weak rock                 weak rock           medium     strong
+natural water content is shown                                               weak rock                        R1                          R2                strong     rock
+                                                                                 R0                                                                          rock       R4
+in the dark blue box. The
+                                                                                                                                                              R3
+increase in UCS with increasing
+suction is shown in the light
+                                          clay - UCS (MPa)
+blue box                                                                                                                   OPA with          due to
+                                   0.1                              0.25          0.5                                    natural water
+                                                                                                                           content
+                                                                                        hard
+                                                           S4              clay         clay
+                                                                            S5           S6
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                                   155
+
+
+seems to be dominated by the strong dilatant behaviour that          (Fig. 5b), and the BTS parallel and normal to bedding by a
+might be associated with the microstructure of Opalinus              factor of 2–3 (Fig. 5c).
+Clay. At high confining stresses, where dilatancy is                     The increase in strength with decreasing water content
+strongly suppressed, the lower undrained friction angle of           (i.e. an increase in suction) was more pronounced for the
+11 could be associated with either a Skempton’s B value             BTS normal to bedding. Similar observations could be
+smaller unity or an unsaturated state of the material.               made by comparing the UCS values with data from tests on
+    Besides the uncertainties in interpreting the UU test results,   S-specimens (i.e. specimens loaded normal to bedding)
+a major problem with UU tests is associated with the initial         conducted by Amann et al. (2011), Rummel and Weber
+effective stress state (i.e. the effective stress state before       (2004), and Schnier and Stührenberg (2007). The UCS for
+undrained loading) of the specimen. For an isotropic rock            specimens loaded parallel to bedding increased from values
+sample taken from a rock mass characterized by an isotropic          between 9 and 11 MPa at water contents between 7.6 and
+stress state, the effective stress after core extraction remains     8.4% to values between 12 and 16 MPa for water contents
+constant and the results obtained from UU tests are repre-           between 4.8 and 5.0%. The UCS for specimens loaded
+sentative for this initial effective stress. This is, however, not   normal to bedding showed an increase from 4–8 to
+the case for an anisotropic material such as Opalinus Clay           20–25 MPa for the same decrease in water content. Hence,
+taken from an anisotropic stress field such as the one observed      Opalinus Clay with low water content (i.e. smaller than the
+at the Mont Terri Rock Laboratory. Thus, in the series of UU         natural water content due to drying) can be classified as a
+tests performed by Amann et al. (2011) and (2012a), the initial      material somewhere between weak and medium strong
+effective stress state remains unknown. Since saturation was         rock according to the ISRM classification shown in Fig. 4.
+not re-established and pore-pressure was not measured during             Besides these unique relationships between total suction,
+undrained loading in their study, the interpretation and             water content and geomechanical properties, the study
+applicability of the test results in terms of the undrained shear    revealed that while the P-wave velocity parallel to bedding
+strength remains uncertain and partly speculative.                   remained almost constant, the P-wave velocity normal to
+                                                                     bedding dropped sharply upon desaturation until the air-
+3.2 The influence of suction on the strength                         entry value (found to be at 22 MPa suction) was reached
+    and stiffness of Opalinus Clay                                   (Fig. 5d). This drop is associated with desiccation cracks
+                                                                     observed solely parallel to the bedding orientation. For
+Due to the potential influence of the initial effective stress       suction larger than the air-entry value, the data suggest no
+state associated with partially saturated condition, Wild            further damage accumulation (i.e. the shrinkage limit is
+et al. (2015c) performed a large series of laboratory                reached). Peron et al. (2009) showed experimentally for
+experiments aiming at providing relationships between                clays that the magnitude of the shrinkage limit and the air-
+total suction and the Young’s Modulus (E), the Poisson’s             entry value are similar. This supports the observations in
+ratio (t), the onset of dilatancy (CI), the Brazilian tensile        our study and suggests that the majority of desiccation
+strength (BTS), the UCS, and the P-wave velocity (vp).               damage is associated with the early stage of desaturation
+Over a period of three years, specimens were equilibrated            where the suction increases from zero to approximately the
+in desiccators at different levels of relative humidity (RH)         air-entry value. For Opalinus Clay, the air-entry value and
+ranging between 19 and 99%. The correspondent suction                the shrinkage limit are reached within 30 min after core
+pressure was calculated according to Kelvin’s relationship.          extraction from the vacuum-evacuated foil and exposure to
+After specimen equilibration, BTS and UCS tests were                 the laboratory environment (Wild et al. 2015c). Thus,
+performed immediately after removing the specimens from              although unsaturated Opalinus Clay tends to behave more
+the desiccators. Load was applied according to the ISRM              rock-like when considering the UCS, this finding shows
+suggested methods such that failure occurred within                  again similarities to soil/clays, at least in the low suction
+5–10 min for the UCS specimens and within 1–3 min for                regime. Despite this, this study generally suggests that in
+the BTS specimens (ISRM 1978, 1979). The study revealed              the context of an underground excavation, changes in
+that total suction has a major influence on both the strength        brittle failure characteristics, stiffness and strength have to
+and stiffness of Opalinus Clay (Fig. 5). From 0 to 57 MPa            be expected when the rock is exposed to a tunnel envi-
+total suction, UCS, CI, BTS and E increases almost lin-              ronment characterized by a low RH.
+early. For suction [57 MPa, both the strength and E re-
+main constant except for the BTS parallel to bedding,                3.3 Study on consolidated undrained (CU)
+which tends to drop to smaller numbers. E increases by a                 and consolidated drained (CD) tests
+factor of 3–4 between a total suction of 13 and 57 MPa
+(Fig. 4a), CI by a factor of 4 (Fig. 5b), UCS for tests              As a consequence of the uncertainties associated with UU
+loaded parallel to the bedding orientation by a factor of 1.5        tests and the major influence of total suction on the strength
+156                                                                                                                                                                                                 F. Amann et al.
+
+Fig. 5 Influence of total suction           a                                                                                                 b
+on a the Young’s modulus (E),                   50                                                                 0.40                                 25
+
+
+                                                          air-entry value                                                                                         air-entry value
+b the unconfined compressive
+strength (UCS) and the onset of                                                                                    0.35
+dilation (CI), c the Brazilian                  40                                                                                                      20
+                                                                                                                   0.30
+tensile strength (BTS) normal
+
+
+
+                                                                                                                                      UCS or CI (MPa)
+and parallel to bedding, and                    30                                                                 0.25                                 15
+
+                                                                                                                          ν (MPa)
+d the P-wave velocity normal
+                                     E (GPa)
+(vp,n) and parallel (vp,p) to                                                                                      0.20
+bedding. adapted from Wild                      20                                                                                                      10
+                                                                                                                   0.15
+et al. (2015c), 433–436,
+copyright Springer, Wien 2014,                                                                                     0.10
+with permission of Springer                     10                                                                                                      5
+                                                                                                          E        0.05                                                                                    UCS
+                                                                                                          ν                                                                                                CI
+                                                 0                                                                 0.00                                 0
+                                                      0                     50   100    150        200          250                                          0                      50   100     150     200          250
+                                                                                 suction (MPa)                                                                                           suction (MPa)
+
+                                         c 4.0                                                                                           d 4.0
+
+
+                                                          air-entry value                                                                                        air-entry value
+                                                3.5
+
+                                                3.0                                                                                                3.0
+
+                                                2.5
+
+                                    BTS (MPa)                                                                                       vp (m/s)
+                                                2.0                                                                                                2.0
+
+                                                1.5
+
+                                                1.0                                                                                                1.0
+
+                                                                                               BTS (normal)                                                                                                    vp,p
+                                                0.5
+                                                                                               BTS (parallel)                                                                                                  vp,n
+                                                0.0                                                                                                0.0
+                                                      0                     50   100     150        200         250                                          0                      50   100     150     200          250
+                                                                                 suction (MPa)                                                                                           suction (MPa)
+
+
+and stiffness of Opalinus Clay, we performed a series of                                              Generally, a strong hydro-mechanically coupled beha-
+CU and CD tests. The specimens were re-saturated in a                                              viour was observed during the CU tests. In the elastic
+long-lasting (i.e. up to several weeks) procedure that                                             range, the pore-pressure build-up is controlled by Skemp-
+involved a flushing and a backpressure phase. Afterwards,                                          ton’s pore-pressure parameters A and B (Skempton 1954).
+the specimens were consolidated to different effective                                             Wild et al. (2015a) found that B, the ratio between the
+confinements relevant for tunnel excavations at the Mont                                           pore-pressure change and the increase in confining stress,
+Terri Rock Laboratory (i.e. 0.5, 0.75, 1.0, 2.0, and                                               ranges between 0.67 and 0.97 and decreases with increas-
+4.0 MPa) and sheared by applying a standard triaxial stress                                        ing effective confinement (Fig. 6). The decrease in B is
+path. Great attempt was taken to ensure full saturation and                                        consistent with the general increase in Young’s modulus
+complete consolidation. An axial strain rate that was slow                                         and therefore related to a decrease in compressibility of the
+enough to either allow a reliable measurement of the pore-                                         rock.
+pressure response during undrained shearing or to avoid                                               Figure 7 shows typical effective stress paths from a CU
+pore-pressure changes during drained loading was chosen.                                           test on a P- and a S-specimen (consolidated at 2 MPa
+For this study we utilized both P-specimens (load is applied                                       effective stress). Also plotted is the theoretical elastic
+parallel to bedding) and S-specimens (load is applied                                              effective stress path for an isotropic specimen loaded under
+normal to bedding).                                                                                the same conditions. A linear pore-pressure build-up is
+   As for the UU tests, the test results of the CU and CD                                          measured for all specimens up to about 0.2–4.0 MPa dif-
+tests showed similarities with both soils and rocks such as                                        ferential stress (dependent on the confinement). A differ-
+for example the dependency of the Young’s modulus on                                               ence in the behaviour of P- and S-specimens can be
+the confining stress, a suppressed dilatancy with increasing                                       identified (Wild et al. 2015a). At low differential stress, the
+confinement, and a non-linearity of the stress–strain                                              stress path of the P-specimen lies on the right hand side of
+response before peak strength. The data set revealed a                                             the theoretical stress path of an isotropic poroelastic
+relatively low cohesion in the range of 1 MPa.                                                     material, which indicates a lower pore-pressure build-up
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                                                                  157
+
+
+                1.0                                                                                     2.4
+                                                                                                                    P-specimens
+                                                                                                        2.2         S-specimens
+                0.8                                                                                     2.0
+
+                                                                                                        1.8
+                0.6
+          B                                                                                    up /u0   1.6
+
+                0.4                                                                                     1.4
+
+                                                                                                        1.2
+                0.2
+                                                               P-specimens                              1.0
+                                                               S-specimens
+                                                                                                        0.8
+                0.0                                                                                           1.0   2.0   3.0       4.0      5.0   6.0   7.0
+                   0.0             0.2     0.4           0.6        0.8         1.0                                               σ3 (MPa)
+                                             σ3’ (MPa)
+                                                                                      Fig. 8 Pore-pressure at peak (up) compared to the initial pore-
+Fig. 6 Relationship between B value and effective confinement (r30 ).                 pressure (u0) vs. total confinement (r3) for P- and S-specimens.
+Adapted from Wild et al. (2015a), San Francisco, CA, USA, 28 June                     Adapted from Wild et al. (2015a), San Francisco, CA, USA, 28 June
+to 1 July 2015, copyright 2015 ARMA, adapted with permission of                       to 1 July 2015, copyright 2015 ARMA, adapted with permission of
+American Rock Mechanics Association                                                   American Rock Mechanics Association
+
+                    5.0
+                               P-specimen (ETH19)                                     differential stress (Wild et al. 2015a). The confinement not
+                               S-specimen (ETH09)
+                    4.0        isotropic elastic                                      only influences the point where dilation starts but also the
+                               stress path                                            amount of pore-pressure that is built-up until peak strength
+                                                                                      is reached. Whereas specimens tested at low confinement
+                    3.0
+
+          q (MPa)
+                                                                                      reach the peak pore-pressure before the peak strength,
+                                                                                      specimens tested at higher confining stresses show a pore-
+                    2.0
+                                                                                      pressure increase until peak strength is reached and then
+                                                                                      drop as a consequence of the dilatancy that accompanies
+                    1.0                                                               failure. Thus, the pore-pressure measured at peak (up) for
+                                                                                      specimens tested at low confining stresses is comparable to
+                    0.0                                                               the initial pore-pressure (u0) (Fig. 8). With increasing
+                       1.5   2.0     2.5   3.0     3.5    4.0     4.5     5.0   5.5   confinement, the ratio between pore-pressure at peak and
+                                                 p’ (MPa)                             initial pore-pressure increases.
+                                                                                         Due to the low hydraulic conductivity of Opalinus Clay
+Fig. 7 Effective stress paths for a P- and a S-specimen using a
+standard triaxial stress path with 2.0 MPa initial effective confine-                 and the relatively high advance rate (2–20 m/day), the
+ment. The black line represents the theoretical elastic effective stress              excavation process can be considered undrained. As a
+path for an isotropic specimen loaded under the same conditions                       consequence, the strong hydro-mechanically coupled
+                                                                                      behaviour of Opalinus Clay can lead to significant pore-
+compared to an isotropic specimen. For a S-specimen, the                              pressure changes around an underground excavation in the
+stress path lies on the left hand side of the theoretical stress                      short-term, which influence the stability and behaviour of
+path, i.e. more pore-pressure is built-up. This observation is                        the rock mass. The excess pore-pressure that develops
+consistent with findings of Bellwald (1990), Aristorenas                              during excavation will dissipate in the longer term and may
+(1992), and Islam and Skalle (2013). The difference in                                cause long-lasting deformations (e.g. swelling or consoli-
+excess pore-pressure and behaviour can be related to the                              dation) and progressive damage in the EDZ.
+transverse isotropy of the clay shale (Aristorenas 1992;
+Bobet et al. 1999; Einstein 2000; Islam and Skalle 2013).
+S-specimens exhibit a higher compliance leading to a                                  4 In-situ experiments
+higher pore-pressure build-up compared to an isotropic
+material. P-specimens are stiffer than an isotropic material                          In the period 2003–2015 we performed three in situ
+and therefore less excess pore-pressure is built-up.                                  experiments (i.e., EZ-B, RC and HM-B) to examine the
+   At differential stresses of about 0.2–4.0 MPa, the                                 hydro-mechanical behaviour and EDZ evolution of Opali-
+specimens start to dilate and the pore-pressure increase                              nus Clay on the intact rock and the rock mass scale. On the
+becomes smaller with each incremental increase in                                     intact rock scale we investigated the time-dependent
+158                                                                                                                   F. Amann et al.
+
+
+evolution of a borehole damaged zone that develops around             cracks and horsetail splays) and secondary shear fractures
+a borehole drilled parallel to bedding. On the rock mass              emanated and propagated back toward the pilot borehole
+scale (i.e. tunnel scale), we focused on the influence of             (Fig. 9). The detailed analysis of the structures revealed
+heterogeneities such as tectonic fault planes and fault zones         that the short-term BDZ is (1) dominated by shearing of
+on stress redistribution and on the kinematic freedom for             bedding planes, which leads to the formation of branching
+shear dislocations along tectonic fault planes.                       fractures, is (2) localized, and is (3) only about half a pilot
+                                                                      borehole radius deep.
+4.1 Time-dependent evolution of the damage zone                          Two further bedding parallel boreholes (BHG-B11 and
+    around a borehole                                                 BSE-3; for the location see Fig. 5, Bossart et al. 2017) were
+                                                                      used to study both the evolution of BDZ structures and the
+In an attempt to better understand the evolution of the               extent of the BDZ with time. Borehole BHG-B11 was left
+damage zone around underground excavations in intact                  unsupported for a total duration of 6 days before resin was
+Opalinus Clay, we performed an overcoring experiment in               injected and the borehole was overcored (Jaeggi et al.
+2013. A pilot borehole (BHM-3) was drilled parallel to the            2010), whereas borehole BSE-3 was left unsupported for
+bedding plane orientation in Gallery 08 (Kupferschmied                30 days (Badertscher et al. 2008). For the complete history
+et al. 2015). The location of the borehole is shown in Fig. 6         of both boreholes the reader is referred to Kupferschmied
+in Bossart et al. (2017). After core extraction, the borehole         et al. (2015). A comparison between the resin-impregnated
+was left unsupported for 12 h and was then impregnated                BDZ structures of the different overcored boreholes
+with a fluorescent resin (injected with a low injection               delivered important insights into the development of the
+pressure). After resin curing, the pilot borehole was over-           BDZ in relatively short durations. Within 6 days (i.e.
+cored, using a 280 mm diameter bore core and the resin-               observed in BHG-B11), the BDZ developed in both lateral
+impregnated section of about 1 m length was extracted.                and radial extent perpendicular to the bedding plane ori-
+The core was cut into 30 mm thick slices that were then               entation and formed a chimney-like fracture network that
+analysed macroscopically under UV-light and microscop-                extended at least one borehole diameter into the sur-
+ically using thin sections from selected locations under a            rounding rock (Fig. 10a). For BSE-3, that was left unsup-
+UV-light embedded microscope. The results of these                    ported for 30 days, the radial extension of the chimney like
+analyses were used to gain detailed insight into the failure          fracture network was larger than two borehole diameters
+mechanism that control the short term around a circular               (Fig. 10b). For further detailed information about the
+opening in Opalinus Clay.                                             structures within the fracture network, the reader is referred
+   The BDZ was dominated by tangential shear fractures                to the description given in Kupferschmied et al. (2015).
+on opposing sides that intersect the pilot borehole (Fig. 9).            The comparison between the initial and the longer-
+In most of the slices, these initial bedding parallel fractures       term BDZ suggests a transition from a locally damaged
+developed in only one direction (Fig. 9a). Occasionally,              state characterized by shear fractures, horsetail splays,
+tangential fractures extending in the opposing directions             wing cracks and second order shears to a deep and
+were observed (Fig. 9b).                                              delineated damage zone composed of buckled slabs in
+   From the bedding parallel shear fractures tangential to            relatively short time and without further mechanical
+the borehole wall, extensional type fractures (such as wing           perturbation.
+
+
+Fig. 9 Sketches obtained from
+the macroscopic analysis of the     a                            overcoring borehole         b
+typical BDZ-structures around a                                                                                           overcoring
+circular opening drilled parallel                                                                                          borehole
+                                                 resin
+to the bedding plane orientation
+                                                                                                         resin
+(S0): a dominating tangential
+fractures developed in only one
+direction (more often observed),
+b tangential fractures extending                                                                            pilot
+in opposing directions                          pilot borehole                                             borehole
+(occasionally observed).
+Adapted from Kupferschmied
+et al. (2015), 108, Copyright
+2015 Elsevier Ltd., with
+permission from Elsevier
+                                     1 cm                               S0                 1 cm                              S0
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                                159
+
+Fig. 10 BDZ in boreholes that
+were left unsupported for
+a 6 days and b 3 weeks.
+Adapted from Kupferschmied
+et al. (2015), 111, Copyright
+2015 Elsevier Ltd., with
+permission from Elsevier
+
+
+
+
+4.2 EDZ evolution around Gallery 04 and the EZ-B                4.2.1 Macroscopic EDZ fracturing around Gallery 04
+    niche
+                                                                Detailed fracture mapping in the EZ-B niche entrance pro-
+All the above studies deal with behavioural aspects of the      vided evidence that tectonic fault planes influenced the
+intact Opalinus Clay. This is, however, not the case for        development of excavation-induced fracturing around Gal-
+larger underground structures like galleries at the Mont        lery 04 (Yong et al. 2010). In the west wall, the bedding-
+Terri Rock Laboratory where a different behaviour due to        parallel fault planes were mobilized without interference from
+the presence of geological heterogeneities and pre-existing     the sub-horizontal fault planes while mobilization of both sets
+tectonic features has to be anticipated. Therefore, we per-     were required to induce fracture growth parallel with the
+formed two mine-by experiments aiming at gaining a better       gallery wall in the east wall (Fig. 12). Numerical 2D and 3D
+understanding of such structures on the rock mass beha-         elastic and elasto-plastic models demonstrated that if the
+viour and the development of an EDZ at multiple scales          tectonic structures (fault planes) are not kinematically
+(Yong 2007; Thoeny 2014).                                       restrained, their mobilization can play a key role in the
+   A first in situ experiment, called the EZ-B experiment,      development of the induced fracture network. In this case, the
+involved the excavation of a short tunnel (EZ-B Niche)          influence of such rock mass heterogeneity dominated over the
+with a diameter of 3.8 m and in a direction normal to the       rock matrix anisotropy of the persistently bedded Opalinus
+strike of bedding but oblique to the Gallery 04 axis            Clay that is prevalent at the Mont Terri Rock Laboratory.
+(Fig. 5 in Bossart et al. 2017). The EZ-B Niche is located      These results are consistent with observations made by Martin
+in the shaly facies, which is locally oriented on average at    et al. (2004), Bossart et al. (2004) and Marschall et al. (2006).
+147/45. Prior to excavation, seven boreholes (BEZ-B1 to
+B7) were drilled for geological and geophysical charac-         4.2.2 Macroscopic and microscopic EDZ fracturing
+terization (BEZ-B1 to B3) as well as pore-pressure                    around the EZ-B niche
+monitoring (BEZ-B4 to B7). The 1.5-m long entrance was
+excavated with a road header while the remaining 5 m of         Damage around the completed EZ-B niche was investigated
+the niche was completed with a pneumatic hammer in six          by fracture mapping on drillcores, televiewer images and
+steps over a period of 12 days (Fig. 11). Additional 12         ultrasonic logging in radial boreholes. These investigations
+boreholes (BEZ-B8 to B19) were drilled from the niche in        revealed a thin inner zone of about 20 cm characterized by
+two vertical and one horizontal planes. An extensive            macroscopic fracturing and a lack of borehole instabilities
+program of geological, geophysical and deformation              (Fig. 13). This zone also coincided with the lowest P-wave
+measurements was made prior to, during and after the            amplitudes and velocities. An outer zone of increasing P-wave
+niche excavation (Yong 2007). These consisted of: (1)           velocities and amplitudes was seen in the surrounding
+geological mapping and 3D panoramic laser scanning, (2)         50–70 cm. The thin macro-fractured zone was to be expected,
+core logging as well as optical televiewer and single-hole      according to a 3D numerical stress analysis that showed the
+ultrasonic logging of boreholes, and (3) pore-pressure          rock mass most susceptible to spalling is found in the side-
+monitoring.                                                     walls and upper western haunch, where the modelled stress
+160                                                                                                             F. Amann et al.
+
+Fig. 11 Isometric view of the
+various EZ-B niche faces,
+boreholes, and roof anchors.
+Reprinted from Yong et al.
+(2013), 302, Copyright 2013
+Elsevier Ltd., with permission
+from Elsevier
+
+
+
+
+levels only just reached a minimum to maximum principal              experiment), where Gallery 08 intersects the Main Fault
+stress ratio (spalling limit) smaller than 0.05 in the inner zone.   of the Mont Terri Rock Laboratory (Fig. 5 in Bossart
+   Rock mass damage ahead of the progressively-excavated             et al. 2017) and thus the rock mass exhibited a wide
+EZ-B niche was characterized through repeat single-hole              range of structural conditions ranging from almost
+ultrasonic velocity logging and optical televiewer imaging.          massive to heavily faulted rock (Thoeny 2014). The
+Furthermore, three-dimensional elastic stress analyses were          32.5 m long Gallery section was excavated full-face
+conducted (Yong et al. 2013). By integrating field and               normal to the bedding plane strike in 23 steps using a
+numerical data, geological structures (i.e. bedding and bed-         road header. The bedding planes in the experimental
+ding-parallel tectonic fault planes) were shown to be most           section dip approximately 45 in the direction of the
+influential near the entrance but diminished in role as the          advancing tunnel face. The fracture network within the
+niche deepened (Fig. 14) and the structures became more              experimental section was characterized prior to and after
+kinematically restrained. Damage ahead of the niche face             excavation by integrating structural data from geological
+accumulated progressively as the formerly compressed                 tunnel mapping and from 2 pre- (BRC-1 and BRC-2)
+volume of rock unloaded during the excavation. Low mini-             and 2 post-excavation boreholes (BRC-3 and BRC-4)
+mum to maximum principal stress ratios coincided with the            that were logged using an optical televiewer and geo-
+lowest seismic wave velocities and amplitudes. This was              logical core logging (the locations of the boreholes are
+corroborated in recent laboratory studies by Amann et al.            given in Fig. 5 in Bossart et al. 2017). We used com-
+(2011), who defined the brittle failure process of Opalinus          plementary geophysical methods including single-hole
+Clay under undrained and low confinement conditions and              interval velocity measurements and seismic refraction
+demonstrated that the volumetric behaviour in the pre-rup-           tomography to quantify spatial variations in seismic
+ture stage is dependent on confining stress.                         velocities, rock mass properties, and the extent of the
+                                                                     EDZ. Both displacements and deformations in the sur-
+4.3 EDZ evolution around Gallery 08                                  rounding rock mass were monitored during and after
+                                                                     completion of the excavation using borehole inclinome-
+Within the framework of the excavation of Gallery 08 at              ters, extensometers, deflectometers, high-resolution
+the Mont Terri Rock Laboratory, we performed a second                geodetic displacement monitoring, and laser scanning of
+mine-by experiment between GM 94.5 and GM 127 (RC                    excavation surfaces (Thoeny 2014).
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                                      161
+
+
+
+
+Fig. 12 Induced fracturing mapped and photographed in the east       Frank Lemy). Tectonic fault planes are labelled, ‘‘F#’’. Reprinted
+(top) and west (bottom) walls of the EZ-B Niche entrance, parallel   from Yong et al. (2010), 897, Copyright 2010 Elsevier Ltd., with
+view with Gallery04 (maps by Christophe Nussbaum and photos by       permission from Elsevier
+162                                                                                                                                           F. Amann et al.
+
+
+                                                                                            2–3 m. The EDZ around the RC section consists of reac-
+                                        0.5-0.7 m
+                                                                                            tivated fault planes and seven different types of induced
+                    5- 0. 7
+                                                                         6
+                                                                          m                 fractures (IF) (Fig. 16):
+                 0.                                                  5-
+                                                                         0.
+                         m                                          0.
+                                         0m
+                                                                                            •   (IF 1) extensional fractures parallel to the sidewalls
+                                0.1 m                       0.3 m                           •   (IF 2) extensional fractures oblique to the tunnel axis at
+                                                                                                the sidewalls
+         0.6-0.7 m                                                            0.6-0.7 m
+         West
+                              0.15 m                            0.25 m
+                                                                                     East
+                                                                                            •   (IF 3) sub-horizontal extensional fractures parallel to
+                                                                                                the tunnel invert
+                                                                                            •   (IF 4) extensional and/or shear fractures along bedding
+                                                                                                planes at the tunnel invert
+                                                                                            •   (IF 5) extensional fractures perpendicular to sheared
+
+                                                    0.6-0.7 m
+                                                                                                bedding or reactivated fault planes at the tunnel invert
+                                                                                            •   (IF 6) shear fractures along bedding planes at the tunnel face
+                                                                                            •   (IF 7) extensional fractures sub-perpendicular to
+Fig. 13 EDZ around the EZ-B niche, as determined from borehole
+                                                                                                sheared bedding planes or reactivated fault planes at
+data integration (blue). Induced macro-fracturing is shown in red.
+(From Yong 2007)                                                                                the tunnel face.
+                                                                                               The failure mechanism, orientation, and frequency of
+                                                                                            these induced fractures are strongly influenced by the
+   The integration of various geological, geophysical and                                   occurrence and characteristics of multi-scale tectonic fault
+deformation monitoring methods provided a unique                                            planes. Extensional fracturing (IF1–IF2) dominated at the
+opportunity to better understand (1) structural and kine-                                   sidewalls where fault plane reactivation and bedding shear
+matic relationships between natural and excavation                                          are constrained due to high normal stresses. Depending on
+induced fractures, (2) the spatial and temporal evolution of                                the fault plane frequency, different IF were observed at the
+the excavation-induced displacement field and (3) the                                       tunnel invert or tunnel face where fault plane reactivation
+stress redistribution around an excavation in an anisotropic                                and bedding plane shear are kinematically free. In sections
+and heterogeneous clay shale formation.                                                     where the rock mass is sparsely faulted (0–1 fault/m2),
+                                                                                            extensional brittle failure and shearing along bedding
+                                                                                            planes (IF3-IF4 at invert, IF6 at tunnel face) were
+4.3.1 Structural and kinematic relationship                                                 observed. In sections where the rock mass shows a higher
+      between natural and excavation-induced fractures                                      fault plane frequency (1–3 faults/m2), the EDZ is mainly
+                                                                                            composed of IF5 (invert) or IF7 (face) fractures. In sections
+A combination of geological and geophysical characteri-                                     with even higher fault plane density ([4 faults/m2), reac-
+zation techniques (i.e. geological mapping of the tunnel/                                   tivation of densely spaced fault planes becomes more
+niche surfaces, core logging, and seismic refraction                                        evident and macroscopic EDZ fractures described above
+tomography) on the tunnel and borehole scale was used to                                    diminish, which indicates a transition from extensional
+analyse the structural and kinematic influence of natural                                   macroscopic failure to shearing.
+fractures on the characteristics and the spatial variation of
+excavation-induced damage (Thoeny 2014). The study                                          4.3.2 Spatial and temporal evolution of the excavation-
+revealed that the spatial variation in fault plane frequency                                      induced displacement field
+along the tunnel axis has a strong influence on the rock
+mass strength and the deformability. This again affects the                                 The influence of pre-existing fault planes and fault zones
+location and the radial extent of the induced damage at                                     on excavation induced displacements and deformation in
+both borehole and tunnel scale. Based on the observations,                                  the short and longer term was analysed on the fracture and
+a conceptual model of the EDZ around the mine-by section                                    tunnel scale (Thoeny 2014). On the borehole scale, vertical,
+was established (Fig. 15). A strongly damaged inner zone                                    radial, and longitudinal displacements were monitored
+with a radial extent of 0.5–1.5 m was observed which is                                     using a TRIVEC, a deflectometer, and two extensometers.
+unaffected by variations in fault plane density along the                                   The data was recorded during the excavation phase as well
+tunnel axis. Furthermore, a less damaged outer zone which                                   as in the longer term (up to 2.5 years after installation).
+changed in radial extent depending on the fault plane                                       Additionally, laser scanning monitoring of the tunnel sur-
+density was identified. Within the main fault, the radial                                   face was used. The analysis of the data revealed that the
+extent of this outer zone reaches up to a distance of 4 m,                                  overall rock mass response of faulted Opalinus Clay is
+whereas between fault zones the outer zone extends to                                       mainly controlled by the rock anisotropy. Heaving
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                            163
+
+Fig. 14 BEZ-B3 borehole data
+with asterisks indicating
+drillcore structures mapped
+closest to projected intersections
+of bedding-parallel shears,
+represented by arrows.
+Reprinted from Yong et al.
+(2013), 306, Copyright 2013
+Elsevier Ltd., with permission
+from Elsevier
+
+
+
+
+observed at the lower sidewalls and below the tunnel invert     Continuous borehole monitoring by deflectometer and
+as well as settlements at the tunnel crown and upper            extensometers showed that longer-term rock mass defor-
+sidewalls suggest that the preferred displacement orienta-      mations parallel to the rock anisotropy are substantially
+tion is sub-perpendicular to the bedding. Furthermore, the      smaller than deformations occurring during the excavation
+displacement field and magnitude at the tunnel face, crown      phase. This is in contrast to the measurements of the
+and invert is influenced by individual pre-existing fault       inclinometer which indicate significantly larger displace-
+planes. At the sidewalls, the orientation of the fault planes   ments in the longer term compared to the short term,
+with respect to the tunnel is kinematically rather unfa-        especially in the vertical direction, oblique to the bedding.
+vourable for shearing along them and the response is            Parallel to bedding, the short-term rock mass deformations
+dominated by extensional fracturing through the intact rock     are controlled by differential deformations along fault
+matrix. This results in the formation of slab-like structures   planes. The longer-term response, on the other hand, is not
+behind the tunnel face associated with large displacements.     significantly affected by these large-scale heterogeneities
+164                                                                                                                                     F. Amann et al.
+
+Fig. 15 Conceptual model of
+the excavation damaged zone                                                       σ1
+based on borehole information,
+geological mapping, seismic
+tomography, borehole and                                           NE                                                              SW
+drillcore logging and
+deformation measurements in                                               ?                                                    ?
+BRC-2 (the location of the                                                                      ?
+borehole is given in Fig. 5 of
+Bossart et al. 2017, this volume)
+(Figure modified from Thoeny
+2014)                                     Borehole deformation                                                                 Geological mapping
+                                          monitoring                                                   50
+                                                                                                           m                   of side niches
+                                                                                                      2.
+                                                                                                                Line 1
+                                                                                                                             0.3-0.7 m 2.0-2.5 m
+                                                      > 4 m 2.5-3.0 m
+                                                                                                                             0.4-0.6 m 2.0-2.5 m
+                                                                                       Line 5                   Line 3
+                                                                                                                     -1
+                                                              2.5-3.0 m   0.3-0.7 m             fracture frequency (m )
+                                                                                                       0      10     20  0.3-0.7 m 2.5-3.0 m
+                                         Outer zone:                                                                          Seismic refraction
+                                         within fault zones                                                          BRC-1
+                                                                                                                              tomography
+                                                                                                                     BRC-3
+
+                                              Outer zone:
+                                                                              ?                                      BRC-4
+                                                                                                                                    ?
+                                              in between fault zones                                       Borehole and drillcore
+                                                                                                           logging
+                                                              Inner zone:
+                                                              within and in between fault zones
+
+
+but rather related (especially in the tunnel invert) to the            caused by spatial variations in fault plane frequency; the
+extent of the initial (short-term) EDZ.                                contrasts in deformability were derived from single-hole
+                                                                       interval velocity measurements which suggest various
+4.3.3 Stress redistribution                                            zones of similar P-wave velocities; it was assumed that the
+                                                                       computed contrasts in the dynamic Young’s modulus are
+Site-specific three-dimensional numerical models were                  the same for the static Young’s modulus). The magnitude
+used to investigate the influence of rock mass characteris-            and extent of these stress concentrations are proportionally
+tics (i.e. large-scale deformability and strength hetero-              related to the stiffness contrast between fault zones and the
+geneities related to multi-scale fault zones) on the                   intact rock mass. The study further showed that isotropic
+excavation-induced stress redistribution during tunnel                 heterogeneous models with an average Young’s modulus
+excavation and the associated short-term rock mass                     used for the intact rock mass can sufficiently represent the
+response (displacements) in the tunnel near-field (Thoeny              changes in stress magnitudes in a transversally isotropic
+2014). Both the elastic and plastic response around the                rock mass, at least for the orientation of the tunnel is
+mine-by section was simulated using the commercial three-              respect to the bedding plane orientation encountered in the
+dimensional continuum code FLAC3D (Itasca 2009). The                   RC experiment. Furthermore, the constitutive model (i.e.
+total stress approach was used and the short-term behaviour            isotropic/transversely isotropic) only influences the orien-
+during excavation was assumed to be undrained. First, an               tation of the displacement vector but not its magnitude.
+elastic analysis with an isotropic and transversal isotropic           Also the stress path is unaffected. Stress path analyses
+model was conducted to identify the influence of the rock              allowed to identify kinematic failure modes occurring
+anisotropy (related to the bedding planes) and the rock                during tunnel excavation. Generally, shearing along fault
+mass heterogeneity (related to fault zones) on the stress and          and bedding planes dominate at the face, invert and crown.
+displacements. Afterwards, an elasto-plastic model was                 This findings are consistent with Martin et al. (2004) and
+used to quantify the effect of the stress redistribution on the        Nussbaum et al. (2011). However, differences in initiation
+displacements and the extent of the EDZ. Further details to            of shearing and the associated type of faulting were
+the models are given in Thoeny (2014).                                 observed. At the face, the reactivation of fault and bedding
+   The elastic models revealed that substantial stress con-            planes is initiated ahead of the face (2–3 m for faults,
+centration in the rock mass adjacent to fault zones can be             0.5–1 m for bedding planes) and is consistently associated
+related to large-scale heterogeneities in deformability (i.e.          with normal faulting. At the invert/crown, the initiation of
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                                                                165
+
+
+                                    Niche MB
+                                right-hand wall                              (IF1) extensional fractures parallel to the sidewalls
+                       0      1         2       3                   4        (IF2) extensional fractures oblique to the tunnel axis at the sidewalls
+                                                                             (IF3) sub-horizontal extensional fractures parallel to the tunnel invert
+                                                                             (IF4) extensional and/or shear fractures along beddin planes at the tunnel invert
+                                                                             (IF5) extensional fractures perpendicular to sheared bedding or reactivated fault
+                           238/7                                                  planes (RF) at the tunnel invert
+          Gallery 08         5
+                                                                             (IF6) shear fractures along bedding planes at the tunnel face
+                            EDZ IF1
+                                                                             (IF7) extensional fractures sub-perpendicular to sheared bedding planes or
+                                                302/72
+                           5-10 cm
+                                                                                  reactivated tectonic faults (RF) at the tunnel face
+
+                                   180
+                                        /58   110/42
+                                                                        1m
+
+
+                                                               1m
+ Gallery Meter (GM)
+94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+
+
+
+
+                                                                                                                                                                 F
+                                                                                                 A
+                                                                                                                                                             E
+                                        D         B      C                                                         G
+
+             A                      B                           C                         D                        E                        F                G
+                                                                                                           IF6                       RF                 RF
+                                                                               RF
+    IF2                                                                                 IF5
+                           IF3
+                                                         IF4                                                 IF7                      IF7
+
+Fig. 16 Conceptual model that illustrates the structural and kinematic relationship between pre-existing tectonic fault planes and excavation
+induced fractures around the RC-mine-by section. (Figure modified from Thoeny 2014)
+
+fault and bedding plane shear takes place behind the face                               5 Discussion
+and is associated with reverse faulting. Furthermore,
+extensional fracturing was identified as the primary failure                            5.1 The importance of the effective stress state
+mechanism at the sidewalls. Extensional fractures may also                                  on the stability of Opalinus Clay excavations
+form sub-parallel to the tunnel face in the vicinity of fault
+zones where stresses are significantly augmented. All these                             The relatively low cohesion tested in CU and CD test on
+findings are consistent with field observations.                                        back-saturated Opalinus Clay specimens would suggest
+   The elasto-plastic models showed that variations in rock                             that tunnel deformations at the Mont Terri Rock Labora-
+mass strength and deformability along the tunnel axis have                              tory may be large. For the stress state at the Mont Terri
+a significant influence on the extent of the EDZ. The                                   Rock Laboratory, significant squeezing of the rock mass
+modelled radial extent and its variation are consistent with                            into the tunnel excavation could be anticipated. However,
+the conceptual model of the EDZ described above                                         excavation sidewall and faces are, except for instabilities
+(Fig. 15). Furthermore, the spatial and temporal evolution                              which are associated with pre-existing tectonic structures
+of the displacement field as well as the measurable dis-                                or large side-wall slabs, stable or show only small to
+placement magnitudes of the models are generally in good                                moderate short-term deformations [i.e. 1–2 cm in case of
+agreement with the measured values. The magnitudes are                                  excavations normal to the bedding orientation (Thoeny
+only not captured in zones where structural controlled                                  2014) and 2–4 cm parallel to the bedding orientation
+instabilities (slab-like features) or major side-wall slabs                             (Martin et al. 2011)]. The short-term stability is likely
+associated with dilatant behaviour develop. Nevertheless,                               associated with the effective stress state that evolves as a
+these zones correspond in extent and location to the max-                               consequence of tunnelling stress path, which may cause a
+imum modelled plastic shear strain.                                                     short-term apparent cohesive strength component. This is
+166                                                                                                                    F. Amann et al.
+
+
+illustrated in the following, based on experience gained               assumed different ratios between E1 and E3 (i.e. the
+from the above experimental studies, theoretical consider-             Young’s moduli normal and perpendicular to the bedding
+ations and conceptual numerical modelling.                             plane orientation) ranging between 0.5 and 3. Note that this
+                                                                       model does not intent to capture the complexity associated
+5.1.1 Apparent cohesion in a bore core                                 with drilling and core extraction as for example described
+                                                                       in detail in Pei (2003). The results are illustrated in Fig. 18
+The effective stress state in a bore core extracted at the             which shows the modelled pore-pressure in a sample that
+Mont Terri Rock Laboratory can be illustrated with a                   developed upon unloading for the assumption that the
+simple model of a bore core that is unloaded from its in situ          plane of anisotropy is rotated about axis 2 (Fig. 18a), axis 1
+state of stress. At the Mont Terri Rock Laboratory, the                (Fig. 18b) and an axis that is 45 inclined from axis 1
+mean total stress rm is 4.5 MPa according to Corkum and                (Fig. 18c). Fluid pressure between -0.5 and -3.5 MPa can
+Martin (2007), the in situ pore-pressure P is approximately            be anticipated and suggest that the short-term stability of
+2.0 MPa and thus the effective mean stress rm0 is 2.5 MPa.             bore cores is primarily due to negative fluid pressures that
+Assuming isotropic elastic conditions, the pore-pressure               evolve during bore core unloading and an associated
+drop can theoretically be estimated using the following                apparent cohesive strength component.
+expression, DP = BDrm, where B is Skempton’s pore-
+pressure coefficient (Skempton 1954). Assuming B is at                 5.1.2 Apparent cohesion around a borehole
+unity, the pore-pressure in the bore core is -2.5 MPa after
+core extraction although the effective stress remains con-             Our overcoring experiment showed that the short-term
+stant. Thus, a substantial apparent cohesive strength com-             damage zone that evolves around a borehole drilled parallel
+ponent is to be anticipated which stabilizes the core until            to the bedding directions is very localized and dominated
+pore-pressures that develop in the short term dissipate. For           by shearing along bedding planes that are tangential to the
+the anisotropic stress state at the Mont Terri Rock Labo-              borehole wall and branching fractures. The extent of the
+ratory and for the assumption of a transversal isotropic               initial BDZ (i.e. after 12 h) was in the order of 0.25 times
+material behaviour, the effective stress in the bore core              the radius of the pilot borehole. After 6 days, the BDZ
+depends significantly on the drilling orientation with                 depth was about two diameters of the pilot borehole and
+respect to the principal stress components. We used a                  twofold wider than the initial BDZ. Within only 30 days,
+simplified numerical model to estimate the negative pore-              an unsupported borehole collapsed and the BDZ increased
+pressure in a bore core with different orientations of the             rapidly in extend and depth. Kupferschmied et al. (2015)
+plane of anisotropy in respect to the stress state at the Mont         concluded that the limited extent of the BDZ in the short
+Terri Rock Laboratory. The model consists of a single cell             term is associated with an effective stress state that favours
+in FLAC3D (Itasca 2009) which is unloaded to atmo-                     stability of the borehole and evolves as a consequence of
+spheric conditions from an in situ state of stress similar to          unloading and dilatant failure immediately during drilling
+the state of stress in the Mont Terri Rock Laboratory. The             (i.e. negative excess pore-pressures develop that increase
+model geometry is shown in Fig. 17.                                    the effective stress).
+   We used an elastic, transversal isotropic model that does               The rapid development of the BDZ within 30 days could
+not account for any plastic deformations. We analysed                  be related to different processes such as dissipation of
+various orientation of the plane of anisotropy and we                  excess pore-pressure, creep, and processes related to sea-
+                                                                       sonal variations in climatic conditions (RH or temperature).
+                         σ1 = 6.5 MPa
+                                                                       However, the observations revealed that the evolution from
+                                                                       an initial state to a longer-term state occurs relatively fast.
+                                                                       This suggests that the evolution of the BDZ is likely con-
+                                                                       trolled by pore-pressure dissipation, which destabilizes the
+                                                                       borehole, rather than by creep or climatic variations.
+                                              σ3 = 2.5 MPa             Destabilization is associated with a propagation of initial
+                  σ2 = 4.5 MPa
+                                                                       tangential shear fractures and the formation of further
+                                                                       bedding parallel shear fractures deeper in the rock mass.
+         1                                                             These bedding parallel shears form slabs that tend to
+              3                                                        buckle into the borehole until collapse occurs. The
+              2                                                        hypothesis that excess pore-pressure dissipation dominates
+                                                                       the long-term behaviour of underground excavations is in
+Fig. 17 Model geometry of the conceptual three-dimensional model
+conducted to estimate the negative pore-pressure in a bore core with   agreement with the conclusions from Martin et al. (2004),
+different orientations of the plane of anisotropy                      numerical findings performed by Amann et al. (2012b),
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                                                           167
+
+
+                     E1/E3                                              E1/E3                                                            E1/E3
+   a   0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5               b    0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5                             c    0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5
+    0.0                                                0.0                                                              0.0
+
+   -0.5                                               -0.5                                                             -0.5
+
+   -1.0                                               -1.0                                                             -1.0
+
+   -1.5                                               -1.5                                                             -1.5
+
+   -2.0                                               -2.0                                                             -2.0
+
+   -2.5                                               -2.5                                                             -2.5
+
+   -3.0                                               -3.0                                                             -3.0
+
+   -3.5                                               -3.5                                                             -3.5
+                                                                       0°             50°
+                                                                       10°            60°
+                                                                       20°            70°
+                                                                       30°            80°
+                                                                       40°            90°
+
+Fig. 18 Theoretical pore-pressure after relaxation of a bore core from       in the horizontal plane from axis 3 (Fig. 16), which is zero degrees in
+an in situ state of stress equivalent to the state of stress at the Mont     azimuth. Dip is measured positive down from the horizontal plane
+Terri Rock Laboratory. Dip direction is measured positive clockwise          (plane 2–3)
+
+
+
+experimental data reported by Neerdael et al. (1999), and                    the monitoring interval with the tunnel. The pore-pressure
+theoretical considerations reported by Anagnostou (2009).                    measurements we performed in the framework of the EZ-B
+While this conclusion seems plausible owing the mea-                         experiment (Fig. 19) showed a similar behaviour at sensor
+surements of the long-term excess pore-pressure dissipa-                     BEZ-B7, where the pore-pressure rose during excavation
+tion in the Mont Terri Rock Laboratory (Masset 2006), the                    and fell quickly in two steps to a pressure close to the
+rapid increase in damage of unsupported openings was                         atmospheric pressure as the face passed the monitoring
+unexpected and fairly new.                                                   location. In contrast, sensors BEZ-B4 and BEZ-B5 recor-
+                                                                             ded pore-pressures of 40–50 kPa below atmospheric pres-
+5.1.3 Apparent cohesion around tunnel excavations                            sure. These pore-pressure measurements demonstrated for
+                                                                             the first time that sub-atmospheric pore-pressure could
+Similar to a bore core and a borehole, also the rock mass in                 develop during the excavation of galleries in Opalinus
+the vicinity of an underground excavation experiences                        Clay, which may provide a significant apparent cohesion,
+unloading. Test galleries constructed in Opalinus Clay at                    at least in the short term.
+the Mont Terri Rock Laboratory have been used to char-
+acterize the hydro-mechanical coupled behaviour of                                                      800                                       6
+Opalinus Clay during tunnel excavation (Martin et al.                                                   700
+2004; Corkum and Martin 2007; Popp et al. 2008; Vietor                                                                                            5
+                                                                                                        600
+et al. 2010; Giger et al. 2015). The short-term pore-pressure
+
+
+                                                                                       pressure (kPa)
+                                                                                                                                                  4
+response monitored during the construction of these test                                                500
+
+galleries revealed a pore-pressure rise ahead of the tunnel                                             400                                       3
+face followed by subsequent reduction of pore-pressures                                                 300
+immediately around the tunnel or slightly ahead of the                                                                                            2
+                                                                                                        200
+tunnel face. With increasing distance from the tunnel, pore-
+                                                                                                                                                  1
+pressures appear unaffected by construction work in the                                                 100
+short term (Corkum and Martin 2007; Vietor et al. 2010;                                                  0                                        0
+Amann et al. 2011; Wild et al. 2015b; Giger et al. 2015).                                               03.03.05     08.03.05    13.03.05    18.03.05
+
+Close to the tunnel, the pore-pressure was substantially
+below the in situ pore-pressure. For the majority of pore-                                                         BEZ-B4       BEZ-B7
+                                                                                                                   BEZ-B5       atmosphere
+pressure measurements conducted during the excavation of                                                           BEZ-B6
+tunnels at the Mont Terri Rock Laboratory, the minimum
+measured pore-pressure was 100 kPa, suggesting that a                        Fig. 19 Pore-pressure response monitored around the EZB-niche
+conductive excavation damaged zone formed, connecting                        during niche excavation. Modified from (Yong 2007)
+168                                                                                                                            F. Amann et al.
+
+
+
+
+Fig. 20 a Excavation damaged zone and failure mechanism (none elastic behaviour, no failure; s-n shear now, s-p shear past, t-n tension now, t-
+p tension past). b Short-term pore-pressure response around the excavation
+
+   We used conceptual numerical models aiming at a better                the plane of anisotropy. In case of an elasto-plastic model,
+understanding of the pore-pressure response in the near-                 where an EDZ may develop ahead and around the
+field of tunnels excavated in a low permeable clay shale                 advancing tunnel face (Fig. 20a), negative pore-pressures
+(Wild et al. 2015b). For the numerical analysis we used                  are to be anticipated within the EDZ (Fig. 20b). These
+FLAC3D (Itasca 2009) and assumed an unsupported, cir-                    negative pore-pressures are primarily related to the dila-
+cular opening with a diameter of 4 m that is step-wise                   tancy that accompanies failure. The pore-pressure drop to
+excavated. We utilized an isotropic stress state and a stress            sub-zero pore-pressures around the excavation contributes
+state with K0 = 0.5 (where K0 is the ratio between the                   to the stability of the excavation. In the longer term,
+horizontal and vertical stress), and an initial pore-pressure            however, these negative excess pore-pressure dissipate and
+of 2 MPa. The principal stresses and pore-pressures that                 cause time dependent tunnel convergences. Note, however,
+evolve as a consequence of tunnel excavation were moni-                  that the rock mass close to the excavation might also dry as
+tored in the centre of the three-dimensional model at var-               a consequence of the tunnel environment. This may cause
+ious radial distances from the tunnel. For the fully coupled             an unsaturated zone with an apparent strength and stiffness
+analysis we assumed that the excavation process is                       significantly larger than the saturated rock, which can
+undrained. For the constitutive behaviour we used (1) an                 contribute to the stability of the excavation (Martin et al.
+elastic constitutive model that was either isotropic or                  2004). Seasonal cyclic variations in RH may, however,
+transversal isotropic and (2) an isotropic elastic-brittle               cause a strength degradation and additional deformations
+plastic model based on a linear Mohr–Coulomb failure                     (Walter 2015).
+criterion. For further details of the numerical model see
+Wild et al. (2015b). The model results suggested that the
+pore-pressure response typically observed at the Mont Terri              5.2 The influence of rock and rock mass anisotropy
+Rock Laboratory is a consequence of (1) the anisotropic                      and heterogeneities on the EDZ development
+in situ state of stress, (2) the transversal isotropic stiffness
+of Opalinus Clay, (3) the anisotropy ratio, (4) the orienta-             Our in situ experiments showed that many fractures that
+tion of the tunnel axis relative to the in situ stress state, and        form around underground excavations in Opalinus Clay are
+(5) dilatancy accompanying failure. An important outcome                 either directly or indirectly associated with bedding plane
+of this numerical study was that pore-pressure changes                   shearing or dislocations along pre-existing tectonic struc-
+associated with tunnel excavation can lead to absolute                   tures. These secondary fractures are either extensional type
+negative pore-pressures of up to -3 MPa in the short term                fractures such as horsetail splays or wing cracks or sec-
+(Wild et al. 2015b). In case of a transversal isotropic                  ondary shear fractures. Only when bedding plane shearing
+model, zones around the excavation with absolute negative                or shearing along tectonic structures was kinematically
+pore-pressure are limited and the limitation depends on the              constrained, extensional type fractures initiated as primary
+assumption of the in situ stress state and the orientation of            fractures.
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                                169
+
+
+   For a circular opening excavated parallel to the bedding      consolidated undrained and drained triaxial tests on fully
+plane strike (i.e. as anticipated for a repository in northern   re-saturated specimens. Furthermore, three in situ experi-
+Switzerland and investigated in our study of the BDZ             ments were carried out: an overcoring experiment and two
+evolution) the behavior was dominated by bedding plane           mine-by experiments at the Mont Terri Rock Laboratory.
+shearing and opening, and all observed extensional type             On the laboratory scale, we showed that even simple
+fractures were secondary fractures (i.e. associated with         laboratory tests, such as unconsolidated undrained shear
+shearing along bedding or buckling of slabs). Buckling of        tests, are difficult to interpret and uncertainties remain in
+slabs into the unsupported boreholes developed in rela-          the representativeness of the test results. The observed
+tively short time and eventually borehole collapse occur-        shear strength, in particular the high undrained friction
+red. Assuming that the behaviour observed for boreholes is       angle, and the bi-linear shape of the failure envelope
+representative for a mechanically excavated circular tunnel      resulting from the series of UU tests can be associated with
+parallel to bedding, early installed rock support such as        a true material behaviour or a partly saturated state of the
+dense rock bolts covering the anticipated buckling zone,         specimens. Partially saturated conditions are associated
+and/or shotcrete can largely prevent rock buckling and           with suction. Our experimental studies showed that suction
+mitigate the development of large open fractures and             may develop rapidly after core extraction and substantially
+overbreaks.                                                      modifies the strength and the stiffness of the material.
+   For excavations oriented normal to the bedding plane             Consolidated undrained tests performed on fully satu-
+strike direction primary extensional type fractures were         rated specimens revealed a relatively small true cohesion
+occasionally observed at the flat tunnel invert and at the       and confirm the strong hydro-mechanical coupled beha-
+sidewalls, were large spalls formed. Our research consis-        viour of Opalinus Clay. This strong hydro-mechanical
+tently showed that both bedding planes and tectonic fault        coupled behaviour, in particular pore-pressure changes that
+planes dominate the formation of an EDZ.                         are associated with unloading stress path and the tendency
+   Another important aspect that is associated with the          of Opalinus Clay to dilate, may explain the stability of
+presence of heterogeneities (i.e. tectonic fault planes, fault   borecores and tunnel excavations in the short term. Pore-
+zones and related stiffness and strength contrasts) is the       pressures develop which are below atmospheric pressure or
+strong influence on stress redistribution around the exca-       rather absolute negative. This pore-pressure drop causes
+vation. Our numerical models demonstrate that even the           effective stress states that favour stability in the short term,
+presence of single tectonic fault planes substantially mod-      but may cause longer-term deformations and a further
+ify the redistributed stresses and the zone around an            development of the excavation damaged zone as the pore-
+excavation where new fractures may evolve. Fault zones           pressure dissipates.
+further modify the stress redistribution in both the radial         Our in situ experiment examined the formation and
+and longitudinal tunnel directions. Due to stiffness con-        development of an EDZ that evolves around excavations
+trasts between fault zones and the adjacent rock mass, large     which are excavated parallel or normal to the bedding
+stress concentrations are to be anticipated on both sides of     plane orientation. Macroscopic fracturing is strongly
+the fault zone. These stress concentrations lead to an           influenced by the presence of bedding planes and tectonic
+intense fracturing and deformations of the rock in close         fault planes. A transition from extensional macroscopic
+vicinity to the fault zone. The zone of influence depends on     failure to shearing can be observed with increasing fault
+the dimensions of the tunnel, the fault zone and the stiff-      plane frequency in section where opening or shearing
+ness contrast between fault zone and the adjacent rock           along bedding planes or tectonic fault planes is kine-
+mass. In case of the RC mine-by experiment the zone of           matical free. In sections where bedding plane shearing/
+influence (i.e. the zone with significant modelled stress        shearing along tectonic fractures is kinematically con-
+concentration) was approximately 2–3 m on both sides of          strained, primary extensional type fractures develop. In
+the main fault.                                                  addition, heterogeneities such as single tectonic fault
+                                                                 planes or fault zone substantially modify the stress
+                                                                 redistribution and thus zones around the excavation where
+6 Conclusions                                                    new fractures may form.
+                                                                    During our research program we observed behavioural
+The research conducted between 2003 and 2015 investi-            aspect of Opalinus Clay that are either typical for rocks or
+gated the behaviour of intact and fractured Opalinus Clay.       soils. Due to the observed dependency of Opalinus Clay on
+Our research comprised a series of laboratory experiments        the water content and therefore typical transitional char-
+such as unconsolidated undrained shear tests, unconfined         acter of the rock, our research suggests that the shaly facies
+compression and indirect tensile strength tests on speci-        of the Opalinus Clay at the Mont Terri Rock Laboratory
+mens equilibrated at various relative humidity and               can be classified as a, ‘‘soil-like’’ clay shale.
+170                                                                                                                               F. Amann et al.
+
+Acknowledgements Most of the funding of the projects described in           Bossart, P. (2008) Annex 4-12. In P. Bossart, & M. Thury (Eds.),
+this article was provided by the Swiss Federal Nuclear Safety                    Mont Terri Rock Laboratory. Project, Programme 1996 to 2007
+Inspectorate (ENSI) with cost-sharing contributions from Swisstopo               and Results. Reports of the Swiss Geological Survey, No.3.
+(Federal Office of Topography, Switzerland), BGR (Federal Institute              Federal Office of Topography (swisstopo), Wabern, Switzerland.
+for Geosciences and Natural Resources, Germany) and Chevron                      www.mont-terri.ch.
+(USA). We also highly appreciate the scientific and technical con-          Bossart, P., Bernier, F., Birkholzer, J., Bruggeman, C., Connolly, P.,
+tributions made by many partner organizations and scientists.                    Dewonck, S., Fukaya, M., Herfort, M., Jensen, M., Matray, J-M.,
+Important partners of these projects have been ENSI (Martin Herfort,             Mayor, J. C., Moeri, A., Oyama, T., Schuster, K., Shigeta, N.,
+Meinert Rahn, Ernando Saraiva), BGR (Kristof Schuster, Torsten                   Vietor, T., & Wieczorek, K. (2017). Mont Terri rock laboratory,
+Tietz, Dieter Boeddener, Friedhelm Schulte, and Wilfried Stille),                20 years of research: introduction,site characteristics and over-
+Swisstopo (Christophe Nussbaum, Nicolas Badertscher, Olivier                     view of experiments. Swiss Journal of Geosciences. doi:10.1007/
+Meier, David Jäggi, Claude Giarardin, and Lukas Glur), University of            s00015-016-0236-1 (this issue).
+Alberta at Edmonton (Derek Martin), CEMI (Peter Kaiser, Andrew              Bossart, P., Trick, T., Meier, P. M., & Mayor, J.-C. (2004). Structural
+Corkum), Queen’s University (Mark Diederichs), the Technical                     and hydrogeological characterisation of the excavation-disturbed
+Universities of Torino (Marco Barla), TU Graz (Manfred Blümel), the             zone in the Opalinus Clay (Mont Terri Project, Switzerland).
+Geodetic Metrology and Engineering Geodesy Group of ETH Zurich                   Applied Clay Science, 26, 429–448.
+(Stephan Schütz, Florence Vaudan), and many colleagues and stu-            Corkum, A. G., & Martin, C. D. (2007). Modelling a mine-by test at
+dents from the Department of Earth Sciences at ETH (Corrado                      the Mont Terri rock laboratory, Switzerland. International
+Fidelibus, Keith Evans, Frank Lemy, Valentin Gischig, Jonas von                  Journal of Rock Mechanics and Mining Sciences, 44, 846–859.
+Rütte, Jürgen Hansmann, Freddy Xavier Yugsi Molina, Christian             Einstein, H. H. (2000). Tunnels in Opalinus Clayshale—A review of
+Haug, Sophie Gschwind, Sebastian Zimmer, Linda Wymann, Nicolas                   case histories and new developments. Tunnelling and Under-
+Kupferschmid, Patric Walter, Matthew Perras, Claudio Madonna, and                ground Space Technology, 15(1), 13–29.
+Hansruedi Maurer). We are grateful two the two reviewers (Prof.             Giger, A. B., Marschall, P., Lanyon, B., & Martin, C. D. (2015).
+Derek Martin and Dr. Bill Lanyon) for their valuable comments.                   Hydro-mechanical response of Opalinus Clay during excavation
+                                                                                 works—A synopsis from the Mont Terri ROCK LABORA-
+                                                                                 TORY. Geomechanics and Tunneling, 8(5), 421–425.
+References                                                                  Golder, H. Q., & Skempton, A. W. (1948). The angle of shearing
+                                                                                 resistance in cohesive soils for tests at constant water content.
+Amann, F., Button, E. A., Evans, K. F., Gischig, V. S., & Blümel, M.            In Proceedings of the Second International Conference of Soil
+     (2011). Experimental study of the brittle behavior of clay shale            Mechanics and Foundation Engineering, Vol. 1, (pp.
+     in short-term unconfined compression. Rock Mechanics and                    185–192).
+     Rock Engineering, 44(4), 415–430.                                      Islam, M. A., & Skalle, P. (2013). An experimental investigation of
+Amann, F., Kaiser, P. K., & Button, E. A. (2012a). Experimental study            shale mechanical properties through drained and undrained test
+     of the brittle behavior of clay shale in rapid triaxial compression.        mechanisms. Rock Mechanics and Rock Engineering, 46,
+     Rock Mechanics and Rock Engineering, 45(1), 21–33                           1391–1413.
+Amann, F., Thoeny, R., & Martin, C. D. (2012b). Rock mechanical             ISRM. (1978). Suggested methods for determining tensile strength of
+     considerations associated with the construction of a nuclear                rock materials. International Journal of Rock Mechanics and
+     waste repository in clay rock. In Proceedings of the 46th US                Mining Sciences & Geomechanical Abstracts, 15, 99–103.
+     Rock Mechanics/Geomechanics Symposium 2012, Chicago,                   ISRM. (1979). Suggested methods for determining the uniaxial
+     American Rock Mechanics Association.                                        compressive strength and deformability of rock materials.
+Amann, F., Wild, K. M., & Martin, C. D. (2015). The role of capillary            International Journal of Rock Mechanics and Mining Science
+     suction and dilatancy on the interpretation of the confined                 & Geomechanical Abstracts, 16(2), 135–140.
+     strength of clay shales. In Proceedings of the 13th International      Itasca (2009). Fast Langrangian Analysis of Continua in 3 dimen-
+     Congress of Rock Mechanics/Shale Symposium, 2015, Montreal,                 sions, Version 4. Itasca Consulting Group, 438
+     International Society for Rock Mechanics.                              Jaeggi, D., Nussbaum, C., Moeri, A., Shao, H., & Mueller, H. (2010).
+Anagnostou, G. (2009). The effect of advance-drainage on the short-              WS-H experiment: overcoring and structural analyses of the
+     term behavior of squeezing rocks in tunneling. In Proceedings of            resin-impregnated BHG-B11 overcore under plane and UV light.
+     the International symposium on computational geomechanics,                  Mont Terri Technical Note, TN 2010-32. Federal Office of
+     Juan-Les-Pins, France (pp. 668–679).                                        Topography (swisstopo), Wabern, Switzerland. www.mont-terri.
+Aristorenas, G. V. (1992). Time-dependent behavior of tunnels                    ch.
+     excavated in shale. Ph.D. dissertation, Massachusetts Institute        Klinkenberg, M., Kaufhold, S., Dohrmann, R., & Siegesmund, S.
+     of Technology, Cambridge, Massachusetts, USA.                               (2009). Influence of carbonate micofabric on the failure strength
+Badertscher, N., Girardin, C., & Nussbaum, C. (2008). SE-H                       of claystones. Engineering Geology, 107, 42–54.
+     Experiment: EDZ structural analyses of resin impregnated               Kupferschmied, N., Wild, K. M., Amann, F., Nussbaum, C., Jaeggi,
+     sections from BSE-3 overcores. Mont Terri Technical Note,                   D., & Badertscher, N. (2015). Time-dependent fracture forma-
+     TN 2008-15. Federal Office of Topography (swisstopo), Wabern,               tion around a borehole in a clay shale. International Journal of
+     Switzerland. www.mont-terri.ch.                                             Rock Mechanics and Mining Sciences, 77, 105–114.
+Bellwald, P. (1990). A contribution to the design of tunnels in             Marschall, P., Distinguin, M., Shao, H., Bossart, P., Enachescu, C., &
+     argillaceous rock. Ph.D. dissertation, Massachusetts Institute of           Trick, T. (2006). Creation and evolution of damage zones around
+     Technology, Cambridge, Massachusetts, USA                                   a microtunnel in a claystone formation of the Swiss Jura
+Bishop, A. W., & Eldin, G. (1950). Undrained triaxial tests on                   Mountains. In SPE International Symposium and Exhibition on
+     saturated sands and their significance in the general theory of             Formation Damage Control, Society of Petroleum Engineers
+     shear strength. Géotechnique, 2(1), 13–32.                            Marschall, P., Horseman, S., & Gimmi, T. (2005). Characterisation of
+Bobet, A., Aristorenas, G., & Einstein, H. H. (1999). Feasibility                gas transport properties of the Opalinus Clay, a potential host
+     analysis for a radioactive waste repository tunnel. Tunnelling              rock formation for radioactive waste disposal. Oil & Gas Science
+     and Underground Space Technology, 13(4), 409–426.                           and Technology, 60(1), 121–139.
+MontTerri, paper #7: geomechanical behavior of Opalinus Clay…                                                                               171
+
+Martin, C. D. (1997). Seventeenth Canadian Geotechnical Collo-                 strain in saturated cohesive soils. In Research Conference on
+     quium: The effects of cohesion loss and stress path on brittle            Shear Strength of Cohesive Soils (pp. 643–694). American
+     rock strength. Canadian Geotechnical Journal, 34, 698–725.                Society of Civil Engineers.
+Martin, C. D., Lanyon, G. W., Bossart, P., & Blümling, P. (2004).        Schnier, H., & Stührenberg, D. (2007). LT experiment: strength tests
+     Excavation disturbed zone (EDZ) in clay shale: Mont Terri.                on cylindrical specimens, documentation and evaluation (Phases
+     Mont Terri Technical Report, TR 01-01. Federal Office of                  8 & 9). Mont Terri Technical Report, TR 03-04. Federal Office
+     Topography (swisstopo), Wabern, Switzerland. www.mont-terri.              of Topography (swisstopo), Wabern, Switzerland. www.mont-
+     ch.                                                                       terri.ch.
+Martin, C. D., Macciotta, R., Elwood, D., Lan, H., & Vietor T. (2011).    Skempton, A. W. (1954). The pore-pressure coefficients A and B.
+     Evaluation of the Mont Terri Mine-By response: Interpretation             Géotechnique, 4(4), 143–147.
+     of results and observations. Report to Nagra (unpublished).          Thoeny, R. (2014). Geomechanical analysis of excavation-induced
+Masset, O. (2006). Rock Laboratory pore pressure long term                     rock mass behavior of faulted Opalinus Clay at the Mont Terri
+     evolution. Mont Terri Technical Note, TN 2006-43. Federal                 Underground Rock Laboratory (Switzerland). Ph.D. dissertation,
+     Office of Topography (swisstopo), Wabern, Switzerland. www.               Swiss Federal Institute of Technology, Zürich, Switzerland.
+     mont-terri.ch.                                                       Thury, M., & Bossart P. (1999). Mont Terri rock laboratory, results of
+Mazurek, M. (1998). Mineralogical composition of Opalinus Clay at              the hydrogeological, geochemical and geotechnical experiments
+     Mont Terri—A laboratory intercomparison. Mont Terri Techni-               performed in 1996 and 1997. Landeshydrologie und -geologie,
+     cal Note, TN 98-41. Federal Office of Topography (swisstopo),             Geologischer Bericht No. 23. Federal Office of Topography
+     Wabern, Switzerland. www.mont-terri.ch                                    (swisstopo), Wabern, Switzerland. www.mont-terri.ch.
+Mazurek, M., Hurford, A. J., & Leu, W. (2006). Unravelling the            Van Loon, L. R., Soler, J. M., Müller, W., & Bradbury, M. H. (2004).
+     multi-stage burial history of the Swiss Molasse Basin: integra-           Anisotropic diffusion in layered argillaceous rocks: a case study
+     tion of apatite fission track, vitrinite reflectance and biomarker        with Opalinus Clay. Environmental Science and Technology, 38,
+     isomerisation analysis. Basin Research, 18, 27–50.                        5721–5728.
+Nagra (2002). Projekt Opalinuston. Synthese der geowis-                   Vietor, T., Armand, G., Nyonoya, S., Schuster, K., & Wieczorek, K.
+     senschaftlichen Untersuchungsergebnisse. Nagra Technischer                (2010). Excavation induced damage evolution during a mine-by
+     Bericht, 20-03. Nagra, Wettingen, Switzerland. www.nagra.ch.              experiment in Opalinus clay. In Proceedings of the 4th Int.
+Neerdael, B., DeBruyn, D., Mair, R. J., & Taylor, R. N. (1999).                Meeting on Clays in Natural & Engineered Barriers for Nuclear
+     Geotechnical behavior of Boom Clay. Commission of the                     Waste Confinement, Nantes, France.
+     European Communities. Nuclear Science and Technology, Pilot          Walter, P. (2015). Environmental degradation of Opalinus Clay with
+     tests on radioactive waste disposal in underground facilities,            cyclic variations in relative humidity. Master thesis, Swiss
+     EUR 13985, 223–238.                                                       Federal Institute of Technology, Zürich, Switzerland.
+Nussbaum, C., Bossart, P., Amann, F., & Aubourg, C. (2011).               Wild, K. M., Amann, F., & Martin, C. D. (2015a). Dilatancy of clay
+     Analysis of tectonic structures and excavation induced fractures          shales and its impact on pore pressure evolution and effective
+     in Opalinus Clay, Mont Terri underground Rock Laboratory                  stress for different triaxial stress paths. In Proceedings of the
+     (Switzerland). Swiss Journal of Geoscience, 104(2), 187–210.              49th US Rock Mechanics/Geomechanics Symposium, American
+Nussbaum, C., Kloppenburg, A., Caër, T., & Bossart, P. (2017).                Rock Mechanics Association.
+     Tectonic evolution around the Mont Terri rock laboratory,            Wild, K. M., Amann, F., & Martin, C. D. (2015b). Some fundamental
+     northwestern Swiss Jura: constraints from kinematic forward               hydromechanical processes relevant for understanding the pore
+     modelling. Swiss Journal of Geosciences, 110. doi:10.1007/                pressure response around excavations in low permeable clay
+     s00015-016-0248-x (this issue).                                           rocks. In Proceedings of the 13th International Congress of Rock
+Pei, J. (2003). Effect of sample disturbance in Opalinus Clay shales.          Mechanics. International Society for Rock Mechanics.
+     Ph.D. dissertation, Massachusetts Institute of Technology,           Wild, K. M., Wymann, L. P, Zimmer, S., Thoeny, R., & Amann, F.
+     Cambridge, Massachusetts, USA.                                            (2015c). Water retention characteristics and state-dependent
+Peron, H., Hueckel, T., Laloui, L., & Hu, L. B. (2009). Fundamentals           mechanical and petro-physical properties of a clay shale. Rock
+     of desiccation cracking of fine-grained soils: experimental               Mechanics and Rock Engineering, 48, 427–439.
+     characterization and mechanisms identification. Canadian             Yong, S. (2007). A three-dimensional analysis of excavation-induced
+     Geotechnical Journal, 46, 7–1201.                                         perturbations in the Opalinus Clay at the Mont Terri Rock
+Popp, T., Salzer, K., & Minkley, W. (2008). Influence of bedding               Laboratory. Ph.D. dissertation, Swiss Federal Institute of
+     planes to EDZ-evolution and the coupled HM properties of                  Technology, Zürich, Switzerland.
+     Opalinus Clay. Physics and Chemistry of the Earth, 33, 374–387.      Yong, S., Kaiser, P. K., & Loew, S. (2010). Influence of tectonic
+Rummel, F., & Weber, U. (2004). RA experiment: rock mechanical                 shears on tunnel-induced fracturing. International Journal of
+     testing and characterization on drillcores of boreholes BRA-1             Rock Mechanics and Mining Sciences, 47, 894–907.
+     and BRA-2. Mont Terri Technical Note, TN 2004-38. Federal            Yong, S., Kaiser, P. K., & Loew, S. (2013). Rock mass response
+     Office of Topography (swisstopo), Wabern, Switzerland. www.               ahead of an advancing face in faulted shale. International
+     mont-terri.ch.                                                            Journal of Rock Mechanics and Mining Sciences, 60, 301–311.
+Schmertmann, J. H., & Osterberg, J. O. (1960). An experimental
+     study of the development of cohesion and friction with axial
+

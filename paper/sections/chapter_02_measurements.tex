@@ -1,0 +1,704 @@
+\chapter{Measurements and OGS Observation Links}
+\label{chap:measurements}
+
+\section{Purpose and Evidence Boundary}
+\label{sec:measurement-purpose}
+
+This chapter records the measurement side of the CD-A Niche 4 modelling problem.
+The purpose is not to turn every available dataset into a likelihood term.  The
+purpose is to state, stream by stream, what is measured, where and when it is
+measured, which unit and reference convention are used, and how the value can enter
+the OGS workflow as an input, output residual, material-field prior, diagnostic, or
+caveat.
+
+The primary evidence is local.  We use the measurement catalogue, the processed
+observation tables, and the generated measurement figures copied into this paper.
+The processed-observation layer is the authority for row counts, time ranges,
+coordinate status, and current activation gates
+\citep[measurement-stream inventories, generated figures, and stream-gate audits]{GeneratedAuditSuite2026}.
+Public internet sources were checked only where the local catalogue lacks
+residual-ready numeric exports.  They confirm the broader CD/CD-A monitoring
+context, including pressure, extensometer, crackmeter, Taupe/TDR, RH, water-content,
+and resistivity streams, but they do not replace the missing project-specific
+Geoscope, pressure, or crack-opening time series
+\citep[abstract and Sec.~2]{Ziefle2017SeasonalHM}
+\citep[Secs.~2.4 and 3.2]{Graebling2022VEIS}.
+
+The geometry rule is the same for all streams.  A measurement is not an OGS datum
+until its support is mapped into the current two-dimensional model frame.  Point
+measurements need coordinates and a sampling rule.  Borehole interval measurements
+need segment geometry and interval weights.  ERT needs a mesh-to-mesh observation
+operator.  Taupe/TDR needs line-band support.  HM monitoring needs a reference
+frame, instrument sign convention, and a 3D-to-2D reduction policy before it can be
+weighted.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.90\textwidth]{resources/figures/measurement_locations_all.png}
+  \caption{Mesh-mapped measurement supports in the current OGS domain.  The plot
+  separates projected ERT cells, NMR labels, Taupe/TDR supports, RH/suction points,
+  and permeability pulse-test intervals.  Streams without accepted OGS-frame support
+  are handled separately in their own sections.}
+  \label{fig:measurement-locations-all}
+\end{figure}
+
+\begin{longtable}{@{}L{0.19\textwidth} L{0.19\textwidth} L{0.23\textwidth} L{0.30\textwidth}@{}}
+\caption{Measurement stream roles in the current OGS workflow.}
+\label{tab:measurement-role-summary}\\
+\toprule
+Stream & Current status & OGS tie & Main gate or use\\
+\midrule
+\endfirsthead
+\caption[]{Measurement stream roles in the current OGS workflow (continued).}\\
+\toprule
+Stream & Current status & OGS tie & Main gate or use\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Permeability pulse tests &
+Active material likelihood &
+Direct interval-scale observation of intrinsic permeability \(\KK(\xx)\). &
+Usable for 75 mapped open-twin BCD-A32/A33 rows; support conflicts and older
+endpoint geometry remain gates.\\
+NMR water content &
+Active but provisional state likelihood &
+Observation of water-content state, compared to \(\theta=\por\Sl\) after an
+observation policy. &
+Raw absolute water content is caveated by bound/interlayer water; trend/anomaly is
+the preferred next residual.\\
+ERT &
+Diagnostic state field &
+Forward operator from \(\Sl\) to water content to bulk resistivity to projected ERT
+resistivity. &
+Needs accepted coordinate transform, support mask, and covariance before likelihood
+use.\\
+Taupe/TDR &
+Diagnostic trend field &
+EDZ-band trend operator tied to \(\theta=\por\Sl\), or to dielectric/water-content
+calibration if confirmed. &
+Absolute unit and calibration are not confirmed; A3/A4 are mapped, A7/A8 are
+outside current support.\\
+RH/suction &
+Boundary-condition audit &
+Kelvin conversion to pressure or suction candidate for the open-niche boundary
+\(p_E(t)\). &
+Active curve provenance, filtering, time origin, and uncertainty remain open.\\
+Direct pressure sensors &
+Blocked future pressure residual &
+Candidate samples of \(\pl(\xx,t)\) or hydraulic head. &
+Mini-piezometer numeric time series, units, reference convention, and quality flags
+are missing.\\
+Fault/fracture geometry &
+Structural prior or scenario field &
+Candidate prior for permeability, porosity, EDZ masks, or 2D projection scenarios. &
+3D geometry, measured aperture/effect, timing, and projection policy are incomplete
+for hard use.\\
+Other HM monitoring &
+Blocked or qualitative HM validation &
+Candidate displacement, strain, crack opening, levelling, scan-difference, or
+pressure residuals. &
+Layout and levelling summaries exist; hard residuals need numeric exports,
+timestamps, units, reference zeros, and uncertainties.\\
+\end{longtable}
+
+\section{Direct Permeability Pulse Tests}
+\label{sec:measurement-permeability}
+
+\paragraph{Meaning.}
+The permeability stream records interpreted pulse-test permeability values,
+transmissibility values, and raw pressure-decay traces.  The source method is a
+modified double-piston packer test with a nominal 10 cm interval and nitrogen
+injection.  Therefore the model-facing quantity is a gas-test interpretation of
+intrinsic permeability, not hydraulic conductivity, not liquid relative permeability,
+and not a direct tensor component.  Gas apparent permeability has its own pressure
+dependence, so the liquid-equivalent intrinsic value must remain separated from the
+OGS relative-permeability factor
+\citep[abstract]{Klinkenberg1941}
+\citep[abstract and Secs.~2.2, 3.2]{Marschall2005}.
+
+\paragraph{Position in the domain.}
+The current active supports are the mapped BCD-A32 and BCD-A33 open-twin intervals
+inside the Niche 4 OGS mesh.  Figure~\ref{fig:permeability-location} shows these
+supports as borehole-line and cell-sampling locations.  Older rows from BCD-A24,
+BCD-A25, BCD-A26, BCD-A27, and BFM-D19 remain visible in the catalogue, but they do
+not have accepted endpoint geometry or current-domain support for the first direct
+fit.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.86\textwidth]{resources/figures/measurement_permeability_location.png}
+  \caption{Location of active direct permeability supports on the current OGS mesh.
+  The plotted supports are the BCD-A32 and BCD-A33 pulse-test intervals currently
+  usable as direct constraints on \(\KK(\xx)\).}
+  \label{fig:permeability-location}
+\end{figure}
+
+\paragraph{Time of measurement.}
+The processed table contains 204 interpreted rows and 6687 pressure-decay rows.  The
+current objective uses the 2024 BCD-A32/A33 rows as quasi-static material evidence.
+The 2021 rows are retained as open/closed and historical context, but they are not
+part of the current active objective unless their support policy is reopened.
+
+\paragraph{Measured value, units, and OGS tie.}
+The interpreted value is permeability in \(\mathrm{m^2}\), used in log10 space.  The
+active usable rows span roughly \(-21.0\le\log_{10}(k/\mathrm{m^2})\le -12.10\).
+The OGS tie is direct: each row constrains an interval-weighted directional
+response of the intrinsic permeability tensor,
+\[
+  r_i^k
+  :=
+  \log_{10} k_{i,\mathrm{pred}}
+  -
+  \log_{10} k_{i,\mathrm{obs}},
+  \qquad
+  k_{i,\mathrm{pred}}
+  =
+  \sum_{c\in\mathcal C_i} w_{ic}\,\mathbf e_i^\top\KK_c\mathbf e_i .
+\]
+This residual acts on the material field used by Darcy's law, so permeability
+changes also affect pressure diffusion, saturation evolution, NMR water-content
+predictions, ERT resistivity predictions, and Taupe/TDR trends.
+
+\paragraph{Uncertainty and reliability.}
+The first-pass direct residual uses a 0.5 log10-unit standard deviation and
+duplicate-aware weights.  This is a policy choice consistent with the order of the
+experimental/evaluation uncertainty, not a proof that every support conflict is
+resolved.  Same-support rows can differ by several log10 units, so outlier policy,
+support aggregation, and endpoint recovery remain active gates.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{resources/figures/measurement_permeability_campaigns.png}
+  \caption{Open-twin interpreted permeability rows by campaign year.  The 2024
+  BCD-A32/A33 values form the active support; earlier rows remain context until
+  geometry and support policy are accepted.}
+  \label{fig:permeability-campaigns}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{resources/figures/measurement_permeability_boreholes.png}
+  \caption{Active open-twin permeability rows by borehole.  BCD-A32 and BCD-A33
+  provide the current horizontal and vertical support families for the direct
+  material-field likelihood.}
+  \label{fig:permeability-boreholes}
+\end{figure}
+
+\FloatBarrier
+\section{NMR Water-Content Measurements}
+\label{sec:measurement-nmr}
+
+\paragraph{Meaning.}
+NMR is the strongest local water-content evidence, but it is not identical to OGS
+liquid saturation.  The weekly and seasonal source tables report volumetric water
+content in vol.\% and relaxation-time information.  In claystone the NMR signal can
+include mobile pore water and bound or interlayer water.  The model-side quantity
+\(\theta=\por\Sl\) is therefore only the mobile-water proxy unless a bound-water
+observation model is added
+\citep[Sec.~4.2]{WaterContentEDZ2024}
+\citep[Secs.~1 and 2.5]{Cui2022DualScaleNMR}
+\citep[single-sided NMR technical slides]{NMR2026Local}.
+
+\paragraph{Position in the domain.}
+The processed NMR labels are mapped into the two-dimensional OGS frame when
+coordinates exist.  Figure~\ref{fig:nmr-location} shows the active and contextual
+support positions.  Niche 4 support is relevant for the current model.  Niche 3
+campaign rows are retained as experimental context, not as direct observations of
+the present slice.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.86\textwidth]{resources/figures/measurement_nmr_location.png}
+  \caption{NMR support positions in the OGS model frame.  These labels define where
+  \(\theta=\por\Sl\) is sampled from OGS outputs for raw and trend/anomaly
+  comparisons.}
+  \label{fig:nmr-location}
+\end{figure}
+
+\paragraph{Time of measurement.}
+The processed NMR layer contains 170 weekly rows and 294 seasonal profile rows.  The
+weekly 4E/4S monitoring covers 2021-10-06 to 2025-09-09, while the seasonal archive
+contains campaign profiles for repeated Niche 3 and Niche 4 measurement dates.  The
+row-level table keeps caveats such as the 2025 4E detuning period.
+
+\paragraph{Measured value, units, and OGS tie.}
+The measured water content is reported in vol.\%; in the model we use the fraction
+\(\theta_{\mathrm{obs}}=\mathrm{vol.\%}/100\).  The natural OGS comparison is
+\[
+  \theta_{\mathrm{NMR}}^{\mathrm{obs}}
+  =
+  \theta_{\mathrm{mobile}}
+  +\theta_{\mathrm{bound}}
+  +\epsilon_{\mathrm{NMR}},
+  \qquad
+  \theta_{\mathrm{mobile}}^{\mathrm{model}}
+  \approx
+  \por\Sl .
+\]
+The active objective uses raw absolute \(\theta\) on the accepted mapped subset.
+The preferred next policy is a within-label anomaly residual, because it removes
+constant station or bound-water offsets before comparing model and measurement
+changes.
+
+\paragraph{Uncertainty and reliability.}
+The bound-water audit shows why absolute NMR must remain provisional: with fixed
+\(\por=0.105\), 315 of 464 NMR target rows exceed the maximum possible value of
+\(\por\Sl\) if interpreted as mobile water.  In the usable current-mesh subset, 162
+of 287 rows exceed the same bound.  Reported confidence intervals and an uncertainty
+floor are useful, but they do not solve the semantic difference between total
+NMR-visible water and mobile OGS liquid.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{resources/figures/measurement_nmr_data.png}
+  \caption{NMR measured-data visualisation.  The upper panel shows weekly 4E/4S
+  water-content histories.  The lower panel shows a seasonal Niche 4 profile with
+  confidence intervals.  Values are total NMR-visible water content in vol.\%.}
+  \label{fig:nmr-data}
+\end{figure}
+
+\FloatBarrier
+\section{ERT Resistivity Measurements}
+\label{sec:measurement-ert}
+
+\paragraph{Meaning.}
+ERT measures an electrical response that is inverted to a resistivity field.  It is
+not a direct measurement of saturation, pressure, or permeability.  The physically
+defensible OGS tie is a forward observation operator: OGS predicts pressure and
+saturation; saturation is converted to a water-content proxy; water content is
+converted through a local empirical resistivity relation; the result is projected to
+the ERT support.  Classical Archie-type relations motivate the structure, but
+claystone requires local calibration because surface conductivity, bound water,
+fractures, and anisotropy can contribute to electrical conduction
+\citep[pp.~54--56]{Archie1942}
+\citep[abstract and Secs.~2--4]{Revil1998ShalySands}
+\citep[Secs.~4.1--4.3]{WaterContentEDZ2024}.
+
+\paragraph{Position in the domain.}
+The ERT archive contains a reference inverted mesh with 5966 triangular cells and
+3126 points.  The provisional projection transforms raw ERT coordinates by
+\(x_{\mathrm{model}}=x_{\mathrm{ERT}}\) and
+\(y_{\mathrm{model}}=z_{\mathrm{ERT}}+500\,\mathrm{m}\).  It maps 4676 cells inside an
+OGS cell, with 2035 cells both inside an OGS cell and inside the approximate
+near-niche support.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.86\textwidth]{resources/figures/measurement_ert_location.png}
+  \caption{Projected ERT mesh support in the OGS frame.  The darker subset indicates
+  the current approximate near-niche support used for diagnostics before the exact
+  support mask is accepted.}
+  \label{fig:ert-location}
+\end{figure}
+
+\paragraph{Time of measurement.}
+The processed ERT inventory contains 1691 timestep entries from 2019-11-01 to
+2024-12-31.  Of these entries, 1675 have matching VTK fields and 16 are missing a
+matching VTK member.  The archive therefore has dense temporal information, but it
+must be matched to OGS output times through an explicit tolerance.
+
+\paragraph{Measured value, units, and OGS tie.}
+The comparison should be made in log-resistivity, for example
+\[
+  \Sl(\xx,t)
+  \longrightarrow
+  \theta(\xx,t)=\por\Sl(\xx,t)
+  \longrightarrow
+  \rho_{\Omega\mathrm{m}}(\xx,t)
+  =
+  1.108\,\theta(\xx,t)^{-1.58}
+  \longrightarrow
+  \mathcal O_{\mathrm{ERT}}[\rho_{\Omega\mathrm{m}}],
+\]
+followed by
+\[
+  r^{\mathrm{ERT}}
+  :=
+  \log_{10}\rho_{\mathrm{pred}}
+  -
+  \log_{10}\rho_{\mathrm{ERT}} .
+\]
+The empirical relation is the current local default over the calibrated range
+\(0.01\le\theta\le0.18\).  It should not be interpreted as a universal
+Opalinus-Clay water-content law.
+
+\paragraph{Uncertainty and reliability.}
+ERT remains diagnostic.  The unresolved gates are the exact coordinate transform,
+the exact tunnel/niche support mask, the 35 cm rock-depth convention, and the
+uncertainty/correlation model.  Without a covariance or aggregation rule, dense
+neighbouring inversion cells would overweight one physical field image.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{resources/figures/measurement_ert_data.png}
+  \caption{ERT measured-data visualisation.  The upper panel shows a projected
+  reference log10-resistivity field and selected support cells; the lower panel
+  shows their log10-resistivity histories over matched ERT timesteps.}
+  \label{fig:ert-data}
+\end{figure}
+
+\FloatBarrier
+\section{Taupe/TDR Measurements}
+\label{sec:measurement-taupe}
+
+\paragraph{Meaning.}
+The Taupe/TDR workbook provides a dielectric or ARDP-derived water-content proxy.
+The local files do not yet prove whether the values are calibrated volumetric water
+content, apparent relative dielectric permittivity, or another Taupe-specific proxy.
+For that reason the safe current interpretation is a same-series trend diagnostic,
+not an absolute saturation residual.  General TDR literature supports the link
+between dielectric response and water content, but the CD-A claystone calibration
+must be supplied before absolute use
+\citep[Sec.~4.4]{Ziefle2024Characterization}
+\citep[review and Secs.~1--2]{Robinson2003TDRReview}
+\citep[Taupe/TDR technical slides]{TaupeISU2026Local}.
+
+\paragraph{Position in the domain.}
+The source sheets A3, A4, A7, and A8 correspond to Taupe supports and EDZ distance
+bands.  A3 and A4 are mapped into the current local OGS frame.  A7 and A8 are kept
+in the workbook and operator tables, but their support falls outside the present
+model mesh.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.86\textwidth]{resources/figures/measurement_taupe_location.png}
+  \caption{Mapped Taupe/TDR line supports.  A3 and A4 are the current in-domain
+  supports for trend diagnostics; A7 and A8 remain source-data context.}
+  \label{fig:taupe-location}
+\end{figure}
+
+\paragraph{Time of measurement.}
+The processed Taupe/TDR layer has 5088 sensor-date-band rows from 2019-12-01 to
+2025-10-10.  The rows are grouped by sensor and EDZ band, including 0--10, 10--20,
+20--30, 30--40, 40--50, and aggregate 0--50 cm bands from the niche wall.
+
+\paragraph{Measured value, units, and OGS tie.}
+The workbook values span approximately 9.87 to 11.00 in source units.  Until the
+unit is confirmed, the model comparison is the standardized trend
+\[
+  r_{\mathrm{Taupe}}
+  :=
+  \widehat{\Delta\theta_{\mathrm{model}}}
+  -
+  \widehat{\Delta T_{\mathrm{Taupe}}},
+  \qquad
+  \theta_{\mathrm{model}}=\por\Sl ,
+\]
+where hats denote a within-series normalization by sensor and EDZ band.  If a
+calibration is supplied, the same support can become an absolute water-content or
+dielectric residual.
+
+\paragraph{Uncertainty and reliability.}
+The trend operator is ready as a diagnostic, but absolute residual weights are not.
+The missing items are the workbook unit, calibration equations, baseline convention,
+sensor and band uncertainties, and whether bound/interlayer water affects the
+dielectric response in the same way as mobile pore water.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{resources/figures/measurement_taupe_data.png}
+  \caption{Taupe/TDR measured-data visualisation.  The upper panel shows
+  representative A3/A4 EDZ-band histories; the lower panel shows a latest EDZ-band
+  profile.  Values are retained in source workbook units.}
+  \label{fig:taupe-data}
+\end{figure}
+
+\FloatBarrier
+\section{RH, Suction, and Open-Niche Pressure Forcing}
+\label{sec:measurement-rh}
+
+\paragraph{Meaning.}
+The RH workbooks measure relative humidity, not liquid pressure directly.  Under a
+Kelvin-equation convention, RH can be converted to a capillary-pressure or
+gauge-liquid-pressure candidate.  This makes RH primarily a boundary-condition
+source or audit for the open niche.  It can later inform retention or boundary
+uncertainty, but it is not an interior material residual.
+
+\paragraph{Position in the domain.}
+The RH/suction supports are near the open-niche boundary and are mapped as
+boundary-audit points in the OGS frame.  Their role is to test whether the
+time-dependent boundary curve \(p_E(t)\) is consistent with local humidity-derived
+suction evidence.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.86\textwidth]{resources/figures/measurement_rh_location.png}
+  \caption{Mapped RH/suction support points used to audit the open-niche pressure
+  boundary.  These are boundary-forcing supports, not cell-wise material
+  observations.}
+  \label{fig:rh-location}
+\end{figure}
+
+\paragraph{Time of measurement.}
+The processed RH layer contains 4247 daily rows from 2021-12-16 to 2025-09-04 for
+RH5, RH6, RH7, and RH8.  RH5 and RH6 are the cleanest open-twin evidence.  RH7 and
+RH8 contain low outliers near 13\% RH and require stronger screening.
+
+\paragraph{Measured value, units, and OGS tie.}
+The source unit is RH in percent.  The local conversion uses
+\[
+  \pl^{\mathrm{Kelvin}}
+  =
+  \frac{\rho_lRT}{M_w}\ln(\mathrm{RH}),
+\]
+where RH is a fraction, \(T=298.15\,\mathrm{K}\), and
+\(\rho_l=1095\,\mathrm{kg\,m^{-3}}\).  Since \(\ln(\mathrm{RH})<0\), the converted
+liquid pressure is negative in the same suction convention used by the active
+open-niche curve.  This is consistent with \(p_c=-\pl\) in the Richards model
+\citep[pp.~448--452]{Thomson1871Kelvin}
+\citep[Sec.~3, Eqs.~1--2]{WaterContentEDZ2024}.
+
+\paragraph{Uncertainty and reliability.}
+The active OGS curve has 845 rows and spans approximately \(-53.24\) to
+\(-5.23\,\mathrm{MPa}\).  The RH audit compares 2280 rows inside the active curve
+time range and finds large differences between RH-derived pressure candidates and
+the active curve.  Therefore \(p_E(t)\) should remain an existing OGS input, not a
+verified RH-derived forcing, until the source sensors, filtering, smoothing, time
+origin, interpolation, and extension policy are reconstructed.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.98\textwidth]{resources/figures/measurement_rh_data.png}
+  \caption{RH and Kelvin-converted pressure visualisation.  The upper panel shows
+  RH5--RH8 histories after omitting the flagged RH7/RH8 dropout interval; the lower
+  panel shows the corresponding gauge liquid-pressure conversion in MPa.}
+  \label{fig:rh-data}
+\end{figure}
+
+\FloatBarrier
+\section{Direct Pressure Measurements}
+\label{sec:measurement-pressure}
+
+\paragraph{Meaning.}
+The direct-pressure stream is the mini-piezometer stream.  In the CD-A
+measurement inventory, mini-piezometers measure pore pressure with unit Pa
+\citep[Table~1]{Ziefle2024Characterization}.  The VEIS paper confirms that CD-A
+has borehole sensors for pressure measured by minipiezometers and that sensor
+databases store sensor names, date/time stamps, and measured values
+\citep[Secs.~2.4 and 3.2]{Graebling2022VEIS}.  The local 2026 technical
+discussion identifies BCD-A28 to BCD-A31 as the current mini-piezometer set and
+shows their pressure trends in kPa \citep[PDF p.~32]{CDATDSlides2026Local}.
+
+\paragraph{Position in the domain.}
+Figure~\ref{fig:pressure-minipiezometer-trends} includes the source-slide
+location inset for A28--A31.  That inset is enough to identify the instrument
+family and open/closed-twin context, but it is not yet an accepted OGS point set.
+A usable pressure residual still needs individual sensor coordinates or trace
+supports, sensor elevations/depths, and a rule for projecting each 3D sensor
+support to the present 2D slice.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{resources/figures/measurement_pressure_minipiezometer_trends.png}
+  \caption{Mini-piezometer trend evidence from the 2026 technical discussion
+  slides.  The plotted values are in kPa and cover approximately March 2024 to
+  January 2026.  The open twin shows seasonality and an ongoing trend; the closed
+  twin is presented as a possible steady-state validation stream.  This is a
+  source-slide plot, not a machine-readable export.}
+  \label{fig:pressure-minipiezometer-trends}
+\end{figure}
+
+\paragraph{Time of measurement.}
+The source plot spans about March 2024 to January 2026.  The May 2026 minutes
+state that BCD-A28 to BCD-A31 were working well, and list pore-pressure
+measurements as later comparison targets for the modelling workflow
+\citep[PDF p.~4 and p.~8]{TDMinutes2026Local}.  The sampled numeric export behind
+the plot is still absent from the current local catalogue, so exact timestamps,
+sampling interval, maintenance gaps, and quality flags remain unavailable.
+
+\paragraph{Measured value, units, and OGS tie.}
+The source plot uses kPa.  The public CD-A inventory names the quantity as pore
+pressure in Pa, but the local export must still state whether the stored values
+are absolute pressure, gauge pressure, hydraulic head, or another Geoscope
+conversion.  Once that reference convention is known, the OGS tie is direct:
+sample \(\pl(\xx,t)\) at the sensor support and convert pressure unit, elevation
+head, atmospheric reference, and sensor depth consistently with the model pressure
+convention.
+
+\paragraph{Uncertainty and reliability.}
+This stream is promising but not residual-ready.  The required export must include
+timestamps, units, sensor ids, coordinates or support ids, zero/reference
+convention, calibration, temperature compensation, quality flags,
+maintenance/failure flags, and raw-file provenance.  The 2D model error may be
+significant if a mini-piezometer samples a local 3D feature or lies outside the
+effective support of the modeled slice.
+
+\FloatBarrier
+\section{Faults, Fractures, and Crack Geometry}
+\label{sec:measurement-faults}
+
+\paragraph{Meaning.}
+This section is about large faults, fault zones, and mapped fracture geometry, not
+about crackmeter time series.  The public CD-A characterization paper reports
+fault planes parallel to bedding as well as non-bedding-parallel fault planes, and
+summarizes the structural geology near the twin niches in its Fig.~4
+\citep[Sec.~3 and Fig.~4]{Ziefle2024Characterization}.  For the OGS workflow,
+these features are not observations of pressure or displacement by themselves.
+They are structural information that can affect permeability, porosity, EDZ
+extent, anisotropy, or prior covariance.
+
+\paragraph{Position in the domain.}
+The local Tecplot layout contains 22 \texttt{Kluft} fracture/crack-geometry zones.
+Those zones document source-frame structural supports, but they do not yet define
+which 3D features intersect the current 2D model slice, what effective width should
+be used, or whether the feature should become a hard material input, a prior, a
+mask, or a qualitative caveat.  The local HERMES input note also states that
+geological characterization of fractured zones is available for CD-A
+\citep[PDF p.~5]{HermesInput2024Local}.
+
+\paragraph{Time of measurement.}
+The geometry is structural, not a complete time series.  A feature can still be
+used as time-dependent modelling information only if there is measured aperture,
+displacement, hydraulic effect, or dated structural evolution.  Without that, it
+should be treated as static structural context or as a scenario/prior field.
+
+\paragraph{Measured value, units, and OGS tie.}
+For large faults and fracture zones, the model-facing quantities are 3D
+coordinates, plane or zone geometry, width/support, aperture or hydraulic effect,
+and a projection policy.  The OGS tie is indirect: a fault may modify
+\(\KK(\xx)\), \(\por(\xx)\), EDZ classification, permeability-tensor orientation,
+or the prior covariance of those fields.  It is not a residual against an OGS
+output unless a measured quantity, unit, time, and observation operator are
+defined.
+
+\paragraph{Uncertainty and reliability.}
+The main risk is overfitting a two-dimensional permeability field to a
+three-dimensional unresolved structure.  A fault or crack should become a hard input
+only after the projection policy is explicit: which 3D feature intersects the 2D
+slice, what width/support is assigned, whether it changes \(\KK\), \(\por\), EDZ
+classification, or only the prior covariance, and which uncertainty represents
+projection error.
+
+\FloatBarrier
+\section{Geoscope, Crackometer, and Other HM Monitoring}
+\label{sec:measurement-other-hm}
+
+\paragraph{Meaning.}
+The other-HM package covers measurements that can constrain mechanics, pressure,
+swelling, permeability plausibility, or boundary disturbances: extensometers,
+crackmeters, laser scans, miniprisma geodesy, convergence points, precision
+levelling, evapometer or climate context, and Geoscope auxiliary streams.  The CD-A
+inventory identifies extensometers and convergence as displacement measurements,
+laser scans as niche-profile displacement measurements in micrometres, and
+mini-piezometers as pore pressure measurements \citep[Table~1]{Ziefle2024Characterization}.
+The local HERMES input note frames the same bundle as long-term deformation,
+humidity, water-content, pore-water-pressure, crack-width, piezometer,
+extensometer, ERT, TDR, and laser-scan measurements \citep[PDF p.~5]{HermesInput2024Local}.
+
+\paragraph{Position in the domain.}
+The source layout contains support geometry for several HM streams, but the generic
+support plots are not useful paper figures because they do not show measured
+values, timestamps, units, or OGS-ready support.  Table~\ref{tab:other-hm-status}
+therefore records the useful status directly.  Before fitting, each stream needs a
+mapping from source frame to the current 2D model frame and, where relevant, a
+3D-to-2D comparison rule.
+
+\Needspace{32\baselineskip}
+\begin{center}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\captionof{table}{Other-HM measurement status in the current local catalogue.}
+\label{tab:other-hm-status}
+\begin{tabular}{@{}L{0.18\textwidth} L{0.25\textwidth} L{0.24\textwidth} L{0.23\textwidth}@{}}
+\toprule
+Stream & What it measures & Current local evidence & OGS tie and status\\
+\midrule
+Extensometer & Displacement or strain along instrument geometry. &
+Geoscope/minutes evidence; BCD-A9/B10 closed-niche failure since September 2025. &
+\(\uu\) or strain diagnostic; hard residual blocked until time series, geometry,
+sign, and quality flags are supplied.\\
+Crackmeter & Crack aperture or local relative displacement. &
+Source trend plot and minutes: one closed-twin trend and open-twin seasonal
+variation. &
+\(\uu\), strain, or crack-aperture diagnostic; residual blocked until positions,
+zero date, sign convention, units, and uncertainty are supplied.\\
+Laser scans & Registered niche-surface displacement or scan-difference fields. &
+Minutes state a 2026-04-20 statistical laser-scan update was sent; local catalogue
+has only surface geometry. &
+Surface-displacement diagnostic; blocked until registered products, masks,
+reference epochs, and registration uncertainty are supplied.\\
+Levelling & Vertical displacement at survey points. &
+Twelve slide-summary values from the 2022-08-29/30 reference to the 2026-03
+campaign. &
+Vertical \(\uu\) validation target; diagnostic only until full survey table,
+coordinates, reference frame, and covariance are supplied.\\
+Auxiliary Geoscope / evapometer & RH, temperature, door/opening times, suction,
+evaporation or climate context. &
+Minutes and support geometry; no residual-ready auxiliary export here. &
+Boundary-condition provenance and disturbance filtering; not an interior OGS
+residual by default.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Time of measurement.}
+The local package contains qualitative 2026 statements, a source crackmeter trend
+plot, a source mini-piezometer trend plot, and one numeric levelling slide summary.
+The May 2026 minutes state that the 2026 Geoscope update covered RH, temperature,
+door opening times, extensometer, mini-piezometer, crackmeter, suction, and laser
+scans, and that horizontal/vertical extensometers BCD-A9/B10 in the closed niche
+failed after September 2025 \citep[PDF p.~4]{TDMinutes2026Local}.  The levelling
+slides report height differences from the first survey on 2022-08-29/30 to the
+2026-03 campaign \citep[PDF pp.~2, 5]{Levelling2026Local}.
+
+\paragraph{Measured value, units, and OGS tie.}
+Potential model ties are straightforward once data exist.  Extensometers constrain
+axial displacement or strain from \(\uu\).  Crackmeters constrain crack aperture or
+relative displacement.  Laser scans constrain surface displacement or scan-difference
+fields.  Miniprisma and convergence points constrain point or pair displacement.
+Levelling constrains vertical displacement.  Evapometer or climate proxies should
+enter only through boundary forcing, not as interior residuals.
+
+\Needspace{32\baselineskip}
+\begin{center}
+  \centering
+  \includegraphics[width=0.92\textwidth]{resources/figures/measurement_crackmeter_trends.png}
+  \captionof{figure}{Crackmeter trend evidence from the 2026 technical discussion slides.
+  The plotted post-processed deformation is in millimetres and spans roughly August
+  2021 to January 2026.  The slide shows seasonal markers and a local instrument
+  inset.  It is useful trend evidence, but not a residual-ready export because the
+  paper still lacks positions, zero/reference convention, sign convention,
+  uncertainty, and quality flags.}
+  \label{fig:crackmeter-trends}
+\end{center}
+
+\Needspace{30\baselineskip}
+\begin{center}
+  \centering
+  \includegraphics[width=0.98\textwidth]{resources/figures/measurement_levelling_data.png}
+  \captionof{figure}{Precision-levelling values extracted from the slide summary.  They give
+  height differences between the 2022 initial survey and the 2026-03 campaign, but
+  not a full survey table or covariance.}
+  \label{fig:levelling-data}
+\end{center}
+
+\paragraph{Uncertainty and reliability.}
+The HM streams remain mostly blocked for hard residuals.  The local numeric-source
+audit found layout geometry, laser surface geometry, levelling slide rows, and
+report/minute evidence, but no residual-ready Geoscope time series, laser
+statistical product, or full levelling survey table
+\citep[other-HM numeric-source audit]{GeneratedAuditSuite2026}.
+A hard residual requires timestamps or survey epochs, values, units, support
+geometry, reference-zero conventions, sign conventions, calibration, quality flags,
+failure flags, and uncertainty or covariance.  The levelling slide gives a
+detectable displacement of \(0.1\)--\(0.2\,\mathrm{mm}\) at 95\% confidence, largest
+settlement at CDA-O1 \((-2.1\,\mathrm{mm})\), and largest uplift at CDA-C4
+\((+1.3\,\mathrm{mm})\), but it still lacks the full survey table and reference-frame
+metadata needed for weighting \citep[PDF pp.~5--6]{Levelling2026Local}.
+
+\FloatBarrier
+\section{Measurement Questions and Answers}
+\label{sec:measurement-question-answers}
+
+Table~\ref{tab:measurement-question-answers} keeps the measurement questions
+granular.  It follows the same structure used above: meaning, position, time,
+measured quantity and processing, units, OGS tie, and uncertainty.  Ready rows are
+usable in the current workflow.  Diagnostic rows can be plotted or compared but
+should not yet receive likelihood weight.  Gate and blocked rows state exactly what
+stream-specific evidence would still be needed before that measurement can ground
+the OGS model as an input, residual, material prior, structural scenario, or
+quality filter.
+
+\input{resources/tables/measurement_questions.tex}

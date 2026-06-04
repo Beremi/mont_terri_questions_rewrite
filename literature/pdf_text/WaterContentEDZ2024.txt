@@ -1,0 +1,1320 @@
+Rock Mechanics and Rock Engineering (2024) 57:4443–4472
+https://doi.org/10.1007/s00603-023-03717-1
+
+ ORIGINAL PAPER
+
+
+
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic
+Approach for a Comparative Interpretation of Measurements
+and Modelling
+Gesa Ziefle1      · Tuanny Cajuhi1        · Stephan Costabel1         · Markus Furche1        · Jobst Maßmann1
+
+Received: 9 January 2023 / Accepted: 28 November 2023 / Published online: 24 April 2024
+© The Author(s) 2024
+
+
+Abstract
+In the Mont Terri Rock Laboratory (Switzerland), an interdisciplinary examination program is carried out to increase
+knowledge about coupled hydro-mechanical effects in Opalinus Clay, which are of significant interest regarding the stabil-
+ity and integrity of a potential storage facility for high-level radioactive waste. This article focuses on the characterization
+of the claystone in the near field of excavations and related hydraulic effects due to excavation and ventilation. Electrical
+resistivity tomography (ERT) is applied to characterize the OPA: Several open fractures correlate with regions of high
+resistivity values, indicating potential preferential flow paths that are relevant for transport processes. Due to the combined
+interpretation of ERT long-term monitoring and seasonally repeated nuclear magnetic resonance (NMR) measurements, a
+relationship between electrical resistivity and water content can be established, resulting also in a time-dependent map of
+the water content around excavations with different climatic conditions. The statistical interpretation of these measurements
+indicates the existence of small-scale singularities in contrast to dominating, more homogeneous zones. The presented
+approach leads to a better process understanding of these heterogeneous near field effects and provides a valuable basis for
+a pragmatic approach to safety assessment.
+
+Highlights
+• Methodic approach to provide a time-dependent map of the water content around an excavation in the sandy facies of
+   Opalinus Clay (OPA).
+• Identification and statistical evaluation of potential flow paths (micro-cracking areas) in the near field of excavations with
+   regard to numerical safety analysis.
+• Establishment of the relationship between electrical resistivity and water content in the sandy facies of OPA based on
+   combined evaluation of ERT and NMR measurements.
+• Impact of heterogeneity and technical boundary conditions on the evolution of the water content and the permeability.
+• Combined interpretation of multi-disciplinary methods aiming on a detailed process understanding and characterization
+   of coupled hydraulic-mechanical effects in Mont Terri OPA.
+
+
+Keywords Mont Terri project · Opalinus claystone · CD-A experiment · Coupled hydro-mechanical effects · Water content
+evolution · Geophysical measurements · Numerical modelling (OpenGeoSys 6)
+
+
+
+
+* Gesa Ziefle                                                                   Markus Furche
+  Gesa.Ziefle@bgr.de                                                            Markus.Furche@bgr.de
+    Tuanny Cajuhi                                                               Jobst Maßmann
+    Tuanny.Cajuhi@bgr.de                                                        Jobst.Massmann@bgr.de
+    Stephan Costabel                                                        1
+                                                                                Federal Institute for Geosciences and Natural Resources
+    Stephan.Costabel@bgr.de
+                                                                                (BGR), Stilleweg 2, 30655 Hanover, Germany
+
+
+                                                                                                                               Vol.:(0123456789)
+4444                                                                                                                 G. Ziefle et al.
+
+
+1 Introduction                                                    focusing on water content evolution in the near field, the
+                                                                  CD-A experiment in general is accompanied by a compre-
+Comprehension of coupled hydro-mechanical (HM) effects            hensive measuring program including geological, geotech-
+in claystone is of significant importance to evaluate the sta-    nical and geophysical characterization as well as numerical
+bility and integrity of the host rock of a potential deep geo-    modelling. The measuring program includes measurements
+logical repository for high-level radioactive waste (HLW).        of the permittivity (Taupe-TDR), the permeability (Pulse
+Especially in the near field of excavations, various effects      tests), different types of water content measurements (NMR,
+like desaturation, swelling and shrinkage, plastic effects, and   CCM), suction measurements (Thermo-hygrometer and psy-
+fracturing interact, which can lead to changes in porosity,       chrometer), pore pressure measurements (Mini-Piezometer)
+permeability and retention properties.                            and deformation measurements (extensometer, laser scans)
+   This publication focuses on the combined interpretation        up to a depth of about 4 m (Ziefle et al. 2024). It focuses
+of electrical resistivity tomography (ERT), nuclear magnetic      on an increased process as well as system understanding of
+resonance (NMR) measurements, the lithologic characteri-          coupled HM effects in OPA.
+zation and numerical modelling with regard to the evolu-             In the literature, many publications related to the charac-
+tion of the water content and micro-cracks as well as their       terization and process understanding of coupled effects in
+impact on long-term effects on the safety in a repository.        claystone can be found (e.g., Wild and Amann 2018; Wild
+Further development of geophysical detection concepts, the        et al. 2017). Numerical procedures have been developed,
+set-up of related modelling approaches, and the definition of     implemented, tested and validated against experiments and
+pragmatic methods for taking these effects into account in        will be a valuable tool for subsequent safety assessment
+safety demonstration are of specific interest for the radioac-    cases which are still under development (please refer to
+tive waste management (RWM) community.                            Armand et al. (2017), Seyedi et al. (2021) amongst others).
+   Coupled HM effects in Opalinus Clay are induced and            Manifold geophysical investigations have been performed in
+affected by excavation as well as the ventilation conditions.     the laboratory as well as in-situ focusing on the lithologic
+As desaturation processes significantly affect the deforma-       description of the claystone, the material parametrization of
+tion behavior, this paper focuses on hydraulic effects and        claystone and EDZ and furthermore the evolution of mate-
+aims on providing a comprehensive basis for further devel-        rial parameters, water content and crack evolution. From
+opment of numerical modelling approaches in the near field        the geophysical point of view, seismic measurements are a
+of excavations. These effects have also been investigated and     widely used and acknowledged tool for detailed structural
+discussed in Maßmann (2009) for the claystone in Tourne-          and mechanical in-situ characterization. Esefelder et al.
+mire, in Peron et al. (2010), Bond et al. (2013), Mayor et al.    (2021) demonstrates the seismic anisotropy of the shaly and
+(2007), and Williams et al. (2022) related to investigations in   carbonate-rich sandy facies of Opalinus Clay in the Mont
+the Mont Terri Rock Laboratory and in Navarro (2005). The         Terri Rock Laboratory at a depth of 2 m away from excava-
+presented work is carried out in the context of the Cyclic        tions, suppressing effects caused by the excavation damaged
+Deformation (CD-A) experiment (Influence of humidity on           zone. Williams et al. (2022) investigates the evolution of the
+cyclic and long-term deformations) Ziefle et al. (2017) as        EDZ and self-sealing for excavations of different age with
+part of the Mont Terri Project Ziefle et al. (2021).              seismic measurements, indicating sealing of the host rock
+   The aim of the CD-A experiment in general is the evalua-       over decades. Further development of laboratory and in-situ
+tion of the hydraulic influence on the long-term deformation      testing procedures for the investigation of material properties
+behaviour of claystone. The unique setting of two identical       related to coupled HM effects is ongoing and can also be
+constructed twin niches, differing only in their ventilation,     found in Amann et al. (2017, 2018), Bock (2009), Zhang and
+enables the investigation of the near field effects like the      Laurich (2020), Zhang et al. (2022), Chen et al. (2022) and
+desaturation and the evolution of the EDZ. In this context,       Jiang et al. (2022). Additionally, resistivity measurements
+the impact of the lithology on the subfacies scale on intrinsic   are used to study on the one hand the microstructure of the
+properties like resistivity on one side and process-variables     material and on the other hand changes in the fluid content
+like water content on the other side are addressed (see also      (Tang et al. 2022). Crisci et al. (2021) proposes a correla-
+Amabile et al. (2020)). The research aims at a detailed, time-    tion of the HM response to the mineralogical variability of
+dependent description of the extent and hydraulic charac-         the tested specimens, defined as shaly (high clay-mineral
+teristics of the EDZ with regard to potential flow paths.         content) and sandy (low clay-mineral content) layers. On
+The interdisciplinary interpretation is carried out in view       the laboratory scale it is shown that by adopting a layered
+of the creation of numerical models, which are to be set-up,      structure with an alternation of shaly and sandy layers, most
+calibrated and verified by means of the various investiga-        of the variability in the studied geomechanical properties
+tion (experimental) methods. Besides the presented work,          of Opalinus Clay can be captured. Similar approaches may
+                                                                  also be used on a larger scale. The work at hand contributes
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                          4445
+
+in an increased understanding of the in situ water content                indicating a heterogeneous evolution of the water content
+evolution and related effects on the barrier integrity and can            in the near field. The interpretation of this results is carried
+be seen as basis for the parametrisation of permeability and              out without distinguishing between EDZ and undisturbed
+tendency to cracking. Extensive studies on this exist with                host rock. The approach enables the interpretation of water
+regard to the effects in the Callovo-Oxfordian (COx) clay-                content changes with regard to the lithologic description
+stone which is investigated in the French radioactive waste               of the rock surface and the seasonal change of humidity
+disposal project. Alcolea et al. (2017) amongst others dis-               conditions. The novel opportunity of combining long-term
+cusses possible characterization strategies and Armand et al.             2D ERT with point-wise water content measurements by
+(2013) contributes a comprehensive study of the initial situ-             nuclear magnetic resonance (NMR) enables the option
+ation around various drifts in the COx.                                   of transferring the resulting electrical resistivity maps
+   The significant impact of the water content on the                     into maps of water content. The corresponding transfer
+mechanical properties like stiffness and strength has been                function has a reliable, i.e., physical, background and is
+highlighted by Ip and Borja (2022): For transversely iso-                 directly driven by in-situ measurements. As demonstrated
+tropic rocks, the effects of saturation can differ between                in this paper, such data sets can serve as a basis for testing,
+the bedding directions, which gives rise to a saturation-                 correcting, and permanently adapting the numerical mod-
+dependent stiffness and strength anisotropy, often with                   elling approaches including their boundary conditions.
+larger stiffness and strength after drying. The accurate
+prediction of mechanical behaviour of clay rocks under
+partially saturated conditions requires numerical models                  2 CD‑A Experiment in the Mont Terri Project
+that can capture the evolving elastic and plastic anisotropy
+depending on the water content. Through numerical sim-                    The Mont Terri Project is an international research project
+ulations with an anisotropic modified Cam-Clay (MCC)                      aiming at the geological and geotechnical characterization
+model, Ip and Borja (2022) demonstrates the role of evolv-                of Opalinus claystone in a rock laboratory. It is located in
+ing stiffness and strength anisotropy and the impact of                   the western part of Switzerland in the Jura mountains and
+the saturation on the mechanical behaviour of clay rocks.                 hosts various field experiments to investigate the coupled
+The response of OPA to relative humidity changes has                      thermal-hydro-mechanical and chemical processes in the
+been investigated by Wild et al. (2017), indicating irrevers-             Opalinus Clay. The results provide general insights about
+ible expansion normal to bedding. The strength and water                  the suitability of clayrock as a potential host rock for radi-
+retention characteristic remain unaffected by the relative                oactive waste disposal or other geotechnical applications
+humidity variations.                                                      like Carbon Capture and Storage (CCS). More information
+   Related to the geophysical application, the investiga-                 about the geology and lithography of the Opalinus Clay in
+tion of lithology but also the fractured zones is of spe-                 the area of the Mont Terri Rock Laboratory can be found
+cific importance as these zones may come along with a                     in Bossart et al. (2018), Hostettler et al. (2018), Nussbaum
+change of material parameters affecting the hydraulic and                 et al. (2018) and Jaeggi et al. (2018). The geomechani-
+mechanical processes.                                                     cal behaviour at multiple scales is summarized in Amann
+   In general, many aspects of hydromechanical behaviour                  et al. (2018). Manifold information about the Mont Terri
+of claystone are under discussion with respect to experi-                 Rock Project is also given in Bossart et al. (2018). The
+mental analysis, mathematical description and numerical                   excavation of the CD-A twin niches has been carried out
+treatment. Numerous international projects and publica-                   as part of the extension of the Mont Terri Rock Laboratory
+tions deal with this topic as can be seen in Armand et al.                (Bossart and Burrus 2019) in September 2019. The niches
+(2017), Plúa et al. (2021), Bond et al. (2013) and Kolditz                were excavated in fall 2019 near the Gallery 2018 in an
+et al. (2021) amongst others.                                             area characterized by the upper sandy facies of the Opa-
+   This article summarizes results of the CD-A experi-                    linus Clay as shown in Fig. 1. With a diameter of 2.3 m
+ment during the first two years after excavation aiming                   and a length of 11 m, both are oriented perpendicular to
+on a comprehensive interpretation of the observed water                   the strike of bedding. While one niche (open twin-color
+content evolution of the near field. In general, laboratory               coded in blue) is ventilated in the same way as the rest of
+investigation results depend on the preparation procedure                 the underground laboratory, the other niche (closed twin-
+and extraction location of the core samples. The methodic                 color coded in red) is sealed off so that a uniformly high
+approach presented here gives (a) an overview of the dis-                 humidity is maintained. The surface of the claystone in
+tribution of initial heterogeneities in the near field, (b)               the niches is not covered with any kind of stabilizing sup-
+provides a moisture map, giving information about the                     port. Consequently, a unattenuated interaction between the
+distribution of the water content over the time and (c)                   climatic conditions in the niches and the claystone is to
+interprets the water content measurements statistically,                  be expected, the possible consequences of which should
+4446                                                                                                                  G. Ziefle et al.
+
+Fig. 1  Top: Location of the
+CD-A experiment in the Mont
+Terri URL (top) and view into
+the open (bottom left/blue
+frame) and the closed (bottom
+right/red frame) niche
+
+
+
+
+be directly observable and even measurable. This model           range for humidity between 0 and 100% with an accuracy of
+setup allows the study of the effects of climatic condi-         +∕ − (1.3 + 0.003)% RH. The measured climatic conditions
+tions on the behaviour of the host rock. The experiment          indicate nearly homogeneous conditions within each niche,
+is characterized by a comprehensive measuring campaign           with slightly higher relative humidities at the bottom and the
+which is combined with numerical modelling and the use           back part of each niche. They are presented for both twin
+of visualisation techniques.                                     niches in Fig. 2. The open niche is characterized by seasonal
+   The complex measuring program of the experiment               evolution of temperature and relative humidity with higher
+focuses on the climatic conditions within the twin niches,       values for these quantities in summer and lower values in the
+the characterization of the host rock, and the evolution of      winter season. In contrast, the climatic conditions in the closed
+the deformation, saturation and pore pressure as it is pre-      niche tend to a constantly high relative humidity of nearly
+sented in Ziefle et al. (2019) and Maßmann et al. (2019)         100% and equilibrium mean temperature of about 13.8 °C.
+and discussed in Ziefle et al. (2024). Within a few weeks        Furthermore, the measurements indicate clearly the impact of
+after excavation, a complex measuring system in and              calibration of air condition within the first months (2019) and
+around the niches has been installed and the climatiza-          of opening times of the sealing door. As intended, no seasonal
+tion has been adjusted in the closed twin as described in        variation on temperature and relative humidity can be identi-
+Ziefle et al. (2021). A comparative interpretation of the        fied in the closed niche. The temporal evolution in both niches
+investigated parameters provide information concerning           indicates an impact of excavation at the early measurements.
+the distribution of different litho–stratigraphic (sub)units,    Here, an initially higher temperature can be identified.
+the extent of a excavation/borehole damaged zone (EDZ/              Additional measurements focusing on the deformation
+BDZ) as well as the occurrence and properties of tectonic        behaviour such as laser scans, convergence and extensometer
+fault zones and individual faults and is discussed in Ziefle     measurements are not part of this article but are discussed in
+et al. (2024).                                                   combination with geologic interpretations, numerical mod-
+   The temperature, atmospheric pressure and relative humid-     elling approaches and visualization techniques in sigeom
+ity of the air within the two niches and the adjoining gallery   (2020), and Ziefle et al. (2022). Additional measurements of
+are measured permanently at several locations (Schwab et al.     crack evolution have been performed using scanline meas-
+2021). In each niche, 5 measuring devices (Relative humid-       urements and summarized in Regard et al. (2022). Investiga-
+ity and temperature EE210 by E + E Elektronik GmbH) at           tions focusing on the pore pressure evolution in the saturated
+different locations are installed. They have a measuring         host rock conducted by mini-piezometer, as well as suction
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                             4447
+
+
+
+
+Fig. 2  Measured relative humidity (RH) (top) and temperature (bottom) in the twin niches. Lower RH within the first couple of months results
+from installation periods as well as technical issues with the ventilation of the niche
+
+
+
+measurements in the desaturated area conducted by psychrom-               approach. Since the focus of the current work is placed on
+eters and thermo-hygrometers are in preparation. The inter-               the desaturation effects, we do not discuss the mechanical/
+pretation of this measurements in combination with numeri-                hydro-mechanical effects and refer the reader to additional
+cal modelling procedures also focuses on the improvement of               publications, e.g., comparison of monitored and modeled
+constitutive models e.g., the retention curve. In this context,           convergence Ziefle et al. (2022), desaturation and strain evo-
+seasonal effects related to saturation and desaturation of the            lution Cajuhi et al. (2023a). The chosen macroscopic HM
+rock and its influence on the deformation behaviour, stability,           approach is based on poro-elasticity with the momentum
+host rock integrity and consequently its containment capability           balance of the solid and the mass balance of the pore fluid
+need to be considered. Swelling and shrinkage, elasto-visco-              (Gawin and Schrefler 1996; Ziefle et al. 2017; Kolditz et al.
+plastic material behaviour as well as damage and fracturing               2021; Pitz et al. 2022). The coupling between the solid and
+should be taken into account.                                             liquid parts is performed with the effective stress concept
+                                                                          (BIOT) and the Bishop’s approximation (Bishop and Blight
+                                                                          1963; Gawin and Schrefler 1996; Lewis and Schrefler 1998).
+3 Numerical Modelling Approach of Near                                   Linear elasticity and modified Darcy flow are applied, taken
+   Field Hydraulic Effects                                                account desaturation by the Richards equation (Richards
+                                                                          1931). Following Richards, the pore gas pressure is kept
+A numerical model is applied to investigate the behaviour of              constant, while the liquid pressure can vary. As the pore gas
+the rock at the niches. The open-source scientific software               pressure is assumed to be zero, negative pore pressures equal
+OpenGeoSys (OGS) (Kolditz et al. 2012, 2021; Bilke et al.                 capillary pressures. Using the van Genuchten curve (Van
+2022) has been used to setup a HM coupled two-dimen-                      Genuchten 1980), the liquid saturation Seff can be defined
+sional model. The model is based on an unsaturated HM                     as a function of capillary pressure pcap:
+4448                                                                                                                     G. Ziefle et al.
+
+Fig. 3  Numerical model setup:
+whole domain (a) and zoomed
+view (rectangular area) of the
+niches (b). The open niche is
+subjected to seasonal bound-
+ary conditions, while the pore
+pressure at the closed niche is
+approximately constant. No dis-
+placement boundary conditions
+as well as a constant, in-situ
+measured, pore pressure are
+applied around the boundaries
+of the two-dimensional model
+
+
+
+
+         (        (
+                      pcap
+                             )n ) 1n −1                           The liquid density, the universal gas constant and molar mass
+Seff =       1+                           ,                (1)    of the pore fluid are given by 𝜌L = 1000 kg/m3 , R = 8.314 J/
+                      pb                                          (mol K) and ML = 0.01802 kg/mol, respectively.
+with pb = 10 MPa, n = 1.82 and the residual saturation               However, one crucial point in modelling the desaturation
+Sr = 1.                                                           effects around the twin niches is the behavior at the surface
+   In the numerical model setup the twin niches are               of the host rock. Here, various effects come into play and
+placed symmetrically in a two-dimensional domain with             interact. The physical and mathematical description, which
+100 × 100 ­m2 with 8510 quadratically interpolated Finite         are basis for the numerical modelling, are complex and the
+Elements as depicted in Fig. 3. The material properties uti-      related interaction of effects is not yet fully understood. The
+lized in the simulation correspond to the sandy facies with       mentioned approach is the common state-of-the-art approach
+anisotropic hydraulic and mechanical behaviours obtained          and has to be critically questioned. The RH variations in the
+from the literature (Bossart et al. 2018,[51]). The anisot-       closed niche observed in the first months of the experiment
+ropy of the intrinsic permeability is modeled by a factor         are related to door openings, e.g., installation of measure-
+of 2.5 as derived from the hydraulic conductivity given by        ment sensors. Nevertheless, the pore pressure is set constant
+[51]. Initially, the stress-state as measured in-situ (Martin     and is calculated with the average values of the maximum
+and Lanyon 2003; Ziefle et al. 2017) is projected on the          monitored RH as it reflects the situation since May 2020.
+mesh with the compressive total stresses 𝜎horizontal = 3 MPa         As a result of the numerical calculations, the relative satu-
+and 𝜎vertical = 7MPa. The initial liquid pore pressure is set     ration changes near the open niche are depicted in Fig. 4 for
+to 2 MPa according to Garitte et al. (2017) over the domain,      September 2020 and March 2021. The temporal evolution
+which also corresponds to the outer boundary condition.           of these changes are presented in Cajuhi et al. (2021b). A
+Moreover, no displacement normal to the edges of the outer
+domain are allowed by boundary condition. No further
+mechanical loading is assigned to the model, consequently,
+the main driving load is the hydraulic part. In order to define
+the transient hydraulic boundary conditions around the open
+niche, the RH depicted in Fig. 2 is used. The Kelvin equa-
+tion Thomson (1872) is applied to determine the capillary
+pressure based on measured RH and temperature. Since one
+of the primary variables of the model is the liquid pore pres-
+sure, the Kelvin equation (given in Thomson (1872)) is used
+to transform relative air humidity into pore pressure to be
+used as boundary condition in the open twin:
+       𝜌L RT                                                      Fig. 4  The difference between the saturation values with respect to
+p=           ln(RH)                                        (2)    the reference state in October 2019 are computed for the open twin.
+        ML                                                        The results for September 2020 (a) and March 2021 (b) are shown in
+                                                                  analogy to Fig. 5
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                          4449
+
+decrease of saturation is predicted for the winter period. The            profile. Furthermore, the relative change of electrical resis-
+saturation is lowest at the end of winter, which is in accord-            tivity provides information about the water content changes
+ance to our observations from the geophysical results (please             around the niches. Additional measurements of the water
+refer to Sect. 5). The calculated saturation changes at the               content evolution are carried out by nuclear magnetic reso-
+surface and in the near field of the open niche come along                nance (NMR) measurements investigating the water content
+with a water vapour inflow from the rock into the niche.                  evolution near the surface.
+The amount of this water vapour flow can be recalculated
+from the model and lies in the range of 0.5 to − 2.5 l/day;               4.1 Characterization of the Host Rock by ERT
+depending on the season and on the time since excavation.
+In comparison to the values from the open twin, the water                 ERT is used to provide information about the material com-
+vapour flow from the closed twin only comprises a decrease                position and the change of water content. For that purpose,
+of the water vapour flow depending on the time since exca-                a vertical ring consisting of 72 equidistant electrodes on the
+vation and lies in a range of about 0.2 l/day. This flow rate             wall in each niche was installed in October 2019. The resis-
+is related to initial effects. Since the pore pressure applied            tivity measurements along this ring profile are repeated daily
+in the closed niche is constant, no changes in saturation are             and enable an interpretation of structures larger than the
+calculated and the results of the closed niche are not plotted.           distance between the electrodes. Smaller scale effects may
+This kind of investigations is especially interesting for the             be measurement-related artefacts.
+long term evolution around the niches and is a still ongoing                 The setup contains all possible Wenner-𝛼 and Wenner-𝛽
+work which is accompanied by in situ measurements focus-                  configurations, respectively (Knödel et al. 2007). This
+ing on the tightness of the sealing door in the closed twin.              allows observing the electrical resistivity and its changes
+   Since the model is homogeneous, the computed saturation                up to a depth of a few decimeters. A numerical inversion
+values Sw are constant circularly around the niche. These                 process is necessary for data analysis and interpretation. The
+results are used to compute the monthly volumetric water                  measured apparent resistivities at the niche wall have to be
+content 𝜃 [m3/m3 ] with                                                   transformed into a spatial model, discretised into a distinct
+                                                                          number of elements of homogeneous resistivity, taking into
+𝜃 = nSw ,                                                         (3)     account the electrode geometry. The forward operator in the
+where n = 0.105 [–] is the water loss porosity estimated in               inversion process is generally obtained by finite-difference
+Bossart et al. (2018). In summary, the presented homogene-                (FD) or finite-element (FE) methods. For our data, the non-
+ous model approach enables the investigation of desatura-                 commercial software package BERT (Boundless Electrical
+tion effects due to climatic conditions. In the following, the            Resistivity Tomography) is used.1 For further details, see
+impact of heterogeneous effects and numerical model cali-                 Günther et al. (2006) and Rücker et al. (2006). Windows of
+bration are discussed. We focus on a combined interpretation              3 × 3 m2 are chosen to depict the ERT results to focus on the
+of monitored data and modeling approach.                                  region near the surface, where the resolution of the method
+                                                                          is optimized given the setup described above.
+                                                                             The measured reference electrical resistivities (ERT)
+4 In‑Situ Investigation Program                                          (measured at 31.10.2019) are presented in Fig. 5 (left) and
+                                                                          indicate the heterogeneous material composition of the
+Important process quantities regarding coupled HM effects                 sandy facies of the OPA around the twin niches. Here, areas
+in claystone are displacements, stress field and pore pres-               with higher carbonate content are characterized by higher
+sure, amongst others. These parameters are part of the CD-A               electrical resistivities. The temporal evolution of this meas-
+measuring program as discussed in Ziefle et al. (2022) and                urement is depicted in Fig. 5 (middle and right). Based on
+Maßmann et al. (2019). However, the water content within                  the measurements at the reference day, the relative changes
+the host rock is a key parameter for various processes affect-            of the resistivity distributions are exemplarily plotted and
+ing the mechanical behaviour. As the work at hand focuses                 compared for two days in August 2021 and 2022, indicat-
+on the effect of desaturation near the excavation, the pre-               ing zones with high changes of the measured resistivity,
+sented in-situ investigations aim on the one hand on a char-              especially with a significant increase of the resistivity (red
+acterization of the host rock as also discussed in Ziefle et al.          zones). This increase of resistivity is directly related in time
+(2024), and on the other hand on the evolution of the water               to seasonal effects and can therefore be interpreted in two
+content around the twin niches. The characterization of the               ways: On the one hand, the measured higher resistivities can
+host rock is carried out with the electrical resistivity tomog-           result directly from a lower water content. On the other hand,
+raphy (ERT) in a range of decimeters around the niches and
+by a geological interpretation at the surface along the niche
+                                                                          1
+                                                                              https://​gitlab.​com/​resis​tivity-​net/​bert.
+4450                                                                                                                               G. Ziefle et al.
+
+
+
+
+Fig. 5  Reference electrical resistivity (ERT) (measured at                measured in August 2021 (middle) and August 2022 (right). The
+31.10.2019) along the open (top left) and closed (bottom left) niche       results of the geologic interpretation (carried out by swisstopo) are
+profile and relative change [–] of the resistivity related to the refer-   marked by the colored dots along the niche profiles
+ence measurement for the open (top) and the closed (bottom) twin
+
+
+
+a seasonal geometric change in the fracture network—poten-                 very low in the closed niche. In general, the results in the
+tially coming along with corresponding changes in hydraulic                open twin also indicate stronger desaturation after the cold
+properties such as permeability—is also conceivable. What-                 and dry winter months than after the warmer and wetter
+ever the case, the fact is that the areas are characterised by a           summer months. This fact becomes obvious in the statisti-
+seasonality coming along with a varying ratio between solid                cal interpretation discussed in Sect. 5. With regard to the
+rock and fluid. Finally, they are interpreted as changes in                geometric distribution of positions with high resistivities and
+the water content, even if they potentially come along with                high relative changes, the arrangement follows the direc-
+seasonal geometric changes of the fracture network. Addi-                  tion of the strike of bedding and indicates a strike direction
+tionally, significant differences in the desaturation process              of about 145° corresponding to the literature (Ziefle et al.
+around the twin niches become obvious. In the open niche,                  2022). For all electrode positions of the ERT ring profile the
+changes of the resistivity that potentially correspond with                rock has been analyzed regarding the existence of carbonate
+a desaturated zone with an extent of some decimeters can                   or sand lenses, shear zones or scaly clay as well as open frac-
+be observed, which is influenced by the seasonal variations                tures. The results are plotted by the coloured dots in Fig. 5.
+of the climatic conditions described above. In contrast, the               The general observation of higher electrical resistivity in
+changes of resistivity (and consequently water content) are                areas with higher carbonate content is already documented
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                                 4451
+
+
+
+
+Fig. 6  The volumetric water content as measured about every six           From 2019 to 2021, the NMR-Mouse PM25 (Magritek) was used for
+months using non-invasive single-sided NMR is depicted as radii in         sampling a depth of approximately 1 cm on floor and ceiling, whereas
+these circle diagrams, which schematically indicate the niche cross        since October 2021 the NMR-Mouse PM10 (Magritek) has been uti-
+sections. The measurement points 4A to 4 S (open twin, top) and 3A         lized that samples a depth of 0.6 cm all along the profile of the twin
+to 3N (closed twin, bottom) twin appear at the angular values cor-         niches. Please see the text for further details
+responding to the real positions inside the niches (Ziefle et al. 2021).
+
+
+in Kneuker et al. (2017) and also discussed in Ziefle et al.               seasonal variation of the amplitude of these high resistivi-
+(2024). While an impact of carbonate/sandy lenses and shear                ties can be associated to changes in crack properties, like
+zones/scaly clay on resistivity outliers can not be identified,            crack aperture, which is reported to occur due to desatu-
+some of the detected positions are characterized by open                   ration (see Maßmann 2009; Ziefle et al. 2017). Additional
+fractures and additionally by high initial resistivities (meas-            scanline measurements, which are also carried out in the
+ured in October 2019), often corresponding with a strong                   CD-A experiment, give information about the evolution of
+increase of resistivity over time. The observed correlation                aperture and length of desiccation cracks at the surface of
+between open fractures and resistivity is based on very                    the host rock. These investigations also indicate a seasonal
+rare data points, but indicate that 70% (7 out of 10) of the               variation of the mentioned crack properties. Nevertheless,
+detected locations with existing open fractures correspond                 this is just an observation of the surface, while the measure-
+to areas with high initial resistivities suggesting areas with             ments discussed in this paper focus on the decimeter scale
+high carbonate content and a (potentially resulting) signifi-              around the niches. Nevertheless, these results are a motiva-
+cant increase of the resistivity over time. Nevertheless, also             tion to use additional numerical approaches like phase-field
+open fractures with lower resistivities as well as unfractured             models (Cajuhi et al. 2018, 2023b; Heider and Sun 2020) in
+regions with higher resistivities are found in the data set. The           the modelling approach.
+4452                                                                                                                     G. Ziefle et al.
+
+Fig. 7  Crossplot of electrical
+resistivity (ERT) and volu-
+metric water content (NMR)
+as measured at the surface of
+the twin niches (left). Water
+content distribution around the
+open twin as interpreted from
+ERT measurements in April
+2021 (right) based on the power
+law relation of the generalized
+Archie model according to Shah
+and Singh (2005)
+
+
+
+
+4.2 Water Content Evolution by ERT and NMR                        CD-A experiment does not allow a robust multi-exponen-
+     Monitoring                                                    tial analysis for NMR data from Opalinus Clay, whereas its
+                                                                   mono-exponential representation is dominated by the pore
+As mentioned before, the permanent ERT installation has            water and leads to water content estimates being consist-
+provided a complete measurement every day since October            ent with the amount of the water lost after drying at 105
+2019. The relative changes of the measured electrical resis-       °C. This is because the assumption of a single exponential
+tivity are of main interest, because these are directly associ-    component represents an averaged decay that suppresses the
+ated with saturation/desaturation processes in the OPA adja-       fast-decaying signal components from interlayer water and/
+cent to the niche. Additional water content measurements           or hydroxyl groups.
+have been performed by the NMR method, which delivers                 Using the single-sided NMR in combination with the air
+a response signal of the 1 H nuclei in water molecules after       humidity measurements in the twin niches, we investigate
+electromagnetic excitation. If exposed to an alternating mag-      the seasonal moisture interactions between niche atmosphere
+netic field oscillating at the Larmor frequency, the 1 H proton    and rock surface. In addition, we anticipate that the in-situ
+spins are forced to tilt away from their equilibrium positions     NMR data from the niche surfaces support the quantitative
+in a static magnetic field, and relax back to it after shutting    interpretation of the ERT monitoring with respect to mois-
+off the excitation field. This relaxation process is observed as   ture variations inside the OPA directly adjacent to the niche
+exponentially decaying signal (Coates et al. 1999). The more       wall.
+1
+  H protons are included in this process, the stronger is the         From October 2019 to October 2021, we used a single-
+detected signal—a simple linear relationship that can eas-         sided NMR device with a 40 by 40 ­mm2 sensor for exciting
+ily be transferred to water content estimates. We apply the        and detecting an NMR signal with optimal signal-to-noise
+single-sided NMR technology for non-invasive in-situ meas-         ratio (NMR-Mouse PM25, Magritek). The sensitive area, a
+urements directly on the wall of the CD-A niches. For details      footprint with the same dimensions as the sensor coil and
+on this relatively new NMR measurement technique and its           a thickness of 200 μm, is placed outside the device. The
+potential use in geosciences, we refer to (Blümich et al.          apparatus was adjusted to sample the volumetric water con-
+2008) and (Costabel et al. 2022). In principle, NMR is able        tent at a depth of 1 cm of the material in front of the sensor.
+to distinguish different kinds of water in rocks, i.e., adsorbed   Specific NMR measurement points were determined and
+and free pore water, if the signals from the corresponding
+proton spins decay with different rates. Consequently, NMR
+signals from porous geo-materials are generally assumed to         Table 1  Empirical values according to the generalized Archie model
+                                                                   (Eq. 4) for the in-situ data set
+be the superposition of different exponential decays (Coates
+et al. 1999). When clay minerals are involved, even pro-           Data specification           c                m                 R2
+ton spins of hydroxyl groups being part of the (pseudo-)
+                                                                   Open twin                    5.98             0.72              0.24
+solid rock matrix might contribute to the measured NMR
+                                                                   Closed twin                  1.44             1.51              0.26
+signal (Fleury and Romero-Sarmiento 2016). However, as
+                                                                   Both niches                  1.11             1.58              0.49
+demonstrated by Costabel (2023), the equipment used in the
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                        4453
+
+positioned in form of a ring around both niche walls (Ziefle              𝜌 = c ⋅ 𝜌fluid ⋅ 𝜃 −m ,                                   (4)
+et al. 2021). The distance of these points to the ERT profile
+differ between 20 and 50 cm. An equidistant determination                 where 𝜌 and 𝜌fluid [Ωm ] are the measured resistivity and that
+of the NMR points with respect to the ERT profiles was                    of the pore fluid, respectively, and 𝜃 is the water content
+not possible because we had to consider the roughness of                  [m3 ∕m3]. The dimensionless parameters c and m are empiri-
+the niche surface that does not allow an arbitrary placement              cal variables, which, according to Shah and Singh (2005),
+of the NMR device. We successfully applied the device                     can range within 0.3–15.9 and 0.7–3.9, respectively. If c and
+described above on the measurement positions of floor and                 m are known or can be identified by sufficient calibration
+ceiling. Due to the weight of the device (35 kg), the attempts            data, 𝜌-measurements can provide water content estimates.
+to conduct measurements also on the positions of the side-                   We test this option using the in-situ ERT and the NMR
+walls were assessed to be too risky for health and material               measurements from the surfaces of the twin niches. Fig-
+and were stopped for safety reasons. Since October 2021                   ure 7a shows a corresponding semi-logarithmic cross plot
+a 6 kg lightweight version of a single-sided NMR device                   of 𝜃 and 𝜌 . Because the positions of the ERT-electrodes
+(NMR-Mouse PM10, Magritek) has been acquired that also                    and the NMR measurement points are not the same, a
+allows measurements from the sidewalls. This advantage                    reasonable connection between the measurement results
+comes at the cost of a lower signal-to-noise ratio. The sen-              is not straightforward. Of course, we consider only the
+sor of the lightweight device has a size of 16 by 16 ­mm2 and             ERT results from those dates, on which the NMR meas-
+is adjusted to sampling a depth of 0.6 cm.                                urements took place. However, the spatial connection is
+   To capture seasonal changes of the moisture content at                 an issue. Considering the fact that the ERT data demon-
+the NMR measurement points, we acquire data at least two                  strates significant differences in the temporal behaviour
+times per year (summer and winter). Figure 6 visualizes and               of different segments around the niches as presented in
+compares the corresponding results for the twin niches since              Fig. 5, we spatially average the ERT inversion results at
+the beginning of the experiment. The circle diagrams indi-                the tunnel surface separately for ceiling, floor, left, and
+cate schematically the cross sections of the niches with the              right sidewall for the considered dates. In doing so, we
+measurement points at the exact angular positions, while                  only take into account those parts of the cross-sectional
+the volumetric water content is depicted as the radii of con-             arc, which are also covered by NMR measurement points.
+centric circles. We observe that the results in the open twin             The NMR water content results depicted in Fig. 6 are
+indicate an overall drier wall than in the closed twin for the            averaged correspondingly.
+entire year. The water content in the open twin ranges from                  Finally, this procedure leads to several 𝜌 − 𝜃 data pairs,
+less than 10 vol% in March to more than 10 up to 15 vol%                  which can be fitted with equation (4) to test how well it
+in October. In contrast and as expected, the water content at             describes our data. Regarding the coefficient of determi-
+the wall of the closed twin hardly changes with season. How-              nation R2 , between 0.2 and 0.3 individually for each niche
+ever, we have observed a slight continuous increase since                 and 0.5 for the whole data set, we can conclude that the
+October 2019 with starting values between 8 and 13 vol%                   𝜌 − 𝜃 data correspond to the generalized Archie model
+during the first year up to 13–16 vol% in 2022 here. This                 as expected, at least at a first approximation. The values
+trend has halted in 2021 and the water content appears to                 of the fitting parameters are given in Table 1. Our future
+have stabilized at each observed point.                                   research will evaluate this relationship in order to verify
+                                                                          it with more in-situ measurements from the twin niches,
+4.3 Combined Evaluation of ERT and NMR                                   but also with additional laboratory experiment.
+                                                                             Once the empirical fit parameters of equation (4) are
+As described, NMR measurements are used to directly meas-                 determined, the ERT data can be converted to estimates
+ure the water content at a very shallow depth of less than                of water content. An example result is given in Fig. 7.
+1 cm on certain points around the niches while ERT measure-               Such water content images can directly be compared to
+ments probe the electrical resistivity distribution up to depths          the results of the numerical simulations.
+of a few tens of cm. The following consideration focus on
+combining the two for extending the water content informa-
+tion. Pore water in porous rocks and the dissolved ions in                5 Temporal Evolution of the Desaturation
+it create flowpaths for electrical current, thus an increasing               Process
+water content usually reduces the electrical resistivity. An
+adequate description of this relationship is given by the gen-            In this section, the ERT measurements are interpreted sta-
+eralized Archie-model (Shah and Singh 2005), which links                  tistically to provide time-dependent information about the
+the two quantities by a relatively simple power law:                      resistivity change and the related water content evolution
+                                                                          around the niches. Furthermore, the water content evolution
+4454                                                                                                                            G. Ziefle et al.
+
+Fig. 8  Methodic approach:
+Concept of comparative multi-
+disciplinary investigation of
+the water content consisting of
+measurements and numerical
+modeling
+
+
+
+
+Fig. 9  Boxplot presentation of resistivity data set obtained experimentally for the open (top) and the closed niche (bottom)
+
+
+is compared to numerical modelling results to discuss the                   the relative air humidity and the electrical resistivity can be
+modelling approaches. Aiming on a validation of the used                    derived by measurements, there are different ways to gain
+numerical model we follow the methodic approach presented                   information about the water content. The NMR measurements
+in Fig. 8, which indicates different methods to gain informa-               aim at a direct measurement of the water content while the
+tion about the saturation effects around the twin niches. While             ERT measurements can be correlated to the water content
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                                 4455
+
+
+
+
+Fig. 10  Time-dependent evolution of water content on the wall inside     grey) and from a numerical simulation with maximum experimentally
+the open niche as measured using NMR (blue points) as presented           obtained porosity of n = 0.175 (lighter grey). The resistivity data was
+in Fig. 6 and estimated from measured mean resistivities (orange) as      converted to values of water content by using the relation presented
+presented in Fig. 5 compared to the water content from the numerical      in Fig. 7
+simulation as presented in Fig. 4 with a porosity of n = 0.105 (darker
+
+
+using the defined relation (described in Fig. 7). The numerical           the distribution of resistivity values on a virtual circular
+model calculates the water content based on balance equations             profile inside the niche wall. As is usual with boxplots,
+and the defined constitutive relationships as they are defined            the boxes represent the interquartile range (IQR), which is
+in the model-set-up and applied in the finite element code                bounded by the lower quartile Q1 (25th percentile) and the
+OpenGeoSys indicated by the orange rectangle in Fig. 8. The               upper quartile Q3 (75th percentile). The plotted vertical lines
+measured relative air humidity is used as input parameter as              represent the data below and above the mentioned quartiles.
+introduced in Sect. 3. Uncertainties coming along with this               The lower range is computed with Q1 − 1.5IQR , while the
+approach have already been discussed in Sect. 3. Additional               upper with Q3 + 1.5IQR . These limits are marked by the
+complexity arises due to heterogeneities, which are covered by            lower and upper whiskers, respectively. The outliers are plot-
+the measurements and their statistical interpretation.                    ted as circles. It is important to notice that the minimum of
+   Conditioned by the relatively short measuring interval                 the data set is larger than the calculated value of the lower
+of 2 years of this long-term experiment, the quantitative                 whisker and for this reason no outlier is seen for low resis-
+results have to be interpreted critically aiming on further               tivities. On the other hand, especially for the open niche the
+development of the methodical approach and future use of                  maximum of the data set is larger than the calculated value
+this approach for calibration and further development of the              of the upper whisker. For this reason there are outliers in
+investigation methods. For this purpose, one measured ERT                 the upper part of the graph. The related data sets are also
+profile per month is evaluated statistically for each niche at            summarized in Appendix.
+different depths, i.e., distances from the niche wall as shown               Summarizing this, the ranges around the mean values,
+in Fig. 9. For that, an idealized ring profile with 2.4 m diam-           minimum and outliers under the minimum remain approxi-
+eter is used and the measurements are re-computed with                    mately constant and show only minor influence of seasonal
+BERT. Since only the position of the sensors are shifted to               effects. However, especially in the open twin the maximum
+the ideal niche contour, the interpolation process in BERT                and outliers above the maximum, i.e., at a higher resistivity
+is not affected by the idealized contour.                                 ratio show a different behaviour. Here, significant seasonal
+   Figure 9 shows the monthly temporal evolution of the                   variations over time occur with maximum amplitudes during
+resistivity from October 2019 to April 2022 for both niches,              winter time. This high range of measured resistivities indi-
+using boxplots, which are also called box-and-whisker plots               cates a significantly higher range of the water content along
+as described in Wikipedia (2023). Each boxplot represents                 the niche profile, coming along with zones of a significant
+4456                                                                                                                           G. Ziefle et al.
+
+
+
+
+Fig. 11  Comparison of resistivity values obtained experimentally (in   mathematical relation between resistivity and water content depicted
+boxplot presentation mode (purple and green)) to resistivity values     in Fig. 7. The comparison is given near the surface (top) and in a
+computed from simulated water content (given by dashed lines (blue      depth of 20–30 cm (bottom)
+and orange). The simulated values are converted from saturation with
+
+
+increase of the resistivity or synonymously a significant               but they may also come along with a varying geometric
+decrease of the water content. This observation yields from             structure or material parametrisation of possible cracks. The
+the niche wall up to a depth of 20 to 30 cm which is the                evolution of the measured elastic resistivity is also plotted in
+whole investigation area. The evaluation indicates that the             comparison to the modelled values directly at the niche wall
+outliers show a maximum amplitude at depths between 5                   and in a depth of 20 to 30 cm in Fig. 11.
+and 10 cm, nevertheless they occur in the whole measuring                  Following the methodic approach presented in Fig. 8,
+interval between 0 and 30 cm depths. The observed seasonal              we aim on a comparison of these measurements with the
+variations are interpreted as changes of the water content,             NMR measurements and the modelling results. For that, the
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                         4457
+
+
+                                                                           estimates for the comparison with the measured ERT data.
+                                                                           Consequently, the resulting water content is plugged in
+                                                                           1.108 𝜃 −1.58 (fitting from Fig. 7) to obtain the resistivity.
+                                                                               The simulated resistivity values are presented in Fig. 11
+                                                                           and compared with the ERT measurements. In analogy to
+                                                                           Fig. 9, the results at the wall of the open niche and at the
+                                                                           contour between 20 and 30 cm are plotted. We note that
+                                                                           the modelled resistivities lay in the range of the ERT out-
+                                                                           liers, which, on the one hand, confirms the structural gap
+                                                                           between numerical model and reality, but indicates, on the
+                                                                           other hand, that the obtained values are in a physically mean-
+                                                                           ingful range. In general, the derived values indicate much
+Fig. 12  Comparative schematic presentation of the desaturated zone        dryer conditions near the surface than the measurements. At
+and heterogeneities in the open twin resulting from the statistic evalu-   higher depths of 20 to 30 cm, the model indicates low sea-
+ation of ERT data and the numerical model
+                                                                           sonal variations and similar values than the measurements.
+                                                                           It can be stated, that the numerical model overestimates the
+derived 𝜌 − 𝜃-relationship (see Fig. 7) is applied to the com-             measured mean resistivity and its seasonal variation near the
+plete ERT monitoring data set (Fig. 9), from which we get                  niche wall, while it fits the measurements at higher depths
+an impression of the temporal evolution of the mean water                  quite good.
+content round the niches. Figure 10 presents the correspond-
+ing data together with the NMR results and compares them                   5.1 Discussion of the Methodology
+with the results computed by numerical simulations assum-
+ing two different porosities for the OPA that vary within the              Possible sources of error for the different results of numeri-
+experimentally obtained range Bossart et al. (2018). The                   cal model and measurement can be found in each part of
+curves indicate a principle agreement of the seasonal water                Fig. 8. First of all, measurements of high RH are crucial
+content changes, although the numerical results indicate                   and imply lower accuracy. Furthermore, the position of the
+higher dynamics, i.e., higher amplitudes, of the seasonal var-             measurement can affect the results, as the humidity in the
+iations. Furthermore, the geophysical measurements indicate                middle of the niches can differ from the situation at the sur-
+a general decreasing trend over time, which superimposes                   face. In the CD-A experiment, several measuring devices
+the seasonal behaviour. The measured values are 1.5 to 3                   with best possible accuracy (please refer to Sect. 4) are used
+times higher than the modelling results assuming a porosity                and positioned along the niches at different heights to keep
+of n = 0.105. Assuming a higher porosity of n = 0.175, the                 the measurement error as low as possible. The behavior at
+measured water contents are up to 2 times higher than the                  the surface can also be influenced by material heterogenei-
+modelled values after the winter month and they correspond                 ties, the development of the EDZ and the fracture network.
+to the measurements at the end of the summer months. Both                  The related uncertainties can also be seen in the measure-
+porosity values lie in the range of related laboratory meas-               ments and are part of the statistical evaluation presented
+urements Bossart et al. (2018), i.e., n = 0.105 corresponds                here. Finally, osmotic effects may come into play. Osmotic
+to the “best estimate" and n = 0.175 to the maximum experi-                pressure is primarily influenced by the concentration of
+mentally obtained porosity. Ongoing use of the presented                   dissolved solutes in water and the temperature. As Opali-
+methodic approach will be based on a more comprehensive                    nus Clay is typically located in deep geological formations
+data set and will allow a statement as to whether the porosity             its pore water is usually relatively low in dissolved solutes
+of the sandy facies lies in the higher range, or is related to             Géologie (2003) and consequently osmotic effects are not a
+different lithological structures. The differences could also              major factor in Opalinus Clay’s behavior. On the other hand,
+emerge from the modelling approach and its strong simpli-                  matric suction arises due to the attractive forces between
+fication, e.g., as already discussed when using the Kelvin                 the water molecules and the solid surfaces of the clay parti-
+equation. In general we can state, that the current numerical              cles. As the moisture content decreases, the capillary forces
+model obviously overestimates the desaturation effect.                     increase, leading to higher matric suction. The low perme-
+    For comparison and verification of the proposed methodi-               ability and high retention properties of OPA prevent sig-
+cal approach, the 𝜌 − 𝜃−relationship can also be used in the               nificant water flow through the clay over long timescales. In
+opposite direction, i.e., starting with the modelled water con-            summary, in comparison to osmotic suction, matric suction
+tent values as input parameters to obtain electrical resistivity           seems to be the more critical factor in the water retention
+4458                                                                                                                   G. Ziefle et al.
+
+
+behavior of Opalinus Clay Villar and Romero (2012), as it           the discussed results is summarized in Fig. 12 indicating
+governs the capillary processes within the clay matrix and          the overestimation of the desaturated zone in the model-
+helps maintain a stable moisture content. Osmotic suction,          ling approach and the appearance of cracks observed by the
+while generally less significant, may come into play under          measurements. The difference between model and measure-
+certain conditions where there are notable differences in           ment becomes even more obvious in winter than in summer
+solute concentrations in the clay’s surroundings. Neverthe-         time.
+less, the validity of the Kelvin equation must be critically           Finally, it has to be pointed out that the presented method-
+questioned in this context. In general, the constitutive model      ical approach to combine measurements and modelling
+as used in the numerical set-up might be too simple, e.g.,          approach has to be assessed, tested and further developed
+the computation of the capillary pressure via Kelvin equa-          on the basis of the long-term evaluation of the CD-A experi-
+tion, fitting of the saturation via the van Genuchten retention     ment, which results in a comprehensive data set within the
+curve or the Bishop’s approximation for the effective stress.       next years. Nevertheless, the presented approach provides an
+Additionally, the complexity of the claystone regarding the         opportunity for more process understanding and enables a
+determination of its material parameters and water conduc-          calibration of various measuring as well as modelling strate-
+tivity behaviour is a further aspect that leads to uncertainties.   gies, enabling continued development and statements con-
+Due to the material structure of the claystone, effects like        cerning possible uncertainties.
+interfacial conductivity have to be kept in mind and make
+the interpretation of measured values very complex. Another
+important issue regarding this evaluation procedure is of           6 Conclusion and Outlook
+course the reliability of the derived relationship between
+electrical resistivity and water content (𝜌 − 𝜃−relationship),      With the presented multi-disciplinary methods we investi-
+which will be in the focus of further investigations. The rela-     gate the characteristics of the claystone and the evolution
+tively short measuring period up to now comes along with            of the water content around the twin niches, which have a
+high uncertainties in the empirical estimation of the fitting       significant impact on coupled HM behavior in claystone.
+parameters of Eq. 4, which can hopefully be resolved by col-        The continual, ongoing ERT measurements provide a
+lecting more data over a longer time period during the ongo-        comprehensive data set for the evolution of the electrical
+ing experiment. Further evaluation of this long-term evolu-         resistivity and reflect clearly the climatic conditions in the
+tion might confirm this trend for all investigation methods.        niches. This data set is interpreted by means of a statistical
+   As discussed in the previous section, the ERT outliers           evaluation. The data points can be assigned to two groups
+can reliably be associated with heterogeneities in the clay-        with different characteristics: While about 90% of the 72
+rock (as depicted in Fig. 5), which are not incorporated in         sensor locations indicate a change of resistivities plotting
+the numerical modeling approach. The homogeneous model              in a narrow range, there exist a second group with outliers,
+approach, although delivering plausible qualitative results,        showing significantly seasonal behaviour, which correlates
+is obviously limited regarding the quantitative differences         to the relative air humidity in the niche. Interpreting this
+to the geophysical observations. Further investigation is           seasonally influenced zones, we assume the existence of
+required to identify the influence of the measured heteroge-        small-scale singularities in contrast to the dominating,
+neities and micro-cracks on the hydraulic as well as mechan-        more homogeneous zone. These seasonally influenced
+ical properties in the numerical model. Depending on the            zones often correlate with open fractures, whereas car-
+scale and also the sealing behaviour, the small scale effects       bonate and sand lenses as well as shear zones or scaly
+may have an impact on the larger scale due to local gas pres-       clay tend to have minor impact. Furthermore, already the
+sure built up or potential ongoing damage, which might be of        initial measurement allows for an assessment of seasonally
+significant importance concerning the integrity of a potential      affected zones, as high initial resistivities often correspond
+waste repository. Consequently, heterogeneous effects such          with zones with a strong increase of resistivity over time.
+as cracks indicated by systematically appearing outliers in         The seasonalities in the ERT measurements indicate zones
+the measurements and the local influence of these cracks on         with particularly pronounced hydraulic behaviour coming
+the drying behaviour, need to be taken into account Cajuhi          along with higher permeabilities, thus, the containment
+et al. (2018, 2021a, 2023b). A schematic presentation of            properties of the clay rock are here affected.
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                      4459
+
+   In combination with the seasonal NMR in-situ meas-                     Nevertheless, in case of a potential repository, the input
+urements on the tunnel wall, a preliminary relationship                   parameters for such a detailed modelling approach are
+between electrical resistivity and water content can be                   rare. However, a sound understanding of the mentioned
+established that enables information about the evolution                  small scale effects serves as an important basis for the
+of water content around the excavations. This informa-                    establishment of a pragmatic, potentially homogenized
+tion yields in a time dependent moisture map and might                    approach to handle near field, long-term, heterogeneous,
+be a good basis for an estimated permeability evolution                   coupled HM effects in the safety assessment of a potential
+and comparison with numerical modelling. However, this                    repository for HLW. The long-term CD-A experiment is
+relationship is still vague due to the few data sets at the               a favorable environment to further evaluate the presented
+beginning of the CD-A experiment, but future work in                      investigation procedure aiming on a quantitative evalua-
+the long-term should underline and consolidate the pre-                   tion and verification of the used measuring and modelling
+sented trend. Due to the mentioned high level of material                 approaches.
+heterogeneity in the near field, the set-up and calibration
+of a model approach is a challenge with different possi-
+bilities to handle. Small scale modeling like e.g., phase                 Data sets for the Statistical Evaluation
+field approaches may represent the fracture evolution and                 of Resistivity as Discussed in Sect. 5
+enable basic information for statements about permeability
+evolution, sealing, and related effects like gas transport.               For completeness, the data sets of the boxplots as presented
+This kind of modelling may be calibrated and also vali-                   in Sect. 5 are summarized here in tabular form for different
+dated by means of the presented methodic approach using                   depths in Tables 2, 3, 4, 5, 6, 7, 8, 9, 10 and 11.
+a combined interpretation of measurements and modelling.
+4460                                                                                                                              G. Ziefle et al.
+
+Table 2  Resistivity data set of   Month       Min      Mean       Max          Q1         Q3        IQR        Q1-1.5IQR       Q3+ 1.5IQR
+the wall of the open niche as
+defined in Sect. 5                 Oct 19      4.73      24.63       73.45      15.76      31.02     15.26        − 7.13         53.9
+                                   Nov 19      3.57      27.74       92.33      15.95      35.36     19.41       − 13.17         64.48
+                                   Dec 19      3.13      31.69      277.05      17.1       38.31     21.21       − 14.72         70.13
+                                   Jan 20      2.87      35.47      538.29      16.38      39.99     23.61       − 19.04         75.41
+                                   Feb 20      2.87      37.01      574.79      16.3       40.31     24.0        − 19.7          76.31
+                                   Mar 20      2.96      40.19      742.34      16.07      44.85     28.77       − 27.09         88.01
+                                   Apr 20      3.21      42.43      746.32      17.68      47.94     30.26       − 27.7          93.32
+                                   May 20      3.25      42.51      725.4       18.01      48.02     30.01       − 27.01         93.04
+                                   Jun 20      3.43      37.47      211.32      17.5       49.67     32.17       − 30.75         97.92
+                                   Jul 20      3.43      35.26      138.01      17.17      47.58     30.41       − 28.46         93.2
+                                   Aug 20      3.39      33.47      109.32      17.6       45.86     28.26       − 24.79         88.25
+                                   Sep 20      3.34      32.08      109.8       16.8       44.19     27.39       − 24.3          85.28
+                                   Oct 20      2.92      35.32      195.97      17.55      47.91     30.36       − 27.99         93.45
+                                   Nov 20      2.7       40.99      633.21      17.13      49.94     32.81       − 32.08         99.15
+                                   Dez 20      2.68      43.95      813.91      16.09      50.63     34.54       − 35.73        102.45
+                                   Jan 21      2.64      44.73      853.64      15.78      51.64     35.86       − 38.01        105.43
+                                   Feb 21      2.8       44.99      861.51      15.86      52.26     36.4        − 38.74        106.86
+                                   Mar 21      2.84      46.26      920.04      16.43      52.88     36.46       − 38.26        107.57
+                                   Apr 21      2.97      45.38      871.33      16.46      54.7      38.24       − 40.9         112.07
+                                   May 21      3.12      44.85      836.74      17.44      56.79     39.35       − 41.58        115.82
+                                   Jun 21      3.25      41.98      479.83      17.08      56.21     39.14       − 41.63        114.92
+                                   Jul 21      3.26      40.57      235.07      18.0       54.56     36.55       − 36.82        109.39
+                                   Aug 21      3.16      38.77      166.68      17.72      52.17     34.45       − 33.95        103.84
+                                   Sep 21      3.17      36.58      130.7       17.14      49.49     32.35       − 31.38         98.02
+                                   Oct 21      3.13      35.73      108.87      16.86      48.79     31.93       − 31.04         96.69
+                                   Nov 21      3.07      35.38      111.38      16.77      49.12     32.34       − 31.74         97.63
+                                   Dez 21      2.52      41.0       472.32      17.07      53.28     36.21       − 37.25        107.6
+                                   Jan 22      2.48      45.31      819.92      16.28      53.16     36.88       − 39.03        108.47
+                                   Feb 22      2.55      49.75     1172.09      16.59      57.33     40.74       − 44.52        118.43
+                                   Mar 22      2.67      50.54     1194.71      16.02      57.04     41.02       − 45.51        118.56
+                                   Apr 22      2.86      47.45      898.91      16.65      58.25     41.6        − 45.75        120.65
+
+                                   Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                   boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                   quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                   are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                   outlier
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                                 4461
+
+Table 3  Resistivity data set        Month       Min       Mean      Max          Q1          Q3       IQR        Q1-1.5IQR       Q3+ 1.5IQR
+concerning the 5–10 cm depth
+of the open niche as defined in      Oct 19      4.74      26.37      117.87      17.04       32.1     15.06        − 5.56         54.7
+Sect. 5
+                                     Nov 19      3.56      30.76      214.95      16.6        35.24    18.64       − 11.37         63.21
+                                     Dec 19      3.11      34.26      229.99      16.11       40.61    24.5        − 20.64         77.36
+                                     Jan 20      2.87      39.52      521.86      15.92       44.46    28.54       − 26.88         87.26
+                                     Feb 20      2.87      41.63      662.63      15.9        44.53    28.63       − 27.05         87.48
+                                     Mar 20      2.96      48.93     1366.55      16.23       48.57    32.34       − 32.28         97.09
+                                     Apr 20      3.19      49.73     1229.18      17.55       51.7     34.15       − 33.68        102.92
+                                     May 20      3.23      48.53     1225.12      18.35       53.04    34.68       − 33.67        105.07
+                                     Jun 20      3.37      42.52      335.0       18.68       51.03    32.35       − 29.84         99.55
+                                     Jul 20      3.35      39.56      242.94      18.39       49.0     30.61       − 27.53         94.91
+                                     Aug 20      3.33      36.98      193.1       18.23       45.71    27.48       − 22.99         86.92
+                                     Sep 20      3.29      35.25      173.37      18.2        43.9     25.7        − 20.35         82.45
+                                     Oct 20      2.8       38.83      379.55      18.16       45.27    27.11       − 22.5          85.93
+                                     Nov 20      2.66      43.88      739.89      17.89       50.22    32.33       − 30.61         98.73
+                                     Dez 20      2.66      48.85      878.13      17.52       55.57    38.05       − 39.56        112.66
+                                     Jan 21      2.62      53.91     1305.9       16.5        58.06    41.57       − 45.85        120.41
+                                     Feb 21      2.78      54.31     1097.85      16.86       57.64    40.78       − 44.31        118.81
+                                     Mar 21      2.82      57.13     1310.85      17.0        58.67    41.67       − 45.51        121.17
+                                     Apr 21      2.95      60.08     1936.17      17.37       57.98    40.61       − 43.55        118.9
+                                     May 21      3.09      59.96     2284.43      18.55       60.0     41.45       − 43.62        122.17
+                                     Jun 21      3.17      52.25     1216.02      18.85       59.91    41.06       − 42.74        121.5
+                                     Jul 21      3.08      48.67      708.26      19.32       57.97    38.65       − 38.65        115.94
+                                     Aug 21      2.84      44.62      335.32      19.21       54.85    35.64       − 34.24        108.3
+                                     Sep 21      2.88      41.11      232.42      18.87       51.44    32.57       − 29.98        100.3
+                                     Oct 21      2.89      40.01      224.71      18.76       49.68    30.92       − 27.62         96.06
+                                     Nov 21      2.86      39.59      229.45      18.62       49.28    30.66       − 27.37         95.27
+                                     Dez 21      2.48      47.01      763.8       17.33       55.82    38.49       − 40.41        113.56
+                                     Jan 22      2.47      54.62     1514.54      17.0        58.28    41.28       − 44.93        120.21
+                                     Feb 22      2.52      61.86     2042.9       16.93       60.6     43.67       − 48.57        126.1
+                                     Mar 22      2.65      65.56     2346.44      17.02       62.36    45.35       − 51.0         130.38
+                                     Apr 22      2.82      62.51     2132.05      17.98       62.24    44.26       − 48.42        128.64
+
+                                     Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                     boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                     quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                     are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                     outlier
+4462                                                                                                                             G. Ziefle et al.
+
+Table 4  Resistivity data set     Month       Min      Mean       Max          Q1         Q3        IQR        Q1-1.5IQR       Q3+ 1.5IQR
+concerning the 10–15 cm depth
+of the open niche as defined in   Oct 19      5.3       25.58      177.65      15.74      32.08     16.34        − 8.78         56.59
+Sect. 5
+                                  Nov 19      4.23      31.34      680.92      14.45      35.44     20.99       − 17.04         66.92
+                                  Dec 19      3.86      35.16      902.27      14.65      41.22     26.57       − 25.2          81.08
+                                  Jan 20      3.42      40.77     1450.12      14.28      44.06     29.78       − 30.4          88.74
+                                  Feb 20      3.43      41.71     1320.34      14.17      43.38     29.21       − 29.64         87.19
+                                  Mar 20      3.51      50.96     2515.08      14.03      46.83     32.81       − 35.19         96.05
+                                  Apr 20      3.86      48.88     2014.96      14.14      50.6      36.46       − 40.55        105.29
+                                  May 20      3.96      49.77     2262.92      14.69      52.04     37.36       − 41.35        108.08
+                                  Jun 20      3.91      38.28      370.39      15.45      49.19     33.73       − 35.15         99.79
+                                  Jul 20      3.02      35.37      223.02      15.46      44.66     29.21       − 28.36         88.48
+                                  Aug 20      3.52      33.25      215.46      15.39      41.33     25.94       − 23.53         80.25
+                                  Sep 20      3.38      31.76      192.67      15.12      38.97     23.85       − 20.66         74.75
+                                  Oct 20      3.18      33.96      216.05      14.76      42.26     27.49       − 26.48         83.5
+                                  Nov 20      3.15      41.43     1059.75      13.98      46.54     32.56       − 34.87         95.38
+                                  Dez 20      3.3       46.97     1610.92      14.39      50.24     35.85       − 39.39        104.02
+                                  Jan 21      3.21      54.09     2583.82      13.95      51.04     37.09       − 41.68        106.68
+                                  Feb 21      3.37      54.39     2504.92      14.06      52.36     38.31       − 43.41        109.83
+                                  Mar 21      3.44      57.22     2811.69      14.09      52.89     38.79       − 44.1         111.08
+                                  Apr 21      3.61      59.37     3227.05      14.32      51.47     37.14       − 41.39        107.18
+                                  May 21      3.65      59.28     3441.46      14.59      53.85     39.25       − 44.28        112.73
+                                  Jun 21      3.6       49.93     1870.54      14.92      54.86     39.93       − 44.97        114.75
+                                  Jul 21      3.45      47.13     1478.84      14.96      52.44     37.48       − 41.25        108.65
+                                  Aug 21      3.14      39.1       292.56      15.66      48.89     33.24       − 34.2          98.75
+                                  Sep 21      3.22      36.48      258.98      15.49      44.51     29.02       − 28.03         88.03
+                                  Oct 21      3.25      35.54      235.29      15.35      43.24     27.89       − 26.48         85.08
+                                  Nov 21      3.23      35.08      224.23      15.27      42.95     27.68       − 26.25         84.47
+                                  Dez 21      2.91      44.08     1265.48      13.93      49.42     35.49       − 39.3         102.65
+                                  Jan 22      3.05      51.5      2144.16      13.58      53.25     39.67       − 45.93        112.76
+                                  Feb 22      3.16      55.5      2292.78      14.37      54.08     39.71       − 45.2         113.65
+                                  Mar 22      3.28      59.49     2789.76      13.84      54.79     40.95       − 47.59        116.22
+                                  Apr 22      3.39      58.51     2802.22      14.54      55.6      41.06       − 47.05        117.19
+
+                                  Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                  boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                  quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                  are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                  outlier
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                                 4463
+
+Table 5  Resistivity data set        Month       Min       Mean       Max         Q1          Q3       IQR        Q1-1.5IQR       Q3+ 1.5IQR
+concerning the 15–20 cm depth
+of the open niche as defined in      Oct 19      5.13      25.98       72.81      18.52       30.97    12.45       − 0.15          49.64
+Sect. 5
+                                     Nov 19      4.04      29.32      111.33      18.28       35.94    17.66       − 8.2           62.43
+                                     Dec 19      3.65      32.33      159.18      18.88       39.51    20.63      − 12.07          70.46
+                                     Jan 20      3.26      35.94      250.68      18.76       45.17    26.42      − 20.87          84.8
+                                     Feb 20      3.26      37.29      233.05      18.86       46.91    28.05      − 23.22          88.98
+                                     Mar 20      3.34      42.2       312.16      19.13       50.93    31.8       − 28.57          98.63
+                                     Apr 20      3.67      42.37      303.87      19.87       52.35    32.48      − 28.84         101.07
+                                     May 20      3.76      42.82      311.52      20.8        53.49    32.69      − 28.24         102.53
+                                     Jun 20      4.08      39.06      230.87      20.64       49.21    28.57      − 22.21          92.07
+                                     Jul 20      4.13      36.82      207.38      21.01       45.67    24.66      − 15.99          82.67
+                                     Aug 20      4.06      35.02      200.27      21.22       42.02    20.8        − 9.98          73.21
+                                     Sep 20      3.98      33.63      179.76      20.97       39.82    18.85       − 7.31          68.1
+                                     Oct 20      3.56      35.84      194.72      20.65       42.38    21.72      − 11.94          74.96
+                                     Nov 20      3.23      39.97      372.61      20.43       47.93    27.49      − 20.81          89.17
+                                     Dez 20      3.13      43.43      386.47      19.83       53.58    33.76      − 30.81         104.22
+                                     Jan 21      3.06      46.21      375.3       19.23       56.46    37.23      − 36.62         112.31
+                                     Feb 21      3.22      46.4       307.55      19.15       57.14    37.99      − 37.84         114.13
+                                     Mar 21      3.28      47.75      335.53      19.02       58.92    39.9       − 40.83         118.76
+                                     Apr 21      3.44      48.26      344.87      19.92       57.75    37.84      − 36.84         114.51
+                                     May 21      3.65      48.42      387.09      20.37       57.69    37.32      − 35.6          113.66
+                                     Jun 21      3.87      44.91      254.01      20.58       54.18    33.6       − 29.81         104.57
+                                     Jul 21      3.94      43.06      271.56      20.02       51.88    31.86      − 27.76          99.67
+                                     Aug 21      3.96      40.56      251.03      21.01       48.87    27.86      − 20.79          90.66
+                                     Sep 21      3.92      38.24      226.92      21.03       45.57    24.54      − 15.78          82.37
+                                     Oct 21      3.85      37.2       209.65      21.15       44.01    22.86      − 13.13          78.29
+                                     Nov 21      3.77      36.71      201.2       21.07       43.88    22.81      − 13.15          78.1
+                                     Dez 21      3.04      42.13      304.75      20.16       49.44    29.28      − 23.77          93.37
+                                     Jan 22      2.9       47.39      451.14      19.53       57.63    38.1       − 37.62         114.77
+                                     Feb 22      3.0       49.94      457.5       19.35       61.93    42.57      − 44.51         125.79
+                                     Mar 22      3.14      51.53      400.88      19.67       60.81    41.14      − 42.05         122.53
+                                     Apr 22      3.35      50.26      338.97      20.06       59.58    39.52      − 39.21         118.85
+
+                                     Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                     boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                     quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                     are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                     outlier
+4464                                                                                                                             G. Ziefle et al.
+
+Table 6  Resistivity data set
+concerning the 20–30 cm depth     Month        Min        Mean        Max      Q1        Q3           IQR      Q1-1.5IQR       Q3+ 1.5IQR
+of the open niche as defined in   Oct 19      4.86      24.64       70.89      17.69     29.04      11.35         0.66           46.07
+Sect. 5                           Nov 19      3.74      27.47       97.93      17.58     32.02      14.44       − 4.07           53.67
+                                  Dec 19      3.35      30.48      189.48      17.5      35.24      17.74       − 9.1            61.84
+                                  Jan 20      3.06      33.25      409.54      17.9      35.59      17.69       − 8.64           62.12
+                                  Feb 20      3.11      34.84      488.89      18.02     38.24      20.22      − 12.31           68.58
+                                  Mar 20      3.22      39.33      730.64      18.12     42.24      24.12      − 18.06           78.41
+                                  Apr 20      3.42      37.99      350.47      19.88     43.64      23.76      − 15.75           79.27
+                                  May 20      3.47      38.48      388.96      19.9      43.94      24.04      − 16.15           80.0
+                                  Jun 20      3.59      36.03      138.0       20.97     42.55      21.58      − 11.41           74.92
+                                  Jul 20      3.59      34.86      127.95      20.08     42.35      22.28      − 13.34           75.77
+                                  Aug 20      3.56      33.34      124.5       19.69     39.71      20.02      − 10.34           69.74
+                                  Sep 20      3.53      32.26      114.0       19.36     38.75      19.39       − 9.72           67.83
+                                  Oct 20      3.05      34.12      122.39      19.9      39.18      19.28       − 9.02           68.09
+                                  Nov 20      2.84      36.76      355.28      19.9      40.68      20.78      − 11.28           71.85
+                                  Dez 20      2.86      39.81      602.39      19.19     42.74      23.56      − 16.15           78.08
+                                  Jan 21      2.81      41.15      518.35      18.42     44.01      25.59      − 19.97           82.4
+                                  Feb 21      2.96      41.09      414.91      18.65     44.07      25.43      − 19.49           82.21
+                                  Mar 21      3.03      42.06      423.96      18.18     44.75      26.58      − 21.69           84.62
+                                  Apr 21      3.12      41.68      287.17      19.13     45.48      26.35      − 20.39           85.01
+                                  May 21      3.25      41.03      224.32      19.66     46.74      27.08      − 20.96           87.36
+                                  Jun 21      3.39      40.2       170.05      19.99     46.98      27.0       − 20.51           87.48
+                                  Jul 21      3.42      39.36      146.6       20.77     46.52      25.75      − 17.86           85.16
+                                  Aug 21      3.26      38.16      149.89      21.09     44.78      23.69      − 14.44           80.32
+                                  Sep 21      3.25      36.55      140.52      20.33     44.7       24.37      − 16.22           81.25
+                                  Oct 21      3.22      35.63      132.14      19.98     42.71      22.73      − 14.11           76.8
+                                  Nov 21      3.16      35.17      127.07      19.93     41.17      21.23      − 11.92           73.01
+                                  Dez 21      2.67      38.56      233.19      19.7      43.27      23.57      − 15.66           78.63
+                                  Jan 22      2.63      42.37      574.16      18.74     44.56      25.82      − 19.99           83.3
+                                  Feb 22      2.7       44.25      506.93      18.17     47.56      29.39      − 25.92           91.65
+                                  Mar 22      2.81      44.57      364.6       18.46     47.69      29.23      − 25.39           91.54
+                                  Apr 22      2.95      43.54      245.05      19.46     48.09      28.63      − 23.48           91.03
+
+                                  Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                  boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                  quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                  are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                  outlier
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                                 4465
+
+Table 7  Resistivity data set of     Month       Min       Mean       Max         Q1          Q3       IQR        Q1-1.5IQR       Q3+ 1.5IQR
+the wall of the closed niche as
+defined in Sect. 5                   Oct 19      3.74      24.6        99.75      12.91       29.42    16.52       − 11.87        54.2
+                                     Nov 19      2.71      27.95      147.41      12.25       34.08    21.82       − 20.48        66.81
+                                     Dec 19      2.86      27.1       145.95      12.17       31.09    18.92       − 16.2         59.46
+                                     Jan 20      3.17      28.51      127.42      12.66       33.95    21.3        − 19.29        65.89
+                                     Feb 20      3.38      29.93      127.23      13.61       35.7     22.09       − 19.53        68.84
+                                     Mar 20      3.61      29.4       130.95      13.21       35.84    22.64       − 20.75        69.79
+                                     Apr 20      3.27      28.27      134.78      13.45       33.2     19.75       − 16.19        62.83
+                                     May 20      2.97      27.7       130.57      13.11       31.61    18.5        − 14.64        59.37
+                                     Jun 20      2.73      27.29      142.82      12.91       31.57    18.65       − 15.07        59.55
+                                     Jul 20      2.66      26.99      145.21      12.78       30.33    17.55       − 13.55        56.66
+                                     Aug 20      2.7       26.82      146.16      12.87       30.13    17.26       − 13.02        56.03
+                                     Sep 20      2.72      26.56      142.82      12.84       30.14    17.29       − 13.09        56.07
+                                     Oct 20      2.82      26.38      137.55      13.04       30.21    17.17       − 12.71        55.96
+                                     Nov 20      3.23      26.56      146.51      12.73       30.4     17.68       − 13.79        56.92
+                                     Dez 20      3.22      26.4       141.62      12.76       30.23    17.46       − 13.43        56.42
+                                     Jan 21      3.26      26.36      137.52      12.73       30.54    17.8        − 13.97        57.24
+                                     Feb 21      3.26      26.27      135.2       12.71       30.24    17.53       − 13.58        56.53
+                                     Mar 21      3.15      26.76      146.26      13.06       30.33    17.28       − 12.86        56.25
+                                     Apr 21      3.12      26.9       149.36      13.15       30.17    17.03       − 12.4         55.72
+                                     May 21      3.19      26.58      146.47      12.99       30.17    17.18       − 12.79        55.94
+                                     Jun 21      3.22      26.31      139.48      12.74       30.12    17.38       − 13.32        56.19
+                                     Jul 21      3.32      26.01      131.18      12.69       29.99    17.29       − 13.25        55.93
+                                     Aug 21      3.24      25.66      126.11      12.85       29.3     16.45       − 11.82        53.97
+                                     Sep 21      2.96      25.43      117.34      13.09       29.15    16.06       − 11.0         53.24
+                                     Oct 21      3.31      25.42      120.58      12.92       29.09    16.17       − 11.33        53.35
+                                     Nov 21      3.35      25.44      119.44      12.87       29.37    16.5        − 11.88        54.12
+                                     Dez 21      3.38      25.51      118.91      12.82       29.65    16.83       − 12.43        54.89
+                                     Jan 22      3.36      25.57      122.26      12.64       29.81    17.17       − 13.11        55.57
+                                     Feb 22      3.37      25.63      124.71      12.57       29.61    17.04       − 12.98        55.16
+                                     Mar 22      3.31      25.59      125.65      12.47       29.5     17.03       − 13.08        55.05
+                                     Apr 22      3.34      25.65      124.58      12.49       29.74    17.25       − 13.39        55.61
+
+                                     Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                     boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                     quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                     are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                     outlier
+4466                                                                                                                            G. Ziefle et al.
+
+Table 8  Resistivity data set    Month       Min       Mean       Max         Q1        Q3         IQR        Q1-1.5IQR       Q3+ 1.5IQR
+concerning the 5–10 cm depth
+of the closed niche as defined   Oct 19      3.2       25.19      101.99      15.21     29.84      14.63        − 6.73        51.79
+in Sect. 5
+                                 Nov 19      2.71      29.28      142.91      15.29     35.08      19.79       − 14.39        64.76
+                                 Dec 19      2.87      28.51      148.19      15.1      34.1       19.0        − 13.4         62.61
+                                 Jan 20      2.95      30.52      157.35      15.98     34.7       18.72       − 12.09        62.77
+                                 Feb 20      3.14      32.13      219.63      16.06     35.64      19.57       − 13.3         65.0
+                                 Mar 20      3.23      31.61      177.21      16.64     35.91      19.28       − 12.28        64.83
+                                 Apr 20      2.93      30.72      177.64      15.91     34.98      19.08       − 12.71        63.6
+                                 May 20      2.75      29.79      156.35      15.52     34.88      19.36       − 13.52        63.91
+                                 Jun 20      2.59      29.16      146.55      15.43     33.6       18.18       − 11.84        60.87
+                                 Jul 20      2.55      28.52      143.88      14.9      33.0       18.1        − 12.24        60.14
+                                 Aug 20      2.55      28.01      146.21      14.8      32.06      17.27       − 11.1         57.96
+                                 Sep 20      2.56      27.56      147.0       14.58     31.5       16.91       − 10.79        56.87
+                                 Oct 20      2.63      27.21      146.25      14.38     31.51      17.14       − 11.33        57.22
+                                 Nov 20      3.19      27.55      154.5       14.31     31.35      17.04       − 11.24        56.9
+                                 Dez 20      3.16      27.27      153.75      14.15     31.2       17.05       − 11.41        56.77
+                                 Jan 21      3.17      27.13      154.69      14.14     31.54      17.41       − 11.97        57.65
+                                 Feb 21      3.18      26.97      154.43      14.11     31.52      17.41       − 12.01        57.64
+                                 Mar 21      3.09      27.77      154.3       14.32     32.4       18.08       − 12.81        59.53
+                                 Apr 21      3.09      28.04      155.55      14.16     32.58      18.43       − 13.48        60.22
+                                 May 21      3.16      27.52      155.6       14.09     31.73      17.64       − 12.37        58.19
+                                 Jun 21      3.16      27.09      155.54      14.06     31.37      17.31       − 11.91        57.34
+                                 Jul 21      3.18      26.63      150.46      14.1      30.99      16.89       − 11.24        56.33
+                                 Aug 21      3.07      26.24      145.49      14.02     30.22      16.2        − 10.27        54.51
+                                 Sep 21      2.68      25.73      144.75      14.26     29.99      15.73        − 9.35        53.59
+                                 Oct 21      3.08      25.91      142.05      14.38     29.71      15.33        − 8.6         52.7
+                                 Nov 21      3.11      25.9       143.88      14.22     29.65      15.43        − 8.92        52.79
+                                 Dez 21      3.17      25.96      147.08      13.93     29.76      15.83        − 9.82        53.51
+                                 Jan 22      3.22      26.01      151.52      13.98     30.2       16.22       − 10.35        54.53
+                                 Feb 22      3.27      26.07      154.81      14.05     30.23      16.19       − 10.23        54.51
+                                 Mar 22      3.23      26.04      155.96      14.03     30.26      16.23       − 10.32        54.61
+                                 Apr 22      3.24      26.11      154.6       14.0      30.61      16.61       − 10.91        55.52
+
+                                 Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                 boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                 quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                 are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                 outlier
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                                 4467
+
+Table 9  Resistivity data set        Month       Min       Mean       Max         Q1          Q3       IQR        Q1-1.5IQR       Q3+ 1.5IQR
+concerning the 10–15 cm depth
+of the closed niche as defined       Oct 19      3.59      24.53      111.42      13.53       28.87    15.34        − 9.48        51.88
+in Sect. 5
+                                     Nov 19      2.68      28.25      187.01      12.28       33.26    20.98       − 19.19        64.74
+                                     Dec 19      2.81      27.57      160.55      12.62       31.21    18.59       − 15.26        59.09
+                                     Jan 20      3.12      30.3       437.03      12.57       33.46    20.89       − 18.76        64.79
+                                     Feb 20      3.34      32.68      708.64      13.06       36.87    23.82       − 22.67        72.6
+                                     Mar 20      3.48      32.86      647.63      12.7        36.62    23.92       − 23.18        72.5
+                                     Apr 20      3.22      30.75      403.49      12.69       34.67    21.98       − 20.29        67.64
+                                     May 20      2.92      29.16      226.02      12.5        33.21    20.71       − 18.56        64.28
+                                     Jun 20      2.68      28.34      163.14      12.19       31.43    19.24       − 16.68        60.29
+                                     Jul 20      2.61      27.76      160.81      12.23       31.19    18.96       − 16.21        59.63
+                                     Aug 20      2.64      27.34      163.28      12.55       30.73    18.18       − 14.72        58.0
+                                     Sep 20      2.66      26.98      164.23      12.47       30.04    17.58       − 13.9         56.41
+                                     Oct 20      2.76      26.72      163.36      12.57       29.37    16.81       − 12.64        54.58
+                                     Nov 20      3.17      27.01      170.51      13.09       29.48    16.39       − 11.5         54.07
+                                     Dez 20      3.16      26.79      169.76      13.44       29.53    16.1        − 10.71        53.68
+                                     Jan 21      3.2       26.69      170.4       13.5        29.5     16.01       − 10.52        53.52
+                                     Feb 21      3.21      26.56      170.11      13.54       29.34    15.8        − 10.15        53.04
+                                     Mar 21      3.09      27.26      170.54      13.11       29.92    16.81       − 12.1         55.14
+                                     Apr 21      3.05      27.41      171.94      13.14       30.02    16.88       − 12.19        55.35
+                                     May 21      3.13      26.98      171.7       13.37       29.32    15.95       − 10.56        53.25
+                                     Jun 21      3.16      26.62      171.42      13.48       29.4     15.93       − 10.41        53.29
+                                     Jul 21      3.26      26.22      165.87      13.4        29.16    15.76       − 10.23        52.8
+                                     Aug 21      3.18      25.85      160.93      13.17       28.92    15.76       − 10.47        52.56
+                                     Sep 21      2.9       25.48      162.26      13.33       27.88    14.55        − 8.49        49.71
+                                     Oct 21      3.25      25.54      157.03      13.25       28.46    15.22        − 9.58        51.29
+                                     Nov 21      3.29      25.52      158.76      13.31       28.32    15.01        − 9.2         50.84
+                                     Dez 21      3.32      25.58      161.96      13.53       28.36    14.83        − 8.72        50.61
+                                     Jan 22      3.31      25.67      166.92      13.7        28.45    14.75        − 8.43        50.58
+                                     Feb 22      3.32      25.72      170.31      13.75       28.36    14.61        − 8.16        50.27
+                                     Mar 22      3.26      25.71      172.11      13.7        28.02    14.33        − 7.8         49.52
+                                     Apr 22      3.29      25.76      170.23      13.7        28.43    14.73        − 8.39        50.52
+
+                                     Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                     boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                     quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                     are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                     outlier
+4468                                                                                                                            G. Ziefle et al.
+
+Table 10  Resistivity data set   Month       Min       Mean       Max         Q1        Q3         IQR        Q1-1.5IQR       Q3+ 1.5IQR
+concerning the 15–20 cm depth
+of the closed niche as defined   Oct 19      4.47      25.52       97.26      15.78     28.25      12.47        − 2.93        46.96
+in Sect. 5
+                                 Nov 19      3.98      29.53      145.47      14.89     33.0       18.11       − 12.28        60.17
+                                 Dec 19      4.0       28.78      144.2       16.16     30.56      14.4         − 5.44        52.16
+                                 Jan 20      4.24      30.02      164.14      15.08     32.95      17.87       − 11.72        59.75
+                                 Feb 20      4.54      31.56      189.14      14.68     34.63      19.95       − 15.25        64.55
+                                 Mar 20      4.55      31.54      222.23      15.25     33.79      18.54       − 12.56        61.6
+                                 Apr 20      4.42      30.75      201.83      15.59     31.82      16.23        − 8.76        56.16
+                                 May 20      4.03      30.15      169.24      15.75     31.25      15.5         − 7.49        54.49
+                                 Jun 20      3.79      29.72      149.54      16.3      29.61      13.31        − 3.67        49.58
+                                 Jul 20      3.72      29.13      149.34      15.84     28.97      13.13        − 3.86        48.67
+                                 Aug 20      3.66      28.64      145.67      15.41     28.57      13.15        − 4.32        48.29
+                                 Sep 20      3.68      28.18      141.15      15.18     28.23      13.05        − 4.4         47.81
+                                 Oct 20      3.81      27.75      134.6       15.2      28.27      13.07        − 4.39        47.87
+                                 Nov 20      4.38      27.95      146.41      15.1      28.5       13.4         − 5.0         48.6
+                                 Dez 20      4.4       27.64      140.33      15.1      28.32      13.22        − 4.73        48.16
+                                 Jan 21      4.46      27.43      137.66      15.05     28.24      13.18        − 4.72        48.01
+                                 Feb 21      4.49      27.25      137.46      15.07     28.19      13.12        − 4.62        47.88
+                                 Mar 21      4.27      28.16      145.5       15.21     28.61      13.41        − 4.9         48.72
+                                 Apr 21      4.21      28.49      148.77      15.16     28.56      13.4         − 4.93        48.65
+                                 May 21      4.34      27.95      145.3       14.99     28.32      13.34        − 5.02        48.33
+                                 Jun 21      4.38      27.45      138.36      14.86     28.13      13.27        − 5.05        48.04
+                                 Jul 21      4.55      26.91      134.53      15.04     27.99      12.94        − 4.37        47.4
+                                 Aug 21      4.42      26.52      131.31      15.14     27.61      12.47        − 3.56        46.3
+                                 Sep 21      4.07      26.07      132.99      15.29     27.16      11.87        − 2.52        44.97
+                                 Oct 21      4.5       26.13      128.51      15.3      27.34      12.04        − 2.76        45.41
+                                 Nov 21      4.57      26.07      129.64      15.29     27.24      11.95        − 2.64        45.17
+                                 Dez 21      4.64      26.09      131.81      15.34     27.23      11.89        − 2.49        45.07
+                                 Jan 22      4.7       26.13      135.38      15.18     27.31      12.13        − 3.02        45.5
+                                 Feb 22      4.75      26.17      137.77      15.28     27.23      11.95        − 2.65        45.16
+                                 Mar 22      4.68      26.14      139.35      15.26     27.19      11.92        − 2.62        45.08
+                                 Apr 22      4.7       26.2       137.85      15.2      26.95      11.75        − 2.42        44.58
+
+                                 Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                 boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                 quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                 are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                 outlier
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                                   4469
+
+Table 11  Resistivity data set       Month       Min       Mean         Max       Q1          Q3        IQR        Q1-1.5IQR        Q3+ 1.5IQR
+concerning the 20–30 cm depth
+of the closed niche as defined       Oct 19      4.61      24.88         93.69    16.14       27.15     11.01        − 0.38         43.67
+in Sect. 5
+                                     Nov 19      3.75      29.03        143.29    15.29       31.43     16.14        − 8.93         55.65
+                                     Dec 19      3.93      28.0         141.85    15.78       30.3      14.52        − 5.99         52.08
+                                     Jan 20      4.23      30.18        211.47    16.15       31.84     15.7         − 7.4          55.38
+                                     Feb 20      4.69      32.03        316.34    15.99       34.49     18.5        − 11.77         62.24
+                                     Mar 20      5.02      32.08        283.64    15.84       33.76     17.92       − 11.04         60.64
+                                     Apr 20      4.02      30.49        188.73    17.04       30.5      13.46        − 3.14         50.68
+                                     May 20      3.46      29.4         146.02    16.84       29.76     12.92        − 2.54         49.14
+                                     Jun 20      2.63      28.89        152.24    16.21       29.54     13.33        − 3.77         49.53
+                                     Jul 20      2.42      28.24        150.04    16.3        29.36     13.05        − 3.28         48.94
+                                     Aug 20      2.83      27.7         144.33    16.38       29.33     12.95        − 3.04         48.75
+                                     Sep 20      2.85      27.24        139.07    16.28       29.24     12.96        − 3.17         48.68
+                                     Oct 20      3.35      26.84        132.22    16.25       28.85     12.6         − 2.65         47.74
+                                     Nov 20      3.91      27.12        142.46    15.83       29.72     13.89        − 5.01         50.55
+                                     Dez 20      4.35      26.82        136.34    15.9        29.12     13.22        − 3.94         48.96
+                                     Jan 21      4.41      26.61        131.32    16.02       28.73     12.71        − 3.04         47.79
+                                     Feb 21      4.42      26.42        128.0     16.14       28.44     12.29        − 2.3          46.88
+                                     Mar 21      4.28      27.39        142.17    15.93       29.44     13.51        − 4.33         49.71
+                                     Apr 21      4.23      27.68        145.72    16.12       29.82     13.7         − 4.42         50.36
+                                     May 21      4.3       27.11        141.46    16.1        29.1      13.0         − 3.4          48.6
+                                     Jun 21      4.35      26.59        132.92    15.94       28.59     12.65        − 3.04         47.57
+                                     Jul 21      3.91      26.12        123.44    16.08       28.18     12.1         − 2.08         46.34
+                                     Aug 21      3.55      25.76        118.89    15.94       27.94     12.0         − 2.06         45.95
+                                     Sep 21      3.3       25.24        109.33    16.11       27.51     11.4         − 0.99         44.6
+                                     Oct 21      3.43      25.42        112.85    15.92       27.96     12.05        − 2.15         46.03
+                                     Nov 21      3.56      25.36        111.25    15.97       27.97     12.0         − 2.02         45.96
+                                     Dez 21      3.84      25.37        111.26    15.95       28.03     12.08        − 2.17         46.15
+                                     Jan 22      4.55      25.36        114.46    15.97       27.96     12.0         − 2.03         45.96
+                                     Feb 22      4.54      25.38        117.07    15.94       27.94     12.0         − 2.06         45.94
+                                     Mar 22      4.45      25.3         117.49    15.9        27.99     12.09        − 2.24         46.12
+                                     Apr 22      4.51      25.39        116.51    15.93       28.15     12.22        − 2.41         46.48
+
+                                     Presented are the minimum, mean and maximum values as well as the lower and the upper part of the
+                                     boxplot (as defined in Wikipedia (2023)) Q1 (representing the 25% quartile) and Q3 (representing the 75%
+                                     quartile). Furthermore, the interquartile range (IQR) and the whiskers (Q1 − 1.5 IQR and Q3 + 1.5 IQR)
+                                     are given. The whiskers represent the end of the boxplot lines, which mark the border to the data defined as
+                                     outlier
+
+
+Acknowledgements The work described in this paper was conducted            Writing Review. SC: Methodology, Validation, Formal analysis, Writ-
+in the framework of the Mont Terri Project. The CD-A experiment            ing Review. MF: Methodology, Validation, Formal analysis. JM: Con-
+itself is funded by the partners BGE (Bundesgesellschaft für End-          ceptualization, Validation, Writing Review and Editing
+lagerung, Germany), BGR (Bundesanstalt für Geowissenschaften und
+Rohstoffe, Germany) on behalf of the BMWK (Bundesministerium               Funding Open Access funding enabled and organized by Projekt
+für Wirtschaft und Klimaschutz, Germany), ENSI (Eidgenössisches            DEAL.
+Nuklearsicherheitsinspektorat, Switzerland), GRS (Gesellschaft
+für Anlagen- und Reaktorsicherheit gGmbH, Germany), Helmholtz              Declarations
+(Helmholtz-Gemeinschaft Deutscher Forschungs–zentren e.V., Ger-
+many) and swisstopo (Bundesamt für Landestopografie, Switzerland).         Conflict of interest The authors declare that they have no known com-
+This support is gratefully acknowledged. The views expressed in the        peting financial interests or personal relationships that could have ap-
+paper are, however, those of the authors and not necessarily those of      peared to influence the work reported in this paper.
+the Funding Organisations.
+                                                                           Open Access This article is licensed under a Creative Commons Attri-
+Author Contributions GZ: Conceptualization, Validation, Methodol-          bution 4.0 International License, which permits use, sharing, adapta-
+ogy, Writing - Original Draft, Supervision, Project administration.        tion, distribution and reproduction in any medium or format, as long
+TC: Conceptualization, Validation, Methodology, Formal analysis,           as you give appropriate credit to the original author(s) and the source,
+4470                                                                                                                                       G. Ziefle et al.
+
+provide a link to the Creative Commons licence, and indicate if changes                 of research: introduction, site characteristics and overview of
+were made. The images or other third party material in this article are                 experiments. In: Bossart P, Milnes AG (eds) Mont Terri Rock
+included in the article's Creative Commons licence, unless indicated                    Laboratory, 20 Years: two decades of research and experimenta-
+otherwise in a credit line to the material. If material is not included in              tion on claystones for geological disposal of radioactive waste.
+the article's Creative Commons licence and your intended use is not                     Springer International Publishing, Cham, pp 3–22. https://​doi.​
+permitted by statutory regulation or exceeds the permitted use, you will                org/​10.​1007/​978-3-​319-​70458-6_1
+need to obtain permission directly from the copyright holder. To view a            Cajuhi T, Sanavia L, De Lorenzis L (2018) Phase-field modeling
+copy of this licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/.        of fracture in variably saturated porous media. Comput Mech
+                                                                                        61(3):299–318
+                                                                                   Cajuhi T, Maßmann J, Ziefle G (2021a) Building the bridge between
+                                                                                        safety requirements and numerical modeling: an example con-
+References                                                                              sidering crack development of Opalinus clay in laboratory and
+                                                                                        field scales. Saf Nucl Waste Disposal 1:165–167
+Alcolea A, Kuhlmann U, Marschall P, Lisjak A, Grasselli G, Mahabadi                Cajuhi T, Ziefle G, Maßmann J, Furche M (2021b) Numerical mod-
+     O et al (2017) A pragmatic approach to abstract the excavation                     eling of hydro-mechanical coupled effects in the cyclic defor-
+     damaged zone around tunnels of a geological radioactive waste                      mation (CD-A) experiment: first results and comparison with
+     repository: application to the HG-A experiment in Mont Terri.                      observations. In: EGU general assembly conference abstracts, p
+     Geol Soc Spec Publ 443(1):127–147. https://​doi.​org/​10.​1144/​                   EGU21–4173
+     SP443.8                                                                       Cajuhi T, Haghighat N, Maßmann J, Mollaali M, ASS, Ziaei-Rad V,
+Amabile A, Lopes BCFL, Pozzato A, Benes V, Tarantino A (2020)                           Ziefle G et al (2023a) 2. In: Hydro-mechanical effects and crack-
+     An assessment of ERT as a method to monitor water content                          ing in Opalinus clay. Springer International Publishing, Cham, pp
+     regime in flood embankments: the case study of the Adige River                     7–46. https://​doi.​org/​10.​1007/​978-3-​031-​26493-1_2
+     embankment [Journal Article]. Phys Chem Earth Parts A/B/C.                    Cajuhi T, Ziefle G, Maßmann J, Nagel T, Yoshioka K (2023b) Mod-
+     120:102930                                                                         eling desiccation cracks in Opalinus Clay at field scale with the
+Amann F, Wild KM, Loew S, Yong S, Thoeny R, Frank E (2017)                              phase-field approach. InterPore J 1
+     Geomechanical behaviour of Opalinus Clay at multiple                          Chen X, Xie SY, Zhang W, Armand G, Shao JF (2022) Creep defor-
+     scales: results from Mont Terri rock laboratory (Switzer-                          mation and gas permeability in fractured claystone under various
+     land). Swiss J Geosci 110(1):151–171. https://​doi.​org/​10.​1007/​                stress states. Rock Mech Rock Eng 55:1843–1853
+     s00015-​016-​0245-0                                                           Coates GR, Xiao L, Prammer MG (1999) NMR logging principles
+Amann F, Wild KM, Loew S, Yong S, Thoeny R, Frank E (2018)                              and application. Halliburton Energy Services, Huston
+     Geomechanical behaviour of Opalinus Clay at multiple scales:                  Costabel S (2023) Mont Terri Project, Technical Report 2023-65,
+     results from Mont Terri rock laboratory (Switzerland). In: Bossart                 MR experiment: moisture detection using magnetic resonance.
+     P, Milnes AG (eds) Mont Terri Rock Laboratory, 20 years: two                       swisstopo, Seftigenstrasse 264, 8084 Wabern, Switzerland:
+     decades of research and experimentation on claystones for                          swisstopo, Switzerland
+     geological disposal of radioactive waste. Springer Interna-                   Costabel S, Hiller T, Dlugosch R, Kruschwitz S, Müller-Petke M
+     tional Publishing, Cham, pp 153–173. https://​doi.​org/​10.​1007/​                 (2022) Evaluation of single-sided nuclear magnetic reso-
+     978-3-​319-​70458-6_8                                                              nance technology for usage in geosciences. Meas Sci Technol
+Armand G, Leveau F, Nussbaum C, De La Vaissiere R, Noiret A, Jaeggi                     34(1):015112. https://​doi.​org/​10.​1088/​1361-​6501/​ac9800
+     D et al (2013) Geometry and properties of the excavation-induced              Crisci E, Ferrari A, Giger SB, Laloui L (2021) Effect of the min-
+     fractures at the Meuse/Haute-Marne URL drifts. Rock Mech Rock                      eralogical composition on the elastoplastic hydromechanical
+     Eng 47(1):21–41. https://​doi.​org/​10.​1007/​s00603-​012-​0339-6                  response of Opalinus Clay shale. Int J Rock Mech Min Sci.
+Armand G, Conil N, Talandier J, Seyedi DM (2017) Fundamental                            https://​doi.​org/​10.​1016/j.​ijrmms.​2021.​104747
+     aspects of the hydromechanical behaviour of Callovo-Oxfordian                 Esefelder R, Wawerzinek B, Lüth S, Giese R, Krawczyk CM (2021)
+     claystone: from experimental studies to model calibration and val-                 Seismic anisotropy of Opalinus Clay: tomographic investiga-
+     idation. Comput Geotech 85:277–286. https://​doi.​org/​10.​1016/j.​                tions using the infrastructure of an underground rock laboratory
+     compg​eo.​2016.​06.​003                                                            (URL). Swiss J Geosci 114(1):1–9
+Bilke L, Fischer T, Naumov D, Lehmann C, Wang W, Lu R et al (2022)                 Fleury M, Romero-Sarmiento M (2016) Characterization of shales
+     OpenGeoSys. Zenodo. If you use this software, please cite it using                 using T1–T2 NMR maps. J Petrol Sci Eng 137:55–62. https://​
+     these metadata. https://​doi.​org/​10.​5281/​zenodo.​70926​76                      doi.​org/​10.​1016/j.​petrol.​2015.​11.​006
+Bishop AW, Blight G (1963) Some aspects of effective stress in satu-               Garitte B, Nguyen T, Barnichon J, Graupner B, Lee C, Maekawa K
+     rated and partly saturated soils. Geotechnique 13(3):177–197                       et al (2017) Modelling the Mont Terri HE-D experiment for the
+Blümich B, Perlo J, Casanova F (2008) Mobile single-sided NMR. Prog                     thermo-hydraulic-mechanical response of a bedded argillaceous
+     Nucl Magn Reson Spectrosc 52(4):197–269. https://​doi.​org/​10.​                   formation to heating. Environ Earth Sci 76(9):345
+     1016/j.​pnmrs.​2007.​10.​002                                                  Gawin D, Schrefler BA (1996) Thermo-hydro-mechanical analysis of
+Bock H (2009) RA Experiment: updated review of the rock mechanics                       partially saturated porous materials. Eng Comput 13(7):113–143
+     properties of the Opalinus Clay of the Mont Terri URL based on                Günther T, Rücker C, Spitzer K (2006) Three-dimensional modeling
+     laboratory and field testing. Mont Terri Technical Report. 2008-04                 and inversion of DC resistivity data incorporatiing tomography—
+Bond A, Millard A, Nakama S, Zhang C, Garritte B (2013) Approaches                      II. Inversion. Geophys J Int 166:506–517
+     for representing hydro-mechanical coupling between sub-surface                Heider Y, Sun WC (2020) A phase field framework for capillary-
+     excavations and argillaceous porous media at the ventilation                       induced fracture in unsaturated porous media: drying-induced vs
+     experiment, Mont Terri. J Rock Mech Geotech Eng 5:85–96                            hydraulic cracking. Comput Methods Appl Mech Eng 359:112647
+Bossart P, Burrus F (2019) GA18: the gallery 2018, extension of the                Hostettler B, Reisdorf AG, Jaeggi D, Deplazes G, Bläsi H, Morard A
+     Mont Terri rock laboratory. Mont Terri Technical Report, Swis-                     et al (2018) Litho- and biostratigraphy of the Opalinus Clay and
+     stopo, Seftigenstrasse 264, 8084 Wabern, Switzerland                               bounding formations in the Mont Terri rock laboratory (Swit-
+Bossart P, Bernier F, Birkholzer J, Bruggeman C, Connolly P,                            zerland). In: Bossart P, Milnes AG (eds) Mont Terri Rock Labo-
+     Dewonck S et al (2018) Mont Terri rock laboratory, 20 years                        ratory, 20 Years: two decades of research and experimentation
+Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative…                                                    4471
+
+     on claystones for geological disposal of radioactive waste.              Nussbaum C, Kloppenburg A, Caër T, Bossart P (2018) Tectonic
+     Springer International Publishing, Cham, pp 23–39. https://​                  evolution around the Mont Terri rock laboratory, northwestern
+     doi.​org/​10.​1007/​978-3-​319-​70458-6_2                                     Swiss Jura: constraints from kinematic forward modelling. In:
+Ip SCY, Borja RI (2022) Evolution of anisotropy with saturation and                Bossart P, Milnes AG (eds) Mont Terri Rock Laboratory, 20
+     its implications for the elastoplastic responses of clay rocks. Int           Years: two decades of research and experimentation on clay-
+     J Numer Anal Methods Geomech 46(1):23–46                                      stones for geological disposal of radioactive waste. Springer
+Jaeggi D, Laurich B, Nussbaum C, Schuster K, Connolly P (2018)                     International Publishing, Cham, pp 41–68. https://​doi.​org/​10.​
+     Tectonic structure of the “Main Fault’’ in the Opalinus Clay,                 1007/​978-3-​319-​70458-6_3
+     Mont Terri rock laboratory (Switzerland). In: Bossart P, Milnes          Office Fédéral des Eaux et de la Géologie S (2003) Mont Terri project:
+     AG (eds) Mont Terri Rock Laboratory, 20 years: two decades                    geochemistry of water in the Opalinus Clay formation at the Mont
+     of research and experimentation on claystones for geological                  Terri Rock Laboratory, vol 5. Office Fédéral des Eaux et de la
+     disposal of radioactive waste. Springer International Publishing,             Géologie OFEG
+     Cham, pp 69–86. https://​doi.​org/​10.​1007/​978-3-​319-​70458-6_4       Peron H, Eichenberger J, Laloui L, Salager S, Marschall P (2010) Mod-
+Jahn S, Mrugalla S, Stark L (2016) Bundesanstalt für Geowis-                       elling of drying and cracking initiation in a gallery excavated in
+     senschaften und Rohstoffe (BGR) G (editor) Methodik und                       shale. In: European Rock Mechanics Symposium, Eurock 2010.
+     Anwendungsbezug eines Sicherheits-und Nachweiskonzeptes                       Taylor & Francis Group, CRC Press, pp 771–774
+     für ein HAW-Endlager im Tonstein, ANSICHT. Ergebnisbericht               Pitz M, Kaiser S, Grunwald N, Kumar V, Buchwald J, Wang WQ et al
+Jiang H, Jiang A, Yang X, Zhang F (2022) Experimental investi-                     (2022) Non-isothermal consolidation: a systematic evaluation of
+     gation and statistical damage constitutive model on layered                   two implementations based on multiphase and Richards equations.
+     slate under thermal-mechanical condition. Nat Resour Res                      Int J Rock Mech Min Sci 170:105534
+     31:443–461                                                               Plúa C, Vu MN, Seyedi DM, Armand G (2021) Effects of inherent spa-
+Kneuker T, Hammer J, Shao H, Schuster K, Furche M, Zulauf G (2017)                 tial variability of rock properties on the thermo-hydro-mechanical
+     Microstructure and composition of brittle faults in claystones of             responses of a high-level radioactive waste repository. Int J Rock
+     the Mont Terri rock laboratory (Switzerland): new data from pet-              Mech Min Sci. https://​doi.​org/​10.​1016/j.​ijrmms.​2021.​104682
+     rographic studies, geophysical borehole logging and permeability         Regard V, Schefer S, Steiner P, Jaeggi D (2022) CD-A experiment:
+     tests. Eng Geol 231:139–156                                                   seasonal crack mapping in twin niches. Mont Terri Technical
+Knödel K, Lange G, Voigt HJ (2007) Environmental geology—hand-                     Note 2021-63, swisstopo, Seftigenstrasse 264, 8084 Wabern,
+     book of field methods and case studies. Springer, Berlin                      Switzerland
+Kolditz O, Bauer S, Bilke L, Böttcher N, Delfs JO, Fischer T et al            Richards LA (1931) Capillary conduction of liquids through porous
+     (2012) OpenGeoSys: an open-source initiative for numerical                    mediums. Physics 1(5):318–333
+     simulation of thermo-hydro-mechanical/chemical (THM/C)                   Rücker C, Günther T, Spitzer K (2006) Three-dimensional modeling
+     processes in porous media. Environ Earth Sci 67(2):589–599                    and inversion of DC resistivity data incorporatiing tomography—
+Kolditz O, Görke UJ, Konietzky H, Maßmann J, Nest M, Steeb H                       I. Modelling. Geophys J Int 166:495–505
+     et al (2021) GeomInt-mechanical integrity of host rocks. Series:         Schwab L, Gisiger J, Rösli U (2021) Mont Terri, CD-A experiment,
+     Terrestrial environmental sciences. Springer, Berlin. https://​doi.​          Installation of extensometers and climate sensors and configu-
+     org/​10.​1007/​978-3-​030-​61909-1                                            ration of DAS - Installation report TN 2019-86. Mont Terri
+Kolditz O, Fischer T, Frühwirt T, Görke U, Helbig C, Konietzky                     Technical Note, Swisstopo, Seftigenstrasse 264, 8084 Wabern,
+     H et al (2021) GeomInt: geomechanical integrity of host and                   Switzerland
+     barrier rocks-experiments, models and analysis of disconti-              Seyedi DM, Plúa C, Vitel M, Armand G, Rutqvist J, Birkholzer J et al
+     nuities. Environ Earth Sci 80:509. https://​d oi.​o rg/​1 0.​1 007/​          (2021) Upscaling THM modeling from small-scale to full-scale
+     s12665-​021-​09787-0                                                          in-situ experiments in the Callovo-Oxfordian claystone. Int J Rock
+Lewis RW, Schrefler BA (1998) The finite element method in the                     Mech Min Sci. https://​doi.​org/​10.​1016/j.​ijrmms.​2020.​104582
+     static and dynamic deformation and consolidation of porous               Shah PH, Singh D (2005) Generalized Archie’s law for estimation of
+     media. mendes                                                                 soil electrical conductivity. J ASTM Int 2(5):1–20
+Martin C, Lanyon G (2003) Measurement of in-situ stress in weak               sigeom (2020) Mont Terri Project, Convergence monitoring by laser
+     rocks at Mont Terri Rock Laboratory, Switzerland. Int J Rock                  scanning in Niches 3 and 4, Gallery 18. Mont Terri Technical
+     Mech Min Sci 40(7–8):1077–1088                                                Note, swisstopo, Seftigenstrasse 264, 8084 Wabern, Switzerland
+Maßmann J (2009) Modeling of excavation induced coupled hydrau-               Tang Y, Yu J, Su B, Li Z (2022) Simulation of rock complex resistivity
+     lic–mechanical processes in claystone [PhD thesis]. Institut für              using an inversion method. Fluid Dyn Mater Process 18(2):1–10
+     Strömungsmechanik und Elektronisches Rechnen im Bauwesen                 Thomson W (1872) 4. On the equilibrium of vapour at a curved surface
+     der Leibniz Universität Hannover. https://​doi.​org/​10.​13140/​RG.2.​        of liquid. Proc R Soc Edinb 7:63–68
+     2.​13180.​82562                                                          Van Genuchten MT (1980) A closed-form equation for predicting the
+Maßmann J, Ziefle G, Costabel S, Furche M, Graupner B, Hesser J                    hydraulic conductivity of unsaturated soils. Soil Sci Soc Am J
+     et al (2019) In-situ experiment on the influence of humidity on               44(5):892–898
+     the cyclic and long-term deformation behavior (CD-A) of the              Villar MV, Romero FJ (2012) Water retention curves of Opalinus Clay.
+     Opalinus Clay at the Mont Terri Underground Research Labora-                  Informes Técnicos Ciemat
+     tory, Switzerland: Measurement Program and Pre-Simulations.              Wikipedia. Editors W, editor.: Boxplot—Wikipedia, The Free Ency-
+     Geophysical Research Abstracts EGU2019-6788-1. 21                             clopedia. Wikimedia Foundation. Accessed 14 July 2023. https://​
+Mayor JC, Velasco M, García-Siñeriz JL (2007) Ventilation experi-                  en.​wikip​edia.​org/​wiki/​Box_​plot
+     ment in the Mont Terri underground laboratory. Physics and               Wild KM, Amann F (2018) Experimental study of the hydro-
+     Chemistry of the Earth, Parts A/B/C. 32(8):616–628. Clay in                   mechanical response of Opalinus Clay-Part I: pore pressure
+     natural and engineered barriers for radioactive waste confine-                response and effective geomechanical properties under consid-
+     ment—Part 2. https://​doi.​org/​10.​1016/j.​pce.​2006.​04.​030                eration of confinement and anisotropy. Eng Geol 237:32–41
+Navarro M (2005) Verhalten und Barrierewirkung toniger                        Wild KM, Walter P, Amann F (2017) The response of Opalinus Clay
+     Wirtsgesteine in einem Endlagersystem für radioaktive Abfälle.                when exposed to cyclic relative humidity variations. Solid Earth
+     GRS Report. GRS - A 3219                                                      8(2):351–360. https://​doi.​org/​10.​5194/​se-8-​351-​2017
+4472                                                                                                                                    G. Ziefle et al.
+
+Williams M, Ziegler M, Schennen S, Loew S (2022) Evolution of                    deformations: CD-A experiment, Mont Terri Rock Laboratory.
+     excavation damaged zones in Opalinus Clay shale inferred from               In: Innovative Feuchtemessung in Forschung und Praxis: Ber-
+     seismic investigations. Eng Geol 01(299):106528. https://​doi.​             ichtsband zur Tagung 2019,Karlsruhe, 10.-11. Oktober 2019.
+     org/​10.​1016/j.​enggeo.​2022.​106528                                       Schuhmann, R. pp 65–78
+Zhang CL, Laurich B (2020) Mechanical behavior of sandy facies              Ziefle G, Bossart P, Costabel S, Czaikowski O, Furche M, Graupner B
+     of Opalinus Clay under different load conditions. J Rock Mech               et al (2021) Mont Terri, CD-A experiment: installation report TN
+     Geotech Eng 12:223–241. https://​doi.​org/​10.​1016/j.​jrmge.​2019.​        2020-41. swisstopo, Seftigenstrasse 264, 8084 Wabern, Switzer-
+     09.​005                                                                     land: Mont Terri Technical Note
+Zhang S, Li K, Sun K, Wang S (2022) Impact of initial moisture con-         Ziefle G, Cajuhi T, Graebling N, Jaeggi D, Kolditz O, Kunz H et al
+     tent on the shrinkage-swelling behavior of Heishan bentonite.               (2022) Multi-disciplinary investigation of the hydraulic-mechan-
+     KSCE J Civ Eng 26(2):550–555                                                ically driven convergence behavior: CD-A twin niches in the Mont
+Ziefle G, Matray JM, Maßmann J, Möri A (2017) Coupled hydraulic-                 Terri Rock Laboratory during the first year. Geomech Energy
+     mechanical simulation of seasonally induced processes in the                Environ 31:100325. https://​doi.​org/​10.​1016/j.​gete.​2022.​100325.
+     Mont Terri rock laboratory (Switzerland). Swiss J Geosci. https://​    Ziefle G, Cajuhi T, Costabel S, Fourriére A, Furche M, Gerowski J
+     doi.​org/​10.​1007/​s00015-​016-​0252-1                                     et al (2024) CD-A twin niches in the Mont Terri Rock Laboratory:
+Ziefle G, Bossart P, Costabel S, Czaikowski O, Furche M, Graupner                Characterization and interpretation of hydraulic parameters with
+     B et al (2019) Influence of humidity on cyclic and long-term                regard to safety aspects. Int J Rock Mech Min Sci, to be published
+

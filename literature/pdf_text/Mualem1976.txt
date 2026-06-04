@@ -1,0 +1,908 @@
+..
+     VOL. 12, NO. 3                                          WATER RESOURCES RESEARCH                                                     JUNE 1976
+
+
+
+
+                           A New Model for Predicting the Hydraulic Conductivity
+                                     of Unsaturated Porous Media
+                                                                        YECHEZKEL MUALEM
+
+                                        Faculty of Civil Engineering, Technion-Israel Institute of Technology, Haifa, Israel
+
+                           A simple analytic model is proposed which predicts the unsaturated hydraulic conductivity curves by
+                        using the moisture content-capillary head curve and the measured value of the hydraulic conductivity at
+                        saturation. It is similar to the Childs and Collis-George (1950) model but uses a modified assumption
+                        concerning the hydraulic conductivity of the pore sequence in order to take into account the effect of the
+                        larger pore section. A computational method is derived for the determination of the residual water
+                        content and for the extrapolation of the water content-capillary head curve as measured in a limited
+                        range. The proposed model is compared with the existing practical models of Averjanov ( 1950), Wyllie
+                        and Gardner (1958), and Millington and Quirk ( 1961) on the basis of the measured data of 45 soils. It
+                        seems that the new model is in better agreement with observations.
+
+
+                                  INTRODUCTION                                         0, i. and I, respectively. Jackson eta/. [1965], Kunze et al.
+                                                                                       [ 1968], Green and Corey [1971 ], and Bruce [1972) have checked
+         The various models used for predicting the hydraulic con-
+                                                                                       the reliability of (4). It seems that the MQ formula is in
+      ductivity of unsaturated soils were reviewed by Brutsaert
+                                                                                       somewhat better agreement with measured data than the other
+      [1967]. We may distinguish between two main groups. The
+                                                                                       formulae.
+      first is based on a generalization of Kozeny's approach for
+                                                                                          The three main models represented by (I), (3 ), and (4) do
+      saturated and unsaturated porous media, according to which
+                                                                                       not seem to have been tested together against measured data
+      the relative hydraulic conductivity K, is a power function of
+                                                                                       before.
+      the effective saturation   i.e.,s.,                                                 The purpose of the present study is to propose a new sim-
+                             K, = KIK.., = S."                               ( 1)      plified model which minimizes the deviations between pre-
+                                                                                       dicted and measured K(9) curves.
+      where
+                         s. = (9 - 9,)/(9.., - 9,)                           (2)                                      THEORY
+
+     ' where 9 and 9, are the actual and the residual water content,                      We consider a homogeneous porous medium, having inter-
+       respectively. Following this approach, Averjanov [1950] pro-                    connected pores defined by their radius r. The contribution of
+       posed the value a = 3.5, whereas lrmay [1954] derived (I)                       full pores of radii r - r + dr to (J is
+       theoretically with a = 3.0. It seems that for a wide variety of                                            f(r) dr = d(J                    (5)
+       soils, a = 3.5 leads to a better agreement with observations
+       [Brooks and Corey, 1964; Boreli and Vachaud, 1966].                             where f(r) is the pore water distribution function. We have
+          The second group includes the models of Burdine [1953],
+       Wyllie and Gardner [1958] (WG in this paper), Farrell and
+       Larson [1972], and Childs and Col/is-George [1950] (CCG in
+                                                                                                            JR
+                                                                                                             Rmin
+                                                                                                                      f(r) dr = 8(R)               (6)
+
+       this paper) and the modifications to the CCG model proposed                     and in particular,
+       by Marshall [1958], Millington and Quirk [1961] (MQ in this
+                                                                                                                Rmn
+       paper), and Kunze eta/. [1968). The models of this group make
+       use of the measured capillary head-water content 1f(9) curve
+       to derive the hydraulic conductivity in the unsaturated state.
+                                                                                                            !Rmin
+                                                                                                                      f(r) dr =   e•• ,            (7)
+
+                                                                                       The areal porosity is equal here to the volumetric porosity, so
+       While in petroleum engineering the 'Burdine equation'                           f(r) dr represents the ratio between the pore area of radii r- r
+                                                                                       + dr and the total area. Consider a porous slab of thickness ~x
+                 K,(B) =    s. 1' dB/IIl/1''"' d8/1f
+                                  2
+                                                        (3)
+                                                                        2
+                                                                                       (x- x + ~x along the axis). The pore area distribution at the
+                                1-o       •-o                                          two slab sides is identical. For ~x >> Rm.., complete random-
+                                               s = e- e.                               ness of the relative positions of the two slab faces is assumed.
+                                                                                       The probability of pores of radii r- r + drat x encountering
+       is commonly used, soil scientists refer generally to a modified
+                                                                                       pores of radii p - p + dp at x + ~x is
+       form of the CCG equation,
+       K,(8 1)
+                                                                                                            a(r, p) = f(r)f(p) dr dp                (8)
+                                                                                                                                                          -==
+                                                                                                                                                          iiiiiiiiiii
+
+
+        =   s/   ±     [2(1- i~        + 1]/ f. [2(m- i + 1]       2
+                                                                    )         ( 4)
+                                                                                       Here no direct connection between the pores rand p does exist
+                                                                                       along the x axis. The other extreme case occurs when .lx- 0.
+                                                                                       Then the correlation between the two slab faces is complete.
+                                                                                                                                                          iiiiiiiiiii
+                                                                                                                                                          ~
+
+
+                 i•l        "'·                 i•l          "''
+
+         Herem represents the total number of intervals into which the                 Since we are concerned with the effect of pore changes on the
+     ··""8 domain is divided, and I is the number of intervals up to a                 hydraulic conductivity, it is more relevant to consider ~x to be
+         prescribed value of8. CCG, MQ, and Kunzeet al. suggest{j =                    of the same order of magnitude as the pore radii. Then the
+                                                                                       probability of the connection of a pore r- r + dr to a pore p -
+         Copyright@ 1976 by the American Geophysical Union.                            p + dp is
+                                                                                     513
+    514                                                   MUALEM : UNSATC RATED fLOW MODELI NG
+
+
+
+                         a(r, p) = G(R, r, p )f(r)f(p ) dr dp          (9)
+    G(R. r, p) is a correct ion accoun ting for partial correla tion
+    between the pores rand p at a given water conten t O(R).
+                                                                                            K,(8) = S."
+                                                                                                           [1 0
+                                                                                                                  B d8/~   I 1'''' ]2
+                                                                                                                                0
+                                                                                                                                    d8/~           (14)
+
+      The contrib ution of the actual flow configu ration in the slab           where n may be positiv e or negative. Equatio n (14) is
+   to the hydrau lic conduc tivity cannot be accurat ely assesse                simple and easy to apply. For 1/;(0) given in analyti cal form,
+                                                                   d.
+   We use, therefo re, two simplifying assumptions: (I) there is                K,(O) can be derived explicitly. For exampl e, introdu cing
+                                                                   no                                                                        in
+   bypass flow between the slab pores. and (2) the pore configu                 ( 14) the expression used by Brooks and Corey [1964],
+                                                                  ra-
+   tion may be replaced by a pair of capillary elements (Figure
+                                                                    I)                                                                             ( 15)
+   whose lengths are propor tional to their radii:
+                                                                                yields
+                                    1,11. = r/ p                      (10)
+  The hydrau lic conduc tivity is then found to vary as rp                                                                                         ( 16)
+                                                                   (see
+  Append ix I). If we use a correct ion factor T(R, r, p) <                                                                                     ( 17)
+                                                                   I to
+  accoun t for eccentricity of the flow path (tortuo sity factor),
+                                                                    the        With n = 0, (16) and (17) reduce to the equatio ns obtaine d
+  contrib ution of the r ~ p elemen t to the relative conduc tivity                                                                                by
+                                                                               Brutsaert [ 1967), using the CCG model. Howev er,
+  becomes                                                                                                                                   the in-
+                                                                               clusion of n (which accoun ts for the correla tion between pores
+                                                                               and for the flow path tortuos ity) in ( 16) and ( 17) contrib utes
+  d K,(r, p)                                                                                                                                       to
+                                                                               a more flexible formul a of K,(S,) and therefo re to a greater
+                         T(R, r, p)G(R, r, p)rpf(r )f(p) dr dp                 cha'lce of agreem ent between theoret ical and experimental
+                                                                               curves. Anothe r exampl e is Farrell and Larson's [ 1972)
+                                                                                                                                                for-
+          !Rm .. !Rm., T(Rm••• r, p)G(Rm.., r, p)rpf(r)f(p) dr dp
+           Rmin
+                                                                               mula
+                    Rmin
+                                                                                                          1/; = 1/lc..e""-S.l                     ( 18)
+                                                                     (II)
+  For a given O(R) the corresp onding K,(O) is                                 which when it is substit uted into ( 14) leads to
+
+                                                                                    K,(S,) = S.''(e2DS. - 2e"s. + I )/(r'" - 2e" + I)
+  Kr((J) =
+            JR JR T(R, r, p)G(R, r, p)rpf(r)f(p) dr dp                        It is not clear whethe r (16) or (19) is in better agreem ent
+                                                                                                                                            ( 19)
+                  Rmin      Rmin                                                                                                            with
+                                                                              measur ed data. Equatio n (16), howeve r, is easier to use in
+           !Rm .. !Rm., T(R, r, p)G(R, r, p)rpf(r)f(p) dr dp                                                                                 the
+                                                                              derivat ion of analyti cal solutio ns of compli cated unsatur ated
+                  Rmin      RrniD
+                                                                              flows.
+                                                             (12)
+    Since there exists no proced ure for an indepe ndent determ                                       COMPU TED RESULT S
+                                                                i-
+ nation of T(R, r, p) and G(R, r, p), we assume with Burdine                      Before agreem ent of theory with measur ements and com-
+ [1953] and MQ that the tortuos ity and correla tion factors                    parison with other method s can be e-xamined, the residua
+                                                              are                                                                                     l
+ power functio ns of 8, thus depend ing solely on R. Hence                      water conten t e, and the power n of S, (( 14 )) must be deter-
+                                                                                mined. The influence of using partial and comple te ~-0 curves
+                     J.R rf(r) dr JR pf(p) d p                                 on the compu ted hydrau lic conduc tivity was checke d by Kunze
+                                                                               eta/. (1968]. It seems that comple te ~-e inform ation improv
+  K,(O) = S n             Rmin           Rmin                                                                                                       es
+                                                                               the quality of the predict ion mainly as a result of a better
+                  ' !Rmu rf(r) dr !Rmu pf(p) dp                                fulfillment of the require ment that K = 0 for 0 = 0,. They
+                         Rmia            Rmia                                  recomm end, therefo re, extrapo lation of the measur ed portion
+                                                                2              of the 1/;-0 curve. During the present study we realized
+
+                                        S"
+                                           JR. rf(r) dr J
+                                                Rmu
+                                                                               becaus e of the strong sensitivity of the compu ted K(0) curve
+                                                                               to the value of e., the decision about which model compa
+                                                                                                                                                that
+
+                                                                    (13)
+                                         •[1Rmu rf(r) dr                       more favorab ly with experim ental data of a given soil is,
+                                                                                                                                                  res
+                                                                                                                                                   in
+                                                Rm in                          fact, govern ed by e,. For this reason, we think that it
+                                                                                                                                                    is
+Applyi ng the capilla ry law r                                                necessary to use a standa rd analyti cal proced ure to fix a value
+                                            CN and (5) to (13), one           of e, and to extrapo late a partiall y given ~-9 curve.
+obtains                                                                                                                                          We
+                                                                              propos e herein a conven ient proced ure, based on the assump
+                                                                                                                                                     -
+                                                                              tion that the soil charact eristic curve in the extrapo lation range
+                                                                              can be analyti cally represe nted by ( 15), which fulfils the con-
+                                                                              dition 1/; _, ex> for e ~ e,. Parame ters 9, and ). are compu
+                                                                                                                                                 ted
+                                                                              with the aid of a minimu m square deviati on proced ure
+                                                                                                                                                 for
+                                                                              regression of measur ed ~.;e points to (15) in the range e <
+                                                                                                                                                ep.
+                                                                             where eP is the value at which the measur ed curve shows
+                                                                                                                                                  an
+                                                                             inflection point (Appen dix 2).
+                                                                                 Now if we perform a similar fitting proced ure for the K,(8)
+                                                                             curve to ( 14 ), we can expect to get differen t values of n
+                                                                                                                                                 for ·
+                                                                             differen t soils. As was already mentio ned, the value of n
+                                                                                                                                               m<       )
+                                                                             be negativ e too. Of course, this poses a great difficulty if one
+                                                                                                                                                   is
+                                                                             interes ted in a universal K,(B) represe ntation , valid for all soils.
+Fig. I.     A combin ation of cylindrical tubes used to evaluate the         As a sort of compro mise between both represe ntation s,
+          hydraul ic conduct ivity of a pair of capillar y elemehts.                                                                           it is
+                                                                             sugges ted that an express ion be adopte d for which the squ,are
+    .   '
+                                                                 MUALEM: UNSATURATED FLOW MODELING                                                                          515
+
+            deviation, averaged over a great number of soils, is minimum.                0.5 may indeed hold as the best value. Hence the suggested
+            In essence, n becomes an experimentally determined parame-                   formula for K,(S,) becomes
+            ter.
+    (
+               Forty-five soils for which measured Y,-8 and K-8 (or K-Y,)
+             .dta on drainage are available in the literature were used for
+                                                                                               K,(s.) = s:
+                                                                                                                  12
+                                                                                                                       (1s, d~,N     /      {        dS,/1/tY          (21)
+
+            computation. In Table I a list of the soils, their measured                  In practice, we distinguish between the extrapolated region 0
+            8mln• Ytmln._and Smas• the computed 8, obtained by using the                 : :; s. < s. min (8, < 8 < 8mln). for which an analytical
+            procedure suggested in Appendix 2, and the power>.. of s. are                expression (( 15)) is used to represent the Y,-S. curve, and the
+            given. For each soil the mean square deviation D between the                 measured region s. min :S: s. :S: I, where the computation is
+            measured hydraulic conductivities K,,. and the computed ones                 carried out numerically. Continuity requires that the extrapo-
+            Krc•                                                                         lated curve meet the measured one at (Ytmln• S, min). Thus (21)
+                         1                                                   12          becomes
+            D=      {1                                   dS,
+                                                         3
+                        s •••• [ln(K.. )-In(K,,..)] ( l - Som,.)
+                                                                 }'
+                                                                                  (20)   K,(S,)
+            is computed. Eight different values of n were used (substituted
+            jn (14)): n = -I + 0.5j,j = 0, I, · · · , 7. In order to maintain
+            consistency in the numerical computation of D for all soils we                    s.'/2
+                                                                                                      I
+                                                                                                      I S, min/(1 + 1/A)Ytmin +      f.     s
+                                                                                                                                                s.
+                                                                                                                                                        dS,/1/t I
+                                                                                                                                                                 '"
+
+                                                                                                                                                                 I <22 >
+                                                                                                                            _
+                                                                                                                                       1         min
+
+            have used a constant increment AS, = 0.02. In Table 2 the
+            mean value lJ, the standard deviation u, and the coefficient of
+                                                                                                      LS, min/(1 + 1/.\)1/tmin
+                                                                                                      1
+
+                                                                                                                                    +f      S • min
+                                                                                                                                                        dS,/Yt J
+            variance E for the 45 soils are given as a function ·of n. The
+            continuous graph of D(n) as plotted in Figure 2 shows that n =               while the WG model ((3)) yields
+
+                                                             TABLE I.   Computed e, and ~ for the 45 Soils
+                              Soil                                                                                                l/lmln•
+               No.           Index                              References                                0mu:     em in        em H20                   e.             ~
+
+
+                    I        1006    Beit Netofa clay [Rawitz. 1965]                                      0.446    0.241        1.51 X 10'               0.010         0.19
+                    2        1101    Shluhot silty clay [Rawitz, 1965]                                    0.385    0.163        1.51 X 10'               0.010         0.20
+                    3        2002    Silt Mont Cenis [Vachaud, 1966]                                      0.447    0.042        1.70 X 10'               0.010         0.36
+                    4        2004    Slate dust [Childs and Col/is-George. 1950]                          0.482    0.110        1.44 X 102               0.090         5.69
+                    5        3001    Weld silty clay loam [Jensen and Hanks, 1967)                        0.470    0.140        2.12 X 10'               0.090         1.52
+                    6        3002    Amarillo silty clay loam [Brooks and Corey, 1966)                    0.455    0.140        2.25 X 10'               0.110         2.35
+                    7        3101    Rideau clay loam [Topp, 1971]                                        0.416    0.286        4.19 X 10'               0.280         1.62
+                    8        3301    Caribou silt loam [Topp, 1971]                                       0.441    0.313        4.25 X 102               0.280         0.91
+                    9        3302    Grenville silt loam [Staple. 1965)                                   0.475    0.037        1.00 X 10'               0.010         0.34
+                   10        3304    Touchet silt loam [Jensen and Hanks. 1967)                           0.480    0.170        2.35 X 102               0.120         1.71
+                   II        3305    Ida silt loam (> 15 em) [Green et al.. 1964)                         0.530    0.175        2.00 X 10'               0.060         0.38
+                   12        3306    Ida silt loam (0-15 em) [Green et al., 1964)                         0.554    0.219        2.00 X 10'             . 0.010         0.27
+                   13        3307    Touchet silt loam (General Electric 3) [Brooks and Corey 1964)       0.469    0.180        4.14 X 10'               0.130         1.89
+                   14        3403    Pachappa loam [Jackson et ill., 1965]                                0.456    0.007        3.19XIO'                 0.002         0.42
+                   15        3404    Adelanto loam [Jackson et al.. 1965]                                 0.426    0.012        4.65 X 10'               0.007         0.50
+                   16        3405    Indio loam [Gardner, 1959]                                           0.450    0.021        1.50 X 10'               0.010         0.81
+                   17        3407    Guelph loam [Elrick and Bowman, 1964]                                0.520    0.236        1.00 X (()3              0.130         0.41
+                   18        3501    Rubicon sandy loam [Topp, 1969]                                      0.381    0.166        2.40 X 102               0.150         2.08
+                   19        3503    Pachappa fine sandy clay [Elrick and Bowman, 1964]                   0.334    0.049        1.50 X 10'               0.030         0.44
+                   20        3504    Gilat sandy loam [Hadas, 1967]                                       0.440    0.130        1.02 X (()3              0.010         0.44
+                   21        4106    Sand [Poulovassilis, 1970]                                           0.272    0.090        3.60 X 10 1              0.010         1.83
+                   22        4107    Sand [Poulovassilis. 1970]                                           0.258    0.084        3.80 X 10 1              0.010         2.87
+                   23        4109    Botany sand fraction (150-300 1-1m) [Watson. 1967)                   0.350    0.055        5.70 X 10'               0.040         8.35
+                   24        4111    River sand (screened) [Jensen and Hanks, 1967]                       0.400    0.060        1.50 X 102               0.050         1.57
+                   25        4114    Volcanic sand [Jensen and Hanks, 1967]                               0.350    0.050        i.85 X 102               0.040         1.30
+                   26        4116    Sand fraction (150-300 1-1m) [Kasttlanek. 1971]                      0.372    0.045        8.00 X 10'               0.040         4.94
+                   27        4118    Sable de rivicre [Vachaud, 1966]                                     0.342    0.075        1.90 X 10'               0.060         0.92
+                   28        4120    Gilat fine sand [Rawitz, 1965]                                       0.179    0.070         1.51 X 10'              0.010         0.27
+                   29        4121    Rchovot sand [Hadas. 1967]                                           0.400    0.020        2.50 X (()3              0.015         0.83
+                   30        4123    Pouder River sand [Brooks and Corey, 1966]                           0.364    0.044        8.20 X 10 1              0.030         2.92
+                   31        4126    Molonglo River sand [Talsma, 1970]                                   0.277    0.098        3.00 X 10 1              0.010         0.96
+                   32        4129    Beit Dagan sand [Rawitz, 1965]                                       0.161    0.052        1.49 X 10'               0.040         0.37
+                   33        4130    Hygiene sandstone [Brooks and Corey, 1964]                           0.250    0.151        2.01 X 102               0.140         3.78
+                   34        4131     Berea sandstone [Brooks and Corey, 1964]                            0.206    0.064        2.34 X 10'               0.050         2.13
+                   35        4132    Fragmented Fox Hill sandstone [Brooks and Corey, 1964)               0.503    0.166        1.16 X 102               0.160         2.61
+                   36        4133    Fine sand (General Electric 13) [Brooks and Corey, 1964]             0.356    0.063        3.02 X 10'               0.050         1.98
+                   37        4134    Volcanic sand [Brooks and Corey, 1964]                               0.365    0.058        2.73 X 102               0.050         1.65
+                   38        4137    Sand fraction (150-3001-'m) [Watson. 1967]                           0.350    0.056        5.70 X 10'               0.050        11.67
+                   39        4141    Sand fraction ( 1.0-0.5 mm) [Childs and Col/is-George. 1950]         0.357    0.034        3.64 X 10'               0.020         2.80
+                   40        4142    Sand fraction (0.5-0.25 mm) [Childs and Col/is-George. 1950]         0.364    0.040        4.40 X 10'               0.030         5.69
+                   41        4143     Fragmented mixture [Brooks and Corey, 1964]                         0.437    0.134         1.07 X 102              0.120         2.65
+                   42        4147     riainfield sand (25-60 em) [Black et al.. 1969]                     0.307    0.060        2.05 X 102               0.050         1.45
+                   43        5002    Glass beads [Brooks and Corey, 1964)                                 0.383    0.037        3.01 X 102               0.030         1.90
+                   44        5003    Aggregated glass beads [Topp and Miller, 1966]                       0.548    0.080        8.26 X 10'               0.060         3.57
+                   45        5004    Monodispersed glass beads [Topp and Miller, 1966]                    0.326     0.033       6.82 X 10 1              0.020         6.24
+                   9muo emln• and e, are given in percent of total volume.
+
+>
+516                                                                             MUALEM: UNSATURATED FLOW MODELING
+
+
+                                       TABLE 2.                Computed D, a, and E for Eight Values of n Obtained by Using (14)
+
+                                                                                                                   n
+
+                                                                - 1.0               -0.5       0.0      0.5                1.0                1.5           2.0            2.5
+
+                        !5 = L:D,/45                            1.40                    1.18   1.0 I    0.97               1.09               1.32          1.62        1.94
+                        a= [(D, - /5)'/45]''                    0.73                    0.70   0.75     0.82               0.89               0.96          1.04        1.58
+                        ' =a/ !5                                0.52                    0.60   0.74     0.84               0.81               0.72          0.64        1.13
+
+
+ K,(S,)                                                                                                effective water content and the effective saturation, respec-
+                                                                                                       tively.
+                                                                                                          The numerical procedure used in this study is based on the
+                                                                                               (23)    assumption that the measured t/1-S. curve can be very closely
+                                                                                                       approximated by a continuous polygon, i. e., that t/1 can be
+                                                                                                       expressed by
+Instead of presenting the MQ formula based on the CCG
+model in the form of finite sums, as is usually done in the                                                                                                                           s,,)       (26)
+literature, we believe that it is worthwhile to present the K,(S.)
+relationship in terms of integrals for several reasons: (I) we                                                                                                             s., ~ s. < s .• +,
+can compare different formulae in an easier way, (2) if analyti-
+                                                                                                       In this case we are not limited to using constant intervals, the
+cal relationships between t/1 and                    s.
+                                         are available, the K-S.                                       node points are conveniently chosen with regard to the curva-
+relationship may also be obtained in a closed form, and (3) the                                        ture of the given graph, and the computation of K,(S.) is
+computer permits use of a variety of procedures for replacing                                          accurately performed. When (26) is used, (22) becomes
+integrals by finite sums. This latter argument is of extreme
+importance, as will be shown later. For this reason, we have                                                                         12{[ S, min/(1 + 1/}..)tf.,ln
+elaborated the CCG model (see Appendix 3) to obtain a final                                            K,(S.) = S.'
+compact integral form of the K-8 relationship:
+
+ K,(8) = S, a                                                                                                               +        ±: (s·,+~-
+                                                                                                                                      l   tf,
+                                                                                                                                                s.,) (_ii_)J
+                                                                                                                                                      "'i+l '{1,+1
+                                                                                                                                                                      In
+
+
+                                   1t···
+                                                                                                                                                                                                         I
+                                                                                                (24)
+      .{   (8 - t?) dt'J/y/                         (B ••• -                t'J) dt'J/V/                                         ' [ S, min/(1 + 1/}..)tf,.ia
+Using a = 4/3 and ( 15) to express the t/1-S. dependence on the
+extrapolated portion, we have                                                                                               + f: (s.. +~- s.,) 1n (_ii._)]-'}2                                   (27)
+                                                                                                                                      l           "'·       Vti+l            '{1;+1
+ K,(S,) =      S,"{!/t. ~inJ (~'!' ;;~ - 2S-t'";;J                                                     while the WG and the modified MQ modcl-{(23) and "(25))
+                                                                                                       yield
+
+                + }~·~ ·. . '"          1/t J
+                                                                    2
+                                               s) ds/
+                                   (S, -
+                                                                                                        K,(S.) =             s.z{[ S. min/(l + 2/}..)tf..,ln2
+                                                                                    2
+                            1 ( S, min
+                                        +
+                      . [ Vtmin'j 1 2/A -                        2
+                                                                   S, min )
+                                                                       2/A  +                                 +        ±: S,;~~"'- S,;J[s.min/(1 + 2/}..)tfmia                               2
+
+
+
+
+                                                                    J
+                                                                                                                       1                  '   i+l
+
+
+                +      f ..,.;.,   (1 -       s) ds/1/t
+                                                                2
+                                                                            1
+                                                                                                (25)
+                                                                                                              + f: s,,+, - s··]}-•
+                                                                                                                       l             "'"''i+l
+                                                                                                                                                                                                 (28)
+which is the equivalent formula for the MQ model. Parameters
+11 and s (in (24) and (25)) are demivariables representing the
+                                                                                                       and
+                5
+                                                                                                                                                        2
+                                                                    ;·                                              4/3{[
+                2.0
+                                                                                                                            1 (s.s. min       s•.. in )
+                1.8                                                                                     K,(S,) = S,       Vtmin l + 2/'A. - 2 + 2/'A.   2
+
+
+                                                                                                         + ±:l [s. s,+,"''"'"'- s; _ ( Vti.s,+,- - s, )(s'+'tfi+l ._ ~)tf,
+                :~          I                                                                                                                                          '{!...
+                                                                                                         + ( Si+l -                  S; )
+                                                                                                                                              2
+                                                                                                                                                 I [Vtmia 1 +min2/'A.
+                                                                                                                                                  I ( '{!; )]]                   1 2 ( S,
+                'l ....._,/
+                1,2         ""                  /
+                                                                                                            Vti - "'i+l            tfi+l          O
+
+
+                                                                                                              Srmin ) + t [si+l-
+               :c.          I      I
+                      -•.o -o.s o.o o.s
+                                          I     I
+                                               1.0
+                                                           I
+                                                          •.s
+                                                                        I
+                                                                    2.0 2.s n
+                                                                                I       ,                     +2           2/'Jt..
+                                                                                                                                      2
+
+
+                                                                                                                                       t/1;1/t;+l   1
+                                                                                                                                                      (.Si+l- S;)
+                                                                                                                                                       1/t; - "'i+l
+                                                                                                                                                                     S; _
+
+
+
+
+Fig. 2.    Computed D based on 45 soils as a function of the power n
+                            (see ( 14 )).
+                                                                                                          .(~;~. - ~) +(;:+~-t/I::J ("'~~)                                  ln          ]]}      ·(29)
+•i
+
+                                                     MVALEM: UNSATURATED fLOW MODELING                                                            517
+
+
+. respectively. In the following the suggested model ((27)), as The presentation of the CCG model is modified to derive a
+  well as the models of Averjanov, WG, and MQ ((I), (28), and compact integral formula instead of its usual form in finite
+  ,, ''"l9), respectively), will be compared with the experimentally sum. This improvement enables us to use the same modified
+(           1sured data.                                                      procedures in applying the various models and therefore to
+   · In Table 3 the deviation D between the measured K,(S.) perform a more reliable comparison among the models.
+     curves and the computed ones (using the proposed method                    For computational benefit the measured .J;-0 curve is re-
+     and the three methods mentioned          above) is given  for each one   garded    as a continuous polygon connecting the given (1/;, 0)
+     of the 45 soils. The italicized values indicate the model which points. This approximation ensures an accurate computation
+      yields the minimum deviation between the measured curves of K,(S.) without truncation errors (which are quite significant
+      and the forecasted ones. The average value D for all 45 soils, for values of if; near zero).
+      the standard deviation u, and the coefficient of variance t are           The proposed model, as well as the three main existing
+      given in the last three lines of the table. It may be seen that for models of Averjanov, MQ, and WG, is compared with mea-
+      various soils, best results are achieved by different methods. sured data of various soils. Since this test is carried out against
+      This can also be concluded from Figures 3a-3p, in which the data the accuracy of which is undetermined, 45 soils of differ-
+      computed results are shown for a sample of 16 soils. On the ent types are considered to ensure solid conclusions. It is
+      other hand, comparison between the different models on an                 TABLE 3. Deviation D Between the Measured and Computed
+      overall basis shows that best results are achieved by the pro- K,(S,) Obtained by Using the Models of Averjanov, WG, and MQ
+      posed model. This is reflected by the number of soils for which                                and the Proposed Model
+      D is minimum (see Table 3 and Figures 3/, 3g, 3j, and 3m-3p)
+                                                                                                                               D
+      and by the computed average value D for the 45 soils.
+                                                                                                 Soil                                           Proposed
+           Very often the agreement of Averjanov's model with the                               Index     Averjanov      WG          MQ          Model
+                                                                                    No.
+      experimental data is quite poor (as it is in soils 1006, 3302,
+       3305, 3306, 3403, 3404, 3405, and 3407; see also Figures 3a and                I         1006         1.94       0.20        0.24          0.29
+       3c-3f), while in some cases (soils 2002, 4121, and 4126; see                   2         1101         1.26       0.74        0.76          0.64
+       Figures 3b and 3/) a definite improvement in results is achieved               3         2002         1.72       6.01        4.38          4.17
+       by this method as compared with the other three. It seems,                     4         2004        0.22        0.14        0.19          0.40
+                                                                                      5         3001         1.08       0.37        0.23          0.76
+       therefore, that the 1/;-IJ curve includes some inherent character-             6         3002         0.51       0.36        0.25          0.46
+
+
+!
+       istic properties of the soil, which the generalized Kozeny-                    7         3101         0.59        1.01        1.18         0.58
+       Averjanov-lrmay approach ignores. One may conclude, how-                       8         3301         0.59       2.44         1.48         1.22
+       ever, that Averjanov's model fits sands well, while it fails to                9         3302         5.67       1.07         1.69         1.72
+       <iescribe the K,-e relationship accurately for heavier soils. Yet            10          3304         0.63       0.49        0.58          0.42
+                                                                                    II          3305         5.12       1.13         1.28          1.34
+.           : Aver]anov-lrmay type of equation, with adjustable power,              12          3306         6.11       2.36        1.26           1.34
+'' .s an expression that has been proved to be very            convenient in        13           3307        0.46       0.33        0.44          0.38
+       the analytical solution of partly saturated flow problems. It                14          3403         4.38        1.38        1.15         0.94
+        might be possible to improve prediction of K(0) by adjusting                 15         3404         4.87       2.82         1.59          1.33
+                                                                 Brooks  and        16           3405        5.46        1.00        2.23          2.18
+        the power for tortuosity and for>. (as was done by                           17          3407         1.96      0.82         0.44         0.25
+        Corey [1964] or as shown here in (16)).                                      18          3501        0.42       0.86         1.04         0.40
+            Among the other three models the WG model yields the                     19          3503        2.18       4.33        2.01          2.25
+        poorest results. For soils in which d8/d.J; i' 0 as if;- 0, there is        20           3504        2.66        2.93        1.61          1.67
+                                                          conductivity  near        21           4106        0.50        1.00        1.03          0.65
+        an abrupt fall of the computed hydraulic
+                                                                                    22           4107         0.38       0.62        0.71          0.30
+        saturation (Figures 3b, 3d, 3e, 3h-3/, and 3n). For some soils              23           4109         1.12       0.88        1.18         0.56
+        these computed results are justified by the experimental data               24           4111         1.13       2.03        1.82          1.01
+        (Figure 3e), but in most cases the contrary is sustained, since              25          4114         1.18       0.92        0.59          0.77
+        the observed drop is milder.                                                 26          4116         0.55       0.54        0.60          0.97
+                                                                                     27          4118         0.52        1.19       1.73          0.86
+             Finaily, we believe that there is a good chance of improving            28          4120        0.66        0.80        1.02          0.79
+         the prediction of K,(9) by developing procedures which cir-                 29          4121         0.27       3.53        2.77          2.41
+         cumvent some of the existing limitations. One might neglect                 30          4123         0.80       0.70        0.53          0.97
+         the measured data of .J;-9 near saturation and fix a clear air              31          4126         0.28       2.15         1.21          1.22
+                                                                                     32          4129         0.88       2.65        2.65          2.26
+         entry value. Another modification is the derivation and use of
+                                                                                     33          4130         0.14       0.24        0.26          0.27
+         an experimental correlation between the value of n in the                   34          4131         0.56       0.43        0.34          0.62
+         power function ((I)) and some physical parameters of the                    35          4132         2.85        3.53        3.66         2.91
+         soils.                                                                      36          4133         0.37       0.41        0.36          0.44
+                           SUMMARY AND CONCLUSIONS                                   37          4134         0.31       0.35        0.56          0.30
+                                                                                     38          4137         0.53        0.28       0.53          0./6
+             The new model for prediction of K,(0), proposed herein, is              39          4141          1.38       1.60        1.71         0.93
+         based on a reasonable approximate evaluation of the hydraulic               40          4142         0.65        0.99       0.62          0.91
+         conductivity of a pore domain with varying shape. The K,(0)                 41          4143         0.52        0.73       0.92          0.41
+         expression is derived in a simple integral form. Thus in cases              42           4147        0.71        0.50        0.70         0.37
+                                                                                     43           5002        0.91        0.98        1.12         0.43
+          where the 1/1-0 dependence is given by analytical formulae,                                         0.61        0.69        1.04         0.2/
+                                                                                     44           5003
+          ~'.(9) can be reduced to a closed form. Very rarely is the 1/;-0           45           5004        0.90        0.80        1.04         0.30
+            Jrve measured in the whole range. Hence in order to make                  [j                       1.49       1.32        1.17         0.97
+          the various models more practical tools an analytical pro-                  u                        1.64       1.22        0.88          0.82
+                                                               residual water     f = u/D                      1.10       0.93        0.75          0.84
+          cedure is suggested for the determination     of the
+          content and the extrapolation of the 1/;-0 curve into the range        The italicized values indicate  the model  which • :elds  the:  minimum
+          for which no measured data are available.                            deviation between the measured curves and the i:.Jrecasted ones.
+          -1
+          10
+
+
+
+
+          -2
+      10
+
+
+
+      -3
+      10 ~~~~-L-J--L-~~~
+         0.30   0.34   0.38 0.42
+              <volume tric)
+                                                              -5
+                    Fig. 3a                                   10 ~~~~--~~~~
+                                                                  0.20 0.30    0.40
+                                                                    <volume tric)
+                                                                        Fig. 3b                                            0.20      0.30    0.40   o.so
+                                                                                                                                  (volumet ric l
+-1
+10                                                                                                                                 Fig. 3c
+
+
+
+
+                                                         -3
+                                                        10
+
+
+                                                        -4
+                                                        10
+
+
+
+                   (volumet ric)
+                                0.52    0.60
+                                                                    0.20  0.30
+                                                                                                                                                           1
+                                                                                      0.40                        -5
+                  Fig. 3d                                          <volume tric)                                  10
+                                                                                                                    0.24      0.32 0.40     0.48
+                                                                                                                              <volume tric)
+                                                                      Fig. 3e
+                                                                                                                                 Fig. 3/
+                                                                                                                  0
+                                                                                                             10
+     -1
+ 10
+                                                                                                             -1
+                                                                                                           10
+
+
+                                                                                                            -2
+                                                                                                           10
+                                                                                                        Kr
+                                                                                                             -3
+                                                                                                           10
+ -4
+ 10
+                                                                                                          -4
+                                                                                                          10
+                                                                                                                                                           -;
+ -5                                                                                                                                                        ;
+10 ~~~~--L-~~~
+    0.30   0.34    0.38 0.42
+                                                                                                                                                           i
+         <volume tric l                               I-5
+                                                       0 ..._...__--L-__.___.__~.....L...---'-~            -5
+                                                                                                          10
+                                                         0.30      0.34 0.38     0.42        0,46                      0.10    0.20 0.30            0.40
+                Fig. 3g                                            <volume tric)                                              (volume tric l
+                                                                      Fig. 3h
+                                                                                                                          Fig. 3i
+             Fig. 3. Compute d relative hydraulic conductivities for 16 soils using four
+                                                                                         models: Averjanov's (Y symbols; sec (I)).
+           WG's (plusses; sec (28)), MQ's (solid triangles; sec (29)), and the proposed
+                                                                                        model (solid circles; sec (27)). The mc-<~surcd
+           curve is shown by solid squares.
+  .   ;
+      ;
+
+
+
+
+      (
+
+
+
+                                                                                                         (volumetric l
+                                         -s                                                                Fig. 3/
+                                         I0 L-..L-...J...---i.__JL.._.L_...i.......J..._
+                                          0.04      0.12       0.20     0.28 0.36
+              I volumetric l                             (volumetric l
+               Fig. 3j                                        Fig. 3k
+
+
+
+
+                                        -1
+                                        10
+
+
+
+
+          0.12   0.20     0.28   0.36
+           I volumetric l
+            Fig. 3m                                                                               0.10   0.20    0.30   0.40   o.so
+                                                                                                          (volumetric l
+                                                         0.12      0.20
+                                                                      0.2 8                0.36              Fig. 3o
+                                                           (volumetric l
+                                                           Fig. 3n
+
+
+
+
+                                             _,
+                                             10
+
+
+
+
+                                                  0.04   0.12    0.20   0.28         0.36
+                                                           I volumetric 1
+                                                              Fig. 3p
+
+                                                    Fig. 3.     (continued)
+
+
+,·,
+              S20                                                 MUALEM: U:-~sATL,RATED FLow MoDELING
+
+             shown that the proposed model is more reliable than the                      In this work, (IS) is adopted to represent the extrapolate d
+             existing models and clearly improves the prediction of unsatu-            part of the t/;-0 curve. Demanding that the extrapolate d CUr'
+             rated hydraulic conductivities.                                           should pass through the measured last point (t/lmtn• 0mtn) lea
+                                                                                       to
+                         APPENDIX 1: HYDRAULIC CONDUCTIV ITY
+                                OF THE CAPILLARY ELEMENT                                             ~=              8-8,
+                                                                                                                                                                  (A8)
+                 In most of the rational models for predicting K one consid-                         S, min         8min - 8,
+             ers the conductivit y of a pair (or a series) of capillary elements.      or
+              Relying on Poiseuille's equation, Childs and Col/is-George
+             [ 19SO] assumed that the conductivit y is determined by the                             In (t/lm1nN) =>.-'In (S.IS. mtn)                             (A9)
+             radius of the narrower element, whereas Wyllie and Gardner                On a log scale, (9) describes a straight line. As a matter of
+             [19S8] used a reduced pore radius. Here a different relation-             convenience we define
+             ship is adopted, based on the pore configuratio n shown in
+             Figure I.                                                                             Y = In     (1/lmln/t/;)   X       = In (S/Smtn)               (AIO)
+                To simplify matters, we disregard special effects and assume           Since the extrapolate d curve should match the measured one,
+             that each capillary in Figure I obeys the Poiseuille equation,            we demand that the dispersion of the measured points, up to
+             I.e.,
+                                                                                       the inflection 0p point (0m 1n < 0 < 0p). around the analytic
+                                      4                                                curve (A9) should be minimum. The sum of the square devia-
+                                 _ 1rr g dtj>
+                                                                             (AI)      tion of the measured data from the analytic curve is
+                         Q1 =         811 dx
+                                                                                              N
+
+             where c/J = t/; + z is the head, 11 is the liquid kinematic viscosity,
+                                                                                       d =   L [y, - y(x,)]•
+             and Q is the discharge. For this combinatio n in series, the total
+             head loss is
+                                                                                                                                                                 (All)
+                                                                             (A2)
+                                                                                      and requiring d to be minimum (ad/ a>. = 0), one obtains
+             while the discharge is
+
+                                                                                       >. = ±[In (~)] / ±In (1/lmi.n) In(~) (Al2)
+                                                                                                                   2
+                                                                             (A3)
+                                                                                            1     Sman  1       1/t,    Smin
+                If the element of Figure I is replaced by an equivalent tube
+             of radius R and length L, then the discharge relationship yields         and
+                                                                                                                   2
+                                                                                                               -;- ~A £ In ("'"'i_n) ~~-(~)
+                                                                                             N
+                            R• tlc/J/L = r' tlt/> 1/ /1 = p• tlc/Jzllz       (A4)
+             while equivalency of volumes gives
+                                                                                       d=    :L [ In ("'mi_•)]
+                                                                                              I         1/1,                 1 1/;,     Sman
+7.,   -C'
+!'.   If.
+                                       R 2L = r/1 + p 21.
+                                                                                                                       + x•1 f:
+                                                                             (AS)                                                N    [        (    S; ' ]       (A13)
+            Assuming moreover that the lengths are proportiona l to the                                                                   In       Sm1:J
+            radii [Fatt, 1956],
+                                                                                      If we assume a series value 9,1 = 0.0 lj, j                  = I, 2, · · ·, up to
+                                                                             (A6)     0m 1n. the correspond ing X1 and d1 are obtained by using (A 12)
+                                                                                      and (A 13). The residual water content 9, is chosen as the
+            we obtain                                                                 value of 0,1 which yields the minimum value of d •
+                                                                                                                                                             1
+                                                                             (A 7)                APPENDIX 3: MODIFIED FORMULATI ON
+            This means that the 'large pore' has a more important influ-                                      OF THE CCG MODEL
+            ence than is generally assumed. The reason is, of course, that              The basic equation suggested by Childs and Col/is-George
+            we have taken into account its length and not only its cross              [1950] as set forth by Brutsaert (1967] is
+            section.
+
+                 APPENDIX 2: PROCEDURE FOR DETERMINA TION OF 0,
+                                                                                       K(R) = M     J,~~R••• r~~ ,.,.lf(p)f(r) dr dp
+                         AND THE EXTRAPOLA TED t/;-0 CURVE
+
+               The determinati on of 0, is a prerequisite for using any of
+                                                                                                    + M J,~~Rmi• r.~R p'f(r)f(p) dp dr                           (Al4)
+            the methods suggested for predicting the K-0 relationship . We            It is obvious that the integration is carried over the square
+            define 0, as the residual water content for d0/dl/; _. 0 for 0 _.         domain OABC in the (r, p) plane (Figure 4). The first integral
+            0, because it fulfils the other basic requiremen t that K(0,) =           (left-hand side) of (AI4) is carried over the triangle OBC, and
+            0. Very often, only part of the 1/;-0 curve is measured, 0, is an         the second integral over the complemen tary triangle OAB. By
+            unknown parameter, and it is no] clear how to extrapolate the             a change in the order of integration,
+            measured curve. This problem becomes embarrassi ng when
+            comparison s of various models with measureme nts are stud-
+            ied, because just by choosing 0, we may improve or worsen
+            one method in relation to the others. There is an intense need
+                                                                                                     ..
+                                                                                      J,~~R,.;. J.~: r 2
+                                                                                                       /(p)f(r) dr dp
+
+            for an objective analytic procedure for extrapolati ng the mea-
+                                                                                                                                                                 (Al.S)
+            sured 1/;-0 curve.
+                                                               MUALEM: UNSATURATED FLOW MODELING                                                        521
+
+                                                                                              T     tortuosity factor.
+                                                                                           a,{J     constant power.
+
+c              a c
+
+
+                                                    /
+                                                           /
+                                                                   B
+                                                                                         e. e,
+                                                                                  E>max. E>mln
+                                                                                                    actual and residual water content.
+                                                                                                    measured maximum and minimum values of
+                                                                                                    E>.
+                                                                                                 8 = E> - E>,, effective water content.
+                                                                                                 p   radius.
+                                             /                                                  Y, capillary head.
+             .J                     /
+                                                                                             '/lcr capillary head at which d8/dljl > 0.
+                                                                                          '/lm1n minimum measured value of 1/1.
+
+                                                                                    Acknowledgment. The present work has been supported by the
+                           /                                                      U.S.-lsrael Science Binational Foundation under grant 442.
+
+                        1/o                                        A                                           REFERENCES
+
+                        Rain            r                      R                  Averjanov, S. F., About permeability of subsurface soils in case of
+                                                                                     incomplete saturation, Eng. C ol/ect., 7, 1950.
+                                                                                  Black, T. A., W. R. Gardner, and G. W. Thirtell, The prediction of
+          Fig. 4.       Description of the integration domain of(Al4).               evaporation, drainage, and soil water storage for a bare soil, Soil
+                                                                                     Sci. Soc. Amer. Proc., 33, 655-660, 1969.
+                                                                                  Boreli, M., and G. Vachaud, Note sur Ia determination de Ia teneur en
+    and a change of variables,                                                       eau residuelle et sur Ia variation de Ia permeabilite relative dans les
+
+
+    [~~R•'• J,:~R r 2/(r)f(p) dp dr
+                                                                                     sols non satures, C. R. Acad. Sci., 263, 698-701, 1966.
+                                                                                  Brooks, R. H., and A. T. Corey, Hydraulic properties of porous
+                                                                                     media, Hydro/. Pap. 3, Colo. State Univ., Fort Collins, 1964.
+                                                                                  Brooks, R. H., and A. T. Corey, Properties of porous media affecting
+                                                                                     fluid flow, J. lrrig. Drain. Div. Amer. Soc. Civil Eng., 92(1R2),
+                                                                          (Al6)      61-88, 1966.
+                                                                                  Bruce, R. R., Hydraulic conductivity evaluation of the soil profile
+    it follows that the two integrals of(A 14) are identical. Hence                  from soil water retention relations, Soil Sci. Soc. Amer. Proc.. 36.
+                                                                                     555-560, 1972.
+
+                         .J,:~R'"'" f~~R /f(p)f(r) dr dp
+                                                                                  Brutsaert, W., Some methods of calculating unsaturated permeability,
+     K(R)       2M                                                                    Trans. ASAE, /0, 400-404, 1967.
+                                                                                  Burdine, N. T., Relative permeability calculation from size distribu-
+
+(                   =    2M    r·R
+                               P•B mla
+                                            /f(p)   r·R
+                                                    f'•P
+                                                           j(r) dr dp     (Al7)
+                                                                                      tion data, Trans. AIM£. /98.71-78, 1953.
+                                                                                  Childs, E. C., and N. Collis-George, The permeability of porous
+                                                                                      materials, Proc. Roy. Soc .. Ser. A, 201, 392-405, 1950.
+                                                                                  Elrick, D. E., and D. H. Bowman, Note on an improved apparatus for
+    By definition, we have                                                            soil moisture measurements, Soil Sci. Soc. A mer. Proc., 28, 450-453,
+                                                                                      1964.
+                               JR•I• f(r) dr
+                                R
+                                                      8(R)                (Al8)   Farrell, D. A., and W. E. Larson, Modeling the pore structure of
+                                                                                      porous media, Water Resour. Res., 8. 699-706, 1972.
+                                                                                  Fatt, I., The network model of porous media, I, 2, 3, Trans. AIM£.
+    and substituting in (A 17) we obtain                                              207, 144-181, 1956.
+                                              ,                1
+                                                                                  Gardner, W. R., Mathematics of isothermal water conduction in un-
+                                                                                      saturated soils, Rep. 40, pp. 78-87, Highway Res. Board, Nat. Res.
+                         K(8) = 2M'
+                                            10   (8 - !1) 1/12 dtJ        (Al9)       Counc., Washington, D. C., 1959.
+                                                                                  Green, R. E., and J. C. Corey, Calculation of hydraulic conductivity:
+    By matching at saturation, the CCG formula can be written as                      A further evaluation of some predictive methods, Soil Sci. Soc.
+                                                                                      Amer. Proc.. 35, 3-8, 1971.
+
+     K,(8) =
+                10'                 eM/ 1'0···
+                         (6 - !1) 1/12              (8 •• , - !1) dtJ
+                                                                  1/12    (A20)
+                                                                                  Green, R. E., R. J. Hanks, and W. E. Larson, Estimates of field
+                                                                                       infiltration by numerical solution of the moisture flow equation, Soil
+                                                                                      Sci. Soc. Amer. Proc., 28, 15-19, 1964.
+                                                                                  Hadas, A., Evaporation and drying process in layered soils (in
+    The formulae of Millington and Quirk (1961] and KUIIze eta/.                       Hebrew), Ph.D. thesis, Hebrew Univ., Rehovot, Israel, 1967.
+    [1968] may be written similarly by multiplying the right-hand                  lrmay, S., On the hydraulic conductivity of unsaturated soils, Eos
+    side of (A 19) by s. ~, with n = t and n = I, respectively.                        Trans. AGU. 35, 463-467, 1954.
+                                                                                  Jackson, R. D .. R. J. Reginato, and C. H. M. Van Bavel, Comparison
+                                        NOTATION                                       of measured and calculated hydraulic conductivities of unsaturated
+                                                                                      soils, Water Resour. Res., /(3), 375-380, 1965.
+                a         probability.                                            Jensen, M. E., and R. J. Hanks, Nonsteady state drainage from
+             f(r)         pore water distribution function.                            porous media, J. lrrig. Drain. Div. Amer. Soc. Civil Eng .. 93(1R3),
+               G          correlation factor.                                          209-231, 1967.
+                K         hydraulic conductivity.                                  Kastelanek, F., Numerical simulation technique for vertical drainage,
+                          relative hydraulic conductivity and computed                 J. Hydro/ .. 14. 213-232. 1971.
+          K,, Krc                                                                  Kunze, R. J., G. Uehara. and K. Graham, Factors important in the
+                          value of K,.                                                 calculation of hydraulic conductivity, Soil Sci. Soc. A mer. Proc., 32,
+                    I     index.                                                       760-765, 1968.
+             L, I         length.                                                  Marshall, T. J., A relation between permeability and size distribution
+               m          index.                                                      of pores, J. Soil Sci .. 9, 1-8, 1958.
+                                                                                   Millington, R. J., and J. P. Quirk, Permeability of porous solids,
+                n         constant power.                                              Trans. Faraday Soc .. 57, 1200-1206, 1961.
+             R, r         radius.                                                  Nielsen. D. R., D. Kirkham, and E. R. Perrier, Soil capillary con-
+       S., S. min         effective saturation and minimum effective sat-              ductivity: Comparison of measured and calculated values, Soil Sci.
+                          uration.                                                    Soc. Amer. Proc.. 24. 157-160, 1960.
+                 522                                              MUALEM: UNSATURATED FLOW MODELING
+
+
+
+                 Poulovassilis, A., Hysteresis of pore water in granular porous bodies,   Topp, G. C., and E. E. Miller, Hysteresis moisture characteristics and
+                   Soil Sci., /09. 5-12, 1970.                                              hydraulic conductivities for g1ass-bead media, Soil Sci. Soc. A~r          c
+
+
+
+                 Rawitz, E., The influence of a number of environmental factors on the      Proc., 30, 156-162, 1966.
+                   availability of soil moisture to plants (in Hebrew), Ph.D. thesis,     Vachaud. G., Verification de Ia loi de Darcy generalisee et determina-
+                   Hebrew Univ., Rehovot, Israel, 1965.                                     tion de Ia conductivite capillaire partir d'une infiltration horizontal,
+                 Staple, W. J., Moisture tension, diffusivity and drying, Can. J. Soil      Ass. Int. Hydro/. Sci. Wageningen, 82, 277-292, 1966.
+                   Scl. 45. 78-85, 1965.                                                  Watson, K. K., Experimental and numerical study of column drain·
+                 Talsma, T., Hysteresis in two sands and the independent domain             age, J. Hydraul. Div. Amer. Soc. Civil Eng .• 93, 1-15, 1967.
+                   model, Water Resour. Res., 6(3 ), 964-970, 1970.                       Wyllie, M. R. J., and G. H. F. Gardner, The generalized Kozency-
+                 Topp, G. C., Soil water hysteresis measured in a sandy loam compared       Carman equation, World Oil, /46, 210-228, 1958.
+                   with the hysteretic domain model, Soil Sci. Soc. Amer. Proc., 33,
+    .   ,          645-651, 1969 .                                                                             (Received February 21, 1975;
+        { -~
+    ::(_~        Topp, G. C., Soil water hysteresis in silt loam and clay loam soils,                            revised August II, 1975;
+        i ~;       Water Resour. Res., 7(4), 914-920, 1971.                                                     accepted August 15, 1975.)
+.
+;   k
+
+
+
+
+        -~~,
+        . I
+
+
+
+
+;!~'
+'~ ~! ;~
+    ·~ :_
+
+
+
+        ,,.,
+
+
+
+
+         \:'
+
+            .,
+            '•
+

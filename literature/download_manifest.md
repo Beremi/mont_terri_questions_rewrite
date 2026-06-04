@@ -15,6 +15,16 @@ This manifest follows the citation keys in `paper/references.bib`. "Copied" mean
 | `Ziefle2021CDA` | `10.5194/sand-1-79-2021` | `fulltexts/Ziefle2021CDA.pdf` | Copied | `../SOTA_OGS_Mont_Terri_work/Library/fulltexts/Ziefle_et_al_2021_CD_A_setup_first_results.pdf` | Local fulltext already present. |
 | `Ziefle2024Characterization` | `10.1016/j.ijrmms.2023.105624` | `fulltexts/Ziefle2024Characterization.pdf` | Copied | `../SOTA_OGS_Mont_Terri_work/Library/fulltexts/Ziefle_et_al_2024_CDA_twin_niches_characterization.pdf` | Local fulltext already present. |
 | `WaterContentEDZ2024` | `10.1007/s00603-023-03717-1` | `fulltexts/WaterContentEDZ2024.pdf` | Copied | `../SOTA_OGS_Mont_Terri_work/Library/fulltexts/Ziefle_et_al_2024_Water_Content_EDZ_Opalinus_Clay.pdf` | Local fulltext already present. |
+| `Ziefle2017SeasonalHM` | `10.1007/s00015-016-0252-1` | `fulltexts/Ziefle2017SeasonalHM.pdf` | Downloaded | `https://sjg.springeropen.com/counter/pdf/10.1007/s00015-016-0252-1.pdf` | SpringerOpen fulltext verified and text-extracted. |
+| `Graebling2022VEIS` | `10.3389/feart.2022.946627` | `fulltexts/Graebling2022VEIS.pdf` | Downloaded | `https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2022.946627/pdf` | Frontiers open-access PDF verified and text-extracted. |
+| `Marschall2005` | `10.2516/ogst:2005008` | `fulltexts/Marschall2005.pdf` | Downloaded | `https://nora.nerc.ac.uk/id/eprint/15905/1/marchal_vol60n1%5B1%5D.pdf` | NERC-hosted fulltext verified and text-extracted. |
+| `Archie1942` | `10.2118/942054-G` | `fulltexts/Archie1942.pdf` | Downloaded | `https://personal.ems.psu.edu/~radovic/EME590_Archie_1942.pdf` | Penn State-hosted scan verified and text-extracted. |
+| `Revil1998ShalySands` | `10.1029/98JB02125` | `fulltexts/Revil1998ShalySands.pdf` | Downloaded | `https://larrycathles.eas.cornell.edu/files/2020/11/61-1998-Revil-et-al.-Electrical-conductivity-in-shaly-sands-with-geophy.pdf` | Author-hosted PDF verified and text-extracted. |
+| `Cui2022DualScaleNMR` | `10.1007/s11242-022-01752-0` | `fulltexts/Cui2022DualScaleNMR.pdf` | Downloaded | `https://link.springer.com/content/pdf/10.1007/s11242-022-01752-0.pdf` | Springer open-access PDF verified and text-extracted. |
+| `Robinson2003TDRReview` | `10.2136/vzj2003.4440` | `fulltexts/Robinson2003TDRReview.pdf` | Downloaded | `https://citeseerx.ist.psu.edu/document?doi=54e738ea97da6ab7af79dbddcd4d1e24ade8c237&repid=rep1&type=pdf` | CiteSeerX endpoint required `curl -k` because of a local certificate-chain verification failure; PDF verified and text-extracted. |
+| `Thomson1871Kelvin` | `10.1080/14786447108640606` | `fulltexts/Thomson1871Kelvin.pdf` | Downloaded | `https://zenodo.org/records/1742066/files/article.pdf?download=1` | Zenodo fulltext scan verified and text-extracted. |
+| `Topp1980TDR` | `10.1029/WR016i003p00574` | None | Not downloaded | `https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/WR016i003p00574` | Publisher PDF returned HTTP 403; citation retained bibliographically but not used for a fulltext-specific claim. |
+| `Kleinberg1996NMR` | `10.1016/S0730-725X(96)00161-0` | None | Not downloaded | ScienceDirect bibliographic/abstract page | No trusted open fulltext was found during this pass; citation retained bibliographically but Chapter 2 relies on downloaded WaterContentEDZ2024 and Cui2022 for NMR-specific fulltext claims. |
 
 ## Official OGS documentation snapshots
 
@@ -35,8 +45,18 @@ This manifest follows the citation keys in `paper/references.bib`. "Copied" mean
 | `ReleaseGateAudit2026` | `local_sources/ReleaseGateAudit2026.md` | `../SOTA_OGS_Mont_Terri_work/inversion_workflow/inversion_release_gate_audit.md` | Copied | Local inversion release-gate audit. |
 | `QuestionInventory2026` | `local_sources/QuestionInventory2026.md` | `mont_terri_questions_reorganized.md` | Copied | Local reorganized collaborator-question inventory. |
 
+## Internal CD-A measurement pages copied for figure provenance
+
+| Source key | Local evidence copy | Original source | Status | Notes |
+|---|---|---|---|---|
+| `CDATDSlides2026Local` | `source_pages/CD-A_Slides_TD_260427x_page32.png` | `../cda_knowledge_base/measurements/other_hm_monitoring/source_files/CD-A_Slides_TD_260427x.pdf`, PDF p. 32 | Copied rendered page | Mini-piezometer trend source figure used in Chapter 2. |
+| `CDATDSlides2026Local` | `source_pages/CD-A_Slides_TD_260427x_page33.png` | `../cda_knowledge_base/measurements/other_hm_monitoring/source_files/CD-A_Slides_TD_260427x.pdf`, PDF p. 33 | Copied rendered page | Crackmeter trend source figure used in Chapter 2. |
+| `Levelling2026Local` | `source_pages/Folien_Niv_TD_CDA_2026_page5.png` | `../cda_knowledge_base/measurements/other_hm_monitoring/source_files/Folien_Niv_TD_CDA_2026.pdf`, PDF p. 5 | Copied rendered page | Precision-levelling values backing the extracted bar plot. |
+| `Levelling2026Local` | `source_pages/Folien_Niv_TD_CDA_2026_page6.png` | `../cda_knowledge_base/measurements/other_hm_monitoring/source_files/Folien_Niv_TD_CDA_2026.pdf`, PDF p. 6 | Copied rendered page | Precision-levelling uncertainty and summary backing the text. |
+
 ## Bibliographic reference without DOI
 
 | BibTeX key | Local file | Status | Notes |
 |---|---|---|---|
 | `Bishop1959EffectiveStress` | None | Not downloaded | The BibTeX entry does not record a DOI. The stable bibliographic record is `https://cir.nii.ac.jp/crid/1570854174118446592`; no clearly trusted downloadable fulltext source was identified. |
+| `Klinkenberg1941` | `fulltexts/Klinkenberg1941.pdf` | Downloaded | No DOI in the BibTeX entry; public scan downloaded from `https://faculty.ksu.edu.sa/sites/default/files/klinkenbergspaper-1941.pdf` and text-extracted. |

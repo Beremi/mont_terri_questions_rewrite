@@ -1,0 +1,20 @@
+Title:           Electrical conductivity in shaly sands with geophysical applications
+Subject:         Journal of Geophysical Research: Solid Earth 1998.103:23925-23936
+Keywords:        http://dx.doi.org/10.1029/98JB02125, doi:10.1029/98JB02125
+Author:          A. Revil, L. M. Cathles, S. Losh, J. A. Nunn
+Creator:         www.PrincetonImaging.com
+Producer:        PDFlib PLOP 2.0.0p6 (SunOS)/escape 1.1; modified using iText 4.2.0 by 1T3XT
+CreationDate:    Wed Jun 13 14:24:43 2007 CEST
+ModDate:         Thu Nov 12 15:10:34 2020 CET
+Custom Metadata: yes
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           12
+Encrypted:       no
+Page size:       614 x 816 pts
+Page rot:        0
+File size:       1277478 bytes

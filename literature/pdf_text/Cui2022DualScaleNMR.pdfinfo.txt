@@ -1,0 +1,20 @@
+Title:           NMR Relaxation Modelling in Porous Media with Dual-Scale-Resolved Internal Magnetic Fields
+Subject:         Transport in Porous Media, https://doi.org/10.1007/s11242-022-01752-0
+Keywords:        Nuclear magnetic resonance,Relaxation,Porous media,Internal fields,Digital core analysis
+Author:          Yingzhi Cui 
+Creator:         Springer
+Producer:        Acrobat Distiller 10.1.8 (Windows)
+CreationDate:    Wed Mar  2 17:28:38 2022 CET
+ModDate:         Sat Jun  4 14:03:12 2022 CEST
+Custom Metadata: yes
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            AcroForm
+JavaScript:      no
+Pages:           22
+Encrypted:       no
+Page size:       439.37 x 666.142 pts
+Page rot:        0
+File size:       2718449 bytes

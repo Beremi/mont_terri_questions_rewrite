@@ -20,6 +20,7 @@ build: figures
 
 figures:
 	@python $(PAPER_DIR)/scripts/build_ogs_solver_snapshots.py >/dev/null
+	@python $(PAPER_DIR)/scripts/build_open_niche_pressure_curve.py >/dev/null
 
 clean:
 	@rm -rf $(BUILD_DIR)

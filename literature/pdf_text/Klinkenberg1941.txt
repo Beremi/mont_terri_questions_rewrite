@@ -1,0 +1,893 @@
+          THE PERMEABILITY OF POROUS MEDIA TO LIQUIDS AND GASES "f
+                                              "
+                              L. J. KLINKENBERG
+
+                                                                     ABSTRACT
+   The standard procedure for determining the permea-                        bility constant as determined with gases is dependent
+bility of porous media according to APZ Code No. 27                          upon the nature of the gas, and is approximately a
+(first edition, October 1935) is based on the funda-                         linear function of the reciprocal mean pressure. This
+mental assumption that, as long as the rate of flow is                       effect can be explained by taking into account the
+proportional to the pressure gradient, the permeability                      phenomena of slip, which are related closely to the
+constant of a porous medium is a property of the                             mean free paths of the gas molecules. The apparent
+medium, and is independent of the fluid used in its                          permeability extrapolated to infinite pressure gives a
+determination.                                                               permeability constant which is a characteristic of the
+   Although this is true for most liquids, the permea-                       porous medium only.
+
+
+I. Introduction                                                              the Bataafsche Petroleum Maatschappij, Amsterdam,
+                                                                             The Netherlands, and of the Shell Development Com-
+   It has become common practice in the oil industry                         pany, Emeryville, Calif. I n general i t was found
+to determine the permeability of core material with                          that, with highly permeable media, the differences be-
+dry air; the equipment usually employed for this de-                         tween liquid and air permeabilities were small, whereas
+termination is arranged to operate with the outlet of                        these differences were considerable for media of low
+the sample a t or near atmospheric pressure.'"                               permeability.
+   This practice is based on the fundamental assumption                        These discrepancies made it desirable to ,investigate
+that, a s long a s Darcy's law is obeyed, i.e., a s long a s                 the validity of the assumption that the permeability
+the rate of flow is proportional. to the pressure                            of a porous medium is independent of the nature of
+gradient,$ the permeability constant of a porous medium                      the fluid with which the determination is carried out.
+is a property of the medium, and is independent of the                         The investigation has shown that the permeability
+fluid used in its determination.' Therefore, the results                     to a gas is a function of the mean free path of the gas
+obtained by laboratory measurements with air are taken                       molecules, and thus depends on factors which influence
+to be applicable to the homogeneous flow of either oil
+                                                                             the mean free path, such a s the pressure, temperature,
+or gas in underground reservoirs.
+                                                                             and the nature of the gas. Therefore, when the mean
+   The fundamental assumption that the permeability of
+                                                                             free paths are small, e.g., a t high pressures, the
+a porous medium is independent of the fluid used in its
+determination is illustrated by Muskat' with a few                           permeability to gas should be expected to approach that
+measurements of highly permeable sandstones to air                           for liquids. The experimental data which support these
+and liquid.                                                                  conclusions are discussed hereinafter.
+   However, Muskat gives a table of results of mea-
+surements on the permeability to water and a i r of a                        11. Permeability of Porous Media to Different
+number of oil sands, carried out by Fancher, Lewis,                               Liquids
+and Barnes,' showing large discrepancies between the
+permeability to air and water-most values found for                             I t is, of course, obvious t h a t if a liquid reacts with
+water being lower than for air. Many cases of such                           some constituent of the core material, e.g., if water
+ discrepancies between the permeabilities to air and                         causes clay-containing core material to swell, then
+ those to water and other liquids also were observed                         differences between the permeabilities for different
+ during investigations carried out in the laboratories of                    liquids and air can be expected. The same is true if
+                                                                             the core material is poorly consolidated so that part of
+      qliell Development Co. E m e r ville Calif
+   .i $resented bx 8. G . ~ d o m i s .,hell ' ~ e v e l dment Co., Emery-   the pores may be plugged off by loose material eroded
+vllle. Calif.. a t Eleventh Mid-Tear Meetina. %ulsa. Okla.. M a s            by the liquid. From a practical point of view, these
+                                                                             considerations may be very important; thus, if a prob-
+                                                                             lem arises about the water movement in clay-containing
+                                                                             formations, the permeability of the formation to dry
+                          THE PERMEABILITY     MEDIA TO LIQUIDSAND GASES
+                                       OF POROUS                                                                          201
+
+air might be of no significance or even definitely mis-       the streaming potential. This streaming potential gives
+leading.                                                      rise to a n electro-endosmotic liquid Aow, which is op-
+   The question to be discussed here, however, is             posite to the hydrodynamic flow. A similar phenomenon
+whether porous media in which no changes in the in-           takes place in a porous medium. The permeability
+ternal structure take place will show different permea-       found, consequently, is too low, dependent on the nature
+bility constants to different fluids.                         of the liquid. The characteristics of most liquids (i.e.,
+   I t has been a point of much discussion in the litera-     the value of zeta potential, dielectric constant, and
+ture' whether the walls of small capillaries, a s they        specific conductivity) are such a s to cause only small
+occur in porous media, are able to adsorb molecules           electro-endosmotic effects.
+to such a n extent a s to build up more or less .rigid           In the case of nitrobenzene the electro-endosmotic
+layers several molecules thick. Such adsorbed layers          effect could be made vanishingly small by increasing the
+would reduce the effective pore diameter to a different       conductivity (simultaneously decreasing the zeta po-
+degree for different liquids and, a s a consequence, the      tential) of the nitrobenzene by dissolving a very small
+permeability of a porous mass would depend on the
+nature of the liquid. Some authors8 prefer to speak                                   TABLE 2
+about an increase in viscosity of the liquid with a de-
+creasing distance to the solid wall-which amounts, of                                   .    Permeability Constant
+course, to the same thing.                                                                       (Millidarcys)
+                                                                                                             A
+
+                                                                Liquid Used                 G, Filter            Ga Filter
+                            TABLE 1                               Isooctane ............. 78.8                     2.31
+                                   Permeability Constant          Water ............... 79.4                       2.27
+                                       (Millidarcys)
+                                                                                      TABLE 3
+                                                                                        Permeability (Millidarcys)
+
+
+Kerosine . : .......... 48.6           49.8     ...    ...
+Toluene ............. 47.6             50.2    3.70    3.42
+Chloroform .......... 49.8             50.6    3.66    3.36       Liquid Used           6                6          d
+Diethyl ether ........ 50.7            51.9     ...    ...        Zsooctane ......... 2.38              2.26       63.8
+Carbon tetrachloride. .. 49.5          50.8    3.68    3.33       Nitrobenzene ...... 2.17              2.01       62.8
+Pentane ............. 50.2             50.1     ...    ...        Zsooctane .......... 2.34             2.24        ...
+Zsooctane ...............               ...    3.67    3.42
+Nitrobenzene . . . . . . . . . . . .    ...    3.27    3.05
+                                                                                      TABLE 4
+   A careful survey of the literature, however, leads to                 Nature                              Permeability
+the conclusion that for flow through capillaries there                 of the Gas                            (Millidarcys)
+is no evidence for the presence of adsorption layers of             Air .............................. 3.06
+such a thickness a s to decrease perceptibly the liquid             Hydrogen ........................ 4.23
+permeability of a porous medium.                                    Carbon dioxide ................... 2.88
+   I n order to test this experimentally -for porous media
+and to avoid complications by swelling or erosion of          amount of a ferric salt in the liquid. In doing so a
+such material, permeability measurements were carried         permeability was found which was the same within
+out on Jena glass filters.                                    the experimental error a s for other liquids such a s
+   The results given in Table 1 were obtained.                isooctane.
+   The deviations, with the exception of those for nitro-        Therefore, i t can be concluded that, if no changes in
+benzene, are within the experimental error.                   the internal structure of the porous medium can take
+   Water behaves normally, a s may be seen from Table 2.      place, the differences in permeability to different liquids
+   To verify further the deviation found for nitroben-        are in most cases within the experimental error. The
+zene, permeability measurements were carried out on           discrepancies found between air permeability and
+other filters; first the permeability to isooctane was de-    liquid permeability [as discussed under ( I ) ] are ap-
+termined, then to nitrobenzene and, finally, the permea-      parently due not to the nature of the liquids used in
+bility to isooctane was determined again. The results         the determination, but to the value of the air permea-
+are given,in Table 3.                                         bility following the ordinary procedure. That the dis-
+   The deviations shown by nitrobenzene, however, are         crepancies were not due to the behavior of the liquids,
+not a result of adsorption layers on the walls of the         but to the behavior of the gas, became clear a t once
+capillaries, but are caused by electro-kinetic phenomena.     when the permeability of a Jena glass filter was
+When a liquid flows through a capillary, a difference         measured with different gases, a s shown in Table 4.
+in potential is formed between the ends of the capillary:        The explanation of the differences between the
+        7
+permeabilities to different gases is found by applying         of the average velocity component of the molecules
+the results for the flow of dilute gases, a s found by         moving towards the wall.
+Kundt and Warburg lo and by Knudsen? to the flow of              Hence :
+gases a t nownal presszwe through porous media.
+
+111. Theory of Slip
+   I t has been proved by Kundt and Warburgo that,                Kundt and-Warburg showed that the assumption t h a t
+when a gas is flowing along a solid wall, the layer of                               dw
+gas nest to the surface is in motion with respect to the       the velocity gradient -is constant does not hold; near
+                                                                                      dz
+solid surface. In other words, if the wall has a zero          the wall the velocity gradient is greater than a t a large
+velocity, then the velocity of the gas layer in the immedi-    distance from the wall. Furthermore, in the above
+ate vicinity of the wall has a finite value. As a conse-       considerations i t has been assumed that the molecules
+quence the quantity of gas flowing through a capillary         after having collided in a certain region have a n aver-
+is larger. than would be expected from Poiseuille's            age velocity component in the direction of flow equal
+formula. This becomes evident by the following simpli-         to the velocity of flow in this region. The average
+fied considerations of the kinetic theory of gases.            velocity gradient, however, depends on the velocity-
+   Consider a layer adjacent to the wall which is thinner      distribution function in this region; hence, not only
+than the mean free path A of the gas molecules, so t h a t     on the velocity, but also on the velocity gradient, a s
+practically a molecule does not collide with other mole-       was pointed out by Jager " and Jeans." The value of c,
+cules present in this layer. A t a given moment half           a s calculated by Kundt and Warburg, therefore, is
+of the gas molecules in this layer will have a component       inaccurate. It has not yet been possible to make a n
+of velocity moving towards the wall; the other half in         exact calculation, but the value of c seems to be slightly
+the opposite direction. The molecules moving towards           less than 1.
+the wall have had their last collision somewhere in the
+flowing mass, and, therefore, will have a n average            IV. Flow of Gas through a Straight Capillary
+velocity component in the direction of flow different
+from zero. A part of this average velocity component              Warburg lo applied the effect of slip to the flow of gas
+will be lost in colliding with the wall. Even if the           through a capillary whose radius is large compared
+molecules lose i t entirely, then still the average velocity   with the mean free path. Following Warburg, consider
+comnonent in the direction of flow of all the molecules        a capillary of radius zo and length I with its axis co-
+contained in the layer will amount to half of the aver-        incident with the x-axis, and assume that the velocity
+age velocity component of the molecules moving towards         is a function only of the distance r from the axis. The
+the wall. The gas in the layer, therefore, will have           differences of the drags in the x-direction on the two
+a finite rate of flow. Let w o be the velocity near the        sides of a cylindrical shell of gas, whose radii a r e
+wall with respect to this wall. Assuming a constant            r and r + d r contained between the cross-sections x and
+velocity gradient in the direction perpendicular to the        x+dx, give rise to a force in a direction opposite to the
+       dw                                                      flow :
+wall -, the velocity a t a distance z from the wall
+       dz
+will be :
+                                                               I n which p is the viscosity of the gas.
+                                                                  For a stationary motion, this force must be balanced
+                                                               by the normal pressures on the plane ends of the shell.
+We suppose, furthermore, that the molecules which had          The difference of these normal pressures is:
+their last collision a t a distance ,- from the wall have
+a n average velocity component in the direction of flow
+equal to the velocity of flow of the gas in this place.
+The average distance z ,from the wall a t which the last
+collision took place will be proportional to the mean free
+path X of the gas molecules Z=cX, in which c is a pro-
+portionality factor.
+   Hence the average velocity component of the mole-
+cules moving towards the wall is:                              Integration gives :
+
+
+
+  If the collision with the wall is entirely inelastic, so     Integrating once more:
+that all the molecules lose their average velocity com-                            1 d~
+                                                                              w=-.--r2+-Alnr+B
+                                                                                  4 p dx
+                                                                                                                   (3)
+ponent in the direction of flow, then, a s stated above,
+the average velocity of all the molecules contained in         As the velocity must be finite a t the axis (r=o), A=o.
+the layer under consideration will amount to the half          The integration constant B can be found by putting in
+                                                                   MEDIA TO LIQUIDSAND GASES                             203
+
+the boundary condition [equation ( I ) ] a t the wall               laminar flow of fluids through a porous medium is that
+(T=~o).                                                             in which all the capillaries in the material are of the
+                                                                    same diameter and are oriented a t random through
+                                                                    the solid material. Such a model, although i t would
+Substituting this in equation (3) :                                 have the same permeability in all directions, is, of
+                                                                    course, in many respects too simple to use a s a basis
+                                                                    for quantitative predictions; but, a s shown herein-
+                                                                    after, i t makes possible qualitative predictions.
+                                                                       Consider a cube of the material with a n edge of 1cm';
+                                                                    the direction of flow is perpendicular to one of the
+According to equation (2) :                                         planes of the cube; and let there be n capillaries of
+                                                                    radius r.
+                                                                       The amount of liquid flowing through per unit time
+                                                                    is ,found by applying Poiseuille's law:
+
+This substituted in equation (3) :
+
+                                                                    According to Darcy's law, the amount of liquid passing
+The volume passing during the time t through a shell                through would be given by:
+between two cylinders of radii r and r + d r is:
+
+     dv=-     - .- t (ro2rdr-r3 dr+2 cXror dr)
+              s dp
+           2P dx                                                    in which K is the permeability constant.
+The volume passing through the whole cross-section is:                 Combining equations (6) and (7) gives:
+                              FO
+
+
+
+                                                                    For a gas, if slipping of the gas in contact with the wall
+                                                                    is taken into account [see equation ( 5 ) ] :
+
+As the mean free path is inversely proportional to the
+pressure, we may write:                                             Or, combined with equation (8) :
+
+
+If per-unit time         IL   gram moles pass through the
+capillary, then:                                                    Darcy's law gives, for the flow of gas through a porous
+                                                                    medium of the above dimensions :
+                                   $=n   RT
+This substituted in equation (4) :
+                                                                                           K.
+                                                                                               .
+                                                                                      Q = - (p1-p:)1,
+                                                                                            P
+                                                                                                                       (11)
+                                                                    Equations (10) and (11) lead to:
+
+Integrating this over the whole length of the capillary:
+                                                                                        K ~ = K(I+   g)                  (12)
+                                                                    As the mean free path is inversely proportional to the
+                                                                    pressure, we may write:
+                                                                                          - 4cX -
+                                                                                                -
+                                                                                                -
+                                                                                                  b
+                                                                                                  -
+                                                                                             r    P
+      --
+      pv - g = I r r . ( . (h-P?)             -                     in which b is a constant. This substituted in equa-
+       t           S P ~
+                                     .+.(I+
+                                              A(PI+PZ)~O   )        tion (12) gives:
+-If 1( pis, +the     mean free path a t the mean pressure
+              p z ) , then:
+                                                                    a relation between the apparent and true permeability
+                                                                    of a n idealized porous system to gas.
+If there is no slipping of the fluid in contact with the
+wall (cX=o) then.equation (5) is reduced to Poiseuille's            VI. Permeability of Core Samples and Glass
+equation.
+                                                                          Filters to Various Gases at Different Pres-
+V. Flow of a Gas through an Idealized Porous
+      Medium
+                                                               I          sures
+                                                                      If the simplified considerations given in Sect. V are
+  The simplest picture which can be formed of the                   valid not only for a system of straight capillaries, but
+can be applied to actual porous media, then, according       I n order to test the first conclusion, i.e., that the gas
+to equation (12) or (13), i t would follow that:           permeability is a linear function of the reciprocal of
+1. Gas permeability is a linear function of the recipro-   the mean pressure, gas-permeability measurements were
+    cal mean pressure.                                     carried out a t different pressures, from about 1 cm
+2. Gas permeability does not depend on the pressure        mercury up to 20 atmospheres. I n Table 5 results a r e
+    difference (p,-p,) as long a s the mean pressure       given of measurements of a glass filter to air a t various
+                                                           pressures; in Tables 6 and 7 similar measurements a r e
+     -
+     p=- "+%
+           2
+                is constant.                               given for two core samples.
+3. As the constant b is inversely proportional to r (the     Fig. 1, 2, and 3 show that the apparent permeability
+    radius of the capillaries) the value of b may be       is approximately a linear function of the reciprocal
+    expected to be small for highly permeable samples,     mean pressure. This linear function, however, is a n
+     and to be larger for less permeable samples.          approximation, a s becomes evident from Tables 5, 6,
+                                                           and 7, wherein the value of constant b increases with
+                                                           increasing pressure.
+                                                             Even with a n idealized pore system, the factor b can-
+                                                           not be expected to be constant, a s the theory of Kundt
+                                                           and Warburg cannot be applied to the flow of gas
+                                                           through a capillary if the mean free path is no longer
+                                                           small compared with the radius of the capillary (i.e.,
+                                                           deviations to be expected a t reduced pressures).
+
+
+
+
+   Permeability Constant of Jena Glass Filter GsA to
+Air at Different Pressures (Permeability Constant to
+Isooctane, 2.36 Md).
+                       FIG. 1
+
+
+                                                                    4   8   12   16     20   24   28   32   36   40   44   48   52   %   60
+                                                                                      REUPROCAL MEAN PRESSURE (ATM.I-'
+
+
+                                                             Permeability Constant of Core Sample "F" to Air
+                                                           at Different Pressures (Permeability Constant to Iso-
+                                                           octane, 170 Md).
+                                                                                  FIG. 3
+
+                                                             In the second place, it has been assumed that a law
+                                                           of flow is applicable which in fact is strictly valid only
+                                                           for capillaries of such a length that the influence of the
+                                                           ends is negligible. The capillaries in a porous system,
+  Permeability Constant of Core Sample "A" to Air at       however, will not have a constant cross-section over a
+Different Pressures (Permeability Constant to Isooctane,   length larger than their diameter.
+23.66 Md).                                                   This change in the factor b, however, will not be dis-
+                        FIG. 2                             cussed here in detail.
+                                                             As to the second conclusion, i.e., that the permeability
+4. At the same mean i~ressure,the permeability is          does not depend on the pressure difference (pl-p2) as
+    different for different gases, as the mean free        long as the mean pressure is constant, this has been
+          x
+     path has different values in this case.               verified several times and found always to be the case.
+5. The apparent permeability K, extrapolated to in-        The data in Tables 5 and 6 illustrate this point.
+     finite pressure (+=o)       should give the true        From the examples already presented and from others,
+                                                           shown in Table 8, it is evident that the factor b is
+     permeability.                                         smaller .the higher the permeability of the sample, a s
+  To verify the above conclusions, permeability Inea-      may be expected.
+surements have been made with glass filters and with         To verify the conclusion that a t the same mean pres-
+core samples from a large variety of fields.               sure the perineability is different for different gases,
+                          THE PERMEABILITY                      AND GASES ,
+                                       OF POROUS MEDIA TO LIQUIDS                                                                             205
+
+measurements were carried out with air, nitrogen, car-                    the apparent permeability K , extrapolated to infinite
+bon dioxide, and hydrogen. The results are shown in                       pressure is, within the experimental error, equal to
+Fig. 4, 5, 6, and 7. According to equation (12), a t a                    the liquid permeability. This is illustrated further in
+given pressure the apparent permeabilities for different                  Table 9, in which the permeabilities a t atmospheric
+gases should increase in the order of their mean free                     pressure, the extrapolated permeabilities a t infinite
+paths, which is confirmed by the present data. The                        pressure, and the liquid pernleabilities of a number of
+same permeability for different gases, however, should
+be foulid if the permeabilities a r e compared a t pressures                                            TABLE 6
+when the mean free paths of the gas molecules are the
+                                                                          Permeability Constant to Core Sample "A" to Air at
+                                                                                          Different Pressures
+                                                                                              '
+
+                             TABLE 5
+                                                                                (Permeability Constant to Liquid: 23.66 Md)
+Permeability Constant of Jena Glass Filter "Ga A'' to
+              Air at Different Pressures                                     -  -
+                                                                             p= PI+b                     -1
+                                                                                                          -
+                                                                                   2      R-P2            P          Ka
+     (Permeability Constant to Zsooctane: 2.36 Md)                            (Atmos-    (Atmos-       (Atmos-      (Milli-     k
+                                                                              pherea)    pherea)      phered-'     darcya)       K            b
+   p_ P l + h                 -
+                              1
+                              -                                             0.01036 0.01627           96.56        290    12.25    0.116
+         2       Pl-P2         P           K.                               0.01087 0.01603           92.00        280     11.82   0.117
+    (Atmos-     (Atmoa-     (Atmos-      (Milli-     K'
+    pheres)     pheres)    phere8)-'    darcya)       K           h         0.01189 0.01577           84.09        259    10.96    0.118
+                                                                            0.01633 .0.01508          61.20        197      8.31   0.119
+                                                                            0.02023 0.01425           50.05        165      6.98   0.120
+                                                                            0.02336 0.01414           42.83        148      6.25   0.122               ,
+
+                                                                            0.03149 0.05734           31.74        117      4.97   0.124
+                                                                            0.05921 0.01081           16.89         75.6    3.20   0.130
+                                                                            0.08882 0.03962           11.26         60.0    2.53   0.136
+                                                                            0.1464   0.03101           6.829        46.6    1.97   0.142
+                                                                            0.3433 0.01635             2.913        34.2 , 1.446   0.153
+                                                                            0.799    0.00351           1.251        28.6    1.207  0.166
+                                                                            1.570    0.03652           0.636        26.79   1.133  0.209
+                                                                            1.581    0.01558           0.632        26.58   1.124 .0.198
+                                                                            1.802    0.05379           0.5553       26.49   1.119  0.214
+                                                                            2.037    0.03422           0.4910       26.23   1.108  0.220
+                                                                            2.045    0.02052           0.4892       26.33   1.112  0.229
+                                                                            2.657    0.03511           0.3764       25.22   1.066  0.18
+                                                                            3.007    0.05166           0.3325       25.43   1.075, 0.23
+                                                                            3.224    0.03704           0.3101       25.09   1.060  0.20
+                                                                            4.366    0.04600           0.2290       25.02   1.058  0.26
+                                                                            5.049    0.03296           0.1981       24.72   1.045  0.23
+                                                                            5.100    0.03493           0.1961       24.62   1.041  0.21
+                                                                            6.34     0.01779           0.1577       24.34   1.029   *
+                                                                            6.34     0.03729           0.1577       24.29   1.027            . ..
+                                                                            6.43     0.03446           0.1553       24.25   1.023   . ..
+                                                                            8.94     0.01615           0.1119       23.79   1.005   ...
+                                                                            8.94     0.03177           0.1119       23.85   1.008            ...
+                                                                            9.19     0.03221           0.1088       23.93   1.012     ..     .
+                                                                           12.45     0.01707           0.0802       23.66   1.000   ...
+                                                                           12.48     0.02033           0.0800       23,82   1.007            .. .
+      A t higher ressures t h e calculation of b h a s not been carried    16.44     0.04056           0.0608       23.67   1.000   . ..
+out, a s the infkence of the experimental error on the value of b          16.45     0.01954           0.0608       23.77   1.005            ...
+i s s o g r e a t a s t o make t h a t figure unreliable.
+                                                                           20.01     0.01821           0.0499       23.55   0.995   ..            .
+same. As the mean free path is inversely proportional                      20.01     0.01105           0.0499       23.65   1.000   .. .
+to the pressure, the same permeability for different gases                   * At higher ressures t h e calculation of b h a s not been carried
+                                                                          out, a s the infPuence of t h e experimental e r r o r on t h e value of b
+will be found a t pressures which are proportional to the                 is s o g r e a t a s t o make t h a t figure unreliable.
+mean free paths. For hydrogen, air, and carbon dioxide,
+for instance, the mean free paths of which are, respec-                   glass filters and core samples of different origin a r e
+tively, 1,123 s lo-' cm, 608 x lo-' cm, and 397 x 10" cm,                 given. That the gas permeability extrapolated to infi-
+the same permeability should be found a t pressures in                    nite pressure is equal to the liquid permeability i s
+the ratio 1.85 : 1: 0.65, or whose reciprocals are in the                 plausible, a s the mean free path in the liquid state
+ratio of 0.54: 1:1.54. Pis may be seen, the experimental                  would be approached by that of gases a t very high
+results check this prediction quite closely.                              pressure.
+   Finally ( a s may be seen from Fig. 1, 2, 3, 5, 6, and 7)                I t is evident froin the foregoing results that the per-
+                         TABLE 7
+Permeability Constant of Core Sample "F" to Air at
+                 Different Pressures
+       (Permeability Constant to Liquid: 170 Md)
+  - PI+P
+  p=                     -
+                         -
+                           1
+       2      PI-P?        P           ha
+  (Atmos-    (Atmos-    (Atmos-      (Ilillii-   h'
+  pheres)    pheres)   pheres)-'    darcys)      K             b
+
+
+
+
+                                                                         Permeability Constant of Core Sample "C" to Hy-
+                                                                       drogen, Air, and Carbon Dioxide at Different Pressures
+                                                                       (Permeability Constant to Zsooctane, 32.1 Md).
+                                                                                                 FIG. 5
+
+                         TABLE 8
+                              Permeability               actor b
+                                   for                     for
+                               Isooctane             '    1
+            Sample            (Millidarcys)              -=-=03
+                                                          P
+Jena glass filter G, A ......   2.36                       0.58
+Jena glass filter Ga No. 3. ..  2.13 9                     0.76
+Jena glass filter G , No. 5. .. 4.36                       0.76
+Jena glass filter G, ........ 85.6                         0.138
+Core sample A ............ 23.66                           0.116
+Core sample B ............ 24.40                           0.096
+Core sample C ............ 32.1                            0.174
+Core sample D ............ 92.3                            0.067                        RECIPROCAL IEAW   QRESSURE (ATM.I-'
+Core sample E ............ 105                             0.067         Permeability Constant of Core Sample "L" to ~ y -
+Core sample F ............ 170                             0.069       drogen, Nitrogen, and Carbon Dioxide at Different Pres-
+Core sample G ............ 1,054                           0.035       sures (Permeability Constant to Zsooctane, 2.55 Md).
+Core sample H ............ 1,347                           0.022
+                                                                                                 FIG. 6
+
+
+
+
+                                                                                         RECIPROCAL MEAN PRESSURE (ATM.1-I
+
+                                                                         Permeability Constant of Core Sample "M" to Hy-
+Permeability Constant of Core Sample "K" to Hydrogen,                  drogen, Nitrogen, and Carbon Dioxide at Different Pres-
+    Air, and Carbon Dioxide at Different Pressures.                    sures (Permeability Constant to Zsooctane, 10.45 Md).
+                           FIG. 4                                  I                              FIG. 7
+                                     O F POROUS
+                        THE PERMEABILITY      MEDIA TO LIQUIDSAND GASES                                                               207
+
+meability a s defined by A P I Code No. 27' is dependent                   I t is, therefore, evident that the discrepancies between
+on the nature of the fluid used. As shown, however, i t                 the permeability to liquid and the permeability to gas
+is possible to determine a permeability constant which                  a t atmospheric, pressure a r e in many cases-at least for
+is characteristic only of the porous medium, by taking                  fornlations of moderately high permeability-not           of
+into account the phenomenon of slip; experimentally                     first importance for practical purposes.
+this is done simply by extrapolating the gas permeabil-                    For formations of low permeability, however, al-
+ity determined a t various pressures to infinite pressure.              though the absolute discrepancies may be small, the
+   I n the oil industry the permeability of core samples                percentage differences are considerable (see Table 9 ) ,
+
+                                                               TABLE 9
+                                                                                 Permeability Constant
+                                                                                     for Gas a t :                      Permeability
+                                                                                             A                            Constant
+                                                                            Atmospheric              Infinite                for
+                                                                              Pressure              Pressure             Zsooctane
+         Sample                                Gas                          (Millidarcys)         (Millidarcys)         (Millidarcys)
+Jena glass filter Ga A . ...............Air                                                              2.34                  2.36
+Jena glass filter Ga No. 3:. ......... .Air                                                              2.13                  2.13
+Jena glass filter Ga No. 5. .......... .Air                                                              4.36                  4.36
+~ena glass filter GI ................ .Air                                                                a
+                                                                                                                              85.6
+Core sample A ................... .Air                                                                  23.6                  23.66
+Core sample B ................... .Air                                                                                        24.4
+Core sample F ....................Air                                                                  170                   170
+Core sample D ..................... Air                                                                                       92.3
+Core sample E ....................Air                                                                  106.5                    b
+
+Core sample G ................... .Air                                                               1,054                      I,
+Core sample H ................... .Air                                                               1,347                 1,353
+Core sample K ....................Hydrogen ...............     8.0                                       5.9                    b
+
+Core sample K ....................Air ...................... 7.2                                         5.9                    b
+
+Core sample K ....................Carbon dioxide ...........   6.9                                       5.9                    b
+
+Core sample C ................... .Hydrogen ...............   50                                        32                    32.1
+Core sample C ....................Air .....................   45                                        32                    32.1
+Core sample C ................... .Carbon dioxide ........... 42                                        32                    32.1
+Core sample L ................... .Hydrogen ...............    5.64                                      2.75                  2.55
+Core sample L ................... .Nitrogen ................                                             2.75                  2.55
+Core sample L ....................Carbon dioxide ...........                                             2.75                  2.55
+Core sanlpleM ................:...Hydrogen ...............                                              11.10                 10.45
+Core sample M ...................Nitrogen ................                                              11.10                 10.45
+Core sample M ................... .Carbon dioxide ...........                                           11.10                 10.45
+Core sample N ................... .Hydrogen ...............                                             14.76                 14.68
+Core sample N ................... .Nitrogen ................                                            14.76                 14.68
+Core sa~nple0 ................... .Hydrogen ...............                                             35.50                 36.20
+Core sample 0 .................... Nitrogen ................ 41.65                                      35.50                 36.20
+Core sample P ................... .Nitrogen ................  G8.9                                      60.2                  61.2
+Core sample R ................... .Nitrogen ................ 182.3                                     166.6                 166.1
+Core sample S ................... .Nitrogen ................ 223.0                                     204.3                 190.7
+  OThe a p p a r e n t permeability h a s n o t been extrapolated toinfinite pressure, a s only nleasurements a t reduced pressures
+were made.
+  "The permeability t o liquid b a s n o t been determined.
+
+is measured to establish geologic correlation and for                   so that in these cases i t is advisable to take into account
+quantitative calculation of the production rate of pro-                 the phenomena discussed hereinbefore.
+ducing strata. I n these calculations several approxima-
+tions have to be made, so that i t is not necessary to                            VII. APPARATUS AND PROCEDURE
+know the permeability with a high degree of accuracy.
+I n addition, a n oil sand in general is not homogeneous                A. The Determination of tlie Permeability to
+with respect to permeability, so that i t is necessary to                    Liquids
+average the values for a given productive interval; and,
+furthermore, the permeabilities a s measured in the                       I n these determinations the following points require
+laboratory on samples which have been extracted and                     attention :
+dried may not represent the formation a s i t exists under-             1. The purity of the liquid: Suspended and colloidal
+ground, because of the shrinkage of clays o r other hy-                      contaminations in particular nlay clog the sample,
+drated materials.                                                            and thus cause a reduction in permeability.
+    2. Saturation of the porous medium: -During the de-           so a s to provide a connection between vessel d and the
+         terminations all pores should be saturated com-          evacuated part of the apparatus. Under the influence
+         pletely with liquid. Gas bubbles, if occluded in         of the atmospheric pressure, plus the hydrostatic pres-
+         the pores, would cause the permeability of the           sure of the mercury, the liquid passes into the ap-
+         sample to be too low.
+       The apparatus for the determination of the permea-
+    bility with liquids is illustrated in Fig. 8. .
+       ar and a? are the porous samples to be measured.
+    They are mounted between two glass caps provided with
+    normal ground joints, so that they need not be re-
+    mounted when placed in another apparatus.
+       ~ l a ' s sfilters were fused direct between two, ground
+    joints.
+        By placing two samples on top of each other, a s indi-
+    cated in Fig. 8, the samples can be examined simul-
+    taneously.
+        b, and' br serve a s manometers. When small differ-
+    ences in pressure have to be determined, the liquid
+    used for the permeability determination also serves a s
+    manometer liquid. (The manometer tubes are longer
+    than indicated in the drawing.) When the pressure
+    differences are great, .the manometer tubes are filled
+    with mercury.
+       c is a glass filter serving a s a n additional device to
+    remove suspended particles from the liquid before the
+    liquid passes through the samples al and a*.
+        d is a reservoir of about 700-ml capacity, from which
+    the liquid'is displaced by mercury. The mercury passes
+    from the Mariotte flask f through a central overflow
+    into reservoir d under the influence of a constant differ-
+    ence in level. By means of cock k with a double bore, d
+    can be connected a t will with either the rest of the
+    apparatus or with the side tube e.
+        Before the determination is started, the apparatus
+    should be filled with the liquid and the core samples
+    saturated. To this end, flask f, the connecting tube,
+    and part of the central tube in d first are filled with
+    mercury--care being taken that no air remains trapped
+    below cock m. Vessel d then is evacuated via side tube
+    e with a rotating oil-vacuum pump. When a satisfac-
+    tory vacuum, e.g., 0.5 mm of mercury, has been ob-
+    tained, side tube g is immersed in a vessel containing
+    the freshly distilled liquid to be used. The cock in
+.   tube g is opened slightly, so that the liquid is sucked
+    in slowly. Volatile liquids boil violently upon entering
+    reservoir d .if the pressure there is appreciably lower
+    than their vapor pressure. The turbulences of the
+    liquid, a s it leaves the cock bore, prevent retardation in
+    boiling. The liquid thus almost completely is freed from
+    dissolved gases while flowing into the reservoir d, which
+     is of great importance for the saturation of the samples.
+        The samples and the manometers meanwhile are
+    evacuated through tube i, which has been substituted             Apparatus for 'the Determination of the Liquid
+    for the overflow h by means of a mercury diffusion               Permeability of Glass Filters and Core Samples.
+     pump. For this purpose the two manometers should                                      FIG. 8
+    be closed a t the ends. With samples of low permeability,
+    t h e frequently can be saved by simultaneously evacu-        paratus-filling i t completely. By continuous pumping
+    ating - the lower manometer a s well.                         during this filling operation, the last remnant of gas i s
+        As soon a s the pressure is about 0.01 mm mercury         displaced by the liquid vapor, while traces of gas, if
+     (measured with a McLeod manometer) cock k is turned          liberated from the liquid, are removed a s well. If no
+                                                         MEDIA TO LIQUIDS AND GASES                   '           209
+
+gas bubbles are left under the samples, the .pores may     cury. The difference in pressure across the sample is
+be assumed to be .free from gas and the saturation         calculated from the levels in the manometers and in
+to be complete.                                            the ascending tube of h, after these levels have become
+  Tube i then is replaced by overflow h again, after       constant. The rate of flow is measured by collecting
+                                                          the outflowing liquid during a measured time in a cali-
+                                                          brated cylinder, or in a tared weighing bottle a t low
+                                                           rates of flow.
+                                                               By varying the height of flask f, i t is possible to de-
+                                                           termine the permeability a t various differences in pres-
+                                                           sure. By continuing the determinations for some time,
+                                                           i t can be ascertained whether the permeability remains
+                                                           constant and whether the pores do not get clogged by
+                                                           contaminations.
+                                                               I n some cases a modified apparatus (Fig. 9) was
+                                                           employed. This was done if the use of mercury had
+                                                           to be avoided, e.g., because there was a risk of the
+                                                           liquid becoming contaminated when in contact with
+                                                           mercury. To prevent contamination by cock grease,
+                                                           no cocks are allowed to come in direct contact with
+                                                           the liquids.
+                                                               al and a, are again the glass filters (or core samples)
+                                                           to be measured, bl and bl the manometer tubes, and c
+                                                           a n extra filter.
+                                                               Prior to the determination, the reservoir d is filled
+                                                           with liquid which has been deaerated a s well a s pos-
+                                                           sible. The apparatus then is evacuated-which takes
+                                                           place simultaneously through tube i (which is substi-
+                                                           tuted for h during the determination), manometer tubes
+                                                           bl and b2, and the second supply flask e. When the
+                                                           air in the samples virtually has been dispelled by liquid
+                                                           vapor, air is admitted into e; the liquid rises through
+                                                         . c and fills the whole apparatus above this, so that the
+                                                           filters become saturated fully. If deaeration happens to
+                                                           be incomplete, the liquid boils when passing through c,
+                                                           so that the last traces of gas in the liquid practically
+                                                           are removed completely and pumped off through mano-
+                                                           meter tube b,. Before the determinations, the supply
+                                                           flask e is filled also, owing to which sufficient difference
+                                                           in level is obtained to allow of a permeability measure-
+                                                           ment-which is carried out as described hereinbefore.
+                                                               Organic liquids presented no difficulties in the deter-
+                                                           minations with glass filters-provided         contamination
+                                                           of the freshly distilled liquids, by dust particles or con-
+                                                           tact with rubber and the like, was prevented. With
+                                                           water, however, difficulties were encountered, inasmuch
+                                                           a s the permeability dropped during the determination,
+                                                           even if freshly distilled water was used. This was due
+                                                           mainly to mechanical clogging of the filters, as appeared
+                                                           from experiments, in which two G, filters had been
+                                                           placed after each other. In these experiments, made
+                                                           when the apparatus had not yet been provided with
+                                                           a n extra filter (c, see Fig. 8 and 9), the first filter
+                                                           decreased much more in permeability than the second.
+   Apparatus for the Determination of the Liquid
+                                                               As contaminations causing mechanical clogging could
+    Permeability of Glass Filters and Core Samples.
+                                                           not be supposed to be volatile and pass over during dis-
+                        FIG. 9                             tillation, i t was supposed that the troubles were caused
+                                                           by microorganisms developing in the water after dis-
+thermometer t has been inserted for reading the liquid     tillation. This difficulty could be eliminated partly by
+temperature. The apparatus is now ready for use.           sterilizing the water by adding either formaline or oxi-
+  The liquid then is passed through the apparatus by       dized silver wires, and finally was eliminated entirely
+maintaining a constant difference in level of the mer-     by the addition of the extra filter c.
+B. The Determination of the. Permeability to                 calcium-chloride tube. This is generally necessary to
+       Gases at Different Pressures                          insure reproducible results, a s most core samples
+                                                             are more or less hygroscopic, and the permeability may
+   As i t was desirable for our investigation to apply       change with humidity (swelling of clay particles).
+lower a s well as higher pressures, two apparatus were         ,The rate of flow of the gas and the pressures pre-
+constructed-ne     for determinations a t Dressures be-      vailing in the apparatus are adjusted by three exchange-
+low, and one for determinations a t pressures above          able capillaries c,, c2, and cs. By means of these capil-
+1 atmosphere.                                                laries i t is possible to attain a n y , desired pressure
+   The apparatus for the gas-permeability determination      distribution without affecting the vacuum in the pump,
+a t low pressures is illustrated schematically in Fig. 10.   which serves simultaneously as pre-vacuum of the
+   The low-pressure part is wholly made of glass, in         mercury diffusion pump.
+order to prevent possible errors due to gas liberated           To measure the rate of flow of the gas when a sta-
+by rubber connections.                                       tionary condition has established itself, the graduated
+   As in the apparatus for liquid-permeability deter-        pipette P is connected by means of the threeway cock 1,
+minations, the glass filters were provided on either         and the air from the pipette is sucked through the
+side with a ground joint. Core samples were fixed            calcium-chloride tube into the apparatus. By means of
+with Pebe cement between two hemispherical glass caps,       the leveling vessel and cock 1 3 the level outside the
+each provided with a ground joint, as schematically          pipette is kept flush with that inside-so that the air,
+       \
+
+
+
+
+      Permeability Apparatus for Low Pressures.                   Permeability Apparatus for High Pressures.
+
+                        FIG. 1 0                                                     FIG. 11
+
+indicated in Fig. 10 (KM). Either the glass filter or        in being sucked in, maintains a constant pressure of 1
+the core sample thus could be mounted by means of the        atmosphere, and the stationary condition is not dis-
+ground joints. Tube B, which has two rectangular             turbed. The time required for a given volume of gas
+bends, was slipped over the slightly .thinner tube A,        to be drawn into the apparatus is measured. As this
+and this connection was sealed with picein.                  gas is saturated with water vapor, retained in the
+   The pressure before and after the core sample can         calcium-chloride tube, a correction for this has to be
+be measured direct by means of the open mercury              made in the volume.
+manometers MI and M2. If the difference in pressure            If the determinations are not made with air, but
+is slight, i t can be measured more accurately with the      with hydrogen or carbon dioxide, the bomb containing
+oil manometer O?, which can be switched off (by means        this gas is connected as indicated in the drawing. The
+of threeway cocks 4 and 5) a t larger differences in         pressure is kept constant a t 1 atmosphere by means
+pressure.                                                    of a inanostat.
+   If the pressures a r e of the order of a few centi-         Fig. 11 is a schematical representation of the ap-.
+meters of mercury, the pressure after the core sample        paratus for gas-permeability determinations a t pres-
+can be measured by means of the oil manometer O,,            sures above 1 atmosphere. The sample can be mounted
+the second limb of which is connected with the high          in this apparatus by means of the same glass hemi-
+vacuum of a mercury diffusion pump. This manometer           spheres with ground joints a s are used in the ap-
+virtually works as a closed manometer. If necessary,         paratus for low pressures and for liquid (isooctane).
+a correction can be made for the pressure in the "closed"    The sample, therefore, such a s i t is can be interchanged
+limb, as the vacuum of the diffusion pump can be mea-        between the different apparatus. The core holder K i s
+sured with a McLeod manometer.                               made of metal, and the sample is placed in i t in such
+   The gas is drawn through the apparatus by a               a way that the pressure inside and outside the glass
+rotating oil-vacuum pump.                                    wall is the same (apart from the slight pressure
+   The gas current enters the apparatus through a            gradient in the sample), so that 'there is no risk of
+                               THE PERMEABILITY
+                                            OF POROUS' MEDIA TO LIQUIDSAND GASES                                                                                      211
+
+breakage owing to the high pressure. The pressure                                                I. Weber nnd G Lervin Kolloid Z. 5 0 197 (1930)
+                                                                                                 W.B. Hardy, ~ i o c .RO;. Soc. London ~ A I118, 209'(1928).
+before the sample is read on a precision manometer of                                            D. P. Bnrnard and R. E. Wilson, Ind. Etrg. Chenc. 14, 683
+                                                                                              (1922).
+the Bourdon type M,; the pressure difference, across
+the sample on a differential manometer Mz, with di-                                        Among those who do not ngree with this hypothesis are :
+butylphthalate a s manometer liquid. The readings of                                             J. C. W. Frazer W.A. Patrick, and H. S. Smith, J . Plrys.
+                                                                                              Che~~t  31,
+                                                                                                        . 897 (1627).
+the latter manometer have to be corrected for the                                                G . H. Lnthnm. J. d m . Cheaa. Soc. 50 2897 ( 1 9 2 s ) .
+                                                                                                 L H. Bastom and F. P. Bowden, ~ r b c .Rou. Soc. London
+specific gravity of the air, which, a t 20 atmospheres,                                        [A] 139, 404 (1932).
+is no longer negligible with respect to that of the                                              K. Bulkley, J. Research hratl. Btcr. S t a ~ t d a r d s6 , S9 ( 1 9 3 1 ) .
+                                                                                             E. BInnegold, K o l l o i d - 2 . 81, 167 (1937).
+manometer liquid. The gas current is measured by                                           B A . Kundt nnd E. Warburg, P o g g e ~ t d o r f sd t t ~ c .Phusik 155.
+conducting i t into the graduated pipette P, the level                                   337 and 525 (1875).
+                                                                                           lo E. Warborg Pogge~rdorfsAnn. Phusik 159, 399 (1S76).
+inside and outside the pipette again being kept flush.                                     " hf. 1inudse; Ann. Physik [.%I 28, 75 ( 1 9 0 9 ) .
+                                                                                           I2G. Jiiger, TPien. Ber. 108, Abt. 111, 452 (1899).
+The gas current is regulated by means of needle                                            "  J. H. deans. Phil. Mag. C61 8, 700 ( 1 9 0 4 ) .
+valve .4. The pressure before the sample is kept con-
+stant by means of an electromagnetic manostat. The                                                                      DISCUSSION
+pressure regulator consists oS two chambers, connected
+by a glass capillary reaching close to the bottom of the                                     Morris Muskat (Gulf Research and Developnlent Com-
+lower chamber, which latter contains mercury. The                                         pany, Pittsburgh, Pa.) (written) : Dr. Klinkenberg's
+top chamber is filled with air of a slightly lower pres-                                  fine paper is so thorough and complete in its report of
+sure than that to which the apparatus is to be adjusted.                                  experiiriental data and discussion a s to leave little
+When the pressure in the apparatus increases, the                                         room for additional comment.
+mercury in the capillary tube of the regulator rises                                          As Dr. Klinkenberg points out, the theory of slip in
+until electric contact is made with an iron needle,                                       the flow of gases through capillaries has been available
+which passes through a n insulation in the wall to the                                    for some 65 years. Yet those of us who have been
+middle of the capillaiy. A relay then is closed, and a n                                  working on permeability measurements for the last 10
+electric current flows through the windings of the                                        years nus st accept with embarrassment the responsi-
+electromagnetic valve A; this opens, and gas escapes                                      bility for having overlooked the basic applications of
+until the pressure in the apparatus drops sufficiently                                    this theory to the flow of gases through porous media.
+to interrupt again the electric contact in the regula-                                    Occasional discrepancies between permeability measure-
+tor. The air buffer serves to level out possible fluctua-                                 ments with gases and liquids undoubtedly have been
+tions. By means of needle valves 1, 2, and 3 the mano-                                    observed by all experimenters. However, i t seems that
+stat can be adjusted so that the pressure fluctuations                                    the line of least resistance has been followed heretofore
+in manonleter M2 amount to only a few hundredths of                                       in attributing these discrepancies merely to- experi-
+a centinleter of water pressure. The gas passes from                                      mental errors. I t has remained for Dr. Klinkenberg
+a bomb to a drying bomb T containing calcium chloride.                                    to trace them down and to prove without question that
+   With this apparatus, permeability determinations                                       they are a n expression of a real physical phenomenon,
+were made a t pressures up to about 20 atmospheres.                                        and to expose in addition the quantitative features of
+                                                                                           the effect in such a way that i t can be controlled and
+                                                                                           interpreted.
+Acknowledgment
+                                                                                              Perhaps the only excuse that can be given for pre-
+  The work described in this article was carried out                                       vious failure to recognize the phenomenon of slip is that,
+during 1938 and 1939, first in the laboratories of the                                     if the mean free paths a s established by other methods
+Bataafsche Petroleum Maatschappij, Amsterdam, The                                          were used and the effective pore radii generally ac-
+Netherlands, and then in those of Shell Development                                        cepted as characterizing reservoir sands were .intro-
+Company, Emeryville, Calif., in collaboration with Dr.                                     duced in the theoretical formulas for flow with slip, the
+W. Adriani, Dr. J. Beintema, and Dr. J. van Heiningen,                                     correction tern1 would have been a priori predicted a s
+to whom the author is greatly indebted. Unfortunately                                      being f a r too small to play any r81e in the measure-
+this paper had to be prepared without their valuable                                       ments. Of course, the basic reason for the apparently
+advice.                                                                                    anomalous importance of the slip is the tremendous sur-
+   The author wishes to express his sincere thanks to                                      face area in a sand a s compared to that in a capillary
+Dr. M. D. Taylor for several valuable discussions and                                      tube. In any case, although for this reason one possibly
+help in the preparation of this paper.                                                     may condone the failure of previous experimenters to
+                                                                                           find the explanation and trace down the discrepancies
+                               REFERENCES                                                  between the gas and liquid permeability, a t the same
+  I dPI       Cotle No E7: " S t a ~ t d a r dProcedure or D e t e r m i ~ t i ~ b g
+                                                                                  Per-   . time i t makes all the more commendable Dr. Klinken-
+m y b i i i f ! , o f Porhus Media,'. 1st edn.. Oct. 0 3 5 )                               berg's perseverance and boldness in going ahead with
+  - S e e for instance: N. ?lusliat. Tlhe Florv o j Homogeneous
+Flfcids tlrrough Poro~cgMcdta, 56 ff., hlcGraw-Hill Book Co., New                          his apparently over-optimistic working hypothesis and
+Tork ( 1 0 3 7 ) .                                                                         ultimately showing that i t is, after all, well founded and
+  8 LOC.c a t , 71 and 91.
+  ' Loc. c i t . . 03.                                                                     significant.
+  6 LOC. eit.. 103.
+  e Q . H . ~ A n c h e r ,J. A. Lewis, and 6. B. Barnes, Pettn. S t a t e                    A particularly valuable feature of Dr. Klinkenberg's
+Coll. M i ~ i e r a lInd. Exp. S t a . Bull. No. 12 ( 1 9 3 3 ) .
+     Among authors who believe that adsorbed layers several                                work is that i t shows how, by a n extrapolation of the
+molecules thick occur are :                                                                air-permeability data for low pressures to that for a n
+            I. R. IIcHaffie and L.. Lehner, J. Chetn. Soc. 127, 1559                       infinitely high mean pressure, a permeability identical
+       (1925).
+with that measured with liquids will be obtained. Thus             The effects of capillary size and pressure o n the flow
+there is no need to feel that the whole method of              of gases have been discussed in connection with the
+permeability measurements with gases must b e dis-             kinetic theory of gases and liquids in texts on physical
+carded. Rather i t is necessary only that, the measure-        chemistry, such a s Herzfeld and Smallwood's discussion
+ments be carried out for several values of the mean            in Taylor's Treatise on Physical Chemistry, D. Van
+pressure and the results extrapolated to infinite mean         Nostrand Company, Inc., New York, N. Y., b u t . Mr.
+pressures. All the inherent advantages of gas measure-         Klinkenberg has clarified the matter by obtaining ex-
+ments thus can be retained, and one does not have t o          perimental data for actual core samples.
+return to the disadvantages and complexities of direct             Although the flow of gases a t low pressures may be
+liquid measurements.                                           considered to be in the region of laminar or viscous
+   Although the reviewer has been among those who              flow, some differences in the usual concepts of laminar
+insistently have opposed the expression of sand permea-        flow are encountered in this region. A t low pressures
+bility in terms of effective pore radius from the point        the mean free path of the gas molecules becomes large
+of view of applications to the oil industry, i t must be       with respect to the size of the pores, and the phenomenon
+recognized that in other industrial problems the deter-        of slippage occurs. In some respects the usual concept
+mination of the effective pore dimensions i s of great         of laminar or viscous flow i s altered when slippage i s
+value in itself. It, therefore, would be of interest to        encountered. Attempts to measure the viscosity of gases
+compare the effective radii corresponding to the liquid        under conditions when slippage occurs will give values
+permeability and that involved in the slip phenomenon          dependent upon the capillary size and the pressure.
+a s given by the constant b. A simple check shows that         Viscosities measured under such conditions usually a r e
+ b2K is not a t all constant, a s i t should be if the above   referred to a s apparent viscosities; a s they a r e not
+effective pore radii were the same and the pore-size           the true viscosity of the gas, but decrease with decrease
+distribution were not of importance. However, a more           in pressure, and a r e dependent upon the size of the
+detailed study of b and its variations may shed light          opening through which the gas is passed. Under such
+upon the geometry of porous materials, such a s might          conditions i t seems logical that Poiseuille's and Darcy's
+be difficult to obtain in other ways.                          laws should not be expected to be obeyed rigorously. A t
+                                                               high pressures the mean free path of the gas molecules
+   M. C. Leverett (Humble Oil and Refining Company,            becomes small with respect to the size of the pores, and
+Houston, Texas) (written) : This paper is a n excep-           slippage is not encountered. This condition is in the
+tional presentation of evidently painstaking experi-           region of ordinary viscous flow, and Darcy's law i s
+mental work, which demonstrates that in the precise            obeyed.
+measurement of permeabilities with gases the phe-                . I n the rozctine testing of cores for permeability, the
+nomenon of slip must be taken into account. Inasmuch           deviation due to slippage is usually small when air is
+a s the importance of this phenomenon has not been             employed, because the mean pressures commonly used
+appreciated previously, this paper is a valuable con-          are approsiinately 1 atmosphere for samples having
+tribution.                                                     high permeability and from 1.5 to 3 atmospheres for
+   Particular attention should be given the author's           samples having low permeability. When a ~ o x h l e tex-
+remark t h a t the errors in permeability measurements         tractor is used for extraction of the oil from the core
+with gases due to slip a r e "in many cases-at least           sample in routine work, i t is probable that the oil
+for formations of moderately high permeability-not of          residues are not removed so thoroughly from the sands
+the first importance for practical purposes." Such             having low permeability, which will compensate partly
+errors well may be significant in laboratory studies of        for the divergence in permeability to air. The speed
+the behavior of fluids in sands. However, in most of           and simplicity of determining permeability to air a r e
+the fundamental studies of this type so f a r made the         very much in favor of its use in routine core analysis.
+sands used have had permeabilities so high a s to make             Mr. Klinkenberg's paper is very useful from the
+slip corrections negligible.                                   standpoint of clarifying our fundamental concepts of
+                                                               fluid flow, but will not affect seriously the present status
+   W. S. Walls (Phillips Petroleum Company, Bartles-           of core-analysis methods.
+                                                                                     \
+ville, Okla.) (written) : Mr. Klinkenberg's excellent
+paper is of interest to the general understanding and            George H. Fancher (University of Texas, Austin,
+clarification of the fundamentals of flow of liquids and       Texas) (written) : Mr. Klinkenberg's paper is a valu-
+gases through porous media. He is to be con~plimented          able contribution to our knowledge of what is probably
+on his careful investigation of this problem.                  the most important single physical property of oil and
+   Discrepancies between the permeabilities to air and .       gas sands, viz., the permeability. Despite the con-
+those to water and other liquids have been observed            siderable amount of research which has been conducted~   -   -   ~~
+
+
+
+
+in many core laboratories; however, the magnitude of           in this field during the past decade and the impressive
+the discrepancy encountered under routine testing con-         array of data and information concerning permeability
+ditions has not been considered sufficiently large to affect   which has been accumulated, and the further fact that
+seriously the practical application of permeability data       the Klinkenberg phenomena have been known a long
+for well-completion purposes or reservoir studies.             time, the work is new, timely, and significanhspecially
+                                                             MEDIA TO LIQUIDS AND GASES.                           213
+
+from the theoretical point of view. There is no question      serious difficulties will result in following usual meth-
+that it has been proved that, when the permeability of        ods of testing permeability in the majority of cases.
+a porous medium is measured with gas, allowance and
+a correction for the fact that the test fluid is a gas           M. D. Taylor (Shell Development Company, Emery-
+rather than a liquid must be made in order to determine       ville, Calif.) (written) :* The universally favorable
+the true permeability of the medium. Nowhere in the           tone of the reviews and comments is, of course, most
+literature is there more convincing proof of the fact         gratifying. In reply, I should like to agree with the
+that permeability is inherently a property of the             comment made by several of the reviewers, viz., that the
+medium when liquids are used to measure permeability.         effect of slip is usually too small to be of practical im-
+The theory for flow of gas is supported by convincing         portance in field calculations, and to repeat that other
+data, although there remains opportunity for further          effects incidental to the recovery of representative core
+work and fact finding in tying the theory down. Com-          samples and their preparation for measurement easily
+plete test data would be useful to all workers in the         may introduce more serious errors than neglect of the
+field in order to hasten progress, and i t is hoped that      effect discussed in this paper. The adoption of a limiting
+Mr. Klinkenberg will find i t possible to supply these        permeability above which the effect of slip can be
+data.                                                         neglected in practical calculations, such a s a permea-
+    I t is interesting to recall, in the light of this new    bility of 25 millidarcys a s suggested by Mr. Fancher,
+information, that in comparing the permeability of a          does not appear to be particularly attractive. A plot
+sand measured with a gas to that with a liquid, some '        of the data presented in Table 9 for core samples mea-
+investigators have reported better agreement when the         sured with air or nitrogen shows that neglecting the
+Weyn~outh mean pressure was used rather than the              effect of slip for core samples of 10 millidarcys will
+arithmetic mean pressure demanded by theory. When             cause, on the average, a n error of about 25 per cent
+i t is recalled further that the Weyrnouth mean always         (based on the value measured a t atmospheric pressure) ;
+exceeds the arithmetic by a n appreciable amount, the         for a sample of 25 md the average error would be
+                                                              about 17 per cent; for a 50-md sample i t is about
+matter is clarified, especially for test pieces of low
+                                                              13 per cent; for a 100-md sample about 11 per cent,
+permeability over which a pressure drop of 100 or
+                                                              and for 1,000-md sample about 5 per cent. It appears,
+150 psi may be used in e~perimentation. Of course, no
+                                                              therefore, that a s the permeability increases, the error
+physical nor theoretic justification of the Weyrnouth         caused by neglecting slip decreases gradually, and there
+mean can be made for this work, and its use is not            is no limiting permeability beyond which the error drops
+necessary nor warranted if the Klinkenberg method             rapidly.
+be followed.                                                     The use of variations observed in the quantity b to
+    Practically speaking, the permeability of a sand in       obtain information on the geometry of a porous ma-           .
+excess of, shall we say, 25 millidarcys, may be evalu-        terial, a s suggested by Mr. Muskat, has been the sub-
+ated in the usual simple way, using air a s a test fluid,     ject of considerable investigation, but no definite con-
+with satisfactory overall accuracy. Considering the           clusions have been reached. I t appears that the sig-
+fact that we usually are interested commercially in           nificant factors are; 1, the radii of the capillaries a t
+permeability higher than 25 millidarcys for practical         their narrowest parts; 2, the rate with which these
+reasons and that the small piece being tested is not          radii increase; 3, the length of the narrow portions;
+thoroughly representative of the entire sand body, i t        and, 4, the distribution of capillary pore sizes in
+is believed that Mr. Klinkenberg's findings will not          the sample a s a whole.
+affect routine permeability measurements except in
+the case of tight sands (low permeability), and no              *Author's closure prepared br 11. D. Tnylor due to the
+                                                              author's nbsence ~ I Inmmy service.
+

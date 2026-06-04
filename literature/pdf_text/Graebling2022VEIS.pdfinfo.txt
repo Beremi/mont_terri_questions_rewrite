@@ -1,0 +1,19 @@
+Title:           feart-2022-946627 1..15
+Creator:         Arbortext Advanced Print Publisher 9.1.510/W Unicode
+Producer:        Acrobat Distiller 7.0 (Windows)
+CreationDate:    Fri Sep  9 19:48:02 2022 CEST
+ModDate:         Fri Sep  9 19:48:02 2022 CEST
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           15
+Encrypted:       no
+Page size:       595.276 x 779.528 pts
+Page rot:        0
+File size:       2788983 bytes
+Optimized:       yes
+PDF version:     1.4

@@ -1,0 +1,20 @@
+Title:           CHARACTERISATION OF GAS TRANSPORT PROPERTIES OF THE OPALINUS CLAY, A POTENTIAL HOST ROCK FORMATION FOR RADIOACTIVE WASTE DISPOSAL
+Author:          P. MARSCHALL
+Creator:         QuarkXPress(tm) 5.01
+Producer:        Acrobat Distiller 4.0 for Macintosh
+CreationDate:    Fri Apr  8 13:27:14 2005 CEST
+ModDate:         Mon Mar  5 18:50:39 2007 CET
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           19
+Encrypted:       yes (print:yes copy:yes change:no addNotes:no algorithm:RC4)
+Page size:       595 x 765 pts
+Page rot:        0
+File size:       664805 bytes
+Optimized:       yes
+PDF version:     1.4

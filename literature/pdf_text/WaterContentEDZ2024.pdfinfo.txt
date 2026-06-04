@@ -1,0 +1,20 @@
+Title:           Water Content Evolution in the EDZ of Opalinus Clay: A Methodic Approach for a Comparative Interpretation of Measurements and Modelling
+Subject:         Rock Mechanics and Rock Engineering, https://doi.org/10.1007/s00603-023-03717-1
+Keywords:        Mont Terri project; Opalinus claystone; CD-A experiment; Coupled hydro-mechanical effects; Water content evolution; Geophysical measurements; Numerical modelling (OpenGeoSys 6)
+Author:          Gesa Ziefle 
+Creator:         Springer
+Producer:        Acrobat Distiller 10.1.8 (Windows)
+CreationDate:    Wed Apr 24 08:34:11 2024 CEST
+ModDate:         Fri Jun 14 20:28:01 2024 CEST
+Custom Metadata: yes
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            AcroForm
+JavaScript:      no
+Pages:           30
+Encrypted:       no
+Page size:       595.276 x 790.866 pts
+Page rot:        0
+File size:       5515441 bytes

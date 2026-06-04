@@ -1,0 +1,1111 @@
+Solid Earth, 12, 1581–1600, 2021
+https://doi.org/10.5194/se-12-1581-2021
+© Author(s) 2021. This work is distributed under
+the Creative Commons Attribution 4.0 License.
+
+
+
+
+Mechanical and hydraulic properties of the excavation damaged
+zone (EDZ) in the Opalinus Clay of the Mont Terri rock
+laboratory, Switzerland
+Sina Hale1 , Xavier Ries1 , David Jaeggi2 , and Philipp Blum1
+1 Karlsruhe Institute of Technology (KIT), Institute of Applied Geosciences (AGW), Kaiserstr. 12, 76131 Karlsruhe, Germany
+2 Federal Office of Topography (swisstopo), Seftigenstr. 264, 3084 Wabern, Switzerland
+
+
+Correspondence: Sina Hale (sina.hale@kit.edu)
+
+Received: 13 January 2021 – Discussion started: 5 February 2021
+Revised: 29 May 2021 – Accepted: 10 June 2021 – Published: 13 July 2021
+
+
+Abstract. Construction of cavities in the subsurface is al-      The presented methodological approach is particularly suit-
+ways accompanied by excavation damage. Especially in the         able for time-dependent monitoring of EDZs since measure-
+context of deep geological nuclear waste disposal, the evolv-    ments are nondestructive and do not change the actual state
+ing excavation damaged zone (EDZ) in the near field of em-       of the rock mass. This allows for a spatially resolved inves-
+placement tunnels is of utmost importance concerning safety      tigation of hydraulic and mechanical fracture apertures, frac-
+aspects. As the EDZ differs from the intact host rock due to     ture surface roughness, and physico-mechanical rock param-
+enhanced hydraulic transmissivity and altered geomechani-        eters and their intra-facies variability.
+cal behavior, reasonable and location-dependent input data
+on hydraulic and mechanical properties are crucial. Thus,
+in this study, a hydromechanical characterization of an EDZ
+                                                                 1   Introduction
+in the Mont Terri underground rock laboratory, Switzerland,
+was performed using three different handheld devices: (1) air    For all types of man-made underground structures, the for-
+permeameter, (2) microscopic camera and (3) needle pen-          mation of a so-called excavation damaged zone (EDZ) or ex-
+etrometer. The discrete fracture network (DFN), consisting       cavation disturbed zone (EdZ) is inevitable (Pusch and Stan-
+of artificially induced unloading joints and reactivated natu-   fors, 1992; Shen and Barton, 1997). As geologic formations
+ral discontinuities, was investigated by a portable air perme-   are affected by regional or local stress fields, stress redistri-
+ameter and combined microscopic imaging with automatic           bution during excavation leads to displacement and conver-
+evaluation. Geomechanical and geophysical characterization       gence, accompanied by the formation of unloading fractures
+of the claystone was conducted based on needle penetrometer      in the rock mass around the cavity (Bossart et al., 2002).
+testing at the exposed rock surface. Within the EDZ, perme-      The EDZ is characterized by severe hydraulic, mechani-
+able fractures with a mean hydraulic aperture of 84 ± 23 µm      cal and geochemical modifications as well as newly formed
+are present. Under open conditions, self-sealing of fractures    connected porosity (Dao et al., 2015; Kupferschmied et al.,
+is suppressed, and cyclic long-term fracture aperture oscilla-   2015; Labiouse and Vietor, 2014; Sato et al., 2000; Yong et
+tions in combination with closure resulting from convergence     al., 2017). Thus, significant changes in flow and transport
+processes is observed. Based on measured needle penetra-         properties can be observed in the EDZ due to an enhanced
+tion indices, a uniaxial compressive strength of 30 ± 13 MPa     permeability of the connected fracture network creating pref-
+(normal to bedding) and 18 ± 8 MPa (parallel to bedding)         erential flow paths. In the EdZ, flow and transport properties
+was determined. Enhanced strength and stiffness are directly     are only scarcely affected (Bossart et al., 2002, 2004; Tsang
+related to near-surface desaturation of the claystone and a      et al., 2005).
+sharp decrease in water content from 6.6 wt % to 3.7 wt %.
+
+
+
+Published by Copernicus Publications on behalf of the European Geosciences Union.
+1582                                                          S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+   The EDZ and its impact on hydraulic and mechanical              sealing capacity of the Opalinus Clay caused by swelling of
+rock properties are of particular importance for the under-        mixed-layer illite–smectite clay minerals (e.g., Bernier et al.,
+ground storage of radioactive material (Blümling et al., 2007;     2007), the hydraulic conductivity of the EDZ is expected to
+Fairhurst, 2004). According to the current state of knowl-         decline within a period of several tens to hundreds of years
+edge, multi-barrier systems for geological disposal are the        by progressive fracture closure (Jaeggi and Bossart, 2014).
+preferred option for effectively isolating high-level nuclear      In addition, fractured rock masses are also characterized by
+waste and spent fuels (Birkholzer et al., 2012; Chapman and        a pronounced hydromechanical coupling; i.e., changes in
+Hooper, 2012). A service life of up to 1 million years will        the mechanical stress state result in changes in permeabil-
+essentially be guaranteed by the sealing function of a nat-        ity and therefore hydraulic fracture aperture (Cammarata et
+ural barrier (Apted and Ahn, 2010; Wilson and Berryman,            al., 2007; Min et al., 2004; Rutqvist and Stephansson, 2003).
+2010). In Switzerland, the Opalinus Clay, an overconsoli-          Generally, ah is nonlinearly linked to the mechanical fracture
+dated Jurassic claystone, was selected as a host rock for deep     aperture am as a function of fracture surface roughness (Blum
+geological storage of high-level radioactive waste (Bossart        et al., 2009; Renshaw, 1995), for example via the Barton–
+et al., 2017; Nagra, 2002). In the context of host rock char-      Bandis model using the joint roughness coefficient (JRC)
+acterization and site assessment, the Mont Terri generic un-       (Barton, 1982; Barton et al., 1985). The mechanical fracture
+derground rock laboratory (URL) provides a valuable site           aperture represents the average geometrical distance between
+for research, testing and development of in-depth technical        the fracture surfaces (e.g., Hakami and Larsson, 1996) and is
+know-how. Since 1996, numerous studies and experiments             needed to examine the response of fracture networks due to
+have been conducted in order to evaluate essential properties      normal or shear stresses (e.g., Blümling et al., 2007; Cuss et
+of the undisturbed and altered rock, as well as to examine         al., 2011; Zhang, 2016) and mechanical self-sealing of artifi-
+the behavior of the Opalinus Clay when exposed to short-           cial fractures (e.g., Marschall et al., 2017; Nagra, 2002).
+or long-term THMC (thermal, hydrological, mechanical and              Similar to the hydraulic properties, mechanical proper-
+chemical) impacts (Bossart et al., 2017; Pearson et al., 2003).    ties of the Opalinus Clay diverge significantly depending
+Besides the Mont Terri URL in Switzerland, a number of un-         on direction, facies and stress regime (Bock, 2009; Giger
+derground laboratories in other countries and their potential      et al., 2015). Furthermore, due to a clay-specific hydrome-
+or selected host rock formations are in operation, mainly in       chanical coupling (Amann et al., 2017; Marschall et al.,
+crystalline rocks (e.g., Äspö Hard Rock Laboratory in Swe-         2017), geomechanical parameters such as uniaxial compres-
+den) and plastic or indurated clays (e.g., HADES URL in            sive strength, tensile strength, shear strength and the Young’s
+Belgium, Meuse/Haute-Marne URL and Tournemire URL                  modulus of the Opalinus Clay generally increase with de-
+in France) (Blechschmidt and Vomvoris, 2010; Delay et al.,         creasing water content (Blümling et al., 2007; Wild et al.,
+2014). Similar to the Opalinus Clay in Switzerland, the EDZ        2015). Furthermore, geomechanical properties of the Opali-
+and its impact on the hydromechanical characteristics of the       nus Clay in the EDZ are also modified in comparison to the
+rock mass in the near field of underground structures are          undisturbed rock mass. In the short term, a reduction in ef-
+of particular interest for the Callovo–Oxfordian claystone in      fective stress caused by pore pressure excess in the vicinity
+France (e.g., Armand et al., 2014; Baechler et al., 2011; Men-     of the advancing excavation front leads to early damage of
+aceur et al., 2016) and for the Boom Clay in Belgium (e.g.,        the rock around the cavity. Right after excavation, pore water
+Bastiaens et al., 2007; Dao et al., 2015).                         drainage and increased suction of the rock mass can be ob-
+   In the Opalinus Clay of the Mont Terri URL, the EDZ is          served close to the cavity (Amann et al., 2017; Giger et al.,
+characterized by a significantly enhanced hydraulic conduc-        2015). In the long term, a general decrease in water content
+tivity of 1 × 10−14 to 1 × 10−5 m s−1 (Bossart et al., 2004;       caused by dehydration of the rock leads to locally enhanced
+Jaeggi and Bossart, 2014; Marschall et al., 2017), whereas         rock strength and stiffness (Wild et al., 2015).
+for undisturbed conditions it ranges between 2 × 10−14 and            An accurate and comprehensive hydraulic and mechanical
+5 × 10−12 m s−1 (Jaeggi and Bossart, 2014; Lavanchy and            characterization of the EDZ is therefore essential for con-
+Mettier, 2012). Within the EDZ, advective transport is facili-     firming the integrity of the host rock in terms of risk and
+tated due to fracture permeability, which is several orders of     performance assessment (e.g., Blum et al., 2005; Popp et al.,
+magnitude higher than the matrix permeability of the clay-         2008; Tsang et al., 2015; Xue et al., 2018). This key infor-
+stone (Marschall et al., 2017). Hydraulic fracture parameters      mation serves as an appropriate starting point for numerical
+such as permeability, transmissivity and flow rate are in turn     modeling studies investigating the development of the EDZ
+directly related to the hydraulic fracture aperture ah (Zim-       in the post-closure phase of the repository, and it is also use-
+merman and Bodvarsson, 1996), which therefore represents           ful for the selection and adaptation of engineering designs or
+a key parameter for assessing the hydraulic characteristics        adequate constructional measures (e.g., Hudson et al., 2005;
+of a fractured rock mass or an EDZ. The hydraulic aperture         Marschall et al., 2017; Nagra, 2019; Tsang et al., 2012). This
+is usually derived from the cubic law (Louis, 1969; Snow,          not only applies to the issue of nuclear waste disposal, but
+1965) and relates to the mean opening width of a fracture          also generally to other underground structures in different ge-
+accessible to advective transport. Due to the confirmed self-
+
+
+Solid Earth, 12, 1581–1600, 2021                                                      https://doi.org/10.5194/se-12-1581-2021
+S. Hale et al.: Mechanical and hydraulic properties of an EDZ                                                                 1583
+
+ological materials and settings (e.g., Li et al., 2012; Sheng et   rameters with data from other studies to assess the effect of
+al., 2002; Wu et al., 2009).                                       desaturation directly on-site at the tunnel wall.
+   Hydraulic fracture apertures are usually determined in the
+laboratory by permeameter tests, with either gases or liquids
+being used to flow through fractured rock samples (Kling et
+al., 2016; Li et al., 2018; Shu et al., 2019; Zhang, 2018). In     2     Material and methods
+the field, hydraulic properties can be derived from hydraulic
+or pneumatic borehole tests (Aoyagi and Ishii, 2019; Jaku-         2.1    Study site
+bick and Franz, 1993; de La Vaissière et al., 2015; Shao et
+al., 2008). Mechanical fracture apertures can generally be ob-     Fieldwork was performed in the EZ-B niche of the Mont
+tained by different fracture imaging methods, whereby visi-        Terri underground rock laboratory (URL) in St. Ursanne,
+bility can be improved by injecting dyed or fluorescent resin      Switzerland (Fig. 1a). The axis of the niche is oriented al-
+into the fractured rock (Armand et al., 2014; Bossart et al.,      most normal to Gallery 04 and to the minimum principal
+2002).                                                             stress direction of the in situ stress field (Yong et al., 2010).
+   Seismic velocity measurements can be carried out in the         The niche is located in the upper shaly facies of the Opalinus
+laboratory by using ultrasonic pulse devices (Popp et al.,         Clay, which consists of dark gray, mostly mica and pyrite
+2008; Wild et al., 2015) and in the field, for example, by         containing calcareous silty–sandy claystones (Hostettler et
+applying mini-seismic methods (Schuster et al., 2017). Ge-         al., 2017). Bedding dips 45◦ towards 150◦ , and thus the niche
+omechanical strength and deformation parameters are usu-           axis is oriented perpendicular to the strike of the bedding.
+ally determined by laboratory experiments. For this purpose,       As the URL is located in the southern limb of the Mont
+many different test setups are utilized such as compressive        Terri overthrust anticline, the Opalinus Clay has experienced
+strength tests, tensile strength tests, shear tests and triaxial   tectonic deformation (Nussbaum et al., 2011). As a con-
+tests under drained or undrained conditions. For the Opalinus      sequence, pre-existing natural discontinuities, i.e., bedding-
+Clay, numerous geomechanical tests were carried out on drill       parallel tectonic faults, steeper splays and bedding planes, are
+cores, primarily examining bedding anisotropy in addition to       present (Nussbaum et al., 2005). The EZ-B niche provides
+the hydromechanical coupling by adapting the water content         direct access to the overconsolidated claystone of the shaly
+of the samples (Amann et al., 2011, 2012, 2017; Wild et al.,       facies of the Opalinus Clay and to the excavation-induced
+2015). In the field, handheld probes such as a Schmidt ham-        fracture network of Gallery 04. It was excavated from De-
+mer or needle penetrometer are used to estimate the uniax-         cember 2004 to March 2005 mainly by a road header and
+ial compressive strength and other mechanical parameters of        pneumatic hammering (Nussbaum et al., 2005). Numerous
+rock material (Aydin, 2009; Buyuksagis and Goktan, 2007;           experiments were carried out in the niche, focusing, for ex-
+Erguler and Ulusay, 2009; Hucka, 1965; Okada et al., 1985;         ample, on determining the extent and degree of damage of the
+Ulusay and Erguler, 2012).                                         EDZ (Schuster et al., 2017), fracture network analysis and
+   For most investigations drilling is required, either di-        small-scale mapping (Nussbaum et al., 2011; Yong, 2007),
+rectly for performing borehole tests or for taking standard-       or long-term hydromechanical coupling processes (Möri et
+compliant samples. However, drilling is not always feasible        al., 2010; Ziefle et al., 2017).
+and boreholes also affect the EDZ by creating additional fluid        Excavation-induced unloading joints (EDZ fractures) that
+pathways. Core samples do not necessarily reflect the initial      are related to the construction of Gallery 04 are present
+state as they can suffer from disturbance or damage during         within the first 1.3 m of depth into the EZ-B niche (Nuss-
+extraction and transport, leading, for example, to a change in     baum et al., 2005). Strike direction is mostly parallel to
+water content. Hence, the objective of this study was to in-       Gallery 04 and therefore perpendicular to the axis of the
+vestigate the hydromechanical properties of the EDZ in the         niche. At greater distances, artificial EDZ fractures that orig-
+Opalinus Clay of the Mont Terri URL from in situ measure-          inate from the excavation process of the EZ-B niche itself
+ments on the exposed rock surface. We carried out a nonde-         are mainly oriented parallel to the side walls. In addition to
+structive and holistic determination of hydraulic and mechan-      the artificially induced unloading fractures, the EDZ also in-
+ical parameters of the fractured rock mass around a small tun-     cludes tectonic faults and splays, referred to as tectonic frac-
+nel niche by combining transient-flow air permeametry, pho-        tures. These tectonic fractures were reactivated by stress re-
+tomicroscopy and needle penetration tests. We characterized        distribution and convergence processes after the niche ex-
+bulk rock properties of the claystone and quantified mechan-       cavation and therefore show measurable fracture apertures
+ical and hydraulic apertures of different fracture types of the    (Nussbaum et al., 2005, 2011). In contrast, tectonic discon-
+EDZ, since these discontinuities can significantly control the     tinuities outside the EDZ are completely closed. In the en-
+overall material and flow behavior. We have also explored the      trance area of the EZ-B niche, the rock is partly covered by
+alteration of the non-lined niche that was directly exposed to     shotcrete, making a section of the EDZ inaccessible (Fig. 1b).
+air for several years. By using the water content of the clay-     The on-site measurements in the Mont Terri URL were car-
+stone, we compared the determined physico-mechanical pa-           ried out on 16–17 April 2019. At that time, the average air
+
+
+https://doi.org/10.5194/se-12-1581-2021                                                       Solid Earth, 12, 1581–1600, 2021
+1584                                                              S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+
+
+
+Figure 1. (a) Location of the Mont Terri underground rock laboratory (URL) alongside the security gallery of the Mont Terri motorway tunnel
+and the EZ-B niche situated in the shaly facies of the Opalinus Clay. (b) Photo and dimensions of the EZ-B niche where data acquisition was
+conducted. In the entrance area, shotcrete partly covers the rock surface on the left and right side wall.
+
+
+temperature in the EZ-B niche was 16.5 ◦ C, while relative              stituents of the Opalinus Clay (Bossart and Thury, 2008),
+humidity was in the range of 67 %–72 %.                                 diffusive double layers (DDLs) are formed on exposed clay
+                                                                        mineral surfaces in water-saturated fractures (Soler, 2001),
+2.2    Air permeameter                                                  which could potentially reduce the hydraulic aperture of frac-
+                                                                        tures in argillaceous rocks. For the Opalinus Clay, the max-
+A handheld transient-flow air permeameter (model TinyPerm               imum thickness of the DDL is only 22 nm, which can be
+3, New England Research, Inc.) was used to measure the                  approximated by the Debye length (Wigger and Van Loon,
+hydraulic aperture (ah ) of accessible fractures in the EZ-B            2018) using representative pore water ionic strength values
+niche. The working principle of the device was outlined by              (e.g., Pearson et al., 2003; Van Loon et al., 2003). Thus, in
+Brown and Smith (2013) and illustrated in Fig. 1 of Hale et             this case the DDL effect on ah is negligible.
+al. (2020b). Further specifications are provided by New Eng-
+land Research, Inc. (2015). For each fracture, measurement              2.3   Microscope camera
+was repeated at least three times. In the case that the mean
+absolute deviation of measured values was above 10 µm, the              For the same set of fractures (Sect. 2.2), high-resolution im-
+measurement was continued. Clear outliers were rejected in              ages of fracture traces were taken with a microscope camera
+order to eliminate erroneous data, e.g., caused by fracture             (DigiMicro Mobile, dnt GmbH) in order to estimate mechan-
+fillings (dust or loose material) or by leaks at the rubber             ical fracture apertures (am ) in the EZ-B niche. The digital
+nozzle tip of the air permeameter. Hydraulic fracture aper-             camera, with an image resolution of up to 12 million pixels,
+tures are determined directly based on the time-dependent               is comprised of a microscope with an adjustable magnifica-
+pressure equilibration and the internal calibration of the de-          tion factor of up to 240. By adjusting the focus dial, the rock
+vice (Brown and Smith, 2013; New England Research, Inc.,                surface can be brought into sharp focus. Subsequently, the
+2015). Thus, no post-processing of data is required for the air         set magnification factor has to be recorded to evaluate the
+permeameter.                                                            images. While taking the photo, the field of view should be
+    For most rocks, the hydraulic aperture derived from air             aligned parallel to the fracture axis and the camera should
+permeameter measurements agrees with the hydraulic aper-                look vertically into the fracture.
+ture available for advective flow. For sandstone, this was                 Microscope camera images can be evaluated both man-
+demonstrated by Cheng et al. (2020), wherein the air perme-             ually and automatically. The arithmetic mean of distances
+ameter was validated by steady-state flow tests and different           measured evenly along the fracture trace corresponds to
+types of artificial fractures with apertures ranging between 7          the mechanical fracture aperture am , whereas the associated
+and 62 µm. For all tested samples, hydraulic apertures were             standard deviation (σam ) provides a reasonable measure for
+in excellent agreement, with deviations below 5 µm (Cheng               fracture surface roughness (e.g., Brown, 1987; Kling et al.,
+et al., 2020). Since clay minerals represent the main con-              2017). The manual evaluation method uses image analysis
+
+
+Solid Earth, 12, 1581–1600, 2021                                                            https://doi.org/10.5194/se-12-1581-2021
+S. Hale et al.: Mechanical and hydraulic properties of an EDZ                                                                 1585
+
+software to determine the distance between the two fracture
+edges regularly along the imaged segment. For a detailed de-
+scription of the manual image analysis approach, we refer to
+Hale et al. (2020b). A minimum of 20 distance measurements
+was needed to gain representative mechanical apertures. Ad-
+ditionally, an automatic approach for determining am and σam
+was applied in this study. The code for running the workflow
+in Fig. 2 is written in MATLAB (see “Data and code avail-
+ability”). As input data, microscopic grayscale images with
+specified magnification factors are used. For an applied im-
+age resolution of 9 million pixels, the resulting image size
+is 3456 pixels in the x direction. As the images should be
+cropped adequately before analysis according to the extent
+of the fracture void area, the image size in the y direction is
+variable (Fig. 2).
+   The automated workflow is delineated in Fig. 2 and in-
+volves four steps. Based on the grayscale values of the image
+(0–255), a suitable threshold value T is first defined in or-
+der to segment the void area (region of interest) as precisely
+as possible. As a second step, the image is binarized; i.e., a
+value of 1 is assigned to the pixels of the void area and a value
+of 0 is assigned to all remaining pixels. Based on the result-
+ing binary pixel matrix, the total number of void pixels (v) is
+determined column-wise. In order to convert the number of
+void pixels into aperture values a (in µm), the real length of
+one image pixel is required as a conversion factor. The pixel
+length directly depends on the magnification of the micro-
+scope camera that was set when taking the photo. It can be
+determined by using the software PortableCapture (Hale et
+al., 2020b). Finally, the mechanical aperture of the analyzed
+fracture segment corresponds to the arithmetic mean of the
+computed aperture values in a. If the fracture trace deviates
+from the x direction of the image (denoted by angle α), am
+is corrected accordingly. Using am and σam , hydraulic frac-
+ture apertures ah can be subsequently estimated by applying
+different empirical equations (Table 1).
+
+                                                                    Figure 2. Workflow of the automatic approach for determining the
+2.4   Needle penetration test                                       mechanical fracture aperture based on microscope camera images
+                                                                    of fracture trace segments.
+A needle penetrometer device (model SH-70, Maruto Cor-
+poration Limited, Japan) was used to determine the needle
+penetration index (NPI) of the Opalinus Clay normal and par-        ISRM-suggested method for needle penetration testing by
+allel to bedding, which is directly dependent on the strength       Ulusay et al. (2014).
+of the rock (e.g., Ulusay and Erguler, 2012). For testing, the         Several physico-mechanical parameters are directly re-
+needle is pushed into the rock by manually applying a maxi-         lated to the NPI. For example, a strong correlation between
+mum load of 100 N. The quotient of the applied load and the         the NPI and the uniaxial compressive strength of intact rock
+attained needle penetration depth (in N mm−1 ) corresponds          was proven (e.g., Aydan, 2012; Uchida et al., 2004). Estab-
+to the NPI (Aydan et al., 2014; Ulusay et al., 2014). Nee-          lished empirical equations were used in this study to esti-
+dle penetrometer tests were carried out at different measure-       mate uniaxial compressive strength (UCS), Brazilian tensile
+ment points on the rock surfaces in the EZ-B niche. If mi-          strength (BTS), Young’s modulus (E), elastic P-wave (vP )
+crocrack formation around the needle hole or tensile split-         and S-wave velocity (vS ), cohesion (c), and friction angle
+ting along bedding planes was observed, the measured value          (ϕ) (Table 2). In order to enable a direct comparison of the
+was excluded from the dataset. For a detailed description of        estimated parameters with existing literature data, the water
+the working principle and testing procedure we refer to the         content of the Opalinus Clay was additionally determined by
+
+
+https://doi.org/10.5194/se-12-1581-2021                                                        Solid Earth, 12, 1581–1600, 2021
+1586                                                              S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+Table 1. Equations for estimating the hydraulic fracture aperture based on the mean mechanical fracture aperture and the standard deviation
+of measured distance values along a fracture trace.
+
+                                 Reference                           Equation
+                                                                                     −1.5
+                                                                                  σ
+                                 Kling et al. (2017)                 ah ≈ am 1 + aamm                          (1)
+                                                                             r                  
+                                                                                            σ
+                                 Rasouli and Hosseinian (2011)       ah ≈ am 3 abs 1 − 2.25 aamm               (2)
+
+                                 Barton and de Quadros (1997)        ah ≈ am r           1                     (3)
+                                                                                              1.5
+                                                                               3           σ
+                                                                                   1+20.5 2aam
+                                                                                             m
+                                                                            r              
+                                                                                       σ
+                                 Xiong et al. (2011)                 ah ≈ am 3 abs 1 − aamm                    (4)
+
+                                 Renshaw (1995)                      ah ≈ (a¯m )Geom                           (5)
+                                                                          s
+                                 Matsuki et al. (1999)               ah ≈ 3 1 −              1.13              (6)
+                                                                                                      1.93
+                                                                                                 2am
+                                                                                    1+0.191      σam
+
+
+                                 Renshaw (1995)                      ah ≈ am s        1                       (7)
+                                                                                             1.5
+                                                                               3       σ2
+                                                                                    1+ a2m
+                                                                                        am
+
+
+                                 Amadei and Illangasekare (1994)     ah ≈ am r           1                     (8)
+                                                                                             −1.2
+                                                                               3
+                                                                                   1+0.6 σaam
+                                                                                             m
+
+
+
+
+oven drying according to DIN EN ISO 17892-1 (2015-03)                   aperture of 89 ± 18 µm (n = 31). The hydraulic fracture aper-
+using two representative rock specimens from the walls of               ture of bedding-parallel cracks was highest (94 ± 8 µm), al-
+the EZ-B niche, which were sampled at the time of the on-               though the obtained average value cannot be considered rep-
+site measurements.                                                      resentative due to a small number of measurements (n = 3).
+                                                                        On the right side wall of the EZ-B niche, most of the sam-
+                                                                        pling points were arranged near borehole BEZ-B1 (Fig. 3b)
+3     Results and discussion                                            due to good accessibility and beneficial surface conditions.
+                                                                        Based on the measured aperture values, no indication of a
+3.1     Hydraulic and mechanical fracture properties                    “borehole damaged zone” (Amann et al., 2017) is observ-
+                                                                        able, which is related to the fact that borehole BEZ-B1 is
+3.1.1    Measured hydraulic fracture aperture                           oriented perpendicular to the strike of the bedding.
+                                                                           The on-site aperture measurements in the EDZ clearly
+The hydraulic aperture ah of artificially induced unloading             show that about 15 years after excavation, hydraulically open
+joints, reactivated fault planes, and bedding-parallel desicca-         fractures and therefore accessible fluid pathways are still
+tion or unloading cracks of the EDZ in the EZ-B niche of                present in the EZ-B niche. In the Opalinus Clay, fractures
+the Mont Terri URL was determined at 43 measuring points                are successively closed by self-sealing processes, which lead
+on both side walls using the handheld transient-flow air per-           to a significant permeability reduction in the EDZ, finally
+meameter (Fig. 3a). The mean hydraulic fracture aperture in             approaching the hydraulic conditions of undeformed rock
+the EZ-B niche was 84 ± 23 µm, with values in the range of              again (Bernier et al., 2007; Jaeggi and Bossart, 2014; Nagra,
+around 100 µm occurring most frequently (Fig. 3b). On aver-             2002). However, this only applies for saturated conditions
+age, artificially induced unloading fractures (hereinafter re-          after backfilling and sealing, when progressive re-saturation
+ferred to as EDZ fractures), mainly oriented sub-parallel to            of the host rock around the underground facility is initiated
+the axis of Gallery 04, showed the smallest hydraulic aper-             (Bossart et al., 2017; Marschall et al., 2017). Under open
+tures of 61 ± 30 µm (n = 9) compared to reactivated fault and           conditions the EDZ is an unsaturated zone, as shown, for
+bedding planes. They were also characterized by the largest             example, by Ziefle et al. (2017). Since 2006, the temporal
+range of measured aperture values from 20 to 100 µm, which              evolution of the EDZ in the EZ-B niche was assessed by
+is also evident from the high standard deviation.                       jointmeter time series obtained from a single tectonic frac-
+   Reactivated tectonic discontinuities, namely fault planes            ture. Based on this dataset, a cyclic long-term closure of the
+and splays of the SSE-dipping thrust system (hereinafter re-
+ferred to as tectonic fractures), showed an average hydraulic
+
+
+Solid Earth, 12, 1581–1600, 2021                                                                    https://doi.org/10.5194/se-12-1581-2021
+S. Hale et al.: Mechanical and hydraulic properties of an EDZ                                                                             1587
+
+
+
+
+Figure 3. (a) Structural maps of the EZ-B niche with measurement points for hydraulic and mechanical aperture determination on the left
+(closed symbols) and right side wall (open symbols), modified after Nussbaum et al. (2005). (b) Hydraulic fracture apertures measured by
+the air permeameter plotted against the distance to Gallery 04. On the right side, the distribution of ah is visualized by a probability density
+function obtained by kernel density estimation (KDE).
+
+
+monitored fracture was demonstrated (Ziefle et al., 2017), but            stones leads to a significantly enhanced creep and swelling
+this is probably primarily due to niche convergence.                      capacity (Yurikov et al., 2019; Zhang et al., 2007). In the
+   For shales or argillaceous rocks, changes in the saturation            case of the non-lined EZ-B niche in Mont Terri, self-sealing
+state are directly linked to structural modifications (Valès et           is inhibited due to a sharp decrease in water content of the
+al., 2004; Yurikov et al., 2019). In the highly saturated state,          rock mass close to the niche caused by sustained ventilation
+a large portion of the pore water is adsorbed onto the clay               since tunnel excavation. This observation is of particular im-
+mineral surfaces, while for high external suction, i.e., desatu-          portance for the second phase in repository development, the
+ration, it is extracted from the rock through the pore network            open drift stage, where ventilation-induced damage and de-
+(Zhang et al., 2007). Dehydration of claystone leads to a de-             hydration in the tunnel systems are also expected (Tsang et
+crease in total porosity (Yurikov et al., 2019) and induces a             al., 2005). The presented results therefore serve as a valuable
+reduction of pore and swelling pressure, which in turn im-                analog and provide information on the state of the EDZ in a
+pedes self-sealing processes (Tsang et al., 2005; Zhang et                non-lined niche in indurated clay after prolonged exposure.
+al., 2007). In addition, secondary shrinking-induced tension                 With increasing distance to Gallery 04, a general decrease
+fractures can develop parallel to bedding with progressive                in hydraulic fracture aperture ah was expected. When leav-
+dehydration (Delage, 2014). In contrast, hydration of clay-               ing the EDZ, the degree of damage or disturbance gener-
+
+
+
+https://doi.org/10.5194/se-12-1581-2021                                                                 Solid Earth, 12, 1581–1600, 2021
+1588                                                                            S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+Table 2. Equations for the estimation of physico-mechanical rock parameters using the needle penetration index (NPI), taken from Ulusay
+and Erguler (2012), Ulusay et al. (2014), and Aydan et al. (2014). The relations are based on compiled experimental data obtained from
+various lithologies.
+
+                   Parameter                                             Equation                                 Reference
+                   Uniaxial compressive strength (MPa)                   UCS ≈ 0.418 · NPI − 0.004                Uchida et al. (2004)a
+                                                                         UCS ≈ 0.2 · NPI                          Aydan (2012)b
+                                                                         UCS ≈ 0.402 · NPI0.929                   Ulusay and Erguler (2012)c
+                   Brazilian tensile strength (MPa)                      BTS ≈ 0.02 · NPI                         Aydan et al. (2014)b
+                   Young’s modulus (GPa)                                 E ≈ 0.05 · NPI                           Aydan et al. (2014)b
+                   Cohesion (MPa)                                        c ≈ 0.04 · NPI                           Aydan et al. (2014)b
+                   Friction angle (◦ )                                   ϕ ≈ 13.375 · NPI0.25                     Aydan et al. (2014)b
+                   P-wave velocity (km s−1 )                             vP ≈ 0.33 + 0.3 · NPI0.5                 Aydan et al. (2014)b
+                   S-wave velocity (km s−1 )                             vS ≈ 0.1 + 0.18 · NPI0.5                 Aydan et al. (2014)b
+                 a Clay. b Mudstone, sandstone, siltstone, marl, lignite, tuff, soapstone, pumice, soft limestone, sheared shale. c Marl, siltstone,
+                 mudstone, tuff. In Ulusay and Erguler (2012), the term needle penetration resistance (NPR) is used instead of NPI.
+
+
+
+ally decreases as deconfinement, displacement and deviatoric                             single fracture was subject to annual aperture fluctuations of
+stresses within the rock mass are highest directly next to the                           up to 500 µm due to seasonal fluctuations of relative humid-
+cavity (Lisjak et al., 2016; Yong et al., 2010). Based on the re-                        ity (RH) (Ziefle et al., 2017). However, over the long period
+sults of the air permeameter measurements, however, a weak                               since the niche was completed in 2005, the observed trend
+positive correlation between ah and the horizontal distance                              of cyclic aperture closure has decreased substantially, and
+could be observed (correlation coefficient r = 0.43). A de-                              seasonal fluctuations of fracture aperture are by now far less
+crease in hydraulic aperture with greater distance to Gallery                            pronounced. In the EZ-B niche, relative humidity is highest
+04 could not be observed, since the fractures in the EZ-B                                between July and October (RH = 100 %), while the lowest
+niche originate from two different excavations. Due to the                               values are usually recorded in February (RH ≈ 60 %). Since
+applied excavation technique and favorable orientation of the                            the measurement campaign for the present study was carried
+niche (Sect. 2.1), the EDZ of the EZ-B niche is less pro-                                out in April, it can be assumed that the obtained hydraulic
+nounced compared to the EDZ around Gallery 04. However,                                  and mechanical aperture values roughly represent an annual
+two EDZs, i.e., two fracture systems, are superposed. Hy-                                average state of the continuously changing fracture system.
+draulic apertures in the immediate vicinity of Gallery 04 are                               For the Opalinus Clay in the Mont Terri URL, no direct in-
+comparatively small (Fig. 3b). Presumably, this is caused by                             formation on hydraulic fracture apertures is available, which
+shotcrete application to the exposed claystone surface asso-                             further illustrates the difficulty of conducting practicable and
+ciated with increased water availability, leading to partial re-                         accurate ah measurements in the field. In order to compare
+saturation of the rock. This water supply most likely pro-                               the measured values with literature values in terms of plausi-
+moted swelling of clay minerals and fracture closure to a                                bility, fracture transmissivities (Tf ) obtained from extensive
+certain degree, resulting in a general reduction of hydraulic                            hydraulic testing in the Mont Terri URL were utilized (Ta-
+apertures in the entrance area of the EZ-B niche.                                        ble 3). Based on the cubic law, an equivalent hydraulic frac-
+   Due to the limited measuring range of the air permeameter,                            ture aperture (ah,eq ) can be calculated from Tf using the rela-
+hydraulic apertures of widely opened fractures (ah > 2 mm)                               tion (Brown, 1987)
+could not be quantified. Thus, the mean ah of open frac-                                          s
+tures in the EZ-B niche was rather underestimated with this                                             12 · µW
+                                                                                         ah,eq = 3 Tf ·          ,                                     (9)
+method. It is also noticeable that for 49 % of the measure-                                              ρW · g
+ment points, the first measured value was smallest. This can
+be explained by dust or loose material inside the fracture,                              where µW is the kinematic viscosity of water, ρW is the den-
+which was removed by the first stroke with the air perme-                                sity of water and g is the gravitational acceleration. It should
+ameter. As outlined above and supported by continuously                                  be noted that hydraulic tests are generally used to character-
+recorded jointmeter data from the EZ-B niche, the satura-                                ize certain borehole intervals. Transmissivity values that are
+tion state of the Opalinus Clay has a major influence on mea-                            derived from these tests therefore relate to a certain rock vol-
+sured fracture apertures. From 2015 to 2019, the investigated                            ume, while the number of hydraulically active fractures inter-
+                                                                                         secting the test interval is usually unknown (Gustafson and
+
+
+Solid Earth, 12, 1581–1600, 2021                                                                                    https://doi.org/10.5194/se-12-1581-2021
+S. Hale et al.: Mechanical and hydraulic properties of an EDZ                                                                   1589
+
+                                                                     Bossart et al. (2004) mention unloading fractures with me-
+                                                                     chanical apertures of up to 1 cm. However, as the specified
+                                                                     measurement range of the air permeameter is limited to hy-
+                                                                     draulic apertures of 2 mm, such widely opened fractures were
+                                                                     not investigated in this study.
+                                                                        The newly implemented analysis algorithm for micro-
+                                                                     scopic images (Fig. 2) provided similar results compared to
+                                                                     the manual approach used in Hale et al. (2020b) (correla-
+                                                                     tion coefficient r = 0.93). Thus, automatic image analysis
+                                                                     is highly recommended. In addition to significant time sav-
+                                                                     ings, more representative results for am and σam of the im-
+                                                                     aged fracture trace segment can be obtained due to the large
+                                                                     number of distance measurements. For images that could not
+Figure 4. Comparison of measured mechanical and hydraulic frac-
+                                                                     be evaluated automatically, manual analysis was employed.
+ture apertures in the EZ-B niche with probability density function
+                                                                     This particularly applied to images that were not sufficiently
+for am . Two outliers with mechanical apertures of 789 and 833 µm
+are not shown for better visibility.                                 focused and fissures with very small mechanical apertures. In
+                                                                     these cases, the void area could not be properly distinguished
+                                                                     from the rock, thus hampering the selection of an appropriate
+Fransson, 2006). In this case, fracture densities must be con-       threshold value for automatic analysis.
+sidered for calculating equivalent hydraulic apertures. How-
+ever, some studies also provide single-fracture transmissivi-        3.1.3   Estimated hydraulic fracture aperture
+ties, which could therefore directly be converted to ah,eq us-
+ing Eq. (9) for direct comparison with ah measured by the air        Based on the mean mechanical aperture (am ) and the corre-
+permeameter (Table 3).                                               sponding standard deviation (σam ), which provides a statisti-
+   Although slightly larger, the hydraulic fracture apertures        cal measure for fracture surface roughness, hydraulic aper-
+measured by the air permeameter are of the same order of             tures were estimated using established empirical relations
+magnitude compared to equivalent hydraulic apertures that            (Eqs. 1 to 8, Table 1). For eight different equations, the
+were derived from single-fracture transmissivity testing (Ta-        results are shown in Fig. 5. With regard to the mean hy-
+ble 3). Due to the previously outlined processes related to the      draulic fracture aperture, the full dataset of the discrete frac-
+successive dehydration of the claystone, hydraulic apertures         ture network (DFN) in the EZ-B niche was best reproduced
+in the EZ-B niche were expected to differ slightly from the          by Eq. (1) (Kling et al., 2017), which is therefore recom-
+literature values due to the elongated exposure time. Never-         mended for future studies. The median of this dataset was
+theless, the measured values are plausible and clearly show          also in excellent agreement with the measured data (Fig. 5).
+that the air permeameter is suitable for the measurement of          However, there were generally large deviations between the
+hydraulic fracture apertures within the EDZ of the Opalinus          measured and estimated mean ah . With regard to the fre-
+Clay.                                                                quency distribution of data points, Eqs. (6) to (8) performed
+                                                                     better because am is reduced to a lesser extent. Similar to
+3.1.2   Measured mechanical fracture aperture                        the dataset of the TinyPerm 3 (air permeameter), most values
+                                                                     were clustered around 100 µm. However, few very high val-
+For the same set of fractures, the mechanical fracture aper-         ues led to a significant overestimation of the arithmetic mean
+ture am was determined based on microscope camera im-                (216–221 µm). In order to provide a representative measure
+ages. For seven measurement points the mechanical aper-              of the central tendency of the estimated hydraulic aperture for
+ture could not be evaluated due to poor quality of the mi-           a given fracture set or DFN, the use of the median is highly
+croscopic images. The measured mechanical fracture aper-             recommended. For EDZ fractures in particular, ah was best
+tures in the EZ-B niche showed a widespread range between            estimated by Eq. (2) (Rasouli and Hosseinian, 2011).
+19 and 833 µm, while most values were clustered around                  Higher deviations between estimated and measured hy-
+115 µm (Fig. 4). Artificial EDZ fractures showed the low-            draulic apertures were observed for fractures with either very
+est values among the studied fracture types (127 ± 92 µm),           low or very high mechanical apertures in relation to the mea-
+whereas the mean mechanical aperture in the EZ-B niche was           sured value range. This was confirmed by a strong correlation
+233 ± 205 µm. Again, no distinct trend with increasing dis-          between am and the resulting deviation between estimated
+tance to Gallery 04 could be observed. For the vast majority         and measured ah values; for example, for Eq. (1) the cor-
+of sampled fractures, am was greater than or equal to ah as          relation coefficient was 0.96. It was noticeable that for EDZ
+expected (Fig. 4). As is the case for hydraulic apertures, al-       fractures far higher agreement of estimated and measured hy-
+most no information on mechanical fracture apertures within          draulic apertures could be observed in comparison to tectonic
+the EDZ of the Opalinus Clay was available for comparison.           fractures, independently of the relation that was used for con-
+
+
+https://doi.org/10.5194/se-12-1581-2021                                                         Solid Earth, 12, 1581–1600, 2021
+1590                                                                                  S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+Table 3. Comparison of measured hydraulic fracture aperture (this study) and equivalent hydraulic aperture values derived from reported
+single-fracture transmissivities from the Opalinus Clay in the Mont Terri URL.
+
+   Reference                        Description                                                             Fracture transmissivity     Equivalent hydraulic
+                                                                                                                                        aperture
+   Martin et al. (2004)             Transmissivity from high-resolution probe testing                       Tf = 1.0 × 10−14 –          < 1 − 11 µma
+                                    in four boreholes (EDZ + undisturbed rock)                              1.0 × 10−9 m2 s−1
+   Meier et al. (2000)              Single-fracture transmissivity from long-term                           Tf = 2.0 × 10−8 m2 s−1      29 µm
+                                    hydraulic testing (EDZ)
+   Bossart et al. (2004)            Single-fracture transmissivity from hydraulic                           Tf = 1.9 × 10−8 –           29–37 µm
+                                    cross-hole testing (EDZ)                                                4.0 × 10−8 m2 s−1
+   Blümling et al. (2007)           Reported maximum local fracture transmissivity                          Tf = 5.0 × 10−7 m2 s−1      85 µm
+                                    (EDZ)
+   This study                       Air permeameter (EDZ)                                                   –                           20–112 µm
+ a Assumption of a single hydraulically dominant fracture (short test intervals, typically 5 cm).
+
+
+
+
+Figure 5. Comparison of hydraulic fracture apertures measured by the air permeameter (TinyPerm 3) and estimated based on mean mechan-
+ical fracture apertures and standard deviations from microscopic fracture trace analysis. For each dataset, the arithmetic mean (bold black
+line), the median (thin purple line) and the probability density function (obtained by kernel density estimation) are shown. Values above
+550 µm are excluded from the graph.
+
+
+version. This is most likely related to smaller mechanical                                    In contrast, for tectonic fractures (reactivated fault planes), an
+apertures. While EDZ fractures seem to better correspond to                                   average σam of 90 µm and an am /ah ratio of 2.4 were deter-
+the general model concept of an “ideal plane-parallel frac-                                   mined in the EZ-B niche. However, the higher mean standard
+ture”, tectonic fractures are most probably characterized by                                  deviation for the measured aperture values along the frac-
+a different am –ah relation. While implied by the presented                                   ture segment obtained for tectonic fractures is not necessar-
+measurement data, this issue should still be examined based                                   ily caused by a higher roughness of the fault surfaces them-
+on larger datasets.                                                                           selves. Namely, observations in the Mont Terri URL showed
+    Despite the good performance of the microscope camera                                     that fault surfaces are generally polished with slickensides,
+method for EDZ fracture analysis, direct measurement of ah                                    while EDZ fracture surfaces often show plumose structures
+with the air permeameter is always preferable. Nevertheless,                                  (Nussbaum et al., 2005, 2011; Yong, 2007). On the other
+the data derived from microscopic imaging can provide ex-                                     hand, since EDZ fractures originate from tensile stresses,
+plicit information on fracture geometry and formation mech-                                   these fracture surfaces also show a high degree of match-
+anism. Presumably due to their formation mechanism, EDZ                                       ing. This directly leads to a comparatively small standard de-
+fractures (artificial unloading joints) showed comparatively                                  viation of measured aperture values along an imaged EDZ
+little variation in aperture along the fracture traces, resulting                             fracture segment. Fault planes in the EZ-B niche were re-
+in a rather low mean standard deviation σam of 58 µm. For                                     activated by stress redistribution during excavation and sub-
+EDZ fractures, am was on average 1.7 times larger than ah .                                   sequent convergence, which is why the investigated tectonic
+
+
+Solid Earth, 12, 1581–1600, 2021                                                                                  https://doi.org/10.5194/se-12-1581-2021
+S. Hale et al.: Mechanical and hydraulic properties of an EDZ                                                               1591
+
+fractures even show measurable apertures. Due to shear load-      ferent locations in the Mont Terri URL (Blum et al., 2013),
+ing, relative displacement led to a higher mismatch of the two    exactly reproduce the trend that is evident from the available
+fracture surfaces. For the tectonic fractures, the higher mean    literature data. The estimated UCS values in Fig. 6a and b
+standard deviation σam that was observed by microscopic im-       were obtained by using different empirical equations, lead-
+age analysis therefore primarily reflects the increased vari-     ing to a comparatively high standard deviation. The individ-
+ance of measured distances due to mismatched fracture walls       ual results for each empirical equation are listed in Table 4.
+rather than the actual fracture surface roughness.                As needle penetration testing is widely used for estimating
+                                                                  the UCS of rocks (Ulusay et al., 2014), several functions are
+3.2   Geomechanical and geophysical properties                    available which have been deduced from various rock types
+                                                                  (Table 2). For the Opalinus Clay, the applied combination of
+Needle penetration testing (NPT) was performed at 47 sam-         different established equations has proven to be suitable.
+pling points on both side walls of the EZ-B niche, includ-           The Brazilian tensile strength (BTS) of the Opalinus Clay
+ing 18 tests normal to bedding and 29 tests parallel to bed-      normal to bedding could also be estimated by the needle
+ding. The measured needle penetration index (NPI) clearly         penetration tests. The mean value of 2 MPa that was ob-
+confirmed the significant strength anisotropy of the Opal-        tained from the on-site measurements in the EZ-B niche is
+inus Clay (Jaeggi and Bossart, 2014). Normal to bedding,          located approximately in the center of the literature value
+strength was significantly higher than parallel to bedding, in-   range for a comparable water content (Fig. 6c). Apparently,
+dicated by an NPI of 98 ± 29 and 59 ± 19 N mm−1 , respec-         the literature data for the shaly facies are divided into two
+tively. For all measurements a constant load of 100 N was         subgroups. Lower BTS values normal to bedding are most
+selected. Thus, the NPI only depended on the observed nee-        likely related to pre-damaged sample material, i.e., desicca-
+dle penetration depth. Measurements normal to bedding re-         tion cracks, which preferentially form parallel to the bed-
+sulted in several invalid tests due to formation of microcracks   ding features in the drill core and therefore reduce the tensile
+around the needle hole. In this case, the measured value was      strength of the tested sample perpendicular to bedding. Par-
+discarded (Sect. 2.4). The results of the parameter estimation    allel to bedding, the estimated BTS deviates by about 2 MPa
+based on the measured NPI are listed in Table 4.                  from the available literature data and is therefore underesti-
+   Figure 6 provides a graphical overview and enables com-        mated (Fig. 6d).
+parison with available literature data to assess the quality         Similar to UCS, the Young’s modulus E is increasing
+of the applied in situ parameter estimation. As discussed in      monotonically with declining water content as evident from
+Sect. 1, geomechanical and geophysical parameters in the          both literature data and the NPT dataset of Blum et al. (2013).
+EZ-B niche are significantly affected by the desaturation of      For water contents below 5.7 wt %, no literature data are
+the rock. Compared to the natural water content of the shaly      available for the shaly facies normal to bedding. As the de-
+facies of about 6.6 wt % (Bossart and Thury, 2008), the wa-       rived Young’s modulus of 4.9 GPa normal to bedding for a
+ter content of the Opalinus Clay in the EZ-B niche has de-        water content of 3.7 wt % was significantly higher than the
+creased drastically to 3.7 wt % due to direct air contact and     available literature values for natural water contents (maxi-
+long-time ventilation of the URL (Jaeggi and Bossart, 2014;       mum of 2.4 GPa), the estimation was assumed to be appli-
+Ziefle et al., 2017). Since samples for water content determi-    cable for the Opalinus Clay (Fig. 6e). With a mean value
+nation were taken directly from the rock surface at the walls     of 3 GPa, E was largely underestimated parallel to bedding
+of the EZ-B niche, this value represents the state of the Opal-   compared to the available literature data ranging between
+inus Clay after 15 years of direct atmospheric exposure. The      13 and 31 GPa for similar water contents (Fig. 6f). This is
+NPI, and therefore estimated geomechanical and geophysical        most probably due to the fact that rather well-preserved drill
+parameters, are not influenced by the distance to Gallery 04.     core specimens are compared to the long-exposed and highly
+   Based on the needle penetrometer data obtained in the EZ-      damaged rock surface of a niche.
+B niche, the estimated uniaxial compressive strength (UCS)           The elastic P-wave velocity (vP ) is slightly overestimated
+was 29.7 MPa for a water content of 3.7 wt % normal to bed-       normal to bedding (Fig. 6g). Similar to Fig. 6c, two sub-
+ding (Fig. 6a). For water contents below 4.5 wt % , no liter-     datasets can be identified within the literature data. Here,
+ature data on UCS are available for the shaly facies of the       pre-damage of the core sample material or an insufficient
+Opalinus Clay. Due to the fact that UCS is increasing lin-        coupling of the ultrasonic source was most likely responsible
+early with decreasing water content (Wild et al., 2015), the      for these reduced P-wave velocities, which are therefore not
+estimated mean value can be considered reasonable and com-        representative for the intact rock body (Jaeggi and Bossart,
+plements the literature dataset in Fig. 6a. The additional NPT    2014). According to Jaeggi and Bossart (2014), the core sam-
+dataset of Blum et al. (2013) also confirms the negative lin-     ples belonging to the lower sub-dataset of literature values in
+ear correlation of UCS and water content. Parallel to bedding,    Fig. 6g were partially penetrated by microcracks. The esti-
+the estimated UCS of 18.2 MPa is consistent with literature       mated vP data seem to represent the upper subset of the lit-
+data on the shaly facies for a similar water content (Fig. 6b).   erature data. Since the needle penetrometer only samples a
+The two NPT datasets, acquired from the EZ-B niche and dif-       small area on the rock surface, the NPT is able to reflect the
+
+
+https://doi.org/10.5194/se-12-1581-2021                                                      Solid Earth, 12, 1581–1600, 2021
+1592                                                              S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+
+
+
+Figure 6. Comparison of estimated geomechanical and geophysical parameters of the Opalinus Clay in the EZ-B niche of the Mont Terri
+URL (black symbols, this study) with literature data for the shaly facies normal (a–g) and parallel (b–i) to bedding. In addition, a second
+NPT dataset of Blum et al. (2013) from various locations in the URL (shaly facies) is shown (gray symbols). Literature data (green and blue
+symbols) originate from other niches in the Mont Terri URL and are mainly adapted after Jaeggi and Bossart (2014) and references herein
+(the full list of source documents is provided in Appendix A).
+
+
+actual in situ conditions. Parallel to bedding, vP is slightly un-         For the elastic S-wave velocity vS of the Opalinus Clay, a
+derestimated but fairly represents the data range of the shaly          mean value of 1.9 km s−1 was estimated normal to bedding.
+facies (Fig. 6h). The observed trend of a slight P-wave veloc-          Due to strong absorption and attenuation of wave energy and
+ity increase with decreasing water content of the Opalinus              insufficient signal retrieval during ultrasonic velocity mea-
+Clay normal and parallel to bedding is also well represented            surement (Gräsle and Plischke, 2010; Schnier and Stühren-
+by the datasets obtained from needle penetration testing.               berg, 2007), few literature data are available. For the shaly
+
+
+Solid Earth, 12, 1581–1600, 2021                                                            https://doi.org/10.5194/se-12-1581-2021
+S. Hale et al.: Mechanical and hydraulic properties of an EDZ                                                                 1593
+
+facies of the Opalinus Clay, Bock (2009) reports vS values        dle penetrometer, physico-mechanical parameter estimation
+of 1.51 km s−1 for a natural water content of 6.4 wt %. Wile-     based on needle penetration testing can be recommended for
+veau (2005) provides S-wave velocities of 1.45–1.58 km s−1        indurated clays, especially for determining the anisotropic
+for water contents varying between 2.4 and 2.9 wt %. Hence,       uniaxial compressive strength.
+normal to bedding vS is most likely overestimated by the
+NPT. Parallel to bedding, a value of 1.5 km s−1 was deter-
+mined. In comparison to existing literature data, vS is un-       4   Conclusions
+derestimated in this direction (Fig. 6i). As ultrasonic veloc-
+ity is explicitly dependent on the internal structure of the      An excavation damaged zone (EDZ) in the Opalinus Clay
+rock, such as cementation, anisotropy and porosity structure      of the Mont Terri rock laboratory, Switzerland, was char-
+(Jaeggi and Bossart, 2014; Schuster et al., 2017), it can be      acterized with regard to hydraulic and mechanical proper-
+assumed that the relationship of ultrasonic velocity and NPI      ties using three different methodological on-site approaches:
+is probably rather weak.                                          (1) air permeameter, (2) microscope camera and (3) needle
+   For the cohesion c and the friction angle ϕ, reliability of    penetration test. About 15 years after excavation, artificially
+the estimated values (Table 4) could not be assessed due to       induced unloading joints (EDZ fractures), reactivated fault
+limited literature data, especially for samples with low water    planes (tectonic fractures) and bedding-parallel desiccation
+contents. In Bock (2009), mean values for the cohesion (3.7       cracks with a mean mechanical aperture of 233 µm and a
+and 5.4 MPa) and friction angle (22 and 23◦ ) of the Opali-       mean hydraulic aperture of 84 µm were observed in the EZ-B
+nus Clay for an average water content of 6.7 wt % are given       niche, serving as potential flow paths for advective transport
+normal and parallel to bedding, respectively. In contrast, Lis-   in the indurated clay formation. This is not only limited to
+jak et al. (2015) used a cohesion of 24.8 MPa (normal) and        the area of the strongly pronounced EDZ around Gallery 04,
+2.4 MPa (parallel) as an input parameter for their calibrated     where a dense network of interconnected fractures is encoun-
+finite–discrete-element model. The implemented friction an-       tered, but also applies to potentially reactivated tectonic dis-
+gle of 22◦ complies with Bock (2009), but no information on       continuities at greater distances, e.g., due to large-scale stress
+the assumed water content is included. Cohesion values of         redistribution or injection of fluids. After an initial continu-
+3.9 MPa (normal) and 2.4 MPa (parallel) derived from needle       ous aperture closure observed by long-term jointmeter data
+penetrometer measurements in the EZ-B niche were of the           records in the non-lined niche, which can be attributed to
+same order of magnitude as the data given by Bock (2009).         seasonally controlled shrinkage and swelling cycles in com-
+However, the estimated friction angles of 42 and 37◦ nor-         bination with niche convergence, this process seems to be
+mal and parallel to bedding, respectively, were significantly     decelerating significantly after 15 years of monitoring. Lo-
+higher in comparison to the literature data.                      cally, fractures are influenced by shotcrete application, lead-
+   Generally, the applied empirical functions performed bet-      ing to reduced hydraulic and mechanical apertures due to en-
+ter normal to bedding. The poor estimation of parameters          hanced water availability and swelling of clay minerals in the
+parallel to bedding (apart from UCS) may be linked to un-         immediate vicinity. Among the studied discontinuity types,
+perceived (possibly micro-scale) shrinking or desiccation         the EDZ fractures showed the smallest hydraulic apertures.
+cracks, which preferentially form parallel to the bedding fea-    However, as 60 % of all measured values were within the
+tures (e.g., Amann et al., 2017; Schnier and Stührenberg,         range of 80–120 µm, a clear distinction was not possible.
+2007). Microcracks would facilitate needle penetration, thus         From direct measurement with the portable transient-flow
+reducing the measured NPI and estimated parameter values.         air permeameter, plausible hydraulic aperture data could be
+It should also be noted that the existing empirical relations     acquired on-site, even if the entire range of fractures in the
+for estimating physico-mechanical parameters do not specif-       EZ-B niche could not be reproduced due to a limited mea-
+ically apply to claystones or shales, but were derived based      suring range. This means that the permeameter measure-
+on compiled experimental data obtained for various types of       ments tend to overrepresent smaller fractures. Here, indi-
+soft rocks (Aydan et al., 2014). In addition to the factors       rect determination of hydraulic fracture apertures based on
+mentioned above, sedimentary heterogeneity might also be          the automatic evaluation of high-resolution microscope cam-
+responsible for geomechanical variability as well as the ob-      era images of fracture traces offers a practical alternative.
+served deviations between the NPI-based values and the con-       Due to the smaller mean mechanical aperture of the artifi-
+sidered literature data. However, heterogeneity of the shaly      cially induced unloading fractures compared to the investi-
+facies of the Opalinus Clay in Mont Terri is comparatively        gated tectonic fractures, conversion was most appropriate for
+low (Jaeggi and Bossart, 2014). More likely, the observed         the EDZ fractures. Tectonic fractures on average exhibit a
+deviations are due to variant surface constitution caused by      higher variance of measured distances along imaged fracture
+the hugely varying exposure time of the rock walls in the         traces, which can be explained by a higher degree of mis-
+non-lined EZ-B niche in contrast to sampled specimens from        match between the fracture surfaces due to the reactivation
+drill cores. Although the measurements were conducted at          of fault planes during excavation. However, the statistical
+the upper end of the specified application range of the nee-      significance of the observed differences between the differ-
+
+
+https://doi.org/10.5194/se-12-1581-2021                                                       Solid Earth, 12, 1581–1600, 2021
+1594                                                            S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+Table 4. Estimated geomechanical and geophysical parameters for the Opalinus Clay in the EZ-B niche normal and parallel to bedding based
+on the needle penetration index.
+
+                        Parameter        Normal to bedding    Parallel to bedding   Reference
+                        NPI              98 ± 29 N mm−1       59 ± 19 N mm−1
+                                         (n = 18)             (n = 29)
+                        Water content    3.7 wt %
+                        UCS              29.7 ± 12.5 MPa      18.2 ± 8.0 MPa        all UCS equations (average)
+                                         41.0 ± 12.2 MPa      24.8 ± 8.1 MPa        Uchida et al. (2004)
+                                         19.6 ± 5.8 MPa       11.9 ± 3.9 MPa        Aydan (2012)
+                                         28.3 ± 7.7 MPa       17.7 ± 5.4 MPa        Ulusay and Erguler (2012)
+                        BTS              2.0 ± 0.6 MPa        1.2 ± 0.4 MPa         Aydan et al. (2014)
+                        E                4.9 ± 1.5 GPa        3.0 ± 1.0 GPa         Aydan et al. (2014)
+                        c                3.9 ± 1.2 MPa        2.4 ± 0.8 MPa         Aydan et al. (2014)
+                        ϕ                41.8 ± 2.7◦          36.8 ± 2.8◦           Aydan et al. (2014)
+                        vP               3.3 ± 0.4 km s−1     2.6 ± 0.4 km s−1      Aydan et al. (2014)
+                        vS               1.9 ± 0.2 km s−1     1.5 ± 0.2 km s−1      Aydan et al. (2014)
+
+
+
+ent fracture types would have to be tested based on a larger             The applied on-site measurement methodology and eval-
+dataset. For specifying the mechanical aperture of a fracture         uation approach are suitable for the hydraulic and mechan-
+network based on fracture trace micro-imaging, the median             ical characterization of excavation damaged or excavation
+of measured values is most representative.                            disturbed zones in different geological environments, espe-
+   The needle penetration test proved to be a valuable tool,          cially since drilling is not always feasible and the validity of
+especially for accurate estimation of the anisotropic uniax-          estimated parameters is limited to the investigated location.
+ial compressive strength, as the needle penetration index sat-        With comparatively little effort, nondestructive analysis of
+isfactorily reflects the in situ conditions of the intact rock        time- and location-dependent variability of important param-
+mass. For the shaly facies of the Opalinus Clay in the EZ-B           eters is permitted. Besides confirming the suitability of the
+niche, a mean uniaxial compressive strength of 30 MPa (nor-           methodological approach for flexibly determining hydraulic
+mal to bedding) and 18 MPa (parallel to bedding) was de-              and mechanical properties, the study assesses the state of
+termined. While parameter estimation based on needle pen-             an EDZ in a non-lined niche after long-term exposure and
+etration indices normal to bedding showed high agreement              therefore serves as an important guideline for diverse tunnel-
+with available literature data, physico-mechanical parameter          ing projects and future performance assessments of nuclear
+values were mostly underestimated in the bedding-parallel             waste disposal sites in argillaceous rocks.
+direction. Due to damage of the exposed rock surface asso-
+ciated with the formation of microcracks parallel to stratifi-
+cation, needle penetration was facilitated in this case. Due to
+direct air contact and ventilation of the rock laboratory, the
+desaturation of the claystone in the near field of the niche led
+to a sharp decrease in water content to 3.7 wt %, which is di-
+rectly linked to an increased uniaxial compressive strength,
+Young’s modulus and elastic P-wave velocity normal to bed-
+ding.
+
+
+
+
+Solid Earth, 12, 1581–1600, 2021                                                          https://doi.org/10.5194/se-12-1581-2021
+S. Hale et al.: Mechanical and hydraulic properties of an EDZ                                                                       1595
+
+Appendix A
+
+The literature data included in Fig. 6 (Sect. 3.2) were mainly
+taken from Jaeggi and Bossart (2014). This expert report of-
+fers a compilation of safety-related rock parameters deter-
+mined for the Opalinus Clay in the Mont Terri URL. All
+source documents for experimentally derived data on ge-
+omechanical and geophysical properties that were utilized
+in this study are listed in Table A1. Technical notes (TNs)
+and technical reports (TRs) for the Mont Terri Project are
+accessible via https://www.mont-terri.ch/en/documentation/
+technical-reports.html (last access: 5 July 2021).
+
+Table A1. Source documents for experimental data on uniaxial compressive strength (UCS), Brazilian tensile strength (BTS), Young’s
+modulus (E), and elastic P-wave (vP ) and S-wave velocity (vS ) of the Opalinus Clay (shaly facies) in Mont Terri.
+
+                                 Source document                                  UCS     BTS   E   vP   vS
+                                 Amann et al. (2011)                                  •         •   •
+                                 Amann et al. (2012)                                                •
+                                 Gräsle and Plischke (2010), TR                       •    •    •         •
+                                 Gräsle and Plischke (2011), TN                                     •
+                                 Jahns (2010), TN                                     •    •
+                                 Rummel and Weber (2004), TN                          •             •
+                                 Rummel and Weber (2007), TN                          •             •
+                                 Schnier and Stührenberg (2007), TR                   •                   •
+                                 Soe et al. (2009)                                                        •
+                                 Wild (2010)a                                              •
+                                 Wild et al. (2015)                                   •    •    •   •
+                                 Wileveau (2005), TR                                                •     •
+                                 Wymann (2013)a                                       •         •   •
+                                 Zimmer (2012)a                                            •        •
+                               a Unpublished final theses, ETH Zurich, Switzerland.
+
+
+
+
+https://doi.org/10.5194/se-12-1581-2021                                                                  Solid Earth, 12, 1581–1600, 2021
+1596                                                               S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+Code and data availability. All field data related to this paper and    Amann, F., Kaiser, P., and Button, E. A.: Experimental
+the MATLAB code for the evaluation of microscopic fracture                Study of Brittle Behavior of Clay Shale in Rapid Tri-
+trace images are available at https://doi.org/10.6084/m9.figshare.        axial Compression, Rock Mech. Rock Eng., 45, 21–33,
+12581144.v2 (Hale et al., 2020a).                                         https://doi.org/10.1007/s00603-011-0195-9, 2012.
+                                                                        Amann, F., Wild, K. M., Loew, S., Yong, S., Thoeny, R. and
+                                                                          Frank, E.: Geomechanical behaviour of Opalinus Clay at multi-
+Author contributions. SH, XR and PB carried out the measure-              ple scales: results from Mont Terri rock laboratory (Switzerland),
+ments in the Mont Terri URL. DJ handled the organization and im-          Swiss J. Geosci., 110, 151–171, https://doi.org/10.1007/s00015-
+plementation of the fieldwork. Formal analysis was done by SH and         016-0245-0, 2017.
+XR. PB supervised SH and XR and was responsible for funding ac-         Aoyagi, K. and Ishii, E.: A Method for Estimating the High-
+quisition. SH wrote the initial draft, and all authors (SH, XR, DJ        est Potential Hydraulic Conductivity in the Excavation Dam-
+and PB) discussed and interpreted the results and substantially con-      aged Zone in Mudstone, Rock Mech. Rock Eng., 52, 385–401,
+tributed to editing and reviewing the paper.                              https://doi.org/10.1007/s00603-018-1577-z, 2019.
+                                                                        Apted, M. J. and Ahn, J.: Multiple-barrier geological repository
+                                                                          design and operation strategies for safe disposal of radioac-
+Competing interests. The authors declare that they have no conflict       tive materials, in: Geological Repository Systems for Safe Dis-
+of interest.                                                              posal of Spent Nuclear Fuels and Radioactive Waste, edited
+                                                                          by: Ahn, J., and Apted, M. J., Woodhead Publishing, 3–28,
+                                                                          https://doi.org/10.1533/9781845699789.1.3, 2010.
+                                                                        Armand, G., Leveau, F., Nussbaum, C., de La Vaissiere, R.,
+Disclaimer. Publisher’s note: Copernicus Publications remains
+                                                                          Noiret, A., Jaeggi, D., Landrein, P., and Righini, C.: Geome-
+neutral with regard to jurisdictional claims in published maps and
+                                                                          try and Properties of the Excavation-Induced Fractures at the
+institutional affiliations.
+                                                                          Meuse/Haute-Marne URL Drifts, Rock Mech. Rock Eng., 47,
+                                                                          21–41, https://doi.org/10.1007/s00603-012-0339-6, 2014.
+                                                                        Aydan, Ö.: The inference of physico-mechanical properties of soft
+Acknowledgements. We thank swisstopo, the Federal Office of To-           rocks and the evaluation of the effect of water content and weath-
+pography in Switzerland, for enabling and supporting our fieldwork        ering on their mechanical properties from needle penetration
+at the Mont Terri rock laboratory and for providing valuable docu-        tests, in: 46th US Rock Mechanics/Geomechanics Symposium,
+mentation. This work was financially supported by the German Fed-         American Rock Mechanics Association, Chicago, Illinois, 2012.
+eral Ministry of Education and Research (BMBF) Geological Re-           Aydan, Ö., Sato, A., and Yagi, M.: The Inference of Geo-
+search for Sustainability (GEO:N) program within the framework            Mechanical Properties of Soft Rocks and their Degradation from
+of Research for Sustainable Development (FONA3). We acknowl-              Needle Penetration Tests, Rock Mech. Rock Eng., 47, 1867–
+edge support by the KIT-Publication Fund of the Karlsruhe Institute       1890, https://doi.org/10.1007/s00603-013-0477-5, 2014.
+of Technology.                                                          Aydin, A.: ISRM Suggested method for determination
+                                                                          of the Schmidt hammer rebound hardness: Revised
+                                                                          version, Int. J. Rock Mech. Min. Sci., 46, 627–634,
+Financial support. This research has been supported by the Bun-           https://doi.org/10.1016/j.ijrmms.2008.01.020, 2009.
+desministerium für Bildung und Forschung (grant no. 03G0871D).          Baechler, S., Lavanchy, J. M., Armand, G., and Cruchaudet,
+                                                                          M.: Characterisation of the hydraulic properties within the
+The article processing charges for this open-access                       EDZ around drifts at level −490 m of the Meuse/Haute-
+publication were covered by the Karlsruhe Institute                       Marne URL: A methodology for consistent interpretation of hy-
+of Technology (KIT).                                                      draulic tests, Phys. Chem. Earth Parts ABC, 36, 1922–1931,
+                                                                          https://doi.org/10.1016/j.pce.2011.10.005, 2011.
+                                                                        Barton, N.: Modelling rock joint behavior from in situ block tests:
+Review statement. This paper was edited by Virginia Toy and re-           implications for nuclear waste repository design, Office of Nu-
+viewed by Zeynal Abiddin Erguler and one anonymous referee.               clear Waste Isolation, Battelle Project Management Division,
+                                                                          Columbus, Ohio, 1982.
+                                                                        Barton, N. and de Quadros, E. F.: Joint aperture and rough-
+                                                                          ness in the prediction of flow and groutability of rock
+                                                                          masses, Int. J. Rock Mech. Min. Sci., 34, 252.e1–252.e14,
+References                                                                https://doi.org/10.1016/S1365-1609(97)00081-6, 1997.
+                                                                        Barton, N., Bandis, S., and Bakhtar, K.: Strength, deformation and
+Amadei, B. and Illangasekare, T.: A Mathematical Model for                conductivity coupling of rock joints, Int. J. Rock Mech. Min. Sci.
+ Flow and Solute Transport in Non-homogeneous Rock Fractures,             Geomech. Abstr., 22, 121–140, https://doi.org/10.1016/0148-
+ Int. J. Rock Mech. Min. Sci. Geomech. Abstr., 31, 719–731,               9062(85)93227-9, 1985.
+ https://doi.org/10.1016/0148-9062(94)90011-6, 1994.                    Bastiaens, W., Bernier, F., and Li, X. L.: SELFRAC: Experiments
+Amann, F., Button, E. A., Evans, K. F., Gischig, V. S., and Blümel,       and conclusions on fracturing, self-healing and self-sealing pro-
+ M.: Experimental Study of the Brittle Behavior of Clay shale             cesses in clays, Phys. Chem. Earth Parts ABC, 32, 600–615,
+ in Rapid Unconfined Compression, Rock Mech. Rock Eng., 44,               https://doi.org/10.1016/j.pce.2006.04.026, 2007.
+ 415–430, https://doi.org/10.1007/s00603-011-0156-3, 2011.
+
+
+Solid Earth, 12, 1581–1600, 2021                                                             https://doi.org/10.5194/se-12-1581-2021
+S. Hale et al.: Mechanical and hydraulic properties of an EDZ                                                                       1597
+
+Bernier, F., Li, X. L., Bastiaens, W., Ortiz, L., Van Geet, M.,       Bossart, P., Bernier, F., Birkholzer, J., Bruggeman, C., Connolly,
+  Wouters, L., Frieg, B., Blümling, P., Desrues, J., Viaggiani, G.,     P., Dewonck, S., Fukaya, M., Herfort, M., Jensen, M., Ma-
+  Coll, C., Chanchole, S., De Greef, V., Hamza, R., Malinsky,           tray, J.-M., Mayor, J. C., Moeri, A., Oyama, T., Schuster, K.,
+  L., Vervoort, A., Vanbrabant, Y., Debecker, B., Verstraelen, J.,      Shigeta, N., Vietor, T., and Wieczorek, K.: Mont Terri rock
+  Govaerts, A., Wevers, M., Labiouse, V., Escoffier, S., Mathier,       laboratory, 20 years of research: introduction, site characteris-
+  J.-F., Gastaldo, L., and Bühler, Ch.: SELFRAC: Fractures and          tics and overview of experiments, Swiss J. Geosci., 110, 3–22,
+  self-healing within the excavation disturbed zone in clays, Final     https://doi.org/10.1007/s00015-016-0236-1, 2017.
+  Technical Publishable Report EUR 22585, European Commis-            Brown, S. and Smith, M.: A transient-flow syringe air permeame-
+  sion, 2007.                                                           ter, Geophysics, 78, 307–313, https://doi.org/10.1190/geo2012-
+Birkholzer, J., Houseworth, J., and Tsang, C.-F.: Geologic Dis-         0534.1, 2013.
+  posal of High-Level Radioactive Waste: Status, Key Is-              Brown, S. R.: Fluid flow through rock joints: the effect of sur-
+  sues, and Trends, Annu. Rev. Environ. Resour., 37, 79–106,            face roughness, J. Geophys. Res.-Sol. Ea., 92, 1337–1347,
+  https://doi.org/10.1146/annurev-environ-090611-143314, 2012.          https://doi.org/10.1029/JB092iB02p01337, 1987.
+Blechschmidt, I. and Vomvoris, S.: Underground research facilities    Buyuksagis, I. S. and Goktan, R. M.: The effect of Schmidt
+  and rock laboratories for the development of geological disposal      hammer type on uniaxial compressive strength prediction
+  concepts and repository systems, in: Geological Repository Sys-       of rock, Int. J. Rock Mech. Min. Sci., 44, 299–307,
+  tems for Safe Disposal of Spent Nuclear Fuels and Radioactive         https://doi.org/10.1016/j.ijrmms.2006.07.008, 2007.
+  Waste, edited by: Ahn, J. and Apted, M. J., Woodhead Pub-           Cammarata, G., Fidelibus, C., Cravero, M., and Barla, G.: The
+  lishing, 82–118, https://doi.org/10.1533/9781845699789.1.82,          Hydro-Mechanically Coupled Response of Rock Fractures, Rock
+  2010.                                                                 Mech. Rock Eng., 40, 41–61, https://doi.org/10.1007/s00603-
+Blum, P., Mackay, R., Riley, M. S., and Knight, J. L.: Per-             006-0081-z, 2007.
+  formance assessment of a nuclear waste repository: Upscal-          Chapman, N. and Hooper, A.: The disposal of radioac-
+  ing coupled hydro-mechanical properties for far-field trans-          tive wastes underground, Proc. Geol. Assoc., 123, 46–63,
+  port analysis, Int. J. Rock Mech. Min. Sci., 42, 781–792,             https://doi.org/10.1016/j.pgeola.2011.10.001, 2012.
+  https://doi.org/10.1016/j.ijrmms.2005.03.015, 2005.                 Cheng, C., Hale, S., Milsch, H., and Blum, P.: Measuring hydraulic
+Blum, P., Mackay, R., and Riley, M. S.: Stochastic simulations of       fracture apertures: a comparison of methods, Solid Earth, 11,
+  regional scale advective transport in fractured rock masses using     2411–2423, https://doi.org/10.5194/se-11-2411-2020, 2020.
+  block upscaled hydro-mechanical rock property data, J. Hydrol.,     Cuss, R. J., Milodowski, A., and Harrington, J. F.: Fracture trans-
+  369, 318–325, https://doi.org/10.1016/j.jhydrol.2009.02.009,          missivity as a function of normal and shear stress: First results
+  2009.                                                                 in Opalinus Clay, Phys. Chem. Earth Parts ABC, 36, 1960–1971,
+Blum, P., Steger, H., and Erguler, Z.: Bestimmung geotechnischer        https://doi.org/10.1016/j.pce.2011.07.080, 2011.
+  Parameter von Tonsteinen mit dem Nadelpenetrometertest (De-         Dao, L.-Q., Cui, Y.-J., Tang, A.-M., Pereira, J.-M., Li, X.-L., and
+  termination of geotechnical parameters of clay rocks using nee-       Sillen, X.: Impact of excavation damage on the thermo-hydro-
+  dle penetration test), in: 19 Tagung für Ingenieurgeologie, Mu-       mechanical properties of natural Boom Clay, Eng. Geol., 195,
+  nich, Germany, 1–4, 2013.                                             196–205, https://doi.org/10.1016/j.enggeo.2015.06.011, 2015.
+Blümling, P., Bernier, F., Lebon, P. and Derek Martin, C.:            Delage, P.: Unsaturated issues in claystones, in: Unsaturated Soils:
+  The excavation damaged zone in clay formations time-                  Research & Applications, edited by: Khalili, N., Russell, A., and
+  dependent behaviour and influence on performance as-                  Khoshghalb, A., CRC Press, London, United Kingdom, 99–105,
+  sessment, Phys. Chem. Earth Parts ABC, 32, 588–599,                   https://doi.org/10.1201/b17034, 2014.
+  https://doi.org/10.1016/j.pce.2006.04.034, 2007.                    de La Vaissière, R., Armand, G., and Talandier, J.: Gas
+Bock, H.: RA Experiment. Updated review of the rock mechanics           and water flow in an excavation-induced fracture network
+  properties of the Opalinus Clay of the Mont Terri URL based on        around an underground drift: A case study for a radioac-
+  laboratory and field testing, Unpublished Mont Terri Technical        tive waste repository in clay rock, J. Hydrol., 521, 141–156,
+  Report, TR 2008-04, 2009.                                             https://doi.org/10.1016/j.jhydrol.2014.11.067, 2015.
+Bossart, P. and Thury, M.: Characteristics of the Opalinus Clay at    Delay, J., Bossart, P., Ling, L. X., Blechschmidt, I., Ohlsson, M.,
+  Mont Terri. Mont Terri Rock Laboratory. Project, programme            Vinsot, A., Nussbaum, C., and Maes, N.: Three decades of under-
+  1996 to 2007 and results, Reports of the Swiss Geological Sur-        ground research laboratories: what have we learned?, Geol. Soc.
+  vey No. 3, Federal Office of Topography (swisstopo), Wabern,          Lond. Spec. Publ., 400, 7–32, https://doi.org/10.1144/SP400.1,
+  Switzerland, 2008.                                                    2014.
+Bossart, P., Meier, P. M., Moeri, A., Trick, T., and Mayor, J.-C.:    Erguler, Z. A. and Ulusay, R.: Water-induced variations in mechan-
+  Geological and hydraulic characterisation of the excavation dis-      ical properties of clay-bearing rocks, Int. J. Rock Mech. Min.
+  turbed zone in the Opalinus Clay of the Mont Terri Rock Lab-          Sci., 46, 355–370, https://doi.org/10.1016/j.ijrmms.2008.07.002,
+  oratory, Eng. Geol., 66, 19–38, https://doi.org/10.1016/S0013-        2009.
+  7952(01)00140-5, 2002.                                              Fairhurst, C.: Nuclear waste disposal and rock mechanics: contribu-
+Bossart, P., Trick, T., Meier, P. M., and Mayor, J.-C.:                 tions of the Underground Research Laboratory (URL), Pinawa,
+  Structural and hydrogeological characterisation of the                Manitoba, Canada, Int. J. Rock Mech. Min. Sci., 41, 1221–1227,
+  excavation-disturbed zone in the Opalinus Clay (Mont                  https://doi.org/10.1016/j.ijrmms.2004.09.001, 2004.
+  Terri Project, Switzerland), Appl. Clay Sci., 26, 429–448,          Giger, S. B., Marschall, P., Lanyon, B. and Martin, C. D.: Hydro-
+  https://doi.org/10.1016/j.clay.2003.12.018, 2004.                     mechanical response of Opalinus Clay during excavation works
+
+
+
+https://doi.org/10.5194/se-12-1581-2021                                                           Solid Earth, 12, 1581–1600, 2021
+1598                                                               S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+   – a synopsis from the Mont Terri URL, Geomech. Tunn., 8, 421–           Sci., 77, 105–114, https://doi.org/10.1016/j.ijrmms.2015.03.027,
+   425, https://doi.org/10.1002/geot.201500021, 2015.                      2015.
+Gräsle, W. and Plischke, I.: Laboratory Testing (LT) Experiment:        Labiouse, V. and Vietor, T.: Laboratory and In Situ Simula-
+   Mechanical Behavior of Opalinus Clay, Final report from Phases          tion Tests of the Excavation Damaged Zone Around Gal-
+   6–14, Unpublished Mont Terri Technical Report, TR 2009-07,              leries in Opalinus Clay, Rock Mech. Rock Eng., 47, 57–70,
+   2010.                                                                   https://doi.org/10.1007/s00603-013-0389-4, 2014.
+Gräsle, W. and Plischke, I.: LT-A Experiment: Mechanical Behavior       Lavanchy, J. M. and Mettier, R.: HA (Hydrogeological analysis)
+   of Opalinus Clay, Data Report from Phase 15, Unpublished Mont           Experiment: Hydraulic database, Phases 1-16, Version 1.0, Un-
+   Terri Technical Note, TN 2010-86, 2011.                                 published Mont Terri Technical Note, TN 2010-74, 2012.
+Gustafson, G. and Fransson, Å.: The use of the Pareto distribution      Li, H., Tang, J., Lu, Y., Zhou, L., Han, S., and Dai, R.:
+   for fracture transmissivity assessment, Hydrogeol. J., 14, 15–20,       Experimental Measurements of Shale Fracture Conductivity
+   https://doi.org/10.1007/s10040-005-0440-y, 2006.                        Under Cyclic Loading, Arab. J. Sci. Eng., 43, 6315–6324,
+Hakami, E. and Larsson, E.: Aperture measurements and                      https://doi.org/10.1007/s13369-017-3032-y, 2018.
+   flow experiments on a single natural fracture, Int. J.               Li, S., Feng, X.-T., Li, Z., Zhang, C., and Chen, B.: Evolution of
+   Rock Mech. Min. Sci. Geomech. Abstr., 33, 395–404,                      fractures in the excavation damaged zone of a deeply buried tun-
+   https://doi.org/10.1016/0148-9062(95)00070-4, 1996.                     nel during TBM construction, Int. J. Rock Mech. Min. Sci., 55,
+Hale, S., Ries, X., Jaeggi, D., and Blum, P.: Mechani-                     125–138, https://doi.org/10.1016/j.ijrmms.2012.07.004, 2012.
+   cal and hydraulic properties of the excavation dam-                  Lisjak, A., Garitte, B., Grasselli, G., Müller, H. R., and Vietor, T.:
+   aged zone (EDZ) in the Opalinus Clay of the Mont                        The excavation of a circular tunnel in a bedded argillaceous rock
+   Terri Rock Laboratory, Switzerland, figshare [data set],                (Opalinus Clay): Short-term rock mass response and FDEM nu-
+   https://doi.org/10.6084/m9.figshare.12581144.v2, 2020a.                 merical analysis, Tunn. Undergr. Space Technol., 45, 227–248,
+Hale, S., Naab, C., Butscher, C., and Blum, P.: Method                     https://doi.org/10.1016/j.tust.2014.09.014, 2015.
+   Comparison to Determine Hydraulic Apertures of Natu-                 Lisjak, A., Tatone, B. S. A., Mahabadi, O. K., Grasselli, G.,
+   ral Fractures, Rock Mech. Rock Eng., 53, 1467–1476,                     Marschall, P., Lanyon, G. W., de La Vaissière, R., Shao, H.,
+   https://doi.org/10.1007/s00603-019-01966-7, 2020b.                      Leung, H., and Nussbaum, C.: Hybrid Finite-Discrete Element
+Hostettler, B., Reisdorf, A. G., Jaeggi, D., Deplazes, G., Bläsi,          Simulation of the EDZ Formation and Mechanical Sealing Pro-
+   H., Morard, A., Feist-Burkhardt, S., Waltschew, A., Dietze,             cess Around a Microtunnel in Opalinus Clay, Rock Mech. Rock
+   V., and Menkveld-Gfeller, U.: Litho- and biostratigraphy of             Eng., 49, 1849–1873, https://doi.org/10.1007/s00603-015-0847-
+   the Opalinus Clay and bounding formations in the Mont Terri             2, 2016.
+   rock laboratory (Switzerland), Swiss J. Geosci., 110, 23–37,         Louis, C.: A study of groundwater flow in jointed rock and its in-
+   https://doi.org/10.1007/s00015-016-0250-3, 2017.                        fluence on the stability of rock masses, PhD thesis, Imperial Col-
+Hucka, V.: A rapid method of determining the strength of rocks in          lege, London, 1969.
+   situ, Int. J. Rock Mech. Min. Sci. Geomech. Abstr., 2, 127–134,      Marschall, P., Giger, S., de la Vassière, R., Shao, H., Leung, H.,
+   https://doi.org/10.1016/0148-9062(65)90009-4, 1965.                     Nussbaum, C., Trick, T., Lanyon, B., Senger, R., Lisjak, A., and
+Hudson, J. A., Stephansson, O., and Andersson, J.: Guidance                Alcolea, A.: Hydro-mechanical evolution of the EDZ as trans-
+   on numerical modelling of thermo-hydro-mechanical coupled               port path for radionuclides and gas: insights from the Mont Terri
+   processes for performance assessment of radioactive waste               rock laboratory (Switzerland), Swiss J. Geosci., 110, 173–194,
+   repositories, Int. J. Rock Mech. Min. Sci., 42, 850–870,                https://doi.org/10.1007/s00015-016-0246-z, 2017.
+   https://doi.org/10.1016/j.ijrmms.2005.03.018, 2005.                  Martin, C., Lanyon, G. W., Bossart, P., and Blümling, P.: Excavation
+Jaeggi, D. and Bossart, P.: Kompilation der lithologischen Vari-           Disturbed Zone (EDZ) in Clay Shale: Mont Terri, Unpublished
+   abilität und Eigenschaften des Opalinus-Ton im Felslabor Mont           Mont Terri Technical Report, TR 2001-01, 2004.
+   Terri, Expert Report for ENSI, Federal Office of Topography          Matsuki, K., Lee, J.-J., Sakaguchi, K., and Hayashi, K.: Size effect
+   (swisstopo), Wabern, Switzerland, 2014.                                 in flow conductance of a closed small-scale hydraulic fracture in
+Jahns, E.: RA Experiment: Opalinus Clay Rock Characterization,             granite, Geotherm. Sci. Technol., 6, 113–138, 1999.
+   Unpublished Mont Terri Technical Note, TN 2008-55rev, 2010.          Meier, P. M., Trick, T., Blümling, P., and Vockaert, G.: Self-healing
+Jakubick, A. T. and Franz, T.: Vacuum testing of the permeability of       of fractures within the EDZ at the Mont Terri Rock Laboratory:
+   the excavation damaged zone, Rock Mech. Rock Eng., 26, 165–             results after one year of experimental work, in Proceedings of the
+   182, 1993.                                                              international workshop on geomechanics, hydromechanical and
+Kling, T., Huo, D., Schwarz, J.-O., Enzmann, F., Benson, S., and           thermohydro-mechanical behaviour of deep argillaceous rocks:
+   Blum, P.: Simulating stress-dependent fluid flow in a fractured         Theory and experiments, Paris, France, 11-12 Oct 2000, 275–
+   core sample using real-time X-ray CT data, Solid Earth, 7, 1109–        283, 2000.
+   1124, https://doi.org/10.5194/se-7-1109-2016, 2016.                  Menaceur, H., Delage, P., Tang, A. M., and Conil, N.:
+Kling, T., Schwarz, J.-O., Wendler, F., Enzmann, F., and                   On the Thermo-Hydro-Mechanical Behaviour of a Sheared
+   Blum, P.: Fracture flow due to hydrothermally in-                       Callovo-Oxfordian Claystone Sample with Respect to the
+   duced quartz growth, Adv. Water Resour., 107, 93–107,                   EDZ Behaviour, Rock Mech. Rock Eng., 49, 1875–1888,
+   https://doi.org/10.1016/j.advwatres.2017.06.011, 2017.                  https://doi.org/10.1007/s00603-015-0897-5, 2016.
+Kupferschmied, N., Wild, K. M., Amann, F., Nussbaum, C., Jaeggi,        Min, K.-B., Rutqvist, J., Tsang, C.-F., and Jing, L.: Stress-
+   D., and Badertscher, N.: Time-dependent fracture formation              dependent permeability of fractured rock masses: a numer-
+   around a borehole in a clay shale, Int. J. Rock Mech. Min.
+
+
+
+Solid Earth, 12, 1581–1600, 2021                                                             https://doi.org/10.5194/se-12-1581-2021
+S. Hale et al.: Mechanical and hydraulic properties of an EDZ                                                                             1599
+
+  ical study, Int. J. Rock Mech. Min. Sci., 41, 1191–1210,                Rummel, F. and Weber, U.: RA Experiment (Rock Mechanics Anal-
+  https://doi.org/10.1016/j.ijrmms.2004.05.005, 2004.                       ysis): Rock Mechanical Testing and Characterization on Drill-
+Möri, A., Bossart, P., Matray, J. M., Franck, E., Fatmi, H., and            cores of Boreholes BRA-1 and BRA-2, Unpublished Mont Terri
+  Ababou, R.: Mont Terri Project: cyclic deformations in the Opal-          Technical Note, TN 2004-38, 2004.
+  inus clay, in: Proceedings of the international meeting of clay         Rummel, F. and Weber, U.: Rock Mechanics Analyses (RA) Exper-
+  in natural and engineered barriers for radioactive waste confine-         iment: Mont Terri Project, Phase 10: Results of Uniaxial and Tri-
+  ments, Nantes, France, 103–124, 2010.                                     axial Tests on Opalinus Clay Samples, Unpublished Mont Terri
+Nagra: Project Opalinus Clay: Safety Report: Demonstration of               Technical Note, TN 2005-57, 2007.
+  disposal feasibility for spent fuel, vitrified high-level waste         Rutqvist, J. and Stephansson, O.: The role of hydromechanical cou-
+  and long-lived intermediate-level waste (Entsorgungsnach-                 pling in fractured rock engineering, Hydrogeol. J., 11, 7–40,
+  weis), Nagra Technical Report 02-05, Wettingen, Switzerland,              https://doi.org/10.1007/s10040-002-0241-5, 2003.
+  available at: https://www.nagra.ch/data/documents/database/             Sato, T., Kikuchi, T., and Sugihara, K.: In-situ experiments on
+  dokumente/{\$}default/Default{%}20Folder/Publikationen/                   an excavation disturbed zone induced by mechanical exca-
+  NTBs{%}202001-2010/e_ntb02-05.pdf (last access: 17 April                  vation in Neogene sedimentary rock at Tono mine, central
+  2020), 2002.                                                              Japan, Eng. Geol., 56, 97–108, https://doi.org/10.1016/S0013-
+Nagra: Implementation of the Full-scale Emplacement Exper-                  7952(99)00136-2, 2000.
+  iment at Mont Terri: Design, Construction and Preliminary               Schnier, H. and Stührenberg, D.: LT Experiment: Strength tests on
+  Results, Nagra Technical Report 15-02, Wettingen, Switzerland,            cylindrical specimens, documentation and evaluation (phases 8
+  available at: https://www.nagra.ch/data/documents/database/               & 9), Unpublished Mont Terri Technical Report, TR 2003-04,
+  dokumente/{\$}default/Default{%}20Folder/Publikationen/                   2007.
+  NTBs{%}202014{%}20-{%}202015/e_ntb15-02.pdf                     (last   Schuster, K., Amann, F., Yong, S., Bossart, P., and Connolly, P.:
+  access: 10 June 2020), 2019.                                              High-resolution mini-seismic methods applied in the Mont Terri
+New England Research, Inc.: TinyPerm3, available at: https://www.           rock laboratory (Switzerland), Swiss J. Geosci., 110, 213–231,
+  ner.com/site/systems/tinyperm3.html (last access: 24 July 2020),          https://doi.org/10.1007/s00015-016-0241-4, 2017.
+  2015.                                                                   Shao, H., Schuster, K., Sönnke, J., and Bräuer, V.: EDZ devel-
+Nussbaum, C., Bossart, P., von Rütte, J., Meier, O., and Badertscher,       opment in indurated clay formations – In situ borehole mea-
+  N.: EZ-B Experiment: Small-scale Mapping of Tectonic and Ar-              surements and coupled HM modelling, Phys. Chem. Earth Parts
+  tificial (EDZ) Fractures of the EZ-B Niche, Unpublished Mont              ABC, 33, 388–395, https://doi.org/10.1016/j.pce.2008.10.031,
+  Terri Technical Note, TN 2005-30, 2005.                                   2008.
+Nussbaum, C., Bossart, P., Amann, F., and Aubourg, C.: Analysis of        Shen, B. and Barton, N.: The disturbed zone around tunnels in
+  tectonic structures and excavation induced fractures in the Opali-        jointed rock masses, Int. J. Rock Mech. Min. Sci., 34, 117–125,
+  nus Clay, Mont Terri underground rock laboratory (Switzerland),           1997.
+  Swiss J. Geosci., 104, 187–210, https://doi.org/10.1007/s00015-         Sheng, Q., Yue, Z. Q., Lee, C. F., Tham, L. G., and Zhou,
+  011-0070-4, 2011.                                                         H.: Estimating the excavation disturbed zone in the permanent
+Okada, S., Izumiya, Y., Iizuka, Y., and Horiuchi, S.: The estimation        shiplock slopes of the Three Gorges Project, China, Int. J. Rock
+  of soft rock strength around a tunnel by needle penetration test,         Mech. Min. Sci., 39, 165–184, https://doi.org/10.1016/S1365-
+  J. Jpn. Soc. Soil Mech. Found. Eng., 33, 35–38, 1985.                     1609(02)00015-1, 2002.
+Pearson, F. J., Arcos, D., Bath, A., Boisson, J.-Y., Fernández, A. M.,    Shu, B., Zhu, R., Tan, J., Zhang, S., and Liang, M.: Evolution of per-
+  Gäbler, H.-E., Gaucher, E., Gautschi, A., Griffault, L., Hernán, P.,      meability in a single granite fracture at high temperature, Fuel,
+  and Waber, H. N.: Mont Terri Project: Geochemistry of Water in            242, 12–22, https://doi.org/10.1016/j.fuel.2019.01.031, 2019.
+  the Opalinus Clay Formation at the Mont Terry Rock Laboratory,          Snow, D. T.: A parallel plate model of fractured permeable media,
+  Reports of the Federal Office for Water and Geology (FOWG),               PhD thesis, University of California, Berkeley, 1965.
+  Geology Series No. 5, Bern-Ittigen, Switzerland, 2003.                  Soe, A. K. K., Osada, M., Takahashi, M., and Sasaki, T.: Charac-
+Popp, T., Salzer, K., and Minkley, W.: Influence of bedding                 terization of drying-induced deformation behaviour of Opalinus
+  planes to EDZ-evolution and the coupled HM properties of                  Clay and tuff in no-stress regime, Environ. Geol., 58, 1215–1225,
+  Opalinus Clay, Phys. Chem. Earth Parts ABC, 33, 374–387,                  https://doi.org/10.1007/s00254-008-1616-2, 2009.
+  https://doi.org/10.1016/j.pce.2008.10.018, 2008.                        Soler, J. M.: The effect of coupled transport phenomena in
+Pusch, R. and Stanfors, R.: The zone of disturbance around blasted          the Opalinus Clay and implications for radionuclide transport,
+  tunnels at depth, Int. J. Rock Mech. Min. Sci. Geomech. Ab-               J. Contam. Hydrol., 53, 63–84, https://doi.org/10.1016/S0169-
+  str., 29, 447–456, https://doi.org/10.1016/0148-9062(92)92629-            7722(01)00140-1, 2001.
+  Q, 1992.                                                                Tsang, C. F., Barnichon, J. D., Birkholzer, J., Li, X. L., Liu, H.
+Rasouli, V. and Hosseinian, A.: Correlations Developed for Esti-            H., and Sillen, X.: Coupled thermo-hydro-mechanical processes
+  mation of Hydraulic Parameters of Rough Fractures Through the             in the near field of a high-level radioactive waste repository
+  Simulation of JRC Flow Channels, Rock Mech. Rock Eng., 44,                in clay formations, Int. J. Rock Mech. Min. Sci., 49, 31–44,
+  447–461, https://doi.org/10.1007/s00603-011-0148-3, 2011.                 https://doi.org/10.1016/j.ijrmms.2011.09.015, 2012.
+Renshaw, C. E.: On the relationship between mechanical and hy-            Tsang, C.-F., Bernier, F., and Davies, C.: Geohydromechanical pro-
+  draulic apertures in rough-walled fractures, J. Geophys. Res.-            cesses in the Excavation Damaged Zone in crystalline rock, rock
+  Sol. Ea., 100, 24629–24636, https://doi.org/10.1029/95JB02159,            salt, and indurated and plastic clays – in the context of radioac-
+  1995.
+
+
+
+https://doi.org/10.5194/se-12-1581-2021                                                                Solid Earth, 12, 1581–1600, 2021
+1600                                                               S. Hale et al.: Mechanical and hydraulic properties of an EDZ
+
+  tive waste disposal, Int. J. Rock Mech. Min. Sci., 42, 109–125,       Xiong, X., Li, B., Jiang, Y., Koyama, T., and Zhang, C.:
+  https://doi.org/10.1016/j.ijrmms.2004.08.003, 2005.                     Experimental and numerical study of the geometrical and
+Tsang, C.-F., Neretnieks, I., and Tsang, Y.: Hydrologic issues as-        hydraulic characteristics of a single rock fracture dur-
+  sociated with nuclear waste repositories, Water Resour. Res., 51,       ing shear, Int. J. Rock Mech. Min. Sci., 48, 1292–1302,
+  6923–6972, https://doi.org/10.1002/2015WR017641, 2015.                  https://doi.org/10.1016/j.ijrmms.2011.09.009, 2011.
+Uchida, N., Etoh, Y., Ono, H., and Miura, N.: Strength evaluation of    Xue, Y., Dang, F., Shi, F., Li, R., and Cao, Z.: Eval-
+  deep mixing soil–cement by needle penetration test, J. Jpn. Soc.        uation of Gas Migration and Rock Damage Characteris-
+  Soil Mech. Found. Eng., 52, 23–25, 2004 (in Japanese).                  tics for Underground Nuclear Waste Storage Based on a
+Ulusay, R. and Erguler, Z. A.: Needle penetration test: Eval-             Coupled Model, Sci. Technol. Nucl. Install., 2018, 1–10,
+  uation of its performance and possible uses in predicting               https://doi.org/10.1155/2018/2973279, 2018.
+  strength of weak and soft rocks, Eng. Geol., 149, 47–56,              Yong, S.: A three-dimensional analysis of excavation-induced per-
+  https://doi.org/10.1016/j.enggeo.2012.08.007, 2012.                     turbations in the Opalinus Clay at the Mont Terri Rock Labo-
+Ulusay, R., Aydan, Ö., Erguler, Z. A., Ngan-Tillard, D. J. M.,            ratory, PhD thesis, Department of Engineering Geology, ETH
+  Seiki, T., Verwaal, W., Sasaki, Y., and Sato, A.: ISRM Sug-             Zurich, Switzerland, 2007.
+  gested Method for the Needle Penetration Test, Rock Mech.             Yong, S., Kaiser, P. K., and Loew, S.: Influence of tectonic shears
+  Rock Eng., 47, 1073–1085, https://doi.org/10.1007/s00603-013-           on tunnel-induced fracturing, Int. J. Rock Mech. Min. Sci., 47,
+  0534-0, 2014.                                                           894–907, https://doi.org/10.1016/j.ijrmms.2010.05.009, 2010.
+Valès, F., Nguyen-Minh, D., Gharbi, H., and Rejeb, A.: Ex-              Yong, S., Loew, S., Schuster, K., Nussbaum, C., and Fidelibus, C.:
+  perimental study of the influence of the degree of satu-                Characterisation of Excavation-Induced Damage Around a Short
+  ration on physical and mechanical properties in Tourne-                 Test Tunnel in the Opalinus Clay, Rock Mech. Rock Eng., 50,
+  mire shale (France), Appl. Clay Sci., 26, 197–207,                      1959–1985, https://doi.org/10.1007/s00603-017-1212-4, 2017.
+  https://doi.org/10.1016/j.clay.2003.12.032, 2004.                     Yurikov, A., Lebedev, M., Pervukhina, M., and Gurevich, B.: Wa-
+Van Loon, L. R., Soler, J. M., Jakob, A., and Bradbury, M. H.: Ef-        ter retention effects on elastic properties of Opalinus shale,
+  fect of confining pressure on the diffusion of HTO, 36Cl− and           Geophys. Prospect., 67, 984–996, https://doi.org/10.1111/1365-
+  125I− in a layered argillaceous rock (Opalinus Clay): diffusion         2478.12673, 2019.
+  perpendicular to the fabric, Appl. Geochem., 18, 1653–1662,           Zhang, C.-L.: The stress–strain–permeability behaviour of clay rock
+  https://doi.org/10.1016/S0883-2927(03)00047-7, 2003.                    during damage and recompaction, J. Rock Mech. Geotech. Eng.,
+Wigger, C. and Van Loon, L. R.: Effect of the pore water compo-           8, 16–26, https://doi.org/10.1016/j.jrmge.2015.10.001, 2016.
+  sition on the diffusive anion transport in argillaceous, low per-     Zhang, C.-L.: Thermo-hydro-mechanical behavior of clay
+  meability sedimentary rocks, J. Contam. Hydrol., 213, 40–48,            rock for deep geological disposal of high-level radioac-
+  https://doi.org/10.1016/j.jconhyd.2018.05.001, 2018.                    tive waste, J. Rock Mech. Geotech. Eng., 10, 992–1008,
+Wild, K. M., Wymann, L. P., Zimmer, S., Thoeny, R., and Amann,            https://doi.org/10.1016/j.jrmge.2018.03.006, 2018.
+  F.: Water Retention Characteristics and State-Dependent Me-           Zhang, C.-L., Rothfuchs, T., Su, K., and Hoteit, N.: Experi-
+  chanical and Petro-Physical Properties of a Clay Shale, Rock            mental study of the thermo-hydro-mechanical behaviour of in-
+  Mech. Rock Eng., 48, 427–439, https://doi.org/10.1007/s00603-           durated clays, Phys. Chem. Earth Parts ABC, 32, 957–965,
+  014-0565-1, 2015.                                                       https://doi.org/10.1016/j.pce.2006.04.038, 2007.
+Wileveau, Y.: THM behaviour of host rock (HE-D experiment):             Ziefle, G., Matray, J.-M., Maßmann, J., and Möri, A.: Cou-
+  Progress Report September 2003–October 2004, Part 1, Unpub-             pled hydraulic-mechanical simulation of seasonally induced pro-
+  lished Mont Terri Technical Report, TR 2005-03, 2005.                   cesses in the Mont Terri rock laboratory (Switzerland), Swiss
+Wilson, K. J. and Berryman, K. R.: Assessing the long-term sta-           J. Geosci., 110, 195–212, https://doi.org/10.1007/s00015-016-
+  bility of geological environments for safe disposal of radioac-         0252-1, 2017.
+  tive waste, in: Geological Repository Systems for Safe Dis-           Zimmerman, R. W. and Bodvarsson, G. S.: Hydraulic conduc-
+  posal of Spent Nuclear Fuels and Radioactive Waste, edited              tivity of rock fractures, Transp. Porous Media, 23, 1–30,
+  by: Ahn, J. and Apted, M. J., Woodhead Publishing, 188–221,             https://doi.org/10.1007/BF00145263, 1996.
+  https://doi.org/10.1533/9781845699789.2.188, 2010.
+Wu, F., Liu, J., Liu, T., Zhuang, H., and Yan, C.: A method for
+  assessment of excavation damaged zone (EDZ) of a rock mass
+  and its application to a dam foundation case, Eng. Geol., 104,
+  254–262, https://doi.org/10.1016/j.enggeo.2008.11.005, 2009.
+
+
+
+
+Solid Earth, 12, 1581–1600, 2021                                                            https://doi.org/10.5194/se-12-1581-2021
+

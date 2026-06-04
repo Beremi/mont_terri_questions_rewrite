@@ -1,0 +1,20 @@
+Title:           
+Subject:         
+Keywords:        
+Author:          
+Creator:         copernicus.cls version 2021/10/18 9.36 Copernicus papers, produced from XML
+Producer:        pdfTeX-1.40.19
+CreationDate:    Tue Nov  9 14:05:15 2021 CET
+ModDate:         Tue Nov  9 14:05:15 2021 CET
+Custom Metadata: yes
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           3
+Encrypted:       no
+Page size:       595.276 x 785.197 pts
+Page rot:        0
+File size:       1013435 bytes

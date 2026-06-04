@@ -1,0 +1,851 @@
+                                                                                                                                             ORIGINAL RESEARCH
+                                                                                                                                              published: 19 July 2022
+                                                                                                                                      doi: 10.3389/feart.2022.946627
+
+
+
+
+                                            Prototype of a Virtual Experiment
+                                            Information System for the Mont Terri
+                                            Underground Research Laboratory
+                                            Nico Graebling 1,2*, Özgür Ozan Şen 1, Lars Bilke 1, Tuanny Cajuhi 3, Dmitri Naumov 4,1,
+                                            Wenqing Wang 1, Gesa Zieﬂe 3, David Jaeggi 5, Jobst Maßmann 3, Gerik Scheuermann 2,
+                                            Olaf Kolditz 1,6 and Karsten Rink 1
+                                            1
+                                              Department of Environmental Informatics, Helmholtz Centre for Environmental Research (UFZ), Leipzig, Germany, 2Image and
+                                            Signal Processing Group, Institute for Computer Science, Faculty of Mathematics and Computer Science, Leipzig University,
+                                            Leipzig, Germany, 3Federal Institute for Geosciences and Natural Resources (BGR), Hanover, Germany, 4TU Bergakademie
+                                            Freiberg, Freiberg, Germany, 5Swiss Geological Survey, Federal Ofﬁce of Topography (swisstopo), Wabern, Switzerland,
+                                            6
+                                              Applied Environmental Systems Analysis, TU Dresden, Dresden, Germany
+
+
+
+                            Edited by:      Underground Research Laboratories (URLs) allow geoscientiﬁc in-situ experiments at
+                     Susana Barbosa,        large scale. At the Mont Terri URL in Switzerland, international research groups conduct
+          University of Porto, Portugal
+                                            numerous experiments in parallel. The measured and simulated data as well as research
+                         Reviewed by:
+                     Roman Leonhardt,
+                                            results obtained from them are highly relevant as they improve the general understanding
+Central Institution for Meteorology and     of geological processes, for example in the context of radioactive waste disposal.
+       Geodynamics (ZAMG), Austria
+                                            Unfortunately, the data obtained at the test site is often only available to researchers
+                              Aldo Ianni,
+     Gran Sasso National Laboratory         who are directly involved in a particular experiment. Furthermore, typical visualisation
+                            (INFN), Italy   techniques of such data by domain scientists often lack spatial context and accessing and
+                   *Correspondence:         exploring the data requires prior technical knowledge and a high level of effort. We created
+                        Nico Graebling
+                 nico.graebling@ufz.de
+                                            a digital replica of the Mont Terri URL and thereby implemented a prototype of a Virtual
+                                            Experiment Information System that integrates highly heterogeneous data from several
+                   Specialty section:       different sources. It allows accessing and exploring the relevant data embedded in its
+        This article was submitted to
+                                            spatial context without much prior technical knowledge. Both, simulation results and
+Environmental Informatics and Remote
+                              Sensing,      observation data are displayed within the same system. The 4D visualisation approach
+               a section of the journal     focuses on three exemplary experiments conducted at Mont Terri and is easily transferable
+           Frontiers in Earth Science
+                                            to other experiments or even other URLs. The Unity Game Engine has been used to
+             Received: 17 May 2022
+            Accepted: 20 June 2022          develop the prototype. This allowed to build the application for various output devices like
+            Published: 19 July 2022         desktop computers or Virtual Reality hardware without much additional effort. The
+                             Citation:      implemented system reduces the technical effort required to access and explore highly
+Graebling N, Şen ÖO, Bilke L, Cajuhi T,
+                                            relevant research data and lowers the cognitive effort usually needed to gain insights from
+       Naumov D, Wang W, Zieﬂe G,
+               Jaeggi D, Maßmann J,         measurements, simulation models and context data. Moreover, it promotes exchange
+Scheuermann G, Kolditz O and Rink K         among research groups by enabling interactive visualisations embedded in the URL’s
+         (2022) Prototype of a Virtual
+Experiment Information System for the       spatial context. In addition, a future use of the system for the communication of scientiﬁc
+              Mont Terri Underground        methods and results to stakeholders or the general public is plausible.
+                Research Laboratory.
+         Front. Earth Sci. 10:946627.       Keywords: virtual experiment information system, visual exploration, 4D visualisation, underground research
+     doi: 10.3389/feart.2022.946627         laboratory (URL), mont terri URL, virtual tour, interactive system, opengeosys
+
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                   1                                           July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                             Virtual Experiment Information System Prototype
+
+
+
+
+1 INTRODUCTION                                                                 multi-disciplinary research results for one experiment within the
+                                                                               Mont Terri URL and provide images of 3D visualisations for the
+Underground Research Laboratories (URLs) enable geoscientiﬁc                   measured and simulated data.
+in-situ experiments that allow researchers to gain a deeper                        Another example is the work of Raith et al. (2020) that
+understanding of geological processes, investigate safety                      addresses another experiment within the Mont Terri URL.
+aspects for the disposal of radioactive waste and develop and                  Their algorithm results in an alternative approach to explore
+analyse novel processes for energy production and storage (Nagel               multivariate data for the visual analysis of simulation data
+et al., 2021).                                                                 compared to the state of the art. The new algorithm has been
+    In recent years, there has been an increasing focus on methods             applied only to data of the selected experiment and is limited to
+to digitally recreate URLs and visually analyse the data. Examples             multivariate data with speciﬁc properties. Working with the
+of virtually reproduced laboratories are the VIRTUS Project1 an                visualisations requires prior knowledge in the ﬁeld of scientiﬁc
+virtual underground laboratory in rock salt (Wieczorek et al.,                 visualisation and therefore requires training and expertise.
+2014), CALLIO LAB2 an underground research centre for various                      As mentioned before, approaches like these are often limited
+research areas in Finland (Jalas et al., 2017) and SNOLAB3 an                  to a single experiment and present research results with speciﬁc
+underground science laboratory in Ontario, Canada (Duncan                      2D plots or screenshots of 3D visualisations. The tools that are
+et al., 2010). Recently, a new underground laboratory GeoLaB4                  used by researchers for the exploration often do not allow for
+has been suggested which will develop scientiﬁc-technological                  intuitive in-depth interactions within the scene and often lack
+solutions for a sustainable exploitation of geothermal energy                  context data, e.g. in-situ geological conditions and location. This
+systems accompanied by sociological studies dealing also with                  situation increases the cognitive effort needed for the
+public acceptance of new geotechnologies (Meller et al., 2018).                investigation and exploration. In addition, the initial costs of
+Although all these URLs focus on different research questions                  the manual technical setup are high as researchers have to access,
+and methodology, these examples clearly show the high relevance                extract and prepare data manually before being able to start their
+of URLs in general on the one hand and the increasing                          exploration. In this regard the preparation and presentation of the
+importance of visualisations of URL-related data on the                        data is a time-consuming step and therefore must be either very
+other hand.                                                                    generic or implemented speciﬁcally for each experiment while
+    The Mont Terri URL in the canton of Jura in Switzerland is an              many different experiments run in parallel. Access is therefore
+example of an underground research site for which a digital                    limited to domain experts with prior knowledge in the ﬁeld of
+replication could improve the accessibility of data from long term             computer science.
+in-situ experiments. The URL is embedded in Opalinus Clay, a                       The limitations of these approaches have been targeted with
+potential host rock for the ﬁnal disposal of radioactive waste.                the development of virtual 3D Information Systems. An example
+Numerous in-situ experiments conducted at Mont Terri URL                       for such a system is the FE5 Information System (FEIS) described
+over the past decades have enabled international collaborative                 by Yeatman et al. (2019) and Müller et al. (2019). The application
+research on a large scale (Bossart et al., 2018). Due to the high              digitally replicates parts of the Mont Terri URL in the scope of
+level of interdisciplinarity and the manifold technical challenges,            one experiment and displays sensors and their measurements.
+the actors and stakeholders involved in this research site are very            The technical system behind this application is called OASIS
+diverse concerning their profession and specialisation.                        (Overarching        Scientiﬁc      Information      System        by
+    Diverse parameters and quantities are measured during all                  BetterDataSystems6) and has also been used for the GAST-
+experiments performed at the Mont Terri URL. Most of this                      experiment7 at the Grimsel test site. It has been implemented
+sensor data as well as the borehole data is stored in standard                 as a web browser application and focuses on the extraction,
+databases. These are accessible via a database front-end that also             processing and presentation of sensor measurements, also in
+allows data export. Additional manual measurements that are not                charts. It does not provide further information on boreholes
+stored in the databases are conducted. Up to now, all this data has            and shows only limited spatial context. In addition, visualisations
+mostly been presented in form of 2D diagrams or non-interactive                are only implemented at a local scale and do not cover the
+3D visualisations with a focus on single experiments and is often              whole URL.
+only usable for experts from the ﬁeld with additional prior                        Systems like FEIS clearly reduce the manual technical effort for
+knowledge.                                                                     researchers to access measurement data. But due to their different
+    There are, for example, investigations based on the manual                 focus of application they lack an important aspect for in-depth
+extraction and processing of the measured and simulated data for               exploration on a larger scale: Besides time series data, for every
+a single experiment like the work by Zieﬂe et al. (2021, 2022)                 experiment there is other data such as simulation results or spatial
+concerning the Cyclic Deformation Experiment. They present                     data sets. This additional data may also include fault zones,
+                                                                               stratigraphic layers, borehole locations and reports containing
+                                                                               drilling documentation. These data sets are of great importance
+1
+  https://www.grs.de/en/research-and-assessment/disposal/virtus-virtual-
+underground-laboratory
+2                                                                              5
+  https://calliolab.com/                                                         Full-scale Emplacement (FE) experiment in URL Mont Terri
+3                                                                              6
+  https://www.snolab.ca/                                                         https://www.betterdatasystems.com
+4                                                                              7
+  https://www.geolab.kit.edu/english                                             Gas Permeable Seal Test (Teodori et al., 2013)
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                           2                                         July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                  Virtual Experiment Information System Prototype
+
+
+
+
+  FIGURE 1 | Overview of the integrated data sources. The copyright of the logos belong to the corresponding companies.
+
+
+
+
+for research, as they play a crucial role in the interpretation of                  is prepared visually in a way that minimises the cognitive effort
+measurement data. Unfortunately, this additional context data is                    needed for investigation and exploration. In addition, the
+often only available to the researchers running the particular                      application enables and supports exchange among researchers
+experiment and in most of the cases these data sets are not used                    as well as science communication to the broad public.
+during the exploration in a visual interactive process. In addition,                    The following Section 2 explains the general software setup
+information systems like FEIS mainly focus on single experiments                    and the methodology of the technical data integration. Then
+which leads to the need for additional, complementary systems                       Section 3 presents the interactive visualisations of three selected
+for the collaboration and exchange of research teams of different                   experiments and explains why these visualisations lower the effort
+experiments.                                                                        needed for investigation and exploration. Our prototype of a
+    In the analysis of this situation, four main challenges for new                 Virtual Experiment Information System is described in Section 4.
+information and exploration tools for researchers at URLs have                      The paper then ends with the conclusion in Section 5.
+been identiﬁed that, to our knowledge, have not yet been
+addressed in combination: 1) Access to data should be
+possible without major technical barriers and foreknowledge.                        2 SETUP AND DATA INTEGRATION
+2) The data should be embedded into its spatial and temporal
+context using state of the art visualisations. 3) Exploration of                    2.1 General Application Setup
+measurements and experiments in general should be                                   Our prototype of a VEIS is based on the framework of an
+implemented in an interactive manner. 4) When presenting                            Environmental Information System originally developed for
+the data, it should be taken into account that the target groups                    hydrological applications (Rink et al., 2020; 2022a) and
+for the communication of research projects and results are very                     recently extended for including geotechnical data (Blecha
+diverse in terms of their professional background and their prior                   et al., 2019; Rink et al., 2022b). An overview of the general
+knowledge.                                                                          application setup and the integrated data is given in Figure 1.
+    Our approach to overcome these four challenges is a prototype                   The application is implemented using the Unity Game Engine8
+of an interactive Virtual Experiment Information System (VEIS)                      (Unity) which provides (among other things) extensive
+based on a digital replication of the Mont Terri URL that embeds                    functionality for interactive 3D scenes. Unity has been used as
+measurements, simulation results and additional data into one                       it supports a wide range of input- and output devices: The
+spatial context. These data sets are highly heterogeneous                           application can be built for desktop PCs as well as for
+concerning their structure, dimensionality and extent. The                          stereoscopic Virtual Reality devices like Head-Mounted
+prototype is usable without further prior knowledge and has                         Displays (HMD) or CAVE-like9 visualisation centres. It
+been developed in constant discussion and close cooperation with                    supports a variety of input devices from regular desktop PC
+experts from the ﬁeld. The resulting application does not only
+allow for user-driven in depth exploration but also gives an
+overview of the URL and presents curated research results for                       8
+                                                                                     https://unity.com
+a selection of three experiments. With this approach the technical                  9
+                                                                                     Cave Automatic Virtual Environment (CAVE) setups are rooms onto whose walls
+access barrier of highly relevant research data is lowered and data                 the virtual world is projected
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                3                                          July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                                Virtual Experiment Information System Prototype
+
+
+
+
+  FIGURE 2 | Two consecutive viewpoints with different scale: (A) a representation of the stratigraphic layers with additional textured surface data of the surrounding
+  terrain from Google (2021) and (B) laser scan data of the tunnel system.
+
+
+
+controllers (keyboard and mouse) to dedicated VR controllers                               in this way creates a 3D model (geometry) based on the
+such as HTC Vive Controllers or Flysticks. Another beneﬁt of                               determined distances.
+using Unity is that it can easily be extended by implementing                                  The digital replica of the Mont Terri URL has been enhanced
+additional modules and methods. Furthermore, Unity also                                    by results of numerical simulations. These simulations have been
+enables the recording of interactive sessions. The movies                                  conducted using the OpenGeoSys (OGS) simulation software
+created in this way can be used for example for presentations.                             (Kolditz et al., 2012). In total six visualisations of numerical
+   The performance of the application obviously depends on the                             models with varying extents have been included into the scene,
+complexity of the scene (i.e. the size and quality of rendered                             displaying the simulation results of saturation, temperature,
+objects) as well as the screen resolution of the output device. For                        displacement and fault opening in the Opalinus Clay. In
+the prototype a notebook with a dedicated graphics card10 is                               contrast to other static data, these data sets are time-
+sufﬁcient to render the visualisations and animations.                                     dependent. Therefore, time step information had to be
+   For the usage on HMDs like the Oculus Quest 2 or the HTC                                preprocessed using Python scripts to cover the various time
+Vive Pro, a notebook or PC with a sufﬁcient graphics card and the                          formats needed to display the progress of simulations with
+device speciﬁc connectors (i.e., DisplayPort for the Oculus Quest                          highly varying time spans. This preprocessed time step data
+2) can be used to outsource the time-consuming calculation of                              then has been imported into Unity.
+separate images for the left and right eye. To use the application in                          In addition, data sets that depict and illustrate the geological
+CAVE-like settings plug-in type software modules like                                      context have been included. Originally they have been provided
+MiddleVR11 or UniCAVE12 are required.                                                      in several different formats and were converted into graphical 3D
+                                                                                           representations. Examples for these data sets are the stratigraphic
+2.2 Integration of Static Data                                                             layers of the Jura Mountains (see Figure 2A), textured surface
+A collection of heterogeneous data sets, originally available in a                         data of the surrounding terrain from Google Earth (Google, 2021)
+wide range of data formats, has been included in the prototype                             and local tectonic fault zones.
+and a number of spatial data sets are a ﬁxed part of the                                       All these static data sets vary in structure (raster-, mesh- and
+application. This is what we call static application data.                                 time series data), dimensionality (1D to 4D) and extent (from
+Although static data might be time-dependent (e.g. results of                              metres to kilometres). Despite the wide variety of formats their
+numerical simulations) and thereby might be displayed in                                   processing has been similar: First they have been preprocessed
+different states, the data sets themselves will not change unless                          and integrated into a uniﬁed geographic context using the
+they are explicitly updated by the developer of the application.                           OpenGeoSys Data Explorer, other OGS preprocessing tools
+The following section will explain the integration of the tunnel                           (Rink et al., 2014) and ParaView (Ahrens et al., 2005). All
+system, simulation results and the geological context in detail.                           OpenGeoSys tools are open-source13 and provide various
+   The model of the Mont Terri URL’s tunnel system (see                                    interfaces for the integration and conversion of common data
+Figure 2B) serves as a frame of reference for almost all other                             formats in geosciences (e.g., GIS formats and GOCAD). Then, a
+data sets. It has been originally created via laser scan. This                             large variety of postprocessing and visualisation techniques has
+technique measures the time it takes for a beam of light to                                been applied, such as clipping of the geometry, the extraction of
+travel from the laser scanner to the tunnel walls and back and                             (contour) surfaces and parameters, projections and the
+                                                                                           colourisation (see Rink et al. (2022b) for details). Next, the
+                                                                                           data has been exported as geometrical objects in the glTF-ﬁle-
+                                                                                           format (Bhatia et al., 2017). To import these into the Unity scene a
+10
+   One of the notebooks used for development contains an Intel Core i7-9750H with
+                                                                                           combination of several custom importer scripts (implemented in
+32 GB RAM and an nVidia Quadro T1000 graphics card
+11
+   https://www.middlevr.com
+12                                                                                         13
+   https://widve.github.io/UniCAVE/                                                             https://gitlab.opengeosys.org
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                       4                                                July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                           Virtual Experiment Information System Prototype
+
+
+
+
+                                                                                         a communication layer between the Unity-application and the
+                                                                                         borehole database. This layer allows to ﬂexibly access live data
+                                                                                         while being able to change which database is currently used
+                                                                                         (remote or local) with only a few clicks. Furthermore, should not
+                                                                                         only the address of the database but the type of database system
+                                                                                         itself change at some point in the future, this does not mean that
+                                                                                         the entire application has to be adapted. The modularity achieved
+                                                                                         by this additional layer between database and application results
+                                                                                         in a high ﬂexibility for such a case as well.
+                                                                                             For everyday use, the data retrieval process of the prototype
+                                                                                         works as follows: Once the application is started, it loads the
+                                                                                         geometrical data for all boreholes plus related information. Then
+                                                                                         the borehole data is preprocessed to ﬁlter out invalid boreholes. In
+     FIGURE 3 | Visual representation of the boreholes based on calculations             addition, meta data (e.g. document-links and section-
+     with single-precision ﬂoating-point vectors (brown) compared to double-
+     precision (green). The green spheres are marking the actual borehole’s start-
+                                                                                         information) is attached to the borehole’s underlying local
+     and end point as a reference for precision.                                         data object. The described borehole data does not update
+                                                                                         automatically while the prototype is running but only when
+                                                                                         restarting the application or manually changing the data source.
+C#) and a dedicated Unity extension14 is used. Besides that,                                 As the BIS contains no structured information about the
+intermediate scripts have been created to transfer additional                            experiment a borehole is associated with, this information
+data from ParaView to Unity. Examples for such additional                                must be extracted from the borehole’s name. After retrieving
+data are labels for the stratigraphic layers, colour mapping                             data from the database, the preﬁxes of all borehole names are
+tables or additional time step data like individually formatted                          collected and considered as experiments.
+time labels.                                                                                 Internally Unity is only able to use single-precision ﬂoating-
+                                                                                         point vectors for the position and orientation of 3D objects while
+2.3 Integration of Borehole Data                                                         in the BIS start- and end points are stored with double-precision.
+The Mont Terri Borehole Information System (BIS) is based on a                           For the display of small boreholes in a large environment this
+productive PostgreSQL15 database which is maintained by the                              precision reduction leads to signiﬁcant artifacts. That error has
+company Simultec AG. The database consists of 19 tables that                             been minimised using an extension for double-precision ﬂoating-
+represent objects such as boreholes and their drilling sections.                         point vectors16 at least for all calculations before displaying visual
+The borehole table contains information such as the unique                               representations of boreholes. A comparison of both approaches is
+borehole ID, links to attached documents and geometrical                                 shown in Figure 3.
+attributes like a three dimensional start- and end point as well
+as the angles azimuth and dip. Via a unique drilling ID the                              2.4 Integration of Sensor Data
+borehole table is linked to the table of drilling sections. This table                   Most boreholes in the Mont Terri laboratory are drilled to install
+contains, among other information, geometrical attributes such                           sensors for the monitoring of processes within the Opalinus Clay.
+as the section’s diameter and length.                                                    With that, a variety of parameters such as pressure, temperature,
+   Due to the fact that not for every borehole the complete set of                       displacement and humidity are determined.
+geometrical information described above is stored, valid and                                 This time-series data is stored in a Firebird17 database which is
+invalid boreholes are distinguished. For the visual                                      maintained by the company Sixsense Soldata. Our application
+representation in the 3D scene of the prototype only boreholes                           accesses the sensors’ names, the date and time of the
+are considered for which either start- and end point are available                       measurements as well as the measured values. At the time of
+or the combination of start point, both angles and the length                            writing, the database stores measured values for more than 5,700
+(through the sections) is given. All boreholes (or sections) that are                    sensors over a time span of multiple years. The sensors we have
+missing this crucial information are considered invalid.                                 focused on in our application measure in intervals of a few
+   At the time of writing, the database contains 1365 boreholes.                         minutes. For example, temperature and extensometer
+While most of these boreholes consist of only one drilling section,                      measurements are available in the database in intervals of 10 min.
+some have up to four sections. In total the database contains 1415                           To include this measurement data into the application
+drilling of the boreholes are invalid. All of these boreholes consist                    libraries provided by Firebird have been imported into the
+of exactly one section, so the count of invalid sections is also 16.                     project and–as previously described for the borehole
+   To include data on boreholes and sections from the BIS into                           data–implemented C#-scripts for an additional communication
+the prototype libraries provided by PostgreSQL have been                                 layer between the Unity-application and the sensor database to
+imported into the project and implemented C#-scripts to build                            provide maximum ﬂexibility.
+
+
+14                                                                                       16
+     https://github.com/Siccity/GLTFUtility                                                   https://github.com/sldsmkd/vector3d
+15                                                                                       17
+     https://www.postgresql.org                                                               https://ﬁrebirdsql.org
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                     5                                              July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                          Virtual Experiment Information System Prototype
+
+
+
+
+  FIGURE 4 | Experiments at the Mont Terri URL (A) an overview of the most important experiments and (B) display of the associated boreholes after the selection of
+  one experiment.
+
+
+
+    For everyday use, the data retrieval by the prototype runs as                            The backup is a encapsulated combination of the following
+follows: Once the application is started it loads the borehole data                      dynamic data sets: borehole positions and dimensions, links to
+as described in subsection 2.3. Then a connection to the sensor                          borehole-related documents, sensor positions and sensor
+database is established and all the sensor data is preprocessed and                      measurements. It can be considered a local ﬁle that can be
+cached in the background, i.e. the measurements of all available                         used without additional software (as e.g. needed to set up and
+sensors are accessed and preprocessed in the background while                            run a local database) when an online database can’t be accessed
+users are already able to use the application. As with the borehole                      and must not be confused with a local database.
+data, cached measurements are only updated when the                                          From a technical perspective the data dump is a text ﬁle in the
+application is restarted or the data source changes.                                     JSON-ﬁle-format containing all data objects in a structured way.
+    We implemented a number of preprocessing methods for the                             It is stored locally on the computer on which the application runs.
+sensor data, such as aggregation (average calculation) of                                An exemplary data dump containing 1350 boreholes and 92
+measurements per day as well as the creation of a copy of the                            measurement time-series has a ﬁle size of 8.45 MB.
+time-series for which outliers are automatically eliminated. For
+this outlier elimination, the maximum realistic difference
+(maximum delta) between two consecutive measurements was                                 3 VISUALISATION OF SELECTED
+determined in consultation with experts from the ﬁeld for each                           EXPERIMENTS
+sensor type. All measurements that deviate more than this
+maximum delta from the previous measurement are                                          The created prototype of a Virtual Experiment Information
+considered outliers. For example, for temperature sensors,                               System (VEIS) not only gives an overview of the Mont Terri
+whose measured values are stored in the database multiple                                URL as a whole but also allows for the visual exploration of a
+times per hour, this value is 2°C.                                                       selection of three exemplary experiments. These experiments
+    As an example, the preprocessing and caching of the                                  have been chosen because they reﬂect the great diversity of
+measurements for a set of 5 sensors inside one borehole over                             research conducted at Mont Terri. The illustrations and
+a time span of roughly two and a half years (at the time of writing                      visualisations of the experiments have been created in close
+roughly 681,000 measured values) takes less than 1 s. Discussions                        consultation and discussion with experts from the ﬁeld.
+with experts from the ﬁeld have shown that a daily aggregation is
+sufﬁcient for the sensors we focused on in the prototype.                                3.1 Experiment Markers
+Nevertheless, it is technically possible to change our setup to                          For a selection of 63 experiments, we collected short name, short
+display live and non-aggregated data. This possibility applies both                      description and position in 3D space attached or close to the
+to the data currently shown and to measurements with a much                              tunnel system. This information has been extracted from Bossart
+higher temporal resolution. The internal architecture of our                             et al. (2018) and the website of the Mont Terri Project18. The
+application allows to set the level of aggregation for different                         resulting 3D experiment markers that can be used to inspect the
+sensor types individually during creation of the prototype with                          associated boreholes are depicted in Figure 4A. The right image,
+little effort.                                                                           Figure 4B, shows an example of the boreholes associated with
+                                                                                         one of the experiments.
+2.5 Local Database Dump                                                                     For the assignment of 3D positions to the experiment markers
+For the borehole data as well as for sensor measurements, the                            an automatic approach has been tested: The bounding box of all
+prototype also provides functionality to save a combined local                           boreholes associated with the experiment has been calculated and
+backup copy of the data retrieved from the databases once the
+online databases have been accessed. This creates the possibility
+to use the application also in situations in which the database is                       18
+                                                                                            https://www.mont-terri.ch/en/experiments/the-most-important-experiments.
+not accessible or the user’s internet connection is not stable.                          html
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                     6                                              July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                           Virtual Experiment Information System Prototype
+
+
+
+
+  FIGURE 5 | Cyclic Deformation Experiment (A) general illustration and (B) boreholes coloured by type of sensor installed inside–both with a mini-map in 2D at the
+  bottom right for orientation.
+
+
+
+
+  FIGURE 6 | The in-chart visualisation of measurements exemplary for the extensometer measurements in the scope of the Cyclic Deformation Experiment (A) with
+  sensor segments coloured by distance to the mouth of the borehole and (B) with sensor segments coloured by distance to the niche (using a cylinder that approximates
+  the niche’s wall). Borehole CD-A1 that has been drilled from the Gallery is marked with (1) and Borehole CD-A9, as an example for a borehole drilled from the niche, is
+  marked with (2).
+
+
+
+its center has been chosen as the position for the experiment                            results in a cluttered visualisation. Secondly, the center of the
+marker. This approach was not feasible for two reasons: Firstly,                         bounding box does not always match the semantic center of the
+the marker is rarely placed close to the tunnel system and this                          experiment–especially if the experiment contains one or more
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                     7                                              July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                   Virtual Experiment Information System Prototype
+
+
+
+
+  FIGURE 7 | The in-scene visualisation of measurements exemplary for the extensometer measurements in the scope of the Cyclic Deformation Experiment (A)
+  without additional context data and (B) with the local fault zones.
+
+
+
+
+long or spatially far separated boreholes. Therefore, the mapping                   the borehole’s axis. The application provides two different
+of positions has been carried out manually.                                         visualisation approaches for extensometers and their
+   In the following we will give an overview of the visualisation                   measurements: the in-chart visualisation and the in-scene
+and exploration options of a few selected experiments.                              visualisation.
+                                                                                        For the in-chart visualisation two different modes have
+3.2 Cyclic Deformation Experiment                                                   been implemented for the colourisation of the sensor
+The Cyclic Deformation Experiment investigates the impact of air                    segments in the scene: on the one hand, colour by distance
+humidity and related desaturation of the claystone on the coupled                   to the borehole’s mouth, i.e., the point where it was drilled into
+hydraulic–mechanical effects in the host rock as these effects are                  the tunnel wall (see Figure 6A) and on the other hand, colour
+relevant for the stability and integrity of a potential waste                       by closest distance to the wall of the niche (see Figure 6B). For
+repository. Therefore, two similar niches have been excavated                       the calculation of the distance to the closest niche, a cylinder
+in close proximity to observe changes of process variables like                     was used to represent the walls for each of the two niches. This
+deformation and water content as well as material parameters like                   is sufﬁcient because the calculation only needs to be an
+the permeability of the Opalinus Clay under different climatic                      approximation of the distance to be useful for our
+conditions. One of these niches is open towards the tunnel system                   visualisation. The exact same colours as in the scene are
+allowing air exchange, while the other one is sealed off with an                    used in the charts as well to allow for an easy and intuitive
+airtight entrance. This is illustrated in Figure 5A.                                recognition of the sensors in their spatial context. In addition
+    Some of the 28 boreholes of the experiment have been drilled                    to the colour coding of sensors, the borehole, for which the
+from the Main Gallery, while others have been drilled from within                   chart is displayed, is highlighted by repeatedly ﬂashing in a
+the niches. In Figure 5B the boreholes are depicted colourised by                   marker colour. The side by side view of the chart and the
+the main sensors installed inside. In the scope of the Cyclic                       sensor’s position in the scene reduces the cognitive effort
+Deformation Experiment more than 90 sensors have been used to                       needed for exploration.
+measure displacement (chain extensometers), permittivity (taupe                         The beneﬁts of the two different colourisation modes become
+sensors), hydraulic conductivity (evapometers), pressure                            more obvious with potential questions for investigation in mind:
+(minipiezometers) and temperature (measured in addition by                          “Does the displacement vary the deeper the sensor is placed inside
+several sensors of different types) within the boreholes.                           the borehole?” and “Does the excavated niche inﬂuence the
+Additional measuring devices are installed within the niches                        measured displacement?”. One may think that the
+and aim on the climatic conditions like air humidity, air                           colourisation by depth inside the borehole (Figure 6A) may
+temperature, water content and electric resistivity amongst                         be sufﬁcient for answering both of these questions. But
+others.                                                                             researchers need the colourisation by distance to the niche
+    For a small subset of sensors manual acquisition or processing                  (Figure 6B) in addition because there are some boreholes that
+of the measurements is required. This data is therefore not stored                  were not drilled from within the niche but from the Main Gallery
+in the database (see subsection 2.4). An example of such a                          (tunnel system in the background). An example for this situation,
+complex sensor is the taupe sensor. All other measurements                          in which the two modes result in different colourisation, is
+that are stored in the database can be accessed via the VEIS.                       borehole CD-A1 (marked ① in Figure 6). In contrast,
+We present examples for the visualisation of sensor data based on                   borehole CD-A9 (marked ② in Figure 6) was drilled starting
+the extensometer measurements acquired within the scope of the                      in the niche so both modes result in similar colour gradients for
+CD-A experiment. The used chain extensometers are sensors that                      its set of sensors.
+measure changes in lengths over time for several segments in a                          For the in-scene visualisation the extensometer chain
+borehole. As they have no ﬁxed point, they only provide                             segments are colourised by the strain relative to the ﬁrst
+information about the degree of shrinking or expanding along                        measurement (see Figure 7A). Therefore, a diverging colour
+
+
+Frontiers in Earth Science | www.frontiersin.org                                8                                           July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                             Virtual Experiment Information System Prototype
+
+
+
+
+  FIGURE 8 | The two types of simulation visualisation in the scope of the Cyclic Deformation Experiment (A) the semi-transparent top-down view and (B) the opaque
+  front-side visualisation with an additional slider for the clipping plane. Both types of visualisation include an additional symbol to indicate the current meteorological
+  season at the bottom right. see Zieﬂe et al. (2021, 2022) for details.
+
+
+
+
+  FIGURE 9 | Illustration of the Full-Scale Emplacement Experiment from Müller et al. (2017).
+
+
+
+
+map is used to illustrate the opposing processes of expanding                              perspective (Figure 8A) and allows to inspect the saturation
+(white to green) and shrinking (white to pink). That makes it easy                         effects along a horizontal plane. On the other hand, a lateral
+for the user to visually detect whether there are changes relative to                      perspective, shown in Figure 8B is enhanced by a movable
+the initial length (and of which type these changes are). This can                         clipping plane, controlled by a second slider. In this way, the
+serve as a ﬁrst preliminary examination before users then inspect                          user can select the focus of investigation as needed.
+measurements in detail in charts.                                                              In addition, a symbol representing the meteorological season
+    A data set illustrating local faults in the surrounding rock can                       of the current time step is displayed at the bottom right. The
+be used as additional context for the in-scene measurement                                 current season is an important information for the inspection of
+visualisation of the Cyclic Deformation Experiment (see                                    the results, since it inﬂuences the saturation evolution, especially
+Figure 7B). Their transparency can be set by the user. The                                 in the open niche. The strikingly coloured icons which display the
+visual embedding of measured values into the spatial context                               current season are easy to perceive and therefore also give users a
+allows for investigation of interrelationships. An exemplary                               sense of how much time is roughly passing while they can mainly
+question to investigate is: “Do fault zones inﬂuence the                                   focus on the visualisation of the simulation. However, users
+measured displacement and if so in which way and where?”.                                  aiming to inspect time steps in more detail than on season-
+    Besides the previously described data, another important data                          level can always resort to the label that displays year and month
+set in the scope of the Cyclic Deformation Experiment are the                              next to the slider.
+results of a coupled hydro-mechanical simulation with OGS (see
+Zieﬂe et al. (2021; 2022) for details). The model consists of 33,552                       3.3 Full-Scale Emplacement Experiment
+nodes and 180,161 tetrahedra, covering a volume of 47 × 27.65 ×                            The Full-Scale Emplacement Experiment investigates the impact
+18 m3. The displacement and pore pressure evolution have been                              of a tunnel excavation and the effect of heat emission on the
+simulated over a time span of roughly 5 years with 269 time                                surrounding rock. For this purpose, three heaters have been
+increments. The changes in the liquid degree of saturation result                          placed in a 50 m long tunnel to investigate thermo-hydro-
+from the pore pressure evolution and are an important quantity                             mechanical effects (Müller et al., 2017; Shao et al., 2017;
+to access the water content variations in the Opalinus Clay. For                           Papafotiou et al., 2018; Parisio et al., 2018). Here, the heating
+this reason, we selected saturation as an example for visualisation.                       elements simulate containers of radioactive waste. They work
+    In Figure 8, the prototype displays contour surfaces of the                            with up to 1,350 W each and emit heat up to 135°C. The dedicated
+simulation results using two different approaches. On the one                              tunnel was ﬁlled with bentonite granulate after the heaters have
+hand, it provides a semi-transparent rendering from a top-down                             been placed inside it. The effects on the surrounding rock induced
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                       9                                               July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                               Virtual Experiment Information System Prototype
+
+
+
+
+  FIGURE 10 | The two visualisation techniques for simulation results in the scope of the FE experiment (A) the modelled temperature as discrete bins of 3°C on a
+  clipped volume and (B) the modelled vertical stress as six contour surfaces.
+
+
+
+
+  FIGURE 11 | Two visualisations of the Fault Slip Experiment (A) a general illustration of the experiment and (B) simulation results with an additional arrow indicating
+  the change of pressure relative to the last time step.
+
+
+
+by the heat are measured by more than 1,600 sensors that are                                 have the same characteristics like domain extent and time
+installed in boreholes and the tunnel itself. These sensors measure                          span as the temperature simulation mentioned above.
+a great variety of parameters like temperature, pressure,                                       In the application, the results of the vertical stress simulation
+deformation and humidity. Figure 9 illustrates this general                                  are displayed as six contour surfaces of increasing values (see
+setup of the Full-Scale Emplacement Experiment.                                              Figure 10B). A sequential colour map has been used for the
+    In addition to measurements, the effect of the heat emission                             surface colouring here because it allows to intuitively analyse
+has also been modelled in a heat transport simulation with a time                            spatial trends and interrelationships.
+span of roughly 15 years using OGS. It contains 230 time steps                                  For both, the temperature as well as the vertical stress
+and covers a volume of 100, ×, 80, ×, 100 m3 around the tunnel.                              simulation, users can individually select a time step or play
+The modelled area consists of 164,472 hexahedra and 169,806                                  them as an animation.
+points.
+    The prototype displays these simulation results as a clipped                             3.4 Fault Slip Experiment
+volume (Figure 10A). The diverging colour map for temperature                                The Fault Slip Experiment investigates the inﬂuence of
+values allows to perceive very high temperatures close to the                                pressure on a fault zone within the Opalinus Clay to study
+heaters (white to red) as well as the overall rather low natural                             the resulting displacement of the rock, the fault opening and
+temperature of the Opalinus Clay (blue to white). As structures in                           therefore also changes in the permeability (Guglielmi et al.,
+the blue-to-white area of the colour map were hard to perceive,                              2017, 2020; Shiu et al., 2021). For this purpose water is
+the colour map has been sampled in discrete bins of 3°C.                                     pumped through a borehole into the fault in intervals of
+Although this approach reduces the displayed degree of detail,                               varying degrees of pressure. This injection has been
+it allows to inspect the overall more important spatial structure of                         illustrated in Figure 11A. In this image, the red surface
+the heat emission and expansion.                                                             represents the part of the fault located within the model
+    The heat induced by the heaters affects not only the                                     domain and the diagram on the right hand side displays
+temperature but also other characteristics of the rock.                                      the change of pressure over time.
+Therefore, another model simulates mechanical parameters                                         The effects of the applied pressure have been modelled in an
+such as displacement, stress, and strain of the surrounding                                  OGS simulation of a variety of parameters like pressure,
+Opalinus Clay. This simulation and the underlying model                                      displacement, hydraulic ﬂow and stress. The simulation
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                        10                                               July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                      Virtual Experiment Information System Prototype
+
+
+
+
+  FIGURE 12 | The shortcut overview and the basic UI elements: Viewpoint Navigation (1), help button (2) and exit button (3).
+
+
+
+
+  FIGURE 13 | Important windows in our application (A) the Main Menu and (B) the Borehole Panel, exemplary for borehole CD-A10.
+
+
+
+
+consists of 314 time steps that cover a time span of 13 min and                        to the precise numbers, thus staying focused on the visualisation
+27 s. The model covers a volume of 10, ×, 20, ×, 20 m3 and                             of the simulation.
+consists of 13,800 nodes as well as 12,276 hexahedra and
+rectangles to discretise the domain and the fault, respectively.
+    In the prototype, in addition to the general illustration, a                       4 VIRTUAL EXPERIMENT INFORMATION
+selection of two simulated parameters has been visualised as                           SYSTEM
+depicted in Figure 11B: On the one hand, on the clipped
+simulation’s domain the displacement (white to blue) is shown                          In the following we give an overview of the Virtual Experiment
+and on the other hand the fault opening (white to green) is                            Information System (VEIS). In contrast to the detailed
+projected onto the surface that represents the fault. Sequential                       explanations of speciﬁc experiment visualisations in the last
+colour maps have been used for both values.                                            chapter we will focus on the general system and explain its
+    Besides the pure simulation results, the visualisation also                        basic concepts and components as well as the beneﬁts and
+displays the currently applied pressure using not only a label                         limitations.
+with the precise strength but also a coloured arrow that indicates
+if the pressure increased (pink, pointing up), decreased (blue,                        4.1 Basic Control
+pointing down) or stagnated (white, straight) compared to the                          In the prototype, users can freely navigate through the 3D scene.
+last time step. These coloured arrows allow users to perceive                          If the application is used with a classic desktop setup, mouse and
+changes in strength of pressure without paying greater attention                       keyboard interactions allow zooming and panning as well as the
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                  11                                            July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                      Virtual Experiment Information System Prototype
+
+
+
+
+     FIGURE 14 | Borehole-related documents (A) access via the Borehole Panel and (B) exemplary display of photo documentation for borehole CD-A10.
+
+
+
+
+rotation and translation of the current point of view. The key                               The ﬁrst entry ① enables the users to select predeﬁned
+bindings and interaction instructions are displayed in Figure 12.                        viewpoints from a list. The entry Objects ② contains a list of
+This view is displayed when the help button ② has been clicked.                          all geometrical objects in the scene. In this list, their visibility can
+The button marked ③ allows users to exit the application.                                be adjusted using a checkbox or a slider for the opacity. The next
+                                                                                         entry, marked ③, lets users control animations, i.e. select a time
+4.2 Viewpoints                                                                           step of a simulation result or play it as an animation. Entry ④
+The created prototype is based on the concept of pre-deﬁned                              contains some general options, e.g. if stereoscopic rendering is
+viewpoints. For each viewpoint an individual conﬁguration                                enabled or the way notiﬁcations are displayed. The entry for
+has been created. This conﬁguration includes the individual                              Experiments ⑤ displays a searchable list of all experiments and
+visibility of data sets, availability of interactions, animations                        allows for ﬁltering of the boreholes currently displayed in the 3D
+and illustrations. Users can change the current viewpoint                                scene by experiment. Another searchable list is displayed in entry
+using either the list of viewpoints in the Main Menu or the                              ⑥: Here you can search for boreholes by their ID. A click on a
+Viewpoint Navigation element at the top of the screen (see ①                             borehole in the list also changes the current point of view so that
+in Figure 12) which also displays the current                                            the geometrical representation of the borehole becomes visible in
+viewpoint’s name.                                                                        the 3D scene. Entry ⑦ allows users to change advanced
+   For each viewpoint the prototype provides an audio comment                            visualisation conﬁgurations like the way boreholes and sensors
+which is available in English and German. The audio comments                             are displayed and colourized. The last entry, marked ⑧, contains
+contain, on the one hand, geoscientiﬁc explanations for the                              options to select the currently used data source and allows users
+currently visible data sets and, on the other hand, instructions                         to create a local data dump.
+on the user interface interactions that are available for the current
+viewpoint. For the recording the software Microsoft Azure Text-                          4.4 Borehole Panel
+to-Speech19, that implements speech synthesis based on neural                            The Borehole Panel aims to provide a general overview of all
+networks, has been used. The audio comments are also part of the                         relevant information on one borehole. This includes the name,
+video20 provided as supplemental material.                                               the approximated length, an overview about the drilling sections
+   The usage of viewpoints and audio comments allows the                                 and their diameter, the amount and type of sensors installed
+Virtual Experiment Information System to be interpreted as a                             inside the borehole as well as a list of documents, images and
+virtual tour for intermediates as well. According to the taxonomy                        reports (see Figure 14) that are associated with the borehole or its
+of virtual ﬁeld trips by Klippel et al. (2019) the implemented tour                      drilling process. To open the Borehole Panel a borehole must be
+can be considered an Advanced Virtual Field Trip as it consists of                       selected either in the 3D scene with a left mouse click on its
+a virtual replica, provides new visual perspectives and enhances                         cylinder or via the Main Menu. The Borehole Panel is depicted,
+the real environment with additional interactions and data such                          exemplary for borehole CD-A10, in Figure 13B.
+as simulation results.
+                                                                                         4.5 Chart View
+4.3 Main Menu                                                                            The Chart View is a window that displays sensor measurements,
+The Main Menu is a tool that allows users to control the scene and                       i.e. time series data. It is exemplarily depicted in Figure 6. The
+the visualisations beyond the predeﬁned setup for the viewpoints.                        underlying data sets that are displayed in the Chart View are
+It is depicted in Figure 13A. By default it is hidden and opens on a                     described in detail in subsection 2.4. Besides the chart itself, the
+right mouse click.                                                                       Chart View contains checkboxes that can be used to individually
+                                                                                         toggle the visibility of the currently displayed data sets.
+                                                                                         Furthermore, users have the option to choose whether they
+19
+     https://azure.microsoft.com/en-gb/services/cognitive-services/text-to-speech        want to see the data as it is stored in the database or whether
+20
+     https://youtu.be/X71DF7SG5uc                                                        they prefer the version where outliers have been eliminated. Next
+
+
+Frontiers in Earth Science | www.frontiersin.org                                    12                                        July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                         Virtual Experiment Information System Prototype
+
+
+
+to the checkbox for the outliers, the criterion for the elimination           from taking in visual and auditive information about the scene at
+of outliers is displayed for reasons of transparency. In both cases,          the same time.
+measurements are aggregated on a daily basis by calculating the
+average. This is necessary because a time span of several years of            4.9 Beneﬁts and Limitations
+measurements is displayed.                                                    The created prototype of a Virtual Experiment Information
+                                                                              System lowers the technical access barrier for researchers to
+4.6 Sliders                                                                   explore their data. By combining simulation and observation
+The prototype’s UI contains three types of sliders: object visibility         data it also promotes a deeper understanding of the experiments.
+sliders which control the opacity of a single object, clipping sliders        The application enables and supports user-driven exploration
+which control which geometrical part of an object is currently                with interactive types of visualisation, facilitating the gain of new
+visible and time step sliders which control the currently displayed           ﬁndings. By embedding a variety of heterogeneous data into one
+state of measurement data or simulation results. All these sliders            spatial context, the application lowers the cognitive effort needed
+are displayed automatically at the bottom of the UI for the                   to investigate and explore the data and its context. Furthermore,
+viewpoints at which they are relevant. Examples are shown in                  the application promotes discussions among researchers and
+Figure 8.                                                                     supports the creation of presentations, which can be used for
+    The visibility sliders have a range from 0 to 100% which is               exchange between the stakeholders. In this way, it promotes
+directly linked to the opacity of the corresponding object. The               discussions also beyond the scientiﬁc context. In addition, the
+same range is also used for the clipping sliders. Here, 0 and 100%            prototype could be further developed to be used as a science
+correspond to two different, ﬁxed positions between which the                 communication tool for the broad public or for intermediates in
+clipping plane can be moved. For the labels of time step sliders, a           an educational context. Since the system has been implemented as
+variety of different date and time formats were used in order to              generically as possible, further data sets in similar formats can be
+take into account the different time spans by adjusting the degree            integrated with little effort using existing infrastructure. Even the
+of detail (milliseconds to years) that is displayed.                          databases as sources for borehole and sensor data can be
+    All sliders allow the selection of a step (or value) manually as          exchanged with little effort as this step only requires an
+well as to play the animation automatically using the controls                adaption to the new database’s scheme but not a new
+next to the slider. After the animation has been started the Play             technical setup.
+button turns into a Pause button.                                                 The application is neither a database management system for
+                                                                              editing data nor a complex measurement exploration tool with a
+4.7 Mini-Map                                                                  focus on versatile chart displays or advanced (pre-)processing.
+In addition to displaying the tunnel system (see subsection 2.2)              Therefore, such functionalities are not part of the prototype of a
+in the main 3D view, an orthographic top down rendering of it is              Virtual Experiment Information System. Furthermore, the
+used as a mini-map in 2D for orientation. Here, the current                   application is partly based on knowledge of domain-experts
+position and orientation of the user is represented by a green                concerning the experiments they are conducting. Thus, further
+marker. This map provides orientation while navigating through                development of the application depends on their input and
+the tunnel system. It is therefore only enabled for a selection of            cooperation. This concerns in particular the following aspects:
+viewpoints for which this feature is useful. An example is shown              1) selection and supply of data sets, 2) identiﬁcation of important
+at the bottom right of Figure 5.                                              tasks, methods and insights from the domain and 3) discussion of
+                                                                              suitable visualisations to address these challenges and results
+4.8 Accessibility                                                             from the domain. In addition, it is important to mention that
+When choosing the colours for the visualisations, we focused on               a single visualisation concept for all sensor data is not the aim of
+colour palettes that are colourblind friendly and considered the              the application, as the sensors utilised and experiments taking
+basic properties of human visual perception, taking into account              place at the Mont Terri URL are quite diverse. Hence, similar to
+the work of Brewer et al. (2022), Okabe and Ito (2008) and                    the preparation of the extensometer measurements for the in-
+Nardini et al. (2021). Only for the visualisation of the                      scene visualisation in the scope of the Cyclic Deformation
+stratigraphic layers (see Figure 2) was this not possible due to              Experiment, further advanced visualisations for other
+the large number of categories and the fact that the colours for the          experiments will once again require individual processing.
+different rock types are predeﬁned in the lithostratigraphic
+lexicon of Switzerland 21 provided by the Federal Ofﬁce of
+Topography (swisstopo) and the Swiss Academy of Sciences.                     5 CONCLUSION
+   In addition to ensuring the usability for people who are
+colourblind, a variation for people who are Deaf has been                     5.1 Summary
+implemented: If users mark a checkbox at the start of the                     In close cooperation with experts from the domain we developed
+application the audio comments are replaced by pop-ups with                   a prototype of a Virtual Experiment Information System for the
+written text. This is not the default setting as it prevents the user         Mont Terri Underground Research Laboratory. Besides the focus
+                                                                              on three experiments, namely the Cyclic Deformation
+                                                                              Experiment, the Full-Scale Emplacement Experiment and the
+21
+     https://www.strati.ch                                                    Fault Slip Experiment, the application also provides an overview
+
+
+Frontiers in Earth Science | www.frontiersin.org                         13                                      July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                               Virtual Experiment Information System Prototype
+
+
+
+of the URL itself. The prototype is compatible with various                                   visual aggregation of the data. In addition, the application could
+different hardware- and software conﬁgurations. Highly                                        be extended to compare the results of simulations conducted
+heterogeneous data from several different sources have been                                   using different numerical models.
+integrated into one application. This includes static data like a
+model of the stratigraphic layers and a laser scan of the tunnel
+system, which provide geological context but also the results of                              DATA AVAILABILITY STATEMENT
+numerical simulations that show potential changes within the
+Opalinus Clay due to human intervention, e.g., excavation.                                    The data analyzed in this study is subject to the following
+Besides static data, access layers for two productive databases                               licenses/restrictions: The visualised data, i.e., borehole data
+have been implemented to display borehole and sensor data. This                               from the BIS as well as sensor related data, that has been
+data is updated live to always present the current status of                                  collected by the Mont Terri Project is not public data.
+experiments within the URL. The application combines both                                     Therefore we can not provide direct access to the databases.
+observation data and simulation results. All data is visualised in                            Requests to access these datasets should be directed to
+an interactive manner to support user-driven exploration. In                                  nico.graebling@ufz.de.
+contrast to related work, our system addresses all four challenges
+that have been identiﬁed during the requirement analysis: It
+provides access of measurement data without major technical                                   AUTHOR CONTRIBUTIONS
+barriers and foreknowledge (1), implements state of the art
+visualisations that embed the data into its spatial context (2),                              NG designed the prototype application, implemented it,
+enables exploration in an interactive 4D scene (3) and takes into                             postprocessed simulation results, maintained exchange with
+account that target groups and prior knowledge may vary by                                    domain experts and wrote the manuscript; ÖŞ and LB
+keeping the user interaction as simple as possible (4). The                                   implemented infrastructure for the prototype application; TC,
+embedding of all data into a common spatial context allows                                    DN and WW provided simulation data as well as domain
+for explorations with low cognitive effort. Besides that, the                                 knowledge. GZ contributed manifold feedback as a domain
+interactive visualisations also lower the technical access                                    expert and supported the design of the prototype; DJ and JM
+barriers compared to the state of the art. The application                                    provided advice and feedback as domain experts; KR supported
+promotes exchange among researchers as well as science                                        designing the prototype, implemented infrastructure for it,
+communication to the broad public.                                                            postprocessed simulation results and revised the manuscript;
+                                                                                              GS and OK provided research concepts and revised the
+5.2 Future Work                                                                               manuscript.
+Future work could, for example, use the infrastructure of the
+current prototype to embed even more contextual information
+and illustrations for applications in the ﬁeld of science                                     FUNDING
+communication. In contrast to this work, the target group
+would then not be researchers but the general public                                          iCROSS (02NUK053E) funded by BMBF and (SO-093) funded by
+interested in the processes at Mont Terri Underground                                         Helmholtz Association • Virtual URL (VR Task) (W2_PH26)
+Research Laboratory, as part of the research and                                              funded by the Mont Terri Consortium • GeomInt (03G0866A)
+communication on the potential host rocks for radioactive                                     funded by BMBF.
+waste storage–a topic with high political and societal
+relevance. Additionally, future work could also include other
+experiments into the prototype to cover even more of the research                             ACKNOWLEDGMENTS
+performed at Mont Terri URL. Another conceivable extension of
+the prototype would be the comparative visualisation of                                       We are grateful to the support by the Mont Terri Consortium,
+measurement data and simulation results. The addition of the                                  the Federal Ministry for Education and Research (BMBF) and
+Full-Scale Emplacement Experiment with its extensive                                          the Helmholtz Association (HGF) (see funding above).
+temperature measurements would be particularly suitable for                                   Furthermore, the authors would like to thank swisstopo for
+this. This data could also be used to test the integration and                                enabling this research as well as Simultec AG and Sixense
+visualisation of larger data sets and to investigate concepts for the                         Soldata for technically setting up database access for us.
+
+
+                                                                                              Blecha, C., Raith, F., Scheuermann, G., Nagel, T., Kolditz, O., and Massmann,
+REFERENCES                                                                                       J. (2019). Analysis of Coupled Thermo-Hydro-Mechanical Simulations of a
+                                                                                                 Generic Nuclear Waste Repository in Clay Rock Using Fiber Surfaces. Proc.
+Ahrens, J., Geveci, B., and Law, C. (2005). “ParaView: An End-User Tool for Large-               IEEE Pac. Vis. Symposium 2019, 189–201. doi:10.1109/PaciﬁcVis.2019.
+   Data Visualization,” in Visualization Handbook, 717–731. doi:10.1016/B978-                    00030
+   012387582-2/50038-1                                                                        Bossart, P., Bernier, F., Birkholzer, J., Bruggeman, C., Connolly, P., Dewonck, S.,
+Bhatia, S., Cozzi, P., Knyazev, A., and Parisi, T. (2017). “glTF 2.0 Speciﬁcation,” in           et al. (2018). “Mont Terri Rock Laboratory, 20 Years of Research: Introduction,
+   Tech. Rep. (Beaverton, Oregon, USA: Khronos Group).                                           Site Characteristics and Overview of Experiments,” in Mont Terri Rock
+
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                         14                                             July 2022 | Volume 10 | Article 946627
+Graebling et al.                                                                                                                       Virtual Experiment Information System Prototype
+
+
+
+    Laboratory, 20 Years. Editors P. Bossart and A. G. Milnes. 1 edn (Cham:                            Laboratory Mont Terri Using Fiber Surfaces. Workshop Vis. Environ. Sci.
+    Birkhäuser), 3–22. Chap. 1. doi:10.1007/978-3-319-70458-6_1                                        (EnvirVis). doi:10.2312/envirvis.20201093
+Brewer, C. A., Harrower, M., Sheesley, B., Woodruff, A., and Heyman, D. (2022).                     Rink, K., Bilke, L., and Kolditz, O. (2014). Visualisation Strategies for
+    ColorBrewer 2.0. – Color Advice for Cartography. Avalilable at: http://www.                        Environmental Modelling Data. Environ. Earth Sci. 72, 3857–3868. doi:10.
+    colorbrewer.org (Accessed January 14, 2022).                                                       1007/s12665-013-2970-2
+Duncan, F., Noble, A. J., and Sinclair, D. (2010). The Construction and Anticipated                 Rink, K., Nixdorf, E., Zhou, C., Hillmann, M., and Bilke, L. (2020). A Virtual Geographic
+    Science of SNOLAB. Annu. Rev. Nucl. Part. Sci. 60, 163–180. doi:10.1146/                           Environment for Multi-Compartment Water and Solute Dynamics in Large
+    annurev.nucl.012809.104513                                                                         Catchments. J. Hydrology 582, 124507. doi:10.1016/j.jhydrol.2019.124507
+[Dataset] Google (2021). Satellite Images from Google Earth of the Region Around                    Rink, K., Şen, Ö. O., Hannemann, M., Ködel, U., Nixdorf, E., Weber, U., et al.
+    Saint-Ursanne. Switzerland: Google.                                                                (2022a). An Environmental Exploration System for Visual Scenario Analysis of
+Guglielmi, Y., Birkholzer, J., Rutqvist, J., Jeanne, P., and Nussbaum, C. (2017). Can                  Regional Hydro-Meteorological Systems. Comput. Graph. 103, 192–200. doi:10.
+    Fault Leakage Occur before or without Reactivation? Results from an In Situ                        1016/j.cag.2022.02.009
+    Fault Reactivation Experiment at Mont Terri. Energy Procedia 114, 3167–3174.                    Rink, K., Şen, Ö. O., Schwanebeck, M., Hartmann, T., Gasanzade, F., Nordbeck, J.,
+    doi:10.1016/j.egypro.2017.03.1445                                                                  et al. (2022b). An Environmental Information System for the Exploration of
+Guglielmi, Y., Nussbaum, C., Jeanne, P., Rutqvist, J., Cappa, F., and Birkholzer, J.                   Energy Systems. Geotherm. Energy 10, 1–16. doi:10.1186/S40517-022-00215-5
+    (2020). Complexity of Fault Rupture and Fluid Leakage in Shale: Insights from a                 Shao, H., Paul, B., Wang, X., Hesser, J., Becker, J., Garitte, B., et al. (2017). The
+    Controlled Fault Activation Experiment. J. Geophys. Res. Solid Earth 125.                          Inﬂuence of Different Supports on the Properties of the Excavation Damaged
+    doi:10.1029/2019JB017781                                                                           Zone along the FE Tunnel in the Mont Terri Underground Rock Laboratory.
+Jalas, P., Enqvist, T., Isoherranen, V., Joutsenvaara, J., Kutuniva, J., and                           Geol. Soc. Lond. Spec. Publ. 443, 149–157. doi:10.1144/SP443.18
+    Kuusiniemi, P. (2017). Callio Lab, a New Deep Underground Laboratory in                         Shiu, W., Guglielmi, Y., Graupner, B., and Rutqvist, J. (2021). Modelling the Water
+    the Pyhäsalmi Mine. J. Phys. Conf. Ser. 888, 012156. doi:10.1088/1742-6596/                        Injection Induced Fault Slip and its Application to In-Situ Stress Estimation.
+    888/1/012156                                                                                       Int. J. Rock Mech. Min. Sci. 137, 104537. doi:10.1016/j.ijrmms.2020.104537
+Klippel, A., Zhao, J., Jackson, K. L., La Femina, P., Stubbs, C., Wetzel, R., et al.                Teodori, S.-P., Rüedi, J., Reinhold, M., and Manca, D. (2013). Design, Testing and
+    (2019). Transforming Earth Science Education through Immersive                                     Emplacement of Sand-Bentonite for the Construction of a Gas-Permeable Seal
+    Experiences: Delivering on a Long Held Promise. J. Educ. Comput. Res. 57,                          Test (GAST). Int. Conf. Environ. Remediat. Radioact. Waste Manag. 15. doi:10.
+    1745–1771. doi:10.1177/0735633119854025                                                            1115/ICEM2013-96086
+Kolditz, O., Bauer, S., Bilke, L., Böttcher, N., Delfs, J. O., Fischer, T., et al. (2012).          Wieczorek, K., Behlau, J., Heemann, U., Masik, S., Raab, M., Mueller, C., et al.
+    OpenGeoSys: an Open-Source Initiative for Numerical Simulation of Thermo-                          (2014). “VIRTUS. Virtual Underground Laboratory in Rock Salt,” in Tech. Rep.
+    Hydro-Mechanical/chemical (THM/C) Processes in Porous Media. Environ.                              (Cologne, Germany: GRS-354, Gesellschaft für Anlagen- und Reaktorsicherheit
+    Earth Sci. 67, 589–599. doi:10.1007/S12665-012-1546-X                                              mbH (GRS).
+Meller, C., Schill, E., Bremer, J., Kolditz, O., Bleicher, A., Benighaus, C., et al. (2018).        Yeatman, R., König, W., Vogt, T., Lüthi, B. F., and Fisch, H. (2019). “3D
+    Acceptability of Geothermal Installations: A Geoethical Concept for GeoLaB.                        Overarching Scientiﬁc Information System for the FE Experiment –
+    Geothermics 73, 133–145. doi:10.1016/j.geothermics.2017.07.008                                     Extended Abstract,” in Modern2020 – 2nd International Conference about
+Müller, H. R., Garitte, B., Vogt, T., Köhler, S., Sakaki, T., Weber, H., et al. (2017).                Monitoring in Geological Disposal of Radioactive Waste.
+    Implementation of the Full-Scale Emplacement (FE) Experiment at the Mont                        Zieﬂe, G., Cajuhi, T., Condamin, S., Costabel, S., Czaikowski, O., Fourriére, A., et al.
+    Terri Rock Laboratory. Swiss J. Geosci. 110, 287–306. doi:10.1007/s00015-016-                      (2021). From Process to System Understanding with Multi-Disciplinary
+    0251-2                                                                                             Investigation Methods: Set-Up and First Results of the CD-A Experiment
+Müller, H. R., Vogt, T., Firat, L. B., Spillmann, T., Giroud, N., and Garitte, B. (2019).              (Mont Terri Rock Laboratory). Saf. Nucl. Waste Dispos. 1, 79–81. doi:10.5194/
+    “Lessons Learned after More Than 7 Years of Monitoring the Full-Scale                              SAND-1-79-2021
+    Emplacement Experiment at the Mont Terri URL – Extended Abstract,” in                           Zieﬂe, G., Cajuhi, T., Graebling, N., Jaeggi, D., Kolditz, O., Kunz, H., et al. (2022).
+    Modern2020 – 2nd International Conference about Monitoring in Geological                           Multi-disciplinary Investigation of the Hydraulic-Mechanically Driven
+    Disposal of Radioactive Waste.                                                                     Convergence Behaviour: CD-A Twin Niches in the Mont Terri Rock
+Nagel, T., Görke, U.-J., Konietzky, H., Maßmann, J., Nest, M., Steeb, H., et al.                       Laboratory during the First Year. Geomechanics Energy Environ. 2022,
+    (2021). “Introduction to GeomInt,” in GeomInt–Mechanical Integrity of Host                         100325. doi:10.1016/j.gete.2022.100325
+    Rocks. Editors O. Kolditz, U. J. Görke, H. Konietzky, J. Maßmann, M. Nest,
+    H. Steeb, et al. 1 edn (Cham: Springer), 1–13. Chap. 1. doi:10.1007/978-3-030-                  Conﬂict of Interest: The authors declare that the research was conducted in the
+    61909-1_1                                                                                       absence of any commercial or ﬁnancial relationships that could be construed as a
+Nardini, P., Chen, M., Samsel, F., Bujack, R., Böttinger, M., and Scheuermann, G.                   potential conﬂict of interest.
+    (2021). The Making of Continuous Colormaps. IEEE Trans. Vis. Comput.
+    Graph. 27, 3048–3063. doi:10.1109/TVCG.2019.2961674                                             Publisher’s Note: All claims expressed in this article are solely those of the authors
+Okabe, M., and Ito, K. (2008). “Color Universal Design (CUD): How to Make                           and do not necessarily represent those of their afﬁliated organizations, or those of
+    Figures and Presentations that Are Friendly to Colorblind People,”. Available                   the publisher, the editors and the reviewers. Any product that may be evaluated in
+    at: http://jﬂy.iam.u-tokyo.ac.jp/color/(Accessed January 13, 2022).                             this article, or claim that may be made by its manufacturer, is not guaranteed or
+Papafotiou, A., Senger, R., Li, C., Singh, A., Garitte, B., Müller, H., et al. (2018). A            endorsed by the publisher.
+    Prediction-Evaluation Approach to the Full-Scale Emplacement Experiment
+    (FE) in Mont Terri. Geol. Soc. Lond. Spec. Publ. 482, 39–73. doi:10.1144/                       Copyright © 2022 Graebling, Şen, Bilke, Cajuhi, Naumov, Wang, Zieﬂe, Jaeggi,
+    SP482.10                                                                                        Maßmann, Scheuermann, Kolditz and Rink. This is an open-access article
+Parisio, F., Vilarrasa, V., and Laloui, L. (2018). Hydro-mechanical Modeling of                     distributed under the terms of the Creative Commons Attribution License (CC
+    Tunnel Excavation in Anisotropic Shale with Coupled Damage-Plasticity and                       BY). The use, distribution or reproduction in other forums is permitted, provided the
+    Micro-dilatant Regularization. Rock Mech. Rock Eng. 51, 3819–3833. doi:10.                      original author(s) and the copyright owner(s) are credited and that the original
+    1007/s00603-018-1569-z                                                                          publication in this journal is cited, in accordance with accepted academic practice.
+Raith, F., Blecha, C., Rink, K., Wang, W., Kolditz, O., Shao, H., et al. (2020). Visual             No use, distribution or reproduction is permitted which does not comply with
+    Analysis of a Full-Scale-Emplacement Experiment in the Underground Rock                         these terms.
+
+
+
+
+Frontiers in Earth Science | www.frontiersin.org                                               15                                                 July 2022 | Volume 10 | Article 946627
+

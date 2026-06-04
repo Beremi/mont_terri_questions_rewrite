@@ -1,0 +1,18 @@
+Creator:         Adobe Acrobat 7.0
+Producer:        Adobe Acrobat 7.0 Paper Capture Plug-in
+CreationDate:    Mon Jun  2 18:43:18 2008 CEST
+ModDate:         Wed Oct 23 17:58:20 2013 CEST
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            AcroForm
+JavaScript:      no
+Pages:           14
+Encrypted:       no
+Page size:       556.8 x 753.96 pts
+Page rot:        0
+File size:       898838 bytes
+Optimized:       yes
+PDF version:     1.6

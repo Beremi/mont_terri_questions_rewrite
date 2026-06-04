@@ -1,0 +1,964 @@
+Swiss J Geosci (2017) 110:173–194
+DOI 10.1007/s00015-016-0246-z
+
+
+
+
+Hydro-mechanical evolution of the EDZ as transport path
+for radionuclides and gas: insights from the Mont Terri rock
+laboratory (Switzerland)
+Paul Marschall1 • Silvio Giger1 • Rémi De La Vassière2 • Hua Shao3 •
+Helen Leung4 • Christophe Nussbaum5 • Thomas Trick6 • Bill Lanyon7 •
+Rainer Senger8 • Andrea Lisjak9 • Andrés Alcolea10
+
+
+
+Received: 29 March 2016 / Accepted: 9 December 2016 / Published online: 17 February 2017
+Ó Swiss Geological Society 2017
+
+
+Abstract The excavation damaged zone (EDZ) around the                   modelling tools for safety assessment. Therefore, simpli-
+backfilled underground structures of a geological reposi-               fied EDZ models, able to mimic the safety-relevant func-
+tory represents a release path for radionuclides, which                 tional features of the EDZ in a traceable manner are
+needs to be addressed in the assessment of long-term                    required. In the framework of the Mont Terri Project, a
+safety. Additionally, the EDZ may form a highly efficient               versatile modelling approach has been developed for the
+escape route for corrosion and degradation gases, thus                  simulation of flow and transport processes along the EDZ
+limiting the gas overpressures in the backfilled repository             with the goal of capturing the evolution of hydraulic sig-
+structures. The efficiency of this release path depends not             nificance of the EDZ after closure of the backfilled
+only on the shape and extent of the EDZ, but also on the                underground structures. The approach draws on both
+self-sealing capacity of the host rock formation and the                empirical evidence and experimental data, collected in the
+prevailing state conditions, such as in situ stresses and pore          niches and tunnels of the Mont Terri rock laboratory. The
+pressure. The hydro-mechanical and chemico-osmotic                      model was benchmarked with a data set from an in situ
+phenomena associated with the formation and temporal                    self-sealing experiment at the Mont Terri rock laboratory.
+evolution of the EDZ are complex, thus precluding a                     This paper summarises the outcomes of the benchmark
+detailed representation of the EDZ in conventional                      exercise that comprises relevant empirical evidence,
+                                                                        experimental data bases and the conceptual framework for
+Editorial handling: P. Bossart and A. G. Milnes.                        modelling the evolution of the hydraulic significance of the
+                                                                        EDZ around a backfilled tunnel section during the entire re-
+The abbreviations EDB, EZ-A, EZ-B, FE, GP, GP-A, GS, HG-A, SE-          saturation phase.
+H denote in situ experiments at the Mont Terri rock laboratory.
+
+This is paper #8 of the Mont Terri Special Issue of the Swiss Journal
+of Geosciences (see Bossart et al. 2017, Table 3 and Fig. 7).           5
+                                                                             Federal Office of Topography swisstopo, 3084 Wabern,
+& Paul Marschall                                                             Switzerland
+  paul.marschall@nagra.ch                                               6
+                                                                             Solexperts AG, Mettlenbachstrasse 25, 8617 Mönchaltorf,
+                                                                             Switzerland
+1
+    National Cooperative for the Disposal of Radioactive Waste          7
+    NAGRA, Hardstrasse 73, 5430 Wettingen, Switzerland                       Fracture Systems Ltd., Tregurrian, Ayr, St Ives, Cornwall,
+                                                                             UK
+2
+    Agence Nationale Nationale pour la Gestion des Déchets             8
+    Radioactifs ANDRA, Meuse Haute-Marne, Center RD 960,                     Intera Incorporated, 1933 Jadwin Avenue, Suite 130,
+    55500 Bure, France                                                       Richland, WA 99354, USA
+                                                                        9
+3
+    Federal Institute for Geosciences and Natural Resources                  Geomechanica Inc., 90 Adelaide St W, Toronto,
+    BGR, Stilleweg 2, 30655 Hannover, Germany                                ON M5H 4A6, Canada
+                                                                        10
+4
+    Nuclear Waste Management Organization NWMO, 22 St.                       TK Consult AG, Mainaustrasse 30, 8008 Zurich, Switzerland
+    Clair Ave. E., Toronto, ON, Canada
+174                                                                                                         P. Marschall et al.
+
+
+Keywords Thermo-hydro-mechanical (THM) processes                exist a zone of damaged rock. According to Tsang et al.
+Excavation damaged zone (EDZ)  EDZ self-sealing                (2005), the excavation damaged zone (EDZ) is a zone
+Opalinus clay  THM modelling  Geological disposal of           around the underground structures with significant irre-
+nuclear waste                                                    versible processes and significant changes in flow and
+                                                                 transport properties. These changes include, for example,
+Abbreviations                                                    one or more orders of magnitude increase in flow
+DECOVALEX         Development of coupled models and              permeability.
+                  their validation against experiments              In the framework of safety assessment (SA), a balanced
+DFN               Discrete fracture network                      evaluation of the impact of repository-induced effects on
+EDZ               Excavation damaged zone                        long-term safety is required. Such evaluation includes, but
+EPM               Equivalent porous medium                       is not limited to, the role of the EDZ around the backfilled
+FDEM              Finite discrete element method                 underground structures. The hydraulic significance of the
+FORGE             Fate Of Repository Gases–EURATOM               EDZ as viable release path for radionuclides serves as a
+                  Collaborative Project/7th Framework            quantitative input for dose calculations. Furthermore, the
+                  Programme                                      EDZ may contribute in a beneficial way to repository
+GI1, 2 and 3      Long-term gas injection experiments in         performance as it represents an efficient pathway for the
+                  the HG-A experiment                            escape of repository gases associated with the corrosion
+NFPRO             Understanding and physical and                 and degradation of the wastes (see Nagra (2008) and Nagra
+                  numerical modeling of the key processes        (2016) for further details).
+                  in the near field–EURATOM Integrated              Dose calculations for SA require simplified abstractions
+                  Project/6th Framework Programme                of the EDZ. These abstractions represent the water/gas
+SA                Safety assessment                              transport capacity of the EDZ after backfilling and sealing
+SF/HLW            Spent fuel/high level waste                    of the underground structures in terms of effective
+SATP              Standard ambient temperature and               parameters for the thickness, hydraulic conductivity and
+                  pressure conditions (25 °C, 101 kPa)           porosity of the EDZ. It is common to describe the EDZ as a
+TDR               Time domain reflectometer                      homogeneous circular shell around the backfilled tunnels
+THMC              Thermo-hydro-mechanical-chemical               (e.g. Lanyon and Senger 2011). Yet, robust assessments
+                  coupled processes                              require a rigorous analysis of the associated conceptual and
+TIMODAZ           Thermal impact on the damaged zone             parametric uncertainties. Such analysis includes a detailed
+                  around a radioactive waste disposal in         evaluation of the complete history of the EDZ, comprising
+                  clay host rocks EURATOM                        its creation during repository construction, its evolution
+                  Collaborative Project/6th Framework            during the operational period and the post closure beha-
+                  Programme                                      viour after backfilling of the underground structures. The
+NNW, SSE          Strike directions of the main tectonic         shape and the extent of the EDZ are mainly controlled by
+                  fracture systems at Mont Terri                 the geological setting, initial state conditions (e.g. pore
+                  CODE_BRIGHT, FLAC3D, TOUGH2,                   pressure, stress state), the excavation procedures and the
+                  T2GGM are academic and commercial              design of the tunnel support system. The hydraulic signif-
+                  codes for THM modelling                        icance of the excavation-induced release paths is affected
+                                                                 by the action of the THMC phenomena and processes
+                                                                 during the operational times and after repository closure.
+                                                                    Excavation damaged and disturbed zones have been
+1 Introduction                                                   studied in a range of rocks since the 1980s (Wilson et al.
+                                                                 1983). An early conceptualization of the EDZ in a low
+The construction of the underground facilities of a geo-         porosity marl formation (Helvetic Marls at the Wellenberg
+logical repository for radioactive waste, the emplacement        site in Central Switzerland) was presented in Nagra (1997).
+of wastes during the operational phase, and the closure          A comprehensive appraisal was dedicated to the creation
+operations in different parts of the repository will induce      and evolution of the EDZ in the Opalinus Clay formation at
+perturbations of state variables (e.g. stress, water pressure,   a repository depth of 650 m (Nagra 2002). In the EURA-
+temperature, saturation, chemical composition of the pore-       TOM Integrated Project ‘‘NFPRO’’, a state-of-the-art
+water) in the host rock around the underground structures.       report on the creation and evolution of the EDZ was
+These perturbations are associated with several coupled          compiled, comprising a synopsis of experience from
+thermo-hydro-mechanical-chemical phenomena (THMC).               investigations in hard rocks, rock salt and clay formations
+Within the zone where these perturbations occur there may        (Alheid et al. 2007). The overall achievements of the
+Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                         175
+
+
+‘‘NFPRO’’ research programme were summarized in the                     EDZ related research and summarises distinguished
+Final Synthesis Report (Aranyossy et al. 2008). More                    achievements.
+recently, a review of studies on the EDZ around excava-
+tions in sedimentary rocks was presented by Lanyon
+(2011). So far, full-scale investigations on EDZ develop-               2 EDZ related phenomena and processes
+ment in indurated clays have been limited to the under-
+ground laboratories of Mont Terri (Lanyon et al. 2014),                 2.1 Basic considerations
+Tournemire (Rejeb et al. 2008) and the Meuse/Haute
+Marne site (Armand et al. 2013a, b).                                    The nature and magnitude of excavation-induced damage
+   Over the last two decades, the EDZ-related research                  around the underground structures of a geological reposi-
+programmes at the Mont Terri rock laboratory (Fig. 1)                   tory evolve over time according to the life phase of the
+have gained recognition in the geoscientific community                  disposal system. Alheid et al. (2007) identified four major
+worldwide. As a result, new insights on the creation and                evolutionary phases, with corresponding phenomena and
+evolution of the EDZ in indurated clays have seen light:                processes, in the context of the EC-funded project NFPRO:
+                                                                        (i) the excavation phase, associated with coupled hydro-
+–   Empirical evidence, contributing to the characterisation
+                                                                        mechanical processes in the rock mass in response to
+    of the shape and extent of the EDZ for a variety of
+                                                                        mechanical unloading, (ii) the operational phase, affected
+    geological conditions, different excavation methods
+                                                                        by the ventilation of the underground structures, drainage
+    and tunnel support designs.
+                                                                        of the rock mass and various perturbations due to opera-
+–   Dedicated THMC experiments with emphasis on the
+                                                                        tions in the repository, (iii) the backfilling and sealing of
+    phenomena and coupled processes governing flow and
+                                                                        emplacement rooms, leading to resaturation of the unsat-
+    transport along the EDZ.
+                                                                        urated zone, heating effects around the high level waste
+–   Integrated experimental programmes providing quali-
+                                                                        (HLW) emplacement tunnels and coupled THM phenom-
+    tative and quantitative evidence of the gas and water
+                                                                        ena, and (iv) the repository closure phase, characterised by
+    transport capacity of the EDZ along seal sections of
+                                                                        progressive resaturation of the host rock around the
+    underground structures during all evolutionary stages.
+                                                                        repository and saturation of the underground facilities,
+–   Complementary modelling programmes, aimed at the
+                                                                        what induces chemical loadings able to amplify the inter-
+    development and validation of traceable modelling
+                                                                        action between chemical and mechanical processes.
+    workflows and simplified EDZ abstraction schemes.
+                                                                           Indurated clays such as the Opalinus Clay form a class
+  The synopsis presented here refers to the key experi-                 of rock between soft rocks and hard clays. The strength of
+ments at the Mont Terri rock laboratory in the fields of                these rocks is relatively low, but tunneling is still feasible
+
+
+
+
+Fig. 1 Geological cross-section of the Mont Terri anticline and location of the Mont Terri rock laboratory (Nussbaum et al. 2017)
+176                                                                                                                         P. Marschall et al.
+
+
+even with standard methods and low to medium support                       with other excavations or in regions with unexpected dis-
+measures. The rock permeability is very low and even                       continuity orientations. Furthermore, within the repository,
+existing natural fractures do not show increased transmis-                 fault zones should be avoided in tunnel sections designated
+sivity as long as a significant normal stress is acting on the             for seal emplacement. The focus for the EDZ-related
+fracture surfaces. Similar to hard rocks (e.g. Martin et al.               studies is therefore on stress-controlled failure and com-
+2001) the stability of excavations can be considered under                 binations of stress/structure failure modes.
+three classes:
+                                                                           2.2 Phenomenology: empirical evidence
+–     Structurally controlled failure (i.e. failure associated
+      with reduced rock strength due to sedimentary and
+                                                                           The creation and evolution of the EDZ around the open-
+      tectonic structures);
+                                                                           ings is controlled by several factors, including the hydro-
+–     Stress-controlled failure (i.e. failure associated with
+                                                                           mechanical state conditions (e.g. stress, pore pressure,
+      elevated deviator stress around the cavities);
+                                                                           temperature), engineering design (e.g. configuration of the
+–     A combination of structure- and stress-controlled
+                                                                           underground structures, size and shape of tunnel cross-
+      failure.
+                                                                           sections, excavation technique, support system/lining)
+   The application of such a failure classification scheme to              and the impacts on the system during the operational
+clay-rich rocks is complicated by compaction processes,                    phase (e.g. ventilation, waste emplacement). The defor-
+bedding-induced anisotropy and the influence of wetting.                   mation behaviour is further complicated, amongst others,
+In this context, the following processes are of particular                 by (i) rock anisotropy (stiffness and strength), (ii) spatial
+importance:                                                                variability of rock fabric (facies variability and tectonic
+                                                                           features) and (iii) clay-specific hydro-mechanical cou-
+–     Swelling, weakening and softening (see Steiner 1996
+                                                                           plings, giving rise to long-lasting time-dependent pro-
+      and Einstein 2002);
+                                                                           cesses in the EDZ even after closure of the backfilled
+–     Shrinkage during drying and loss of strength due to
+                                                                           repository structures. Typical features of the rock mass
+      repeated wetting/drying cycles.
+                                                                           fabric observed in the Opalinus Clay at Mont Terri are
+   Structurally-controlled wedge-type failures can be                      shown in Fig. 2. These include geostructural features
+managed by maintaining a compressive stress regime                         observed at different scales, from the millimetre to the
+(Diederichs and Kaiser 1999) and identifying the relevant                  meter, and associated with both sedimentary and tectonic
+discontinuity sets. Yet, problems may occur at intersections               processes.
+
+
+
+
+Fig. 2 Heterogeneity and anisotropy in the Opalinus Clay at Mont           facies with sandstone lenses cemented with carbonates; c SW dipping
+Terri (natural state): a dark grey silty, calcareous layers of the shaly   fault associated with a folded vein of celestite; d the Main Fault
+facies with a vein of celestite; b silty to sandy marls of the sandy       intersecting Gallery 98 in window through shotcrete
+Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                               177
+
+
+   The inventory of brittle EDZ features (i.e., caused                     Further EDZ features can be attributed to the operational
+directly by the short-term excavation-induced unloading                 phase, such as desiccation cracks in response to tunnel
+and loading) includes extensional fractures (Fig. 2a),                  ventilation and swelling-induced disaggregation of the rock
+spalling and buckling of the bedding planes (Fig. 2b, c),               matrix, when subjected to water-based fluids (e.g. cement
+interactions with the existing tectonic features (Fig. 2b),             water during the construction of the invert; water injections
+bedding slip, single shear fractures and shear-bands                    in boreholes, see Fig. 4a). In the Mont Terri rock labora-
+(Fig. 3). Far reaching bounding shear bands delimit the                 tory, the prevailing ventilation conditions and the gravity
+EDZ and the intact rock zones (Blümling et al. 2007).                  driven pore-water drainage towards the tunnel system
+
+
+
+
+Fig. 3 Excavation-induced brittle features in Opalinus Clay (Mont       stress controlled failure at the lower right side wall with a tectonic
+Terri rock laboratory): a extensile fractures created during the        structure (Marschall et al. 2006); c buckling of the bedding planes
+excavation of Gallery 98 (Nagra 2002); b bedding related spalling       around a small borehole (Blümling et al. 2007)
+processes in the crown of the HG-A microtunnel and interaction of
+
+
+
+
+Fig. 4 EDZ-related phenomena in the Opalinus Clay during the            tunnel ventilation; c degradation of the Opalinus Clay caused by
+operations phase of the Mont Terri rock laboratory: a damage of the     water uptake at the contact zone between liner and rock (HG-A
+shotcrete liner caused by swelling and creep processes; b dessication   microtunnel)
+cracks at the tunnel wall of the HG-A microtunnel in response to
+178                                                                                                                  P. Marschall et al.
+
+
+cause a significant impact on the development of the EDZ.
+Cyclic deformation of the tunnel surface due to earth tides,
+as well as seasonal variations of barometric pressure,
+humidity and temperature lead to progressive degradation
+of the EDZ (Fig. 4b). Furthermore, monitoring and main-
+tenance activities in support of the implementation of the
+in situ experiments may have increased the size of the EDZ
+in the long-term (e.g. water uptake during instrumentation
+of the HG-A tunnel; see Fig. 4c). In a real repository
+environment, there are further phenomena and processes,
+which may lead to a continuous weakening of the rock
+mass around the tunnel, such as ground motion associated
+with waste emplacement operations (successive excavation
+of emplacement tunnels, transportation of waste canisters,
+etc.). The weakening of the EDZ during the operational
+phase is associated predominantly with time-dependent
+ductile failure mechanisms (also termed ‘‘creep’’), going
+along with a gradual loss of cohesion in the rock matrix and
+the development of fault gouges along fracture planes.
+
+2.3 Extent of the EDZ and failure mechanisms
+
+In the Mont Terri rock laboratory, the extent and shape of
+the EDZ have been characterized at various experimental
+sites using both geological and geophysical methods.
+Geological investigations include structural mapping of
+excavation surfaces (tunnel walls, niches and wallrock
+‘‘windows’’) and core mapping of boreholes drilled from
+the excavation (most commonly radial boreholes). Classi-
+fication schemes were established to discriminate between
+natural (tectonic) fractures and faults, EDZ-related features
+and artificially induced fractures caused by drilling and
+core handling.
+    Structural mapping of the tunnel walls of the newly
+excavated cavities has been a routine procedure associated
+with all previous extensions of the Mont Terri rock labo-
+ratory. In addition, dedicated experimental programmes          Fig. 5 Fracture statistics derived from tunnel mapping and borehole
+                                                                logging: a line-counted frequencies from the side walls of the niches
+were initiated to characterise in a systematic way the shape
+                                                                in the security gallery (after Bossart et al. 2002) and b fracture counts
+and extent of the EDZ and to establish inventories of EDZ       in 0.5 m borehole intervals from the EZ-B Niche and previous sub-
+features for tunnel sections parallel and normal to bedding.    parallel excavations (from Yong 2007)
+A comprehensive compilation of the corresponding struc-
+tural data bases is given in Lanyon et al. (2014), com-         wall. Detailed investigation of macro-fracturing around the
+prising structural maps and structural analyses of core         EZ-B niche suggested a much narrower zone of macro-
+samples from the EZ-A niche, Gallery 04, EZ-B niche,            fracturing with a thickness of *20 cm and an outer zone
+HG-A microtunnel, Gallery 08, Mine-By Experiment and            extending to 70 cm characterised by a reduced seismic
+the FE-Experiment. The compilation refers—amongst               velocity. Almost all excavations show the highest fracture
+other aspects—to the detailed evaluation of EDZ fracture        density close to the tunnel wall and significant drop in
+statistics by Yong (2007), which draws on elaborate anal-       fracture frequency beyond 2 m from it.
+ysis of fracture density from over 100 boreholes (see              Another method for core mapping developed at Mont
+Fig. 5). Yong’s evaluations reveal that fracture count in the   Terri involves resin injection into a pilot hole followed by
+first 0.5 m can be as high as 10 (mean spacing of 5 cm          subsequent overcoring (Bossart et al. 2002, 2004). The
+between fractures) around some excavations but typically        resin injection method allows one to identify open (resin-
+reduces to less than 2 between 2.5 and 3 m from the tunnel      impregnated) fractures within the EDZ and can give
+Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                        179
+
+
+information on the prevailing fracture mechanisms, reac-               various aspects of the EDZ and excavation orientation. In
+tivation of pre-existing features, connectivity and structural         the past, numerous conceptual EDZ models have been
+relationships. Labiouse and Vietor (2014) used this method             developed for the Mont Terri rock laboratory, capable to
+in the context of the EC-funded TIMODAZ project (SE-H                  explain the prevailing structural features and failure mech-
+experiment) for analysing an overcore from a sub-hori-                 anisms for particular geological settings and a given exca-
+zontal 101 mm borehole, which had been used for a 3 year-              vation method. Thus, for excavations normal to bedding
+long dilatometer test. Resin-impregnated core samples                  strike (i.e., sub-parallel to rhmax), Bossart et al. (2002)
+(Fig. 6a) corresponding to the test and packer sections                present a concept of ‘‘onion-like’’ extensile fractures form-
+show similar fracture patterns, indicating that the mecha-             ing an interconnected network within 1 m from the tunnel
+nisms leading to borehole collapse were similar and inde-              wall but tending to be isolated structures beyond this dis-
+pendent of the testing history. The sub-vertical buckling              tance (Fig. 7a). For the same orientation of the excavation,
+failure zones extend beyond the overcore (in excess of a               Blümling et al. (2007) complement the concept of extensile
+borehole diameter).                                                    fracturing by adding buckling and kink failures, commonly
+   The fracture mechanisms postulated by Labiouse and                  associated with zones of bedding slip and multiple through-
+Vietor (2014) on the borehole scale exhibit distinct simi-             going shears (Fig. 7b). Complex combinations of structural
+larities with the conceptual model developed by Martin and             and stress induced failure (Fig. 7c) have been conceptu-
+Lanyon (2003) for the EDZ around the EDB section of                    alised by Marschall et al. (2006) for excavations along
+Gallery 98. Extensional fractures formed in the excavation             bedding strike (i.e., sub-parallel to rhmin).
+side-walls while the EDZ in the roof and floor was related                 The complexity of the geological setting (stress state,
+to a region of potential bedding-slip and subsequent kink/             lithological variability, tectonic overprint) and the differ-
+buckling failures (see Fig. 6b). Blümling et al. (2007)               ences in the adopted excavation approaches makes it
+further developed the model of Martin and Lanyon (2003),               challenging to develop a generalised conceptual model of
+incorporating the observed buckling failure and through-               the EDZ at Mont Terri. Nevertheless, important conclu-
+going shears associated with bedding slip.                             sions can be drawn with respect to the inventory of char-
+   The aforementioned characterisation methods are com-                acteristic EDZ features and the EDZ related phenomena
+plementary in the sense that different emphasis is placed on           and processes:
+
+
+
+
+Fig. 6 Fracture mechanisms postulated by Labiouse and Vietor           developed by Martin and Lanyon (2003) for the EDZ around the EDB
+(2014): a analysis of resin impregnated core samples (SE-H project),   section of Gallery 98
+b conceptual model of fracture mechanisms at the tunnel scale,
+180                                                                                                                             P. Marschall et al.
+
+
+
+
+Fig. 7 Conceptual models of EDZ, derived in the framework of Mont           et al. 2007); c schematic representation of the damage zone around
+Terri Project: a radial distribution of extensile fracturing (tunnel axis   the HG-A microtunnel, showing the key processes and features that
+normal to bedding strike, sub-parallel to rhmax; see also Bossart et al.    affect borehole stability: slablike breakouts on the upper left side are
+2002); b combined buckling failure and extensile fracturing (tunnel         caused by extensile failure along tectonic fractures and wedge-like
+axis normal to bedding strike, sub-parallel to rhmax; see also Blümling    breakouts on the right side
+
+–     Clear evidence was found, that the immediate (short-                  –   The long-term response of the rock during the opera-
+      term) failure of the Opalinus Clay in response to the                     tional phase in terms of tunnel convergence is largely
+      excavation process is brittle. The inventory of EDZ-                      associated with ductile failure mechanisms and can be
+      related features can be classified as extensional frac-                   conceptualised as a viscous component (termed
+      turing, bedding parallel slip, buckling and kink failures,                ‘‘creep’’) in the deformation behaviour of the rock.
+      single shear fractures and shear bands and, eventually,
+      reactivated tectonic features.
+                                                                            2.4 Hydraulic characterisation of the EDZ
+–     The short-term response can be stress controlled,
+      structurally controlled or a combination of both
+                                                                            Representative transmissivity estimates of the EDZ frac-
+      regimes.
+                                                                            tures immediately after excavation are of high importance
+–     Governing parameters for stress controlled failure are
+                                                                            for the calibration of discrete fracture network models
+      the in situ stress tensor and the stress state ahead of the
+                                                                            (DFN models; see Alcolea et al. 2016). To that end, small-
+      tunnel face. Thus, stress controlled failure is strongly
+                                                                            scale in situ transmissivity measurements were carried out
+      related to the adopted excavation techniques and the
+                                                                            in radially oriented boreholes as part of the early EDZ
+      progress of excavation.
+                                                                            related research programme (Bossart et al. 2002). The
+–     Structurally controlled failure is caused by sedimentary
+                                                                            boreholes were equipped with multi-packer systems, iso-
+      and tectonic structures. Variabilities in microstructure
+                                                                            lating measurement intervals of 10–50 cm at various dis-
+      such as bedding or intercalations of sandy and clay-rich
+                                                                            tances from the tunnel wall. Hydraulic pulse and constant
+      layers tend to create self-similar failure patterns (e.g.
+                                                                            head tests were conducted in the saturated part of the EDZ,
+      buckling), which are observed at scales ranging from
+                                                                            whereas simple pneumatic tests were undertaken in the
+      small boreholes to the tunnel scale (see Fig. 3). In
+                                                                            unsaturated rock in the immediate vicinity of the tunnel
+      addition, reactivations of tectonic structures are highly
+                                                                            surface to investigate the local effective permeability.
+      irregular and, consequently, difficult to predict without
+                                                                            Figure 8 shows that permeability increases several orders
+      detailed knowledge of the pre-existing fracture
+                                                                            of magnitude (up to 6–7) within 20–40 cm from the tunnel.
+      patterns.
+Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                     181
+
+
+                                                                      closure law (see Nagra 2002). An effective mechanical
+                                                                      self-sealing of the artificial fracture is observed already at
+                                                                      moderate effective normal stresses in the order of 1–2 MPa
+                                                                      (Fig. 10).
+
+
+                                                                      3 Modelling of water/gas flow along the EDZ
+
+                                                                      3.1 Background and rationale
+
+                                                                      The complexity of the hydro-mechanical phenomena
+                                                                      associated with the creation and temporal evolution of the
+                                                                      EDZ precludes a detailed representation of the EDZ with
+                                                                      conventional modelling tools for safety assessment (SA).
+Fig. 8 Hydraulic characterisation of the EDZ features around
+excavations in the Mont Terri rock laboratory: in-situ permeability
+                                                                      Therefore, quantitative analyses in support of the assess-
+measurements conducted in Mont Terri experimental drift (from         ment of long-term radiological safety of geological repos-
+Bossart et al. 2002)                                                  itories are often based upon simplified representations of
+                                                                      the EDZ, assuming a configuration of concentric shells
+This zone coincides with that exhibiting high fracture                (single or double shell) with enhanced hydraulic conduc-
+density.                                                              tivity (Fig. 11).
+   Several experiments were conducted to demonstrate the                 In recent years, several numerical EDZ abstraction
+evolution of transmissivity of the excavation-induced                 approaches have been proposed for SA applications,
+fractures in the ventilated tunnel and after re-compaction of         referring to data bases from the Mont Terri rock laboratory.
+the EDZ in order to capture the time dependence of the                Lanyon and Senger (2011) developed a sequential mod-
+self-sealing process. A long-term in situ experiment, con-            elling approach for indurated clay formations, based on a
+ducted in the EDZ of an open tunnel section, indicated a              stochastic representation of the EDZ in terms of discrete
+significant reduction of the EDZ transmissivity over a                fracture network (DFN) models. The underlying hydraulic
+period of 800 days from 5 9 10-7 to 2 9 10-9 m2/s (blue               DFN models, derived from structural mapping of tunnel
+dots in Fig. 9). During the subsequent test phase, a load             walls and drillcores, were converted into equivalent porous
+plate was installed and the EDZ was subjected to radial               medium (EPM) models with stochastic permeability dis-
+stresses between 1 and 5 MPa to simulate bentonite swel-              tributions. Combined water and gas flow along stochastic
+ling pressures in a backfilled emplacement tunnel. A fur-             realizations of the EDZ was simulated with the EPM
+ther drop in transmissivity of two orders of magnitude to             models. Eventually, effective properties suitable for per-
+2 9 10-11 m2/s was observed (red dots in Fig. 9).                     formance assessment were derived by inverse modelling of
+                                                                      the results of stochastic modelling with a simple single
+2.5 Investigation of fracture closure mechanisms                      shell representation of the EDZ. Senger et al. (2013) vali-
+                                                                      dated the aforementioned modelling approach with long-
+The dependence of fracture transmissivity on effective                term monitoring data from the HG-A experiment (gas path
+normal stress has been the issue of laboratory studies and            through host rock and along seals) at Mont Terri.
+in situ tests (Blümling et al. 2007). As part of the GS                 Walsh et al. (2015) developed an EPM-based modelling
+experiment (Gasfrac Self-sealing) at Mont Terri, hydraulic            framework which simulates two-phase flow with the
+tests were performed in a borehole before and after a                 T2GGM code (Suckling et al. 2012) and mechanical pro-
+combined hydro- and gas-frac experiment (Marschall et al.             cesses with FLAC3D (Itasca 2012). This coupled model
+2005). The experiment was carried out in a test interval              predicted the evolution of the EDZ around the HG-A
+containing a hydrofrac with a well-defined fracture geom-             tunnel, and then modelled the EDZ permeability as a
+etry. Interval transmissivity increased by 5–6 orders of              function of time (self-sealing) and packer pressure (hydro-
+magnitude when the injection pressure exceeded the                    mechanical coupling).
+effective normal stress on the fracture plane (Fig. 10). For             Alcoverro et al. (2014) developed a simplified hydro-
+low injection pressures, however, the interval transmis-              mechanical modelling approach for SA applications using
+sivity was close to that of the intact rock (T B 10-12 m2/s).         the THM-simulator CODE_BRIGHT (DIT-UPC 2000).
+These findings can be explained by the dependence of                  The permeability of the EDZ was assumed to depend on
+fracture transmissivity (or hydraulic conductivity) on                deformation, allowing the simulation of self-sealing pro-
+effective normal stress, which follows a hyperbolic fracture          cesses in the EDZ in response to re-saturation and stress
+182                                                                                                                        P. Marschall et al.
+
+
+
+
+Fig. 9 Long-term changes in EDZ transmissivity in an open tunnel          transmissivity was monitored periodically. Afterwards, a load plate
+section at the Mont Terri rock laboratory: a sketch of the experimental   inducing a radial stress between 1 and 5 MPa was installed and the
+set-up and b long-term monitoring of EDZ transmissivity. Initially,       transmissivity measurements were repeated (EU Selfrac Project;
+the EDZ was saturated for a period of 800 days (blue dots) and EDZ        Nagra 2002)
+
+
+Fig. 10 Experimental evidence
+of sealing effects in Opalinus
+Clay at Mont Terri. Suggested
+hyperbolic relationship between
+interval transmissivity and
+effective normal stress, (rn-pi),
+based on the investigation of
+fracture closure mechanisms in
+the so-called Gasfrac self-
+sealing (GS) experiment (after
+Nagra 2002). Hydraulic tests
+were conducted for different
+interval pressure values, pi. The
+normal stress, rn (ca. 4.3 MPa),
+was derived from the shut-in
+pressure recorded during
+hydraulic fracturing
+Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                                  183
+
+
+
+
+Fig. 11 Simulation of radionuclide release in safety assessment (SA):     transport code (right). The EDZ is implemented as a single shell
+abstraction of the radionuclide release paths from the site descriptive   model with effective properties in terms of cross-sectional area,
+model (left) towards a simplified representation in a numerical           porosity and hydraulic conductivity (modified after Poller et al. 2014)
+
+recovery. The modelling approach was benchmarked                          FDEM are mapped onto a finite element mesh (Fig. 12b),
+extensively with long-term monitoring data from the HG-A                  which allows to solve the fluid motion equations in the
+experiment.                                                               excavation near-field. A salient feature of the suggested
+                                                                          approach is that hydraulic parameters of both fracture and
+3.2 A novel EDZ abstraction approach                                      matrix evolve over time as a response to re-saturation of
+                                                                          the tunnel surroundings. Finally, an abstraction of the
+The aforementioned EDZ modelling approaches have                          complex model is made based on the late time behaviour
+successfully demonstrated their suitability for simulating                (after full re-saturation) of the system (Fig. 12c). The main
+the hydraulic behavior of the EDZ around backfilled tunnel                outputs of the model are the spatio-temporal distributions
+sections and for the back-analysis of the self-sealing pro-               of hydraulic parameters and the corresponding specific
+cesses associated with the re-saturation and pressure                     fluxes towards the tunnel, with special emphasis on the late
+recovery along the seal section of the HG-A experiment. A                 time behaviour. Finally, the abstraction of the EDZ is
+shortfall of these approaches is their limited ability to                 implemented by defining a piece-wise homogeneous
+represent the mechanisms of fracture closure in response to               ‘‘shell-like’’ model with hydraulic behaviour identical to
+pressure recovery in the EDZ, thus restricting the predic-                that of the complex model.
+tive capability of the models.
+   A novel numerical approach has been developed by                       3.3 Heuristic modelling concept of fracture self-
+Alcolea et al. (2016) with special emphasis on an adequate                    sealing
+representation of the hydro-mechanical conditions in the
+EDZ, covering the full range of hydraulic regimes, from                   Based on the presented empirical and experimental evi-
+the fracture dominated, with localised pore-water flow                    dence (Sect. 2), the hydraulic significance of the EDZ
+during early times, to the matrix-dominated distributed                   during tunnel construction and its evolution during the
+flow in the late times. The workflow consists of three main               operational phase and after backfilling of the underground
+steps carried out sequentially (Fig. 12). First, a hybrid                 structures can be formulated in terms of a heuristic EDZ
+finite-discrete element method (FDEM; Lisjak et al. 2016)                 closure model (Fig. 13). The creation of the EDZ is a
+is used to simulate the geometry and geomechanical con-                   brittle process, i.e., the increase of the void volume in the
+ditions of the discrete fracture networks forming the EDZ                 damaged rock zone around the excavation is solely attrib-
+(Fig. 12a). The FDEM simulations are purely mechanical                    uted to fracture opening, whereas the porosity of non-
+and mimic the excavation and emplacement processes                        fractured rock remains essentially unchanged during the
+only. Second, the geometric properties simulated by the                   early times after excavation. Initially, the newly created
+184                                                                                                                    P. Marschall et al.
+
+
+
+
+Fig. 12 Concept of the EDZ abstraction procedure for safety              porosity and hydraulic conductivity distributions; c in a final
+assessment (SA) applicable for a circular tunnel (after Alcolea et al.   abstraction process, the heterogeneous porosity and conductivity
+2016): a representative fracture patterns are simulated for relevant     distributions are converted into a shell defined by a radius and
+repository configurations with a discrete element model (FDEM);          homogeneous porosity and conductivity
+b the discrete fracture patterns are converted in heterogeneous
+
+
+
+
+Fig. 13 Schematic sketch of the conceptual framework for EDZ fracture closure in Opalinus Clay, covering the key phenomena and features
+from the early post excavation phase until static formation pressure recovery
+
+EDZ fractures are unsaturated and exposed to atmospheric                 2014). The initial transmissivity of the unsaturated EDZ
+pressure, whereas the non-fractured rock remains saturated               fractures is controlled by the fracture aperture and can be
+and exhibits high matrix suction as a consequence of the                 very high. The matrix conductivity remains essentially
+high gas entry pressure of the Opalinus Clay (Ferrari et al.             unchanged, i.e., it is the same as the conductivity of the
+Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                 185
+
+
+intact rock. With time, the matric suction in the rock matrix     experimental programme to provide qualitative and quan-
+decreases due to the uptake of pore-water from outer rock         titative evidence of the gas and water transport capacity of
+zones and the fractures start to resaturate. Pore-water           the EDZ along the sealed section of the HG-A microtunnel
+uptake from the non-fractured rock zones is associated with       during all relevant evolutionary stages, comprising the
+swelling and consequently with an increase of matrix              excavation phase, a short ventilation period and the back-
+porosity. This porosity increase occurs at the expense of a       filling and sealing stages (Marschall et al. 2006, 2008;
+decrease of fracture aperture (and correspondingly, of            Lanyon et al. 2009, 2014). The test site is located in the
+fracture transmissivity), i.e., fractures start to close and      southern part of the Mont Terri rock laboratory off Gallery
+fracture transmissivity reduces drastically, whereas the          04 (Fig. 14). A 1 m diameter, 13 m long microtunnel was
+hydraulic conductivity of the non-fractured matrix zones          excavated during February 2005 from a niche in Gallery
+increases slightly as a consequence of the porosity increase.     04. The microtunnel was directed parallel to bedding strike
+This process continues until the equilibrium of effective         and bedding parallel features run along the tunnel. Exca-
+stresses is reached. This is essentially the case, when pore      vation was monitored by a borehole array containing
+pressure reaches the static formation pressure.                   piezometers and deformation gauges (clino-chain and
+   Alcolea et al. (2016) implemented the heuristic EDZ            chain deflectometers). The borehole array was subse-
+closure model in a numerical workflow and subjected long-         quently augmented with additional piezometer boreholes
+term monitoring data from the HG-A experiment at Mont             and borehole stressmeters.
+Terri to a detailed back analysis. The results of this analysis
+are presented in the subsequent paragraphs.                       4.3 Creation of the EDZ
+
+                                                                  The excavation of the HG-A microtunnel was carried out
+4 Assessment of model performance                                 using a steel auger (Marschall et al. 2006). No drilling fluid
+                                                                  was used in order to avoid swelling and disaggregation of
+4.1 The role of the Mont Terri rock laboratory                    the clay during drilling. Immediately after termination of
+                                                                  the drilling process, a steel liner was installed along the
+The performance of a modelling approach is commonly               first 6 m of the microtunnel to stabilise the damage zone
+evaluated by comparing model predictions with experi-             around the tunnel entrance. Detailed small scale geological
+mental evidence. Rigorous model validations require com-          mapping of the tunnel section between 6 and 13 m was
+prehensive benchmark exercises for the full range of              carried out after emplacement of the liner. The facies in the
+intended model applications as part of a systematic predic-       microtunnel is composed of marly shales, which are locally
+tion-evaluation process. In geoscientific modelling work-         intercalated with grey-white silty limestones and weakly
+flows rigorous validations are rarely achieved due to the lack    cemented fine-grained brownish siderite layers. On the
+of detailed knowledge concerning the actual state of the          metre scale, the lithologies are quite homogeneous. How-
+modelled geo-system and the limited amount of measure-            ever, a quite pronounced bedding anisotropy could be
+ments of its temporal evolution. In this sense, the Mont Terri    mapped (bedding traces in the microtunnel are almost
+rock laboratory offers a unique opportunity to collect com-       horizontal, true bedding dip is 51°).
+prehensive geoscientific data bases for model validation not          After completion of construction, the surface of the
+only from well-instrumented long-term in situ experiments,        microtunnel was scanned with a tachymeter from 6 to 13 m
+but also from general site characterisation activities such as    along the tunnel axis (Fig. 15), which confirmed the results
+structural mapping and borehole logging.                          of structural mapping, indicating that breakouts occur
+   Modelling benchmarks for the simulation of the hydro-          mainly at locations where bedding is oriented tangential to
+mechanical evolution of the EDZ have been carried out as          the tunnel circumference.
+part of the EC-funded FORGE project (Harrington et al.                The instantaneous brittle failure process during and
+2013; Shao et al. 2015) and in the framework of the               immediately after excavation of the HG-A microtunnel
+DECOVALEX project (Xu et al. 2013; Nguyen and Le                  exhibits the characteristic EDZ features around cylindrical
+2015). In both benchmark exercises, the HG-A in situ              cavities in claystone formations, such as massive break-
+experiment at Mont Terri served as a key experiment for           outs, spalling and buckling phenomena. Instantaneous
+model calibration and validation.                                 failure was caused by the combined effect of (i) the ani-
+                                                                  sotropy in far-field stress, (ii) the anisotropy of geome-
+4.2 The HG-A experiment                                           chanical rock properties (stiffness and strength) and (iii)
+                                                                  the heterogeneity of the rock mass (tectonic fracture sys-
+The HG-A experiment (gas path through host rock and               tems and flaws in the rock fabric). The conceptualisation of
+along seal sections) was designed as an integrated                the damage zone around the HG-A microtunnel (Marschall
+186                                                                                                        P. Marschall et al.
+
+Fig. 14 Schematic drawing of
+the HG-A microtunnel and the
+site instrumentation. Colour
+coding refers to the steel liner
+(red), the seal section (green)
+and the backfilled test section
+(orange)
+
+
+
+
+et al. 2006) is given in Fig. 7c. The damage zones on the       principal stress component tend to delimit the damage
+upper left side (9:00–11:00 o’clock) exhibit clear signa-       zones on the left side of the tunnel. Less distinct are the
+tures of extensile fracturing such as plumose structures and    buckling phenomena along the tunnel floor (about 5:00
+disjoining of bedding planes. The breakouts are largely         o’clock). No significant breakouts are formed in this zone,
+linked to the SSE dipping thrust system, which is oriented      because the debris is kept in place due to gravity. Com-
+subparallel to the bedding planes and intersects the tunnel     plementary extensometer records give clear indication for
+at a low angle. These fractures represent planes of weak-       on-going tunnel convergence in the lower sidewall to the
+ness with reduced uniaxial compressive strength and are         NNW.
+therefore preferential loci for failure initiation during the
+excavation process. In the upper zone between 10:00 and         4.4 Hydraulic and gas testing
+11:00 o’clock, spalling and buckling phenomena create
+slab-like breakouts. Spalling occurs preferentially in the      Following a short ventilation phase of several months, the
+rear end of the tunnel at areas were SSW dipping fault          test section (9–13 m) and the seal section (6–9 m) of the
+planes phase out, whereas buckling dominates in the sec-        microtunnel were instrumented with piezometers, exten-
+tion with the most prominent breakouts between 6 and 9 m.       someters, strain-gauges, total pressure cells and time
+In the lower zone between 9:00 and 10:00 o’clock, damage        domain reflectometers (TDRs) to measure pressure,
+seems more and more stress controlled, i.e., onion-like         deformation, total stress and water content. Finally, the
+extension joints associated with the minor in-plane             megapacker was installed in June 2006. Saturation of the
+Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                      187
+
+
+                                                                        injection was maintained in the test section. Gas pressure
+                                                                        during GI1 was limited to 1200 kPa, significantly below
+                                                                        the minimum stress, to avoid coupled mechanical effects.
+                                                                        After an initial 20 ml/min (SATP) injection, when pressure
+                                                                        rose quickly, the injection rate was reduced to about 10 ml/
+                                                                        min (SATP) to maintain an approximately constant pres-
+                                                                        sure in the test section. During GI2 test section pressure
+                                                                        rose more slowly than in GI1 and then peaked at around
+                                                                        1350 kPa. After the pressure breakdown, the test section
+                                                                        pressure dropped over about a month by ca. 350–1000 kPa
+                                                                        and then stabilized at about 1040 kPa. During GI3, test
+                                                                        section pressure again peaked at 1350 kPa but with a
+                                                                        broader peak than in GI2 and then dropped to about
+                                                                        850 kPa owing to an interruption in injection before
+                                                                        recovering (after resumption of gas injection) and sta-
+                                                                        bilised at about 1000 kPa.
+
+                                                                        4.5 Modelling of EDZ formation
+
+                                                                        Lisjak et al. (2016) carried out numerical simulations of the
+                                                                        EDZ formation and compressive stress controlled sealing
+                                                                        process around the HG-A microtunnel using a hybrid finite-
+                                                                        discrete element method (FDEM). The model geometry
+                                                                        consisted of a circular opening representing a 2D cross
+                                                                        section of the HG-A microtunnel located along the seal
+                                                                        section (Fig. 17). The influence of model boundaries on the
+Fig. 15 Characterisation of the EDZ in the HG-A microtunnel: 3-D        excavation near-field was minimized by placing them at a
+laser scan with a tachymeter. Views are from the rear end of the        distance of 10 m from the centre of the microtunnel. To
+tunnel towards the SSE side wall (top) and the NNW side wall            maximize the model resolution in the EDZ while keeping
+(bottom), respectively. The radial accuracy of the scans is ±3 mm and   the computation times within practical limits, a 4 m 9 4 m
+the axial resolution varies between 5 and 10 cm
+                                                                        mesh refinement zone, with a nominal element size of
+                                                                        0.015 m, was adopted around the excavation boundary. In
+test section and surrounding rock started in November 2006              this zone, the mesh was pre-conditioned along the bedding
+and comprised several saturation tests and a long-term                  direction by introducing a layering thickness of 0.05 m, as
+multirate hydraulic test, starting in January 2008 (Fig. 16).           required to adopt the anisotropic fracture model. A trans-
+This test continued until February 2010 and involved a                  versely isotropic stiffness model coupled with a direction-
+series of constant rate injection steps, with stepwise                  dependent fracture criterion was adopted for the Opalinus
+reduced rates in the range between ca. 10 and 0.1 ml/min.               Clay. The input values for the fracture model were derived
+The results from the hydraulic testing indicated progressive            from the FDEM back-analysis of the full-scale emplace-
+self-sealing (Lanyon et al. 2014). During hydraulic testing             ment (FE) tunnel at the Mont Terri rock laboratory (Lisjak
+the effective stress conditions in the seal zone were altered           et al. 2015). The reference values of the principal stress
+by varying the megapacker pressure in the range between                 components at Mont Terri (r1 = 6.5 MPa, r2 = 4.5 MPa,
+2000 and 2600 kPa.                                                      r3 = 2.5 MPa) were used to specifiy the in situ stress field
+   The gas injection phase included three separate nitrogen             in the HG-A model.
+gas injections termed GI1, GI2 and GI3. Figure 16 displays                 The simulation of the EDZ formation and recompaction
+the corresponding microtunnel sensor responses. After                   process was accomplished with two separate model runs.
+each gas injection, following a shut-in period, water was               The first run was intended to analyse the failure mecha-
+extracted from the test section and depressurized to remove             nisms and damage propagation associated with the EDZ
+trapped gas (gas–water exchange). The degassed water was                formation process. The second run was dedicated to the
+then re-injected into the test section. This procedure pro-             recompaction of the EDZ in response to packer inflation,
+vided a well-defined initial gas saturation in the test section         acting as a radial stress on the inner model boundary.
+pore-water for the subsequent gas injection. During gas                    A total of 5 model variants were specified as part of a
+injection a low constant rate (c. 0.02 ml/min) water                    sensitivity analysis, aimed at assessing the impact of
+188                                                                                                                      P. Marschall et al.
+
+
+
+
+Fig. 16 Microtunnel stress, pore pressure, water content and flow rate measurements from start of saturation (from Lanyon et al. 2014)
+
+parametric and conceptual uncertainties on the EDZ for-                 tends to be arrested at the intersection with the fault plane
+mation. Of particular interest was the effect of the tectonic           (Fig. 17c). As a result, the growth of shear fractures along
+fault (see Fig. 7c) on the development of the EDZ fracture              the bedding direction tends to be inhibited in favor of new
+pattern. The numerical results of the model variant with                shorter bedding-parallel fractures nucleating along the fault
+tectonic fault (model ‘‘HG-A-F’’) indicate that damage                  plane direction (Fig. 17d).
+starts to develop around the excavation boundary in                        The mechanical re-compaction of the EDZ in response
+response to the gradual softening of the excavation core                to packer inflation was simulated by assigning a radial
+(Fig. 17). Failure initiates in the form of shear (i.e., Mode           pressure of 3 MPa on the inner model boundary. As shown
+II) fractures nucleating and growing along bedding planes               in Fig. 18a, a zone of high fracture aperture (corresponding
+approximately tangential to the tunnel walls (Fig. 17a,b).              to high fracture transmissivity) develops in the microtunnel
+The distinctive location of these failure zones is caused by            sidewalls during the preceding EDZ formation process. In
+a combination of compressive stress concentration arising               response to packer inflation a substantial fracture aperture
+in the sidewalls and the low shear strength of the bedding              reduction is simulated around the opening (Fig. 18b),
+planes. The impact of the tectonic discontinuity with fault             indicating a 64% decay in the total fracture porosity value.
+plane oriented oblique to bedding affects the rock mass
+strength, fracturing behaviour, as well as the induced fail-            4.6 Hydraulic conductivity around the HG-A
+ure kinematics in the subsequent phases of damage prop-                     microtunnel
+agation (Fig. 17c, d). A distinctive interaction can be
+observed between the pre-existing discontinuity in the right            Drawing on the workflow described in Fig. 12, the FDEM
+sidewall and the growing EDZ fractures. Particularly, the               based discrete fracture networks around the HG-A micro-
+propagation of shear fractures nucleating at 270°–360°,                 tunnel were converted into cell-based distributions of
+Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                            189
+
+
+
+
+Fig. 17 Simulated EDZ formation process in a model that explicitly       (2016)]: a 50,000 time steps, b 100,000 time steps, c 140,000 time
+accounts for the presence of a sub-horizontal, SW-dipping tectonic       steps, and d 200,000 time steps
+fault in the right sidewall [FDEM model ‘‘HG-A-F’’ after Lisjak et al.
+
+Fig. 18 Spatial distribution of
+fracture aperture a at the time of
+packer installation and b after
+reaching equilibrium conditions
+under the effect of a 3 MPa
+radial pressure, in a model
+explicitly accounting for the
+presence of a sub-horizontal,
+SW-dipping tectonic fault
+(FDEM model ‘‘HG-A-F’’; after
+Lisjak et al. 2015)
+
+
+
+
+effective porosity and hydraulic conductivity (Alcolea et al.            facies. In the conceptual framework, self-sealing of the
+2016). To this end, a finite element mesh was created over               fractures in response to pore pressure changes (Fig. 13) was
+which the fracture traces and corresponding fracture char-               mimicked by a swelling mechanism. Thus, the increase of
+acteristics (fracture mode, trace length, aperture) were                 pore pressure from very low negative values (suction) during
+mapped on the corresponding cells. Effective porosity and                the unsaturated phase towards static formation pressures in
+effective conductivity values were assigned to each cell by              the saturated state after full pore pressure recovery increases
+‘‘box-counting’’ the contributions of the intact rock matrix             the porosity of intact matrix and reduces the aperture of the
+and traces of the intersecting fractures. A porosity of 12%              fracture traces. Based on the available experimental data
+and a hydraulic conductivity of 4.5 9 10-14 m/s were                     (Fig. 10), a hyperbolic fracture closure mechanism (Barton-
+assigned to the intact rock, representing the properties of the          Bandis relationship) was adopted to simulate the reduction
+Opalinus Clay at the transition between shaly and sandy                  of fracture transmissivity in response to pore pressure
+190                                                                                                                   P. Marschall et al.
+
+
+increase. Correspondingly, the increase of matrix conduc-               includes the tectonic fracture (Fig. 19a). Cell-based
+tivity associated with the swelling process was expressed in            porosities in the immediate vicinity of the microtunnel
+terms of a well-established porosity–permeability relation-             range between 12 and 40%. Local conductivity values
+ship (Kozeny–Karman relationship). Further details of the               spread between 10-11 and 4.5 9 10-14 m/s, which is in
+adopted models for simulating the self-sealing of the EDZ               general agreement with experimental evidence (see
+are found in Alcolea et al. (2016).                                     Lanyon et al. 2014).
+   With the given approach, the initial distributions of
+effective porosity and conductivity around the HG-A                     4.7 Back analysis of water/gas injections: examples
+microtunnel and their evolution with pore pressure
+recovery have been calculated for all FDEM fracture                     The cell-based distributions of effective porosity and
+network realisations. At early times, when pore pressure                hydraulic conductivity around the HG-A microtunnel, in
+in the fracture network is negative due to unsaturated                  combination with the implemented self-sealing mechanism
+conditions and efficient swelling of the intact matrix                  (i.e., pressure-controlled fracture closure and swelling of
+does not yet apply, the hydraulic conductance of the                    the intact matrix blocks) formed the input for back analyses
+EDZ is dominated by the contribution of the highly                      of the long-term water injections and the gas injection tests.
+transmissive fractures, displaying effective conductivities                 The multi-rate water injection test described earlier
+which are many orders of magnitudes higher than the                     (Fig. 16) was selected for assessing the self-sealing beha-
+parameters of the intact rock (Fig. 19b). Conversely,                   viour of the EDZ around the HG-A microtunnel. Pore
+when fractures are essentially closed after complete pore               pressure transients from the piezometer boreholes HG-A2
+pressure recovery, the effective hydraulic conductivity of              and HG-A3 (Fig. 14) were used to infer—via maximum
+the EDZ is largely controlled by the matrix behaviour.                  likelihood optimization—the fracture closure parameter
+Figure 18c, d display the late-time distributions of                    that controls the closure law (Barton–Bandis like) mim-
+effective porosity and conductivity for the FDEM that                   icking the long-term self-sealing of the EDZ. Two different
+
+
+
+
+Fig. 19 Modelling of effective EDZ properties around the HG-A           insets, \T[ denotes the geometric mean of transmissivity, c,
+microtunnel: a FDEM fracture network model with tectonic feature        d equivalent porous medium properties on a finite element mesh:
+(‘‘HG-A-F’’), b histograms of initial fracture transmissivity. In the   late time distributions (after Alcolea et al. 2016)
+Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                 191
+
+
+FDEM variants of the EDZ fracture network were con-              that the immediate (short-term) failure of the Opalinus
+sidered, namely a variant without tectonic faults (FDEM          Clay in response to the excavation process is brittle. The
+model ‘‘HG-A’’; see Lisjak et al. 2016) and a variant with a     inventory of EDZ-related features comprises extensional
+SW-dipping pre-existing discontinuity (Fig. 17; FDEM             fracturing, bedding parallel slip, buckling and kink failures,
+model ‘‘HG-A-F’’). Even at early times, model HG-A is            isolated shear fractures, shear bands and reactivated tec-
+characterised by a low hydraulic conductance due to its          tonic features. Multiple examples of stress controlled fail-
+relatively low fracture density, as compared to model HG-        ure have been reported, all suggesting that the in situ virgin
+A-F. Figure 20a displays the pressure fits at observation        stress and the stress state ahead of the tunnel face govern
+borehole HG-A2 for both models. In spite of the simplistic       the formation of the EDZ. As a consequence, the extent of
+representation of the model domain (2-D model geometry)          stress controlled failure is strongly influenced by the choice
+and the hydro-mechanical boundary conditions (axisym-            of excavation technique and the progress of excavation. On
+metric pressure field and plane stress conditions), the          the other hand, structurally controlled failure is related to
+model exhibits relatively good fits of available measure-        the occurrence of sedimentary and tectonic structures.
+ments (see for instance, the time period 300–400 days,           Variabilities in microstructure such as bedding or interca-
+Fig. 20a) and captures the main trends of the measured           lations of sandy and clay-rich layers tend to create self-
+pressure records at the piezometer boreholes in response to      similar failure patterns (e.g. buckling), which are observed
+the multi-step water injection. Overall, model HG-A-F            at scales ranging from small boreholes to the tunnel scale.
+performs slightly better, suggesting that increased fracture     In contrast, reactivations of tectonic structures are highly
+density is more representative for the EDZ around the HG-        irregular processes and are therefore difficult to predict
+A microtunnel than the sparse fracture network of the HG-        without detailed knowledge of the pre-existing fracture
+A model.                                                         patterns, a fact which calls for detailed site characterisation
+   Gas injection test GI-2 with a gas injection period of        measures ahead of the excavation face.
+5 months was selected for assessing the gas transport               A mechanistic understanding of the hydro-mechanical
+behaviour of the EDZ along the seal section. The simula-         and hydro-chemical phenomena associated with the self-
+tions were executed with the two-phase flow code                 sealing capacity of the Opalinus Clay has been developed.
+TOUGH2 (Pruess et al. 2012) using the FDEM fracture              In this context, a long-lasting packer test campaign in short
+model HG-A-F and the fracture closure parameter deter-           radial boreholes allowed to bracket the time scales and
+mined after the analysis of the long-term water injection        magnitudes of EDZ fracture self-sealing, indicating a
+test. The simulated gas pressure build-up in the test zone of    continuous decrease of fracture transmissivities by several
+the HG-A microtunnel and the modelled pressure transients        orders of magnitudes within a time period of three years.
+along the seal section are in good agreement with the            Furthermore, a dedicated in situ experiment on a hydraulic
+monitored piezometer data. Clear evidence was seen for a         fracture revealed the hydro-mechanical controls, essen-
+preferential gas flow path, associated with the extended         tially determining the hydraulic significance of the EDZ
+damage zone around the tectonic fault. Figure 20b displays       fractures. In this context, a hyperbolic fracture closure law
+the gas path along the seal section in terms of gas saturation   was derived, expressing for a functional relationship
+at the time when the gas breakthrough to the Gallery 04 is       between fracture transmissivity and the prevailing pore
+observed. The modelling results were achieved without            pressure (respectively, effective normal stress) when the
+extensive calibration of the conductivity and porosity dis-      fracture is subjected to a normal (total) stress component.
+tributions, indicating a good performance of the applied            The comprehensive experimental data base of the Mont
+model set-up. Further adaptions of the capillary pressure        Terri research programme formed the basis for the devel-
+and relative permeability relationships (cubic scaling law       opment of a versatile heuristic modelling approach, aimed
+instead of Leverett scaling; Grant gas permeability curve)       at simulating flow and transport processes along the EDZ
+provided further improvements of the data fits.                  and capable to estimate the spatial–temporal evolution of
+                                                                 hydraulic conductance of the EDZ after tunnel closure. The
+                                                                 model was benchmarked with a data set from the HG-A
+5 Conclusions                                                    experiment, demonstrating the ability of the approach to
+                                                                 mimic the evolution of the hydraulic conductance of the
+In the framework of the Mont Terri Project, new insights         EDZ around a backfilled tunnel section during the entire re-
+have been gained concerning the formation and evolution          saturation phase. In addition, a two-phase flow model was
+of the EDZ in indurated clays. Clear evidence was found,         successfully applied for the back-analysis of gas injection
+192   P. Marschall et al.
+ Mont Terri, paper #8: hydro-mechanical evolution of the EDZ                                                                                 193
+
+b Fig. 20 Back analysis of a long-term water injection and a gas               excavation-induced fractures at the Meuse/Haute-Marne URL
+ injection test at the HG-A experiment (from Alcolea and Kuhlmann              drifts. Rock Mechanics and Rock Engineering, 47(1), 21–41.
+ 2017): a simulation of a long-term water injection test with the         Armand, G., Noiret, A., Zghondi, J., & Seyedi, D. M. (2013b). Short-
+ fracture network models ‘‘HG-A’’ and ‘‘HG-A-F’’. The pressure fits at         and long-term behaviors of drifts in the Callovo-Oxfordian
+ observation borehole HG-A2 above the tunnel are displayed;                    claystone at the Meuse/Haute-Marne underground research
+ b simulation of gas injection test GI-2 with the fracture network             laboratory. Journal of Rock Mechanics and Geotechnical
+ model HG-A-F. The preferential gas path along the EDZ at the time             Engineering, 5(3), 221–230.
+ of the gas breakthrough is indicated by enhanced gas pressures           Blümling, P., Bernier, F., Lebon, P., & Martin, C. D. (2007). The
+                                                                               excavation damaged zone in clay formations time-dependent
+                                                                               behaviour and influence on performance assessment. Physics and
+ tests, giving evidence for the high gas transport capacity of                 Chemistry of the Earth, Parts A/B/C, 32(8), 588–599.
+                                                                          Bossart, P., Bernier, F., Birkholzer, J., Bruggeman, C., Connolly, P.,
+ the EDZ along a sealed tunnel section. The suggested
+                                                                               Dewonck, S., Fukaya, M., Herfort, M., Jensen, M., Matray, J-M.,
+ methodology provides an abstracted single-shell model of                      Mayor, J. C., Moeri, A., Oyama, T., Schuster, K., Shigeta, N.,
+ the EDZ, able to mimic the relevant functional features of                    Vietor, T., & Wieczorek, K. (2017). Mont Terri rock laboratory,
+ the EDZ in a traceable manner. Such abstracted model is a                     20 years of research: introduction, site characteristics and
+                                                                               overview of experiments. Swiss Journal of Geosciences, 110.
+ requirement for radionuclide release calculations in support
+                                                                               doi:10.1007/s00015-016-0236-1 (this issue).
+ of long-term safety analyses of a geological repository.                 Bossart, P., Meier, P. M., Moeri, A., Trick, T., & Mayor, J. C. (2002).
+                                                                               Geological and hydraulic Characterization of the excavation
+ Acknowledgements This work was supported by ANDRA, BGR,                       disturbed zone in the Opalinus Clay of the Mont Terri Rock
+ Nagra and NWMO via the Mont Terri Consortium. The authors                     Laboratory. Engineering Geology, 66, 19–38.
+ would like to thank Dr. Paul Bossart, Mr. T. Theurillat, Dr. D. Jäggi   Bossart, P., Trick, T., Meierand, P. M., & Mayor, J. C. (2004).
+ of the Mont Terri consortium together with the many contractors who           Structural and hydrogeological Characterization of the excava-
+ have supported the experiments for their invaluable assistance in the         tion-disturbed zone in the Opalinus Clay (Mont Terri Project,
+ technical planning and performance of the experiment. The valuable            Switzerland). Applied Clay Science, 26, 429–448.
+ review comments and suggestions by Prof. D. Martin (University of        Diederichs, M. S., & Kaiser, P. K. (1999). Stability of large
+ Edmonton, Canada) and Prof. T.S. Nguyen (Canadian Nuclear Safety              excavations in laminated hard rock masses: the Voussoir
+ Commission, Ottawa) for improving the technical quality of this               analogue revisited. International Journal of Rock Mechanics
+ paper are highly appreciated.                                                 and Mining Sciences, 36(1), 97–118.
+                                                                          DIT-UPC. (2000). CODE_BRIGHT, A 3-D program for thermo-
+                                                                               hydro-mechanical analysis in geological media. User’s guide.
+                                                                               Barcelona: CIMNE.
+ References                                                               Einstein, H. H. (2002). Tunnels in Opalinus Clayshale. A review of
+                                                                               case histories and new developments. Tunnelling and Under-
+ Alcolea, A., Kuhlmann, U. (2017). Mont Terri HG-A experiment                  ground Space Technology, 15(1), 13–29.
+     (phase 21). Inverse fow modelling of the hydraulic properties of     Ferrari, A., Favero, V., Marschall, P., & Laloui, L. (2014).
+     the EDZ. Mont Terri Technical Note 2016-76 (in prep.).                    Experimental analysis of the water retention behaviour of shales.
+ Alcolea, A., Kuhlmann, U., Marschall, P., Lisjak, A., Grasselli, G.,          International Journal of Rock Mechanics and Mining Sciences,
+     Mahabadi, O., de La Vaissière, R., Leung, H., & Shao, H.                 72, 61–70.
+     (2016). A pragmatic approach to abstract the EDZ around              Harrington, J., Volckaert, G., Jacobs, E., Maes, N., Areias, L.,
+     tunnels of a geological radioactive waste repository—Applica-             Charlier, R., & Granet, S. (2013). Summary report: experiments
+     tion to the HG-A experiment in Mont Terri. Geological Society,            and modelling of excavation damage zone (EDZ) behaviour in
+     London, Special Publications, 443, SP443–8.                               argillaceous and crystalline rocks (Work Package 4). EC
+ Alcoverro, J., Olivella, S., & Alonso, E. E. (2014). Modelling fluid          FORGE Project Report D, 4.
+     flow in Opalinus Clay excavation damage zone. A semi-                Itasca. (2012). FLAC3D (Fast Lagrangian Analysis of Continua).
+     analytical approach. Geological Society, London, Special Publi-           Version 5.01. Itasca Consulting Group Inc., Minnesota, USA.
+     cations, 415(1), 143–166.                                            Labiouse, V., & Vietor, T. (2014). Laboratory and in situ simulation
+ Alheid, H. J., Aranyossy J. F., Blümling P., Hoteit N., & Van Geet M.        tests of the excavation damaged zone around galleries in Opalinus
+     (2007). EDZ Development and Evolution (RTDC 4). EDZ                       Clay. Rock Mechanics and Rock Engineering, 47(1), 57–70.
+     development and evolution. State of the art. NF-PRO. Contract        Lanyon, G. W. (2011). Excavation damaged zones assessment.
+     Number F16W-CT-2003-02389. European Commission,                           Report NWMO DGR-TR-25 2011-21. (p. 111).
+     Luxembourg.                                                          Lanyon, G. W., Marschall, P., Trick, T., De La Vaissiere, R., Shao, H.,
+ Aranyossy, J. F., Mayor, J. C., Marschall, P., Plas, F., Blumling, P.,        & Leung, H. (2009). Hydromechanical Evolution and Self-Sealing
+     Van Geet, M., Armand, G., Techer, I., Alheid, A. J., Rejeb, A.,           of Damage Zones around a Microtunnel in a Claystone Formation
+     Pinettes, P., Balland, C., Popp, T., Rothfuchs, T., Matray, J. M.,        of the Swiss Jura Mountains. In 43rd U.S. Rock Mechanics
+     De Craen, M., Wieczorek, K., Pudewills, A., Czaikowski, O.,               Symposium & 4th U.S.—Canada Rock Mechanics Symposium
+     Hou, Z., & Fröhlich, H. (2008). EDZ Development and                      (pp. 652–663). American Rock Mechanics Association.
+     Evolution (RTDC 4). In nuclear science and technology.               Lanyon, G. W., Marschall, P., Trick, T., De La Vaissiere, R., Shao,
+     Understanding and Physical and Numerical Modelling of the                 H., & Leung, H. (2014). Self-sealing experiments and gas
+     Key Processes in the Near Field and their Coupling for Different          injection tests in a backfilled microtunnel of the Mont Terri
+     Host Rocks and Repository Strategies NF-PRO) Final Synthesis              URL. Geological Society, London, Special Publications, 400(1),
+     Report (D. 4.5.3). FP6-EURATOM/NF-PRO, F16W-CT-2003-                      93–106.
+     02389 (pp. 150–197). European Commission, Luxembourg.                Lanyon, G. W., & Senger, R. (2011). A Structured approach to the
+ Armand, G., Leveau, F., Nussbaum, C., De La Vaissiere, R., Noiret,            derivation of effective properties for combined water and gas
+     A., Jaeggi, D., et al. (2013a). Geometry and properties of the            flow in the EDZ. Transport in Porous Media, 90(1), 95–112.
+194                                                                                                                               P. Marschall et al.
+
+Lisjak, A., Garitte, B., Grasselli, G., Müller, H., & Vietor, T. (2015).         modelling. Swiss Journal of Geosciences, 110. doi:10.1007/
+     The excavation of a circular tunnel in a bedded argillaceous rock            s00015-016-0248-x (this issue).
+     (Opalinus Clay): short-term rock mass response and FDEM                 Poller, A., Smith, P., Mayer, G., & Hayek, M. (2014). Modelling of
+     numerical analysis. Tunnelling and Underground Space Tech-                   Radionuclide Transport along the Underground Access Struc-
+     nology, 45, 227–248.                                                         tures of Deep Geological Repositories. Nagra Technical Report,
+Lisjak, A., Tatone, B. S. A., Mahabadi, O. K., Grasselli, G.,                     NTB 14-10 (p. 166). Nagra, Wettingen, Switzerland. http://
+     Marschall, P., Lanyon, G. W., et al. (2016). Hybrid finite-                  www.nagra.ch.
+     discrete element simulation of the EDZ formation and mechan-            Pruess, K., Oldenburg, C., & Moridis, G. (2012). TOUGH2 user’s
+     ical sealing process around a microtunnel in Opalinus Clay. Rock             guide, Version 2.1 Lawrence Berkeley Laboratories, Report
+     Mechanics and Rock Engineering, 49(5), 1849–1873.                            LBL-43134, Berkeley, CA, USA.
+Marschall, P., Distinguin, M., Shao, H., Bossart, P., Enachescu, C., &       Rejeb, A., Slimane, K. B., Cabrera, J., Matray, J. M., & Savoye, S.
+     Trick, T. (2006). Creation and evolution of damage zones around              (2008). Hydro-mechanical response of the Tournemire argillite
+     a microtunnel in a claystone formation of the Swiss Jura                     to the excavation of underground openings: Unsaturated zones
+     Mountains. In International Symposium and Exhibition on                      and mine-by-test experiment. In Thermo-hydromechanical and
+     Formation Damage Control, Society of Petroleum Engineers.                    chemical coupling in geomaterials and applications: proceed-
+Marschall, P., Horseman, S., & Gimmi, T. (2005). Characterisation of              ings of the 3 international symposium GeoProc’2008 (pp.
+     gas transport properties of the Opalinus Clay, a potential host              649–656). Wiley.
+     rock formation for radioactive waste disposal. Oil & Gas Science        Senger, R. K., Lanyon, G. W., & Marschall, P. (2013). Modeling the
+     and Technology, 60(1), 121–139.                                              Hydraulic and Two-phase Flow Behaviour of the Heterogeneous,
+Marschall, P., Trick, T., Lanyon, G. W., Delay, J., & Shao, H. (2008).            Fractured EDZ in the Opalinus Clay during the HG-A Exper-
+     Hydro-Mechanical Evolution of Damaged Zones around a                         iment at the Mont Terri URL. In Proceedings of the Fourth
+     Microtunnel in a Claystone Formation of the Swiss Jura                       European Association of Geoscientists & Engineers (EAGE)
+     Mountains. In The 42nd US Rock Mechanics Symposium                           Shale workshop. Shales: what do they have in common? (pp
+     (USRMS), American Rock Mechanics Association.                                148–152). European Association of Geoscientists & Engineers.
+Martin, C. D., Christiansson, R., & Söderhäll, J. (2001). Rock stability   Shao, H., Xu, W., Marschall, P., Kolditz, O., & Hesser, J. (2015).
+     considerations for siting and constructing a KBS-3 repository.               Numerical interpretation of gas-injection tests at different scales.
+     SKB Technical Report, TR-01-38 (p. 94). Swedish Nuclear Fuel                 Geological Society, London, Special Publications, 415(1),
+     and Waste Management Co, Stockholm, Sweden. http://www.                      203–212.
+     skb.se.                                                                 Steiner, W. (1996). Tunnelling in squeezing rocks: case histories.
+Martin, C. D., & Lanyon, G. W. (2003). EDZ in clay shale: Mont                    Rock Mechanics and Rock Engineering, 29(4), 211–246.
+     Terri. Mont Terri Technical Report, TR 01-01 (p. 207). Federal          Suckling, P., Avis, J., Calder, N., Humphreys, P., King, F., & Walsh,
+     Office of Topography (swisstopo), Wabern, Switzerland. http://               R. (2012). T2GGM Version 3.1: gas generation and transport
+     www.mont-terri.ch.                                                           code. Nuclear Waste Management Organization Report NWMO
+Nagra. (1997). Geosynthese Wellenberg 1996-Ergebnisse der Unter-                  TR-2012-23. Toronto, Canada.
+     suchungsphasen I und II. Nagra Technical Report, NTB 96-01              Tsang, C. F., Bernier, F., & Davies, C. (2005). Geohydromechanical
+     (p. 511). Nagra, Wettingen, Switzerland. http://www.nagra.ch.                processes in the Excavation Damaged Zone in crystalline rock,
+Nagra. (2002). Projekt Opalinuston. Synthese der geowis-                          rock salt, and indurated and plastic clays in the context of
+     senschaftlichen Untersuchungs ergebnisse. Entsorgungsnachweis                radioactive waste disposal. International Journal of Rock
+     für abgebrannte Brennelemente, verglaste hochaktive sowie                   Mechanics and Mining Sciences, 42(1), 109–125.
+     langlebige mittelaktive Abfälle. Nagra Technical Report, NTB           Walsh, R., Nasir, O., Leung, H., & Avis, J. (2015). Numerical
+     02-03 (p. 659). Nagra, Wettingen, Switzerland. http://www.                   Characterization of the Excavation Damaged Zone in the HG-A
+     nagra.ch.                                                                    Experiment. In Proceedings: International High-Level Radioac-
+Nagra. (2008). Effects of post-disposal gas generation in a repository            tive Waste Management, Charleston, SC.
+     for low- and intermediate-level waste sited in the Opalinus Clay        Wilson, C. R., Witherspoon, P. A., Long, J. C. S., Galbraith, R. M.,
+     of Northern Switzerland. Nagra Technical Report, NTB 08-07                   DuBois, A. O., & McPherson, M. J. (1983). Large-scale
+     (p. 175). Nagra, Wettingen, Switzerland. http://www.nagra.ch.                hydraulic conductivity measurements in fractured granite. Inter-
+Nagra. (2016). Production, consumption and transport of gases in                  national Journal of Rock Mechanics and Mining Sciences &
+     deep geological repositories according to the Swiss disposal                 Geomechanics Abstracts, 20(6), 269–276.
+     concept. Nagra Technical Report, NTB 16-03, Nagra, Wettin-              Xu, W., Shao, H., Marschall, P., Hesser, J., & Kolditz, O. (2013).
+     gen, Switzerland. http://www.nagra.ch.                                       Analysis of flow path around the sealing section HG-A
+Nguyen, T. S., & Le, A. D. (2015). Simultaneous gas and water flow                experiment in the Mont Terri Rock Laboratory. Environmental
+     in a damage-susceptible bedded argillaceous rock. Canadian                   Earth Sciences, 70(7), 3363–3380.
+     Geotechnical Journal, 52(1), 18–32.                                     Yong, S. (2007). A three-dimensional analysis of excavation-induced
+Nussbaum, C., Kloppenburg, A., Caër, T., & Bossart, P. (2017).                   perturbations in the Opalinus Clay at the Mont Terri Rock
+     Tectonic evolution around the Mont Terri rock laboratory,                    Laboratory. Ph.D dissertation, Swiss Federal Institute of Tech-
+     northwestern Swiss Jura: constraints from kinematic forward                  nology in Zürich, Zürich, Switzerland, p. 167.
+

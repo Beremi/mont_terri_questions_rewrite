@@ -1,0 +1,1158 @@
+Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1, pp. 121-139
+Copyright © 2005, Institut français du pétrole
+
+                                                                                                                    IFP International Workshop
+                                                                                                                Rencontres scientifiques de l’IFP
+                                                                                 Gas-Water-Rock Interactions ... / Interactions gaz-eau-roche ...
+
+
+
+
+     Characterisation of Gas Transport Properties
+of the Opalinus Clay, a Potential Host Rock Formation
+           for Radioactive Waste Disposal
+                                       P. Marschall1, S. Horseman2* and T. Gimmi3
+             1 NAGRA, National Cooperative for the Disposal of Radioactive Waste, Hardstr. 73, 5200 Wettingen - Switzerland
+               2 British Geological Survey, Kingsley Dunham Centre, Keyworth, Nottingham NG12 5 GG - United Kingdom
+                 3 Universitity of Bern, Baltzerstrasse 1-3, 3012 Bern and Paul Scherrer Institut, 5232 Villigen - Switzerland
+                                     e-mail: marschall@nagra.ch - stho@bgs.ac.uk - gimmi@geo.unibe.ch
+
+          * The contribution to this work by Steve Horseman, who died suddenly last year, is greatly appreciated by the remaining authors.
+                                                        His loss is regretted by his colleagues.
+
+
+
+           Résumé — Caractérisation des propriétés des argiles d’Opalinus (roche d'accueil potentielle
+           pour un stockage de déchets radioactifs) relatives au transport des gaz — Les argiles d’Opalinus, au
+           nord de la Suisse, sont envisagées pour l'implantation d'un site de stockage pour déchets radioactifs en
+           formation géologique profonde. La compréhension approfondie des processus de transport des gaz au
+           travers de cette roche peu perméable est un élément clé dans l’évaluation de l’aptitude du site au
+           stockage. Selon les données fournies par les campagnes de reconnaissance géologique et les expériences
+           en laboratoire, la perméabilité intrinsèque d’argiles d’Opalinus serait de l'ordre de 10–20 à 10–21 m2, pour
+           un rapport d’anisotropie modéré (< 10). La porosité dépend de la composition de l'argile et de la profon-
+           deur d'enfouissement ; pour la zone envisagée, on a mesuré des valeurs de l'ordre de ~0,12. Selon les
+           données porosimétriques, on peut classer 10-30% des vides dans la catégorie des macropores, avec un
+           diamètre équivalent > 25 nm. Les pressions d'entrée déterminées sont de l'ordre de 0.4-10 MPa et dépen-
+           dent largement de la perméabilité intrinsèque. Les tests, tant in situ qu'en laboratoire (essais par perméa-
+           mètre au gaz sur les carottes de forage), montrent un fort couplage entre la migration de gaz à travers la
+           roche et les déplacements de l'eau interstitielle. Il semblerait donc possible d'appliquer les modèles de
+           déplacement immiscible de fluides dans les milieux poreux, et ceci lorsque la pression d'entrée du gaz
+           (c'est-à-dire le seuil de pression capillaire) est inférieure au niveau minimal de contrainte au sein de la
+           roche. Il faut noter que la circulation de gaz est limitée au réseau des macropores connectés entre eux,
+           d'où un très faible degré de désaturation de la roche au cours du processus d'imbibition du gaz. Lorsque
+           que la pression du gaz est élevée (c'est-à-dire lorsqu'elle approche le niveau de la contrainte maximale
+           exercée sur la roche), on a pu observer des mécanismes de transport induits par effet de dilatation. Par le
+           biais d'autres expériences de terrain, on a tenté de produire des fractures de rupture de grande extension et
+           à haute transmissivité (hydrofracs, gasfracs). Les résultats de ces tests permettent de conclure que la frac-
+           turation due aux gaz peut, dans une large mesure, être exclue des risques inhérents au comportement d'un
+           dépôt après fermeture.
+
+           Abstract — Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock
+           Formation for Radioactive Waste Disposal — The Opalinus Clay in Northern Switzerland has been
+           identified as a potential host rock formation for the disposal of radioactive waste. Comprehensive
+           understanding of gas transport processes through this low-permeability formation forms a key issue in
+122                             Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1
+
+
+           the assessment of repository performance. Field investigations and laboratory experiments suggest an
+           intrinsic permeability of the Opalinus Clay in the order of 10–20 to 10–21 m2 and a moderate anisotropy
+           ratio < 10. Porosity depends on clay content and burial depth; values of ~0.12 are reported for the
+           region of interest. Porosimetry indicates that about 10-30% of voids can be classed as macropores,
+           corresponding to an equivalent pore radius > 25 nm. The determined entry pressures are in the range of
+           0.4-10 MPa and exhibit a marked dependence on intrinsic permeability. Both in situ gas tests and gas
+           permeameter tests on drillcores demonstrate that gas transport through the rock is accompanied by pore-
+           water displacement, suggesting that classical flow concepts of immiscible displacement in porous media
+           can be applied when the gas entry pressure (i.e. capillary threshold pressure) is less than the minimum
+           principal stress acting within the rock. Essentially, the pore space accessible to gas flow is restricted to
+           the network of connected macropores, which implies a very low degree of desaturation of the rock during
+           the gas imbibition process. At elevated gas pressures (i.e. when gas pressure approaches the level of total
+           stress that acts on the rock body), evidence was seen for dilatancy controlled gas transport mechanisms.
+           Further field experiments were aimed at creating extended tensile fractures with high fracture transmis-
+           sivity (hydro- or gasfracs). The test results lead to the conclusion that gas fracturing can be largely ruled
+           out as a risk for post-closure repository performance.
+
+
+INTRODUCTION                                                       by faulting. Regional geological investigations in Northern
+                                                                   Switzerland and more focused studies in the Zürcher
+Radioactive wastes conditioned for geological disposal in          Weinland with a 3D seismic survey and a borehole at Benken
+deep, low-permeability formations will produce a significant       confirmed the remarkable homogeneity of the Opalinus Clay
+amount of gas due to corrosion and degradation processes. Gas      on the site scale (Birkhäuser et al., 2001; Nagra, 2001;
+generation will continue for a long period after repository clo-   Müller et al. 2002).
+sure and the accumulation of the gas may lead to unacceptable          The Opalinus Clay formation is a moderately over-
+build-up of gas pressure in the disposal tunnels, if the gas       consolidated claystone that has been formed by a complex
+cannot escape through the low-permeability host rock.              burial and compaction history with two distinct periods of
+Consequently, the investigation of gas transport processes is of   subsidence. In the region of the Zürcher Weinland, the for-
+high relevance in the assessment of repository performance.        mation reached a burial depth of about 1000 m during the
+    As part of the Swiss waste disposal programme, gas trans-      Cretaceous. A period of uplift of the area in the mid-Tertiary
+port processes were studied in a potential host rock called the    was followed by subsidence in the late Tertiary, when the
+Opalinus Clay (Nagra, 2002a; Nagra, 2002b; Nagra, 2004).           Opalinus Clay reached its greatest burial depth of about
+The investigations concentrated on the Zürcher Weinland in         1700 m below the surface. From about 10 Ma ago, alpine
+Northern Switzerland, with a deep investigation borehole           uplift and erosion brought the Opalinus Clay progressively
+close to the village of Benken, and on the Mont Terri Rock         up to its present burial depth of about 600-700 m in the
+Laboratory located in the Folded Jura of north-west                region of interest. At Mont Terri, the Opalinus Clay forma-
+Switzerland near the town of St-Ursanne (Thury and Bossart         tion reached a maximum depth of about 1000 m and the pre-
+1999). Field investigations included hydraulic packer tests        sent burial depth is about 200-300 m.
+and gas injection tests in boreholes, complemented by studies          On a regional scale, the mineralogical composition of the
+of the unsaturated zone around ventilated tunnels in the Mont      Opalinus Clay (Nagra 2002a) exhibits moderate lateral vari-
+Terri Rock Laboratory. The laboratory investigations on
+                                                                   ability and a slight increase in clay content with depth.
+Opalinus Clay drillcores from Benken and Mont Terri com-
+                                                                   Quantitative laboratory analyses of core samples from Benken
+prised microstructural analyses, determination of the capil-
+                                                                   and Mont Terri provided a total mass fraction of clay minerals
+lary pressure relationship and gas permeability measurements
+                                                                   of 54-66%, a quartz content of 14-20% and 13-16% calcite.
+in isostatic cells.
+                                                                   The fraction of swelling clay minerals, with 11-14%
+                                                                   illite/smectite mixed layers, is of particular interest for the
+1 THE OPALINUS CLAY FORMATION                                      gas-related studies. Further minerals are siderite, pyrite and
+                                                                   feldspar. The mass fraction of organic carbon is < 1%.
+The Opalinus Clay was deposited 180 Ma ago in a shallow                Transport of non-wetting fluids in a low-permeability for-
+marine environment. It is part of a thick Mesozoic-Tertiary        mation is largely controlled by the microstructure of the rock.
+sedimentary sequence in the Molasse Basin of Northern              A balanced assessment of gas transport processes in the
+Switzerland. In the siting area, the Mesozoic sediments            Opalinus Clay therefore requires careful consideration of
+reveal uniform thickness over a distance of several kilome-        both structure and texture. Figure 1 illustrates the mineralogi-
+tres, dipping gently to the south-east, and are hardly affected    cal and structural features of the Opalinus Clay in the
+            P Marschall et al. / Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock Formation                 123
+
+
+Zürcher Weinland on various scales. Petrophysical logs in                    determines the microstructure of the rock. Quartz minerals
+the Benken borehole indicate moderate variability and a                      may exhibit grain sizes in the range 0.01 mm, whereas the
+slight increase of clay content with depth, suggesting a divi-               clay minerals form flake-like packages with typical sizes in
+sion of the Opalinus Clay into 5 lithostratigraphic sub-units                the order of 100 nm-10 µm. The pore space of the rock is
+(facies). Core inspection reveals a distinct anisotropy, made                formed by a network of micro/meso- and macropores, which
+up of siderite concretions and silt and sandstone lenses,                    is too small (in the order 1-100 nm) to be shown by
+which are embedded in the clay-rich strata. The anisotropy                   conventional SEM methods. This network of pores actually
+due to bedding is largely a result of microscopic heterogene-                dominates the flow and transport properties of the rock. As
+ity as seen in the thin sections, where diagenetic cementation               shown in the subsequent section, complementary methods
+of the pore space has been observed in the silty and sandy                   are required to characterise the pore space of the Opalinus
+layers. Scanning electron microscope (SEM) images reveal                     Clay, such as mercury porosimetry and measurement of the
+that the size of the mineralogical components (10–7-10–3 m)                  adsorption / desorption isotherms.
+
+
+
+                                                                                                             1 mm
+
+                                                                                                         Silt grains (quartz)
+                a)                               b)
+
+                     Upper
+                 confining units                                                                           Calcite
+                                                                                   c)
+                Murch
+                layers                                                                                                 Clay minerals
+
+
+
+
+                                                                                                        100 µm
+                                                       Clay-rich                        d)
+                                                        section
+
+
+
+
+                     Opalinus clay
+                                                                                                  Clay minerals
+
+
+                                                       Siderite
+                                                      concretion
+
+    Depth
+                                                                                                                     Quartz grains
+
+
+
+
+                                          20 m
+
+                                                       Silty layer
+                                                      (quartz-rich)
+                                                                                        e)
+
+
+
+
+                     Lower                                                                                             Clay minerals
+                 confining units                      2 cm
+
+            0                        80
+
+                 Clay content (%)
+
+                                                                                                        Quartz grains
+                                                                                                  100 µm
+
+
+     Figure 1
+     Illustration of the mineralogy and structure of the Opalinus Clay at different scales, based on data from the Benken borehole in the Zürcher
+     Weinland: a) vertical profile of clay content determined by petrophysical logging; b) core sample; (c) thin sections and (d+e) SEM images
+     (after Nagra, 2002a).
+124                                      Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1
+
+
+
+                 a) Phenomenological description                                               σ3                                 σ3
+                                    Clay
+                                 aggregates
+                                                  Free gas           Pore-        Dilatancy
+                                                   phase             water
+                             Quartz
+                 Diffusion    grain                                                                          σ1                                  σ1
+                             Advection                                                                                             Tip of frac
+
+
+
+                                                                                                                        Frac aperture
+                                                                                               Envelope of
+                                      ~1 µm                                                   damage zone
+                 Advection and diffusion        Viso-capillary flow of gas and   Dilatancy controlled gas           Gas transport in tensile
+                    of dissolved gas           water phase ("two-phase flow")    flow ("pathway dilation")        fractures ("hydro-/gasfrac")
+
+                 b) Transport mechanisms
+
+                         Single phase                                                                             Single phase
+                                                             Visco-capillary two phase flow
+                            (liquid)                                                                                  (gas)
+
+
+                 c) Geomecanical regime
+
+                                                                                                Irreversible deformation
+                                Poro-elastic deformation                         Dilatancy      Distributed shear       Localised tensile
+                                                                                                      failure                failure
+
+
+                 d) Barrier function of host rock
+                                   Not affected                                       Dilatancy-controlled           Distinct fracture
+                                                                                          permeability                transmissivity
+
+
+      Figure 2
+      Classification and analysis of gas transport processes in Opalinus Clay: a) phenomenological description based on the microstructural model
+      concept; b) basic transport mechanisms; c) geomechanical regime; and d) effect of gas transport on the barrier function of the host rock.
+
+
+
+2 BASIC CONCEPTS OF GAS TRANSPORT                                                2.1 Transport of Gas Dissolved in the Porewater
+
+Gas transport through low-permeability rock formations is                        Advective and diffusive transport of gas dissolved in
+controlled not only by the hydraulic and mechanical proper-                      porewater is characterised by three fundamental laws. The
+ties of the rock mass (intrinsic permeability, porosity, rock                    advective groundwater flow is governed by Darcy’s law.
+strength), but also by the gas pressure at the generation locus                  Fick’s law represents the diffusion of dissolved gas due to
+and the hydromechanical state of the rock (i.e. water satura-                    concentration gradients in the porewater and Henry’s law
+tion, porewater pressure, stress state). Phenomenological                        describes the solubility of gas in porewater (Helmig, 1997).
+considerations suggest the following subdivision of the basic
+                                                                                 The transport of dissolved gas occurs even at low (total) gas
+transport mechanisms (Fig. 2):
+                                                                                 pressures; the pressure-dependent dissolution of gas in pore-
+– advective-diffusive transport of gas dissolved in the pore-
+                                                                                 water and the increased groundwater flux cause the specific
+   water;
+                                                                                 flux of the dissolved gas to increase with an increase in the
+– visco-capillary two-phase flow;
+                                                                                 gas pressure. The main parameters affecting the transport
+– dilatancy-controlled gas flow;
+                                                                                 behaviour of dissolved gas are Henry’s coefficient, the
+– gas transport along macroscopic tensile fractures (hydro-
+                                                                                 diffusion coefficient in water, the tortuosity, the accessible
+   and gas-fracturing).
+                                                                                 porosity and the hydraulic conductivity. The low hydraulic
+   As seen in Figure 2a, the phenomenological description is
+                                                                                 conductivity of argillaceous rock significantly restricts the
+inspired by the microstructural conceptualisation of the
+Opalinus Clay (Nagra, 2002a). The complex hydromechani-                          efficiency of this transport mechanism. Nevertheless, the
+cal processes are decomposed into a problem of transport of                      general importance of diffusion and advection as slow back-
+immiscible fluids (Figure 2b) and a geomechanical problem                        ground processes in all types of cap rock formations is
+(Figure 2c). The effect of gas transport on the hydraulic bar-                   beyond question and has been addressed in the context of
+rier function of the rock is highlighted for each of the trans-                  many hydrocarbon exploration and reservoir engineering
+port mechanisms (Figure 2d). The different mechanisms are                        studies (Clayton and Hay, 1994; Krooss et al., 1992;
+discussed in the following sections.                                             Schlömer and Krooss, 1997).
+       P Marschall et al. / Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock Formation     125
+
+
+2.2 Visco-Capillary Two-Phase Flow                                                                               n
+                                                                                                  ε                  2(1−1/ n )
+                                                                                k r,g = (1 – S e ) ⋅ (1 – S e n –1 )
+In its conventional form, visco-capillary two-phase flow is                                                    n n −1     2
+                                                                                                
+described as a transport process whereby porewater in the                       k r,w = S e γ ⋅ 1 – (1 – S e n –1 ) n 
+pore volume of a rock formation is displaced by gas under                                                             
+                                                                                                                                   (3)
+the influence of viscous and capillary forces (e.g. Bear,
+                                                                       with:
+1972). In a geomechanical sense, the rock mass behaves like
+an elastic medium, characterised by the porosity and the rock
+                                                                                                     Sw – Swr
+compressibility. The controlling factor for the two-phase                                   Se =
+                                                                                                   1 – Sgr – Swr
+flow characteristics of a porous medium is the gas entry
+pressure pae, also known as the capillary threshold pressure,
+which represents the difference between gas pressure and               where ε and γ are empirical shape factors, describing the pore
+water pressure needed to displace the porewater from the ini-          connectivity of the medium (present study: ε = γ = 0.5).
+tially fully saturated medium. For a capillary tube, Young’s           According to the Mualem approach, the definition of the
+equation gives the relationship between the gas entry pres-            effective saturation Se is slightly modified and includes the
+sure (capillary threshold pressure) and the pore radius:               residual gas saturation Sgr.
+                                                                          A distinct hysteresis is often seen in the capillary pressure
+                                                                       relationship, when a porous medium is saturated or desatu-
+                               2 ⋅ σ gw
+                       pae =              cos α                  (1)   rated, respectively. The porosity of the medium cannot be
+                                   r                                   saturated completely during the saturation process (residual
+where pae is the gas entry pressure, σgw is the surface tension        gas saturation Sgr), because part of the pore space is poorly
+gas/water (ca. 0.073 N m–1 at 20°C), r represents the radius           connected. On the other hand, assuming an initially fully
+of the capillary tube and α is the wetting angle. In porous            saturated medium, a critical gas saturation has to be exceeded
+media, Young’s equation can be adopted to define an equiva-            before gas starts to form a continuous phase with a gas per-
+lent pore radius of the medium by measuring the entry                  meability > 0 (e.g. Dury et al., 1999). In the context of this
+pressure with a non-wetting fluid (e.g. mercury porosimetry).          study, due to the limited experimental data base, no distinc-
+                                                                       tion is made between residual and critical gas saturation.
+    Once the gas entry pressure has been exceeded, the gas
+mobility is controlled mostly by the intrinsic permeability k
+of the formation, the permeability-saturation relationship             2.3 Dilatancy-Controlled Gas Flow
+(relative permeability), and the relationship between the
+capillary pressure and the water saturation (suction or water          Dilatancy controlled gas flow (or “pathway dilation”; termi-
+retention curve). The functional dependency between the                nology after Horseman et al., 1996) is a transport mechanism
+pore space saturation and the relative permeability or the             of special importance for argillaceous media with low tensile
+capillary pressure are commonly described with parametric              strength. Clay-rich rock cannot withstand long-term gas pres-
+models. According to van Genuchten (1980), the functional              sures with a magnitude greater than the minimum principal
+relationship between water saturation and capillary pressure           stress acting on the rock mass. Due to the expected micro-
+is given as:                                                           scale variability of the geomechanical rock properties, it even
+                                                                       seems plausible that microfractures will form before the level
+                                                                       of minimum principal stress is reached. Gas flow along
+            1         n        1
+                                                      Sw − Swr         microfractures is anticipated in situations where the shear
+     pc =     ⋅ (Sec 1− n − 1) n       with   Sec =              (2)   stress is large in comparison with peak strength or where the
+            α                                          1 − Swr
+                                                                       stress state favours extensile rock deformation. The process
+                                                                       of gas-driven microfracturing leads to an increase of the pore
+where pc represents the capillary pressure. 1/α, the inverse of        space, which is accompanied by a detectable increase in
+van Genuchten’s α parameter, is known as the apparent gas              intrinsic permeability and a change in the capillary pressure-
+entry pressure and n is the shape factor (pore size distribution       saturation relationship. In the terminology of multiphase flow
+index). The effective saturation Sec can be determined when            concepts, gas flow is still controlled by visco-capillary forces
+the actual porewater saturation Sw (volume of porewater per            (phase interference between wetting and nonwetting fluid)—
+volume of pores) and the residual porewater saturation Swr             the main difference with respect to conventional two-phase
+are given.                                                             flow is that the transport properties of the solid phase (rock
+   The relative gas/water permeabilities kr,g and kr,w of the          permeability, relative permeability, capillary pressure rela-
+Opalinus Clay are described by the approach of Mualem (e.g.            tionship) can no longer be viewed as invariants since they
+Helmig, 1997).                                                         depend on the state of deformation of the rock.
+126                                        Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1
+
+
+
+2.4 Gas Flow Along Macroscopic Tensile Fractures                                           the pore structure is possible and one has to rely on indirect
+                                                                                           methods like mercury porosimetry and measurements of
+As a rule of thumb, a macroscopic tensile fracture (hydrofrac/                             nitrogen or water isotherms. In Section 3.1, we give a brief
+gasfrac) develops when the gas pressure is larger than the                                 outline of the methods used and then discuss the results.
+sum of the minimum principal stress and the tensile strength                               Section 3.2 summarises the laboratory experiments on gas
+of the rock (e.g. Valko and Economides, 1997). The macro-                                  permeability measurements.
+scopic fracture is initiated quasi-instantaneously and propa-
+gates at about the velocity of a shear wave. Gas flow in such a
+                                                                                           3.1 Pore Size Distribution and Capillary Pressure
+macroscopic tensile fracture can be seen as a single-phase
+flow process. The propagation comes to a halt when the gas                                 Mercury porosimetry data and nitrogen and water isotherms
+pressure in the fracture becomes less than the value of the                                were obtained at the geotechnical laboratories of BRGM
+minimum principal stress (shut-in pressure). Successful                                    (Bureau de recherches géologiques et minières, Orléans,
+hydrofracs are characterised by a fracture transmissivity                                  France) and LEM-CNRS (Laboratoire environnement et
+which increases the bulk permeability of the treated rock by                               minéralurgie, Nancy, France), and summarised in Nagra
+many orders of magnitude. In a rock with low tensile strength,                             (2002a). For mercury porosimetry, Hg was injected at
+a macroscopic frac develops only when the gas pressure                                     increasing pressures into crushed, dried and degassed sam-
+build-up is rapid, i.e. when the combined effect of porewater                              ples. From the incremental saturation and the Washburn
+displacement and formation of small-scale fractures (i.e. dila-                            Equation, which is equivalent to Young’s Equation (1) for
+tancy) no longer counterbalances the gas production rate. The                              this system, the distribution of equivalent pore sizes was
+conceptual, theoretical and experimental framework for frac-                               inferred. The maximum injection pressure was 200 MPa,
+ture propagation is well documented in standard hydrocarbon                                and thus only pores with a radius larger than 3.7 nm could
+exploration literature (e.g. Valko and Economides, 1997).                                  be detected. To obtain nitrogen and water isotherms, the
+                                                                                           powder samples were dried at temperatures of at least 120°C
+                                                                                           and degassed under vacuum. Nitrogen isotherms were
+3 LABORATORY EXPERIMENTS                                                                   measured at 77 K, water isotherms at 303 K by gravimetry
+As part of the rock characterisation programme, laboratory                                 in quasi-equilibrium mode, where water vapour was intro-
+analyses were performed with core samples of Opalinus Clay                                 duced at a constant, low flow rate (Villiéras et al., 1997). The
+from Benken and Mont Terri. Table 1 presents typical values                                pore size distributions in the mesopore range (radius between
+for the basic physical properties.                                                         1 and 25 nm; definition according to IUPAC 1997) were
+                                                                                           obtained from the incremental saturation and Young’s
+   Of special interest for studies of gas transport are the pore
+                                                                                           Equation (1). In the case of narrow pores as in clay rocks, a
+size distribution and the water retention function (capillary
+                                                                                           correction for the amount of fluid adsorbed on surfaces, as
+pressure-saturation relationship) of Opalinus Clay. Because
+                                                                                           opposed to condensed in capillaries, has to be made. This
+of the small sizes of the pores, no direct characterisation of
+                                                                                           was done according to the Barret-Joyner-Hallenda (BJH)
+
+
+                                                                                 TABLE 1
+             Basic physical properties of Opalinus Clay from Benken and the Mont Terri Rock Laboratory (Nagra, 2002a; Pearson et al., 2003)
+
+
+                                                                     Benken                                       Mont Terri                                Remarks
+                                                           Mean                 Range                   Mean                   Range
+  Bulk dry density (Mg m–3)                                 2.43               2.37-2.53                 2.31                2.28-2.32
+  Grain density (Mg m–3)                                    2.72               2.69-2.74                 2.74                2.70-2.77
+  Water loss porosity (-)                                  0.11(a)                                      0.16(a)                                       Drying at 105°C
+  Specific surface area(b) BET N2 (m2 g–1)                                       19-49                                          24-37                External surfaces
+  Specific surface area(c)                                                      56-129                                         112-147            Total surfaces, various
+  EGME or H2O (m2 g–1)                                                                                                                                   methods
+
+a: not all water will be driven off at 105°C; for Benken, the physical porosity is estimated to be about 1.1-1.2 times the water loss porosity, or somewhere in the range 0.12-
+   0.13.
+b: nitrogen cannot penetrate into the interlayer space, i.e. the pores between basic clay layers of expandable clays (smectites). Thus, only external surfaces are reached by
+   nitrogen.
+c: EGME (ethylene glycol monoethyl ether) is a polar liquid, which can, like water, also penetrate the interlayer space of expandable clays. Thus, EGME and H2O are
+   considered to reach all surface areas.
+  P Marschall et al. / Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock Formation                127
+
+
+
+
+Figure 3
+Equivalent pore size distributions in the mesopore range (equivalent pore radii 1 nm ≤ rc ≤ 25 nm). Pore size distribution in terms of
+incremental pore volume per size class, ∂Vp/∂rc, as obtained from mercury injection, nitrogen adsorption and desorption, and water
+adsorption and desorption. The numbers in the legend of the plot indicate the sampling depth in m below ground.
+
+
+
+
+Figure 4
+Capillary pressure - water saturation curves for Opalinus Clay samples from Mont Terri and Benken. Various methods were applied: water
+adsorption/desorption measurements, mercury porosimetry and controlled suction tests (Nagra, 2002a; Muñoz et al., 2003).
+128                             Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1
+
+
+method (Nagra, 2002a). Water retention functions describe          adsorption. The corresponding apparent gas entry values,
+the capacity of a porous medium to retain water at a given         1/α, are about 7 MPa and 15 MPa, respectively.
+suction head. Thus, the water retention function is in princi-
+ple identical to the water adsorption isotherm. The main dif-
+                                                                   3.2 Gas Permeability Measurements
+ferences are the experimental procedure and the preparation
+of the samples. Water retention curves of the Opalinus Clay        Six long-term gas permeability tests were conducted on
+were determined at the geotechnical laboratories of UPC            Opalinus Clay core samples from the Mont Terri
+(Universitat Politècnica de Catalunya, Barcelona, Spain), by       Underground Laboratory and from Benken. The experimen-
+stepwise desaturation and resaturation of core samples under       tal work was carried out by two different geotechnical labo-
+controlled humidity (Nagra, 2002a; Muñoz et al., 2003).            ratories, namely by SCK·CEN (Studiecentrum voor
+   Figure 3 shows a comparison of the pore size distributions      Kernenergie, Centre d’étude de l’énergie nucléaire, Mol,
+in the mesopore range obtained from mercury injection, from        Belgium) and by BGS (British Geological Survey,
+the nitrogen isotherms and from the water isotherms for            Nottingham, United Kingdom). Both laboratories used isosta-
+Benken samples. Distributions obtained from adsorption and         tic cells, designed to match the expected in situ stress condi-
+desorption of nitrogen or water are shown. It is evident that      tions by applying an isotropic confining pressure on the test
+the details of the distributions are rather different, depending   sample. Testing of the ultra-low permeability rock samples
+on the method that was used. Thus, the results can only give       turned out to be an extremely demanding task with respect to
+a relatively general picture of typical size distributions, and    the experimental set-up and the test duration, typically in the
+interpretation of specific peaks obtained for one adsorbate        order of several hundred days for a single core sample.
+should be done with care, having regard to possible interac-           Figure 5a shows a schematic sketch of the BGS isostatic
+tions between the adsorbate and the solid surfaces.                cell with the main components. The cylindrical rock speci-
+   From the mercury data, and assuming a physical porosity         men (diameter: 54 mm, thickness: 34 mm) is sandwiched
+of the Opalinus Clay samples of 0.12, the volume fraction of       between the end-caps and can be subject to an isotropic
+pores with radii larger than 25 nm was estimated to be about       confining stress up to 40 MPa. The sample is jacketed in
+10%, the fraction with radii between 3.7 and 25 nm about           heat-shrink Teflon to exclude confining fluid. The inlet and
+51%, and the fraction with radii below 3.7 nm about 39%.           outlet zones for water or gas flow through the specimen are
+The isotherm data suggest a somewhat larger macropore              provided by porous filter discs which are recessed into the
+fraction in the order of 20-30%. From these numbers and            bearing surface of the end-caps. Annular guard-ring filters
+from the curves in Figure 3, it becomes evident that a large       are recessed into the end-caps so that they completely encir-
+proportion of the pores are very narrow, with equivalent radii     cle the inlet and outlet filters. Volumetric total (i.e. gas and
+smaller than about 10 nm.                                          water) flow rates for the upstream and downstream side as
+   Figure 4 shows the water adsorption and desorption data         well as the pressure of the inlet/outlet zones and of the guard-
+and the mercury injection data interpreted as water retention      ring filters are monitored by a data acquisition system. A
+functions (capillary pressure-saturation relationship). A phys-    more detailed description of the basic permeameter system is
+ical porosity of 0.12 was used to calculate the saturation in      given in Harrington et al. (2001).
+the case of the mercury data. In the same plot, suction curve          Testing was performed in an air-conditioned laboratory at
+data obtained for Mont Terri samples are presented (Nagra,         a temperature of 20 ± 0.3ºC. A typical test history comprised
+2002a; Muñoz et al., 2003).                                        a sequence of test stages, namely:
+   The water adsorption and desorption data show a clear           – a saturation and equilibration stage;
+hysteresis. This phenomenon is very common; it may be              – a constant rate water flow stage;
+linked to pore connectivity, variability of cross-sections, or     – pressure recovery stage;
+other effects. Notably, in the water retention curves of the       – a sequence of constant gas pressure (CP) test stages.
+Mont Terri samples such differences are not observed                   Saturation of the specimen and constant rate water testing
+between the drying and wetting path (Nagra, 2002a; Muñoz           were accomplished with a synthetic porewater solution that
+et al., 2003), but the retention data are very similar to the      matched as closely as possible the in situ porewater chem-
+water desorption isotherm of the Benken sample. The shape          istry (Pearson et al., 2003). This procedure was aimed at
+of the mercury curve differs slightly from that of the water       minimising osmotic flow effects and shale swelling. Helium
+isotherms, but it is located approximately within the range        gas was used during the gas pressure test stages.
+spanned by the hysteresis of the water isotherm. We                    The water and gas permeameter tests performed by BGS
+attempted to adjust the parameters of a van Genuchten              were conducted with two core samples from Benken (OPA-1
+function (2) such that it fits the measured adsorption and des-    and OPA-2). Flow direction was parallel and normal to the
+orption data approximately. The following values were              bedding, respectively. In the following sections, the results of
+obtained: n = 1.6, α = 0.065 MPa–1 for desorption, n = 1.5,        test OPA-1 with flow normal to bedding will be discussed in
+α = 0.14 MPa–1, and a maximum saturation of 0.95 for               greater detail.
+       P Marschall et al. / Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock Formation                     129
+
+
+
+
+     Figure 5
+     Gas permeability measurements on an Opalinus Clay core sample from the Benken borehole: a) sketch of the isostatic cell containing the test
+     specimen; and (b + c) pressure and flow transients during gas testing (Nagra, 2002a).
+
+
+
+   During the equilibration stage of 6 days, an isotropic con-               after around 18 days, reaching a final asymptote of 5.2 MPa
+fining stress of 21.0 MPa was applied to the specimen and a                  and 0.2 µl/h. Since the emergent flow from the specimen at
+fixed backpressure of 5.0 MPa applied to all four filters.                   the end of the CP1 stage was at least partially gas, this clearly
+Subsequently, a constant rate water injection was established                demonstrates that the excess gas pressure at breakthrough
+for a period of 57 days, followed by a pressure recovery stage               had been exceeded and that the value of this quantity is less
+of 48 days. Numerical analysis of the entire hydraulic test                  than 5.0 MPa.
+sequence (water injection and pressure recovery) provided                        Subsequently, gas pressure in the injection system was
+estimates of intrinsic permeability parallel to the bedding in               raised in a series of 2.5 MPa steps (stages CP2-CP5), reach-
+the range 3-8 × 10–21 m2 and 5-7 × 10–22 m2 normal to                        ing a final pressure of 20.0 MPa. Outgoing flow rate and
+bedding, suggesting an anisotropy ratio of approximately 10.                 guard-ring pressures were monitored over each test stage.
+Specific storage estimates ranged between 1-2 × 10–5 m–1.                    Comparison of the flow rates at the end of stages CP1 and
+   At the end of the recovery phase, the aqueous solution in                 CP6 with 10.0 MPa upstream gas pressure reveals a signifi-
+the injection system was replaced with helium in order to                    cant increase in gas permeability. This observation can be
+undertake the constant gas pressure stage (CP). The gas pres-                explained by the desaturation of the sample during the gas
+sure phase consisted of a sequence of 6 pressure stages CP1-                 injection phase according to the relative permeability rela-
+CP6 as shown in Figure 5b. Upon pressurisation with gas at a                 tionship (Eq. 3). Further evidence for the process of progres-
+pressure of 10 MPa, both guard-ring pressures increased dur-                 sive water displacement is obtained by careful analysis of the
+ing the early time period of CP1 and a small emergent flow                   cumulative volumetric outflow. Even though the experimen-
+was detected from the specimen, levelling out at 0.6 µl/h                    tal set-up did not allow for a separation of gas and water out-
+after 8 days. The emergent flow can be explained as a slug of                flow during testing, an a posteriori determination of cumula-
+water displaced from the pore space of the inlet filter by the               tive gas flow was feasible. At the time of decommissioning
+pressurised helium. After 15 days, the upstream guard-ring                   of the test, the backpressure syringe pump was found to con-
+pressure began to drop and, by 28 days, this pressure had                    tain 0.1 ml of free helium at a pressure of 5.0 MPa, corre-
+fallen to 1.2 MPa above the backpressure. It then rose a little,             sponding to about 2% of the cumulative volumetric outflow.
+reaching a final pressure of 6.4 MPa by the end of the first                 In other words, 98% of the total volumetric outflow can be
+gas test stage (an elapsed time of 41 days). The downstream                  attributed to expelled porewater from the sample and the
+guard-ring pressure and outgoing flux also began to decrease                 filters. The low amount of gas in the outlet indicates that
+130                                         Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1
+
+
+quasi-stationary flow conditions along the specimen had not                                  specimen was damaged during the sample preparation process
+been established after 6 months of gas injection; the injected                               and exhibited a visible fracture in the flow direction. The mea-
+gas did still displace the porewater from the sample and/or                                  sured gas entry pressures are all < 0.5 MPa (cf.
+accumulate in the guard filters.                                                             Table 2). The gas saturation of the core samples after the gas
+   The second test with core sample OPA-2 (flow direction                                    injection phase was determined when decommissioning the
+parallel to the bedding) revealed marked differences both in                                 tests. The reported values Sg = 1 – Sw are typically below 10%;
+hydraulic and gas transport behaviour, although a similar test                               in the case of sample BED-B3 06, the upper limit of gas
+procedure was adopted. The hydraulic characterisation                                        saturation was determined to be < 0.22.
+indicated a more or less isotropic permeability of about                                        Before-and-after measurements of hydraulic conductivity
+3 × 10–22 m2. The gas entry pressure was found to be                                         were performed on sample BWS-E4 06. Within the uncer-
+between 7.5 and 10.0 MPa. The most significant difference,                                   tainty limits of the measuring technique, a hydraulic test after
+however, was seen in the cumulative gas flow. At the time of                                 gas injection exhibits the same conductivity as one done
+decommissioning of the test, the backpressure syringe pump                                   before gas testing (2 × 10–20 m2).
+was found to contain 5.2 ml of free helium at a pressure of
+5.0 MPa, suggesting that the predominant flow was gas mov-
+ing along the bedding planes. Post-test measurements suggest                                 4 FIELD INVESTIGATIONS
+a gas saturation of around 7% at the completion of testing.
+   A total of four water and gas permeameter tests were                                      Packer tests in boreholes have been the main source of field
+conducted by SCK·CEN (summary of test results in                                             data contributing to the characterisation of gas transport
+Marschall et al. 2003) with core samples from the Mont Terri                                 properties in the Opalinus Clay. The general test procedure
+Rock Laboratory (sample identifications BED-B3 06, BFP-                                      comprises a combination of hydrotest, gas injection and
+16, BED-C5/7 and BWS-E4 06). The confining pressure was                                      pressure recovery sequences. A typical test configuration
+6 MPa and the downstream porewater pressure was 2 MPa,                                       consists of a short straddle double packer system as shown in
+corresponding to the in situ conditions at Mont Terri with an                                Figure 6. After packer inflation, the hydrotest sequence is
+overburden < 300 m. One core sample each was subjected to                                    started. The purpose of this sequence is a comprehensive
+flow parallel and perpendicular to bedding. The flow direction                               hydraulic characterisation of the formation with particular
+for the other two samples was oblique to bedding. The core                                   emphasis on flow model identification and estimation of
+samples were saturated with synthetic porewater before the                                   hydraulic conductivity, storage coefficient and hydraulic
+water / gas injection phase started (equilibration phase). As for                            head. At the end of the hydraulic test sequence, when the
+the BGS experiments, each test started with a hydrotest stage                                interval pressure has recovered towards the static formation
+to determine the intrinsic permeability. Subsequently, the gas                               pressure, the fluid in the test interval is replaced by gas. The
+injection phase was initiated as a constant pumping rate. The                                subsequent gas injection phase may be implemented as an
+gas injection periods ranged from 3 to 8 months. The intrinsic                               event at constant flow rate (“gas threshold pressure test”) or
+permeabilities to water were consistently in the range of                                    as a multi-step constant head event. Usually, in situ gas tests
+1-2 × 10–20 m2, with the exception of sample BED-B3 06. This                                 are conducted with nitrogen. The final stage of gas testing is
+
+
+                                                                                    TABLE 2
+                                       Overview of gas permeameter tests with core specimens from Benken and Mont Terri
+
+     Core sample                     Injection period               Direction of flow relative            Intrinsic permeability(a) k   Gas entry pressure pae
+                                            (d)                            to bedding                                (m2)                      (MPa)
+
+
+     OPA-1                                  140                                  90°                           kp = 3-6 × 10–21                  ~4
+                                                                                                               kn = 5-7 × 10–2
+     OPA-2                                  120                                   0°                              3 × 10–21                    7.5-10
+     BED-B3 06(b)                            60                                   0°                              2 × 10–18                     <0.03
+     BFP 16                                 110                                  50°                             1.5 × 10–20                     0.5
+     BWS-E4 06                              180                                  90°                              2 × 10–20                      0.2
+     BED-C5/7                               174                                  35°                              2 × 10–20                      0.2
+
+a: intrinsic permeability: kp parallel to bedding, kn normal to bedding.
+b: core sample is not representative of undisturbed Opalinus Clay (visible fracture in flow direction).
+  P Marschall et al. / Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock Formation                                           131
+
+
+
+
+             a)                                     b)                                c)                                                      d)
+
+
+                             Valve open     Valve closed                                                                                           Packer
+
+
+Figure 6
+Gas threshold pressure testing in boreholes - test configuration and procedure: a) hydrotest sequence; b) water/gas displacement DISP;
+c) gas injection phase GRI; and d) gas pressure recovery phase GRIS.
+
+
+
+
+                                                              Hydrotests                                                         Gastest
+                                4000
+                                                            HI, HIS PI                                                            GRIS
+                                                                              DISP              GRI
+
+                                3000
+
+
+
+
+        Pressure (kPa)
+                                2000
+
+
+                                1000
+
+
+                                    0
+                                        0    500             1000             1500              2000                                2500           3000      3500
+        a)                                                                           Time (h)
+
+
+
+
+                                                                                                                          2000
+
+
+
+
+   ∆p and derivative (kPa)                                                                      ∆p and derivative (kPa)
+                                                                         ∆p                                               1500
+                                1000
+                                                                                                                          1000
+
+
+                                                                                                                           800
+                                  100
+
+                                                                                                                           400
+
+                                   10                                                                                      100
+                                    103                       104                                                             100               101          102
+        b)                                         Elapsed time (s)                                    c)                                  Horner time (-)
+
+
+Figure 7
+Gas threshold pressure test GP-4 at Mont Terri: a) entire test phase comprising a hydrotest and a gas test sequence; b) log-log derivative plot
+of the GRI phase; and c) Horner plot of the GRIS phase.
+132                              Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1
+
+
+a shut-in followed by a long-term pressure recovery phase.          were remarkably well constrained; the estimated hydraulic
+The primary purpose of the gas test sequence is the determi-        conductivity was 2 × 10–13 m/s, the storage coefficient was
+nation of the gas entry pressure of the formation. If the test is   3 × 10–5 m–1 and the static formation pressure pf ranged
+designed to comprise an extended gas injection phase, further       between 0.347 and 0.350 MPa.
+gas transport properties can be estimated, such as the shape            The interpretation of the gas test sequence followed an
+factors of the capillary pressure and relative permeability         approach by Senger et al. (1998), consisting of diagnostic
+relationships (Senger et al., 1998). At Mont Terri, gas injec-      analyses and numerical simulations with a multiphase flow
+tion experiments were complemented by hydraulic and                 model (summary presented in Marschall et al., 2003). The
+geomechanical crosshole observations, intended to investi-          diagnostic analyses are based on a so-called log-log deriva-
+gate coupled hydromechanical processes in the vicinity of the       tive plot of the gas injection phase and a Horner representa-
+injection borehole.                                                 tion of the pressure recovery phase (Horne, 1995). Assuming
+    In situ gas tests were conducted at Mont Terri and in the       an initial pressure pi, a linear increase of interval pressure p is
+investigation borehole at Benken. Three examples are                seen during the wellbore storage dominated early time of gas
+presented in the following sections, highlighting the current       injection. When the gas entry pressure is reached, the interval
+state of conceptual understanding of gas transport mecha-           pressure begins to deviate from the linear trend, because gas
+nisms in the Opalinus Clay. The results of field testing are        is being released into the rock formation. On the log-log
+summarised.                                                         derivative plot, the graphs of pressure change ∆p = (p – pi)
+    Beyond packer testing in boreholes, empirical observations      and pressure derivative ∂(∆p)/ ∂(log t) begin to deviate at this
+were made in the Mont Terri Rock Laboratory, demonstrating          point. For gas test BGP-4, the estimated gas entry pressure is
+the evolution of an unsaturated zone around the ventilated          about 0.4 MPa, assuming the initial pressure pi remained
+tunnels up to a depth of 1-2 m. These studies provide further       constant at 0.85 MPa (Fig. 7b).
+insight towards broader understanding of multiphase flow                The Horner plot for the gas pressure recovery phase
+processes in argillaceous rock. Recently, the EU-funded             (Fig. 7c) extrapolates the stabilised interval pressure ps at late
+research project “Ventilation Experiment” has been launched         times of the recovery phase. Given the maximum gas pres-
+as part of the Mont Terri project, with special focus on quan-      sure pmax at the end of the gas injection phase (3 MPa) and
+titative characterisation of the unsaturated zone (EC contract      the Horner intercept pressure pic according to Figure 7c
+FIKW-CT2001-00126).                                                 (1.8 MPa), the stabilised interval pressure of the recovery
+                                                                    phase is ~ 1.2 MPa. Assuming a static formation pressure of
+4.1 Gas Threshold Pressure Test BGP-4                               0.35 MPa (determined with the hydrotest analysis), the
+                                                                    inferred gas entry pressure is 0.85 MPa.
+The gas threshold pressure test BGP-4 in the Mont Terri Rock            Thus, the diagnostic analyses suggest a gas entry pressure
+Laboratory represents a typical example of a gas test that has      of the formation in the range 0.4-0.8 MPa. The gas injection
+been analysed with state-of-the-art interpretation tools            phase may provide a lower bound, because static formation
+(Marschall et al., 2003). The test took place in a borehole         pressure had not been reached before the start of gas injec-
+which intersects a fault zone of several metres thickness. The      tion. The Horner analysis, on the other hand, delimits the
+pressure transients of the entire test phase are presented in       upper range of the parameter spectrum. In order to better
+Figure 7. Comprehensive hydraulic testing was performed             constrain the parameter ranges, inverse simulations were per-
+with an unintended short constant head/recovery event at the        formed, covering the entire testing programme with hydrotest
+end of the test phase. Subsequently, a constant rate gas injec-     and gas test sequences (Marschall et al., 2003). Numerical
+tion was initiated; the starting pressure level (0.85 MPa) is far   analyses were conducted with the multiphase flow simulator
+above the static formation pressure (0.35 MPa). The gas injec-      TOUGH2 (Pruess, 1991) using the van Genuchten/Mualem
+tion was maintained for 19 h, followed by a recovery period         parametric models for relative permeability and capillary
+of about 60 days. During the injection period, the pressure         pressure. The fitting parameters were the permeability, the
+rose steadily from 0.85 MPa to about 3 MPa. During the sub-         formation compressibility (formation storage coefficient), the
+sequent shut-in period the pressure fell off to about 1.5 MPa.      wellbore storage, the air entry pressure and the porosity. No
+   The hydrotest sequence was interpreted using a combina-          inverse estimates of the pore size distribution index and
+tion of diagnostic analysis, inverse parameter estimation and       residual water saturation were obtained, as the sensitivity of
+subsequent uncertainty analysis (summary presented in               the pressure to these parameters was found to be low (fixed
+Marschall et al., 2003). The flow model used for the analysis       input values Swr = 0.1, Swg = 0, n = 2). A very good match of
+was a homogeneous radial system of infinite lateral extent          the data was obtained with low correlation between the
+with constant wellbore storage. The fitting parameters were         fitting parameter and a low degree of parameter uncertainty.
+hydraulic conductivity, storage coefficient, static formation       The best estimate value of the permeability was about
+pressure and wellbore storage coefficient. The overall match        6 × 10–20 m2 (3 times higher than the single phase analysis of
+of the hydrotest sequence was excellent and fitting parameters      the hydrotest sequence would suggest); the best estimate of
+       P Marschall et al. / Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock Formation                                     133
+
+
+the gas entry pressure was 0.82 MPa. In comparison to the                                                 Prior to gas testing, the test zone had been subjected to
+hydrotests, the estimated conductivity is about 3 times higher                                         extended hydraulic testing. The interpretation reveals a best
+and the specific storage coefficient 10 times lower. The esti-                                         estimate hydraulic conductivity of 1 × 10–14 m/s, with an
+mate for the air entry pressure arising from the Horner analy-                                         uncertainty range between 1 × 10–15 m/s and 3 × 10–14 m/s.
+sis corresponds very well to the estimate from the inverse                                             Furthermore, the analyses indicate distinct porewater over-
+simulation. It is worth noting that the adopted conceptual                                             pressures on the level of the test zone, corresponding to a
+model (homogeneous medium, no gravity segregation) does                                                hydraulic head of ~150 m above hydrostatic conditions.
+not account for the characteristic features of gas imbibition                                             The pressure transients of the gas test sequence O5 are
+into a fully saturated medium, such as fingering due to fluid                                          shown in Figure 8. After displacement of the test fluid in the
+viscosity differences or to heterogeneities. With this assump-                                         test interval by gas (DIS1, DIS2), the first constant rate gas
+tion in mind, the simulations suggest a penetration depth of                                           injection phase (GRI1) was initiated at 2 l/min (with N2 at
+the gas front < 10 cm into the formation.                                                              standard pressure conditions, STP). The rate was reduced after
+                                                                                                       0.6 h to 1 l/min (STP) to improve the detection of the gas entry
+4.2 Gas Threshold Pressure Test O5                                                                     (GRI2). The duration of the GRI2 phase was 35.5 h, with a
+                                                                                                       total pressure change of 4.7 MPa and a final pressure of
+The gas threshold pressure test O5 in the Benken borehole                                              11 MPa. The injection phase was stopped to avoid the risk of
+was located in the centre of the Opalinus Clay formation at a                                          creating gas fractures. The first shut-in phase (GRIS1) lasted
+depth of 600.1-603.5 m below ground (Nagra, 2001). The                                                 2.8 h, before a third gas injection GRI3 was started at the same
+test interval contained a minor fault zone with a thickness of                                         injection rate as GRI2. GRI3 was stopped after 2.8 h at a final
+0.1 m. The test is presented here because its anomalous                                                pressure of 11.3 MPa and the final shut-in phase GRIS2 was
+pressure recovery phase is considered as evidence for                                                  started. Packer pressures and interval pressures of the adjacent
+dilatancy-controlled gas flow into the rock formation.                                                 zones (bottom hole zone and annulus above the upper packer)
+
+
+
+                                            DIS1                                              GRIS1
+
+                                                                GRI2                                                      GRIS2
+
+                                                 DIS2   GRI1                                        GRI3
+
+
+
+                                      11
+
+                                           a)
+
+                                      10
+
+
+
+
+            Interval pressure (MPa)
+                                       9
+                                                                                              3.E+04
+                                                                                                       b)
+
+
+
+
+                                                                       Gas flow rate (m3/h)
+                                       8                                                      2.E+04
+
+
+
+                                                                                              1.E+04
+                                       7
+
+                                                                                              0.E+00
+                                                                                                              160                 170         180
+                                       6                                                                                    Time (h)
+
+
+
+                                                100       120                                 140                   160                 180         200
+
+                                                                                                Time (h)
+     Figure 8
+     Gas threshold pressure test O5 in the Benken borehole: a) interval pressure during gas injection and pressure recovery period; and
+     b) calculated gas leak-off into the rock formation (DIS1/DIS2 – water/gas displacement; GRI1/GRI2/GRI3 – constant rate gas injection;
+     GRIS1/GRIS2 – pressure recovery period).
+134                             Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1
+
+
+were monitored during the entire gas test sequence. The            from each other, two of them equipped with triple-packer
+transients did not reveal indications for possible packer bypass   systems and the others instrumented with multiple exten-
+or other technical problems during testing                         someters for observations of the axial deformation (Fig. 9).
+    The pressure response during the GRI2 phase indicates a        The test lasted for a total of 30 days and incorporated a test-
+minor deviation from unit slope at a gas pressure of 7.2 MPa,      ing sequence with three pressure levels (Marschall et al.,
+which may be caused by invasion of gas into a disturbed            2003). Before testing commenced in the injection borehole,
+zone around the borehole (“inner zone”). Above 8.5 MPa, the        the borehole fluid in the test interval was replaced with nitro-
+slope of the pressure curve remains constant until the shut-in     gen gas. The gas injection was started with a gas pulse injec-
+is reached. The subsequent GRIS1 sequence results in nearly        tion pretest (PRE). During this phase, a leak was detected in
+constant pressures, corroborating a closed system without          the surface equipment, which explains the strong pressure
+noticeable gas transport into the outer zone. The pressure         recovery. The pressure in the test interval was then increased
+response during the subsequent GRI3 also shows a linear            stepwise to 1175 kPa (PI1), 1916 kPa (PI2) and 2776 kPa
+increase. The initial response during GRIS2 is characterised       (PI3), followed by a pressure release and recovery stage
+by, again, nearly constant pressures, which start to decline       (PW1). Figure 9 shows the development of the interval pres-
+after about 155 h, indicating pressure dissipation most likely     sure in the gas injection borehole, as well as the deformation
+associated with gas movement into the formation.                   in the observation borehole at a distance of 0.8 m. For the
+    The anomalous pressure response during GRIS2, when             pressure step PI1, the formation appears practically imperme-
+pressure remains approximately constant initially but starts to    able to gas as the gas entry pressure has not yet been reached.
+decline after about 155 h, is seen as an indication of the onset   Low leak-off rates are observed during PI2 without any sig-
+of dilatancy-controlled gas flow into the formation. The           nificant deformation in the adjacent extensometer boreholes.
+Horner plot analysis of GRIS2 suggests a gas entry pressure        Finally, the highest pressure level PI3 is characterised by a
+value of 4.3 MPa (Nagra, 2002a), which is within a reason-         distinct gas leak-off. The extensometer, placed in the mid-
+able range compared to the results of the laboratory experi-       interval of the observation borehole, shows significant exten-
+ments (cf. Table 2, tests OPA-1 and OPA-2). However, the           sion of about 20 µm/m which is not reversible during the
+signature of the GRIS2 phase does not match the expected           pressure release phase PW1. Correspondingly, during PI3 the
+response of a standard two-phase flow system: the initial          two adjacent extensometer intervals exhibit a tendency for
+phase with nearly constant pressure, followed by a rather          contraction, which can be explained as a compensation
+rapid decline, suggests that the formation cannot hold the gas     process in response to the extension of the central interval.
+pressure for a long time and starts to leak. The leak-off rate         Together with a hydrotest sequence that had been carried
+into the formation during GRIS2 is shown in Figure 8b, indi-       out as a precursor, the gas test was analysed with the multi-
+cating a gradual increase in gas flow during the early part of     phase flow simulator TOUGH2 (results presented in Marschall
+GRIS2, when pressures were relatively flat (at about 153-          et al., 2003 and Nagra, 2002a). The results of the inverse simu-
+156 h). The maximum volumetric flow rate of 2 × 10–4 m3/h          lation indicate a noticeable increase in permeability between
+corresponds to the onset of the steep pressure decline starting    the hydrotest sequences (k = 2.2 × 10–20 m2) and the third
+at about 158 h, with a subsequent gradual decrease. Given          pressure step PI3 of the gas test (k = 5.4 × 10–20 m2). The
+the radius and the length of the test interval, the volumetric     two-phase flow parameters exhibited strong cross-correlation
+gas flow rate can be converted into a specific mass flux           and are therefore not very reliable. By visual inspection of
+through the borehole wall. As a rough estimate, the rock for-      the pressure transients in Figure 9, the gas entry pressure is
+mation accommodates a specific gas flux in the order of            inferred to be in the order of 0.5 MPa. This value corre-
+magnitude of 1 × 10–5 m3 m–2 s–1 (STP)—the underlying gas          sponds to the onset of gas flow at the pressure level of PI2.
+transport mechanism can be either two-phase flow or dila-              The onset of extension in the adjacent monitoring interval
+tancy-controlled gas flow. The process of classical hydro- or      at elevated gas pressure (PI3), together with a noticeable
+gas fracturing, however, can be ruled out, because the forma-      increase of intrinsic permeability, suggests that the gas injec-
+tion of a macroscopic tensile fracture would be associated         tion experiment GS-2 has explored two different gas trans-
+with a characteristic and completely different signature in the    port regimes: classical two-phase flow behaviour during PI2
+pressure transients.                                               when the onset of gas leak-off is monitored and dilatancy-
+                                                                   controlled gas flow during PI3. After termination of the gas
+                                                                   test sequence and resaturation of the test interval, a series of
+4.3 Multi-Step Gas Injection Test GS-2
+                                                                   hydrofrac experiments were conducted in borehole BGS-2
+The multi-step gas test GS-2 in the Mont Terri Rock                (Marschall et al., 2003). Three attempts at very high fluid
+Laboratory was explicitly designed for monitoring hydrome-         injection rates were necessary to create the hydrofrac. The
+chanical responses of the rock formation to a gas injection        frac was characterised by a transmissivity that was more than
+event (Marschall et al., 2003). The experimental layout com-       5 orders of magnitude higher than the interval transmissivity
+prised a total of 4 boreholes at a distance of less than 2 m       before fracturing. The hydrofrac analysis exhibited a frac
+  P Marschall et al. / Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock Formation                                                                                                              135
+
+
+
+                                                                    m
+                                                                0
+                       Tunnel floor
+
+                                              m
+                                          0
+                                                                         BG
+                                                                               S-3
+
+                                                               BG                                                                                        Bedding
+                                                                S-  2
+
+
+
+
+                                                                               m
+                                                                           4
+                                                                               r3
+                                                                           cke           m                                                               m
+                                                                                                                                                                        3
+                                                                                                                                                     5
+                                                                        Pa
+                                                                                     5                                                             6.              3.
+                                                                                                                                                               M
+                                                                                                                                                             FI
+                                                                                                                                                                            m
+                                                                                                                                                                       5
+                                                                                                   l3                                                              7.                  3.
+                                                                                                                                                                                          2
+                                                                                                  a
+                                                                                               rv                                                                                  M
+                                                                                             te                                                                                 FI          m
+                                                                                         In                        m                                                                   5
+                                                                                                               7                                                                     8.               3.
+                                                                                                                                                                                                           1
+                                                                                                                                                                                                  M
+                                                                                                                   er
+                                                                                                                      2                                                                         FI             m
+                                                                                                            ck                     m                                                                     5
+                                Packer                                                                                         8                                                                      9.
+                                         Cementation                                                      Pa
+                                                                                                                                       l2
+                                                                                                                               r   va        9
+                                                                                                                                                 m
+                                                  Micrometer                                                                te
+                                                                                                                          In
+                                                                                                                                                        r1        m
+                                                                                                                                               c ke          10
+                                                          Anchors                                                                           Pa                                                                                m
+                                                                                                                                                                                                                         .1
+                                                                                                                                                                                                                     12
+                                                                                                                                                                            a   l1
+                                                                                                                                                                        rv
+                                                          Test interval                                                                                               te
+                                                                                                                                                                  In                                 m
+                                                                                                                                                                                                12                       m
+          a)                                                                                                                                                                                                         7
+                                                                                                                                                                                                                   0.
+
+
+
+
+                         3000
+
+                         2500
+
+   Interval pressure
+                                                                                                               BGS-2/Z2
+                         2000
+
+
+         (kPa)
+                         1500
+
+                         1000
+                                                                                             Formation pressure: 500 kPa
+                          500
+                         0.01                                                                           FIM 3.3
+                                      Compaction
+                        -0.00
+   Deformation                        Extension                                                                            FIM 3.1
+                        -0.01
+     (mm/m)
+                        -0.02                                                                                          FIM 3.2
+
+                        -0.03
+
+          b)                    0                                                                                                                                                                                                 70
+                                                                                                        Time (days)
+
+
+
+Figure 9
+Multi-step gas injection test GS-2 at Mont Terri: a) hydromechanical instrumentation of the injection and monitoring boreholes;
+b) transients of interval pressure in the injection borehole and axial deformation in the adjacent monitoring borehole.
+136                               Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1
+
+
+pressure of ~9 MPa, refrac pressures of ~5 MPa and a shut-                pressure of 10 MPa (i.e. gas pressure above porewater pres-
+in pressure of ~4.2 MPa. A detailed interpretation of the                 sure), the amount of displaced porewater is about 10-20%,
+hydrofrac sequence revealed a complex fracture geometry                   corresponding to a water saturation Sw between 0.8 and 0.9.
+with both tensile and shear fractures as well as branches                 For the stress state of the Opalinus Clay in the Zürcher
+(Daneshy et al., 2004).                                                   Weinland (σ3 = 15-16 MPa, pw = 6.5-8 MPa), the excess gas
+                                                                          pressures of 10 MPa can be viewed as the upper limit that the
+4.4 Summary of Field Results                                              formation can sustain without rupture.
+                                                                              A distinct difference is observed between water desorption
+A total of three gas threshold pressure tests and two long-term           and adsorption, indicating a strong hysteresis between the gas
+gas injection tests were conducted in the Opalinus Clay                   imbibition and resaturation processes, respectively. The set of
+formation. The length of the test intervals between 1 m and               capillary pressure curves exhibits a wide uncertainty range.
+4.5 m may be indicative for the scale of investigation. Specific          This spread may be attributed in part to the fact that the differ-
+gas flow rates (gas flow per circumferential area of the test             ent experimental methods provide slightly different estimates
+interval) were determined for each test to compare the gas                of capillary pressure, since each method samples the pore
+leak-off into the rock formation. The specific gas flow rates             space in a different way. On the other hand, recalling the min-
+covered a wide spectrum between 7 × 10–9 m3 m–2 s–1 and                   eralogical and structural variability of the Opalinus Clay on the
+1 × 10–5 m3 m–2 s–1 (STP). Intrinsic permeability ranged                  microscopic scale (cf. Fig. 1), the wide uncertainty range of the
+between 1 × 10–21 m2 and 6 × 10–20 m2. A gas entry pressure               capillary curves is no surprise: flow of a nonwetting fluid
+> 5 MPa was inferred for the gas test at Benken; the tests in             through a saturated porous medium is known to be a transport
+the Mont Terri Rock Laboratory, however, exhibit signifi-                 process that maps and exploits the heterogeneities of the con-
+cantly lower values between 0.4 and 1.0 MPa. Table 3                      nected pore space. Notably, the aforementioned hysteretic
+presents a summary of the results of field testing.                       behaviour is also viewed as a consequence of the microscale
+                                                                          heterogeneity of the rock. In the present study, the following
+                                                                          parameter ranges were used to represent the two-phase flow
+5 DISCUSSION
+                                                                          behaviour of the Opalinus Clay: 5 MPa ≤ α–1 ≤ 21 MPa,
+Gas transport through the Opalinus Clay is strongly controlled            0 ≤ Swr ≤ 0.5, 0 ≤ Sgr ≤ 0.05 and 1.5 ≤ n ≤ 2.
+by the microstructural features of the rock mass. Imbibition of               The in situ gas threshold pressure tests and gas permeabil-
+a gas phase into the existing pore space of the rock is                   ity tests with core specimens indicate that the Opalinus Clay
+restricted to the connected system of macropores (> 25 nm)—               exhibits a correlation between intrinsic permeability and gas
+displacement of water from the meso- and micropores would                 entry pressure. Similar correlations have been found for other
+require gas pressures that exceed the mechanical strength of              rock formations and predictor relationships based on intrinsic
+the rock and consequently lead to rock failure. As part of                permeability have been developed. Figure 10 shows a compi-
+the rock characterisation programme on Opalinus Clay,                     lation of laboratory data from Davies (1991) and a survey of
+microstructural investigations were conducted with different              oil industry data (Ingram et al., 1997; Horseman, 2001)—the
+laboratory methods. The studies revealed consistent estimates             results from Mont Terri and Benken are added. A clear trend
+of the fraction of macropores in the range 10-30%.                        between entry pressure and intrinsic permeability is seen, but
+   Capillary pressure curves were derived from microstruc-                the spread of the data is enormous. The gas entry pressures
+tural investigations and from controlled suction experiments.             from Benken fit reasonably well to the Davies relationship,
+The data exhibit the typical shape of the van Genuchten para-             whereas the data base of Ingram et al. (1997) would suggest
+metric model with a steep rise of capillary pressure in the               considerably higher values. The entry pressures determined
+range of high water saturation. According to Figure 4, when               for the Mont Terri Rock Laboratory are significantly below
+a fully saturated rock sample is subjected to an excess gas               the Davies relationship.
+
+
+                                                                   TABLE 3
+                             Gas injection experiments in the Benken borehole and at the Mont Terri Rock Laboratory
+
+                                                                Specific gas flow rate        Intrinsic permeability k   Gas entry pressure pae
+              Test                   Injection period (h)
+                                                                 (m3 m–2 s–1 STP)                        (m2)                    (MPa)
+      Benken O5 (GTP)                       ~ 38                      1 × 10–5                       1 × 10–21                    >5
+      Mont Terri GS-2 (MSI)                 ~ 700                     variable                     2 – 5 × 10–20                 ~ 0.5
+      Mont Terri GP-4 (GTP)                 ~ 18                      7 × 10–9                     2 – 6 × 10–20                0.4-0.8
+      Mont Terri GP-6 (GTP/MSI)             ~ 150                     2 × 10–8                       2 × 10–20                   ~ 1.0
+       P Marschall et al. / Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock Formation                    137
+
+
+                                            100
+
+                                                                                                             Ingram et al. (1997)/
+                                                                                                             Horseman (2001)
+                                                                                                             Davies (1991)
+                                                                                                             Mont Terri (GP/GA-A)
+                                             10
+                                                                                                             Benken
+
+
+
+
+                 Gas entry pressure (MPa)
+                                               1
+
+
+
+
+                                             0.1
+
+                                                                                  Davies (1991)
+
+
+
+
+                                            0.01
+                                               10-23   10-21   10-19              10-17              10-15               10-13       10-11
+                                                                       Intrinsic permeability (m2)
+
+     Figure 10
+     Relationship between gas entry pressure and intrinsic permeability for various low permeability rock formations (claystones, shales,
+     sandstone). The results from Benken and Mont Terri have been added to the original compilations of Davies (1991) and Ingram et al. (1997),
+     referenced by Horseman (2001).
+
+
+    The reasons for the large scatter in Figure 10 are twofold.                      space of the Opalinus Clay, suggesting that classical flow
+First, the entry pressure-permeability correlation does not                          concepts of immiscible displacement in porous media can
+consider the microstructural and mineralogical features of the                       be applied to such problems when the gas entry pressure
+rock. It is obvious that the pore size distribution, the small-                      (i.e. capillary threshold pressure) is less than the minimum
+scale heterogeneity, intrinsic anisotropy, clay content and                          principal effective stress acting within the rock.
+specific surface are determining factors for the gas entry                         – In contrast to classical porous media, gas transport
+pressure, which cannot be represented appropriately by a                             through the Opalinus Clay does not cause a major desatu-
+simplifying pae – k relationship. On the other hand, the corre-                      ration of the rock. Under in situ stress and pore pressure
+lation does not reflect the site-specific conditions that may                        conditions, the water saturation will not decrease below a
+determine the onset of gas flow, such as in situ stress and                          range of 0.7-0.9.
+porewater pressure. Further site-specific characteristics such                     – The mineralogical variability and microstructural hetero-
+as burial history, diagenetic processes and the tectonic regime                      geneity of the Opalinus Clay suggest that gas transport is
+need to be considered. When in situ stress is low due to low                         strongly focused along preferential flow paths. Further
+overburden (e.g. Mont Terri), the onset of dilatancy-                                research work is required to constrain the inherent para-
+controlled gas entry into the rock formation may be expected                         meter uncertainty of the two-phase flow properties and to
+at gas pressures that are below the capillary entry of the intact
+                                                                                     define appropriate representative elementary volumes for
+rock. Movement of gas along interconnected microcrack net-
+                                                                                     gas transport properties.
+works associated with rock dilatation may explain the low
+                                                                                   – Evidence was found for dilatancy-controlled gas transport
+entry pressure values observed at Mont Terri.
+                                                                                     at elevated gas pressures and in rock damaged by shear
+                                                                                     deformation and destressing. Characteristic features of this
+CONCLUSIONS                                                                          gas transport mechanism are the enhancement of gas per-
+                                                                                     meability at elevated gas injection pressures and dilatant
+Summarising the achievements of this study on gas transport                          strains in the vicinity of a gas injection borehole.
+properties of the Opalinus Clay, the following conclusions                         – As long as the gas pressure build-up at the locus of gas
+are drawn:                                                                           generation is slow, visco-capillary two-phase flow and
+– Multiple evidence on different experimental scales was                             dilatancy-controlled gas flow represent efficient transport
+   found for visco-capillary flow of gas in the existing pore                        mechanisms to accommodate gas flow in the Opalinus
+138                             Oil & Gas Science and Technology – Rev. IFP, Vol. 60 (2005), No. 1
+
+
+   Clay. In this context, “slow” means that gas generation is      Clayton, C.J. and Hay, S.L. (1994) Gas migration mechanisms
+   largely balanced by porewater displacement (drained             from accumulation to surface. Bull. Geol. Soc. Denmark 41, 12-23.
+   geomechanical conditions). The determining factor for           Daneshy, A., Blümling, P., Marschall, P. and Zuidema, P. (2004)
+                                                                   Interpretation of Field Experiments and Observation of
+   distinguishing between “slow” and “rapid” gas pressure          Fracturing Process. Proc. SPE/Formation Damage Control, SPE
+   build-up is the hydraulic diffusivity of the rock (ratio        86486, Lafayette, Louisiana.
+   between storage coefficient and hydraulic conductivity).        Davies, P. B. (1991) Evaluation of the role of threshold pressure
+– Hydraulic fracturing experiments have been conducted at          in controlling flow of waste-generated gas into bedded salt at the
+                                                                   Waste Isolation Pilot Plant (WIPP). Sandia Rep. SAND 90-3246,
+   Mont Terri. The tests demonstrate that high fluid pressures     Sandia National Laboratories, Albuquerque, New Mexico.
+   and high injection rates are required to create tensile frac-   Dury, O. Fischer, U. and Schulin, R. (1999) A comparison of
+   tures in Opalinus Clay (hydro- or gasfracs). The pressure       relative nonwetting-phase permeability models. Water Resour.
+   build-up rates in the test interval are many orders of mag-     Res. 35/5, 1481-1493.
+   nitude higher than the gas pressure build-up rates expected     Helmig, R. (1997) Multiphase Flow and Transport Processes in
+                                                                   the Subsurface. Springer Publ., Berlin.
+   in the disposal tunnels of a closed radwaste repository.
+                                                                   Harrington, J.F., Horseman, S.T., and Noy, D.J. (2001) Swelling
+   Hydrofracturing and gas fracturing are therefore excluded       and osmotic flow in a potential host rock. In: Delage, P. (ed.):
+   as possible risks for repository performance.                   Proc. of the 6th International Workshop on Key Issues in Waste
+   Future investigations on gas transport in the Opalinus Clay     Isolation Research (KIWIR-2001), Ecole Nationale des Ponts et
+                                                                   Chaussées, Paris, France, 28-30 November.
+will aim at gaining an improved understanding of the most rel-
+                                                                   Horne, R.N. (1995) Modern Well Test Analysis. Petroway Inc.,
+evant transport mechanisms, namely two-phase flow and dila-        Palo Alto, California.
+tancy-controlled gas flow. In ultra-low permeability forma-        Horseman, S.T. (2001) Gas migration through indurated clays
+tions, the classical two-phase flow concepts may need further      (mudrocks). In: Gas Generation and Migration in Radioactive
+refinement and adaptation—in particular with respect to the        Waste Disposal. Proc. of the NEA Workshop in Reims 2000, France.
+relative permeability formulation and the anisotropic perme-       Horseman, S.T., Higgo, J.J.W., Alexander, J. and Harrington, J.F.
+                                                                   (1996) Water, gas and solute movement through argillaceous
+ability. Additional experimental evidence on the laboratory        media. Nuclear Energy Agency Rep. CC-96/1, Paris, OECD.
+and field scale is required to constrain the existing parameter    Ingram G.M., Urai, J.L. and Naylor, M.A. (1997) Sealing
+uncertainty and, on the other hand, to explore new parametric      processes and top seal assessment. In: Hydrocarbon Seals:
+models. The regime of dilatancy-controlled gas flow needs an       Importance for Petroleum Exploration and Production (eds. P.
+                                                                   Molle-Pedersen and A.G. Koesler) Norwegian Petroleum
+extended theoretical foundation and further experimental justi-    Society, Special Publication 7, Elsevier, Amsterdam, 165-174.
+fication. Systematic laboratory experiments with triaxial cells    IUPAC (1997) Compendium of Chemical Terminology. The Gold
+for a wide spectrum of possible stress paths are recommended       Book, Second Edition, A. D. McNaught and A. Wilkinson,
+to gain better insight into the mechanisms which control the       Blackwell Science, London.
+appearance of dilatancy dependent permeability changes.            Krooss, B.M., Leythaeuser, D., Schäfer, R.G. (1992) The
+                                                                   quantification of diffusive hydrocarbon losses through cap rocks
+                                                                   of natural gas reservoirs – a re-evaluation. The American
+                                                                   Association of Petroleum Geologists Bulletin 76, 403–406.
+ACKNOWLEDGEMENTS                                                   Marschall, P., Croisé, J., Schlickenrieder, L., Boisson, J.Y.,
+                                                                   Vogel, P. and Yamamoto, S. (2003) Synthesis of hydrogeological
+The authors would like to thank scientific colleagues, research    investigations at the Mont Terri site (Phases 1 - 5). Mont Terri
+collaborators and project partners, notably Jon Harrington and     Technical Report TR 2001-02, Geotechn. Inst. Ltd., Bern,
+                                                                   Switzerland.
+David Noy of BGS, Lorenzo Oriz Amaya of SCK⋅CEN, Bernd
+Frieg/Nagra, Christian Enachescu/Golder, Jean Croisé/              Müller, W.H., Naef, H. and Graf, H.R. (2002) Geologische
+                                                                   Entwicklung der Nordschweiz, Neotektonik und
+Colenco, Rainer Senger/Intera and Hans-Rudi Fisch/Solexperts       Langzeitszenarien Zürcher Weinland. Nagra Technical Report
+—who have contributed their knowledge, skills and personal         NTB 99-08, Nagra, Wettingen, Switzerland.
+energy to the study of gas movement in the Opalinus Clay. We       Muñoz, J.J., Lloret, A., Alonso, E. (2003) Ventilation Experiment
+have greatly benefited from intensive discussion within            in Opalinus clay - Laboratory Report: Characterization of
+                                                                   hydraulic properties under saturated and non saturated conditions.
+Nagra’s R&D team, in particular Piet Zuidema, Lawrence             Project Deliverable 4, EC contract FIKW-CT2001-
+Johnson, Andreas Gautschi and Peter Blümling.                      00126/‘EURATOM.’ Programme (1998-2002), final project
+                                                                   report in preparation.
+                                                                   Nagra (2001) Sondierbohrung Benken – Untersuchungsbericht.
+REFERENCES                                                         Nagra Technical Report NTB 00-01, Nagra, Wettingen, Switzerland.
+                                                                   Nagra (2002a) Projekt Opalinuston – Synthese der
+Bear, J. (1972) Dynamics of fluids in porous media, American       geowissenschaftlichen Untersuchungs-ergebnisse. Entsor-
+Elsevier Pub., New York.                                           gungsnachweis für abgebrannte Brennelemente, verglaste
+Birkhäuser, P., Roth, P., Meier, B. and Naef, H. (2001) 3D-        hochaktive sowie langlebige mittelaktive Abfälle. Nagra
+Seismik: Räumliche Erkundung der mesozoischen                      Technical Report NTB 02-03, Nagra, Wettingen, Switzerland.
+Sedimentschichten im Zürcher Weinland, Nagra Technical             Nagra (2002b) Project Opalinus Clay: Safety Report.
+Report NTB 00-03, Nagra, Wettingen, Switzerland.                   Demonstration of disposal feasibility (Entsorgungsnachweis) for
+       P Marschall et al. / Characterisation of Gas Transport Properties of the Opalinus Clay, a Potential Host Rock Formation                             139
+
+
+spent fuel, vitrified high-level waste and long-lived intermediate-               Two-Phase Flow Properties of the Host Rock at the Proposed
+level waste. Nagra Technical Report NTB 02-05, Nagra,                             L/ILW Repository, Switzerland, Mat. Res. Soc., Symp. Proc. Vol.
+Wettingen, Switzerland.                                                           506, 829-838
+Nagra (2004) Effects of Post-disposal Gas Generation in a                         Thury, M. & Bossart, P., eds. (1999) Mont Terri Rock
+Repository for Spent Fuel, High-level Waste and Long-lived                        Laboratory: Results of the Hydrogeological, Geochemical, and
+Intermediate Level Waste Sited in Opalinus Clay. Nagra                            Geotectonical Experiments performed in 1996 and 1997. Bern,
+Technical Report NTB 04-06, Nagra, Wettingen, Switzerland.                        Switzerland, Landeshydrologie und -geologie, Geologische
+Pearson, F.J., Arcos, D., Bath, A., Boisson, J.-Y., Fernández,                    Berichte Nr. 23.
+A.M., Gaebler, H.E., Gaucher, E., Gautschi, A., Griffault, L.,                    Valko, P. and Economides, M.J. (1997) Hydraulic fracture
+Hernan, P. and Waber, H.N. (2003) Geochemistry of water in the                    mechanics. John Wiley, New York.
+Opalinus Clay formation at the Mont Terri Rock Laboratory –
+Synthesis Report. Bern, Switzerland, Berichte des Bundesamtes                     van Genuchten, M.Th. (1980) A closed-form equation for
+für Geologie und Wasser – Serie Geologie, Nr. 30.                                 predicting the hydraulic conductivity of unsaturated soils. Soil
+                                                                                  Sci. Soc. Am. J., Vol. 44.
+Pruess, K. (1991) TOUGH2-A general-purpose numerical
+simulator for multiphase fluid and heat flow. Lawrence Berkeley                   Villiéras, F., Michot, L. J., Cases, J. M., Bérend, I., Bardot, F.,
+Laboratories, Report LBL- 29400, Berkeley, CA.                                    François, M., Gérard, G. & Yvon, J. 1997 Static and dynamic
+                                                                                  studies of the energetic surface heterogeneity of clay minerals. In
+Schlömer, S., Krooss, B.M. (1997) Experimental characterisation                   W. Rudzinski, W.A. Steele & G. Zgrablich (eds), Equilibria and
+of the hydrocarbon sealing efficiency of cap rocks. Marine and                    Dynamics of Gas Adsorption on Heterogeneous Solid Surfaces:
+Petroleum Geology 14, 565–580.                                                    573-623.
+Senger, R., Marschall, P. and Lavanchy, J.-M., 1998 Gas
+Threshold Pressure Tests in Deep Boreholes for Determining                                                Final manuscript received in November 2004
+
+
+
+
+                                                         Copyright © 2005 Institut français du pétrole
+ Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee provided that copies are not made
+ or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this
+ work owned by others than IFP must be honored. Abstracting with credit is permitted. To copy otherwise, to republish, to post on servers, or to redistribute
+ to lists, requires prior specific permission and/or a fee: Request permission from Documentation, Institut français du pétrole, fax. +33 1 47 52 70 78,
+ or revueogst@ifp.fr.
+

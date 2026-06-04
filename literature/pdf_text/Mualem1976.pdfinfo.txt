@@ -1,0 +1,18 @@
+Creator:         FUJITSU Fi-5950d
+Producer:        Adobe Acrobat 10.17 Paper Capture Plug-in
+CreationDate:    Wed Jul 31 19:25:24 2013 CEST
+ModDate:         Wed Jul 31 19:26:23 2013 CEST
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           10
+Encrypted:       no
+Page size:       614.4 x 791.76 pts
+Page rot:        0
+File size:       884641 bytes
+Optimized:       yes
+PDF version:     1.6

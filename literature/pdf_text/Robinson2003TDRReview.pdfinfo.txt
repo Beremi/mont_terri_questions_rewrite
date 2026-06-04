@@ -1,0 +1,19 @@
+Title:           028588U070
+Creator:         SYSTEM400 Rev 16.03
+Producer:        Acrobat Distiller 4.05 for Sparc Solaris
+CreationDate:    Wed Nov  5 11:10:46 2003 CET
+ModDate:         Fri Nov 21 16:01:27 2003 CET
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           32
+Encrypted:       no
+Page size:       612 x 792 pts (letter)
+Page rot:        0
+File size:       970193 bytes
+Optimized:       yes
+PDF version:     1.3

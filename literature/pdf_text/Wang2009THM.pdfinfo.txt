@@ -1,0 +1,20 @@
+Title:           doi:10.1016/j.cageo.2008.07.007
+Keywords:        Parallel computing; Finite element method; Domain decomposition; Thermo-hydro-mechanical (THM) coupled processes; Porous media
+Author:          Wenqing Wang; Georg Kosakowski; Olaf Kolditz
+Creator:         Elsevier
+CreationDate:    Mon Jul 20 14:34:46 2009 CEST
+ModDate:         Mon Jul 20 17:25:12 2009 CEST
+Custom Metadata: yes
+Metadata Stream: yes
+Tagged:          yes
+UserProperties:  no
+Suspects:        no
+Form:            AcroForm
+JavaScript:      no
+Pages:           11
+Encrypted:       no
+Page size:       595.276 x 793.701 pts
+Page rot:        0
+File size:       982106 bytes
+Optimized:       yes
+PDF version:     1.4

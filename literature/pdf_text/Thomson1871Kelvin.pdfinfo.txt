@@ -1,0 +1,18 @@
+Creator:         ABBYY FineReader
+Producer:        Monash University
+CreationDate:    Mon Sep 19 08:23:38 2011 CEST
+ModDate:         Sun Apr  2 16:06:16 2017 CEST
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            AcroForm
+JavaScript:      no
+Pages:           6
+Encrypted:       no
+Page size:       504 x 777.6 pts
+Page rot:        0
+File size:       395034 bytes
+Optimized:       yes
+PDF version:     1.6

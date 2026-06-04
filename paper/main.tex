@@ -10,9 +10,11 @@
 \usepackage{longtable}
 \usepackage{graphicx}
 \usepackage[hypcap=false]{caption}
+\usepackage[section]{placeins}
 \usepackage{tikz}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{enumitem}
+\usepackage{needspace}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage[hidelinks]{hyperref}
 
@@ -39,7 +41,7 @@
 \newcommand{\por}{n}
 
 \title{Mont Terri CD-A Niche 4 OGS Model Notes\\
-\large Chapter 1: Mathematical TRM Model and OGS Realization}
+\large Mathematical TRM Model, OGS Realization, and Measurement Links}
 \author{Local modelling note}
 \date{\today}
 
@@ -66,6 +68,7 @@ are safe to release for inversion or validation.
 \clearpage
 \pagenumbering{arabic}
 \input{sections/chapter_01_ogs_model}
+\input{sections/chapter_02_measurements}
 
 \bibliographystyle{plainnat}
 \bibliography{references}

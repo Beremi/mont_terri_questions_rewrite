@@ -1,0 +1,119 @@
+                                                                                                                                      safeND, 2c) Tectonics and geomechanics of the potential host rocks for nuclear waste, BASE
+Saf. Nucl. Waste Disposal, 1, 79–81, 2021
+https://doi.org/10.5194/sand-1-79-2021
+                                                                                                                  Safety of Nuclear
+© Author(s) 2021. This work is distributed under                                                                  Waste Disposal
+the Creative Commons Attribution 4.0 License.                                                                     Open Access
+
+
+
+
+                From process to system understanding with
+               multi-disciplinary investigation methods:
+             set-up and first results of the CD-A experiment
+                         (Mont Terri rock laboratory)
+           Gesa Ziefle1 , Tuanny Cajuhi1 , Sebastian Condamin7 , Stephan Costabel1 , Oliver Czaikowski4 ,
+         Antoine Fourriére1 , Larissa Friedenberg4 , Markus Furche1 , Nico Graebling8 , Bastian Graupner3 ,
+         Jürgen Hesser1 , David Jaeggi7 , Kyra Jantschik4 , Tilo Kneuker1 , Olaf Kolditz8,9 , Franz Königer5 ,
+        Herbert Kunz1 , Ben Laurich1 , Jobst Maßmann1 , Christian Ostertag-Henning1 , Dorothee Rebscher1 ,
+          Karsten Rink8 , Wolfram Rühaak2 , Senecio Schefer7 , Rainer Schuhmann6 , Marc Wengler2 , and
+                                                  Klaus Wieczorek4
+                 1 Bundesanstalt für Geowissenschaften und Rohstoffe (BGR), 30655 Hannover, Germany
+                            2 Bundesgesellschaft für Endlagerung, (BGE), 31224 Peine, Germany
+                     3 Eidgenössisches Nuklearsicherheitsinspektorat (ENSI), 5201 Brugg, Switzerland
+                 4 Gesellschaft für Anlagen- und Reaktorsicherheit (GRS), 38122 Braunschweig, Germany
+            5 Ingenieur-gesellschaft für Sensorik in der Umwelttechnic mbH (ISU), 76185 Karlsruhe, Germany
+                           6 Karlsruher Institut für Technologie (KIT), 76131 Karlsruhe, Germany
+                         7 Bundesamt für Landestopografie (swisstopo), 3084 Wabern, Switzerland
+                    8 Helmholtz-Zentrum für Umweltforschung GmbH (UFZ), 04318 Leipzig, Germany
+                         9 Technische Universität Dresden (TU Dresden), 01069 Dresden, Germany
+
+                                    Correspondence: Gesa Ziefle (gesa.ziefle@bgr.de)
+
+                                                  Published: 10 November 2021
+
+      Abstract. A potential repository site for high-level radioactive waste should ensure the highest possible safety
+      level over a period of one million years. In addition to design issues, demonstrating the integrity of the barrier is
+      essential as it ensures the long-term containment of radioactive waste. Therefore, a multi-disciplinary approach
+      is necessary for the characterization of the surrounding rock and for the understanding of the occurring physical
+      processes. For site selection, however, the understanding of the respective system is essential as well: Do fault
+      zones exist in the relevant area? Are these active and relevant for interpreting system behavior? What is the role
+      of the existing heterogeneities of the claystone and how do these site-dependent conditions influence the phys-
+      ical effects? To answer these questions, the site-selection procedure requires underground exploration, which
+      includes geophysical and geological investigations on milli- to decameter scales. Their results serve as the basis
+      for numerical modelling. This combined, multi-disciplinary interpretation requires extensive knowledge of the
+      various methods, their capabilities, limitations, and areas of application.
+         In the cyclic deformation (CD-A) experiment in the Mont Terri rock laboratory, the hydraulic–mechanical
+      effects due to excavation and the climatic conditions within the rock laboratory are investigated in two niches
+      in the Opalinus Clay. The twin niches differ mainly with regard to the relative humidity inside them, but are
+      also characterized by different boundary conditions such as existing fault zones, the technical construction of
+      the neighboring gallery, etc. In order to gain insights into the relevance of the individual influences, comparative
+      studies are being carried out on both niches. The presented results provide a first insight into the initial experi-
+      mental years of the CD-A long-term experiment and illustrate the benefits of multi-disciplinary investigations in
+      terms of system understanding and the scale dependency of physical effects. Amongst other effects, the assess-
+      ment of the impact of heterogeneities on the deformation behavior and the evolution of pore water pressure is
+
+
+Published by Copernicus Publications on behalf of the Federal Office for the Safety of Nuclear Waste Management (BASE).
+80                   G. Ziefle et al.: From process to system understanding with multi-disciplinary investigation methods
+
+      very complex and benefits from geological interpretation and measurements of for example deformation, water
+      content, and pore pressure. The numerical modeling allows statements about the interaction of different pro-
+      cesses and thus enables an interpretation of the overall system, taking into account the knowledge gained by the
+      multi-disciplinary investigation.
+      Kurzfassung. Ein potenzieller Endlagerstandort für hochradioaktive Abfälle sollte über einen Zeitraum von
+      einer Million Jahren das höchstmögliche Sicherheitsniveau gewährleisten. Neben Aspekten der Konstruktion ist
+      es wesentlich, die Intaktheit der Barriere nachzuweisen, da diese den langfristigen Einschluss von radioaktiven
+      Abfällen sicherstellt. Für die Charakterisierung des umgebenden Gesteins und das Verständnis der ablaufenden
+      physikalischen Prozesse ist daher ein multidisziplinärer Ansatz notwendig. Für die Standortwahl ist jedoch auch
+      das Verständnis des jeweiligen Systems wesentlich: Gibt es im betreffenden Gebiet Störungszonen? Sind diese
+      aktiv und für die Interpretation des Systemverhaltens entscheidend? Welche Rolle spielen die vorhandenen He-
+      terogenitäten des Tongesteins und wie beeinflussen diese standortabhängigen Bedingungen die physikalischen
+      Effekte? Zur Beantwortung dieser Fragen erfordert das Standortauswahlverfahren unterirdische Erkundungen,
+      die geophysikalische und geologische Untersuchungen im Millimeter- bis Dezimeterbereich umfassen. Deren
+      Ergebnisse bilden die Grundlage für numerische Modellierungen. Diese kombinierte, multidisziplinäre Interpre-
+      tation setzt umfassendes Wissen über die verschiedenen Methoden, ihre Möglichkeiten, Grenzen und Anwen-
+      dungsbereiche voraus.
+         Im CD-A-Experiment (cyclic deformation) im Felslabor Mont Terri werden in zwei Nischen in Opalinus-
+      ton die hydraulisch-mechanischen Effekte aufgrund des Aushubs und die klimatischen Bedingungen im Felsla-
+      bor untersucht. Die Zwillingsnischen unterscheiden sich vor allem in der relativen Luftfeuchtigkeit innerhalb
+      der Nischen, weisen aber auch unterschiedliche Randbedingungen wie vorhandene Störungszonen, den tech-
+      nischen Aufbau des Nachbarstollens etc. auf. Um Erkenntnisse über die Bedeutung der einzelnen Einflüsse zu
+      gewinnen, werden zu beiden Nischen vergleichende Untersuchungen durchgeführt. Die vorgestellten Ergeb-
+      nisse geben einen ersten Einblick in die Anfangsjahre des CD-A-Langzeitexperiments und veranschaulichen die
+      Vorteile multidisziplinärer Untersuchungen in Hinblick auf das Systemverständnis und die Skalenabhängigkeit
+      physikalischer Effekte. Neben anderen Effekten ist die Einschätzung der Auswirkungen von Heterogenitäten auf
+      das Deformationsverhalten und die Entwicklung des Porenwasserdrucks sehr komplex. Sie profitiert von geolo-
+      gischen Interpretationen und Messungen von z. B. Deformation, Wassergehalt und Porendruck. Die numerische
+      Modellierung erlaubt Aussagen zum Zusammenwirken verschiedener Prozesse und ermöglicht es somit, das
+      Gesamtsystem unter Berücksichtigung der durch die multidisziplinäre Untersuchung gewonnenen Erkenntnisse
+      zu interpretieren.
+
+
+
+
+Saf. Nucl. Waste Disposal, 1, 79–81, 2021                                          https://doi.org/10.5194/sand-1-79-2021
+G. Ziefle et al.: From process to system understanding with multi-disciplinary investigation methods                    81
+
+
+
+
+Figure 1. Set-up and first results of the CD-A Experiment (Mont Terri Project).
+
+
+
+References
+
+Ziefle, G., Bossart, P., Costabel, S., Czaikowski, O., Furche, M.,
+  Graupner, B., Hesser, J., Jaeggi, D., Jantschik, K., Kolditz, O.,
+  Königer, F., Kunz, H., Maßmann, J., Nicaty, C., Rebscher, D.,
+  Rink, K., Schuhmann, R., and Wieczorek, K.: CD-A Experiment:
+  Installation report, Mont Terri Technical Report TR2020-41, 1–
+  60, available at: http://www.mont-terri.ch (last access: 1 Novem-
+  ber 2021), 2020.
+
+
+
+
+https://doi.org/10.5194/sand-1-79-2021                                            Saf. Nucl. Waste Disposal, 1, 79–81, 2021
+

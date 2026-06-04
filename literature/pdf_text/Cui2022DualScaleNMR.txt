@@ -1,0 +1,1223 @@
+Transport in Porous Media (2022) 142:453–474
+https://doi.org/10.1007/s11242-022-01752-0
+
+
+
+
+NMR Relaxation Modelling in Porous Media
+with Dual‑Scale‑Resolved Internal Magnetic Fields
+
+Yingzhi Cui1 · Igor Shikhov1 · Christoph H. Arns1
+
+Received: 3 November 2021 / Accepted: 5 February 2022 / Published online: 2 March 2022
+© The Author(s) 2022
+
+
+Abstract
+A pore-scale forward modelling approach for NMR relaxation responses of sandstones
+incorporating their dual-scale nature is presented. The approach utilises X-ray micro-CT
+images to capture inter-granular porosity and scanning electron microscopy images to
+reconstruct clay regions via a resolved clay micro-structure model. A key to calculating the
+NMR response with resolved clay micro-structure is the development of a dual-scale inter-
+nal magnetic field calculation. This is achieved by a separation of near- and far-field effects
+in a dipole approximation of the internal field with periodic clay micro-structures, the latter
+of which take local clay pocket porosity into account. Tri-linear interpolation of the micro-
+CT image before calculation of the internal magnetic field further reduces errors in the
+transition regions between coarse- and fine-scale structure, with final discretisation level
+matching the fine-scale clay micro-structure model across the whole domain. The method
+is validated against direct calculations of model media at full resolution and applied to
+Bentheimer sandstone. Measured and simulated NMR T2 relaxation responses, including
+relaxation time distribution shape, are in excellent agreement and distributions of inter-
+nal magnetic field gradients at the highest spatial resolution as well as diffusion-averaged
+effective gradients are reported.
+
+Keywords Nuclear magnetic resonance · Relaxation · Porous media · Internal fields ·
+Digital core analysis
+
+
+1 Introduction
+
+Due to advances in micro-structure characterisation and computational techniques, the
+modelling of pore-scale transport phenomena is increasingly important in ground water
+engineering and geostorage applications. Increasing the accuracy of rock representa-
+tions would significantly improve the quality of forward simulations, which are increas-
+ingly important, e.g. in the context of carbon capture and storage. Reservoir rocks includ-
+ing sandstone (Øren and Bakke 2002) and carbonate rocks (Biswal et al. 2007) typically
+
+
+* Christoph H. Arns
+  c.arns@unsw.edu.au
+1
+    School of Minerals and Energy Resources Engineering, University of New South Wales, Sydney,
+    NSW 2052, Australia
+
+
+                                                                                                 13
+                                                                                         Vol.:(0123456789)
+454                                                                                   Y. Cui et al.
+
+
+exhibit dual-scale micro-structures. Capturing multiple scales of porosity in rocks, like
+vugs, macro-, and micro-porosity, is a long-standing problem: while nano-computed
+tomography (nano-CT) and focused ion beam scanning electron microscopy (FIB-SEM)
+offer exceptional resolution of micro-structures, this comes at the expense of a very narrow
+field of view (FoV), typically missing larger-scale heterogeneity of the pore space entirely
+(Bai et al. 2013; Welch et al. 2017). X-ray micro-computed tomography (micro-CT) is
+capable of capturing heterogeneity at core scale but is limited to micron resolution (Arns
+et al. 2003). The problem can be partially overcome by the introduction of so-called super-
+resolution techniques (Chang et al. 2004; Glasner et al. 2009; Wang et al. 2018b), which
+increase the effective resolution by a factor 4 to 8 with the help of auxiliary high-resolution
+information for training. This approach is insufficient to accurately represent the micro-
+structure of clay regions when applied at X-ray micro-CT imaging resolution. Effective
+medium theories (Bruggeman 1935; Kirkpatrick 1971) describe the macroscopic behav-
+iour of a micro-structure at larger scales, avoiding the need for explicitly resolved spatial
+information. A combination of the latter with direct imaging in the context of digital core
+analysis was proposed in the past (Arns et al. 2005). “Macroscopic” pore-scale spatial
+information is directly captured by micro-CT imaging of an appropriate resolution, and an
+effective medium representation is used for the finest elements of the system (micro-poros-
+ity, clays, etc.), including in recent upscaling approaches (Jiang and Arns 2021). However,
+this strategy has a significant limitation—every effective element or region needs to be
+large enough to possess the effective property of interest. If this condition is not, fulfilled
+problematic boundary conditions between regions of resolved and non-resolved porosity
+may arise. Another convenient approach for representing multiple spatial scales of rocks is
+pore-network modelling (Øren and Pinczewski 1994; Stig and Øren 1997). Due to strong
+abstractions of the local geometry and the need to incorporate mineralogy, it is less suited
+for the predictive modelling of NMR responses.
+    NMR transverse relaxation time (T2) distributions are frequently used in reservoir char-
+acterisation to estimate pore size distributions and permeability (Kleinberg et al. 1994).
+However, T2 responses are sensitive to internal magnetic field inhomogeneities induced
+by susceptibility contrast between solids and fluids in rocks. Molecular diffusion in the
+presence of strong internal magnetic field gradients leads to additional dephasing, which
+enhances transverse relaxation, potentially invalidating the condition of ‘fast diffusion’
+(Brownstein and Tarr 1979). Accounting for relaxation enhancement due to internal mag-
+netic field gradients in pore-scale simulations requires the accurate calculation of these
+fields.
+    Over the past decades, two main numerical methods for deriving the internal magnetic
+field distribution in rocks have been established. The first method derives the magnetic
+field distribution by calculating the magnetic potential using the finite element method
+(FEM) to solve the Maxwell equations in zero-current condition. For instance, the internal
+magnetic field and internal gradients are simulated using thin sections of Berea sandstone
+(2D model) for multiple constituent phases (Chen et al. 2005). The 3D internal magnetic
+field of a single pore is calculated in Fordham and Mitchell (2018). More recently the
+3D internal magnetic field was computed for digital rock samples (Connolly et al. 2019),
+assigning a mean magnetic susceptibility across all solid components.
+    The second method to calculate the internal magnetic field is based on a linear super-
+position of dipolar fields (also known as dipole approximation). Internal field distributions
+of random sphere packs were calculated (Drain 1962; Majumdar and Gore 1988; Audoly
+et al. 2003). The approach has been investigated for a periodic cylinder pack system, which
+represented the simplest pore geometry for visualisation of internal field distribution (Sen
+
+13
+NMR Relaxation Modelling in Porous Media with…                                           455
+
+
+and Axelrod 1999). The application of the dipole approximation to 3D micro-CT images
+of rocks including for multiple mineral phases was demonstrated in the past (Arns 2004;
+Arns et al. 2007, 2011). However, the magnetic field distribution of the clay phase was
+calculated assuming a continuous effective medium with constant volume-weighted sus-
+ceptibility for the entire clay region due to a lack of image resolution. Utilising directly
+a high-resolution micro-structure of clay regions poses a significant computational chal-
+lenge. Such a micro-structure could be chosen to be periodic in a way that it still covers
+regional micro-structure patches (Arns et al. 2009). The latter resulted in local porosity
+variations and, therefore, average susceptibility variation at voxel scale. Calculating high-
+resolution internal magnetic fields then must consider near-field effects at intermediate
+scales. We note that resolving the micro-structure of kaolinite requires resolution of the
+order of 20 nm (Cui et al. 2021). A direct approach using, e.g. an n3c voxel sub-domain,
+nc = 1000, of a micro-CT image at 2 μm resolution would result in fields of size 100,0003,
+which is impractical.
+    Most NMR response simulations are based on random walk algorithms, where each
+‘walker’ is representative of a nuclear spin package (Mendelson 1990; Bergman et al.
+1995). 2D anisotropic pore geometries involving different pore shapes were considered by
+Wilkinson et al. (1991). Comparisons of simulation and experiment for the mono-sized
+grain consolidation model led to good agreement with experiments (Straley and Schwartz
+1996). However, internal magnetic field gradients were not included in these earlier stud-
+ies. The dephasing spins are considered in a uniform gradient in a porous material (Val-
+ckenborg et al. 2002) and for ferromagnetic grains (Valckenborg et al. 2003). The NMR
+response is simulated with constant gradient based on a 3D model that includes arbitrary
+bi-modal pore size distributions by compacted spheres (Toumelin et al. 2003). Consider
+now NMR relaxation response simulations incorporating a general internal magnetic field.
+Random walk simulations on X-ray micro-CT images of heterogeneous sedimentary rock
+samples comparing different definitions of pore size were presented in Arns (2004). D–T2
+responses of Bentheimer and Berea sandstone were modelled based on micro-CT images
+including internal field effects (Arns et al. 2011). Recent work simulating T2 responses led
+to partial agreement with experiments; short relaxation times are not recovered (Connolly
+et al. 2019).
+    Another method for NMR relaxation response simulation is based on the FEM to solve
+the Bloch–Torrey equations for the evolution of the magnetisation. The magnetisation
+decay due to diffusion in the internal magnetic field gradient in a single pore of complex
+shape was explored in Fordham and Mitchell (2018). A recent study (Mitchell et al. 2019)
+involving intra- and inter-particle porosity compares random walks and FEM on simplified
+models. Due to different magnitudes of length scales in micro- and macro-pores, micro-
+porous grains were treated as effective medium.
+    The increasing sophistication of NMR simulators for porous media responses opens new
+applications regarding the extraction of intrinsic physical properties of complex materials
+when a high-resolution 3D physical representation is available, e.g. by micro-CT imag-
+ing. Recently, a comprehensive and efficient Bayesian optimisation framework to extract
+multiple intrinsic physical parameters simultaneously was introduced (Li et al. 2021). They
+demonstrated the framework on Bentheimer sandstone, extracting quartz surface relaxivity
+as well as effective diffusion and transverse relaxation time of unresolved clay regions.
+    The latter suggests that dynamic changes in surface properties, e.g. as result of wet-
+tability alteration (Shikhov et al. 2018, 2019), may be understood spatially resolved and
+inform modelling of two-phase flow (Wang et al. 2018a). For such an approach, it would be
+desirable to replace effective clay parameters with clay structure and surface properties. A
+
+                                                                                  13
+456                                                                                  Y. Cui et al.
+
+
+first step in this direction has been presented by Cui et al. (2021), where a dual-scale model
+of Bentheimer sandstone described the heterogeneity of the rock including micro-porosity
+in clay regions. However, a multi-stage approach was used for the simulation of the NMR
+responses.
+    In this work, we present a dual-scale NMR solver which supports multiple clay micro-
+structures and accounts for the resultant internal magnetic fields at the highest resolution.
+The paper is organised as follows: we first introduce the materials including a simplified
+three-layer model, kaolinite model, and the representation of Bentheimer sandstone. This
+is followed by the dual-scale internal field calculation utilising the dipole approxima-
+tion, based on a decomposition of the field into high- and low-resolution components and
+accounting for near- and far-field effects. We then introduce the dual-scale random walk
+approach to solve for NMR responses. Section 3 illustrates the accuracy of the simula-
+tion approach utilising the model material, and applications to Bentheimer sandstone with
+excellent match to experimental measurements. Finally, we report on the distributions of
+spatial internal magnetic field gradients and diffusion-averaged effective gradients for dif-
+ferent regions of the sample.
+
+
+2 Materials and Methods
+
+The study includes dual-resolution samples which consist of two categories. One is the
+coarse-resolution micro-CT image (around 2 to 4 μm resolution). The other is the fine-
+resolution artificially reconstructed 3D model (down to about 10 nm resolution). There can
+be N different fine-scale models with different porosity and micro-structure representing
+coarse-scale (unresolved) phases in the low-resolution image. The internal fields of these
+domains will be named as coarse field and fine field in the later discussion, with transition
+regions giving cause to near-field effects. The simple three-layer model is first introduced
+here to better explain the dual-scale internal field calculation methodology. We then trans-
+fer to complex rock geometry.
+
+2.1 Three‑Layer Model
+
+The coarse-resolution sample (Fig. 1a) contains three parallel layers, assumed, respec-
+tively, as pore (top), unresolved “clay” phase (middle) which will be replaced by resolved
+micro-structure, and solid (bottom). Image size is 20 × 20 × 40 cubic voxel with resolu-
+tion of 3 μm/voxel. The 3D micro-structure is constructed by a level cut through a Gauss-
+ian Random Field (GRF). For such fields, the resultant two-point correlation function can
+be calculated analytically and fitted to measured correlation functions, e.g. from 2D high-
+resolution SEM micrographs. We employ the field-field correlation function (Cahn 1965;
+Roberts 1997; Arns et al. 2004):
+
+                                   e(−r∕𝜉) − (rc ∕𝜉)e−r∕rc sin 2𝜋r∕d
+                          g(r) =                                     ,                       (1)
+                                          1 − rc ∕𝜉          2𝜋r∕d
+
+with cut-off scale rc = 0.7355, correlation length 𝜉 = 0.9095 and domain size d = 7.6434
+in voxel units. Actual values are given for concreteness but have no particular meaning
+other than defining the model structure. With the known g(r), realisations of GRF Z(𝐱) are
+
+
+
+
+13
+NMR Relaxation Modelling in Porous Media with…                                                    457
+
+
+
+
+Fig. 1  3D three-layer model; a 20 × 20 × 40 voxel coarse-resolution sample, 3 μm/voxel, b
+400 × 400 × 400 voxel micro-structure represented by the Gaussian Random Field, 60 nm/voxel, and c the
+1000 × 1000 × 2000 voxel fully resolved model at 60 nm/voxel. The phases colour scheme: pore space—
+blue; “clay”—grey; solid—red
+
+
+
+numerically generated using the fast Fourier transform (FFT) method utilising a one-level
+cut
+                                         {
+                                            1, Z(𝐱) ⩾ 𝛽
+                                  Z(𝐱) =
+                                            0, Z(𝐱) < 𝛽
+                                                        ,                             (2)
+
+with level cut parameter 𝛽 = 0.17. The fine-scale model structure is generated with peri-
+odic boundary conditions as 4003 voxel domain with the model domain covering 83 vox-
+els of the coarse-resolution image (Fig. 1b). To generate a fully resolved model, we map
+the coarse-resolution sample to a conforming subgrid. Each coarse-scale voxel corre-
+sponds to n3s fine-scale voxels. Here, we chose ns = 3 μm∕0.06 μm = 50. This results in a
+1000 × 1000 × 2000 voxel micro-structure at 60 nm resolution, where the unresolved mid-
+dle layer of the structure is replaced by corresponding micro-structure voxels. The fully
+resolved model is visualised in Fig. 1c. Note the periodic repetition of the template 4003
+domain.
+
+
+2.2 Bentheimer Sandstone
+
+Bentheimer sandstone exhibits a more complex geometry and is often used as benchmark rock
+(Arns et al. 2011; Mitchell et al. 2013; Peksa et al. 2015). While Bentheimer sandstone does
+not contain a large amount of clay (around 1.9 wt% Shikhov et al. 2017), the clay type is
+mainly kaolinite and the reason we chose it for this study. An X-ray micro-CT image was
+acquired at resolution of 2.2 μm/voxel. More details about the specific sample and image
+acquisition can be found in our previous work (Shikhov and Arns 2017). The simulation pre-
+sented here is based on an 8003 central subset of the original image data. The sample is seg-
+mented into five phases, namely pore space, clay region (mixture of pore space and kaolinite),
+
+
+
+                                                                                          13
+458                                                                                        Y. Cui et al.
+
+
+quartz, feldspar, and high-density minerals utilising an active contour method (Sheppard et al.
+2014). Slices through the tomogram and segmented image are shown in Fig. 2.
+
+2.3 Kaolinite Model
+
+Kaolinite is one of the most common clay mineral constituents of sedimentary rocks, espe-
+cially in sandstones. It is difficult to capture the booklets’ morphology of kaolinite (Fig. 3a,
+b) in the micro-CT image due to resolution limitations. We employ a 3D reconstruction tech-
+nique (Cui et al. 2021) based on SEM images to overcome these limitations. Kaolinite book-
+lets are distributed following a Boolean process with random unit rotation angles (Cui et al.
+2021). Individual kaolinite platelets as constituents of the booklets are approximated as hex-
+agonal plates with thickness of about 60 nm and diameter of 2-3 μm. To mimic the morphol-
+ogy of booklet units, we generate stacked hexagonal platelets, separated by a small separation
+distance (about 30 nm). In this study, we choose a domain size of n3f voxel, nf = 400, with
+resolution 22 nm, which is 1/100 of micro-CT image resolution, to discretise the kaolinite
+micro-structure (Fig. 3c, d). The surface area (Sv) of the model is 18.7 m2/g in agreement with
+the literature (East 1950).
+
+2.4 Internal Magnetic Field
+
+The magnetic field at position 𝐫 consists of the uniform external magnetic field 𝐁0 and the
+internal magnetic field 𝐁i induced by the magnetic susceptibility contrast:
+                                        𝐁(𝐫) = 𝐁0 + 𝐁i (𝐫).                                        (3)
+The dipole approximation is employed to calculate the nonuniform internal magnetic field
+(e.g. Song 2003); SI unit will be utilised. The dipole moment of an isolated sphere of
+radius rD as function of distance r to the centre of the sphere is given by
+
+
+
+
+Fig. 2  a A slice of 800 3 tomogram of Bentheimer, 2.2 μm/voxel. b A slice of 800 3 5-phase segmented
+tomogram of Bentheimer, 2.2 μm/voxel. The phases colour scheme: pore space—blue; clay—light blue;
+quartz—green; feldspar—brown; high-density minerals—red
+
+
+13
+NMR Relaxation Modelling in Porous Media with…                                                          459
+
+
+
+
+Fig. 3  Kaolinite images and model. a SEM image of a kaolinite pocket, b SEM of a kaolinite booklet struc-
+ture, c slices through the 4003 kaolinite model with porosity of 0.4; voxel size is 22 nm, d 3D-reconstructed
+kaolinite model
+
+
+
+
+                                                                        r ≥ rD
+                                     {𝜇 [                     ]
+                                              3(𝐦⋅𝐫)𝐫
+                                          0
+                                                      − r𝐦3       for
+                                                                        r ≤ rD
+                            𝐁dip =       4𝜋
+                                         2
+                                                r5                               ,                       (4)
+                                           𝜇 𝐦
+                                         3 0
+                                                                  for
+
+where 𝜇0 = 4𝜋 × 10−7 NA−2 is the magnetic permeability of the vacuum. The magnetic
+dipole moment of a single cubic voxel is calculated as 𝐦 ≈ 𝜇0 𝜒v 𝐁0 for 𝜒v ≪ 1, which is a
+good approximation for typical rock constituent minerals (Hürlimann 1998). The suscepti-
+bility field of a larger body is generated by assigning each voxel an isotropic magnetic vol-
+ume susceptibility 𝜒v (𝐫) according to phase occupancy at location 𝐫 . The induced change
+in magnetic field is linear in susceptibility, and the internal magnetic field can be calculated
+as a sum of dipoles. Then the internal magnetic field is given by the convolution of dipole
+and susceptibility field:
+
+
+                                                                                                13
+460                                                                                                Y. Cui et al.
+
+
+
+                                           ∫R3
+                                    𝐁i =         𝜒v (𝐫)𝐁dip (𝐫 − 𝐫 � )d𝐫 � .                               (5)
+
+The approach is validated by deriving the dipole profile of a sphere discretised on a Carte-
+sian regular grid with spacing 𝜖 = 15  1
+                                         rD and comparison with the analytical solution. Fig-
+ure 4 depicts cross sections of the resultant fields and profiles along the z-axis through
+the centre of the dipole generated by a solid sphere inclusion (𝜒s = 5.0 × 10−6) in water
+(𝜒w = −9 × 10−6) with applied field 𝐁0 = (0, 0, B0 ).
+     Consider now the case of the three-layer model, which consists—at the coarse scale
+(Fig. 1a)—of one unresolved and two resolved phases. While the resolved phases directly
+take the magnetic susceptibilities 𝜒w and 𝜒s, each unresolved coarse-scale voxel maps to
+n3s fine-scale voxels, a sub-domain of the fine-scale model as discussed previously. Conse-
+quently, the coarse-scale susceptibility of the unresolved phase 𝜒u must vary locally (unless
+n3s is the same size as the fine-scale model), and those voxels are assigned the local volume-
+weighted susceptibility
+                                          ∑
+                                             V𝜒
+                                    𝜒u = ∑ i i , i = w, c,                                 (6)
+                                              Vi
+
+where 𝜒c stands for the volume susceptibility of pure clay. Convolution of the coarse-reso-
+lution susceptibility field 𝜒v (𝐫) with the dipole field, where 𝜒v (𝐫) takes the values 𝜒s, 𝜒w, or
+𝜒u (𝐫), gives the coarse-resolution internal magnetic field 𝐁i,c. The convolution establishes a
+macroscopic internal field trend in the unresolved phase as well as near-field perturbations
+in the resolved phase in regions close to the fine-scale structure.
+    The fine-scale field 𝐁i,f is calculated analogous to 𝐁i,c, using the constituent material
+susceptibilities 𝜒w and 𝜒c. From 𝐁i,f we derive the coarse-scale averaged trend model
+𝐁i,t covering the fine-scale domain. For our periodic fine-scale structure with nf = 400
+(Fig. 1b) and ns = 50 the periodic trend model has a size of n3t voxel with nt = nf ∕ns = 8.
+In practice, we can map 𝐁i,t to high resolution by tri-linear interpolation. At places where
+no fine-scale structure exists because the coarse-scale voxel belongs to a fully resolved
+phase, the associated trend value and fine-scale field are set to zero. A high-resolution
+
+
+
+
+Fig. 4  Dipole field of a discrete sphere and comparison to the analytical solution at f = 2 MHz. a compari-
+son of the dipole profile (in central xy-plane perpendicular to z) calculated numerically using Eq. (5) with
+the analytical solution given by Eq. (4); (𝜒s = 5.0 × 10−6, 𝜒w = −9 × 10−6), b central xz cross section of the
+internal field
+
+
+13
+NMR Relaxation Modelling in Porous Media with…                                                461
+
+
+internal magnetic field 𝐁i covering the whole simulation domain of size (nc ns )3 voxel can
+now be calculated as follows:
+                                𝐁i (𝐫) = 𝐁i,c (𝐫) + 𝐁i,f (𝐫) − 𝐁i,t (𝐫).                      (7)
+We note that the field 𝐁i is never stored in memory but constructed locally when required
+for either a random trajectory during NMR simulations, to visualise parts of the high-reso-
+lution internal magnetic field, or to extract statistics.
+   Given 𝐁i ≡ (0, 0, Bz ), the corresponding internal magnetic field gradients at image reso-
+lution are given by
+                                 √
+                                   (      )     (       )   (     )
+                                      𝜕Bz 2        𝜕Bz 2      𝜕Bz 2
+                           Gi =               +           +                               (8)
+                                      𝜕x            𝜕y         𝜕z
+
+and are calculated using central differences. In Sect. 3, we report histograms and visuali-
+sations of the internal gradient fields for different phases with the further distinction of
+including (Gi ≡ Gin ) or excluding (Gi ≡ Gex) voxels which have different phase neigh-
+bours. Not including gradients for voxels with different phase neighbours is reasonable,
+since near-surface interactions are included in surface relaxivity.
+   The accuracy of the internal field representation can be further improved by utilising
+a higher-resolution mesh at the coarse scale. In Sect. 3, we make a distinction between
+results for a fully resolved calculation where a single fine-scale grid is utilised (possible
+only for the artificial model), and for coarse-grid refinement factors between 1 and 5. While
+a factor of 1 indicates that the initial resolution of the coarser grid is utilised, it represents
+nevertheless a result for the dual-scale approach.
+
+
+
+2.5 NMR Response Simulation
+
+The NMR T2 relaxation response is simulated by a lattice random walk algorithm on the
+segmented image (Arns et al. 2011). In this study, we extend the method to dual-scale sam-
+ples. Initial positions of the random walkers are chosen uniform randomly across the pore
+space. Since the dual-scale approach assigns either solid (quartz or kaolinite) or pore space
+to each fine-scale voxel, we use a simple rejection method. The random walk is carried
+out on a regular cubic lattice with resolution 𝜖 . Consequently, the time step 𝜏i of a step i is
+given by 𝜏i = 6D(𝐫)∕𝜖 2, where D(𝐫) is the local diffusion coefficient. Since here the struc-
+ture is fully resolved and we consider a single fluid, D(𝐫) = D0, where D0 is the free-diffu-
+sion coefficient of water. Bulk and surface relaxation are implemented as signal weighting
+factors for each step, with Si = Sb Ss. Here Sb = exp(−𝜏i ∕T2,b) is the contribution by bulk
+relaxation, and Ss = 1 − 6𝜌2 𝜏i ∕(𝜖A) the contribution by surface relaxation. For steps within
+the same fluid Ss = 1. A is a correction factor of order 1, which accounts for the details of
+the random walk implementation (Bergman et al. 1995). For imaged structures, this value
+is typically close to A = 3∕2. For Bentheimer sandstone, the surface relaxivity 𝜌2 of the
+solid takes the value of quartz (𝜌2q ), feldspar (𝜌2f ), high-density minerals (𝜌2h), or kaolinite
+(𝜌2k).
+    While 𝜌2 (𝐫) describes the relaxation processes at the surface, the contribution of the
+internal field to dephasing is calculated explicitly. The evolution of the phase for a spin
+package in relation to the Larmor frequency at the starting position 𝜔0 = 𝛾Bz (0) can be
+written as follows (Carr and Purcell 1954):
+
+                                                                                      13
+462                                                                                      Y. Cui et al.
+
+
+                                               Δ𝜙 = 𝜙 − 𝜙0 ,                                     (9)
+
+                               N                                             j
+                               ∑                                            ∑
+                           =         𝛾𝜏j [Bz (tj ) − Bz (0)],      tj =           𝜏i ,         (10)
+                               j=1                                          i=1
+
+
+                                         N
+                                         ∑
+                                     =         𝛾𝜏j [Bz (𝐫j ) − Bz (𝐫0 )],                      (11)
+                                         j=1
+
+where 𝛾 is the gyromagnetic ratio. 𝐫0 and 𝐫j note the location of the start of the random walk
+and at time tj . The Carr–Purcell–Meiboom–Gill (CPMG) sequence (Carr and Purcell 1954;
+Meiboom and Gill 1958) is implemented by switching the sign of Δ𝜙 after tE ∕2, where tE
+is the echo spacing, and every ntE , n = 1, 2, … N − 1 thereafter, where N is the total num-
+ber of echoes recorded (at echo positions tE ∕2 after the phase switch). The phase variation
+caused by this diffusive relaxation is then incorporated into the calculation of each walker’s
+magnetisation, which becomes
+                                                             ∏
+                              Mw (tj ) = Mw (0) cos[Δ𝜙(tj )]   Si .                       (12)
+
+Averaging over random walks and recording at times t = ntE (n = 1, 2, … N ) results in the
+magnetisation decay M(t). The relaxation time distribution is obtained by fitting a multi-
+exponential decay to M(t). The effective gradient of a particular random path of Ns steps
+can be calculated as follows:
+                                                     Ns
+                                                1 � Bz (𝐫j ) − B(𝐫0 )
+                            Gef f (𝜏N ) =             𝜏               ,                        (13)
+                                               𝜏Ns j=1 j ‖𝐫j − 𝐫0 ‖
+
+                𝜏i and where the sum extends over all terms for which 𝐫j ≠ 𝐫0 and may be
+           ∑Ns
+with 𝜏Ns = i=1
+considered most meaningful for 2𝜏Ns ≤ tE . Thus, Gef f refers to a diffusion-averaged (effec-
+tive) gradient over part of a magnetisation decay. We later report results for Gef f ( 12 tE ),
+avoiding refocusing pulses.
+
+
+
+2.6 NMR Experiments
+
+Bentheimer sandstone core plugs of 25.4 mm diameter and 50 mm length were satu-
+rated with 3% NaCl brine and transverse relaxation responses measured with a 2 MHz
+Magritek Rock Core Analyzer. The standard CPMG pulse sequence was utilised with
+echo-train length of 10 seconds. Measurements were recorded for two echo times
+( tE = 200 μ s and tE = 640 μ s) to study the significance of internal magnetic field gra-
+dients. The signal-to-noise ratio (SNR) was set to at least 200. The acquired magneti-
+sation decays were treated as multi-exponential signals and inverted into T2 relaxa-
+tion distributions. Like for the NMR simulations, the inversion of the NMR relaxation
+decay into the relaxation time distribution was carried out utilising a non-negative
+least square approach with amplitude regularisation term (Hansen 1992).
+
+
+
+
+13
+NMR Relaxation Modelling in Porous Media with…                                               463
+
+
+3 Results and Discussion
+
+The introduced internal field calculation method and associated NMR response simulation
+approach are demonstrated for the three-layer model first. We illustrate the field distribu-
+tion change in the transition region with different degree of discretisation and the accuracy
+of the dual-scale model. Applications to Bentheimer sandstone including a discussion of
+internal field distributions follow:
+
+3.1 Three‑Layer Model
+
+To verify the dual-scale Bi calculation method, we calculate the internal magnetic field Bi
+at full resolution directly for the 1000 × 1000 × 2000 resolved micro-structure (Fig. 1c) and
+compare it to the dual-scale approach with coarse-grid refinement factors of 1, 2, and 5 in
+Figs. 5 and 6. For concreteness, we present the fields for the common specific field strength
+of B0 = 470 Gauss corresponding to a frequency of f = 2 MHz for 1 H NMR. The respec-
+tive susceptibilities are given in Table 1; we assign a relatively high but not implausible
+paramagnetic susceptibility for pure clay to highlight the effects from internal fields.
+    The Bi cross sections (Fig. 5) illustrate the overall closeness of the dual-scale approach
+with the full-scale calculation as well as the further improvement of the solution for the
+dual-scale approach when using grid refinement for the coarse-scale model, particularly in
+the transition region as visible in the rectangular cut-outs of Fig. 5. A grid refinement fac-
+tor of 5, resulting in a coarse grid of 100 × 100 × 200 voxel with ns = 10 leads to excellent
+agreement.
+    This is further illustrated in Fig. 6a for a line crossing the coarse-scale phase boundaries
+perpendicularly.
+    We immediately note the large fluctuations in field associated with the fine-scale micro-
+structure, which is fully recovered by all grid refinement factors, as is the far field. From
+Fig. 6b, magnifying one of the transition regions, we see that the spatial extend of the dif-
+ference between full and dual-scale approach close to the transition region drops drasti-
+cally with increasing grid refinement. We note that the resolution of the micro-structure
+is exactly the same for all grid refinement factors here due to the alignment of the coarse-
+scale phase distribution with the grid. The main effect of the grid refinement is that the
+coarse-scale trend model of the fine-scale micro-structure has a higher resolution, which
+impacts on the accuracy of the convolution calculating the coarse-scale field contribution
+𝐁i,c to 𝐁i (see Eq. 5).
+    Consider now the simulation of NMR T2 relaxation responses utilising the dual-scale
+internal field calculation approach for the three-layer model. NMR simulation parameters
+are shown in Table 1. Since internal field effects are stronger for higher field strength or
+larger echo spacing (Kleinberg and Horsfield 1990), we calculate T2 distributions for the
+following four conditions: (1) f = 2 MHz, tE = 200 μs; (2) f = 2 MHz, tE = 640 μs; (3)
+
+
+
+Table 1  Magnetic susceptibility   Phase                   𝜒 (μSI)                     𝜌2 (μm/s)
+(𝜒 ) and surface relaxivity (𝜌2)
+of each phase in the three-layer
+                                   Water                   − 9.0                       –
+model
+                                   Clay                    45.0                        0.8
+                                   Solid                   − 13.4                      9.0
+
+
+
+                                                                                    13
+464                                                                                                  Y. Cui et al.
+
+
+
+
+Fig. 5  Illustration of the different length scales present for the internal fields and their recovery utilising
+periodic fine-scale structure and a dual-scale internal field calculation. The central cross sections of the
+1000 × 1000 × 2000 voxel Bi field for the three-layer model at 60 nm/voxel resolution (see also Fig. 1c) for
+an applied field of 470 Gauss ( f = 2MHz) are shown. a Fully resolved micro-structure; [b-d] dual-scale
+approach for coarse-grid refinement factors of b one, c two, and d five. The black squares in the transition
+zone are enlarged on the right side
+
+
+ f = 20 MHz, tE = 200 μs; (4) f = 20 MHz, tE = 640 μs. Comparisons of the NMR T2
+responses corresponding to the fully resolved model and previously discussed dual-scale
+internal field representations are depicted in Fig. 7. For all chosen field strength and echo
+time combinations, the position of the main relaxation time peak is preserved, while the
+sharpness of the main peak is affected by the internal field discretisation. However, there
+are significant differences in the width and position of the short relaxation time peak. We
+note that a coarse-grid refinement of a factor five leads in all cases to excellent agreement
+between the full-resolution solution and the dual-scale simulation approach. We further
+
+
+13
+NMR Relaxation Modelling in Porous Media with…                                                                                                                 465
+
+
+                                                                                                                   10 -3
+                   0.015
+                                                               fully-resolved                                                                       fully-resolved
+                                                               factor=1                                                                             factor=1
+                     0.01                                      factor=2                                        1                                    factor=2
+                                                               factor=5                                                                             factor=5
+                   0.005                                                                                  0.5
+
+Bi (G)                    0                                                                   Bi (G)           0
+                   -0.005
+                                                                                                         -0.5
+                    -0.01
+                                                                                                           -1
+                   -0.015
+                              0           500           1000   1500        2000                                       1000            1050          1100
+         (a)                                       z (voxel)                                            (b)                           z (voxel)
+
+Fig. 6  Comparison between the 1D Bi profiles for the fully resolved reference (blue solid line) and the dual-
+scale method with different discretisation factors for an applied field of 470 Gauss ( f = 2MHz): factor =
+1 (red dashed line), factor = 2 (yellow dashed line), and factor = 5 (purple dashed line). The boundary
+between macro–micro-scale is shown as black-dotted line. a For a typical trajectory vertical to the coarse-
+scale boundary along z-direction. b The transition region where the largest differences occur in (a)
+
+
+
+                    0.2           fully resolved                                                         0.2         fully resolved
+                                  factor=1                                                                           factor=1
+                                  factor=2                                                                           factor=2
+                                  factor=5                                                                           factor=5
+
+
+
+
+Amplitude (a.u.)                                                                     Amplitude (a.u.)
+                   0.15                                                                                 0.15
+
+
+                    0.1                                                                                  0.1
+
+
+                   0.05                                                                                 0.05
+
+
+                     0                                                                                    0
+                        0                    1           2          3            4                           0                  1           2          3             4
+                     10                 10          10         10           10                            10               10          10         10           10
+        (a)                                        T (ms)                                   (b)                                       T (ms)
+                                                    2                                                                                  2
+
+
+
+                    0.2           fully resolved                                                         0.2         fully resolved
+                                  factor=1                                                                           factor=1
+                                  factor=2                                                                           factor=2
+                                  factor=5                                                                           factor=5
+
+
+
+
+Amplitude (a.u.)                                                                     Amplitude (a.u.)
+                   0.15                                                                                 0.15
+
+
+                    0.1                                                                                  0.1
+
+
+                   0.05                                                                                 0.05
+
+
+                     0                                                                                    0
+                     10 0               10 1        10 2       10 3         10 4                          10 0             10 1        10 2       10 3         10 4
+         (c)                                       T (ms)                                  (d)                                        T (ms)
+                                                    2                                                                                  2
+
+
+Fig. 7  NMR T2 relaxation distribution for the three-layer model comparing full-resolution calculations to
+the dual-scale simulation approach for different coarse-grid refinement factors. a f = 2 MHz, tE = 200 μs; b
+ f = 2 MHz, tE = 640 μs; c f = 20 MHz, tE = 200 μs; d f = 20 MHz, tE = 640 μs
+
+
+
+
+                                                                                                                                                    13
+466                                                                                               Y. Cui et al.
+
+
+remark that the dual-scale approach mimics well the apparent “coupling” of the two main
+peaks for the case of f = 20 MHz and tE = 640 μs. The discretisation level of the internal
+field (recall that the fine-grid resolution 𝜖 remains constant) becomes increasingly impor-
+tant with increasing field strength and longer echo times.
+
+3.2 Bentheimer Sandstone
+
+The segmented micro-CT image of Bentheimer (coarse resolution, 𝜖 = 2.2 μm) is com-
+bined with the kaolinite model (fine resolution, 𝜖 = 22nm) to construct the high-resolu-
+tion internal field Bi as well as the high-resolution micro-structure. However, jagged edges
+along phase boundaries defined by cubic voxels are magnified when refining the coarse-
+resolution sample. To reduce these artefacts, we use a surface interpolation technique to
+obtain smoother solid surfaces and consider refinement factors of 1, 2, and 4 (Fig. 8). This
+results in coarse-grid sizes of 8003, 16003 and 32003 , respectively. The fine-scale grid is
+constructed at a resolution of 𝜖 = 22nm with a fine-scale (logical) grid size of 80, 0003 and
+ns = 100, ns = 50, and ns = 25 for the refinement factors of 1, 2, and 4.
+    NMR T2 response simulations are performed for two different echo spacings, tE = 200 μs
+and tE = 640 μs in order to investigate the significance of internal magnetic field gradi-
+ents. Here, we only consider a field strength of 470 Gauss, for which we have experimental
+data. In an earlier study (Cui et al. 2021), we determined the effective parameters for the
+unresolved clay phase of Bentheimer sandstone by matching simulated NMR responses to
+experimental data. In this study, the surface relaxivities utilised in simulations were slightly
+adjusted compared to the previous study (Cui et al. 2021) to account for the integration of
+the internal field and micro-structure model into a single dual-scale simulation. Table 2
+lists the utilised material properties 𝜒 and 𝜌2 for each phase. Susceptibilities were set to
+typical values and agree with the measured volume susceptibility of the crushed sample.
+    Simulations are compared to experiment in Figs. 9 and 10 depicting magnetisation
+decay and T2 distribution, respectively. We immediately note the good match between
+experiment and simulation for all dual-scale simulations. Grid refinement by a factor
+of 2 or 4 improves the match further, affecting mainly the peak position of the shorter
+T2 peaks. This implies that the internal magnetic field gradient resolution of the transi-
+tion region between coarse- and fine-scale structure again matters in agreement with
+the findings for the three-layer model. This is despite the relatively small clay fraction
+
+
+
+
+Fig. 8  Cross section of a subsection of the Bentheimer sandstone image illustrating the interpolated surface
+for increasing coarse-grid refinement factors. a Original image with voxel size of 2.2 μm, b Grid refinement
+factor 2 (1.1 μm/voxel), c grid refinement factor 4 (0.55 μm/voxel)
+
+
+13
+NMR Relaxation Modelling in Porous Media with…                                                                                                                                  467
+
+
+                    1                                                                                          1
+                                                                      Experiment                                                                                Experiment
+                                                                      factor=1                                                                                  factor=1
+                   0.8                                                factor=2                                0.8                                               factor=2
+                                                                      factor=4                                                                                  factor=4
+
+                   0.6                                                                                        0.6
+Mt                                                                                              Mt
+                   0.4                                                                                        0.4
+
+
+                   0.2                                                                                        0.2
+
+
+                    0                                                                                          0
+                       -4          -3        -2                -1          0          1                           -4          -3         -2                -1        0               1
+                    10        10        10                10          10         10                            10        10         10                10        10              10
+     (a)                                          t (s)                                             (b)                                       t (s)
+
+Fig. 9  Measured and simulated transverse magnetisation decays for Bentheimer sandstone. a f = 2 MHz,
+tE = 200 μs; b f = 2 MHz, tE = 640 μs
+
+
+                   0.06                                                                                      0.06
+                             Mean T2 distribution, TE=200 s                                                            Mean T2 distribution, TE=640 s
+                   0.05      95% confidence interval                                                         0.05      95% confidence interval
+                             factor=1                                                                                  factor=1
+
+
+
+
+Amplitude (a.u.)                                                                          Amplitude (a.u.)
+                             factor=2                                                                                  factor=2
+                   0.04                                                                                      0.04
+                             factor=4                                                                                  factor=4
+
+                   0.03                                                                                      0.03
+
+                   0.02                                                                                      0.02
+
+                   0.01                                                                                      0.01
+
+                     0                                                                                         0
+                     10 -1      10 0      10 1             10 2        10 3        10 4                        10 -1      10 0      10 1              10 2      10 3            10 4
+           (a)                                    T (ms)
+                                                   2                                                (b)                                  T (ms)
+                                                                                                                                              2
+
+
+Fig. 10  T2 relaxation time distributions corresponding to magnetisation decays shown in Fig. 9. a
+f = 2 MHz, tE = 200 μs; b f = 2 MHz, tE = 640 μs
+
+
+
+
+Table 2  Magnetic susceptibility                                    Properties                                             𝜒 (μSI)                                       𝜌2 (μm/s)
+(𝜒 ) and surface relaxivity (𝜌2)
+of each constituent phase of
+                                                                    Water                                                  − 9.0                                         –
+Bentheimer sandstone
+                                                                    Kaolinite                                              − 11.0                                        1.2
+                                                                    Quartz                                                 − 12.0                                        9.0
+                                                                    Feldspar                                               − 12.0                                        9.0
+                                                                    High density                                           5270                                          50.0
+
+
+
+
+existent in Bentheimer sandstone (about 2% volume fraction is covered by clay regions
+in the segmented image) and only considering the low field response ( f = 2MHz).
+   Consider now the spatial internal magnetic field gradient distributions across the
+pore space. Gradients in the solid are not considered and set zero for visualisation. We
+further differentiate between including (Gin (𝐫 )) and excluding (Gex (𝐫 )) voxels at the
+solid–fluid boundary.
+
+                                                                                                                                                                13
+468                                                                                                   Y. Cui et al.
+
+
+
+
+Fig. 11  Cross section of a 15,0003 subset of the 80,0003 internal magnetic gradient fields (Gin (𝐫)) at 22 nm/
+voxel; non-fluid voxels are set to zero values. a Gin , solid–fluid gradients included, b Gex, solid–fluid gradi-
+ents excluded
+
+
+   Cross sections of the spatial fields Gin (𝐫) and Gex (𝐫) for a 15,0002 sub-slice of the
+80, 0003 volume are given in Fig. 11 and the corresponding histograms for the full sample
+are depicted in Fig. 12.
+   The spatial visualisation of internal magnetic field gradients (Fig. 11) highlights the dif-
+ference between including and excluding fluid–solid gradients in regions of high surface
+area, e.g. clay regions. For longer-range gradients in the macro-pore space caused by larger
+homogeneous regions, the fields Gin (𝐫) and Gex (𝐫) are visually almost indistinguishable.
+The difference in the respective internal gradient distributions can be seen as sharper offset
+peaks in Fig. 12 (left). The position and magnitude of this offset changes with increasing
+grid refinement factor since the discontinuity between solid and fluid is better resolved for
+higher refinement, while the larger resultant gradients are distributed across fewer voxels.
+In the right column of Fig. 12, we compare the distribution of Gex to a normal distribution,
+leading to a good fit with fit parameters given in Table 3 and highlighting the limited shift
+in peak position.
+   Most of the values fall into the range of 10−1 G/cm to 102 G/cm, the mean values of Gex
+are 1.09 G/cm (factor 1), 1.12 G/cm (factor 2), and 1.17 G/cm (factor 4), and maximum
+internal magnetic field gradients can reach 105 G/cm. We note that very high gradients in
+the fluid can be generated by the high-density paramagnetic inclusions (see red region in
+Fig. 11).
+   The histograms of magnetic field gradients explored by NMR simulations (Gef f ) are
+shown in Fig. 13 for grid refinement factors of 1 and 4, where Eq. (13) is evaluated for
+𝜏Ns = 21 tE = 100 μs.
+   The shapes of the distributions are well described by normal distributions (see
+Table 4). The means of the diffusion-averaged gradients are around 1.07 G/cm. With
+increasing coarse voxel refinement, the Gef f distributions broaden. There is a relative
+rise of both tails in Fig. 13 compared to Fig. 12 and associated drop in peak value,
+which can be explained by diffusional averaging. The distributions are limited to the
+range of 10−3 G/cm to 103 G/cm since actual histogram contributions outside this range
+
+
+13
+NMR Relaxation Modelling in Porous Media with…                                                                                                                                               469
+
+                    0.06                                                                                             0.06
+                                                                                G                                                                                                 G
+                                                                                 in                                                                                                     ex
+                    0.05                                                        G
+                                                                                 ex
+                                                                                                                     0.05                                                         fit
+
+
+
+
+Frequency (a.u.)                                                                                  Frequency (a.u.)
+                    0.04                                                                                             0.04
+
+                    0.03                                                                                             0.03
+
+                    0.02                                                                                             0.02
+
+                    0.01                                                                                             0.01
+
+                      0                                                                                                0
+                         -3        -2        -1           0        1        2              3                              -3        -2        -1           0         1        2               3
+                      10      10        10           10       10       10             10                               10      10        10           10        10       10              10
+     (a)                                          Gi (G/cm)                                           (b)                                          Gex (G/cm)
+
+                   0.06                                                                                              0.06
+                                                                                Gin                                                                                               Gex
+                   0.05                                                         Gex                                  0.05                                                         fit
+
+
+
+
+Frequency (a.u.)                                                                                 Frequency (a.u.)
+                   0.04                                                                                              0.04
+
+                   0.03                                                                                              0.03
+
+                   0.02                                                                                              0.02
+
+                   0.01                                                                                              0.01
+
+                      0                                                                                                0
+                      10 -3   10 -2     10 -1       10 0      10 1     10 2          10 3                              10 -3   10 -2     10 -1        10 0      10 1     10 2            10 3
+      (c)                                         Gi (G/cm)                                          (d)                                         Gex (G/cm)
+
+                    0.06                                                                                           0.06
+                                                                                G                                                                                                 G
+                                                                                    in                                                                                                  ex
+                    0.05                                                        G
+                                                                                    ex
+                                                                                                                   0.05                                                           fit
+
+
+
+
+ Frequency (a.u.)                                                                               Frequency (a.u.)
+                    0.04                                                                                           0.04
+
+                    0.03                                                                                           0.03
+
+                    0.02                                                                                           0.02
+
+                    0.01                                                                                           0.01
+
+                      0                                                                                                0
+                      10 -3   10 -2     10 -1        10 0     10 1     10 2           10 3                             10 -3   10 -2     10 -1        10 0     10 1      10 2            10 3
+        (e)                                       Gi (G/cm)                                            (f)                                       Gex (G/cm)
+
+
+Fig. 12  Histograms of the internal magnetic field gradients of the water phase including (Gin ) and excluding
+(Gex) the water-fluid boundary for different coarse-grid refinement factors. a, b Factor = 1; c, d factor = 2;
+e, f factor = 4. Left Comparison of Gin and Gex. Right Normal distribution fits to Gex (see also Table 3)
+
+
+Table 3  Normal distribution                                       Factor                      Mean (log10 (G/                           Std (log10 (G/cm))                              R2
+parameters corresponding to the                                                                cm))
+fits of Gex in Fig. 12 for different
+grid refinement factors
+                                                                   1                           0.037                                     0.655                                           0.98
+                                                                   2                           0.051                                     0.660                                           0.98
+                                                                   4                           0.068                                     0.669                                           0.99
+
+
+
+
+                                                                                                                                                                         13
+470                                                                                                                                                                      Y. Cui et al.
+
+                   0.04                                                                                             0.04
+                                                                                 Geff                                                                                             Geff
+                                                                                 fit                                                                                              fit
+                   0.03                                                                                             0.03
+
+
+
+
+Frequency (a.u.)                                                                                 Frequency (a.u.)
+                   0.02                                                                                             0.02
+
+
+                   0.01                                                                                             0.01
+
+
+                     0                                                                                                0
+                        -3        -2        -1           0          1        2              3                            -3        -2        -1           0          1        2              3
+                     10      10        10           10         10       10             10                             10      10        10           10         10       10             10
+                                                 Geff (G/cm)                                                                                      Geff (G/cm)
+     (a)                                                                                            (b)
+Fig. 13  Histograms of the diffusion-averaged effective gradients Gef f according to Eq. (13) with
+𝜏Ns = 12 tE = 100 μ s for different coarse-grid refinement factors. a Factor = 1, b factor = 4. The solid lines
+are Gaussian distributions over log(Gef f ) with respective parameters reported in Table 4
+
+
+Table 4  Normal distribution                                        Factor                      Mean (log10 (G/                         Std (log10 (G/cm))                              R2
+parameters corresponding to the                                                                 cm))
+fits of Gef f in Fig. 13 for different
+grid refinement factors
+                                                                    1                           0.036                                   0.844                                           0.99
+                                                                    2                           0.035                                   0.849                                           0.99
+                                                                    4                           0.031                                   0.861                                           0.99
+
+
+
+
+are difficult to discern from zero. Random walks do experience no gradients when
+interacting with the surface, since near-surface effects are incorporated into the surface
+relaxivity. Similarly, the very high gradients possible in the fluid when close to a para-
+magnetic mineral affect a larger region when accounting for diffusional averaging.
+   It is worth noting that the common approach to account for the effect of susceptibil-
+ity contrast-induced internal magnetic field gradients is based on an analysis of relaxa-
+tion regimes proposed by Hürlimann et al. (1995). It has been demonstrated that for
+the two asymptotic regimes (“free-diffusion” or “short time” typically applicable for
+larger pores; and “motional averaging” for smaller pores), the corresponding analytical
+expressions (Mitchell et al. 2010; Mitchell and Chandrasekera 2014) could be devel-
+oped to account for the additional relaxation due to spin dephasing in magnetic field
+gradients. This enables standard petrophysical interpretations of the transverse relaxa-
+tion responses in the fast diffusion limit, e.g. estimating pore size distributions, despite
+the presence of significant internal magnetic field inhomogeneities. For instance, it was
+applied to great benefit in the analysis of capillary trapping in sandstones subjected
+to partial desaturation by nitrogen and carbon dioxide (Connolly et al. 2017, 2019).
+However, the analytical approach requires the identification of a “mean” relaxation
+regime. Furthermore, the expressions so far were developed for two out of three relaxa-
+tion regimes, being invalid for frequently reported intermediate regimes and coexist-
+ing regime mixtures. On the contrary, the dual-scale approach presented here does not
+require any assumption about governing relaxation regimes, offering potentially a tool
+to study associated problems. In particular, the coexistence of different regimes and sig-
+nificance of intermediate regimes in certain conditions even for diamagnetic on average
+sandstone were demonstrated in Cui et al. (2021).
+
+13
+NMR Relaxation Modelling in Porous Media with…                                                                  471
+
+
+4 Conclusions
+
+This study introduced an effective NMR relaxation response modelling approach incor-
+porating resolved internal magnetic fields enabling numerical simulations spanning
+five orders of magnitude in length scales on grids logically containing of the order of
+1015 cells. The internal magnetic fields were calculated via the dipole approximation in
+a dual-scale approach with trend model. The approach was validated against a model
+micro-structure and demonstrated for the Bentheimer sandstone as common benchmark
+rock. For the latter, NMR T2 responses of a (1.76 mm)3 domain were derived with grid
+resolution of 22 nm based on micro-CT images at 2.2 μm resolution and a clay micro-
+structure resolved at 22 nm resolution. Comparison of T2 distributions between simula-
+tion and experiment show excellent agreement.
+   A significant result is the influence of tri-linear interpolation on the position of
+shorter relaxation time modes. This is associated with reduced errors in the transi-
+tion regions between macro- and micro-scale regions, where near-field effects become
+important. We note that the change in peak position cannot be explained by a change in
+surface relaxivity of the kaolinite model in practice, since the underlying cause is the
+transition region. This has significant implications for modelling more complex rock
+samples where clay fractions are larger and paramagnetic impurities more frequent.
+   Finally, we comment on the observed fine-scale internal field gradient distributions.
+Spatially we observe that larger gradients are associated with surfaces in an irregular
+way—with higher gradients at the solid–fluid boundary, which depending on the pore
+shape may extend more or less into the fluid. The diffusion-averaged effective gradients
+are well described by log-normal distributions.
+
+Acknowledgements CHA acknowledges the Australian Research Council for funding through ARC discov-
+ery project DP190103744. This work was supported by computational resources provided by the Australian
+Government under the National Computational Merit Allocation Scheme (Grant m65). The tomogram data
+that support the findings of this study are available online at the Digital Rocks Portal (https://​www.​digit​alroc​
+kspor​tal.​org/​proje​cts/​421).
+
+Funding Open Access funding enabled and organized by CAUL and its Member Institutions. The authors
+have not disclosed any funding.
+
+Declarations
+Conflict of interest The authors have not disclosed any competing interests.
+
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License,
+which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Com-
+mons licence, and indicate if changes were made. The images or other third party material in this article
+are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the
+material. If material is not included in the article’s Creative Commons licence and your intended use is not
+permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly
+from the copyright holder. To view a copy of this licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/.
+
+
+
+
+                                                                                                       13
+472                                                                                             Y. Cui et al.
+
+
+References
+Arns, C.H.: A comparison of pore size distributions derived by NMR and X-ray-CT techniques. Physica
+     A 339(1–2), 159–165 (2004). https://​doi.​org/​10.​1016/j.​physa.​2004.​03.​033
+Arns, C.H., Sakellariou, A., Senden, T.J., Sheppard, A.P., Sok, R.M., Pinczewski, W.V., Knackstedt,
+     M.A.: Petrophysical properties derived from X-ray CT images. APPEA J. 43, 577–586 (2003).
+     https://​doi.​org/​10.​1071/​AJ020​31
+Arns, C.H., Knackstedt, M.A., Pinczewski, W.V., Mecke, K.R.: Characterisation of irregular spatial
+     structures by parallel sets and integral geometric measures. Colloids Surf. A 241(1–3), 351–372
+     (2004). https://​doi.​org/​10.​1016/j.​colsu​r fa.​2004.​04.​034
+Arns, C.H., Bauget, F., Limaye, A., Sakellariou, A., Senden, T.J., Sheppard, A.P., Sok, R.M., Pincze-
+     wski, W.V., Bakke, S., Berge, L.I., Øren, P.E., Knackstedt, M.A.: Pore scale characterization of car-
+     bonates using micro X-ray CT. SPE J. 10(04), 475–484 (2005). https://​doi.​org/​10.​2118/​90368-​PA
+Arns, C.H., Sheppard, A.P., Sok, R.M., Knackstedt, M.A.: NMR petrophysical predictions on digitized
+     core images. Petrophysics 48(3), 202–221 (2007)
+Arns, C.H., Melean, Y., Burcaw, L., Callaghan, P.T., Washburn, K.E.: Comparison of experimental
+     NMR measurements with simulated responses on digitized images of mono-mineralic rocks using
+     X-ray-CT. In: Improved Core Analysis for Unconventional Fields. The 23rd International Sympo-
+     sium of the Society of Core Analysts, pp. 1–6, Noordwijk. Society of Core Analysts (2009)
+Arns, C.H., AlGhamdi, T., Arns, J.-Y.: Numerical analysis of nuclear magnetic resonance relaxation-
+     diffusion responses of sedimentary rock. New J. Phys. 13, 015004 (2011). https://​doi.​org/​10.​1088/​
+     1367-​2630/​13/1/​015004
+Audoly, B., Sen, P.N., Ryu, S., Song, Y.-Q.: Correlation functions for inhomogeneous magnetic field in
+     random media with application to a dense random pack of spheres. J. Magn. Reson. 164, 154–159
+     (2003). https://​doi.​org/​10.​1016/​s1090-​7807(03)​00179-4
+Bai, B., Zhu, R., Wu, S., Yang, W., Gelb, J., Gu, A., Zhang, X., Su, L.: Multi-scale method of
+     nano(micro)-CT study on microscopic pore structure of tight sandstone of Yanchang forma-
+     tion, Ordos basin. Pet. Explor. Dev. 40, 354–358 (2013). https://​doi.​org/​10.​1016/​S1876-​3804(13)​
+     60042-7
+Bergman, D.J., Dunn, K.-J., Schwartz, L.M., Mitra, P.P.: Self-diffusion in a periodic porous medium: a
+     comparison of different approaches. Phys. Rev. E 51, 3393–3400 (1995). https://​doi.​org/​10.​1103/​
+     physr​eve.​51.​3393
+Biswal, B., Øren, P.E., Held, R.J., Bakke, S., Hilfer, R.: Stochastic multiscale model for carbonate rocks.
+     Phys. Rev. E 75, 061303 (2007). https://​doi.​org/​10.​1103/​PhysR​evE.​75.​061303
+Brownstein, K.R., Tarr, C.E.: Importance of classical diffusion in NMR studies of water in biological
+     cells. Phys. Rev. A 19, 2446–2453 (1979)
+Bruggeman, D.A.G.: Berechnung verschiedener physikalischer Konstanten von heterogenen Substanzen,
+     I. Dielektrizitätskonstanten und Leitfähigkeiten der Mischkörper aus isotropen Substanzen. Ann.
+     Phys. 24, 636–679 (1935). https://​doi.​org/​10.​1002/​andp.​19354​160705
+Cahn, J.W.: Phase separation by spinodal decomposition in isotropic systems. J. Chem. Phys. 42, 93–99
+     (1965). https://​doi.​org/​10.​1063/1.​16957​31
+Carr, H.Y., Purcell, E.M.: Effects of diffusion on free precession in nuclear magnetic resonance experi-
+     ments. Phys. Rev. 94, 630–638 (1954). https://​doi.​org/​10.​1103/​PhysR​ev.​94.​630
+Chang, H., Yeung, D.Y., Xiong, Y.: Super-resolution through neighbor embedding. In: Proceedings of
+     the 2004 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 2004
+     (2004). https://​doi.​org/​10.​1109/​CVPR.​2004.​13150​43
+Chen, Q., Marble, A.E., Colpitts, B.G., Balcom, B.J.: The internal magnetic field distribution and single
+     exponential magnetic resonance induction decay in rocks. J. Magn. Reson. 175, 300–308 (2005).
+     https://​doi.​org/​10.​1016/j.​jmr.​2005.​05.​001
+Connolly, P.R.J., Vogt, S.J., Iglauer, S., May, E.F., Johns, M.L.: Capillary trapping quantification in
+     sandstones using NMR relaxometry. Water Resour. Res. 53, 7917–7932 (2017). https://​doi.​org/​10.​
+     1002/​2017W​R0208​29
+Connolly, P.R.J., Yan, W., Zhang, D., Mahmoud, M., Verrall, M., Lebedev, M., Iglauer, S., Metaxas,
+     P.J., May, E.F., Johns, M.L.: Simulation and experimental measurements of internal magnetic field
+     gradients and NMR transverse relaxation times (T2 ) in sandstone rocks. J. Petrol. Sci. Eng. 175,
+     985–997 (2019). https://​doi.​org/​10.​1016/j.​petrol.​2019.​01.​036
+Cui, Y., Shikhov, I., Li, R., Liu, S., Arns, C.H.: A numerical study of field strength and clay morphol-
+     ogy impact on NMR transverse relaxation in sandstones. J. Petrol. Sci. Eng. 202, 108521 (2021).
+     https://​doi.​org/​10.​1016/j.​petrol.​2021.​108521
+
+
+
+13
+NMR Relaxation Modelling in Porous Media with…                                                          473
+
+
+Drain, L.E.: The broadening of magnetic resonance lines due to field inhomogeneities in powdered sam-
+     ples. Proc. Phys. Soc. 80, 1380–1382 (1962). https://​doi.​org/​10.​1088/​0370-​1328/​80/6/​119
+East, W.H.: Fundamental study of clay: X, water films in monodisperse kaolinite fractions. J. Am.
+     Ceram. Soc. 33(7), 211–218 (1950)
+Fordham, E.J., Mitchell, J.: Localization in a single pore. Microporous Mesoporous Mater. 269, 35–38
+     (2018). https://​doi.​org/​10.​1016/j.​micro​meso.​2017.​05.​029
+Glasner, D., Bagon, S., Irani, M.: Super-resolution from a single image. In: Proceedings of the IEEE
+     International Conference on Computer Vision (ICCV 2009), pp. 349–356 (2009). https://​doi.​org/​
+     10.​1109/​ICCV.​2009.​54592​71
+Hansen, P.C.: Numerical tools for analysis and solution of Fredholm integral equations of the first kind.
+     Inverse Probl. 8(6), 849–872 (1992). https://​doi.​org/​10.​1088/​0266-​5611/8/​6/​005
+Hürlimann, M.D.: Effective gradients in porous media due to susceptibility differences. J. Magn. Reson.
+     131, 232–240 (1998). https://​doi.​org/​10.​1006/​jmre.​1998.​1364
+Hürlimann, M.D., Helmer, K.G., de Swiet, T.M., Sen, P.N., Sotak, C.H.: Spin echos in a constant gradi-
+     ent and in the presence of simple restriction. J. Magn. Reson. A 113, 260–264 (1995). https://​doi.​
+     org/​10.​1006/​jmra.​1995.​1091
+Jiang, H., Arns, C.H.: Pore-scale multiresolution rock-typing of layered sandstones via Minkowski maps.
+     Water Resour. Res. (2021). https://​doi.​org/​10.​1029/​2020W​R0291​44
+Kirkpatrick, S.: Classical transport in disordered media: scaling and effective-medium theories. Phys.
+     Rev. Lett. 27(25), 1722–1725 (1971). https://​doi.​org/​10.​1103/​PhysR​evLett.​27.​1722
+Kleinberg, R.L., Horsfield, M.A.: Transverse relaxation processes in porous sedimentary rock. J. Magn.
+     Reson. 88, 9–19 (1990). https://​doi.​org/​10.​1016/​0022-​2364(90)​90104-H
+Kleinberg, R.L., Kenyon, W.E., Mitra, P.P.: Mechanism of NMR relaxation of fluids in rock. J. Magn.
+     Res. A 108(2), 206–214 (1994). https://​doi.​org/​10.​1006/​jmra.​1994.​1112
+Li, R., Shikhov, I., Arns, C.H.: Solving multiphysics, multiparameter, multimodal inverse problems: an
+     application to NMR relaxation in porous media. Phys. Rev. Appl. 15(5), 054003 (2021). https://​doi.​
+     org/​10.​1103/​PhysR​evApp​lied.​15.​054003
+Majumdar, S., Gore, J.C.: Studies of diffusion in random fields produced by variations in susceptibility.
+     J. Magn. Reson. 78, 41–55 (1988). https://​doi.​org/​10.​1016/​0022-​2364(88)​90155-2
+Meiboom, S., Gill, D.: Modified spin-echo method for measuring nuclear relaxation times. Rev. Sci.
+     Instrum. 29(8), 688 (1958). https://​doi.​org/​10.​1063/1.​17162​96
+Mendelson, K.S.: Percolation model of nuclear magnetic relaxation in porous media. Phys. Rev. B 41,
+     562–567 (1990). https://​doi.​org/​10.​1103/​physr​evb.​41.​562
+Mitchell, J., Chandrasekera, T.C.: Understanding generalized inversions of nuclear magnetic resonance
+     transverse relaxation time in porous media. J. Chem. Phys. 141, 224201 (2014). https://​doi.​org/​10.​
+     1063/1.​49033​11
+Mitchell, J., Chandrasekera, T.C., Gladden, L.F.: Obtaining true transverse relaxation time distributions
+     in high-field NMR measurements of saturated porous media: Removing the influence of internal
+     gradients. J. Chem. Phys. 132, 244705 (2010). https://​doi.​org/​10.​1063/1.​34468​05
+Mitchell, J., Souza, A., Fordham, E., Boyd, A.: A finite element approach to forward modeling of nuclear
+     magnetic resonance measurements in coupled pore systems. J. Chem. Phys. 150, 154708 (2019).
+     https://​doi.​org/​10.​1063/1.​50921​59
+Øren, P.E., Bakke, S.: Process based reconstruction of sandstones and prediction of transport properties.
+     Trans. Porous Med. 46(2), 311–343 (2002). https://​doi.​org/​10.​1023/A:​10150​31122​338
+Øren, P.E., Pinczewski, W.V.: Effect of wettability and spreading on recovery of waterflood residual oil
+     by immiscible gasflooding. SPE Form. Eval. 8, 149–156 (1994). https://​doi.​org/​10.​2118/​24881-​PA
+Peksa, A.E., Wolf, K.-H.A.A., Zitha, P.L.J.: Bentheimer sandstone revisited for experimental purposes.
+     Mar. Petrol. Geol. 67, 701–719 (2015). https://​doi.​org/​10.​1016/J.​MARPE​TGEO.​2015.​06.​001
+Roberts, A.P.: Statistical reconstruction of three-dimensional porous media from two-dimensional
+     images. Phys. Rev. E 56, 3203–3212 (1997). https://​doi.​org/​10.​1103/​PhysR​evE.​56.​3203
+Sen, P.N., Axelrod, S.: Inhomogeneity in local magnetic field due to susceptibility contrast. J. Appl.
+     Phys. 86, 4548–4554 (1999). https://​doi.​org/​10.​1063/1.​371401
+Sheppard, A., Latham, S., Middleton, J., Kingston, A., Myers, G., Varslot, T., Fogden, A., Sawkins, T.,
+     Cruikshank, R., Saadatfar, M., Francois, N., Arns, C., Senden, T.: Techniques in helical scanning,
+     dynamic imaging and image segmentation for improved quantitative analysis with X-ray micro-CT.
+     Nucl. Instrum. Methods Phys. Res. Sect. B 324, 49–56 (2014). https://​doi.​org/​10.​1016/j.​nimb.​2013.​
+     08.​072
+Shikhov, I., Arns, C.H.: Tortuosity estimate through paramagnetic gas diffusion in rock saturated with
+     two fluids using T2 (z, t) low-field NMR. Diffus. Fundam. 29, 1–7 (2017)
+
+
+
+
+                                                                                                13
+474                                                                                                  Y. Cui et al.
+
+
+Shikhov, I., d’Eurydice, M.N., Arns, J.-Y., Arns, C.H.: An experimental and numerical study of relative
+      permeability estimates using spatially resolved T1-z NMR. Trans. Porous. Med. 118(2), 225–250
+      (2017). https://​doi.​org/​10.​1007/​S11242-​017-​0855-7
+Shikhov, I., Li, R., Arns, C.H.: Relaxation and relaxation exchange NMR to characterise asphaltene
+      adsorption and wettability dynamics in siliceous systems. Fuel 220, 692–705 (2018). https://​doi.​
+      org/​10.​1016/j.​fuel.​2018.​02.​059
+Shikhov, I., Thomas, D., Arns, C.H.: On the optimum ageing time-magnetic resonance study of asphal-
+      tene adsorption dynamics in sandstone rock. Energy Fuels 33(9), 8184–8201 (2019). https://​doi.​
+      org/​10.​1021/​acs.​energ​yfuels.​9b016​09
+Song, Y.-Q.: Using internal magnetic fields to obtain pore size distributions of porous media. Concepts
+      Magn. Reson. 18A, 97–110 (2003). https://​doi.​org/​10.​1002/​cmr.a.​10072
+Stig, B., Øren, P.E.: 3-D pore-scale modelling of sandstones and flow simulations in the pore networks.
+      SPE J. 2, 136–149 (1997). https://​doi.​org/​10.​2118/​35479-​PA
+Straley, C., Schwartz, L.M.: Transverse relaxation in random bead packs: Comparison of experimental data
+      and numerical simulations. Magn. Reson. Imaging 14, 999–1002 (1996). https://​doi.​org/​10.​1016/​
+      s0730-​725x(96)​00206-8
+Toumelin, E., Torres-Verdín, C., Chen, S.: Modeling of multiple echo-time NMR measurements for com-
+      plex pore geometries and multiphase saturations. SPE Reser. Eval. Eng. 6, 234–243 (2003). https://​doi.​
+      org/​10.​2118/​85635-​PA
+Valckenborg, R.M.E., Huinink, H.P., van der Sande, J.J., Kopinga, K.: Random-walk simulations of NMR
+      dephasing effects due to uniform magnetic-field gradients in a pore. Phys. Rev. E 65, 21306 (2002).
+      https://​doi.​org/​10.​1103/​PhysR​evE.​65.​021306
+Valckenborg, R.M.E., Huinink, H.P., Kopinga, K.: Nuclear magnetic resonance dephasing effects in a spher-
+      ical pore with a magnetic dipolar field. J. Chem. Phys. 118(7), 3243–3251 (2003). https://​doi.​org/​10.​
+      1063/1.​15369​70
+Wang, J., Xiao, L., Liao, G., Zhang, Y., Guo, L., Arns, C.H., Sun, Z.: Theoretical investigation of heteroge-
+      neous wettability in porous media using NMR. Sci. Rep. 8(1), 13450 (2018a). https://​doi.​org/​10.​1038/​
+      s41598-​018-​31803-w
+Wang, Y., Arns, J.-Y., Rahman, S.S., Arns, C.H.: Three-dimensional porous structure reconstruction based
+      on structural local similarity via sparse representation on micro-computed-tomography images. Phys.
+      Rev. E 98, 043310 (2018b). https://​doi.​org/​10.​1103/​PhysR​evE.​98.​043310
+Welch, N.J., Gray, F., Butcher, A.R., Boek, E.S., Crawshaw, J.P.: High-resolution 3D FIB-SEM image
+      analysis and validation of numerical simulations of nanometre-scale porous ceramic with com-
+      parisons to experimental results. Trans. Porous Med. 118, 373–392 (2017). https://​doi.​org/​10.​1007/​
+      s11242-​017-​0860-x
+Wilkinson, D.J., Johnson, D.L., Schwartz, L.M.: Nuclear magnetic relaxation in porous media: The role of
+      the mean lifetime 𝜏(𝜌, d). Phys. Rev. B 44, 4960–4973 (1991). https://​doi.​org/​10.​1103/​PhysR​evB.​44.​
+      4960
+
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and
+institutional affiliations.
+
+
+
+
+13
+

@@ -1,0 +1,245 @@
+                                                 of Edinburgh, Session 1869-70.                                                          63
+                  irrespectively of the direction of the stream lines in its neighbour-
+                  hood ; a result easily deduced from the elementary formula for fluid
+                  pressure in hydrokinetics.
+                      I have long ago shown that an elongated diamagnetic body in a
+                  uniform magnetic field tends, as tends an elongated ferromagnetic
+                  body, to place its length along the lines of force. Hence a long
+                  solid, pivoted on a fixed axis through its middle in a uniform stream
+                  of liquid, tends to place its length perpendicularly across the direc-
+                  tion of motion ; a known result (Thomson & Tait's " Natural Philo-
+                  sophy/' § 335). Again, two globes held in a uniform stream with
+                  the lines joining their centres, require force to prevent them from
+                  mutually approaching one another. In the magnetic analogue, two
+                  spheres of diamagnetic or ferromagnetic inductive capacity repel
+                  one another when held in a line at right angles to the lines of
+                  force. A hydrokinetic result similar to this for the case of two
+                  equal globes, is to be found in Thomson and Tait's " Natural Philo-
+                  sophy/' § 332.
+                      IV. (Proposition.) If the second body considered in § III., that is
+                  to say, a body either having no apertures, or, if perforated, having
+                  no circulation through the apertures, be acted on by one system of
+                  forces applied so as always to balance the resultant of the fluid
+                  pressure, calculated for it according to I I . and III. for whatever
+                  position it may come to at any time, and if it be influenced, besides,
+                  by any other system of applied forces, superimposed on the former,
+                   it will move just as it would move, under the influence of the latter
+                  system of forces alone, were the fluid at rest, except in so far as
+                  compelled to move by the body's own motion through it. A parti-
+                  cular case of this proposition was first published many years ago, by
+                  Professor James Thomson, on account of which he gave the name
+                  of " vortex of free mobility " to the cyclic irrotational motion sym-
+                  metrical round a straight axis,
+
+                  4. On the Equilibrium of Vapour at a Curved Surface of
+                            Liquid. By Sir William Thomson.
+                    In a closed vessel containing only a liquid and its vapour, ail at
+                  one temperature, the liquid rests, with its free surface raised or
+                  depressed in capillary tubes and in the neighbourhood of the solid
+                  boundary, in permanent equilibrium according to the same law of
+
+Downloaded from https:/www.cambridge.org/core. Monash University, on 02 Apr 2017 at 14:06:16, subject to the Cambridge Core terms of use, available at
+https:/www.cambridge.org/core/terms. https://doi.org/10.1017/S0370164600041729
+                   64                          Proceedings of the Boyal Society
+                  relation between curvature and pressure as in vessels open to the
+                  air. The permanence of this equilibrium implies physical equi-
+                  librium between the liquid and the vapour in contact with it at all
+                  parts of its surface. But the pressure of the vapour at different
+                  levels differs according to hydrostatic law. Hence the pressure of
+                  saturated vapour in contact with a liquid differs according to the
+                  curvature of the bounding surface, being less when the liquid is
+                  concave, and greater when it is convex. And detached portions of
+                  the liquid in separate vessels all enclosed in one containing vessel,
+                  cannot remain permanently with their free surfaces in any other
+                  relative positions than those they would occupy if there were hydro-
+                  static communication of pressure between the portions of liquid
+                  in the several vessels. There must be evaporation from those
+                  surfaces which are too high, and condensation into the liquid at
+                  those surfaces which are too low—a process which goes on until
+                  hydrostatic equilibrium, as if with free communication of pressure
+                  from vessel to vessel, is attained. Thus, for example, if there are
+                  two large open vessels of water, one considerably above the other
+                  in level, and if the temperature of the surrounding matter is kept
+                   rigorously constant, the liquid in the higher vessel will gradually
+                   evaporate until it is all gone and condensed into the lower vessel.
+                   Or if, as illustrated by the annexed diagram, a capillary tube, with
+                   a small quantity of liquid occupying it from its bottom up to a
+                   certain level, be placed in the neighbourhood of a quantity of the
+                   same liquid with a wide free surface, vapour will gradually become
+                   condensed into the liquid in the capillary tube until the level of
+                   the liquid in it is the same as it would be were the lower end of
+                   the tube in hydrostatic communication with the large mass of
+                   liquid. Whether air be present above the free surface of the
+                   liquid in the several vessels or not, the condition of ultimate
+                   equilibrium is the same; but the processes of evaporation and
+                   condensation through which equilibrium is approached will be
+                   very much retarded by the presence of air. The experiments of
+                   Graham, and the kinetic theory of Clausius and Maxwell, scarcely
+                   yet afford us sufficient data for estimating the rapidity with which
+                   the vapour proceeding from one of the liquids will diffuse itself
+                   through the air and reach the surface of another liquid at a lower
+                   level. With air at anything approaching to ordinary atmospheric
+
+
+Downloaded from https:/www.cambridge.org/core. Monash University, on 02 Apr 2017 at 14:06:16, subject to the Cambridge Core terms of use, available at
+https:/www.cambridge.org/core/terms. https://doi.org/10.1017/S0370164600041729
+                                                of Edinburgh, Session 1869-70.                                                          65
+                  density to resist the process, it is probable it would be too slow to
+                  show any results unless in very long continued experiments. But
+                  if the air be removed as perfectly as can be done by well-known
+                  practical methods, it is probable that the process will be very
+                  rapid: it would, indeed, be instantaneous, were it not for the cold
+                  of evaporation in one vessel and the heat of condensation in the
+                  other. Practically, then, the rapidity of the process towards
+                  hydrostatic equilibrium through vapour between detached liquids,
+                  depends on the rate of the conduction of heat between the several
+                  surfaces through intervening solids and liquids. Without having
+
+
+
+
+                   made either the experiment, or any calculations on the rate of con-
+                   duction of heat in the circumstances, I feel convinced that in a
+                   very short time water would visibly rise in the capillary tube indi-
+                   cated in the diagram, and that, provided care is taken to maintain
+                   equality of temperature all over the surface of the hermetically
+                   sealed vessel, the liquid in the capillary tube would soon take very
+                   nearly the same level as it would have were its lower end open;
+                   sinking to this level if the capillary tube were in the beginning filled
+                   too full, or rising to it if (as indicated in the diagram) there is not
+                   enough of liquid in it at first to fulfil the condition of equilibrium.
+
+Downloaded from https:/www.cambridge.org/core. Monash University, on 02 Apr 2017 at 14:06:16, subject to the Cambridge Core terms of use, available at
+https:/www.cambridge.org/core/terms. https://doi.org/10.1017/S0370164600041729
+                    66                         Proceedings of the Royal Society
+                      The following formula show precisely the relations between
+                   curvatures, differences of level, and differences of pressure, with
+                   which we are concerned.
+                      Let p be the density of the liquid, and a that of the vapour; and
+                   let T be the cohesive tension of the free surface, per unit of breadth,
+                   in terms of weight of unit mass, as unit of force. Let h denote
+                   the height of any point, P, of the free surface above a certain plane
+                   of reference, which I shall call for brevity the plane level of the
+                   free surface. This will be sensibly the actual level of the free
+                   surface in regions, if there are any, with no part of the edge (or
+                   bounding line of the free surface where liquid ends and solid
+                   begins) at a less distance than several centimetres. Lastly, let
+                   r and r' be the principal radii of curvature of the surface at P.
+                   By Laplace's well-known law, we have, as the equation of equi-
+                   librium,
+                                                       ( ; i )                     (1).
+
+                   Now, in the space occupied by vapour, the pressure is less at the
+                   higher than at the lower of two points whose difference of levels is h,
+                   by a difference equal to ah. And there is permanent equilibrium
+                   between vapour and liquid at all points of the free surface. Hence
+                   the pressure of vapour in equilibrium is less at a concave than at a
+                   plane surface of liquid, and less at a plane surface than at a con-
+                                                                                                m
+                   vex surface, by differences amounting to                                              per unit difference
+                                                                                              p-cr
+                   of curvature. That is to say, if -& denote the pressure of vapour in
+                   equilibrium at a plane surface of liquid, and p the pressure of
+                   vapour of the same liquid at the same temperature presenting a
+                   curved surface to the vapour, we have
+
+                                                                            p-<r
+
+                   - and -, being the curvatures in the principal sections of the sur-
+                   face bounding liquid and vapour, reckoned positive when concave
+                   towards the vapour.
+                      In strictness, the value of o- to be used in these equations, (1)
+                   and (2), ought to be the mean density of a vertical column of
+                   vapour, extending through the height h from the plane of reference.
+
+
+Downloaded from https:/www.cambridge.org/core. Monash University, on 02 Apr 2017 at 14:06:16, subject to the Cambridge Core terms of use, available at
+https:/www.cambridge.org/core/terms. https://doi.org/10.1017/S0370164600041729
+                                                of Edinburgh, Session 1869-70.                                                           67
+                   But in all cases to which we can practically apply the formulae,
+                   according to present knowledge of the properties of matter, the
+                   difference of densities in this column is very small, and may be
+                   neglected. Hence, if H denote the height of an imaginary homo-
+                   geneous fluid above the plane of reference, which, if of the same
+                   density as the vapour at that plane, would produce by its weight
+                   the actual pressure «r, we have
+
+                                                                        "IT
+                   Hence by (1) and (2)
+
+
+                      For vapour of water at ordinary atmospheric temperatures, H is
+                   about 1,300,000 centimetres. Hence, in a capillary tube which
+                   would keep water up to a height of 13 metres above the plane
+                   level, the curved surface of the wTater is in equilibrium with the
+                   vapour in contact with it, when the pressure of the vapour is less
+                   by about xoVo"^ °f ^ s o w n amount than the pressure of vapour in
+                   equilibrium at a plane surface of water at the same temperature.
+                      For water the value of T at ordinary temperatures is about -08 of
+                   a gramme weight per centimetre; and p, being the mean of a
+                   cubic centimetre, in grammes, is unity. The value of a for vapour
+                   of water, at any atmospheric temperature, is so small that we may
+                   neglect it altogether in equation (1). In a capillary tube thoroughly
+                   wet with water, the free surface is sensibly hemispherical, and
+                   therefore r and rr are each equal to the radius of the inner surface
+                   of the liquid film lining the tube above the free liquid surface; we
+                  •have, therefore,
+                                                                    h = -08 x - .
+                                                                                        r
+                   Hence, if h = 1300 centimetres, r = -00012 centimetres. There can
+                   be no doubt but that Laplace's theory is applicable without serious
+                   modification even to a case in which the curvature is so great (or
+                   radius of curvature so small) as this. But in the present state of
+                   our knowledge we are not entitled to push it much further. The
+                   molecular forces assumed in Laplace's theory to be " insensible at
+                   sensible distances," are certainly but little, if at all, sensible at
+                   distances equal to or exceeding the wave lengths of ordinary light.
+                   This is directly proved by the most cursory observation of soap
+
+Downloaded from https:/www.cambridge.org/core. Monash University, on 02 Apr 2017 at 14:06:16, subject to the Cambridge Core terms of use, available at
+https:/www.cambridge.org/core/terms. https://doi.org/10.1017/S0370164600041729
+                   68                         Proceedings of the Royal Society
+                  bubbles. But the appearances presented by the black spot which
+                   abruptly ends the series of colours at places where the bubble
+                  is thinnest before it breaks, make it quite certain that the action
+                  of those forces becomes sensible at distances not much less than a
+                  half wave length, or ¥-Q o~o o" o f a centimetre. There is, indeed,
+                  much and multifarious evidence that in ordinary solids and liquids,
+                  not merely the distances of sensible inter-molecular action, but the
+                  linear dimensions of the molecules themselves, and the average
+                  distance from centre to nearest centre,* are but very moderately
+                  small in comparison with the wave lengths of light. Some
+                  approach to a definite estimate of the dimensions of molecules
+                  is deducible from Clausius' theory of the average spaces travelled
+                  without collision by molecules of gases, and Maxwell's theory
+                  and experiments regarding the viscosity of gases. Having
+                  perfect confidence in the substantial reality of the views which
+                  these grand investigations have opened to us, I find it scarcely
+                  possible to admit that there can be as many as 1027 molecules in
+                  a cubic centimetre of liquid carbonic acid or of water. This makes
+                  the average distance from centre to nearest centre in the liquids
+                  exceed a thousand-millionth of a centimetre !
+                     We cannot, then, admit that the formulce which I have given
+                  above are applicable to express the law of equilibrium between the
+                  moisture retained by vegetable substances, such as cotton cloth or
+                  oatmeal, or wheat-flour biscuits, at temperatures far above the
+                  dew point of the surrounding atmosphere. But although the
+                  energy of the attraction of some of these substances for vapour
+                  of water (when, for example, oatmeal, previously dried at a high
+                  temperature, has been used, as in the original experiment of Sir J.
+                  Leslie, to produce the freezing of water under the receiver of an air-
+                  pump), is so great that it might almost claim recognition from
+                  chemists as due to a " chemical affinity," and resulting in a " chemi-
+                  cal combination," I believe that the absorption of vapour into
+                  fibrous and cellular organic structures is a property of matter
+                  continuous with the absorption of vapour into a capillary tube
+                  demonstrated above.
+
+                     * B 7 "average distance from centre to nearest centre," I mean the side of
+                  the cube in a cubic arrangement of a number of points equal to the number
+                  of real molecules in any space.
+
+
+Downloaded from https:/www.cambridge.org/core. Monash University, on 02 Apr 2017 at 14:06:16, subject to the Cambridge Core terms of use, available at
+https:/www.cambridge.org/core/terms. https://doi.org/10.1017/S0370164600041729
+

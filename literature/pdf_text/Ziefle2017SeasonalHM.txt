@@ -1,0 +1,910 @@
+Swiss J Geosci (2017) 110:195–212
+DOI 10.1007/s00015-016-0252-1
+
+
+
+
+Coupled hydraulic-mechanical simulation of seasonally induced
+processes in the Mont Terri rock laboratory (Switzerland)
+Gesa Ziefle1      •   Jean-Michel Matray2 • Jobst Maßmann1 • Andreas Möri3
+
+
+
+
+Received: 3 March 2016 / Accepted: 9 December 2016 / Published online: 17 February 2017
+Ó The Author(s) 2017. This article is published with open access at Springerlink.com
+
+
+Abstract This paper focuses on hydraulic-mechanical                     desaturated zone incorporating a seasonally influenced
+effects in the Mont Terri rock laboratory (Switzerland) and             part. The comparison with measured water contents yields
+investigates their impact on pore pressure, the convergence             good agreement. Simulation results and measurements
+of a niche and the evolution of pre-existing cracks in the              consistently predict a convergence of the niche. The evo-
+wallrock of the niche. A comparison of measurements with                lution of the crack aperture is influenced by long-term as
+numerical simulation results is conducted. The presented                well as seasonallyinfluenced effects. Due to the conver-
+in situ measurements include long-term data on tempera-                 gence of the niche, the long-term trend is characterized by
+ture, relative humidity, and niche convergence, as well as              closure of the crack. Furthermore, the seasonally influ-
+crackmeter and jointmeter measurements determining the                  enced desaturation in winter results in opening of the crack,
+aperture of a bedding-parallel crack. Furthermore, time-                while the resaturation in the warm and wet summer months
+domain-reflectometry measurements were carried out in a                 leads to closure of the crack. Finally, the comparison of
+borehole located in the niche wall close to the crack. They             simulation results with measurements indicates qualitative
+provide information on the water content of the claystone.              agreement. As a matter of fact, the numerical model seems
+The numerical simulation is carried out with OpenGeoSys.                to represent significant effects concerning the evolution of
+It contains a 2-dimensional coupled hydraulic-mechanical                the crack aperture of a single crack.
+model considering orthotropy, swelling and shrinkage
+effects, linear elastic material behaviour and an excavation            Keywords Cyclic deformation (CD) experiment  Long-
+damaged zone characterized by a zone of lower rock                      term monitoring of pore parameters (LP-A) experiment 
+strength. An additional focus is laid on the evolution of               OpenGeoSys  Desaturation process  Atmospheric
+cracks in the wallrock of the niche. The presented model                influences  Crack evolution  Nuclear waste disposal
+approach allows a prediction of the temporal evolution of a
+
+                                                                        1 Introduction
+Editorial handling: P. Bossart and A. G. Milnes.
+
+This is paper #9 of the Mont Terri Special Issue of the Swiss Journal   This article is based on the CD (cyclic deformation)
+of Geosciences (see Bossart et al. (2017), Table 3 and Fig. 7).         experiment which is carried out in the Mont Terri rock
+                                                                        laboratory, located in the Opalinus Clay formation in
+& Gesa Ziefle                                                           Switzerland. Figure 1 presents the cross section through
+  gesa.ziefle@bgr.de
+                                                                        the Mont Terri anticline and the location of the rock lab-
+1
+    Federal Institute for Geosciences and Natural Resources             oratory. The CD experiment is located in the EZB-niche of
+    (BGR), Stilleweg 2, 30655 Hannover, Germany                         the underground laboratory (see Bossart et al. 2017). It
+2
+    Institut de Radioprotection et de Surete Nucleaire, BP 17,          focuses on the seasonally induced hydraulic-mechanical
+    92262 Fontenay-aux-Roses Cedex, France                              coupling at the wallrock of the uncovered niche in the
+3
+    Federal Office of Topography Swisstopo, Seftigenstrasse 264,        claystone. In this context, the investigations focus on the
+    3084 Wabern, Switzerland                                            desaturation and resaturation process, swelling and
+196                                                                                                                            G. Ziefle et al.
+
+
+
+
+Fig. 1 Geological cross-section of the Mont Terri anticline and location of the Mont Terri rock laboratory (Nussbaum et al. 2017, this volume)
+
+shrinkage, the excavation damaged zone (EDZ), and                        RockFlow. Sensitivity studies point to the permeability
+orthotropic material conditions. The aim of the presented                being the significant input parameter; comparisons with
+work is to obtain an increased process understanding of the              various measurements are carried out (see also Maßmann
+observed effects. Since 2006, the temporal evolution of the              et al. (2008)) and the differentiation of a fully saturated, a
+water content, the convergence of the niche as well as                   desaturated and a seasonally influenced desaturated zone is
+apertures of a crack were continuously measured and the                  introduced. The measured saturation profiles in Tournemire
+derived values compared with numerical simulation results.               are wide spread, indicating an inhomogeneous distribution
+The measurements conducted in the context of the CD                      of permeabilities which might be induced by desaturation
+experiment are continued in the LP-A (long-term moni-                    fissures.
+toring of pore parameters) experiment. The numerical                         Yildizdag et al. (2014) investigated related effects in the
+model approach considers strictly defined effects and                    context of the mine-by experiment carried out in Meuse–
+enables the determination of significant processes.                      Haute–Marne (France). He proposes different finite ele-
+   The following article starts with a description of the                ment models and uses the simulation tool RockFlow
+experimental set-up in the niche. Additionally, the mea-                 involving coupled hydraulic-mechanical effects, shrinkage,
+surements are briefly summarized. After that, a numerical                partial saturation, damage and sensitivity studies concern-
+model approach is presented. Here, the physical effects are              ing permeability, and Young’s modulus. Yildizdag et al.
+transferred to a mathematical description of the model. The              (2014) states that the mechanical response in the near-field
+investigated effects concern three different points: (1) the             could not be reproduced while the investigation of the pore
+hydraulic process, (2) the mechanical process and (3) the                pressure evolution leads to acceptable results.
+phenomenological investigation of one single crack. The                      Finally, the literature review indicates that the
+derived results are presented and compared with the mea-                 mechanical effects in indurated clay are not yet fully
+surements in the subsequent sections. Finally, the results               understood and that there exist various uncertainties con-
+are discussed, followed by conclusions and an outlook.                   cerning the measured and simulated saturation profiles—
+   Similar aspects have been investigated in the Underground             especially in the near-field of the niche. This work deals
+Research Laboratory in Tournemire (France) [discussed in                 with the hydraulic-mechanically coupled simulation of the
+Maßmann (2009)] and Meuse–Haute–Marne (France) (Yil-                     considered effects. It focuses on a relatively simple
+dizdag et al. 2014) which are also located in claystone.                 mechanical approach in combination with a complex
+   Maßmann (2009) introduced hydraulic-mechanically                      hydraulic-mechanical coupling, with the aim of identifying
+coupled numerical simulations with the finite element code               significant effects.
+Mont Terri, paper #9: Hydraulic-mechanical simulation of seasonally induced processes                                                      197
+
+
+2 Experimental set-up in the niche                                        temperature are presented in Fig. 3, the convergence
+  and measurements                                                        measurements are given in Fig. 15. More information can
+                                                                          be found in e.g. Möri et al. (2010), and Matray and Möri
+In-situ measurements are carried out in the EZB-niche                     (2012).
+(Fig. 2), where the claystone is not covered with shotcrete.                 The temporal evolution of the fracture apertures sug-
+Here, the atmospheric changes in temperature and relative                 gests a correlation between variations in crack aperture and
+humidity directly affect the wallrock. The effects which are              the variation in the tunnel climate conditions. Conse-
+generated due to these ‘‘open conditions’’ are monitored by               quently, the long-term crack aperture, and the associated
+various long-term, as well as one-time, measurements.                     shear displacements of selected shrinkage cracks at a
+   Long-term measurements of temperature, relative                        bedding-parallel plane in the rock matrix, have been
+humidity and the convergence of the niche are carried out.                measured by a crackmeter and a 3D- jointmeter (Girardin
+The measurements of the relative humidity and                             and Nussbaum 2006; Jaeggi and Gisiger 2012). The
+                                                                          crackmeter measures its own deformation and is located
+                                                                          perpendicular to an existing crack. The time series is
+                                                                          acquired automatically using an independent data acquisi-
+                                                                          tion system (DAS). The jointmeter measures relative
+                                                                          movements in three directions at two different measure-
+                                                                          ment blocks located on two sides of a selected shrinkage
+                                                                          crack. The displacements are manually acquired every
+                                                                          5/7 days.
+                                                                             Additional laboratory experiments with drill cores under
+                                                                          controlled initial and boundary conditions are summarized
+                                                                          in Matray and Möri (2012). The investigations determine
+                                                                          profiles of the porosity, the gravimetric and volumetric
+                                                                          water content, the degree of saturation, and the grain
+                                                                          density over the length of the 3.28 m BCD-3 borehole
+                                                                          drilled in June 2012. The results indicate characteristic
+                                                                          values for the undisturbed rock, as well as modified values
+                                                                          resulting from various kinds of rock damage: such as
+                                                                          shrinkage cracks, natural fractures, or fractures induced by
+                                                                          excavation and/or handling.
+                                                                             The long-term measurements, as well as laboratory
+                                                                          investigations, started in 2006. They are supplemented by
+                                                                          the installation of a so-called TDR probe (Time Domain
+                                                                          Reflectometry) in the BCD-3 borehole in 2012. This
+                                                                          modular packer system consists of five modules, each
+
+
+
+
+Fig. 2 The EZB-niche in the Mont Terri rock laboratory is not
+covered with shotcrete. Various measuring devices are installed. The
+upper picture indicates the location of the crackmeter and the            Fig. 3 Measurements of relative humidity (blue) and air temperature
+jointmeter [taken from Möri et al. (2010)]. The lower picture is taken   (red) in the EZB-niche. The measurements are presented for a time
+from Nussbaum et al. (2005) and indicates the bedding trace, as well      period of 6 years, and indicate the seasonal oscillations of relative
+as the location of pre-existing fractures in the wallrock of the niche    humidity and temperature
+198                                                                                                                G. Ziefle et al.
+
+                                                                     
+containing a TDR sensor located behind a latex rubber                    0; if S\1
+cover to avoid water intrusion. This TDR probe and related      v¼                 :
+                                                                         1; else
+measurements produce profiles of matrix saturation, swel-
+ling and pore-water pressures from the niche surface               This leads to the following formulation of the mechan-
+towards the saturated rock matrix. Petrophysical and vol-       ical problem:
+                                                                                                
+umetric water content probe results and a discussion of the     r  r  avðp  p0 ÞI  Spsw;max I ¼ 0
+results are presented in Matray and Möri (2012) and
+Matray and Bailly (2014).                                       where the effective stress tensor r, the water pressure p, the
+   Additional measurements of the water content, as well        initial water pressure p0, the identity tensor I, the water
+as the convergence of the niche and the crack aperture, are     saturation S, and the maximal swelling pressure psw,max.
+depicted in Figs. 10, 11 and 19.                                   The formulation of the hydraulic problem is given by:
+                                                                           oS        ou   op
+                                                                rqþn         þ Sar  þ Sp ¼ 0
+                                                                           ot        ot   ot
+3 Model approach                                                with: the fluxes due to Darcýs law q, the porosity n, the
+                                                                time t, the deformation vector u, and the storage term due
+3.1 Definition of the problem                                   to pressure changes Sp .
+                                                                   This model approach implies that classical Terzaghi cou-
+The described experiment focuses on coupled hydraulic-
+                                                                pling effects are restricted to the fully saturated case. For the
+mechanical processes in the low permeability, orthotropic
+                                                                unsaturated case, the coupling is mainly caused by the
+claystone formation with significant swelling and shrinkage
+                                                                swelling and shrinkage behaviour. Gravity and the process of
+behaviour. The flow process in the hydraulically ortho-
+                                                                excavation are not incorporated in the presented model.
+tropic claystone is simulated using Darcýs law modified for
+unsaturated media, and a two-phase flow model simplified
+                                                                3.2 Model set-up
+by the Richard’s approach. The mechanical behaviour is
+described by transversal isotropic, linear elasticity.
+                                                                The coupled simulation is carried out with the finite ele-
+   The presented model focuses on the effects resulting
+                                                                ment code OpenGeoSys (OGS). Further information con-
+from the contact of the claystone with the seasonally
+                                                                cerning OGS can be found in e.g. Kolditz (2002), Wang
+varying air humidity—neglecting effects induced directly
+                                                                et al. (2009), Kolditz et al. (2012b), Wang et al. (2013), and
+by the excavation. It can be assumed that the excavation of
+                                                                Kolditz et al. (2012a). The model set-up is performed for a
+the niche in the claystone with nearly horizontal bedding
+                                                                2D-model with plane strain conditions, representing a
+plane and an orthotropic initial stress field leads to a
+                                                                vertical slice of the niche. The model domain has an extent
+decrease of the pore volume in some distance sidewards the
+                                                                of 20 m times 20 m and is presented in Fig. 5. The mod-
+niche. This results in an increase of pore pressures. The
+                                                                elled area is divided into a domain that represents the EDZ
+opposite effect might appear at the top and bottom com-
+                                                                and a zone which is characterized by intact Opalinus Clay.
+bined with a decrease of pore pressures. These effects have
+                                                                Both areas are depicted in Fig. 6. The EDZ is assumed to
+been investigated in Maßmann (2009) amongst others.
+                                                                have an extent of 70 cm at the top and at the side walls of
+However, there exist no pressure measurements that could
+                                                                the niche; at the bottom it is reduced to an extent of 25 cm.
+confirm these assumptions—but desaturation in the hori-
+                                                                Further information about the EDZ can be found in Alheid
+zontal direction is definitely indicated. It is assumed that
+                                                                et al. (2002), Matray and Bailly (2014), Nussbaum et al.
+the effect of desaturation dominates the evolution of the
+                                                                (2005), and Yong et al. (2010). In comparison to the intact
+desaturated area.
+                                                                claystone (index OPA), the EDZ is assumed to have a
+   The seasonal change of desaturation and resaturation in
+                                                                reduced strength. Yong (2007) presents a first approxima-
+the Opalinus Clay implies shrinkage and swelling beha-
+                                                                tion to determine the rock mass modulus in comparison
+viour. This effect is incorporated in the model by an iso-
+                                                                with intact rock moduli for a niche located in Mont Terri
+tropic, linear swelling model, proposed by Rutqvist et al.
+                                                                and surrounded by multiple tectonic shears. The derived
+(2001). Information about the swelling behaviour of the
+                                                                reductions vary between more than 75 and 50%. The model
+claystone can be found in Bock (2000) and Martin and
+                                                                presented here focuses on the reduction of the EDZ com-
+Lanyon (2003). A general overview of the presented cou-
+                                                                pared to the surrounding rock mass. For this case, the
+pled hydraulic-mechanical model is given in Fig. 4. The
+                                                                following properties are assumed:
+HM coupling effects are considered using the Biot constant
+a and the Bishop coefficient v, reducing the effective stress             1
+                                                                Ej j;EDZ ¼ Ej j;OPA
+approach to saturated conditions only. The Bishop coeffi-                 2
+cient is given by:
+Mont Terri, paper #9: Hydraulic-mechanical simulation of seasonally induced processes                                                199
+
+
+
+
+Fig. 4 Model approach for the coupled hydraulic-mechanical system      which incorporates interactions between stresses, strains and dis-
+[modified after Maßmann (2009)]. The simulation of the hydraulic       placements. A coupling of both processes is implemented due to the
+process is based on the conservation of the liquid mass which states   classical Terzaghi effective stress approach, as well as a linear
+an interaction between pressure, fluid velocity and saturation. The    swelling/shrinkage model
+mechanical process is based on the conservation of linear momentum,
+
+
+        1                                                              humidity in the niche. This boundary condition is charac-
+E?;EDZ ¼ E?;OPA
+        2                                                              terized by negative pore pressures (suction) and is based on
+   All other material parameters are assumed to be iden-               the measurements as depicted in Fig. 3. As presented in
+tical for the intact Opalinus Clay and the EDZ. They are               Maßmann (2009), Andra (2005a) and Bond et al. (2013),
+summarized in Table 1. More information can be found in                the Kelvin equation is used to derive the pressure boundary
+e.g. Wild et al. (2015) and Bock (2009). The initial con-              condition. It is given by
+ditions imply a fully saturated area of Opalinus Clay. The                  ql RT
+                                                                       p¼          ln hrel
+boundaries are assumed to remain fully saturated. The                        Mv
+detailed model set-up is presented in Fig. 5.
+                                                                       with: the liquid density ql, the perfect gas constant R, the
+   The far-field stresses are specified as initial compressive
+                                                                       absolute temperature T, the molecular weight of water Mw,
+stresses and assumed to be 7 MPa in the vertical direction
+                                                                       and the relative humidity hrel.
+and 5 MPa in the horizontal direction. More information
+                                                                          The relation between capillary pressure and saturation is
+about the in situ stress field at the Mont Terri rock labo-
+                                                                       defined by the van Genuchten model
+ratory can be found in Martin and Lanyon (2003). The
+                                                                            "     1=ð1bÞ #b
+bedding plane has an inclination of 10° in this part of the                         p
+laboratory and the displacements are prevented in the                  S¼ 1þ
+                                                                                    P0
+horizontal direction at the left boundary and in the vertical
+direction at the bottom of the presented area. Furthermore,            with: the van Genuchten fitting parameters P0 and R
+a pressure boundary condition at the niche represents the              according to Wild et al. (2015). The relationship between
+seasonal changes in the temperature and the relative                   the relative permeability and the saturation is defined by:
+200                                                                                                                       G. Ziefle et al.
+
+
+                                                                           with: the effective saturation Seff , the residual saturation
+                                                                           Sres , and the maximal saturation Smax . The hydraulic and
+                                                                           mechanical parameters are taken from Bock (2009),
+                                                                           Wild et al. (2015), and Xu et al. (2014). The permeability
+                                                                           is calibrated with respect to the measurements of the
+                                                                           water content. All parameters are summarized in
+                                                                           Table 1.
+
+
+                                                                           4 Hydraulic results
+
+                                                                           The proposed model represents a desaturation of the
+                                                                           claystone due to the exposure of the wallrock to the
+                                                                           tunnel atmosphere. While the desaturated zone
+                                                                           increases during the cold and dry winter, there exists a
+                                                                           temporary resaturation close to the tunnel during the
+                                                                           warm, wet summer months. The desaturated zone for
+                                                                           the summer, as well as the winter, is presented in
+                                                                           Fig. 7 seven years after the excavation. The extent of
+Fig. 5 Geometry and model set-up. The 2-dimensional model has an
+extent of 20 times 20 m. The bedding plane in this area of the Mont        the desaturated zone reaches its maximum in the
+Terri rock laboratory has an inclination of 10°. The boundaries of the     direction of the bedding, and has an extent of nearly
+numerical model are fixed in the horizontal direction at the right side,   1.4 m at this time.
+and in the vertical direction at the bottom. The far-field stresses are
+                                                                              A validation of the depicted effect is carried out by
+given by 7 MPa in the vertical direction and 5 MPa in the horizontal
+direction. Initially, the model domain is assumed to be fully saturated    means of a comparison of measurements and simulation
+in the whole domain, and it is assumed to remain fully saturated at the    results concerning the temporal progression and the degree
+boundaries. The pore pressure in this area is set to 900 kPa               of desaturation. The desaturated zone can be divided into
+                                                                           two parts: the seasonally influenced desaturated zone and
+                          m
+                              m1
+                                m
+                                   2
+                                                                           the long-term influenced desaturated zone. In this context,
+krel;S ¼ S0:5
+          eff 1    1  S m1
+                          eff                                              the desaturated zone is defined by a saturation of less than
+                                                                           99.5%. The seasonally influenced zone is defined by
+where the shape factor m and the effective saturation are                  oscillations of the water content of more than 0.2%—lower
+given by:                                                                  deviations are not mandatory connected with seasonal
+          S  Sres                                                         effects.
+Seff ¼
+         Smax  Sres
+
+
+Fig. 6 Part of the finite element
+mesh incorporating the EDZ.
+The numerical simulation with
+OpenGeoSys (OGS) is carried
+out on a triangle mesh with an
+extent of 20 times 20 m. The
+figure represents the central part
+of this mesh. The blue area
+represents the excavation
+damaged zone (EDZ), while the
+black parts constitute the intact
+claystone
+Mont Terri, paper #9: Hydraulic-mechanical simulation of seasonally induced processes                                             201
+
+
+Table 1 Hydraulic and              Parameter                                                       Value                  Unit
+mechanical parameters which
+are used in the numerical model    Angle of inclination, c                                         10.0                   °
+                                   Porosity, n                                                     0.16                   -
+                                   Hydraulic conductivity, K                                       4.0e-13                m/s
+                                   Permeability in the plane of isotropy, kk                       6.8e-20                m2
+                                   Permeability normal to the plane of isotropy, k?                1.36e-20               m2
+                                   Liquid density, ql                                              1000                   kg/m3
+                                   Perfect gas constant, R                                         8.314                  J/(K mol)
+                                   Molecular weight water, Mw                                      0.018                  kg/mol
+                                   Biot constant, a                                                1.0                    –
+                                   Bishop coefficient, v                                           0.0–1.0                –
+                                   Grain density claystone, qs                                     2500                   kg/m3
+                                   Poisson number in the plane of isotropy, tk                     0.18                   –
+                                   Poisson number normal to the plane of isotropy, t?              0.16                   –
+                                   E in the plane of isotropy, Ek                                  3.6e9                  N/m2
+                                   E normal to the plane of isotropy, E?                           1.1e9                  N/m2
+                                   G normal to the plane of isotropy, G?                           1.2e9                  N/m2
+                                   Maximal swelling pressure, psw;max                              7.0e7                  N/m2
+                                   Van Genuchten parameter, P0                                     44.4e6                 Pa
+                                   Van Genuchten parameter, b                                      0.54                   –
+                                   Van Genuchten parameter, m                                      2                      –
+                                   Residual saturation, Sres                                       0.002                  –
+                                   Maximal saturation, Smax                                        1.0                    –
+
+
+4.1 Comparison of the simulation results                                the niche. The water content indicates seasonal variations
+    with measurements of the TDR probe                                  with an amplitude of 0.5%. This location belongs to the
+                                                                        seasonally influenced desaturated zone. TDR 4 is located at
+In summer 2012 (7 years after the excavation of the niche),             a distance of 0.99 m from the niche. The volumetric water
+a TDR probe was installed in borehole BCD-3 which is                    content indicates desaturated conditions but no significant
+located along the horizontal line shown in Fig. 7 (bottom).             seasonal influence. TDR 3, which is located at a distance of
+Figure 8 presents measurements of the volumetric water                  1.61 m from the niche, yields similar results. For this
+content over a time period of nearly 4 years. These results             location, the measurements indicate even lower water
+are compared with simulated water contents which are                    contents than for the location of TDR 4. TDR 2 and TDR 1
+presented over the distance away from the niche.                        are located at distances of 2.22 and 2.83 m respectively
+   The measurements of the water content (Fig. 8) are                   from the niche. They are not characterized by seasonal
+presented for five locations determined by the geometry of              influences, but by a minor saturation process. The material
+the TDR probe. Initially, results indicate an influence of the          at these locations seems to be under nearly saturated
+drilling at the borewall which lead to a significant decrease           conditions.
+of the water contents in the vicinity of the borehole. In                  The simulation results presented in Fig. 9 indicate vol-
+addition, a step-like increase/decrease and a subsequent                umetric water contents between 13.4 and 13.8% at the
+decrease/increase in the water content can be seen between              location of TDR 5. This equals an amplitude of 0.4%, and
+January and April 2013, June 2014, and November/De-                     an association with the seasonally influenced zone—
+cember 2014. These steps as well as the decrease of the                 matching the result of the measurements. Both investiga-
+water content, that can be observed since November 2015                 tion methods indicate seasonal influences at this location.
+for all five positions, are artefacts which result from tech-           Furthermore, the numerical simulation indicates that the
+nical reasons concerning the design of the TDR probe. In                output location of TDR 4 belongs to the long-term influ-
+addition, the volumetric water content indicates—location               enced desaturated zone—again matching the result of the
+dependent—that it is part of either the seasonally influ-               measurements. The numerical simulation suggests that the
+enced desaturated zone, the desaturated zone or the satu-               location of TDR 3 belongs to the saturated zone, which
+rated zone. TDR 5 is located at a distance of 0.38 m from               does not agree with the measurements. Regarding the
+202                                                                                                                     G. Ziefle et al.
+
+
+                                                                         after excavation. Finally, the measured water contents are
+                                                                         lower than the simulated ones, but the comparison of the
+                                                                         investigation methods shows good agreement concerning
+                                                                         the extent of the desaturated zone, the extent of the sea-
+                                                                         sonally affected zone, and the seasonal oscillations of the
+                                                                         water content, which are also presented in Table 2.
+
+                                                                         4.2 Comparison of the simulation results
+                                                                             with petrophysical measurements on core
+                                                                             samples
+
+                                                                         In combination with the drilling of borehole BCD-3, core
+                                                                         samples were taken and investigated in the laboratory. The
+                                                                         derived volumetric water content is presented in Fig. 10
+                                                                         over the distance from the niche, along the output line
+                                                                         which is defined in Fig. 7 (right). A comparison of these
+                                                                         measurements with simulation results for the summer and
+                                                                         winter is depicted. The simulation indicates that the sea-
+                                                                         sonally-influenced desaturated zone is characterized by the
+                                                                         ongoing change between desaturation and resaturation,
+                                                                         while the water content in the long-term desaturated zone
+                                                                         undergoes only minor changes. The core samples were
+                                                                         taken in summer, and give the summer cycle extent of the
+                                                                         water content. The comparison of both investigation
+                                                                         methods shows good agreement of the water content
+                                                                         7 years after excavation. The numerical simulation results
+                                                                         significantly depend on the assumed permeabilities and the
+                                                                         saturation-dependent relative permeabilities. The mea-
+                                                                         surements indicate the existence of heterogeneous areas
+                                                                         resulting in deviant behaviour. Finally, the measurements
+                                                                         as well as the simulation indicate an extent of the desatu-
+                                                                         rated zone of about 1.4 m after 7 years. Lower water
+                                                                         contents which are measured at greater distances are
+                                                                         interpreted as heterogeneities of the material. The simula-
+                                                                         tion indicates an extent of the seasonally influenced zone of
+                                                                         about 50 cm. The results are summarized in Table 2.
+
+Fig. 7 Desaturated area in winter (top) and summer (bottom) after        4.3 Long-term evolution of the desaturated zone
+7 years under atmospheric influence. The coloured area represents the
+zone where the saturation is lower than 99%. The comparison of the
+                                                                         In this article, the comparison of measurements and sim-
+winter and summer cases indicates a seasonal influence in the vicinity
+of the niche. The influence of the orthotropic material properties can   ulation results is used to verify the model approach.
+be seen. Furthermore, the picture at the bottom contains the             Incorporating the model set-up, the results of a long-term
+identification of the output location for the following investigations   simulation can also be interpreted. Here they do not
+of the water content
+                                                                         incorporate damage or plastic effects, nevertheless they
+                                                                         indicate that an equilibrium stage will hardly be reached in
+unexpectedly low measured water contents at this location,               15 years due to an ongoing, very low desaturation process.
+reasons for this difference might be a heterogeneity of the              However, the hydraulic (please refer to Fig. 11) and
+claystone and/or an irregular borehole shape at this posi-               mechanical (see Fig. 15) long-term results seem to con-
+tion. Please refer also to the results of the petrophysical              verge on an equilibrium stage, and most of the convergence
+measurements on core samples (presented in section. 4.2,                 as well as most of the desaturated area, already develops in
+Fig. 10), which also indicate heterogeneities at this loca-              the first 10 years. 15 years after the excavation of the
+tion. For the locations of TDR 4 and TDR 5, both inves-                  niche, the extent of the seasonally influenced desaturated
+tigation methods indicate fully saturated conditions 7 years             zone is given as 50 cm (as already stated as a result after
+Mont Terri, paper #9: Hydraulic-mechanical simulation of seasonally induced processes                                                      203
+
+Fig. 8 Measured volumetric
+water contents over the time.
+The measurements represent the
+evolution of the water content
+over a time period of nearly
+4 years. Initially, a decrease in
+water content due to the drilling
+of the borehole takes place. The
+red curve shows the water
+content in the vicinity of the
+niche and is characterized by
+seasonal oscillations. The pink
+and the green curves are located
+in the desaturated zone, while
+the output locations given by the
+blue lines seem to be located in
+nearly saturated conditions
+
+
+
+
+Fig. 9 Simulated water content (7 years after excavation) versus the       definition of a seasonally influenced desaturated zone, a long-term
+distance from the niche for the horizontal line given in Fig. 7 (right).   influenced desaturated zone and a saturated zone. The coloured lines
+Lines represent the desaturation case in winter (grey) and the             mark the output locations of the TDR-measurements
+resaturation case in summer (black). The comparison allows for the
+
+7 years) and the long-term desaturated zone has an extent                  The results from the TDR at the drilling date do not provide
+of 2.2 m.                                                                  any information regarding the seasonal variation, because
+                                                                           they are not time-dependent. Consequently, the output
+4.4 Summarizing the results                                                location TDR 1 is only classified as ‘‘DZ’’ (desaturated
+                                                                           zone).
+The presented results regarding the comparison of the
+numerical simulation with the measurements are summa-
+rized in Table 2. Here, a classification of the different                  5 Mechanical results
+locations with respect to the saturation state is presented. It
+can be stated that the results concerning the extent of the                Concerning the mechanical processes, the desaturation
+desaturated zone show good agreements. Only the mea-                       implies an area of compaction due to the shrinkage of the
+surements at the location of TDR 3 indicate heterogeneous                  material. The resulting stress state is given in Fig. 12 for
+material behaviour or some kind of fractured zone, which                   the winter. Here, a decrease of the compressive stresses can
+is not considered in the homogeneous numerical model.                      be observed in the near-field of the niche. The related
+204                                                                                                                               G. Ziefle et al.
+
+
+
+
+Fig. 10 Comparison of the measured and simulated water contents          samples are shown by the orange triangles. Simulated results as
+(7 years after excavation) versus distance from the niche for the        displayed in Fig. 9 are given for comparison
+horizontal line given in Fig. 7 (bottom). Measured values from core
+
+
+Table 2 Classification of different locations based on measurement and simulation
+Investigation method         Output location
+                             TDR 1: 38.5 cm         TDR 2: 99.5 cm         TDR 3: 160.5 cm          TDR 4: 221.5 cm          TDR 5: 282.5 cm
+
+TDR probe                    SIDZ                   DZ                     DZ                       SZ                       SZ
+Core samples                 DZa                    DZ                     DZ                       SZ                       SZ
+Simulation (7 years)         SIDZ                   DZ                     SZ                       SZ                       SZ
+Simulation (15 years)        SIDZ                   DZ                     DZ                       DZ                       SZ
+SIDZ seasonally influenced desaturated zone, DZ desaturated zone, SZ saturated zone
+a
+  The investigation of the core samples does not provide any information on seasonal changes. TDR 1 lies in the desaturated zone, however it is
+not possible to state whether this zone is seasonally influenced
+
+
+
+
+Fig. 11 Simulated water content (15 years after the excavation)          of approximately 2.2 m after 15 years. The seasonally influenced
+versus distance from the niche for the horizontal line given in Fig. 7   desaturated zone is quasi-stationary and has an extent of 50 cm
+(bottom). The simulation indicates an extent of the desaturated zone     7 years after excavation in accordance with the results
+
+vertical and horizontal displacements are given in Fig. 13               the displacements at the tunnel surface may be character-
+for the winter and indicate a comparatively large affected               ized by opposite effects than the displacements at a dis-
+zone with movement towards the desaturated area. Due to                  tance of some decimetres. While movement towards the
+the seasonal change between desaturation and resaturation,               claystone can be observed at the surface of the niche,
+Mont Terri, paper #9: Hydraulic-mechanical simulation of seasonally induced processes                                                          205
+
+
+
+
+Fig. 12 Decrease in the compressive stresses after 7 years of atmo-
+spheric influence (top horizontal stresses; bottom vertical stresses) in the   Fig. 13 Horizontal (top) and vertical (bottom) displacements after
+winter. Zones are shown where the change in the stresses is more than          7 years of atmospheric influence in the winter. The results indicate
+1 MPa. The results in winter in this context represent the worst case. The     movements towards the niche at a distance of more than 1 m away
+resaturation in summer will lead to lower values                               from the niche. In the vicinity of the niche, these movements
+                                                                               significantly depend on the season as is shown in Fig. 14
+
+movement towards the niche can be observed at a greater
+distance from the tunnel. This effect significantly depends                    movement of the niche over the time. The comparison
+on the season. It is also presented in Fig. 14 because it                      indicates good agreement of the qualitative trend. The
+leads to significant differences between the results                           quantitative comparison indicates an underestimation of
+observed at the niche surface and at locations a few cm                        the convergence of the niche by the numerical model.
+away from the surface. This area is characterized by sig-                      Comparative analyses indicate better results assuming a
+nificant seasonal oscillations which are restricted to the                     higher permeability of the claystone. Seasonal oscillations,
+vicinity of the niche. Measurements with regard to the                         which are indicated by the model due to the swelling and
+anchor location (25 cm away from the niche surface) may                        shrinkage effects, cannot be seen as clearly in the measured
+indicate a lower impact of the seasonal variation of the                       results. The presented convergences lead to the deforma-
+climatic conditions than measurements at the niche surface.                    tion of the niche profile as presented in Fig. 16. The
+   A comparison of the numerical results with the con-                         measurements, as well as the numerical simulation, indi-
+vergence measurements of the niche is given in Fig. 15.                        cate a closure of the niche combined with a slight hori-
+Presented are the vertical, the horizontal and the diagonal                    zontal extension.
+206                                                                                                                              G. Ziefle et al.
+
+
+
+
+Fig. 14 Influence of the output location on the results. Due to the
+seasonally induced change between desaturation and resaturation, the      Fig. 16 The initial tunnel profile—shown by the black line in
+first decimetres of claystone are characterized by manifold, seasonal     combination with the grey background—in comparison with the
+effects. The saturation here—in the vicinity of the niche—varies          deformed niche which is represented by the red line. The deformed
+significantly depending on the time and the location. Consequently,       niche is scaled by a factor of 50. The results are given for the winter
+numerical as well as measured results depend on the output location.      7 years after the excavation
+Results from the surface vary significantly from results e.g. at a
+distance of 25 cm away from the niche (this equals the depth of an
+anchor). The brown points in the figure mark the output location at the   measurements are carried out over a time period of more
+surface of the niche and at the depth of the anchor
+                                                                          than 7 years. Observations concerning the tectonic and
+6 Phenomenological investigation of a single crack                        artificial (EDZ) fracture network in the vicinity of the EZB
+                                                                          niche are presented in Nussbaum et al. (2005). To better
+A special focus of this experiment is laid on the evolution               understand the effects in the vicinity of these cracks, a first
+of existing cracks at the surface of the niche. As already                approach incorporates one single crack in the finite element
+mentioned in Sect. 2, crackmeter as well as jointmeter                    model. Comparative studies were carried out with different
+
+Fig. 15 Comparison of
+convergence results from
+measurements and simulation.
+Measured and simulated
+displacements of the presented
+distances are shown over time.
+The blue symbol
+(measurements) and line
+(simulation) present the
+displacements of the diagonal
+distance between points 3 and 4;
+the green symbols and line
+reflect displacements of the
+vertical line between points 2
+and 4, the grey symbols and line
+indicate horizontal
+displacements between points 1
+and 3. Measurements were
+carried out for 10 years.
+Keeping the differences
+between measurement and
+simulation results in mind, the
+numerical simulation allows for
+a prediction of the convergence
+of the niche over a longer time
+period
+Mont Terri, paper #9: Hydraulic-mechanical simulation of seasonally induced processes                                                        207
+
+
+crack geometries, and do not indicate any influence of the
+crack geometry on the general results. The resulting mesh
+is presented in Fig. 17 and presents the crack which is
+assumed to be filled. The parameters of the filling material
+are supposed to be isotropic. As the significant deforma-
+tions appear vertical to the bedding, the reference value for
+the Younǵs modulus is perpendicular to the bedding. The
+significant flow velocity is in the bedding direction—con-
+sequently, the reference value for the permeability is cho-
+sen in the bedding plane. The parameters of the crack are
+defined by a higher permeability and a lower strength than
+the Opalinus Clay. They are given by:
+            1
+Ecrack ¼      EOPA;?
+           10
+kcrack ¼ 10kOPA;jj
+where the designation ‘‘crack’’ means the property of the
+filling material, and the designation ‘‘OPA’’ means the
+property of the intact claystone. A different factor between          Fig. 18 The effect of resaturation (summer) and desaturation (winter)
+                                                                      takes place in the vicinity of the niche, as well as in the vicinity of the
+these parameters will influence the quantitative results but
+                                                                      crack. The resulting saturation for the summer 7 years after excava-
+not the effect in general. In contrast to that, different effects     tion is presented here
+would be observed if the crack is assumed to have a higher
+strength and a lower permeability than the OPA. The                   the material in the concerned area. Due to this effect, the
+presented model set-up does not incorporate the EDZ. It               long-term behaviour of the crack is characterized by clo-
+indicates an increase of the surface of the niche due to the          sure of the crack. Both coexisting effects are presented
+crack. Consequently, the same effects that can be observed            schematically in Fig. 20. They can be observed in the
+at the surface of the niche are observed at the surfaces of           measurements (detailed information can be found in Möri
+the crack, which can be seen in Fig. 18. In the vicinity of           et al. (2010)) as well as in the results of the numerical
+the crack, a seasonally affected zone occurs. Due to the              simulation, and are depicted in Fig. 19. The measured
+swelling and shrinkage of the claystone, the crack opens              relative humidity as presented in Sect. 2 is here trans-
+while the desaturation process takes place, and closes due            formed to the absolute humidity, while the displacements
+to the resaturation of the claystone. But it has to be kept in        are taken from the crackmeter data. The changes in the
+mind that a long-term affected zone also exists. As already           saturation/absolute humidity and the aperture/displace-
+described in Sect. 4, this zone is characterized by a long-           ments are given over a time period of 3 years. The seasonal
+term desaturation process. This effect causes a shrinkage of          oscillation of the saturation/absolute humidity leads to
+
+Fig. 17 Part of the mesh for the
+phenomenological investigation
+of one single crack. The finite
+element mesh is characterized
+by a very fine discretization in
+the vicinity of the crack. The
+black areas represent the intact
+claystone, while the blue areas
+represent the filling material of
+the crack. This model does not
+incorporate any excavation
+damaged zone (EDZ)
+208                                 G. Ziefle et al.
+
+Fig. 19 The evolution of the
+saturation/absolute humidity
+and the aperture/displacements
+of the crack are given here over
+a time period of 3 years.
+Measurements are presented in
+the upper picture, simulation
+results in the lower picture.
+Both result types indicate a
+seasonal behaviour as well as a
+long-term influenced trend of
+the crack. The seasonally
+affected behaviour is
+characterized by opening of the
+crack due to desaturation of the
+claystone in the vicinity of the
+crack, and closure of the crack
+due to resaturation in the
+vicinity of the crack. The long-
+term trend is characterized by
+closure of the crack in
+combination with the
+desaturation of the nearfield of
+the niche. The presented results
+are only phenomenological
+results—due to the simplicity of
+the numerical model
+quantitative comparisons are not
+yet possible
+
+
+
+
+Fig. 20 Simplified scheme of
+processes occurring in the
+claystone in the near-field and
+far-field of the crack due to
+desaturation and resaturation.
+As also presented in the
+discussion of the hydraulic
+results, the area is divided into
+two zones: the seasonally
+influenced zone which is the
+near-field of the crack and the
+long-term influenced zone
+which is the far-field of the
+crack. The effects due to
+desaturation and resaturation are
+presented schematically for both
+zones. The resulting behaviour
+of the crack is pointed out
+Mont Terri, paper #9: Hydraulic-mechanical simulation of seasonally induced processes                                           209
+
+
+movement of the crack. While the desaturation indicates               zone is found to depend significantly on the seasonal
+opening of the crack, the resaturation is combined with               influences, and correlates with the evolution of temperature
+closure of the crack. Following the description of the                and relative humidity. The long-term effective hydraulic
+hydraulic process in Sect. 4, this effect is called the sea-          conductivity of the 2 m thick EDZ is expected to increase
+sonally influenced aperture of the crack. Furthermore, a              by approximately one order of magnitude relative to the
+long-term trend is observed in the measurements, as well as           undisturbed rock.
+in the simulation. This trend indicates closure of the crack             A comparison of the presented simulation results with
+due to the ongoing desaturation, which leads to conver-               the discussed temporal TDR measurements indicates good
+gence of the niche. This effect coincides with the long-term          agreement concerning the water content, the extent of the
+influenced desaturated zone. The presented results reflect            desaturated zone, the extent of the seasonally affected
+the described processes qualitatively.                                zone, and the seasonal oscillation of the water content.
+
+                                                                      7.2 Mechanical effects
+7 Discussion of the results
+                                                                      The mechanical effects in the vicinity of the niche are quite
+7.1 Hydraulic effects                                                 complex. The comparison of the numerical results with the
+                                                                      measurements indicates qualitative agreement. The results
+Concerning the hydraulic process, it can be stated that the           suggest a closure of the niche combined with a slight
+desaturation and resaturation lead to three different zones           horizontal extension, which is significantly affected by the
+in the claystone. In the vicinity of the niche, a seasonally          orthotropic conditions. However, the quantitative compar-
+influenced, desaturated zone develops. The extent of this             ison shows an underestimation of the mechanical effects. A
+zone is quasi-stationary after the first 3 years and has an           reason for this might be the lack of a viscous material
+extent of about 50 cm. In addition, a long-term influenced            model or a damage model in the simulation, which incor-
+desaturated zone arises. This zone is characterized by a              porates the effect of rock strength reduction due to the
+desaturation which is not significantly affected by the               seasonal oscillations. The increase in the rigidity of the
+seasonal oscillations of the atmospheric conditions in the            argillite due to the desaturation would lead to the opposite
+niche. This zone has an extent of about 1.40 m after                  effect. It is also not incorporated in the model, although it
+7 years. The long-term simulation indicates that after                is proposed by Andra (2005a). The long-term simulation
+10 years the process develops slowly, because minor                   does not indicate an equilibrium stage after 15 years due to
+changes are still observed after 15 years. The extent of the          the ongoing but very weak desaturation process. It should
+desaturated zone is about 2.2 m at this time. The main                not be forgotten that the results significantly depend on the
+material property affecting these results is the permeability         output location. As many processes affect the immediate
+of the claystone.                                                     vicinity of the niche, the resulting displacements, water
+   Andra (2005a) came to a similar result for the Callovo-            content, and other parameters at the surface of the niche are
+Oxfordian formation at the Meuse/Haute-Marne site in                  significantly different from the values at a distance of e.g.
+France, and states that the stationary extent of the desatu-          25 cm (which is the depth of the anchors).
+rated zone is 1.5 times the radius of the drift, which results
+in 2.48 m in the case of the EZB-niche. Following Andra               7.3 Investigation of a single crack
+(2005a), a permanent pattern is reached after about
+10 years. Additional investigations by Andra are summa-               The phenomenological investigation of one single crack
+rized in e.g. Andra (2005b, c, d).                                    indicates the influence of seasonally changing atmospheric
+   Related results can be found in Maßmann (2009). He                 conditions as well as an impact of the long-term desatu-
+investigates hydraulic-mechanically coupled effects at the            ration process. The simulation results match the measure-
+Tournemire site (France) and defined the seasonally influ-            ments qualitatively. They indicate seasonal opening (due to
+enced zone as the zone where the saturation varies by more            the desaturation) and closure (due to the resaturation) of the
+than 0.01%. This leads to an extent of the seasonally                 crack, as well as a trend which is characterized by closure
+influenced zone of about 1–2 m around the opening. Fol-               of the crack due to the long-term desaturation process,
+lowing Maßmann (2009), the desaturated zone (saturation               causing convergence of the niche. Both effects are illus-
+less than 99.9%) strongly depends on the assumed per-                 trated in Fig. 18. As already presented in the discussion of
+meability and has an extent of 2–27 m after 100 years.                the hydraulic results, the area is divided into the seasonally
+   Concerning the desaturated zone Alcolea et al. (2014)              influenced zone—which is the near-field of the crack—and
+and Lanyon et al. (2014) state that the extent of this zone is        the long-term influenced zone, which is the far-field of the
+about 2 m around an excavation in Opalinus Clay; this                 crack. The near-field is characterized by the seasonal
+210                                                                                                                   G. Ziefle et al.
+
+
+change between desaturation and resaturation, which            changes of the atmospheric conditions in the niche induce
+directly results in opening or closure of the crack. The       cycles of desaturation and resaturation. This leads to a
+same behaviour is found in the rock laboratory in              long-term desaturation process in combination with sea-
+Tournemire (France) (Rejeb and Cabrera 2006).                  sonal influences around the niche. The measurements and
+   Due to the simplicity of the discussed model, quantita-     the numerical simulation show a good agreement con-
+tive statements are not yet possible. In order to obtain       cerning the volumetric water content of the claystone in the
+quantitative results, more information on the properties of    near-field of the niche, the extent of the desaturated zone
+the cracks is required. In addition, the numerical model has   (about 2.2 m after 10 years), as well as the extent (about
+to be extended to incorporate more cracks as well as crack     50 cm) and amplitude of the seasonally influenced desat-
+evolution.                                                     urated zone. Similar results can be found in the cited
+   Xu et al. (2014) conclude that the swelling and shrink-     literature.
+age behaviour of various claystones is strongly anisotropic.       The mechanical results indicate a qualitative agreement
+The deformation perpendicular to the bedding plane is          concerning the trend of the convergence of the niche.
+higher than in the direction of the bedding, and shrinkage     Quantitatively, the simulated convergence underestimates
+appears more quickly than swelling. The second statement       the measured values. Furthermore, the simulation suggests
+concerning the velocity of shrinkage and swelling fits the     significant seasonal oscillations in the convergence of the
+simulation results presented here. Figure 19 clearly shows,    niche. This effect does not appear in the same clarity in the
+that the opening of the crack (caused by the shrinkage         measurements. An improvement of the mechanical results
+effect) appears faster than the closure of the crack (caused   might be achieved if plasticity, viscosity and/or damage
+by the swelling effect). More information about drying and     effects are considered in the numerical model. However,
+cracking initiation can be found in Peron et al. (2010).       the measurements, as well as the numerical simulation,
+Future investigations could focus on a more detailed           indicate a convergence of the niche combined with a slight
+description of the behaviour of cracks. Furthermore, the       horizontal extension.
+numerical model could be extended regarding plastic as             A phenomenological approach is chosen to identify
+well as damage effects, and regarding a more detailed          processes in the vicinity of a single crack. The seasonal
+description of the swelling model.                             evolution of the crack aperture is characterized by an
+                                                               opening of the crack due to desaturation, and a closure of
+                                                               the crack due to resaturation. The long-term trend indicates
+8 Conclusions and outlook                                      a slight closure of the crack due to the convergence of the
+                                                               niche, which is driven by the long-term desaturation pro-
+The seasonally induced desaturation and resaturation pro-      cess. It can be stated that the model succeeds in repre-
+cess, and its impact on the pore-water pressure, the con-      senting the qualitative behaviour of the crack aperture.
+vergence of the niche and the evolution of the aperture of     Consequently, the evolution of the crack aperture results
+one pre-existing crack in the wallrock of the niche are        from the coexistence of two effects: the seasonally induced
+investigated. The associated measurements and simulation       desaturation and resaturation process in the near-field of
+results, as well as the comparison of both, lead to the fol-   the crack, as well as the long-term desaturation process of
+lowing conclusions which can be subdivided into three          the niche. The impact of swelling and shrinkage on the
+aspects concerning (1) the hydraulic processes, (2) the        displacements seem to play an important role in the sea-
+mechanical processes and (3) the evolution of a crack          sonal evolution, as well as in the long-term evolution of the
+aperture.                                                      crack aperture.
+   First of all it can be stated that the relatively simple
+model approach enables a representation of a large number      Acknowledgements The Mont Terri Project comprises a great vari-
+                                                               ety of experiments, conducted by the 14 project partners. These
+of measurements with acceptable results. This indicates        partners contribute technical and scientific knowledge as well as
+that the considered effects such as swelling and shrinkage,    financial support. Without these partners it would not be possible to
+introduced by a linear swelling model, 2-phase flow using      generate such a comprehensive and diverse set of field measurements
+the Richards approach, saturation-dependent material           as well as laboratory and numerical data to obtain an increased
+                                                               understanding of the complex processes in claystone. Therefore we
+parameters, an elastic material model and orthotropic          would like to extend our sincere gratitude to all of them. The CD
+material conditions, are significant aspects concerning the    experiment was initiated in 2006 by swisstopo (Paul Bossart). The
+discussed research question.                                   following partners contributed considerably to this experiment: BGR
+   Focusing on the hydraulic results, the measurements, as     (Hans-Joachim Alheid and Kristof Schuster), ENSI (Erik Frank and
+                                                               Martin Herfort), IRSN (Jean-Michel Matray), Nagra (Peter Blümling
+well as the simulation, indicate the evolution of three dif-   and Tim Vietor), and swisstopo (A. Möri). We would like to take this
+ferent zones: a seasonally influenced zone, a long-term        opportunity to express our particular gratitude to all of them. We are
+influenced zone, and a saturated zone. The seasonal            also grateful to Dr. Susanne Stadler for her English proof reading and
+Mont Terri, paper #9: Hydraulic-mechanical simulation of seasonally induced processes                                                           211
+
+Dr. Peter Vogel for the fruitful discussions. Furthermore, special            Topography (swisstopo), Wabern, Switzerland. www.mont-terri.
+thanks go to Herbert Kunz for the great support concerning the                ch.
+preparation of the finite element mesh with his GINA software and to     Jaeggi, D., & Gisiger, J. (2012). CD (cyclic deformation) experiment:
+David Jaeggi who provided the measured data. Finally, very special            Data report of Phase 17 (July 2011–June 2012). Mont Terri
+thanks goes to the reviewers Dr. Alain Millard, CEA, Paris-Saclay,            Technical Note, TN 2012-68, 34 pp. Federal Office of Topog-
+France and Dr. Alex Bond, Quintessa, Warrington, UK for many                  raphy (swisstopo), Wabern, Switzerland. www.mont-terri.ch.
+constructive and helpful comments and suggestions.                       Kolditz, O. (2002). Computational methods in environmental fluid
+                                                                              mechanics. Berlin: Springer.
+Open Access This article is distributed under the terms of the           Kolditz, O., Bauer, S., Bilke, L., Böttcher, N., Delfs, J. O., Fischer, T.,
+Creative Commons Attribution 4.0 International License (http://crea           et al. (2012a). OpenGeoSys: An open22source initiative for
+tivecommons.org/licenses/by/4.0/), which permits unrestricted use,            numerical simulation of thermo-hydro-mechanical/chemical
+distribution, and reproduction in any medium, provided you give               (THM/C) processes in porous media. Environmental Earth
+appropriate credit to the original author(s) and the source, provide a        Siences, 67(2), 589–599.
+link to the Creative Commons license, and indicate if changes were       Kolditz, O., Görke, U.-J., Shao, H., & Wang, W. (2012b). Thermo-
+made.                                                                         hydro-mechanical-chemical processes in fractured porous
+                                                                              media. Berlin: Springer.
+                                                                         Lanyon, G. W., Martin, D., Giger, S., & Marschall, P. (2014).
+                                                                              Development and evolution of the Excavation Damaged Zone
+References                                                                    (EDZ) in the Opalinus Clay—A synopsis of the state of
+                                                                              knowledge from Mont Terri, Nagra Arbeitsbericht, NAB
+Alcolea, A., Kuhlmann, U., Lanyon, G. W., & Marschall P. (2014).              14–87, 204 pp. Nagra, Wettingen, Switzerland. www.nagra.ch.
+     Hydraulic conductance of the EDZ around underground struc-          Martin, C. D., & Lanyon, G. W. (2003). Measurement of in situ stress
+     tures of a geological repository for radioactive waste—A                 in weak rocks at Mont Terri Rock Laboratory, Switzerland.
+     sensitivity study for the candidate host rocks in the proposed           International Journal of Rock Mechanics and Mining Sciences,
+     siting regions in Northern Switzerland. Nagra Arbeitsbericht,            40, 1077–1088.
+     NAB 13–94, 101 pp. Nagra, Wettingen, Switzerland. www.              Maßmann, J. (2009). Modeling of excavation induced coupled
+     nagra.ch.                                                                hydraulic-mechanical processes in claystone. Ph.D. dissertation,
+Alheid, H.-J., Kruschwitz, S., Schuster, K., & Yaramanci, U. (2002).          Leibniz Universität Hannover, Germany, 77 pp.
+     Charakterisierung der Auflockerungszone um Strecken im              Maßmann, J., Uehara, S., Rejeb, A., & Millard, A. (2008). Investi-
+     Opalinuston mit seismischen und geoelektrischen Verfahren.               gation of desaturation in an old tunnel and new galleries at an
+     Angewandte Geologie, 48, 48–55.                                          argillaceous site. Environmental Geology, 57(6), 1337–1345.
+Andra. (2005a). Dossier 2005 Argile, Tome—Phenomenological               Matray, J.-M., & Bailly, D. (2014). LP-A experiment: Phase 20,
+     evolution of a geological repository.                                    statistical analysis of time series acquired in the EZ-B Niche and
+Andra. (2005b). Dossier 2005 Argile, synthesis—Evaluation of the              at the Main fault. Mont Terri Technical Note, TN 2014-59,
+     feasibility of a geological repository in an argillaceous forma-         77 pp. Federal Office of Topography (swisstopo), Wabern,
+     tion. France: Meuse/Haute-Marne Site.                                    Switzerland. www.mont-terri.ch.
+Andra. (2005c). Dossier 2005 Argile, Tome—Savety evaluation of a         Matray, J.-M., & Möri, A. (2012). CD (Cyclic deformation)
+     geological repository.                                                   experiment, petrophysical measurements on BCD-3 core sam-
+Andra. (2005d). Dossier 2005 Argile, Tome—Architecture and                    ples from the Mont Terri rock laboratory. Mont Terri Technical
+     management of a geological repository.                                   Note, TN 2013-49, 27 pp. Federal Office of Topography
+Bock, H. (2000). RA experiment rock mechanics analyses and                    (swisstopo), Wabern, Switzerland. www.mont-terri.ch.
+     synthesis: Data report on rock mechanics. Mont Terri Technical      Möri, A., Bossart, P., Matray, J.-M., Frank, E., Fatmi, H., & Ababou,
+     Report, TR 00-02, 52 pp. Federal Office of Topography                    R. (2010). Mont Terri Project, Cyclic deformations in the
+     (swisstopo), Wabern, Switzerland. www.mont-terri.ch.                     Opalinus Clay. In Proceedings of the international meeting of
+Bock, H. (2009). RA experiment: Updated review of the rock                    clay in natural and engineered barriers for radioactive waste
+     mechanics properties of the Opalinus Clay of the Mont Terri              confinements, Nantes (pp. 103–124).
+     rock laboratory based on laboratory and field testing. Mont         Nussbaum, C., Bossart, P., von Rütte, J., Meier, O., & Badertscher, N.
+     Terri Technical Report, TR 08-04, 68 pp. Federal Office of               (2005). EZ-B experiment: Small-scale mapping of tectonic and
+     Topography (swisstopo), Wabern, Switzerland. www.mont-terri.             artificial (EDZ) fractures of the EZ-B niche. Mont Terri
+     ch.                                                                      Technical Note, TN 2005-30rev, 24 pp. Federal Office of
+Bond, A., Millard, A., Nakama, S., Zhang, C., & Garritte, B. (2013).          Topography (swisstopo), Wabern, Switzerland. www.mont-
+     Approaches for representing hydro-mechanical coupling                    terri.ch.
+     between sub-surface excavations and argillaceous porous media       Nussbaum, C., Kloppenburg, A., Caer, T., & Bossart, P. (2017).
+     at the ventilation experiment, Mont Terri. Journal of Rock               Tectonic evolution around the Mont Terri rock laboratory,
+     Mechanics and Geotechnical Engineering, 5, 85–96.                        northwestern Swiss Jura: constraints from kinematic forward
+Bossart, P., Bernier, F., Birkholzer, J., Bruggeman, C., Connolly, P.,        modelling. Swiss Journal of Geosciences, 110. doi:10.1007/
+     Dewonck, S., Fukaya, M., Herfort, M., Jensen, M., Matray, J-M.,          s00015-016-0248-x (this issue).
+     Mayor, J. C., Moeri, A., Oyama, T., Schuster, K., Shigeta, N.,      Peron, H., Eichenberger, J., Laloui, L., & Salager, S. (2010).
+     Vietor, T., & Wieczorek, K. (2017). Mont Terri rock laboratory,          Modelling of drying and cracking initiation in a gallery
+     20 years of research: introduction, site characteristics and             excavated in shale. European Rock Mechanics Symposium-
+     overview of experiments. Swiss Journal of Geosciences, 110.              EUROCK 2010, pp. 771–774. International Society for Rock
+     doi:10.1007/s00015-016-0236-1 (this issue).                              Mechanics.
+Girardin, C., & Nussbaum, C. (2006). CD experiment (cyclic               Rejeb, A., & Cabrera, J. (2006). Time-dependent evolution of the
+     deformations): Installation and procedures of measurement.               excavation damaged zone in the argillaceous Tournemire site
+     Mont Terri Technical Note, TN 2006-64, 9 pp. Federal Office of           (France). In The GeoProc international conference on coupled
+212                                                                                                                             G. Ziefle et al.
+
+    THMC processes in geosystems: fundamentals, modelling,                    experiments on argillaceous rocks. In: S. Norris, J. Bruno, M.
+    experiments and applications (invited lecture) (pp. 22–25).               Cathelineau, P. Delage, C, Fairhurst, E.C. Gaucher, et al. (Eds.),
+Rutqvist, J., Börgesson, L., Chijimatsu, M., Kobayashi, A., Jing, L.,        Clays in natural and engineered barriers for radioactive waste
+    Nguyen, T. S., et al. (2001). Thermohydromechanics of partially           confinement (pp. 359–366). Geological Society London Special
+    saturated geological media: Governing equations and formula-              Publication.
+    tion of four finite element models. Rock Mechanics and Mining        Yildizdag, K., Shao, H., Hesser, J., Noiret, A., & Sönnke, J. (2014).
+    Sciences, 38, 105–127.                                                    Coupled hydromechanical modelling of the mine-by experiment
+Wang, Q., Cui, Y.-J., Tang, A.-M., Barnichon, J.-D., Saba, S., & Ye,          at Meuse–Haute–Marne underground rock laboratory France. In:
+    W.-M. (2013). Hydraulic conductivity and microstructure                   S. Norris, J. Bruno, M. Cathelineau, P. Delage, C, Fairhurst, E.
+    changes of compacted bentonite/sand mixture during hydration.             C. Gaucher, et al. (Eds.), Clays in natural and engineered
+    Engineering Geology, 164, 67–76.                                          barriers for radioactive waste confinement (pp. 265–278).
+Wang, W., Kosakowski, G., & Kolditz, O. (2009). A parallel finite             Geological Society London Special Publication.
+    element scheme for thermo-hydro-mechanical (THM) coupled             Yong, S. (2007). A three-dimensional analysis of excavation-induced
+    problems in porous media. Computers & Geosciences, 35(8),                 perturbations in the Opalinus Clay at the Mont Terri rock
+    1631–1641.                                                                laboratory. Ph.D. dissertation, Swiss Federal Institute of Tech-
+Wild, K. M., Wymann, L. P., Zimmer, S., Thoeny, R., & Amann, F.               nology in Zurich (ETH Zurich), Zurich, Switzerland, 167 pp.
+    (2015). Water retention characteristics and state-dependent          Yong, S., Kaiser, P. K., & Loew, S. (2010). Influence of tectonic
+    mechanical and petro-physical properties of clay shale. Rock              shears on tunnel-induced fracturing. International Journal of
+    Mechanics and Rock Engineering, 48, 427–439.                              Rock Mechanics and Mining Sciences, 47, 894–907.
+Xu, W.J., Shao, H., Hesser, J., & Kolditz, O. (2014). Numerical
+    modelling of moisture controlled laboratory swelling/shrinkage
+

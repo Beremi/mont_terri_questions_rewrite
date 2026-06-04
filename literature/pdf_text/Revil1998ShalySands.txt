@@ -1,0 +1,1179 @@
+          JOURNAL OF GEOPHYSICAL        RESEARCH, VOL. 103, NO. B10, PAGES 23,925-23,936, OCTOBER 10, 1998
+
+
+
+
+Electrical conductivity in shaly sandswith geophysicalapplications
+
+A. Revil,• L. M. CathlesIII, andS. Losh
+Departmentof GeologicalSciences,GlobalBasinResearchNetworkGroup,CornellUniversity,Ithaca,New York
+
+J. A. Nunn
+Departmentof GeologyandGeophysics,
+                                GlobalBasinResearch
+                                                  NetworkGroup,LouisianaStateUniversity,BatonRouge
+
+
+Abstract. We developa new electricalconductivity      equation  basedon Bussian's  modeland
+accounting  for thedifferentbehaviorof ionsin theporespace.The tortuosityof thetransport
+of anionsis independent   of the salinityandcorresponds  to thebulk tortuosityof thepore
+spacewhichis givenby theproductof theelectricalformationfactorF andtheporosity•p.
+For the cations,the situationis different. At high salinities,the dominantpathsfor the
+electromigration  of the cationsare locatedin theinterconnected   porespace,andthe tortuosity
+for the transportof cationsis thereforethe bulk tortuosity.As the salinitydecreases, the
+dominantpathsfor transportof the cationsshiftfrom thepore spaceto the mineral water
+interfaceand consequentlyare subjectto differenttortuosities.This shift occursat salinities
+corresponding
+           to ½/ t[+)~ 1, where• is theratiobetween
+                                                  thesurface
+                                                           conductivity
+                                                                     of thegrains
+andtheelectrolyteconductivity,and t[+)is theHittorftransport numberfor cationsin the
+electrolyte.The electricalconductivityof granularporousmediais determinedas a function
+of porefluid salinity,temperature,water and gassaturations,shalecontent,andporosity. The
+modelprovidesa very goodexplanationfor the variationof electricalconductivitywith these
+parameters.Surfaceconductionat the mineralwaterinterfaceis describedwith the Stem
+theoryof the electricaldoublelayer and is shownto be independentof the salinityin shaly
+sands above10-3 molL -1. Themodelis appliedto in situsalinitydetermination    in theGulf
+Coast,andit providesrealisticsalinityprofilesin agreement with sampledporewater. The
+resultsclearlydemonstratethe applicabilityof the equationsto well log interpretationof shaly
+sands.
+
+
+1. Introduction                                       can move along the grains water surface [e.g., Zukoskiand
+                                                      Saville, 1986; Revil and Glover, 1997]. The electrical
+   Electricalconductivitycan be usedto infer porosity conductivityof a saturatedmixture of sandandclay grainsis
+[Pezard, 1990], shale content,and gas or hydrocarbon a combinationof the bulk conductivityin the interconnected
+saturation [Ellis, 1987]. However, interpretation is
+                                                      pore spaceand the surfaceconductivity at the grain water
+complicated
+          by the presenceof clayminerals.Claysconsist
+                                                               interface[Bussian,1983]. Downholeelectricalconductivity
+essentiallyof alumino-silicateminerals, which have a deficit
+                                                               measurementsare usually interpretedby empirical models
+of chargedue to (1) substitutionof ions in the crystal         such as the classicalWaxman and Smits [1968] model, the
+structureby ions of different valence, and (2) acid/base
+                                                               dual-water model [Clavier et al., 1984], or variations of
+reactionsbetweensurfacesilanol/aluminol   groupsandwater
+                                                               thesemodels [e.g., Pezard, 1990]. In this paper we are
+[e.g., Thomas,1976]. The "counterions"required to
+                                                               interestedin finding an improvedrelationshipbetweenthe
+counterbalancethis chargedeficit are locatedin the so-called
+                                                               effectiveelectricalconductivityof a shalysandas a function
+electricaldoublelayer [Waxmanand Srnits,1968; Avena and
+                                                               of electrolyte
+                                                                            conductivity,
+                                                                                       porosity,gassaturation,
+                                                                                                            andclay
+De Pauli, 1996; andJanuszet al., 1997]. The presenceof         properties.
+thesecounterionshieldsthe local electricalfield produced         A differentialeffective medium theory for the electrical
+by the chargedeficit of the clay minerals and resultsin a      conductivity of a saturated porous medium is used.
+macroscopicelectrical static field equal to zero [Pride,       Following Revil and Glover [1997], the model accountsfor
+1994].
+                                                               the different behavior of anions and cations. This model is
+   Under the influenceof a macroscopicelectricalfield, as
+                                                           appliedto a mixtureof sandgrainsand clay minerals. The
+an appliedelectricalfield or theresultof chargeseparation
+                                                        in
+                                                           surfaceelectricalconductivityis controlledby the cation
+thebulkporespacedueto a salinitygradient,thecounterions
+                                                               exchange
+                                                                      capacityof theclayminerals.We applyourmodel
+                                             to determinethe salinity profiles in three boreholesin the
+                                             SouthEugeneIsland (SEI) Basin, offshoreLouisiana,and
+    1Now
+       atLaboratoire
+                 deMesures
+                        enForage,            discuss
+                               Aix-en-Provence,     the salinityprofilesderived.
+France.
+
+                                                               2. Model
+Copyright1998by the AmericanGeophysical
+                                     Union.
+
+Papernumber98JB02125.                                            We considera granularporousmediumwith insulating
+0148-0227/98/98JB-02125 $09.00                                 grainssaturated
+                                                                             by a binary1:1 electrolytelike NaC1. The
+
+                                                          23,925
+23,926                           REVIL ET AL.: ELECTRICAL CONDUCTIVITY IN SHALY SANDS
+
+  Table 1. Electrolytic (at Infinite Dilution) and Surface            Hittorf numbers of the cations and anions [Revil and Glover,
+  Ionic Mobilities, and TemperatureDependenceof the                   1997]. From the definitions of these parameterswe have:
+                                                                                         $
+  Surface Mobilities     for Some Possible Counterions      at 25øC   t[+)+ t[_)- 1 andt(+)+ t•_)- 1.
+                                                                         The electrical conductivityof a granularporousmedium
+                                                                      is given by combiningthe definitionsof the Hittorf transport
+    Ion                 157                   Its,          Os,       numberwith the approachof BussJan[1983],
+                10-8 m2 s-1 V-I       10-8 m 2 s-• V-I       oc-I
+                  •                                              ,
+
+
+
+
+    H+                  36.3                 1.60a         0.023
+                                                               b                              o'= (y(+)+ (y(_),                       (1)
+    Li +                4.00                0.50a          0.094c                                      (+)(Ys         t•+)rYs
+    Na+
+    K+
+                        5.19
+                        7.61
+                                            0.51a
+                                            0.37a
+                                                           0.037c
+                                                           0.040c
+                                                                          (Y(+)
+                                                                            --t•)G
+                                                                                 f•m1--        / t$/rn/ /
+                                                                                     tf(•)Gf 1--••(•)                                 (2)
+                                                                      Here G(•) aretheioniccontributions
+                                                                                                      to themacroscopic
+   NHa+                 7.60                0.23a            -
+                                                                      electrical
+                                                                              conductivity
+                                                                                        G, Gf is theporefluidconductivity,
+    Rb+                 8.06                0.20a            -        m is called •e "cementafionexponent,"m = 3/2 for perfect
+    Cs+                 8.00                0.15a          0.049c     spherical grains [Sen et al., 1981], and $ is the
+                                                                      interconnectedfractional porosity of the sediment. The
+   Ba2+                 6.59                0.15c          0.030c
+                                                                      surfaceconductivity •s is related to the specific surface
+   Ca2+                 6.16                0.13a          0.040c     conductance
+                                                                                Z s (in siemens)by •s = 2Zs / R whereR is
+    Sr2+                6.16                0.12c          0.038c     the radiusof •e grains. This is becausethe effect of coating
+   Mg2+                 5.48                0.10a          0.040
+                                                               c      non-conductinggrains with a specific surface conductivity
+         ,
+                                                                       Z s is exactlyequivalentto increasethe bu• conductivityby
+     aFromRaythatha
+                  andSen[ 1986]onmontmorillonite.                     2Z s / R [O'Ko•ki, 1960]. The elec•ical formationfactorF
+     bFrom
+         Gast
+           andEast
+                 [1964]
+                     onabentonite
+                             suspension.                              is definedby [ B•si•,       1983]
+     CFrom
+         Hardwick
+                [1987]ona shalysandstone.
+
+                                                                                              F       as•O
+  effect of gascontentwill be analyzedlater in thispaper. The
+                                                                      Equation (3) representsthe classical Archie's [1942] law.
+  Hanai-Bruggeman equation [Bruggeman, 1935; Hanai,
+                                                                      This law has been confirmed by numerical works [e.g.,
+  1960, 1961; BussJan, 1983] was developed using a self-
+                                                                      Robertsand Schwartz, 1985; Schwartz and Kimminau, 1987;
+  consistent   medium    model   of the dielectric   and conductive
+                                                                      Sen, 1987] which simulate electhcal conduction in dense
+  responses of a composite in which charged insulating
+                                                                      orderedor disorderedpackingof insulatingspheressatiated
+  spheresof arbitrarysize are suspendedin a conductingfluid.
+                                                                      by a conductivephase.
+  Their approachis valid only in the limit 4•
+                                                                         To obtain an analytical expressionof (2), we use the
+  representsthe fractionalinterconnectedporosity. Sen et al.
+                                                                      approximation
+  [1981] obtain the same analytical equationas Bruggeman
+  [1935] and Hanai [1960] using a differential effective
+  medium approachvalid in all the porositysprectrum.In the
+  model of Sen et al. [1981], spheresof non-conducting                        •(•)=t•)G
+                                                                                      f•TM
+                                                                                         1 tf
+                                                                                           (•)Gf 1--
+                                                                                                   •(•)                          , (4)
+  material, representing the insulating mineral grains, are           which is formally exact for m = 2 and is a good
+  added to a conducting fluid, which representsthe saline             approximationfor 3/2 5 m 5 5/2, •e co--only obse•ed
+  water, until the desired porosity is reached. Their method          rangeof cementationexponentin sedimentaryrocks [e.g.,
+  assuresthat the fluid contains conductingpathways at all            W•man a• Smits, 1968]. Equation(4) can be rewritten as
+  valuesof porosity. BussJan[1983] consideredthe insulating
+                                                                      a seconddegreeequationin •(•), whichcan be easily
+  grainscoatedby a layer of surfaceconductivity5;s which              solved. In the pH range 5-8, we can expect that the
+  representsthe electrical conductionin the electrical double         countefionsof the electrical diffuse and Stern layers are
+  layer (diffuse and Stern layers).                                   mostlycarlons[e.g., Grossea• Foster, 1987; Avena a• De
+     In the present work, contrary to Bussian [1983] or de            Pauli, 1996; Revil and Glover, 1997], and therefore we
+  Lima and Sharma [ 1990], we explicitly includethe different         considert[_)- 0. With thislast•sumption,(4) becomes
+  behavior of different charge carriers, that is, the anions and
+  thecations.We specifyt(•+)and t[_)asthefractionof
+                                                                                                                                4F•
+                                                                           - •f F•l(t;)-•)1-•+
+                                                                                           t(+)1-                               + (+)
+  electricalcurrentcarriedin the free electrolyteby the cations
+  and the anions,respectively. Theseparametersare called the
+  "Hittorf transportnumbers"of the cationsand anionsin the
+  free electrolyte [e.g., Revil and Glover, 1997] and                                                                                 (5)
+  t•)- ]•)/(]5[+)+]5{_)),
+                       where]5{+)
+                                (inm2 s-1V -1) arethe
+                                                                                                  1
+  ionicmobilities
+                of theions(Table1). ForNaC1,
+  0.38,andfor KC1, t(•+)
+                      (K+) -- 0.50[e.g.,Thomas,
+                                              1976].To                                ry(_)
+                                                                                         - -•(1-
+                                                                                               tf(+))(Yf,                             (6)
+  first approximation,
+                     the Hittorf transportnumbersin the free where• is a key dimensionless
+                                                                                        parameter  definedby [Kan
+  electrolyteare independent of bothsalinityandtemperature andSen, 1987;Sen, 1987;Shubinet al., 1993]
+  [e.g.,Thomas,1976]. Similarly,we specify s andt•_)as
+  the fractionof currenttransportedby cationsand anionsfor                        •_=?_•_s
+                                                                                      = 2Z =2 (pZs]SsQ
+                                                                                                    v                                 (7)
+  surfaceconduction.Theseparametersare calledthe surface                               o'f        Ro'f       3 1-(p   crf
+                         REVIL ET AL.' ELECTRICAL CONDUCTIVITY IN SHALY SANDS                                                  23,927
+
+
+Here /•$ is an equivalentsurfacemobilityfor the surface migration of the cations shift from the interconnectedpore
+electricalconductionprocess, Qv is the excessof surface        spaceto the grainswater interface, and thereforeare subject
+charge
+     perunitporevolme (usually
+                             expressed
+                                    inmeqmL-1,                 to different tortuosities [Sen, 1987]. This transition occurs at
+1 meqmL-1 = 96.32x 106C m-3 in SI unitswhereC                  asalinity
+                                                                      corresponding
+                                                                               to • / t[+)- 1,thatis, (Yf--'(YS
+                                                                                                              / t(f+)
+                                                                                                                   '
+represents Coulomb), and Z$ is the valence of the       The change is responsible for the curvature (the second
+counterions                                             partial derivativewith respectto the electrolyteconductivity)
+           (e.g., Z$ = 1 for Na+, Li+, andCs+, Z$ = 2 for
+Ca2+).Theparameter    Qvisrelatedtothecation    exchangeof the electrical conductivity data of shaly sands when
+capacity(CEC) by [e.g., Waxmanand Sinits, 1968]         plotted as a function of the pore fluid conductivity at low
+
+                           1- OCEC.                 (8) salinities [e.g., Sen, 1987; Revil and Glover, 1997]. From
+                   Qv--fig                              (1), (5), and (6) we have
+
+Herepgisthegrain
+               density
+                    (=2650kgm-3forquartz
+                                      and
+clay mineralswithout their boundwater).                               rr-rrfl
+                                                                         F l-t/+)  •'1
+                                                                                +F½+  (t(f+)
+                                                                                         - ½)
+   The CEC (in meqg-1 or C kg-1 of matrixweight)
+indicatesthe maximum number of surfaceexchangeable
+cationsper unit massof sedimentand is usuallysignificant
+only for clay minerals [Ellis, 1987]. Patchett [1975]
+suggesteda direct relationshipbetweenCEC and specific
+                                                                           t(+)               l/ /2
+                                                                                   x1-++ 1-t-•--
+                                                                                     (+)
+                                                                                            1½ +t,•--
+                                                                                                 4F½ . (10)
+                                                                                               (+)
+
+surfacearea (see Figure 1). The surfacechargedensityis The high-salinityasymptote
+                                                                                of (10) corresponding
+                                                                                                   to • << 1
+givenby the ratio betweenthe CEC andthe specificsurface is
+area,whichisequaltotheratioQv/ (S/ Vp)whereS isthe                                      crf
+surface
+      areaofthemineralwaterinterface
+                                   andVpisthepore                                   rr= F [1+2(F- 1)½].                      (11)
+volume. The data of Figure 1 indicate a surfacecharge
+density
+      of 1-3 elementary
+                     charges
+                           pernm2 for all theclay                 We have tested(10) againstexperimentaldata (at 25øC,
+minerals. Thomas [1976] gives the CEC for authigenic           NaC1 electrolyte) derived from databases of Hill and
+formsof theclayminerals:
+                      CEC(kaolinite) = 0.03meqg-               Milburn [ 1956], Waxmanand Smits[ 1968],andVinegarand
+CEC(chlorite)
+            = 0.01meqg-1,CEC(illite) = 0.09meq                 Waxman[1984]. We have usedall 129 samplesfrom these
+andCEC(smectite)= 0.8meqg-1 [note:1 meqg-1_ (e • ) databases
+                                                           with0 _<Qv-<1.60meqmL-1(1 meqmL-1=
+Ckg-1= 96320C kg-1where istheelementary   charge
+                                               and 96.32x 106 C m-3). Fromtheseelectrical
+                                                                                       conductivity
+•is Avogadro's
+             number].Thevaluesgivenby Thomasare                measurements we havesolved(10) for F and • andestimate
+in agreement
+          with thevaluesgivenby Ridge[ 1983]andEllis           the surfaceelectricalconductivityors from (7) assuming
+[1987]'CEC(kaolinite)
+                   = 0.03-0.15meqg-1,CEC(illite)               that F is independent of the salinity because F is a
+0.10-0.40                               = 0.7-0.8 microstructuralparameter. The resultsare plotted in Figure
+        meqg-1,andCEC(Na-montmorillonite)
+meqg-1[Ridge,1983],CEC(smectite)= 0.8-1.5meqg-    2, which showsthat (:rs (and thereforeZ$) is independent
+[Ellis, 1987],andthe valuesreportedby Wiklander[1964]'         of the salinity. Possibleexplanationsfor surfaceelectrical
+CEC(kaolinite)
+           = 0.023meqg-l, CEC(illite)=0.16meqg-
+andCEC(Na-montmorillonite)
+                         = 0.810meqg-1 For a
+mixtureof clay mineralswe cantakean arithmeticaverage
+of individual clay CEC weightedby the corresponding
+volumefractionof eachclay mineral to obtainthe effective
+                                                                     103
+                                                                      • /X Montmorillonite
+                                                                              (1)
+                                                                               C)
+                                                                               •
+                                                                                     IIIite(1)
+                                                                                     IIIite(3)
+CEC [Pezard,1990]. For a mixtureof sandgrainsandclay                           I--I
+                                                                               I
+                                                                                    Kaolinite
+                                                                                            (1)
+                                                                                    Kaolinite
+                                                                                            (3)
+minerals,the CEC canbe calculatedby [ Patchett,1975]
+                                                                               ,&    Vermiculite(2)
+                                                                               •     Kaolinite
+               CEC- •wE ZiCECi,                        (9)                     •     Chorite
+                                                                                           (3)
+                           i
+                                                                     10•                                        IIIite
+where CEC is the effective cation exchangecapacity of the
+sediment,rpw is the massfractionof clay mineralsin the
+sediment,•i are the relativefractionsof eachclayminerals                                                        I chargenm'=
+in theshalefractionof thesediment,
+                                andCECiis thecation                                                             3 charges
+exchangecapacityof eachof theseclayminerals.The cation                                              Kaolinire
+exchangecapacitycorresponding     to the quartzgrainscan be                                            and
+neglecteddue to the large size of thesegrains(and therefore                                         chlorite
+                                                                     10•
+the small amount of surface charge per unit mass) in                    0.01                  0.1                        1
+ comparisonwith the size of the clay mineralsgrains[Ellis,
+1987].
+                                                                                              CEC(meq
+                                                                                                    g4)
+   Equations (5) and (6) assume that the tortuosity            Figure 1. Variationof the specificsurfacearea(in m2
+corresponding   to themigrationof the anionsis givenby F$,     g-l) withtheCEC(in meqg-l with I meqg-l __96320C
+that is, the tortuosityof the interconnected
+                                           pore space. For
+                                                               kg'l) forvarious
+                                                                              clayminerals.Theratiobetween
+                                                                                                         theCEC
+                                                               andthe specificsurfacearea gives the equivalentsurface
+the cationsthe situationis different. At high salinitiesthe
+                                                               charge
+                                                                    density
+                                                                          of themineralsurface
+                                                                                             Qs'Experimental
+                                                                                                          data
+dominantpaths for the electro-migrationof the cationsare       are from 1, Patchett[1975]; 2, Lipsicas [1984]; 3, Zundel
+locatedin the interconnected    pore spaceand the tortuosity   andSiffert[1985];and4, Lockhart[1980]. The grey areas
+for the transportof cations and anionsis the same. As the      represent the domains of variations for kaolinite and
+salinity decreases,the dominant paths for the electro-         chlorite, illite, and smectite.
+23,928                            REVIL ET AL.' ELECTRICAL CONDUCTIVITY IN SHALY SANDS
+
+                                                                           represents the groupsarisingfrom isomorphousubstitutions
+                                                                           of high-valencecationswith thoseof lower valencein the
+                                                                           tetrahedralframeworkof the clay minerals. Counterionscan
+                                                                           move alongthe pore surfaceprobablyby directsurfacesite
+                                                                           interhopping. The net energy of interactionof the clay
+                                                                           surface with the counterion may result from short-range
+                                                                           chemical forces (covalent bonding, hydrophobicbonding,
+                                                 T = 25 øC                 hydrogenbridges,stericor orientationaleffects)and long-
+         o.eo                                                              range forces (electrostaticand van der Waals attraction
+                                                 NaCI                      forces), and the mobility of the counterionsdependsof the
+                                                                           forces involved. The independenceof surfaceconductivity
+
+         0.4o
+          I•10 #WS-23(K:8%s:o%)
+                     ;1:8%;S:84%)
+                              I!
+                                  for salinityabove10-3 moll -1 canbe explained
+                                                                              by the
+                                                                           saturationof the Stemlayer by Na+ ionsabovethissalinity
+    •0.20
+       H•                  #WS'24
+                             (K:
+                              8%;I:8%;
+                                    S:
+                                     84%•
+                                        •                                  at pH - 7 [e.g., Gloveret al., 1994, Figure 11]. At lowersalt
+                                                                           concentrationswe would expect a decreaseof the surface
+         0.0     /,,, ws26                                                 conductivity corresponding to a decrease of counterion
+                                                                           adsorption
+                                                                                    in the Stemlayer [Zukoskiand Saville,1986].
+           0.1               I       of(Sm's•O
+                      Fluidconductivity,                                      In this article we focus on the strictly dc-behaviorof the
+ Figure 2. Normalized    surfaceconductivity(7s((7!)!                      electricalconductivityof shaly sands. In order to studythe
+ (7s(5.249 S m-i) as a functionof the pore fluid                           frequency-dependent    responseof a suspensionof charged
+ conductivity
+            (7[. In therangeof salinityinvestigated
+                                                  by                       particlesin an aqueouselectrolyte,GrosseandFoster [ 1987]
+  Waxman and Smits [1968],               the surface conductivity          have replacedthe double layer by a perfectly conducting
+ determined     from the model     described   in the main     text   is
+                                                                           layer for the cationsand an insulatinglayer for the anions
+ constant inside a 10% variation by comparison with the
+                                                                           (both of zero thickness),and they includediffusioncurrents
+  value
+      of thesurface
+                 conductivity
+                          at (7/ = 5.249S m-i                              in the pore space. Becauseour resultsindicatethat surface
+ (shownby the grey band). The letters K, I, and S indicate
+ kaolinite, illite, and smectite content respectively.                     conductionis occurringmostly in the Stern layer, which has
+                                                                           a thickness
+                                                                                    probably
+                                                                                          smaller
+                                                                                               than10]k,themethod
+                                                                                                                usedby
+                                                                           Grosseand Foster [ 1987] could be combinedwith our results
+  conductivity are conductionin the electrical diffuse layer               to derive the frequency behavior of the electrical
+  [Revil and Glover, 1997], conduction in the Stern layer                  conductivity of saturated shaly sands. This will be the
+  [Zukoski and Saville, 1986], and conduction at the mineral               purposeof a future work.
+  surface by proton transfer [O'Konski, 1960; S. Pride,                       We assume from now that both the formation                                factor F and
+  personalcommunication,1995]. Resultsplottedin Figure 2                   surfaceconductivityo's areindependent of thesalinity.We
+  are in contrast   with   electrical   conduction   in the electrical     havecalculatedF and o's by fitting (10) nonlinearlyto the
+  diffuselayer which is stronglysalinitydependent[Revil and
+  Glover, 1997]. We believe that surfaceelectrical conduction
+                                                                                   1.0
+  in shaly sands is probably associated with electrical
+  conductionin the Stern layer as postulatedby Urban et al.
+  [1935],Lorenz [1969] and Morirnoto and Kittara [1973].
+  Zukoskiand Saville [ 1986] have presentedan electrokinetic
+  model incorporatingeffectsdue to electromigrationtransport
+  in the Stern layer. Shubin et al. [1993] came to similar
+  conclusionsregardingthe role of surfaceconductivityin the
+  Stern layer in their analysisof the frequencydependenceof                  o 0.10
+  electrophoretic mobility of a monodisperse latex with
+  carboxyl-headsurfacegroups. Furthermore,Morimoto and                       Q.
+                                                                             0
+  Kittara [1973] and Hardwick [1987] have shownthat surface
+                                                                             0
+  conductivity is strongly dependent on brine composition.
+                                                                                                     !--I WS-17(clay:100%kaolinite) -
+  The experimentsof Lorenz [ 1969] indicate that there is no
+  surfaceconductivity at the isoelectricpoint of Na-kaolinite                                         •        WS-26(clay:100%smectite)
+  (at pH = 4). Both observations seem to exclude surface                                                           This model
+                                                                                              , ',   ,,,,,,I            ,     , ,,,,,,I           ,     , ,,,,',,
+  conduction by proton transfer as the main mechanism of                         0.010
+                                                                                     0.1                       I                          10                        100
+  surfaceconductionin shaly sandsas it has been sometimes
+  postulated.                                                                                    Pore
+                                                                                                    fluid
+                                                                                                        conductivity,
+                                                                                                                of(Sm's)
+     In the Sternlayer the counterionsare directly adsorbedon              Figure        3.   Macroscopic electrical conductivity (7 as a
+  the clay mineral surface through the surface coordination                function
+                                                                                  of porefluidelectricalconductivity
+                                                                                                                   o'f. The
+  reactions[e.g., Avena and De Pauli, 1996; Janusz et al.,                 equationdevelopedin the main text, equation(10), is used
+  1997],                                                                   to determine       the    electrical             formation          factor     F and           the
+                                                                           surfaceconductivity(7s (experimentaldatafrom Waxman
+          > Me-OH + Na + •=• > Me- O-Na + + H + .                          and Sinits, [1968]).                The results of the nonlinear fit
+                                                                 (12a)
+                                                                           corresponding to the equationdescribingthe macroscopic
+             > SiA10-Na + •=• > SiA10-+ Na +                     (12b)     conductivityo' as a function of the pore fluid conductivity
+                                                                           n•/.are
+                                                                                 #WS-17'
+                                                                                       F = 46.48+ 0.42,(7s= (426+ 11)x 10'4 S
+  Here the greaterthan sign representthe mineral lattice, Me                 l; #WS-26;
+                                                                                      F = 46.95+ 0.63,(7s= (1521+ 29)x 10-4 S
+  represents Si or A1 atoms, and >Si-O-AI< (or SiA10-)
+                                         REVIL ET AL.' ELECTRICAL CONDUCTIVITY IN SHALY SANDS                                                               23,929
+
+ experimentalrock conductivitydata as a function of fluid                                  3.0
+
+ conductivitydata for eachof the 129 samplesanalyzedby                                                                                 Typical smectite
+ Hill and Milburn [1956], Waxman and Stairs [1968], and                                    2.8
+ Vinegar and Waxman [1984]. Examplesof such fit are                                                  Clean sand/sandstone
+
+ givenin Figure3. A plot of tYs(1- q)/q as a functionof
+ Qv for eachof the 129 samplesanalyzedis givenin Figure
+ 4. The parameterQv is estimatedfrom theCEC using(8),
+                                                                                           2.4
+ and   the       CEC     is obtained         from   the   chemical         titration
+ experimentof the clay fraction [Waxmanand Srnits,1968].
+ A linearregressionbetween O's(l- •)/• and Qv using(7)                                     2.2
+                                                                                                                                             Typical illite
+ leads
+     tothevalueof ]ts(25øC)
+                         = 5.14x 10-9 m2 s-1 V -• for
+                                                                                                                                        kaolinite
+ the ion Na+ in the Stern layer. Becausethe samplesusedin                                  2.0
+ the previous databases have different proportions of
+                                                                                                                     I'-I   Vinegar and Waxman (1984)
+ kaolinite,smectite,andillite, Its seemsto beindependent
+                                                      of                                   •.8                       ß      Waxman and Smits (1968)
+ the clay mineralogy. If we take a surfacechargedensity Qs
+ (= Qv Vp/ s whereS is thesurface
+                                areaof thegrainswater                                                                V      Hill and Milburn (1956)
+                                                                                           1.6
+ interface
+        andVpisthepore
+                     volume)
+                          ofthree
+                                charges
+                                     pernm2                                                                                 r =0.83
+
+ (Figure 1), the specificsurfaceconductivityof clay minerals
+                                                                                           1.4
+ is Zs (25øC)=e Q$]ts =2.5 x 10-9 S. Thisvalueis in                                              0        0.1        0.2      0.3      0.4          0.5             0.6
+ agreementwith other independentstudies[e.g., Morimoto
+ and Kittara, 1973; Patchett, 1975; Lorenz, 1969; Van der                                                            (;Iv ½/ (1 -(D)
+ Put and Bijsterbosch,1980; O'Brien and Rowlands, 1993;                                Figure 5. Cementationexponentin shaly sands. There
+ Shubinet al., 1993].                                                                  is a net increase of the cementation exponent with the
+    Using the electricalconductivitydata of Raythatha and                              parameterQvtPl(1-tp). The cementationexponentvaries
+                                                                                       between 1.6-1.9 for clean sands and sandstones and 2.6 for
+ Sen [1986] and Hardwick [1987] and the presentmodel of
+ electrical conductivity, we have calculated the surface
+                                                                                       smectite-rich sediments. The grey areas represent the
+                                                                                       domains of variation for clean sandstone, kaolinite,               illite,
+ mobility ]•s for counterions
+                            otherthanNa+ (Table 1). The                                and smectite.
+ values reported in Table 1 are consistent with other
+ determinations. For example, the ratio betweenthe value                               that the mobilities of the counterionsare given in a
+ obtained
+        forNa+ andCa2+is in agreement
+                                   withtheresultof                                     decreasingorderaccordingto the lyotropicserie:H+, Li+ =
+ Lorenz [1969] in Na-kaolinite and Vinegar and Waxman                                  Na+, K+, NH4+, Rb+, andCs+. As notedby Vinegarand
+ [1984] in Na- and Ca-bentonitegels. According to these                                Waxman[ 1984]andRaythathaandSen[ 1986],thebinding
+ authors
+       themobility
+                 of Ca2+ionsmultiplicate
+                                      bythevalence betweenthe clay minerals and the counterionsin the Stern
+ of Ca2+ represent
+                 40% of themobilityof Na+ ionsin layer is determinedprimarily by Coulombic forces and
+ kaolinite.
+          ZukoskiandSaville[1986]reportedIts (H+)/ ]If decreases
+                                                               withincreasing
+                                                                            hydratedionicradiianddecreasing
+ (H+)= 0.05andIts(K+)/ ]t](K
+                           +)= 0.05fora suspension of ioniccharge. Vinegarand Waxman[ 1984]reportedthatthe
+ latex particlesin HC1 and KC1 in agreementwith the H + and                            orderof preferenceis generallyCs+ > Rb+ > K+ > Na+ > Li +
+ K+ values reported in Table 1. The values for the ratio                               for monovalent     cations.
+ betweenthe surfacemobilityof Na + andthe surfacemobility                                 We have used the electrical conductivity databases
+ of theionsLi+, K+, Cs+, andCa2+arealsoin verygood discussedabove in order to determine any variations
+ agreementwith the ratio values reportedby Weiller and                                 betweenthe cementation  exponentrn, whichrepresentsthe
+ Chaussidon [1968] for montmorillonite at 25øC. We note                                decoupling factorbetweenthetotalinterconnected porosity
+                                                                                       andtheeffectiveporosityfor theelectricalcurrentransport,
+       O.8                                                                             andthe factor Qvtp/(1-•). We observein Figure5 a net
+                       I'-I         Vinegar and Waxman (1984)                          increase of the cementation exponent with the factor
+                       ß            Waxman and Smits (1968)                             Qvtp/(1-•) whichis directlyproportionalto the CEC as
+                       •'           Hill and Milburn (1956)                            describedby (8). Sandstones
+                                                                                                                 rich in smectiteare observedto
+                                    r = 0.959'•                  0                     have the highestcementationexponent(Figure 5). For
+   E   0.4                                                                             practicalpurposes,
+                                                                                                       suchdependencecanbewrittenby
+
+                                                                                                         rn = m0 + aQv0/(1 - 0),                          (13)
+       o.3
+                                              o
+                                                                                       wherern0 representsthe cementationexponentof a clean
+                                                                                       sandor sandstone(i.e., a sandor a sandstone
+                                                                                                                                 withoutclay
+                                                                                       minerals,
+                                                                                              approximately
+                                                                                                        rn0 = 1.80), andotis a coefficient
+                                                                                       relatingthe cementationexponentand CEC, ot = 1.58 mL
+       0.1                                                                             meq
+                                                                                         -1.
+                                                                                          Typically, the electrolyteand surfaceconductivitiesare
+                                             •s=0'51x10'ø
+                                                      m2s'SV'S                         temperaturedependent.This dependence     can be expressed
+         0                                                                             with a linearform, whichdescribes laboratorymeasurements
+             0     0.2        0.4      0.6   0.8    I      1.2       1.4     1.6
+                                                                                       very well (Figure 6),
+                                      Qv(meqmla)
+Figure 4.   Surfaceconductivity o's as a function of                                                 as(T)
+                                                                                                        =as(T
+                                                                                                           o)[1
+                                                                                                              +Os(T-
+                                                                                                                  O)],                                     (14)
+excesschargedensityper unit pore volume Qv.                                                          Its(T)= ]ts(T
+                                                                                                                 o)[1+ Os(T-TO)],                          (15)
+23,930                            REVIL ET AL.' ELECTRICAL CONDUCTIVITY IN SHALY SANDS
+
+                                                                                               m   n
+         10                                                                             (pm __.>
+                                                                                              (p Sw'                  (16a)
+                    •     WaxmanandThomas(1974)
+                    C)    clavieret al. (1984)                                          Qv --> Qv / Sw,               (16b)
+                    •,    sen and Goode (1992)
+                                                                wheren is calledthe saturationor secondArchie exponent(n
+
+              .--         Linear(r=
+                            regression
+                                  0.99)                         = m)[Waxman and Sinits, 1968; Waxman and Thomas,
+                                                                1974; Senand Goode,1992] and Sw is the fractionalwater
+                                                                saturationof the pore space. A fully saturatedpore space
+                                                                corresponds to Sw =1. Valuesof theexponentn lie between
+                                                                1.0 and 2.5 [Dunlap et al., 1949]. In shalysands,Waxman
+                                                                and Thomas[1974] give valuesof n typically in the range
+                                                                1.6-2.2. Consequently the electrical conductivity as a
+                                                                functionof thewater saturationis givenby
+
+
+                                                                   or= F 1-t(+)
+                                                                            f +S•+1+'• t(f+
+                                                                                         )-
+
+
+                                                                                            l/ 12
+                                                                                    •                  •     4F•
+                          Temperature (øC)                                  x 1-tf w+ 1-tf'
+                                                                                (+)S    (+)S• +•t(f+)s•
+                                                                                                    +! .(17)
+ Figure 6.        Normalized surface conductivity versus
+ temperature. The surfaceconductivity of shaly sands at         The presenceof a nonwettingand insulatingfluid phase(like
+ different temperaturesand from various literature sources      gas or oil) in the interconnectedpore spaceincreasesthe
+ hasbeennormalizedto the surfaceconductivityat 25øC. A          ratiobetweensurfaceto bulkproperties.
+ linear variation between these two parametersconstitutesa
+ very good approximation. The linear regressionis forced
+ through(25øC, 1).                                              3. GeophysicalApplication
+                                                                  Usually downholemeasurementanalysisof the electrical
+   where TO is a reference temperature (25øC), and the        resistivity are done with the Waxman and Smits empirical
+   coefficients
+              0f=0.023øC-1,    andOs(Na+)=O.040_+      0.002 model(WS-model)whichhasbeenthemostwidelyaccepted
+   øC-1(fromFig 6) aretemperature   independent.  Morimoto approachto the understandingof the electricalconductivity
+   and Kittara [1973] noted that the activation energy of     of shalysands[e.g., Ellis, 1987]. The electricalconductivity
+   surface conductivity of metal oxides is larger with larger in theWS modelis givenby [ Waxmanand Srnits,1968]
+   adsorbed ions, and smaller with smaller adsorbed ions,
+   comparedto that of bulk conductivity.Using the electrical                        1
+   conductivitydata on shaly sandstoneof Hardwick [1987]                           cr=--(rrf+BQv)
+                                                                                    F            '                     (18)
+   and from Gast and East [1964] on a bentonitesuspension
+   and using the presentmodel of electrical conductivity,we   whereF is relatedto • by the ArchierelationshipF- •-2,
+   havecalculatedOs for counterions  otherthanNa+ (Table1). andB is an equivalentcounterion  mobilitygivenempirically
+   Only two cations,Li and Cs, have valuessignificantlyhigher at 25øCby
+   than 0.040 _+0.002 øC-1 in agreement
+                                      with previous
+   observations
+              [e.g., Gast and East, 1964]. BecauseOs >
+   Of, theratioof thesurface
+                           conductivity
+                                    to theelectrolyte                       B=B0 1-0.6exp
+                                                                                        -0.013'
+  conductivity increases with the temperature. At high
+  temperatures, surface conductivity can dominate bulk          where
+                                                                    theelectrolyte
+                                                                               conductivity
+                                                                                        O'fisin Sm-1andthe
+  conductivityeven for high-salinity electrolytesin the pore    maximum  counterion
+                                                                                 mobilityis givenby B0 = 4.78x 10-8
+  space. For example,Ward and Sill [ 1983] reporteda ratio of   m2 s-1V -1 Theformof (19)waschosen  by Waxman  and
+  surface to water conductivity of - 3 for altered rocks at     Smits[1968] to fit thecurvatureof theelectricalconductivity
+  Roosevelt Hot Springs, Utah, despite the presence of an       data at low salinities. However, the decrease of the surface
+  electrolytecontaining7000 ppm total dissolvedsolids(note:mobility with the salinity describedby (19) is contraryto
+  1ppm= 58.443      x l03Cf/pf, where   Cf istheequivalent what could be expectedfrom conventionalphysics. The
+  NaC1solution   concentrationin molL -1 and58.443g mol-1 curvatureof crwhen plotted as a functionof the electrolyte
+  is the molecular mass of NaC1).                          conductivityis the result of the geometryof the porous
+      A case of great practical importance in hydrothermal medium as indicated by (19) (see also Revil and Glover
+  areasand sedimentarybasinsis when two immisciblefluids [ 1997] and references therein, for a discussionof this effect
+  occupythe pore spaceof a granularmaterial. The particular based on Joule energy dissipation). As the salinity
+  case we develop here is that of two static fluids, only one decreases,the dominantcurrentpaths shift from the pore
+  conducts and is wetting for the mineral grains (the         volume to grain surfaceswhich have different tortuosities
+  electrolyte) and the insulating fluid is nonwetting for the [e.g., Sen and Goode, 1992, and references therein].
+  mineral grains (e.g., gas or oil). The influence of the Furthermorethe scatterof B0-values can be significant
+  nonwettingphasesaturationuponthe electricalconductivity ranging     between 2 x 10-8m2 s-1V-1 and4.8 x 10-8m2 s-•
+  can be taken into account by adding the transformation V-1. Predictions    ofourmodel  arecompared  withpredictions
+  introducedby Waxman and Smits [1968] to the electrical of theWS modelin Figure7. We usethe high-salinitydata
+  conductivityequation,Eq. (10) [see Waxmanand Thomas, (suchthat • << 1) of Waxmanand Smits[1968], andwe
+   1974; Clavier et at., 1984],                                 determine   from our model and the WS model the electrical
+                          REVIL ET AL.' ELECTRICAL CONDUCTIVITY IN SHALY SANDS                                     23,931
+
+                                                            conductivityfrom theporosityandtheexcessof counterions
+             aB                                             per unit pore volume. The resultsdisplayedin Figure7
+                                                            show that the model developedin this paper leads to an
+                                                            improvement
+                                                                      in the ability to predictlaboratoryelectrical
+                                                            conductivitymeasurements.
+                                                               We applytheelectricalconductivity modeldeveloped  in
+                                                            thispaperto determinesalinityprofilesin the SouthEugene
+                                                            Island(SEI) salt withdrawalminibasin. This minibasinis a
+                                                            youngPleistocene   passiveshelfmarginsedimentary  basin
+                                                            locatedin the Gulf of Mexico offshoreLouisiana(Figure 8).
+                                  r =   0.87
+                                                            This basinwasfilled rapidly(sedimentation  rate --2 km/m.y.)
+                                                            over the last 2.8 Ma. During thisperiod,a thick sequenceof
+                                 WS     Model
+                                                            shalewasdeposited    overpre-Tertiarysediments  andcovered
+                           (•1                    1         by increasinglysand-richsediments[Holland et al., 1990;
+             Measured
+                    electrical
+                            conductivity
+                                     (Sm'•)                 Alexander and Flemings, 1995]. Below 1-2 km the pore
+                                                            fluid pressureis usuallyin excessof hydrostaticpressure
+                                                            [Holland et al., 1990]. The SEI area is crossedby some
+                                                            importantfaultsandpiercedby saltdomes.
+                                                               The naturalgammaray tool containsa gammadetector
+                                                            measuring the gamma quanta emitted by the decay of
+                                             ,0             naturallyoccuringradioactivenuclei (potassium,thorium,
+                                                            uraniumisotopesandtheirdaughernuclei)in the formations.
+                                                            Consequently,   the gammaray log is a measureof thenatural
+   ._• o.1                                                  radioactivityof the sedimentformationsand can be usedto
+                                                            estimate the shalinessof the formations [Ellis, 1987]. We
+                                    r = 0.94
+                                                            assume
+                                                                 thatthe gammaray is a linearfunctionof the clay
+                                                            content,
+                          This          Model
+                                                                           7 - (1 - rpw)7sd+ rPw7sh,              (20)
+                           o.1                    1
+             Measured
+                    electrical
+                            conductivity
+                                      (Sm'•)                where7 is the gammaray reading,7Sdis thegammaray of
+Figure 7.      Predicted versus measured macroscopic        a puresandassumed     to be equalto 10 gammaray units,
+electricalconductivityof shaly sandsat 25øC (NaCl). The     whereas7shis thegammaray of a pureshale.The gamma
+experimentaldata are from Waxman and Sinits [1968].         ray levelof a pureshaleis calculatedby:
+Comparisonbetweenthe model of Waxman and Sinits
+[1968] andthe modeldevelopedin this paper. The inputs                                 n
+
+
+
+are only the porosityand the chemicalCEC.                                        7Sh
+                                                                                   - • Zi?'i,                     (21)
+                                                                                     i=1
+
+
+
+
+                                        TX
+
+
+
+
+                           Mexico
+
+
+
+
+                                                                       3 miles    (5 Km)
+
+
+
+       Figure 8. Location map of South EugeneIsland (SEI) area. The SEI areais locatedon the continental
+       shelfof offshoreLouisiana. The sedimentationrate has been high since the Pleistocene(approximately
+        1.5-2.5 km/m.y.), andsalt diapirismis intensein this area. The networkof faults is interpretedfrom
+       seismicdataat a depthof 2 km. A, B, and C are well locations.
+23,932                                              REVIL ET AL.: ELECTRICAL CONDUCTIVITY IN SHALY SANDS
+
+
+       1.20                                                                                    ionsCI-, Na+, Ca2+,andMg2+. Theporefluidssampled
+                                                                                                                                              in
+                                               Density of NeCI solutions st 25øC               the SEI area show very high salinitieswith ionic strengthin
+                                  •)           PorefluidfromSEI(onlyNa*considered)             therange1-3molL -1 (Figure9), andfluiddensities
+                                                                                                                                             in the
+  •,• 1.15
+                                  O            PorefluidfromSEI(Ne*,Cea*,Mg•, CI')             range1040-1110kgm-3 withanaverage  valuecloseto 1092
+                                                                                               kg m-3 (Figure9). For suchsalinitiesandthe previous
+   (• 1.10        -                                                                      -     composition
+                                                                                                         of the shalefraction,(7) gives • << 1, and
+                                                                                               therefore (11) can be used to infer salinity from electrical
+                                                                                               conductivity.
+  _.= 1.05
+                                                                                                  The result from the analysis of three wells is shown in
+   o                                                                                           Figure 10 (for borehole locations,see Figure 8). For this
+       1.00           '''     • ....         • ...................                             analysiswe have used the electrical resistivity, the gamma
+              0             0.5          I            1.5            2     2.5     3    3.5    ray, and the density logs, and the following methodology.
+                                         Ionicstrength
+                                                     (molL' t)                                 The porosity is determined directly from the density log
+
+  Figure 9. Pore fluid density as a function of the ionic                                      using
+                                                                                                  the
+                                                                                                    relationship
+                                                                                                            p-(1-rp)pg
+                                                                                                                    3+rppf
+                                                                                                                        where
+                                                                                                                           pf isthe
+                                                                                               pore fluid density (-- 1092 kg m- , as seen previously).
+  strength of the pore water samples from the SEI area.                                        Consequently,the porosityis given by
+  Experimental datafrom porewaterextractedfrom SEI cores
+  arecomparedwith datafor pureNaC1electrolyte. They are                                                           rp- pg- p .                              (23)
+  both in agreementif we considerthe ionic strength at the                                                             Pg --Pf
+  placeof the salinity of an equivalentNaC1solution. The
+  ionic strengths
+                derivedfrom pore water sampledin the SEI                                       The porosity of the sediments in sedimentary basins
+  areais in therange0.5-3molL'l.                                                               decreasesin a regular fashion as effective stressincreases.
+                                                                                               A. Revil and L.M. Cathles(manuscriptin preparation,1998)
+   where Zi are the clay ratio of eachclay mineral to the total                                show that the relationshipbetween the hydrostaticporosity
+   shalefraction,and 7i is the gammaray levelfor eachclay                                      •H (the porositycorresponding
+                                                                                                                           to hydrostaticpore fluid
+   mineral. In the case considered in this paper, the clay                                     pressure)andthe depthof burial z is
+   mineralogy does not change all along the entire well
+   sections. Thin sectionswe have analyzed indicate that the
+   relative clay fractionsin the sedimentare fairly constantover                                              •H
+                                                                                                               (z)-
+                                                                                                                 1-(1-
+                                                                                                                    •0
+                                                                                                                     )exp
+                                                                                                                       I---z. (24)
+                                                                                                                         /,            •,Zc
+   the depth intervals selected.          The clay ratios are                                  where •0 is a noncompactedporosity, and zc is a
+   approximatelyZ(I)= 1.75%' z(C)= 18.25%' z(MLC)=
+   64.5% (with 25% of illite and 75% of smectite),and z(K) =
+                                                                                               characteristic
+                                                                                                          depth defined
+                                                                                                                      by 1/zc -- rpO(Pg
+                                                                                                                                     -pf )gfl,pgis
+                                                                                               thegraindensity,
+                                                                                                             pf isthedensityoftheporefluid,g isthe
+   15.5% where I, C, MLC, and K representsillite, chlorite,                                    accelerationof gravity, and /• is a long-term porosity
+   mixed layers clays, and kaolinite respectively. The gamma                                   compressibility. This long-term compressibilityis defined
+   ray levels for pure shale are y(I) = 250; y(C) = 180; y(MLC)
+                                                                                               byfl = -(1/ •0)(dq/ dO'ef
+                                                                                                                     t ), whereO'eff
+                                                                                                                                  = O'- p = P - p is
+   = 100; and 7(K) -- 80 [Ellis, 1987]. With the previousvalues                                the effectivestress,cris the total confiningpressure(i.e., the
+   for the clay mineralogy and the gamma ray level for each                                    first total stressinvariant), P is the lithostaticstress,and p is
+   component,we calculatefrom (21) 7sh -- 115. From Eq.                                        thetotalfluid pressure.Both •0 and]3canbe deducedfrom
+   (20), the clay weight fractionof the formationsis givenby:                                  the porosity trend in the upper hydrostatic compartments
+                                                                                               (compartments  A) shownin Figure 10.
+                                                    7-     7sd
+                                       q•w =                                            (22)      Disequilibrium compactionoccurswhen sedimentsare
+                                                  7sh - 7sd                                    unable to expel their pore fluid in response to sediment
+                                                                                               loading and fluid overpressuresare generated. In such a
+   Equation (22) should be considered as a rough                                               case, the porosity remains a function of the effective stress
+   approximation because sometimes nonradioactive clay                                         [e.g., Bredehoeft and Hanshaw, 1968]. The total fluid
+   minerals are present and becauseuranium rich formations                                     pressurep is equalto the hydrostaticfluid pressurePH plus
+   canbe interpretedasshalelayers[Ellis, 1987]. From (9), the                                  thefluid overpressure6p.If theporosity• is writtenas
+   clay compositionpreviously describedand the authigenic
+   clay CEC data of Thomas [1976] we obtainCEC = (0.0793                                                          ½(z)=          +                         (25)
+   rpw) meqg-1 Thisleadstoa verygoodagreement
+                                           withthe
+   valuesgiven by Clavier et al. [1984, their Fig. 1], who noted                               A. Revil andL. M. Cathles(manuscriptin preparation,1998)
+   a direct correlation between (7/                                      q) and Qv'    Qv --   showthat the "excessporosity" 6q is relatedexactlyto the
+   1.2186x10-3
+            (7/q) forshalysand.                                                                excessfluidpressure6p by
+       The ionic strengthI of a multicomponentelectrolyteis
+                                                                                                                           z
+   defined
+        byI - •in__l
+                  (Z/)2 C/ [e.g.,Revil
+                                    andGlover,
+                                            1997].
+   Here Z i are the ionic valences, n is the number of ionic                                              6p(z)-
+                                                                                                             &p(z)
+                                                                                                                 l(pg
+                                                                                                                 0
+                                                                                                                    _pf)g&P(z')
+                                                                                                                          dz'. (26)
+   species
+         and C? aretheionicconcentrations
+                                       (in toolL-l).
+  The four main ions in the fluid sampledin the SEI area are                                   The secondterm correctsthe lithostaticpressurefor changes
+  C1-Na+, Ca2+,andMg2+. Figure9 shows
+                                    thathesampled in sediment
+                                                            densitydueto theporositychange6•. Equation
+  pore fluid in the SEI area is a multi-componentelectrolyte.                                  (26) is valid only for disequilibriumcompaction.The excess
+  It can be consideredas an equivalentNaC1 solutionif we                                       porosityis indicatedby the cross-hatchedzonesin Figure 10.
+  considerthe salinity as equal to the ionic strengthof the pore                               The fluid overpressures   determinedfrom (26) are favorably
+  fluid taking into accountthe concentrationsof the four main                                  comparedto mud weight data which are known to be fairly
+                                           REVIL ET AL.: ELECTRICAL CONDUCTIVITY IN SHALY SANDS                                                                                                          23,933
+
+                                i
+
+
+
+
+                    Hole A •                                      Excessporosity¸                        Mudweightdata
+                                                                   Fluid'
+                                                                       excess                         Shale
+                                                                                                         content                Pore
+                                                                                                                                   flud                            Sedimentation
+                            Porosity pressure
+                                          (MPa)                                                        (weight) salinity
+                                                                                                                     (molL'•)                                          rate
+                                                                                                                                                                          (rn/m.y.)
+
+            -                               / • Reduced '
+                                                   '                                                                                                          '
+            'A
+            -                        •      /                 '
+                                                              '         lithostatic
+                                                                             i
+                                                                            pressure
+
+
+
+
+                                •1•                           •, X                                .     -                  . ,, •.,                           .
+                ..... ....                                                          ...... ...... .                        -              ß                   --   !•.
+                                                                                                                                                                       .............
+                                                                                                  ._ _•,
+                                                                                                  .                        .- . . :...-f
+                                                                                                                           .
+
+
+
+
+                ,•                                c        .:••-
+                                                 ............-;     •-......:.
+                                                                ,.,...,.    .,,.,;.;.•,;
+                                                                                      ...... , ....
+            0           0,2 0,4 0,6 0                               10              20            0     0,5               I 0    I            2           3
+
+                    Hole B •                                      ExcessporosityO Mudweightdata
+                                                          •                                                                                                                      i               i
+        0
+                                                                   Fluid
+                                                                       excess                         Shale
+                                                                                                         content                Pore
+                                                                                                                                   fluid                               Sedimentation
+                            Porosity pressure
+                                          (MPa)                                                        (weight) salinity
+                                                                                                                     (molL'•)                                            rate
+                                                                                                                                                                            (rn/m.y.)
+
+
+     1000
+            :A •-'"•----'\ pre/.ssure  : ••=••_ : ,!,•'; i •t'
+            ,.--
+             ......•  'i ..............i.-••........•., ....:..•....•i...........
+            ,B                                                :•. •
+                                                                    .......            .
+                                                                       - •-'["Seawater -
+                                ••                            •'e•,_
+                                                                   •                              • --•                    •!' salinity
+                                                                                                                                    • •.
+
+
+            •_.                             .......:....'.½.......,...•;....--•.•.
+                                                                         .....:.••,,,r•.•..•_..:;
+                                                                                              .............
+                                                                                                                                                              ,.
+
+
+                ß   .   .   !       ....     !   ......             i   ,   ,   ,   i   .......             i .........          , ....       i   .....            •     ,   ,       I   ,   ,       ,
+
+
+
+            0 0.2 0.4 0.60                                          10 20 30 0                         1 0.5              I 0    I            2           30                 2500 5000
+Figure 10. Resultsfrom the downholemeasurements     analysis. Porosity, fluid excesspressure(in
+megapascals),
+           shalecontent(fractionalweightwith valuesbetween0, cleansand,and 1, pureshale),pore
+fluidsalinity
+            (intoolL'l), andsedimentation
+                                      ratearederived
+                                                   fromdownhole
+                                                             measurements.
+                                                                       Theporosity
+andtheshalecontentarederivedfromthedensitylog and the gammaray log, respectively. The porosity
+decreasesalmostlinearly with the depthof burial in the upperhydrostaticallypressured    compartment
+(compartment  A). Suchdecrease   is characteristic
+                                                 of equilibrium compaction.The porositytrendin this
+compartment  is indicatedby the solid(almostlinear)line. Fluidoverpressure
+                                                                         is computed from the excess
+porositydistribution(cross-hatched  zone)definedby the differencebetweenthe porositycomputedfrom
+the density log and the porosity predictedfrom the equilibriumcompactiontrend. Overpressured
+compartments  areindicatedby capitalletters(B, C, andD). Dashedlines andshadedzonesrepresenthe
+boundariesbetweenthesecompartments      whichcorrespond  to thepresence
+                                                                      of sealsor growingfaults. The
+sedimentation  rateis determined from biostratigraphicinformation(the lower valuecorresponds  to the
+compacted sedimentation  rate,andthe highervaluecorresponds   to theuncompactedsedimentationrate,see
+maintext). The salinity is computed  fromthe electricalconductivityequations derivedin the main text,
+the electricalresistivitylog, the porosity,and the shalecontent.
+23,934                          REVIL ET AL.' ELECTRICAL CONDUCTIVITY                                        IN SHALY SANDS
+
+
+
+                         Hole C •                Excessporosity¸                    Mudweight
+                                                                                           data
+
+                          Porositypressure
+                                   Fluid
+                                      excess
+                                        (MPa) Shale
+                                                 content
+                                               (weight)   Pore fluid
+                                                        salinity L'1) Sedimentation
+                                                              (mol    rate(m/m.y.)
+
+
+              1000
+                     -                       :• Reducedi'••
+                                             -•\              lithostatic                                                                - I•
+                         A                   .••sure
+                                             ;.
+                                                                                                       i..,•,,.•ti•l•
+                                                                                                           .•,•...•...
+                                                                                                            ...
+                                                                                                                 :•-
+
+                                             ß
+
+
+
+
+                                                              ! .......                                                                  :.::
+                                                                                                                                         '   1
+
+
+
+
+                                                                               .
+
+
+
+
+                                             'l,,,I,,,I,,,I          .......         I   ,   ,   , ,   ',,    , , I ....   I ........              ,    ....
+
+                     0    0.2    0.4   0.6       0     10 20 30 400                0.5             I •0           I        2            30       2500          5000
+
+
+                                                                   F'•ure 10. (continued)
+
+
+  goodindicatorsof excessfluid pressures[Ellis, 1987]. The     sealing[Revilet al., 1998]. Compartments      are indicatedby
+  compactedsedimentationrate is equalto the thicknessof the    capital letters in Figure 10 (A, B, C, and D where A is
+  stratigraphic intervals divided by the time required for     always an hydrostaticcompartment). The correlationof
+  deposition. We estimateits magnitudefrom biostratigraphic porosity and salinity variations suggeststhat porosity and
+  information. This sedimentation rate to is corrected •om     salinity may have a common history. We note that the
+  compaction   to obtaina non-compacted sedimentation  rate c% porosityvariationsand the salinity variationshave roughly
+  using: to0 = to(l-O)/(1-•0    ), where • is determinedfrom   the sameamplitude(approximatelya factor 3) which could
+  (23) and •0 from the normaltrendof compaction.               indicatethe possiblefiltration effect of shale [Hanshaw and
+     The salinity is obtainedfrom the set of equationsgiven in Coplen,1973]. However,salinityin the SEI areacanalsobe
+  the previous sectionof this paper usingthe following steps. controlledby salt dissolutionof allochthonoussalt structures
+  (1) The CEC is obtained from (9), the shale content (in      and thermohaline convection [e.g., Hanor, 1987]. Salt
+  weight) obtainedfrom (22) usingthe gammaray log and the domespierce sedimentarylayers and exist at shallowdepth
+  relative fractionsof clay minerals. The CEC is convertedto   in the SEI area [Holland et al., 1990]. Preferential
+   Ov using (8). (2) The surface conductivity is calculated dissolutionof the salt is occurringnearthe top of the dome
+  from (7) and correctedfor temperatureusing (15). (3) The     [e.g., Hanor, 1987]. Lesssalinewater bleedsup aroundsalt
+  fluid conductivityis determinedusing(11) andcorrectedfor     domeswhere less saline overpressured      fluids leak up from
+  temperatureusing(14) to obtain the pore fluid conductivity below resulting in gravitational instabilities and
+  at 25øC. Integrationof downholetemperature    measurements thermohaline convection. Regardless of the cause, the
+  (corrected from borehole effects) show that the variation of salinity pattern determined by the present method is
+  the temperature(in øC) with depth in the area is given by    remarkablycoherent. Numerical modeling and theoretical
+   T= Ts+G ZTVD, where Ts = 25øC is the seafloor               analysisto explainthe salinity,porosity,andpressurepattern
+  temperature,   G = 20.7 x 10-3 øCm-1 is the large-scale will be addressedin a futurepaper.
+  geothermalgradient,and z TVD is the true vertical depth
+  below the seafloor. (4) Finally, becausethe salinity is                          4. Conclusions
+  roughly proportionalto the electrolyteconductivity,we can
+  estimatethe salinity using Cf =0.56x[crf(25øC)/5],     We have developed a new model for the electrical
+  where5 S m-1 is approximatelythe seawaterelectrical conductivityof shaly sandswhich includesthe influenceof
+  conductivity
+            at 25øCand0.56molL -1 is thesalinityof an clay minerals (clay content and clay composition),ionic
+  equivalentNaC1solutionof sameelectricalconductivitythan                          compositionin the pore water and in the electrical double
+  sea water accordingto the equationdevelopedby Sen and                            layer, temperature,and gas saturation. Ion transportalong
+  Goode [ 1992].                                                                   the surfaceof clay mineralsoccursmainly in the Stemlayer,
+     Figure 10 shows porosity, fluid overpressure,                                 where at 25øC, ion mobilities are smaller than in the bulk
+  sedimentationrate, and salinityprofiles determinedfrom the                       water. The temperaturedependenceof surfaceconductivity
+  previous methodology. This suggeststhat the SEI basin is                         is generallyhigher than the temperaturedependenceof the
+  pressurecompartmentalize.
+                       d maybeas a resultof capillary                              bulk electrolyte. Consequently,surfaceconductivitycan
+                            REVIL ET AL.: ELECTRICAL CONDUCTIVITY IN SHALY SANDS                                                    23,935
+
+
+representan importantcontributionto the macroscopic Hanai, T., Dielectric on the interfacial polarizationfor two-phase
+conductivityof shaly sandsin sedimentarybasinsand            mixtures,Bull. Inst. Chem.Res.,KyotoUniv.,39, 341-367,1961.
+                                                           Hanor,J. S., Kilometer-scale
+                                                                                      thermohaline  overturnof porewaters
+geothermal areasdue to the increaseof temperature    with    in the LouisianaGulf Coast,Nature, 327, 501-503, 1987.
+depth. At constantemperature  the surfaceconductivityis Hanshaw,B. B., and T. B. Coplen,Ultrafiltrationby a compacted
+shownto be independentof the salinity,at leastfor salinity   clay membrane - II. Sodium ion exclusion at various ionic
+above10-3 molL- 1 Electricalconductivity   calculatedwith    strengths,Geochim.Cosmochim.   Acta, 37, 2311-2327,!973.
+ this model is favorably compared with published Hardwick, A., The effect of brine composition on excess
+                                                              conductivityin shaly sands,paper presentedat SPWLA 28th
+ experimentaldata. We find consistentresults of the          Annual Logging Symposium,Soc. of Prof. Well Log Anal.,
+'electricalconductivity for shalysandsovera widerangeof      London,England,June29-July2, PaperW, 1987.
+ salinity,porosity,cationexchangecapacity,andtemperature. Hill, H. J., and J. D. Milburn, Effect of clay and water salinityon
+                                                             electrochemical behavior of reservoir rocks, Trans., Am. Inst.
+ The application of thismodelin a sedimentary basinin the
+                                                             Min. Metall. Pet. Eng.,207, 65-72, 1956.
+ Gulf Coast of Mexico (South Eugene Island, offshore
+                                                          Holland, D. S., J. B. Leedy, and D. R. Lammelin, EugeneIsland
+ Louisiana)showssalinityprofileswhichareconsistent  with     Block 330 field - USA, offshore Louisiana, in Compilers,
+ sampledsalinityand indicatingcompartmentation    of this    StructuralTraps;III, TectonicFold andFault Traps,Treatiseof
+basin.                                                                  PetroleumGeologyAtlas of Oil and Gas Fields,editedby E. A.
+                                                                        Beaumont,and N.H. Fosterpp. 103-143, Am. Assoc.of Pet.
+                                                                        Geol., Tulsa, Okla., 1990.
+                                                                     Janusz,W., I. Kobal, A. Sworska,and J. Szczypa,Investigationof
+   Acknowledgments. This work is supportedby the Gas                   the electrical double layer in a metal oxide/monovalent
+Research Institutegivennumber5093-260-2689,the GlobalBasin             electrolytesolutionsystem,J. ColloidInterfaceSci., 187, 381-
+Research Network (GBRN) at Cornell University, and the              387, 1997.
+companies  sponsoring  theseprojects.Thisworkbenefitedgreatly Kan,R., andP. N. Sin,Electrolytic   conduction  inperiodicarrays of
+from discussionswith Y. Bernab6andP. A. Pezardand initially with    insulatorswith charges,J. Chem.Phys.,86, 5748-5756,1987.
+M. Darotat Strasbourg.A. Revil acknowledges   the supportof Elf Lipsieas,M., Molecularandsurfaceinteractionsin clay intercalates,
+Aquitaine,O. Brevart,and D. Graulsduringhis stayat Cornell          in Physicsand Chemistryof porous Media, editedby D, L.
+University.We thankD. Fitterman,P. Glover,andthe associate          Johnsonand P. N. Sen, pp. 191-202, Am. Inst. of Phys., New
+editorG. Jiracekfor theirhelpfulreviews.                            York, 1984.
+                                                                 Lockhart,N. C., Electricalproperties
+                                                                                                    andthesurfacecharacteristics
+                                                                    and structureof clays, II, Kaolinitc: A nonswellingclay, J.
+References                                                          ColloidInterfaceSci.,74,520-529, 1980.
+                                                                 Lorenz,P. B., Surfaceconductance  and electrokineticpropertiesof
+Alexander, L. L., and P. B. Flemings, Geologic evolution of a      kaolinitcbeds,ClaysClayMiner., 17,223-231, 1969.
+   Pliocene-Pleistocene salt withdrawalmini-basin:EugeneIsland Morimoto, T., and S. Kittara, Surface conductanceof metal oxides
+   Block 330, offshore Louisiana,AAPG Bull., 79, 1737-1756,        in electrolytesolutions,J. ColloidInterfaceSci.,44, 289-297,
+   1995.                                                                1973.
+
+Archie,G. E., The electricalresistivitylog as an aid in determining O'Brien, R. W., and W. N. Rowlands, Measuring the surface
+   somereservoircharacteristics, Trans. Am. Inst. Min. Metall. Pet.    conductanceof kaoliniteparticles,J. ColloidInterfaceSci., 159,
+   Eng.,146, 54-62,1942.                                                471-476, 1993.
+Avena,M. J., andC. P. De Pauli, Modelingtheinterfacialproperties O'Konski, C. T., Electricpropertiesof macromolecules, V, Theory
+   of an amorphousaluminosilicate     dispersedin aqueousNaC1       of ionicpolarizationin polyelectrolytes,
+                                                                                                           J. Chem.Phys.,64,605-
+   solutions,ColloidsSurf.,118,75-87, 1996.                         619, 1960.
+Bredehoeft, J. D., and B. B. Hanshaw, On the maintenanceof Patchett, J. G., An investigation of shale conductivity, paper
+   anomalous  fluidpressures in thicksedimentarysequences,Geol.     presentedat SPWLA 16th AnnualLoggingSymposium,Soc.of
+   $oc. Am. Bull., 79, 1097-1106, 1968.                             Prof. Well Log Anal., PaperV, 40 pp., New Orleans,June4-7,
+Bruggeman,D. A. G., Berechnungverschiedener       physikalischer    1975.
+   konstanten vonheterogenen             Ann.Phys.,24, 636-664, Pezard,P. A., Electricalpropertiesof mid-oceanridge basaltand
+                               substanzen,
+   1935.                                                            implicationsfor the structureof the oceaniccrustin Hole 504B,
+Bussian, A. E., Electrical conductancein a porous medium,           J. Geophys.Res.,95, 9237-9264, 1990.
+   Geophysics,  48, 1258-1268,1983.                              Pride,S., Governingequations  for the coupledelectromagneticsand
+Clavier, C., G. Coates, and J. Dumanoir, The theoretical and        acousticsof porousmedia,Phys.Rev.B, 50, 15678-15696,1994.
+   expe•rimental bases for the dual-water model for the Raythatha, R., and P. N. Sen, Dielectric properties of clay
+   interpretationof shalysands,Soc.Pet. Eng. J., 24(2), 153-169,    suspensions in MHz to GHz range,J. ColloidInterfaceSci.,109,
+   1984.                                                                301-309, 1986.
+de Lima, O. A. L., and M. M. Sharma, A grain conductivity           Revil, A., L. M. CathlesIII, J. D. Shosa.,P. A. Pezard, and F. D. de
+    approach  to shalysandstones,Geophysics, 55, 1347-1356,1990.       Larouzi•re,Capillarysealingin sedimentary     basins:A clearfield
+Dunlap, H. F., H. L. Bilhartz, E. Schuler,and C. R. Bailey, The        example,Geophys.   Res.Lett., 25, 389-392,1998.
+    relation between electrical resistivity and brine saturation in Revil, A., and P. W. J. Glover, Theory of ionic surfaceelectrical
+    reservoir rocks, Trans. Am. Inst. Min. Metall. Pet. Eng., 186,     conduction  in porousmedia,Phys.Rev.B, 55, 1757-1773,1997.
+    259-264, 1949.                                                  Ridge,M. J., A combustionmethodto measurethe cationexchange
+Ellis, D. V., Well Loggingfor Earth Scientists,527 pp., Elsevier,      capacityof day minerals,LogAnal., 3, 6-11, 1983.
+    New York, 1987.                                                 Roberts, J. N., and L. M. Schwartz, Grain consolidationand
+Gast, R. G., and P. J. East, Potentiometric,electrical conductance     electricalconductivity in porousmedia,Phys.Rev.B, 31, 5990-
+    and self-diffusionme•yrements in clay-water systems,Clays          5997, 1985.
+    ClayMiner., 12,297-310, 1964.                                   Sen,P. N., Electrolyticconductionpastarraysof chargedinsulating
+Glover, P. W. J., P. G. Meredith, P. R. Sammonds, and A. F.            spheres, J. Chem.Phys.,87(7),4100-4107,1987.
+    Murrell, Ionic surface electrical conductivityin sandstone,J. Sen,P. N., and P. A. Goode,Influenceof temperatureon electrical
+    Geophys.  Res.,99, 21635-21650,1994.                               conductivity on shalysands,Geophysics,    57, 89-96, 1992.
+Grosse,C., andK. R. Foster,Permittivityof a suspension  of charged Sen, P. N., C. Scala, and M. H. Cohen, Self similar model for
+    sphericalparticlesin electrolytesolution, J. Chem. Phys., 91,      sedimentaryrockswith applicationto the dielectricconstantof
+    3073-3076, !987.                                                   fusedglassbeads,Geophysics,     46, 781-795, 1981.
+Hanai, T., Theory of the dielectricdispersiondue to the interfacial Schwartz, L. M., and S. Kimnfinau, Analysis of electrical
+   polarizationandits applicationto emulsions,Kolloid-Z.,171, 23-      conductionin the grain consolidationmodel, Geophysics,52,
+   31, 1960.                                                            1402-1411, 1987.
+23,936                          REVIL ET AL.: ELECTRICAL CONDUCTIVITY IN SHALY SANDS
+
+
+   Shubin,V. E., R. J. Hunter, and R. W. O'Brien, Electroacoustic
+                                                                and   Wiklander,L., Chemistry
+                                                                                            of theSoil,2nded.,editedby F. E. Bear,
+         dielectricstudyof surfaceconduction,
+                                           J. ColloidInterfaceSci.,     Van NostrandReinhold,New York, 1964.
+         159, 174-183, 1993.                                       Zukoski, C. F., and D. A. Saville, The interpretation of
+   Thomas,E. C., Determinationof Q v from membranepotential          electrokineticmeasurements  usinga dynamicmodelof the Stern
+      measurements  on shalysands,Trans.Am. Inst.Min. Metall. Pet.   layer, I, The dynamicmodel, J. ColloidInterfaceSci., 114, 32-
+     Eng.,261, 1087-1096,1976.                                       44, 1986.
+   Urban, F., H. L. White, and E. A. Stassner,Contributionto the Zundel, J.P. and B. Siffert, Mtcanisme de rttention de
+     theoryof surfaceconductivity at solid-liquidinterfaces,
+                                                          J. Phys.   l'octylbenzene sulfonatede sodiumsurles mintrauxargileux,in
+      Chem.,39,311-330, I935.                                        Solid-Liquid Interactions in Porous Media, pp. 447-462,
+   VanderPut,A. G., andB. H. Bijsterbosch,   Electricalconductivity' Technip,Pads,1985.
+         of diluteandconcentrated
+                               aqueous
+                                     dispersions
+                                              of monodisperse
+      polystyrene particles: Influence of surface conductanceand     L. M. Cathies III and S. Losh, Departmentof Geological
+      double-layer
+                 polarization,J. ColloidInterfaceSci., 75, 512-523,Sciences,SneeHall, Cornell University,GBRN Group, Ithaca,
+         1980.
+                                                                   NY 14853.(e-mail:cathles@geology.cornell.edu;
+                                                                                                               1osh@geology.
+   Vinegar,H. J., andM. H. Waxman,Inducedpolarization     of shaly cornell.edu)
+      sands.The effect of clay counteriontype, paperpresentedat
+      SPWLA,Soc.of Prof.Well LogAnal.,1984.                          J.A. Nunn,Department  of GeologyandGeophysics, Louisiana
+   Ward,S. H., andW. R. Sill, Resistivity,inducedpolarization,and  StateUniversity, GBRN Group, BatonRouge,LA  70803. (e-mail:
+      self-potential
+                   methodsin geothermal              Rep. 1983-3, jeff@geol.lsu.edu)
+                                          exploration,
+      Geothermal Training Programme, United Nations Univ.,           A. Revil, Laboratoirede Mesures en Forage, ODP, BP 72,
+      Reykjavik,Iceland,1983.                                      13545 Aix-en-Provence,Cedex 4, France. (e-mail: revil@lmf-
+   Waxman,M. H. and L. J. M. Smits,Electricalconductivitiesin oil- aix.gulliver.fr)
+      bearingshalysands,Soc.Pet. Eng.J. , 8, 107-122,1968.
+   Waxman, M. H., and E. C. Thomas, Electrical conductivities in   (ReceivedSeptember  5, 1997;revisedMarch3, 1998;
+      shalysands,J. Pet. Technol.,257,213-225, 1974.               acceptedJune15, 1998.)
+   Weiller, R. A., and J. Chaussidon,Surface conductivityand
+      dielectricalpropertiesof Montmorillonitegels, Clays Clay
+      Miner., 16,147-155, 1968.
+
