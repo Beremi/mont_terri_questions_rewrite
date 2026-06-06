@@ -19,13 +19,13 @@ Clay/EDZ effective Darcy mobility before relative permeability and viscosity are
 applied.  It is the main hydraulic material field for the present inversion. &
 Hydraulic conductivity is derived from \(\KK\), liquid density, viscosity, relative
 permeability, and saturation state; it is not an independent base field here. &
-Run-local \texttt{MeshElement} field \texttt{k\_i\_rd}.  Current release gates allow
+Current OGS \texttt{MeshElement} field \texttt{k\_i\_rd}.  Current release gates allow
 permeability magnitude changes while tensor shape remains staged.\\
 Porosity \(\por(\xx)\) &
 Effective pore-volume fraction used by the OGS continuum model. &
 Water content is \(\theta=\por\Sl\) only for the mobile/OGS liquid storage; NMR,
 ERT, and Taupe/TDR may also see bound/interlayer water or calibration offsets. &
-Run-local \texttt{MeshElement} field \texttt{n\_rd}, fixed at \(0.105\) in the
+Current OGS \texttt{MeshElement} field \texttt{n\_rd}, fixed at \(0.105\) in the
 current field package.  Not released as an unknown yet.\\
 Saturation \(\Sl\) and retention \(S_l(p_c)\) &
 Liquid occupancy of the OGS pore space, governed by a retention law. &
@@ -65,7 +65,7 @@ Fixed XML constants/laws.  The \texttt{CTE}=1254.74 value is a provenance caveat
 should not be interpreted as a calibrated thermal-expansion coefficient.\\
 Fault, fracture, crack, and EDZ fields &
 Structural features that may localize permeability, porosity, stiffness, or aperture. &
-Measured aperture could imply hydraulic aperture or local permeability only after
+Measured aperture could imply hydraulic aperture or localized permeability only after
 scale, clay-contact, and 3D-to-2D projection assumptions are accepted. &
 Not an active OGS geometry/material class in this chapter.  They remain structural
 priors, masks, scenarios, or qualitative diagnostics until source data are resolved.\\

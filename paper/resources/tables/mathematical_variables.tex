@@ -17,18 +17,18 @@ Field & Symbol & Unit & Mathematical meaning and OGS status\\
 Displacement &
 \(\uu=(u_x,u_y)\) &
 \(\mathrm{m}\) &
-Primary mechanical unknown and run-local output field.  It describes deformation of
+Primary mechanical unknown and current OGS output field.  It describes deformation of
 the continuum slice relative to the chosen numerical initial state.\\
 Liquid pressure &
 \(\pl\) &
 \(\mathrm{Pa}\) &
-Primary hydraulic unknown and run-local output field.  In the Richards convention
+Primary hydraulic unknown and current OGS output field.  In the Richards convention
 used here, negative liquid pressure means positive suction relative to the
 gas/reference pressure.\\
 Temperature &
 \(\TT\) &
 \(\mathrm{K}\) &
-Primary thermal unknown in the full TRM process and run-local output field.  In the
+Primary thermal unknown in the full TRM process and current OGS output field.  In the
 active parametrization it is constrained to \(T_0=298.15\,\mathrm{K}\) throughout the
 domain and time interval.\\
 Liquid saturation &
@@ -61,7 +61,7 @@ Intrinsic permeability &
 \(\mathrm{m^2}\) &
 Material tensor controlling Darcy mobility before multiplication by relative
 permeability and division by viscosity.  The current workflow supplies it through
-the run-local mesh field \texttt{k\_i\_rd}.\\
+the current OGS mesh field \texttt{k\_i\_rd}.\\
 Porosity &
 \(\por(\xx)\) &
 -- &

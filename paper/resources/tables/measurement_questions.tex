@@ -85,14 +85,14 @@ for example \path{Permeability_CDA_all_2025.xlsx}, weekly/seasonal NMR
 \path{OT_RH5.xlsx}--\path{OT_RH8.xlsx}, and \path{VisualisationCDA.dat}.}
 \mqPair{mqGate}{Gate}
 {What processing step produced the table used here?}
-{The tables used here come from the processed-observation/audit layer in
+{The tables used here come from the processed-observation layer in
 \path{SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations} and the
 joined \path{measurement_model_entry_matrix.md}.}
 \mqPair{mqGate}{Gate}
 {What exact spatial support does one row represent?}
 {It is stream-specific: permeability rows are borehole intervals; NMR rows are
 mapped NMR labels or profile positions; ERT rows are inverted mesh cells; Taupe rows
-are sensor--EDZ-band line supports; RH rows are boundary-audit sensor points; HM rows
+are sensor--EDZ-band line supports; RH rows are boundary-check sensor points; HM rows
 may be points, lines, pairs, or surfaces.}
 \mqPair{mqGate}{Gate}
 {What timestamp or survey epoch does one row represent?}
@@ -183,12 +183,12 @@ gas-interpretation metadata gate unless the original fitting sheet or method not
 states it.}
 \mqPair{mqGate}{Gate}
 {Which pressure-decay fits are failed or low-signal?}
-{The processed audit separates 6687 pressure-decay rows and flags 4 interpreted rows
+{The processed table separates 6687 pressure-decay rows and flags 4 interpreted rows
 as missing or nonpositive.  It does not yet provide a row-level failed/low-signal fit
 classification.}
 \mqPair{mqGate}{Gate}
 {Which rows may be affected by leakage?}
-{No row-level leakage flag was found in the current local catalogue or audit layer.
+{No row-level leakage flag was found in the current source catalogue or processing layer.
 Treat leakage as a requested provider/fitting-metadata flag, not as an inferred local
 classification.}
 \mqPair{mqGate}{Gate}
@@ -218,8 +218,8 @@ does not yet prove whether this angle is fixed globally, released, or identical 
 the mechanical/ERT anisotropy angle in the final workflow.}
 \mqPair{mqGate}{Gate}
 {Which repeated tests sample the same support?}
-{The likelihood-policy audit groups repeated/conflicting active rows by support cell:
-30 active repeated/range cells are audited, with 16 support groups showing range
+{The likelihood-policy check groups repeated/conflicting active rows by support cell:
+30 active repeated/range cells are checked, with 16 support groups showing range
 \(\ge 2\) log10 units.}
 \mqPair{mqGate}{Gate}
 {How are several-log10 repeated-test disagreements classified?}
@@ -342,7 +342,7 @@ within-label means so constant label offsets cancel to first order.  It remains 
 policy choice, not a measured decomposition.}
 \mqPair{mqGate}{Gate}
 {Can bound water be treated as constant by campaign or depth?}
-{Not proven.  The bound-water audit shows high-offset labels and nonuniform offsets,
+{Not proven.  The bound-water check shows high-offset labels and nonuniform offsets,
 so a single campaign/depth correction is riskier than label-specific trend/anomaly or
 bias terms.}
 \mqPair{mqGate}{Gate}
@@ -414,7 +414,7 @@ reference date and covariance policy that are not accepted yet.}
 projection lookup.}
 \mqPair{mqGate}{Gate}
 {Which VTK field is authoritative?}
-{The processed audit uses the inverted \texttt{Resistivity(log10)} field from the
+{The processed table uses the inverted \texttt{Resistivity(log10)} field from the
 ERT VTK files for diagnostic comparisons.}
 \mqPair{mqGate}{Gate}
 {Which reference date is used for ERT changes or anomalies?}
@@ -512,7 +512,7 @@ remain structural caveats unless a mask is supplied.}
 are inside an OGS cell and inside the provisional near-niche support.}
 \mqPair{mqGate}{Gate}
 {Is the 35 cm rock-depth convention part of the ERT support?}
-{It is an explicit open support question.  The current support-sensitivity audit
+{It is an explicit open support question.  The current support-sensitivity check
 tests radial subsets, but the exact 35 cm convention is not closed.}
 \mqPair{mqGate}{Gate}
 {How are dense ERT cells aggregated before scoring?}
@@ -574,12 +574,12 @@ TAUPE/TDR can measure apparent relative dielectric permittivity, but the workboo
 unit has not been provider-confirmed.}
 \mqPair{mqGate}{Gate}
 {Does the workbook value store ARDP?}
-{Possible.  The current semantic audit treats the values as an ARDP/dielectric
+{Possible.  The current semantic check treats the values as an ARDP/dielectric
 water-content proxy until the unit is confirmed.}
 \mqPair{mqGate}{Gate}
 {Does the workbook value store calibrated volumetric water content?}
 {Not confirmed.  Interpreting the values as water-content percent is only a
-plausibility check in the audit, not an accepted calibration.}
+plausibility check, not an accepted calibration.}
 \mqPair{mqGate}{Gate}
 {Does the workbook value store travel time or amplitude?}
 {No evidence in the processed workbook summary.  The sheets contain dated band values
@@ -590,7 +590,7 @@ near 9.87--11.00, not raw waveform traces, travel times, or amplitudes.}
 Taupe/TDR water-content residuals.}
 \mqPair{mqGate}{Gate}
 {What Taupe/TDR calibration range is valid for Opalinus Clay?}
-{Not accepted for the CD-A workbook values.  The audit only tests physical
+{Not accepted for the CD-A workbook values.  The current check only tests physical
 plausibility of candidate conversions; it does not establish an Opalinus Clay
 calibration range.}
 \mqPair{mqGate}{Gate}
@@ -608,7 +608,7 @@ tube geometry is mapped through the Taupe/NMR coordinate workbook and
 \mqPair{mqGate}{Gate}
 {Are air gaps or tube-contact problems flagged?}
 {No row-level air-gap/contact-quality flags were found in the current Taupe/TDR
-workbook or semantic audit.}
+workbook or semantic check.}
 \mqPair{mqGate}{Gate}
 {Is convergence or settling time flagged for Taupe/TDR?}
 {No explicit convergence/settling flag is present in the processed Taupe table.
@@ -660,24 +660,24 @@ force permeability changes that merely fit a correlated Taupe drift.}
 \toprule
 \mqPair{mqDiagnostic}{Diagnostic}
 {What does RH measure and how is it converted?}
-{The RH workbooks measure vapour relative humidity in percent.  The local audit
-converts it to a gauge liquid-pressure candidate with
+{The RH workbooks measure vapour relative humidity in percent.  The source
+conversion used here maps it to a gauge liquid-pressure candidate with
 \(\pl=\rho_lRT/M_w\,\ln(\mathrm{RH})\), assuming \(T=298.15\,\mathrm{K}\) and
 \(\rho_l=1095\,\mathrm{kg\,m^{-3}}\).}
 \mqPair{mqDiagnostic}{Diagnostic}
 {Does RH tie to OGS input or output?}
-{Primarily input.  RH/suction can audit or reconstruct the open-niche pressure
+{Primarily input.  RH/suction can check or reconstruct the open-niche pressure
 boundary \(p_E(t)\), and later can inform retention or boundary uncertainty.  It
 is not an interior material residual by itself.}
 \mqSeparator{Additional granular questions for OGS grounding}
 \mqPair{mqGate}{Gate}
 {Which RH sensor defines the open-niche boundary candidate?}
-{No single sensor is accepted as the boundary source.  The audit prefers RH5/RH6 for
+{No single sensor is accepted as the boundary source.  The current source check prefers RH5/RH6 for
 clean open-twin evidence and constructs a candidate RH5/RH6 median curve, but the
 active \(p_E(t)\) curve provenance is not confirmed.}
 \mqPair{mqGate}{Gate}
 {Which temperature sensor should accompany the RH sensor?}
-{Not identified in the active boundary curve provenance.  The local Kelvin audit uses
+{Not identified in the active boundary curve provenance.  The Kelvin conversion check uses
 a fixed \(T=298.15\,\mathrm{K}\) rather than a row-level temperature series.}
 \mqPair{mqGate}{Gate}
 {Where is the RH sensor relative to \(\Gamma_E\)?}
@@ -686,7 +686,7 @@ open niche.  The exact relation between each sensor and the model boundary
 \(\Gamma_E\) is still a boundary-support gate.}
 \mqPair{mqGate}{Gate}
 {Are door openings filtered from the RH data?}
-{Not in the local RH audit.  Door/opening times are mentioned as Geoscope auxiliary
+{Not in the RH source check.  Door/opening times are mentioned as Geoscope auxiliary
 data, but the numeric event export is absent.}
 \mqPair{mqGate}{Gate}
 {Are logger problems filtered from the RH data?}
@@ -702,19 +702,19 @@ thermo-hygrometer values above 95 percent RH are considered less reliable.}
 as a fraction inside the logarithm.}
 \mqPair{mqGate}{Gate}
 {What temperature is used in the Kelvin conversion?}
-{The current audit uses \(T=298.15\,\mathrm{K}\); final boundary provenance remains
+{The current conversion uses \(T=298.15\,\mathrm{K}\); final boundary provenance remains
 gated.}
 \mqPair{mqGate}{Gate}
 {What liquid density is used in the Kelvin conversion?}
-{The current audit uses \(\rho_l=1095\,\mathrm{kg\,m^{-3}}\); final boundary
+{The current conversion uses \(\rho_l=1095\,\mathrm{kg\,m^{-3}}\); final boundary
 provenance remains gated.}
 \mqPair{mqGate}{Gate}
 {Does the RH conversion produce capillary pressure?}
-{The audit computes a gauge liquid-pressure candidate.  Capillary pressure follows by
+{The conversion computes a gauge liquid-pressure candidate.  Capillary pressure follows by
 the sign convention \(p_c=-\pl\) if gas pressure is taken as the reference.}
 \mqPair{mqGate}{Gate}
 {Does the RH conversion produce gauge liquid pressure?}
-{The current audit interprets the result as a gauge liquid-pressure candidate.}
+{The current conversion interprets the result as a gauge liquid-pressure candidate.}
 \mqPair{mqGate}{Gate}
 {Does the RH sign convention match \(p_c=-\pl\)?}
 {Yes in the current interpretation: RH below 100 percent gives negative
@@ -1069,7 +1069,7 @@ and the copied equivalents in Taupe/other-HM measurement-info folders.}
 into the current 2D OGS slice is not fully closed for individual faults.}
 \mqPair{mqGate}{Gate}
 {Does the source contain only geometry?}
-{For the local \texttt{Kluft} zones, yes for current model use: the audit extracts
+{For the local \texttt{Kluft} zones, yes for current model use: the source extraction records
 geometry/labels and bounds, not residual-ready aperture or time-series values.}
 \mqPair{mqGate}{Gate}
 {Does the source contain measured aperture?}
@@ -1226,7 +1226,7 @@ operator and uncertainty before it can change an objective value.}
 uncertainty from documented precision, or run sensitivity scenarios until a provider
 or modelling-team covariance decision exists.}
 \mqPair{mqGate}{Gate}
-{What audit record is required when a stream becomes active?}
+{What source and processing record is required when a stream becomes active?}
 {Record raw source, processed table, row count, accepted support, time convention,
 unit/reference conversion, observation operator, covariance/grouping, quality filters,
 and whether it shares information with another stream.}

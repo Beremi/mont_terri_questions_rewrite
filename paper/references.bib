@@ -55,54 +55,6 @@
   note         = {Official OGS user guide for initial and boundary condition assignment; accessed 3 June 2026}
 }
 
-@misc{GesaProjectionModel2025,
-  author       = {{GESA and local CD-A modelling workflow}},
-  title        = {CD-A Niche 4 2D OGS projection model},
-  year         = {2025},
-  howpublished = {Local files under \path{SOTA_OGS_Mont_Terri_work/GESA_model_original/projection_on_mesh_2025-09-05}},
-  note         = {Primary project file \path{cd_a_open_niche_quad.prj} with included TRM XML files}
-}
-
-@misc{ModelAudit2026,
-  author       = {{Local CD-A modelling workflow}},
-  title        = {Model audit for the transferred Mont Terri CD-A OGS package},
-  year         = {2026},
-  howpublished = {Local file \path{SOTA_OGS_Mont_Terri_work/MODEL_AUDIT.md}},
-  note         = {Records source package provenance and May 2025 XML update status}
-}
-
-@misc{FormulationAudit2026,
-  author       = {{Local CD-A inversion workflow}},
-  title        = {OGS formulation consistency audit},
-  year         = {2026},
-  howpublished = {Local file \path{SOTA_OGS_Mont_Terri_work/inversion_workflow/ogs_formulation_consistency_audit.md}},
-  note         = {Machine-checkable audit of active process variables, field parameters, constitutive laws, and boundary-condition semantics}
-}
-
-@misc{RunInputAudit2026,
-  author       = {{Local CD-A inversion workflow}},
-  title        = {OGS run input audit},
-  year         = {2026},
-  howpublished = {Local file \path{SOTA_OGS_Mont_Terri_work/inversion_workflow/current_permeability_field/OGS_RUN_INPUT_AUDIT.md}},
-  note         = {Checks mesh fields, submesh headers, required output variables, and OGS acceptance evidence}
-}
-
-@misc{ReleaseGateAudit2026,
-  author       = {{Local CD-A inversion workflow}},
-  title        = {Inversion release gate audit},
-  year         = {2026},
-  howpublished = {Local file \path{SOTA_OGS_Mont_Terri_work/inversion_workflow/inversion_release_gate_audit.md}},
-  note         = {Records that current candidate runs release only the permeability tensor magnitude field while other fields remain fixed or gated}
-}
-
-@misc{QuestionInventory2026,
-  author       = {{Local Mont Terri question inventory}},
-  title        = {Reorganized source questions by modelling function},
-  year         = {2026},
-  howpublished = {Local file \path{mont_terri_questions_reorganized.md}},
-  note         = {Granular collaborator questions reorganized as OGS model, material-field, and measurement gates}
-}
-
 @article{Amann2017Opalinus,
   author  = {Amann, Florian and Wild, Katja M. and Loew, Simon and Yong, Salina and Thoeny, Reto and Frank, Edwin},
   title   = {Geomechanical behaviour of Opalinus Clay at multiple scales: results from Mont Terri rock laboratory (Switzerland)},
@@ -303,62 +255,58 @@
   doi     = {10.3389/feart.2022.946627}
 }
 
-@misc{CDAModellingSlides2025,
-  author       = {Ziefle, Gesa},
-  title        = {{CD-A} for {HERMES} 2D: modelling discussion slides},
-  howpublished = {Internal CD-A modelling slide deck shared in the project data exchange},
-  year         = {2025}
+@misc{CDAProvidedMeasurementFiles2025,
+  author       = {{CD-A measurement providers via Gesa Ziefle}},
+  title        = {Email- and {TeamBeam}-provided {CD-A} measurement source files},
+  howpublished = {Project email and TeamBeam file transfers},
+  year         = {2025},
+  note         = {Original source filenames include \path{Permeability_CDA_all_2025.xlsx}, \path{ERT_meas_Niche_open.zip}, \path{Coordinates_NMR_Taupe_characborehole.xlsx}, \path{Taupe_WC.xlsx}, \path{OT_RH5.xlsx}--\path{OT_RH8.xlsx}, \path{VisualisationCDA.dat}, weekly and seasonal NMR \path{.dat} files, and \path{saisonally.zip}; used for the paper visualisations and row summaries}
 }
 
-@misc{NMR2026Local,
+@misc{NMR2026Email,
   author       = {Costabel, Stephan},
-  title        = {Single-sided nuclear magnetic resonance on the walls in the {CD-A} niches},
-  howpublished = {Internal BGR technical discussion slide deck},
-  year         = {2026}
+  title        = {\texttt{NMR2026.pdf}: Single-sided nuclear magnetic resonance on the walls in the {CD-A} niches},
+  howpublished = {Email-provided presentation in \texttt{Presentations\_CD-A\_TD\_260428.zip}},
+  year         = {2026},
+  note         = {Project email resource; original filename preserved}
 }
 
-@misc{TaupeISU2026Local,
+@misc{TaupeTDREmail2026,
   author       = {K{\"o}niger, Franz},
-  title        = {{CD-A}: Differential {TDR} using {TAUPE} sensor cables},
-  howpublished = {Internal ISU/BGR technical discussion slide deck},
-  year         = {2026}
+  title        = {\texttt{2604\_TD\_CD-A\_ISU.pdf}: Differential {TDR} using {TAUPE} sensor cables},
+  howpublished = {Email-provided presentation in \texttt{Presentations\_CD-A\_TD\_260428.zip}},
+  year         = {2026},
+  note         = {Project email resource; original filename preserved}
 }
 
-@misc{GeneratedAuditSuite2026,
-  author       = {{CD-A modelling audit workflow}},
-  title        = {Generated measurement, likelihood, stream-gate, field-selection, and objective-readiness audits},
-  howpublished = {Internal reproducible audit outputs produced from the collected CD-A model and measurement files},
-  year         = {2026}
-}
-
-@misc{CDATDSlides2026Local,
+@misc{CDATDSlides2026Email,
   author       = {Ziefle, Gesa},
-  title        = {{CD-A} technical discussion measurement-trend slides},
-  howpublished = {Internal BGR technical discussion PDF, \path{CD-A_Slides_TD_260427x.pdf}},
+  title        = {\texttt{CD-A\_Slides\_TD\_260427x.pdf}: {CD-A} technical discussion measurement-trend slides},
+  howpublished = {Email-provided presentation in \texttt{Presentations\_CD-A\_TD\_260428.zip}},
   year         = {2026},
-  note         = {Local source under \path{cda_knowledge_base/measurements/other_hm_monitoring/source_files/}}
+  note         = {Project email resource; original filename preserved}
 }
 
-@misc{TDMinutes2026Local,
+@misc{CDATDMinutes2026Email,
   author       = {{CD-A technical discussion participants}},
-  title        = {{TD517 CD-A} technical discussion minutes},
-  howpublished = {Internal project minutes PDF, \path{2026-05-11_TD517_CD-A_260507__Minutes.pdf}},
+  title        = {\texttt{TD517\_CD-A\_260507\_\_Minutes.pdf}: {CD-A} technical discussion minutes},
+  howpublished = {Email attachment received 11 May 2026},
   year         = {2026},
-  note         = {Local source under \path{cda_knowledge_base/measurements/other_hm_monitoring/source_files/}}
+  note         = {Project email resource; original filename preserved}
 }
 
-@misc{HermesInput2024Local,
+@misc{HermesInput2024Email,
   author       = {{BGR HERMES input team}},
-  title        = {Input for {HERMES}: {CD-A} experiment data and modelling context},
-  howpublished = {Internal project note PDF, \path{2024-12-19_Input_HERMES_BGR_20241217.pdf}},
+  title        = {\texttt{Input\_HERMES\_BGR\_20241217.pdf}: Input for {HERMES}, {CD-A} experiment data and modelling context},
+  howpublished = {Email attachment received 19 December 2024},
   year         = {2024},
-  note         = {Local source under \path{cda_knowledge_base/measurements/other_hm_monitoring/source_files/}}
+  note         = {Project email resource; original filename preserved}
 }
 
-@misc{Levelling2026Local,
+@misc{Levelling2026Email,
   author       = {Condamin, Sebastian},
-  title        = {Precision Levelling Twin Niches},
-  howpublished = {Internal swisstopo technical discussion slide deck, \path{Folien_Niv_TD_CDA_2026.pdf}},
+  title        = {\texttt{Folien\_Niv\_TD\_CDA\_2026.pdf}: Precision Levelling Twin Niches},
+  howpublished = {Email-provided presentation in \texttt{Presentations\_CD-A\_TD\_260428.zip}},
   year         = {2026},
-  note         = {Local source under \path{cda_knowledge_base/measurements/other_hm_monitoring/source_files/}}
+  note         = {Project email resource; original filename preserved}
 }

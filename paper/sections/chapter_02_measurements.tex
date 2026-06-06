@@ -40,11 +40,12 @@ measured, which unit and reference convention are used, and how the value can en
 the OGS workflow as an input, output residual, material-field prior, diagnostic, or
 caveat.
 
-The primary evidence is local.  We use the measurement catalogue, the processed
-observation tables, and the generated measurement figures copied into this paper.
-The processed-observation layer is the authority for row counts, time ranges,
-coordinate status, and current activation gates
-\citep[measurement-stream inventories, generated figures, and stream-gate audits]{GeneratedAuditSuite2026}.
+The primary evidence for the plotted data and row summaries is the set of
+email- and TeamBeam-provided source files named in the bibliography.  We use the
+processed observation tables and generated measurement figures copied into this
+paper as traceable reductions of those files.  The processed-observation layer is
+the authority for row counts, time ranges, coordinate status, and current activation
+gates \citep[source filenames and transfer context]{CDAProvidedMeasurementFiles2025}.
 Public internet sources were checked only where the local catalogue lacks
 residual-ready numeric exports.  They confirm the broader CD/CD-A monitoring
 context, including pressure, extensometer, crackmeter, Taupe/TDR, RH, water-content,
@@ -109,7 +110,7 @@ calibration if confirmed. &
 Absolute unit and calibration are not confirmed; A3/A4 are mapped, A7/A8 are
 outside current support.\\
 RH/suction &
-Boundary-condition audit &
+Boundary-condition check &
 Kelvin conversion to pressure or suction candidate for the open-niche boundary
 \(p_E(t)\). &
 Active curve provenance, filtering, time origin, and uncertainty remain open.\\
@@ -212,7 +213,7 @@ interpretation errors through a conservative log-space uncertainty and
 duplicate-aware weighting
 \citep[abstract]{Klinkenberg1941}
 \citep[abstract and Secs.~2.2, 3.2]{Marschall2005}
-\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+\citep[source files used for the generated support and row summaries]{CDAProvidedMeasurementFiles2025}.
 
 This stream directly constrains only \(\KK(\xx)\) or its released
 parameterization.  It does not independently constrain pressure, saturation,
@@ -279,7 +280,7 @@ include mobile pore water and bound or interlayer water.  The model-side quantit
 observation model is added
 \citep[Sec.~4.2]{WaterContentEDZ2024}
 \citep[Secs.~1 and 2.5]{Cui2022DualScaleNMR}
-\citep[single-sided NMR technical slides]{NMR2026Local}.
+\citep[single-sided NMR technical slides]{NMR2026Email}.
 
 \paragraph{Position in the domain.}
 The processed NMR labels are mapped into the two-dimensional OGS frame when
@@ -326,7 +327,7 @@ constant station or bound-water offsets before comparing model and measurement
 changes.
 
 \paragraph{Uncertainty and reliability.}
-The bound-water audit shows why absolute NMR must remain provisional: with fixed
+The bound-water check shows why absolute NMR must remain provisional: with fixed
 \(\por=0.105\), 315 of 464 NMR target rows exceed the maximum possible value of
 \(\por\Sl\) if interpreted as mobile water.  In the usable current-mesh subset, 162
 of 287 rows exceed the same bound.  Reported confidence intervals and an uncertainty
@@ -354,7 +355,7 @@ and the cited clay/NMR caveat that NMR-visible water can include bound or
 interlayer water
 \citep[Sec.~4.2]{WaterContentEDZ2024}
 \citep[Secs.~1 and 2.5]{Cui2022DualScaleNMR}
-\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+\citep[NMR source files used for the generated row summaries]{CDAProvidedMeasurementFiles2025}.
 
 The inverse role is to constrain pressure/saturation evolution after the boundary
 and permeability field drive \(\Sl\).  NMR alone cannot separate porosity,
@@ -490,7 +491,7 @@ mistaken for independent point measurements
 \citep[pp.~54--56]{Archie1942}
 \citep[abstract and Secs.~2--4]{Revil1998ShalySands}
 \citep[Secs.~4.1--4.3]{WaterContentEDZ2024}
-\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+\citep[ERT source files used for the generated field summaries]{CDAProvidedMeasurementFiles2025}.
 
 For inversion, ERT mainly constrains the saturation/water-content pattern and
 therefore tests permeability, boundary forcing, and retention indirectly.  Its
@@ -548,7 +549,7 @@ between dielectric response and water content, but the CD-A claystone calibratio
 must be supplied before absolute use
 \citep[Sec.~4.4]{Ziefle2024Characterization}
 \citep[review and Secs.~1--2]{Robinson2003TDRReview}
-\citep[Taupe/TDR technical slides]{TaupeISU2026Local}.
+\citep[Taupe/TDR technical slides]{TaupeTDREmail2026}.
 
 \paragraph{Position in the domain.}
 The source sheets A3, A4, A7, and A8 correspond to Taupe supports and EDZ distance
@@ -602,8 +603,8 @@ that the workbook unit is already an absolute volumetric water content or dielec
 permittivity.  The literature supports the general TDR water-content link, while
 the local Taupe stream still needs CD-A-specific calibration before absolute use
 \citep[review and Secs.~1--2]{Robinson2003TDRReview}
-\citep[Taupe/TDR technical slides]{TaupeISU2026Local}
-\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+\citep[Taupe/TDR technical slides]{TaupeTDREmail2026}
+\citep[Taupe source workbook and support files]{CDAProvidedMeasurementFiles2025}.
 
 The inverse role is indirect: Taupe/TDR can help reject permeability or boundary
 candidates that produce the wrong wetting/drying trend near the EDZ.  It cannot yet
@@ -654,19 +655,19 @@ sensor-band covariance.}
 The RH workbooks measure relative humidity, not liquid pressure directly.  Under a
 Kelvin-equation convention, RH can be converted to a capillary-pressure or
 gauge-liquid-pressure candidate.  This makes RH primarily a boundary-condition
-source or audit for the open niche.  It can later inform retention or boundary
+source or check for the open niche.  It can later inform retention or boundary
 uncertainty, but it is not an interior material residual.
 
 \paragraph{Position in the domain.}
 The RH/suction supports are near the open-niche boundary and are mapped as
-boundary-audit points in the OGS frame.  Their role is to test whether the
+boundary-check points in the OGS frame.  Their role is to test whether the
 time-dependent boundary curve \(p_E(t)\) is consistent with local humidity-derived
 suction evidence.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.86\textwidth]{resources/figures/measurement_rh_location.png}
-  \caption{Mapped RH/suction support points used to audit the open-niche pressure
+  \caption{Mapped RH/suction support points used to check the open-niche pressure
   boundary.  These are boundary-forcing supports, not cell-wise material
   observations.}
   \label{fig:rh-location}
@@ -695,7 +696,7 @@ open-niche curve.  This is consistent with \(p_c=-\pl\) in the Richards model
 
 \paragraph{Uncertainty and reliability.}
 The active OGS curve has 845 rows and spans approximately \(-53.24\) to
-\(-5.23\,\mathrm{MPa}\).  The RH audit compares 2280 rows inside the active curve
+\(-5.23\,\mathrm{MPa}\).  The RH boundary check compares 2280 rows inside the active curve
 time range and finds large differences between RH-derived pressure candidates and
 the active curve.  Therefore \(p_E(t)\) should remain an existing OGS input, not a
 verified RH-derived forcing, until the source sensors, filtering, smoothing, time
@@ -708,11 +709,11 @@ independent interior residual.  The current best transfer is to convert screened
 records to a Kelvin pressure candidate with the stated constants, compare that
 candidate to the active XML curve \(p_E(t)\), and represent the mismatch as a
 boundary-condition gate or scenario envelope.  This is grounded in the local curve
-script, local RH audit, and the CD-A water-content/RH formulation where negative
+script, RH workbook check, and the CD-A water-content/RH formulation where negative
 liquid pressure represents suction through the chosen pressure convention
 \citep[pp.~448--452]{Thomson1871Kelvin}
 \citep[Sec.~3, Eqs.~1--2]{WaterContentEDZ2024}
-\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+\citep[RH source workbooks used for the generated boundary checks]{CDAProvidedMeasurementFiles2025}.
 
 In the inverse problem, uncertain \(p_E(t)\) is dangerous because permeability,
 retention, and boundary suction all control similar drying/wetting transients.
@@ -725,7 +726,7 @@ fit can falsely compensate by changing \(\KK(\xx)\) or retention parameters.
 {
 \gqPair{gqPolicy}{Policy}
 {Is RH an OGS input or output comparison?}
-{Primarily an input-side boundary source or audit for \(p_E(t)\), not an interior
+{Primarily an input-side boundary source or check for \(p_E(t)\), not an interior
 OGS output residual.}
 \gqPair{gqReady}{Ready}
 {How is RH converted to model pressure?}
@@ -767,7 +768,7 @@ has borehole sensors for pressure measured by minipiezometers and that sensor
 databases store sensor names, date/time stamps, and measured values
 \citep[Secs.~2.4 and 3.2]{Graebling2022VEIS}.  The local 2026 technical
 discussion identifies BCD-A28 to BCD-A31 as the current mini-piezometer set and
-shows their pressure trends in kPa \citep[PDF p.~32]{CDATDSlides2026Local}.
+shows their pressure trends in kPa \citep[PDF p.~32]{CDATDSlides2026Email}.
 
 \paragraph{Position in the domain.}
 Figure~\ref{fig:pressure-minipiezometer-trends} includes the source-slide
@@ -792,7 +793,7 @@ support to the present 2D slice.
 The source plot spans about March 2024 to January 2026.  The May 2026 minutes
 state that BCD-A28 to BCD-A31 were working well, and list pore-pressure
 measurements as later comparison targets for the modelling workflow
-\citep[PDF p.~4 and p.~8]{TDMinutes2026Local}.  The sampled numeric export behind
+\citep[PDF p.~4 and p.~8]{CDATDMinutes2026Email}.  The sampled numeric export behind
 the plot is still absent from the current local catalogue, so exact timestamps,
 sampling interval, maintenance gaps, and quality flags remain unavailable.
 
@@ -824,8 +825,8 @@ would directly test whether the far-field pressure, open-niche boundary curve,
 initial pressure field, and fitted permeability field are mutually consistent
 \citep[Table~1]{Ziefle2024Characterization}
 \citep[Secs.~2.4 and 3.2]{Graebling2022VEIS}
-\citep[PDF p.~32]{CDATDSlides2026Local}
-\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+\citep[PDF p.~32]{CDATDSlides2026Email}
+\citep[provided pressure/HM source files and generated trend figures]{CDAProvidedMeasurementFiles2025}.
 
 The most important current modelling use is not to fit the slide image.  It is to
 request the pressure export in a form that closes the pressure-reference ambiguity.
@@ -881,7 +882,7 @@ which 3D features intersect the current 2D model slice, what effective width sho
 be used, or whether the feature should become a hard material input, a prior, a
 mask, or a qualitative caveat.  The local HERMES input note also states that
 geological characterization of fractured zones is available for CD-A
-\citep[PDF p.~5]{HermesInput2024Local}.
+\citep[PDF p.~5]{HermesInput2024Email}.
 
 \paragraph{Time of measurement.}
 The geometry is structural, not a complete time series.  A feature can still be
@@ -917,8 +918,8 @@ time-dependent material change.  The best current use is to construct alternativ
 permeability-basis support, or a covariance modifier for \(\KK\) and possibly
 \(\por\) or tensor orientation
 \citep[Sec.~3 and Fig.~4]{Ziefle2024Characterization}
-\citep[PDF p.~5]{HermesInput2024Local}
-\citep[stream-gate audit]{GeneratedAuditSuite2026}.
+\citep[PDF p.~5]{HermesInput2024Email}
+\citep[geometry source file \texttt{VisualisationCDA.dat}]{CDAProvidedMeasurementFiles2025}.
 
 For inversion, the key discipline is not to turn fault geometry into a fake
 measurement.  A fault can guide where material fields are allowed to vary.  It
@@ -967,7 +968,7 @@ laser scans as niche-profile displacement measurements in micrometres, and
 mini-piezometers as pore pressure measurements \citep[Table~1]{Ziefle2024Characterization}.
 The local HERMES input note frames the same bundle as long-term deformation,
 humidity, water-content, pore-water-pressure, crack-width, piezometer,
-extensometer, ERT, TDR, and laser-scan measurements \citep[PDF p.~5]{HermesInput2024Local}.
+extensometer, ERT, TDR, and laser-scan measurements \citep[PDF p.~5]{HermesInput2024Email}.
 
 \paragraph{Position in the domain.}
 The source layout contains support geometry for several HM streams, but the generic
@@ -1022,9 +1023,9 @@ plot, a source mini-piezometer trend plot, and one numeric levelling slide summa
 The May 2026 minutes state that the 2026 Geoscope update covered RH, temperature,
 door opening times, extensometer, mini-piezometer, crackmeter, suction, and laser
 scans, and that horizontal/vertical extensometers BCD-A9/B10 in the closed niche
-failed after September 2025 \citep[PDF p.~4]{TDMinutes2026Local}.  The levelling
+failed after September 2025 \citep[PDF p.~4]{CDATDMinutes2026Email}.  The levelling
 slides report height differences from the first survey on 2022-08-29/30 to the
-2026-03 campaign \citep[PDF pp.~2, 5]{Levelling2026Local}.
+2026-03 campaign \citep[PDF pp.~2, 5]{Levelling2026Email}.
 
 \paragraph{Measured value, units, and OGS tie.}
 Potential model ties are straightforward once data exist.  Extensometers constrain
@@ -1059,17 +1060,17 @@ enter only through boundary forcing, not as interior residuals.
 
 \paragraph{Uncertainty and reliability.}
 The HM streams remain mostly blocked for hard residuals.  The local numeric-source
-audit found layout geometry, laser surface geometry, levelling slide rows, and
+source scan found layout geometry, laser surface geometry, levelling slide rows, and
 report/minute evidence, but no residual-ready Geoscope time series, laser
 statistical product, or full levelling survey table
-\citep[other-HM numeric-source audit]{GeneratedAuditSuite2026}.
+\citep[provided HM source files and generated trend figures]{CDAProvidedMeasurementFiles2025}.
 A hard residual requires timestamps or survey epochs, values, units, support
 geometry, reference-zero conventions, sign conventions, calibration, quality flags,
 failure flags, and uncertainty or covariance.  The levelling slide gives a
 detectable displacement of \(0.1\)--\(0.2\,\mathrm{mm}\) at 95\% confidence, largest
 settlement at CDA-O1 \((-2.1\,\mathrm{mm})\), and largest uplift at CDA-C4
 \((+1.3\,\mathrm{mm})\), but it still lacks the full survey table and reference-frame
-metadata needed for weighting \citep[PDF pp.~5--6]{Levelling2026Local}.
+metadata needed for weighting \citep[PDF pp.~5--6]{Levelling2026Email}.
 
 \subsubsection*{Current computational use.}
 With the local data available now, niche-surface cracks and other HM streams should
@@ -1084,8 +1085,8 @@ EDZ/fracture scenarios, or define quality/disturbance flags; they should not yet
 drive a coupled HM calibration
 \citep[Table~1]{Ziefle2024Characterization}
 \citep[abstract and Sec.~2]{Ziefle2017SeasonalHM}
-\citep[PDF p.~4 and p.~8]{TDMinutes2026Local}
-\citep[other-HM numeric-source audit]{GeneratedAuditSuite2026}.
+\citep[PDF p.~4 and p.~8]{CDATDMinutes2026Email}
+\citep[provided HM source files and generated trend figures]{CDAProvidedMeasurementFiles2025}.
 
 If numeric exports are supplied, the operators are standard but stream-specific:
 extensometers use projected displacement or strain along an instrument axis;
