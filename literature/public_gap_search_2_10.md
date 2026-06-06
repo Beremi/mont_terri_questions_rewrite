@@ -65,7 +65,7 @@ machine-readable data needed to close the open gates:
 
 ## Consequence For Section 2.10
 
-The expanded table answers now use local audits and the public literature where
+The expanded table answers now use source-file checks, email resources, and the public literature where
 they are sufficient.  Rows that remain unresolved state the best available answer:
 the stream is physically meaningful, but the project-specific file, calibration,
 support transform, quality flag, reference convention, or covariance is still

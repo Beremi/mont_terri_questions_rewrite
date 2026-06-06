@@ -1,12 +1,13 @@
 # Paper Quality and Readability Audit
 
-Date: 2026-06-04.
+Date: 2026-06-04.  Updated source-boundary check: 2026-06-06.
 
 Scope: `paper/sections/chapter_01_ogs_model.tex`,
 `paper/sections/chapter_02_measurements.tex`, and
-`paper/resources/tables/*.tex`.  Evidence was checked against the local citation
-and claim audits, the local OGS/XML source copies, and the generated measurement
-stream audits.  Raw data and provenance files were not edited.
+`paper/resources/tables/*.tex`.  Evidence was checked against the citation and
+claim audits, the OGS/XML source copies, published papers, official OGS
+documentation, and the email/TeamBeam source-file records used for the generated
+measurement reductions.  Raw data and provenance files were not edited.
 
 ## Style And Structure Check
 
@@ -39,10 +40,10 @@ stream audits.  Raw data and provenance files were not edited.
 
 | Check | Result |
 |---|---|
-| Cited keys present in bibliography | Passed: 102 citation occurrences, 35 unique cited keys, and no missing `references.bib` keys. |
-| Citation placement | Claims in Chapters 1 and 2 map to `literature/citation_evidence.md` and `literature/paper_claim_audit.md`. Local OGS values cite local XML/audits; external papers support general formulation or measurement-method claims. |
-| Bibliographic-only sources | `Bishop1959EffectiveStress` remains limited to historical naming; OGS/local sources support the active equation and parameter substitution. |
-| Unused bibliography entries | `CDAModellingSlides2025`, `Kleinberg1996NMR`, and `Topp1980TDR` are not cited by the current paper. The citation-evidence audit already records that the NMR/TDR entries are not used for fulltext-specific claims. |
+| Cited keys present in bibliography | Passed: 79 citation occurrences, 30 unique cited keys, and no missing `references.bib` keys. |
+| Citation placement | Claims in Chapters 1 and 2 map to `literature/citation_evidence.md` and `literature/paper_claim_audit.md`. OGS values are grounded in XML/source checks; external papers and official documentation support formulation or measurement-method claims; email resources identify project source files and technical slides. |
+| Bibliographic-only sources | `Bishop1959EffectiveStress` remains limited to historical naming; OGS documentation and checked XML/source files support the active equation and parameter substitution. |
+| Unused bibliography entries | `Kleinberg1996NMR` and `Topp1980TDR` are not cited by the current paper. The citation-evidence audit records that these entries are not used for fulltext-specific claims. |
 
 ## Remaining Gated Questions
 

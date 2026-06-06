@@ -49,10 +49,10 @@ This manifest follows the citation keys in `paper/references.bib`. "Copied" mean
 
 | Source key | Local evidence copy | Original source | Status | Notes |
 |---|---|---|---|---|
-| `CDATDSlides2026Local` | `source_pages/CD-A_Slides_TD_260427x_page32.png` | `../cda_knowledge_base/measurements/other_hm_monitoring/source_files/CD-A_Slides_TD_260427x.pdf`, PDF p. 32 | Copied rendered page | Mini-piezometer trend source figure used in Chapter 2. |
-| `CDATDSlides2026Local` | `source_pages/CD-A_Slides_TD_260427x_page33.png` | `../cda_knowledge_base/measurements/other_hm_monitoring/source_files/CD-A_Slides_TD_260427x.pdf`, PDF p. 33 | Copied rendered page | Crackmeter trend source figure used in Chapter 2. |
-| `Levelling2026Local` | `source_pages/Folien_Niv_TD_CDA_2026_page5.png` | `../cda_knowledge_base/measurements/other_hm_monitoring/source_files/Folien_Niv_TD_CDA_2026.pdf`, PDF p. 5 | Copied rendered page | Precision-levelling values backing the extracted bar plot. |
-| `Levelling2026Local` | `source_pages/Folien_Niv_TD_CDA_2026_page6.png` | `../cda_knowledge_base/measurements/other_hm_monitoring/source_files/Folien_Niv_TD_CDA_2026.pdf`, PDF p. 6 | Copied rendered page | Precision-levelling uncertainty and summary backing the text. |
+| `CDATDSlides2026Email` | `source_pages/CD-A_Slides_TD_260427x_page32.png` | Email-provided `CD-A_Slides_TD_260427x.pdf`, PDF p. 32 | Copied rendered page | Mini-piezometer trend source figure used in Chapter 2. |
+| `CDATDSlides2026Email` | `source_pages/CD-A_Slides_TD_260427x_page33.png` | Email-provided `CD-A_Slides_TD_260427x.pdf`, PDF p. 33 | Copied rendered page | Crackmeter trend source figure used in Chapter 2. |
+| `Levelling2026Email` | `source_pages/Folien_Niv_TD_CDA_2026_page5.png` | Email-provided `Folien_Niv_TD_CDA_2026.pdf`, PDF p. 5 | Copied rendered page | Precision-levelling values backing the extracted bar plot. |
+| `Levelling2026Email` | `source_pages/Folien_Niv_TD_CDA_2026_page6.png` | Email-provided `Folien_Niv_TD_CDA_2026.pdf`, PDF p. 6 | Copied rendered page | Precision-levelling uncertainty and summary backing the text. |
 
 ## Bibliographic reference without DOI
 

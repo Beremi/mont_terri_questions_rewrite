@@ -1,12 +1,15 @@
 # Reorganized Source Questions by Modelling Function
-This pass reorganizes the same source-driven questions by how they affect the frozen OGS workflow. The point is not to answer the science yet, but to make each collaborator query precise: what part of OGS it touches, which material field or measurement it concerns, and what metadata or decision is needed before using it in fitting or validation.
+This inventory organizes the source-driven questions by how they affect the current
+OGS workflow.  Its purpose is to make each collaborator query precise: which part of
+OGS it touches, which material field or measurement it concerns, and what metadata
+or decision is needed before using it in fitting or validation.
 
 ## 1. OGS model
 
 ### 1.1 Equations
 Questions to keep separate:
 - Which exact OGS process is active in the exchanged model: Thermo-Richards-Mechanics, with displacement, liquid pressure, and temperature as primary variables?
-- Which equation source should be treated as authoritative for this project: OGS documentation, OGS source implementation, the report formulation audit, Wang/Kosakowski/Kolditz notation, or a specific project paper?
+- Which equation source should be treated as authoritative for this project: OGS documentation, OGS source implementation, the report formulation check, Wang/Kosakowski/Kolditz notation, or a specific project paper?
 - Which simplifications are active in this CD-A run: no vapor transport, gravity/body force off, Backward Euler, Newton solve, linear liquid density, van Genuchten saturation, van Genuchten relative permeability, Bishop b(S_l)=S_l, swelling, and orthotropic mechanics?
 - Which terms are absent or inactive even if they appear in related TRM theory: vapor diffusion, hydrostatic gravity, active top mechanical load, active initial-stress/prestress parameter, and the outside pressure parameter that is defined but not attached?
 - In Darcy flow, do we compare permeability through intrinsic permeability K, relative permeability k_rel(S_l), viscosity, and pressure gradient, rather than confusing this with hydraulic conductivity or saturation itself?
@@ -175,7 +178,7 @@ Questions to keep separate:
 - Time of measurement: What is the RH/T timestamp convention, valid interval, high-RH caution period, low-outlier period, and relation to the active open_niche_seasonal curve time axis?
 - What/how measured: How is RH converted through Kelvin equation, and what constants are assumed: temperature, density, gas constant, water molar mass/volume, RH percent/fraction convention, and gas/atmospheric reference?
 - Units: Are derived quantities RH percent, suction, capillary pressure, gauge liquid pressure, absolute liquid pressure, MPa, or Pa?
-- OGS tie: Is RH used to reconstruct or audit a pressure boundary input, validate active forcing, inform retention parameters, or provide uncertainty on boundary scenarios?
+- OGS tie: Is RH used to reconstruct or check a pressure boundary input, validate active forcing, inform retention parameters, or provide uncertainty on boundary scenarios?
 - Curve provenance: Why does the local RH-derived envelope differ from the active seasonal pressure curve, and what source table/script/sensor-screening policy generated the active curve?
 - Uncertainty/use: What uncertainty should be assigned if RH becomes a boundary or retention likelihood, and how do we avoid double-counting the same data as both forcing and validation?
 
@@ -227,6 +230,6 @@ Questions to keep separate:
 - Is NMR active only with tracked caveats, and should the final policy be raw absolute theta, bias-corrected theta, corrected free-water theta, within-label trend/anomaly, or exclusion?
 - Should ERT remain diagnostic until transform/support/uncertainty/covariance are accepted?
 - Should Taupe/TDR remain diagnostic until unit/calibration/baseline/uncertainty are confirmed?
-- Should RH remain boundary-audit/provenance evidence until active curve generation, sensor screening, Kelvin constants, and extension policy are confirmed?
+- Should RH remain boundary-check/provenance evidence until active curve generation, sensor screening, Kelvin constants, and extension policy are confirmed?
 - Should other HM pressure/deformation streams remain inactive until Geoscope, laser-scan, levelling, extensometer, crackmeter, and mini-piezometer numeric exports with uncertainty are supplied?
 - Should CTE and prestress remain model-provenance caveats until Gesa/BGR confirms intended values and active/inactive status?

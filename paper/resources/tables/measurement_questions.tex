@@ -30,15 +30,16 @@ distinguish ready residuals, diagnostics, policy decisions, gates, and blocked
 streams.  In each stream, the original current-answer rows are followed by a
 separated block of additional single-topic questions needed for OGS grounding.
 Where the project-specific answer is still unavailable, the row states the current
-local/public evidence boundary and the missing provider or modelling decision.  The
-inverse-problem check rows make the observation operator, covariance, nuisance terms,
-and identifiability risks explicit.}
+source-file, email-resource, published-source, or XML evidence boundary and the
+missing provider or modelling decision.  The inverse-problem check rows make the
+observation operator, covariance, nuisance terms, and identifiability risks explicit.}
 \label{tab:measurement-question-answers}
 
 \noindent\textbf{Answer-status legend.}\par\smallskip
 \begin{tabular}{@{}L{0.23\textwidth} L{0.70\textwidth}@{}}
 \mqStatus{mqReady}{Ready} &
-The local evidence and operator are sufficient for current active use.\\
+The available source data, generated reduction, and operator are sufficient for
+current active use.\\
 \mqStatus{mqDiagnostic}{Diagnostic} &
 The stream can be plotted or compared, but not yet weighted as an accepted
 likelihood term.\\
@@ -48,20 +49,20 @@ The answer is a current modelling choice, not a measurement fact.\\
 The stream is partly understood, but a collaborator decision, source file, or
 uncertainty model is still required.\\
 \mqStatus{mqBlocked}{Blocked} &
-The local and public evidence do not provide the numeric export needed for a hard
-residual.\\
+The available source data, email resources, and public sources do not provide the
+numeric export needed for a hard residual.\\
 \end{tabular}
 
 \mqSubtable{Geometry And Stream Inventory}
 \begin{longtable}{@{}L{0.18\textwidth} L{0.76\textwidth}@{}}
 \toprule
 \mqPair{mqReady}{Ready}
-{Which local evidence layer defines the measurement positions?}
-{The current geometry layer is the processed coordinate and mesh-lookup output:
-\path{measurement_mesh_lookup.csv}, \path{borehole_mesh_lookup.csv}, and
-\path{borehole_line_mesh_samples.csv}.  It transforms catalogue coordinates into
-the two-dimensional OGS frame and records inside-cell, nearest-cell, and
-outside-domain status.}
+{Which generated reduction defines the measurement positions?}
+{The current geometry reduction maps the provided catalogue coordinates, borehole
+endpoints, and support samples into the two-dimensional OGS frame.  It records
+inside-cell, nearest-cell, and outside-domain status for the paper figures and
+row summaries; it is a processing reduction of the source files, not an independent
+measurement source.}
 \mqPair{mqGate}{Gate}
 {Can every measurement be treated as a point in the OGS mesh?}
 {No.  NMR and RH are sparse supports, permeability is an interval-scale borehole
@@ -69,7 +70,7 @@ observation, Taupe/TDR is an EDZ-band line support, ERT is an inverted mesh fiel
 faults are 3D structural objects, and HM streams have source-frame geometry that
 still needs a model-frame projection.}
 \mqPair{mqReady}{Ready}
-{Which streams have locally available measured-data plots?}
+{Which streams have available measured-data plots?}
 {Permeability, NMR, ERT, Taupe/TDR, RH, mini-piezometer pressure, crackmeter, and
 levelling have useful measured-data or source-trend visualisations.  Generic
 source-frame support plots for extensometer, laser, miniprisma, convergence, and
@@ -78,16 +79,17 @@ values, times, units, and accepted OGS supports are attached.}
 \mqSeparator{Additional granular questions for OGS grounding}
 \mqPair{mqGate}{Gate}
 {What raw source file defines this stream?}
-{No single file defines all streams.  The authoritative raw sources are the
-stream-specific files copied under \path{cda_knowledge_base/measurements_info/*/source_files}:
-for example \path{Permeability_CDA_all_2025.xlsx}, weekly/seasonal NMR
+{No single file defines all streams.  The source boundary is stream-specific and
+uses the original filenames preserved in the email/TeamBeam source record, for
+example \path{Permeability_CDA_all_2025.xlsx}, weekly and seasonal NMR
 \texttt{.dat} files, \path{ERT_meas_Niche_open.zip}, \path{Taupe_WC.xlsx},
 \path{OT_RH5.xlsx}--\path{OT_RH8.xlsx}, and \path{VisualisationCDA.dat}.}
 \mqPair{mqGate}{Gate}
 {What processing step produced the table used here?}
-{The tables used here come from the processed-observation layer in
-\path{SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations} and the
-joined \path{measurement_model_entry_matrix.md}.}
+{The tables used here are generated reductions of the source files for the paper
+figures, row counts, and OGS-support checks.  They are not cited as independent
+evidence; final residual use still requires the source file, processing rule,
+support definition, and uncertainty model to be recorded.}
 \mqPair{mqGate}{Gate}
 {What exact spatial support does one row represent?}
 {It is stream-specific: permeability rows are borehole intervals; NMR rows are
@@ -98,7 +100,8 @@ may be points, lines, pairs, or surfaces.}
 {What timestamp or survey epoch does one row represent?}
 {It is stream-specific and must stay row-level: ERT/RH/Taupe/NMR carry dates or
 timesteps, permeability rows are campaign/interval observations, and levelling rows
-are survey-epoch differences.  Other HM time-series epochs are not locally exported.}
+are survey-epoch differences.  Other HM time-series epochs are not available in the
+provided exports.}
 \mqPair{mqGate}{Gate}
 {What unit and reference convention does the stored value use?}
 {Known for active streams only: permeability is \(\mathrm{m^2}\) in log10 residual
@@ -163,17 +166,17 @@ of \(\KK(\xx)\), with the older or outside-domain rows retained as context.}
 \mqPair{mqGate}{Gate}
 {Is each permeability value intrinsic liquid-equivalent permeability?}
 {The active value is treated as an intrinsic-permeability candidate in
-\(\mathrm{m^2}\), but the local workbooks and slides are gas pulse tests.  The
+\(\mathrm{m^2}\), but the provided workbooks and slides are gas pulse tests.  The
 liquid-equivalent/slip-corrected interpretation is therefore a tracked caveat, not a
 closed fact.}
 \mqPair{mqGate}{Gate}
 {Was a Klinkenberg or gas-slip correction applied?}
-{Not documented row-by-row in the local workbooks.  Because nitrogen gas testing is
+{Not documented row-by-row in the provided workbooks.  Because nitrogen gas testing is
 pressure dependent, the correction/provenance remains a gate for final
 liquid-equivalent interpretation.}
 \mqPair{mqGate}{Gate}
 {What gas type and mean pressure were used for each test?}
-{The local HERMES/method slides state nitrogen injection up to about 1 bar.  A
+{The provided HERMES/method slides state nitrogen injection up to about 1 bar.  A
 row-specific mean pressure for each interpreted permeability value is not extracted
 from the current table.}
 \mqPair{mqGate}{Gate}
@@ -189,7 +192,7 @@ classification.}
 \mqPair{mqGate}{Gate}
 {Which rows may be affected by leakage?}
 {No row-level leakage flag was found in the current source catalogue or processing layer.
-Treat leakage as a requested provider/fitting-metadata flag, not as an inferred local
+Treat leakage as a requested provider/fitting-metadata flag, not as an inferred
 classification.}
 \mqPair{mqGate}{Gate}
 {What interval centre and interval length belong to each row?}
@@ -263,7 +266,7 @@ likelihood, and whether historical rows are excluded, recovered, or superseded.}
 \toprule
 \mqPair{mqDiagnostic}{Diagnostic}
 {What physical quantity does NMR represent before modelling interpretation?}
-{The local tables report volumetric water content in vol.\% and relaxation-time
+{The provided NMR tables report volumetric water content in vol.\% and relaxation-time
 information.  The signal is a total NMR-visible hydrogen/water signal, so the free
 mobile water represented by \(\por\Sl\) is not separated from bound or interlayer
 water by default.}
@@ -299,16 +302,16 @@ those labels is not expanded in the current table.}
 {What borehole label and depth interval does each row sample?}
 {The processed NMR targets keep label/profile position fields and are mapped through
 the NMR/Taupe coordinate workbook.  The paper table does not repeat every row-level
-label/depth; those details live in \path{nmr_weekly.csv} and
-\path{nmr_seasonal_profiles.csv}.}
+label/depth; those details remain in the generated NMR reductions and the original
+weekly/seasonal source files.}
 \mqPair{mqGate}{Gate}
 {What sensitive footprint does one NMR row represent?}
-{Only approximately local support is represented in the current operator.  The exact
+{Only approximate support is represented in the current operator.  The exact
 single-sided NMR sensitive volume or profile footprint is not documented row-by-row,
 so current comparisons sample mapped labels rather than a full sensitivity kernel.}
 \mqPair{mqGate}{Gate}
 {Which fitting model produced the reported water content?}
-{Not fully reconstructed from the local processed tables.  The local NMR
+{Not fully reconstructed from the generated reductions.  The provided NMR
 presentations discuss relaxation-time and bound/interlayer-water issues, but the
 row-level inversion/fitting model is still a source-method gate.}
 \mqPair{mqGate}{Gate}
@@ -351,7 +354,7 @@ bias terms.}
 row-level T2 threshold has been promoted to the OGS residual policy.}
 \mqPair{mqGate}{Gate}
 {Is there a drying, CCM, or other calibration for bound water?}
-{Public/local CD-A sources discuss NMR, CCM, and water-content interpretation, but no
+{Published and provided CD-A sources discuss NMR, CCM, and water-content interpretation, but no
 accepted calibration has been converted into a bound-water subtraction for these
 targets.}
 \mqPair{mqGate}{Gate}
@@ -390,7 +393,7 @@ does not directly measure saturation, water content, pressure, or permeability.}
 {How should OGS be tied to ERT?}
 {The forward direction is
 \(\Sl\rightarrow\theta=\por\Sl\rightarrow\rho_{\Omega\mathrm{m}}\rightarrow
-\mathcal O_{\mathrm{ERT}}\).  The current local default uses
+\mathcal O_{\mathrm{ERT}}\).  The current provisional default uses
 \(\rho_{\Omega\mathrm{m}}=1.108\,\theta^{-1.58}\) and compares
 \(\log_{10}\rho\), not raw water content.}
 \mqSeparator{Additional granular questions for OGS grounding}
@@ -423,7 +426,7 @@ log10-resistivity fields, not relative changes against a selected baseline.}
 \mqPair{mqGate}{Gate}
 {Are bad electrodes or bad timesteps flagged?}
 {Timesteps are inventoried and 16 rows lack matching VTK files.  A detailed
-bad-electrode/bad-timestep quality table is not locally accepted for residual
+bad-electrode/bad-timestep quality table is not accepted for residual
 weighting.}
 \mqPair{mqGate}{Gate}
 {Are inversion artefacts flagged?}
@@ -431,7 +434,7 @@ weighting.}
 is one reason ERT stays diagnostic.}
 \mqPair{mqGate}{Gate}
 {Which water-resistivity law should be used?}
-{The current local diagnostic uses \(\rho_{\Omega\mathrm{m}}=1.108\,\theta^{-1.58}\);
+{The current diagnostic uses \(\rho_{\Omega\mathrm{m}}=1.108\,\theta^{-1.58}\);
 final acceptance is still gated.}
 \mqPair{mqGate}{Gate}
 {What uncertainty is assigned to the water-resistivity exponent?}
@@ -479,7 +482,7 @@ masks, not separated by the present regression.}
 relation.}
 \mqPair{mqGate}{Gate}
 {Is the ERT inversion electrically isotropic?}
-{Not confirmed from the local inversion metadata.  The current diagnostic treats the
+{Not confirmed from the provided inversion metadata.  The current diagnostic treats the
 inverted resistivity field as a scalar field.}
 \mqPair{mqGate}{Gate}
 {What resistivity tensor is used if anisotropy matters?}
@@ -487,7 +490,7 @@ inverted resistivity field as a scalar field.}
 would require accepted electrical anisotropy data and orientation.}
 \mqPair{mqGate}{Gate}
 {Does the ERT bedding angle match the hydraulic bedding angle?}
-{Unknown.  A local \path{bedding_angle_ERT.png} exists and the structural prior is
+{Unknown.  The available ERT bedding-angle source figure gives a structural prior
 near 144--145 degrees, but equality with the hydraulic tensor angle is not accepted.}
 \mqPair{mqGate}{Gate}
 {Does the ERT bedding angle match the mechanical bedding angle?}
@@ -495,12 +498,12 @@ near 144--145 degrees, but equality with the hydraulic tensor angle is not accep
 mechanical, hydraulic, and electrical anisotropy conventions are reconciled.}
 \mqPair{mqGate}{Gate}
 {Do fractures require a separate ERT mask or term?}
-{Probably for final interpretation: public/local CD-A sources link high resistivity
+{Probably for final interpretation: published and provided CD-A sources link high resistivity
 regions with open fractures or preferential paths.  No accepted fracture mask is
 active in the current residual.}
 \mqPair{mqGate}{Gate}
 {Do carbonate layers require a separate ERT mask or term?}
-{Not found as an accepted model mask in the local operator.  Lithology/facies effects
+{Not found as an accepted model mask in the current operator.  Lithology/facies effects
 remain structural caveats unless a mask is supplied.}
 \mqPair{mqGate}{Gate}
 {What ERT-to-OGS coordinate transform is accepted?}
@@ -520,7 +523,7 @@ tests radial subsets, but the exact 35 cm convention is not closed.}
 correlated inversion cells are not treated as independent point data.}
 \mqPair{mqGate}{Gate}
 {What spatial covariance is assigned to ERT cells?}
-{No defensible spatial covariance is recorded locally or in the current public
+{No defensible spatial covariance is recorded in the provided ERT metadata or published
 sources for these CD-A VTK cells.}
 \mqPair{mqGate}{Gate}
 {What temporal covariance is assigned to ERT timesteps?}
@@ -561,7 +564,7 @@ relative dielectric permittivity, ARDP, or another Taupe proxy.}
 \mqPair{mqDiagnostic}{Diagnostic}
 {Which Taupe supports can be mapped to the current OGS slice?}
 {A3 and A4 are mapped line supports in the current mesh.  A7 and A8 are retained in
-the data tables but are outside the current local OGS support.}
+the data tables but are outside the current OGS support.}
 \mqPair{mqPolicy}{Policy}
 {How can Taupe/TDR enter OGS before absolute calibration is known?}
 {Use only standardized same-series trend or anomaly diagnostics by sensor and EDZ
@@ -569,9 +572,9 @@ band.  A hard absolute water-content or permittivity residual remains blocked.}
 \mqSeparator{Additional granular questions for OGS grounding}
 \mqPair{mqGate}{Gate}
 {Does the workbook value store apparent relative dielectric permittivity?}
-{Possible but not confirmed for \path{Taupe_WC.xlsx}.  Public/local TDR context says
-TAUPE/TDR can measure apparent relative dielectric permittivity, but the workbook
-unit has not been provider-confirmed.}
+{Possible but not confirmed for \path{Taupe_WC.xlsx}.  Published and provided TDR
+context says TAUPE/TDR can measure apparent relative dielectric permittivity, but
+the workbook unit has not been provider-confirmed.}
 \mqPair{mqGate}{Gate}
 {Does the workbook value store ARDP?}
 {Possible.  The current semantic check treats the values as an ARDP/dielectric
@@ -586,7 +589,7 @@ plausibility check, not an accepted calibration.}
 near 9.87--11.00, not raw waveform traces, travel times, or amplitudes.}
 \mqPair{mqGate}{Gate}
 {What sensor-specific calibration converts Taupe/TDR to water content?}
-{Not present in the local catalogue.  This is the main blocker for absolute
+{Not present in the provided source catalogue.  This is the main blocker for absolute
 Taupe/TDR water-content residuals.}
 \mqPair{mqGate}{Gate}
 {What Taupe/TDR calibration range is valid for Opalinus Clay?}
@@ -604,7 +607,7 @@ tube geometry is mapped through the Taupe/NMR coordinate workbook and
 30--40, 40--50, and aggregate 0--50 cm bands.}
 \mqPair{mqGate}{Gate}
 {Are A7 and A8 outside the current OGS mesh?}
-{They are retained as outside-support context in the current local tables.}
+{They are retained as outside-support context in the current generated reductions.}
 \mqPair{mqGate}{Gate}
 {Are air gaps or tube-contact problems flagged?}
 {No row-level air-gap/contact-quality flags were found in the current Taupe/TDR
@@ -623,12 +626,12 @@ mapped in-domain, A7/A8 outside the present mesh.}
 claystone, so this remains part of the Taupe calibration/observation-model gate.}
 \mqPair{mqGate}{Gate}
 {Is a temperature correction needed for Taupe/TDR?}
-{Not determined from the local workbook.  No temperature correction is applied in the
+{Not determined from the provided workbook.  No temperature correction is applied in the
 current trend diagnostic.}
 \mqPair{mqGate}{Gate}
 {Is a salinity or conductivity-loss correction needed for Taupe/TDR?}
 {Not determined.  TDR can be affected by electrical conductivity, but the current
-local Taupe operator has no salinity/conductivity-loss correction.}
+Taupe operator has no salinity/conductivity-loss correction.}
 \mqPair{mqGate}{Gate}
 {Should Taupe/TDR be compared as absolute water content?}
 {No for the current workflow.  Absolute comparison remains blocked until unit,
@@ -727,11 +730,12 @@ the overlap, so it must be treated as existing model forcing with unverified
 provenance.}
 \mqPair{mqGate}{Gate}
 {Was the current \(p_E(t)\) curve manually constructed?}
-{Unknown.  No local generation script, smoothing record, or provider note explains
+{Unknown.  No generation script, smoothing record, or provider note explains
 whether it was manual, RH-derived, or based on another source.}
 \mqPair{mqGate}{Gate}
 {What smoothing was applied to \(p_E(t)\)?}
-{Not documented locally.  This is included in the RH active-curve provenance request.}
+{Not documented in the available source record.  This is included in the RH
+active-curve provenance request.}
 \mqPair{mqGate}{Gate}
 {What interpolation policy is used for \(p_E(t)\)?}
 {Not documented as a source-data policy.  OGS can interpolate curves internally, but
@@ -739,7 +743,7 @@ the intended preprocessing and date-to-model-time convention remain open.}
 \mqPair{mqGate}{Gate}
 {What extrapolation policy is used outside the \(p_E(t)\) date range?}
 {Not documented.  The active curve spans model dates 2019-09-18 to 2023-12-26, while
-local RH data extend to 2025-09-04.}
+the provided RH data extend to 2025-09-04.}
 \mqPair{mqGate}{Gate}
 {What uncertainty is assigned to \(p_E(t)\)?}
 {No accepted boundary-forcing uncertainty is assigned.  The RH candidate envelope has
@@ -780,7 +784,8 @@ support geometry, but no machine-readable BCD-A28--A31 coordinate/support table 
 been promoted to OGS pressure targets.}
 \mqPair{mqGate}{Gate}
 {What screened interval belongs to each pressure sensor?}
-{Not found locally.  The requested export must include screened interval, sensor
+{Not found in the provided residual-ready material.  The requested export must
+include screened interval, sensor
 depth/elevation, or trace/support id for each mini-piezometer.}
 \mqPair{mqGate}{Gate}
 {What depth or elevation belongs to each pressure sensor?}
@@ -789,7 +794,7 @@ OGS liquid pressure or hydraulic head.}
 \mqPair{mqGate}{Gate}
 {What exact timestamps are available for the pressure stream?}
 {Only source-plot timing is visible: roughly March 2024 to January 2026.  Exact
-timestamps are absent from the local catalogue.}
+timestamps are absent from the provided catalogue.}
 \mqPair{mqGate}{Gate}
 {What sampling interval is used by the pressure stream?}
 {Not found.  The Geoscope export request asks for sampling interval and timestamp
@@ -797,7 +802,7 @@ convention.}
 \mqPair{mqGate}{Gate}
 {What maintenance flags exist for the pressure stream?}
 {The May 2026 minutes state BCD-A28--A31 were working well, but no row-level
-maintenance or quality flags are locally exported.}
+maintenance or quality flags are available in the provided exports.}
 \mqPair{mqGate}{Gate}
 {Are the exported pressure values pore pressure?}
 {The public inventory describes mini-piezometer output as pore pressure, but the
@@ -809,10 +814,10 @@ absolute/gauge/head convention is not confirmed.}
 \mqPair{mqGate}{Gate}
 {Are the exported pressure values hydraulic head?}
 {Unknown.  Hydraulic-head use would require elevation/reference metadata that is not
-present locally.}
+present in the provided source material.}
 \mqPair{mqGate}{Gate}
 {What pressure unit is used in the raw export?}
-{No raw export is present.  The local source slide plots kPa; the public CD-A
+{No raw export is present.  The provided source slide plots kPa; the public CD-A
 inventory lists mini-piezometer pore pressure in Pa.}
 \mqPair{mqGate}{Gate}
 {What atmospheric correction is applied?}
@@ -823,7 +828,7 @@ inventory lists mini-piezometer pore pressure in Pa.}
 sensors at different elevations.}
 \mqPair{mqGate}{Gate}
 {Which pressure sensors are in the open twin?}
-{The local trend slide distinguishes open/closed twin behaviour for A28--A31, but the
+{The provided trend slide distinguishes open/closed twin behaviour for A28--A31, but the
 accepted sensor-to-twin mapping is not encoded in a processed target table.}
 \mqPair{mqGate}{Gate}
 {Which pressure sensors are in the closed twin?}
@@ -831,7 +836,7 @@ accepted sensor-to-twin mapping is not encoded in a processed target table.}
 or confirmed from the slide/support geometry.}
 \mqPair{mqGate}{Gate}
 {Which pressure sensors are far-field supports?}
-{Not classified locally.  The current question remains whether any mini-piezometer
+{Not classified in the provided residual-ready material.  The current question remains whether any mini-piezometer
 samples far-field pressure, niche boundary evolution, or a local 3D path.}
 \mqPair{mqGate}{Gate}
 {Which pressure sensors are outside the 2D slice?}
@@ -847,7 +852,7 @@ reference are not yet known.}
 \mqPair{mqGate}{Gate}
 {Does the pressure stream validate the initial pressure field?}
 {Potentially if observations exist near model start or post-excavation start.  The
-available local plot starts around 2024, so it cannot by itself reconstruct the
+available source plot starts around 2024, so it cannot by itself reconstruct the
 initial field.}
 \mqPair{mqGate}{Gate}
 {Can the 2D model represent the sampled hydraulic path?}
@@ -931,7 +936,7 @@ the 2D slice and not over-weighted as a time-series residual.}
 supports a permeability anomaly.}
 \mqPair{mqGate}{Gate}
 {What uncertainty should be assigned to crackmeter values?}
-{No instrument uncertainty or covariance is available locally.  Public sources
+{No instrument uncertainty or covariance is available in the provided source material.  Public sources
 confirm the measurement type, not the CD-A residual weight.}
 \mqSeparator{Inverse-problem computation check}
 \mqPair{mqGate}{Gate}
@@ -976,8 +981,9 @@ conventions, sign conventions, quality flags, and uncertainty models are missing
 numeric Geoscope extensometer export is present.}
 \mqPair{mqGate}{Gate}
 {What quantity does each convergence row measure?}
-{Expected quantity is tunnel/niche convergence or point-pair displacement.  The local
-catalogue has support evidence but no residual-ready convergence time series.}
+{Expected quantity is tunnel/niche convergence or point-pair displacement.  The
+provided catalogue has support evidence but no residual-ready convergence time
+series.}
 \mqPair{mqGate}{Gate}
 {What quantity does each miniprisma row measure?}
 {Expected quantity is geodetic point displacement.  The layout has miniprisma support
@@ -985,7 +991,8 @@ zones, but no numeric time series or survey covariance.}
 \mqPair{mqGate}{Gate}
 {What quantity does each laser-scan product measure?}
 {Expected quantity is registered surface displacement or scan-difference/statistical
-surface change.  Locally, only surface geometry and minutes evidence are present.}
+surface change.  The available source material contains surface geometry and minutes
+evidence, not a residual-ready laser product.}
 \mqPair{mqGate}{Gate}
 {What quantity does each levelling row measure?}
 {The slide summary gives vertical height difference, but the full survey export is
@@ -993,7 +1000,7 @@ still missing.}
 \mqPair{mqGate}{Gate}
 {What baseline epoch is used by each HM stream?}
 {Known only for levelling: first measurement on 2022-08-29/30 to the 2026-03
-campaign.  Other HM baselines are not in the local exports.}
+campaign.  Other HM baselines are not in the provided exports.}
 \mqPair{mqGate}{Gate}
 {What sign convention is used by each HM stream?}
 {Not available except qualitatively for levelling height differences.  Extensometer,
@@ -1057,20 +1064,21 @@ displacement, crack aperture, or EDZ priors.}
 \mqSeparator{Additional granular questions for OGS grounding}
 \mqPair{mqGate}{Gate}
 {Which \texttt{.dat} file defines the large fault geometry?}
-{\path{VisualisationCDA.dat} is the local Tecplot-style layout source containing
+{\path{VisualisationCDA.dat} is the provided Tecplot-style layout source containing
 \texttt{Kluft} fracture/crack geometry zones.}
 \mqPair{mqGate}{Gate}
 {Which Tecplot file defines the \texttt{Kluft} geometry?}
-{\path{cda_knowledge_base/measurements_info/coordinates_geometry_layout/source_files/VisualisationCDA.dat}
-and the copied equivalents in Taupe/other-HM measurement-info folders.}
+{\path{VisualisationCDA.dat}.  The same original filename appears in the copied
+geometry resources used by the Taupe and other-HM support reductions.}
 \mqPair{mqGate}{Gate}
 {What coordinate system is used by the fault source file?}
 {The file is in the source layout/Tecplot coordinate frame; the accepted transform
 into the current 2D OGS slice is not fully closed for individual faults.}
 \mqPair{mqGate}{Gate}
 {Does the source contain only geometry?}
-{For the local \texttt{Kluft} zones, yes for current model use: the source extraction records
-geometry/labels and bounds, not residual-ready aperture or time-series values.}
+{For the provided \texttt{Kluft} zones, yes for current model use: the source
+extraction records geometry/labels and bounds, not residual-ready aperture or
+time-series values.}
 \mqPair{mqGate}{Gate}
 {Does the source contain measured aperture?}
 {Not found in the extracted \texttt{Kluft} geometry inventory.  Aperture remains a
@@ -1085,8 +1093,9 @@ separate HM streams and are not the large-fault geometry source.}
 other observations and should not be assigned solely from geometry.}
 \mqPair{mqGate}{Gate}
 {Which 3D features intersect the current OGS slice?}
-{Not determined in an accepted way.  The local inventory has 22 fracture/crack
-geometry zones, but a feature-by-feature 3D-to-2D intersection table is still needed.}
+{Not determined in an accepted way.  The generated geometry extraction records
+22 fracture/crack geometry zones, but a feature-by-feature 3D-to-2D intersection
+table is still needed.}
 \mqPair{mqGate}{Gate}
 {What effective 2D width is assigned to each fault feature?}
 {None yet.  Width/support assignment is a modelling-policy gate before faults can
@@ -1155,26 +1164,26 @@ assumption.}
 \toprule
 \mqSeparator{Additional granular questions for OGS grounding}
 \mqPair{mqGate}{Gate}
-{Is atmospheric pressure available as a local time series?}
+{Is atmospheric pressure available as a project time series?}
 {Not as a residual-ready CD-A auxiliary export in the current catalogue.  Public
 seasonal-HM sources show atmospheric/climate monitoring in related Mont Terri niches,
 but the project-specific series is not present here.}
 \mqPair{mqGate}{Gate}
-{Is tunnel temperature available as a local time series?}
-{Mentioned in Geoscope/RH context, but no machine-readable local temperature series
+{Is tunnel temperature available as a project time series?}
+{Mentioned in Geoscope/RH context, but no machine-readable project temperature series
 is present for boundary filtering or Kelvin conversion.}
 \mqPair{mqGate}{Gate}
-{Is evapometer conductivity available as a local time series?}
-{No local time series was found.  The Tecplot layout includes an evapometer support
+{Is evapometer conductivity available as a project time series?}
+{No project time series was found.  The Tecplot layout includes an evapometer support
 role, but not measured values or units.}
 \mqPair{mqGate}{Gate}
 {Are geophone or MSM velocity data available?}
-{Not found as local residual-ready data for the current OGS workflow.  Public CD-A
+{Not found as residual-ready project data for the current OGS workflow.  Public CD-A
 characterization mentions miniseismic context, but no geophone/MSM export is
 catalogued here.}
 \mqPair{mqGate}{Gate}
 {Are CCM water-content data available?}
-{Public/local CD-A sources mention CCM water-content measurements, but the current
+{Published and provided CD-A sources mention CCM water-content measurements, but the current
 processed OGS target set does not include a residual-ready CCM table.}
 \mqPair{mqGate}{Gate}
 {Are borehole images available for the current support?}
@@ -1184,7 +1193,7 @@ available.}
 \mqPair{mqGate}{Gate}
 {Are geological or lithological logs available for the current support?}
 {Partly as structural/geology context from Ziefle/GETE material, bedding notes, and
-local source figures.  They are prior/context evidence, not a numeric residual.}
+source figures.  They are prior/context evidence, not a numeric residual.}
 \mqPair{mqGate}{Gate}
 {Should this stream be an OGS input?}
 {Only if it supplies boundary forcing, initial conditions, material fields, or
