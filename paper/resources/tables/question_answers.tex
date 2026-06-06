@@ -133,6 +133,31 @@ RH/suction, direct pressure, nearby boreholes, or excavation history.}
 {No.  The computation starts from the already-open 2D geometry, with
 \(\uu(\xx,0)=\bm{0}\), no active initial stress tensor, and no active top load.}
 \qaPair{qaGate}{Gate}
+{What measured in-situ stress is locally findable before excavation?}
+{Local CD-A literature gives pre-excavation stress evidence, but not an active
+initial condition for the current run.  The water-content modelling paper reports a
+measured in-situ stress state projected to the mesh with compressive total stresses
+\(\sigma_h=3\,\mathrm{MPa}\) and \(\sigma_v=7\,\mathrm{MPa}\)
+\citep[Sec.~3]{WaterContentEDZ2024}.  A local GETE 2022 modelling table lists
+\(\sig_0=-(5,5,7)\times10^6\,\mathrm{Pa}\) and notes that in-situ stress and pore
+pressure measurements are challenging and change with excavation
+\citep[modelling Table~2]{Ziefle2022GETE}.  The current active XML does not apply
+either value: \path{ic_sigma0} and \path{load_top} are defined but inactive, so use
+requires a component/sign convention, a principal-direction or rotation-angle
+decision, and an excavation-reference decision.}
+\qaPair{qaGate}{Gate}
+{Is a prestress angle or principal-stress orientation locally closed?}
+{No.  The local paper evidence gives stress magnitudes, and the knowledge base
+separately records bedding and structural orientations used as geological or
+hydraulic-tensor context.  Those angles are not an accepted principal-stress
+rotation for the current 2D prestress tensor.  In particular, CD-A bedding and
+niche-orientation evidence from the characterization source cannot be substituted
+for stress orientation without a modelling decision
+\citep[Sec.~4.3]{Ziefle2024Characterization}.  A usable prestress definition would
+need principal directions or a rotation angle, component order, sign convention,
+value choice, and the excavation-reference state; the current active XML has no
+active initial-stress tensor.}
+\qaPair{qaGate}{Gate}
 {How should early pressure or displacement transients be interpreted?}
 {They may mix physical drainage with adjustment from the prescribed numerical
 initial state.  Hard mechanical validation needs a prestress and

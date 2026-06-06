@@ -53,7 +53,8 @@ The following are correctly presented as gates rather than paper defects:
 - active open-niche pressure-curve provenance, sensor selection, filtering,
   time-origin, and uncertainty;
 - CTE value and unit provenance;
-- prestress, excavation unloading, and mechanical reference-state policy;
+- prestress magnitude/orientation, excavation unloading, and mechanical
+  reference-state policy;
 - initial pressure state versus post-excavation drainage evidence;
 - NMR bound/mobile-water split and absolute-offset policy;
 - ERT coordinate transform, near-niche support, covariance, and clay/surface
