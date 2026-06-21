@@ -1,0 +1,149 @@
+\usepackage[normalem]{ulem}
+\normalem
+
+\makeatletter
+\newif\ifreviewchanges
+\@ifundefined{reviewchanges}{\reviewchangesfalse}{\reviewchangestrue}
+\makeatother
+
+\newcommand{\reviewbubble}[1]{%
+  \tikz[baseline=(mark.base)]{%
+    \node[
+      circle,
+      draw=black,
+      fill=white,
+      inner sep=0.3pt,
+      minimum size=1.35em,
+      font=\scriptsize
+    ] (mark) {#1};%
+  }%
+}
+\newcommand{\reviewfootnote}[2]{\footnote{\raggedright\textbf{Comment #1.} #2\par}}
+\newcommand{\qid}[1]{%
+  \ifreviewchanges
+    \textcolor{blue!70!black}{\uline{\textbf{[#1]}}}\ %
+  \else
+    \textbf{[#1]}\ %
+  \fi
+}
+\newcommand{\pdfAnnComment}[3]{%
+  \textbf{Original annotated PDF #1.}
+  \textbf{Exact annotation:} \emph{#2}
+  Response: #3%
+}
+
+\newcommand{\annCommentOne}{\textbf{Exact available note:}
+\emph{Co presne jsou zaporne tlaky? "negative liquid pressure means postiive
+suction relative to the gas/reference pressure".}  Context: clarify the pressure
+reference convention, while preserving the Richards sign convention used by OGS.}
+\newcommand{\annCommentTwo}{\textbf{Exact available note:}
+\emph{Jake jsou typicke chyby/jejich odhady jednotlivych experimentu a vyslednych
+velicin?}  Context: record which uncertainty estimates are active policies and
+which remain gates.}
+\newcommand{\annCommentThree}{\textbf{Exact available note:}
+\emph{Lehce offotpic, jak funguje modelovani 2d rezu pro elasticitu, ktera ma
+materialove parametry dane z 3d modelu?}  Context: explain the 2D slice
+interpretation of fixed 3D-derived mechanical parameters.}
+\newcommand{\annCommentFour}{\textbf{Exact available note:}
+\emph{je mozne uplne vyhodit zavislost na teplote z OGS? lepsi by asi bylo na to
+nesahat, ale pokud by nam umeli dat jen HM model, tak by to mohlo neco malicko
+usetrit.}  Context: keep the checked TRM XML form but make the active isothermal
+reading explicit.}
+\newcommand{\annCommentFive}{\textbf{Exact available note:}
+\emph{Chceme nejak integrovat data z "crackmeteru" a podobnych? (spise ne?)}
+Context: keep these streams as validation/prior gates unless numeric residual
+exports are supplied.}
+\newcommand{\annCommentSix}{\textbf{Exact available note:}
+\emph{Co znamena S\_lr pro ruzna mereni? S\_e z van Genutchtena, ale permeabilita
+je skrze S\_l. Projevi se nekdy i S\_gr?}  Context: separate \(S_e\), \(\Sl\),
+residual saturations, storage, relative permeability, and measurement proxies.}
+\newcommand{\annCommentSeven}{\textbf{Exact available note:}
+\emph{tensor pro permeabiliru by asi mel byt otoceny podle orientace beddingu,
+mohlo by byt napsane nekde explicitne v uvodni casti.}  Context: make the
+bedding-angle and tensor-rotation gate explicit.}
+\newcommand{\annCommentEight}{\textbf{Exact available note:}
+\emph{explicitni formule pro \(\eps^{sw}\)? nebo neni treba a staci OGS
+implementace? V OGS to je jako zmena delta\_sigma\_sw =
+-(lambda\_i * pi\_i * S\_eff\string^{lambda\_i - 1}) * delta\_S\_eff / dt, kde
+S\_eff je efektivni saturace, tlak -> vG -> S\_eff; lambda\_i a p\_i jsou
+efektivne "materialove parametry", jeden pro kazdy smer, mozno kodovat
+anizotropii; dt : timestep; prefix delta\_ : prirustky.}  Context: replace the
+unsupported swelling-strain shorthand by the active swelling-stress-rate law.}
+\newcommand{\annCommentNine}{\textbf{Exact available note:}
+\emph{paragraph "Measured value, units, and OGS tie." a analogicke pozdeji: co
+znamena "OGS tie"? jakoze chapu v otazce how does (something) tie to OGS, ale
+"OGS tie" mi zni divne.}  Context: use "model link" for the measurement role.}
+\newcommand{\annCommentTen}{\textbf{Exact available note:}
+\emph{Obecne asi chceme smazat vsechno, co zminuje teplotni zavislost.}
+Context: remove unnecessary active-temperature-dependence language while retaining
+the checked isothermal/TRM evidence boundary.}
+\newcommand{\annCommentEleven}{\textbf{Exact available note:}
+\emph{"Which pressure Dirichlet conditions are attached in the checked OGS XML?"
+Trochu divna odpoved.}  Context: separate the mathematical boundary inventory from
+the checked XML attachment gate.}
+\newcommand{\annCommentTwelve}{\textbf{Exact available note:}
+\emph{"What mechanical condition is used on the niche boundary?" bez explicitni
+podminky -> nulove plosne sily, ale jestli to funguje stejne jako linearni model,
+tak okrajova podminka by mela byt na effective stress, tj. brat do uvady i
+tlakovou okrajovou podminku. je tohle ok v ramci OGS?}  Context: state the
+natural mechanical boundary and the remaining hydraulic pressure coupling.}
+\newcommand{\annCommentThirteen}{\textbf{Exact available note:}
+\emph{"Which parameter family is released in the first workflow?" nerozumim tomu,
+co znamena released.}  Context: define "released" as allowed to vary in candidate
+inverse runs.}
+\newcommand{\annCommentFourteen}{\textbf{Exact available note:}
+\emph{"Is permeability an OGS state output?" smazal bych.}  Context: replace the
+state-output wording by the input-field comparison rule.}
+\newcommand{\annCommentFifteen}{\textbf{Exact available note:}
+\emph{"When does an OGS field become a residual?" smazal bych nebo zadefinoval
+pojem "residual".}  Context: define residual as model-data mismatch after an
+observation operator.}
+\newcommand{\annCommentSixteen}{\textbf{Exact available note:}
+\emph{"Can it become an absolute residual?" nerozumim pojmu "absolute residual".}
+Context: replace it with calibrated likelihood residual: a measurement mismatch
+with an observation operator, uncertainty, and posterior contribution.}
+\newcommand{\annCommentSeventeen}{\textbf{Exact user request:}
+\emph{then look into the new materials: main.tex, DAMH\_ERT20\_COMPACT\_TECHNICAL\_REPORT.tex,
+domain\_kl\_100\_3h\_final\_report.tex and carefully make another chapter in the
+document and add there these results on inversion, so its compact and properly
+tied to the rest of the text.}  Context: add an inversion-results chapter tied to
+the ERT-only observation scope and model gates.}
+
+\ifreviewchanges
+  \newcommand{\revadd}[3]{%
+    \reviewbubble{#1}\textcolor{blue!70!black}{\uline{#2}}%
+    \reviewfootnote{#1}{#3}%
+  }
+  \newcommand{\revdel}[3]{%
+    \reviewbubble{#1}\textcolor{red!70!black}{\sout{#2}}%
+    \reviewfootnote{#1}{#3}%
+  }
+  \newcommand{\revreplace}[4]{%
+    \reviewbubble{#1}\textcolor{red!70!black}{\sout{#2}}\ %
+    \textcolor{blue!70!black}{\uline{#3}}%
+    \reviewfootnote{#1}{#4}%
+  }
+  \newcommand{\revreplaceonly}[4]{%
+    \reviewbubble{#1}\textcolor{red!70!black}{\sout{#2}}\ %
+    \textcolor{blue!70!black}{\uline{#3}}%
+    \reviewfootnote{#1}{#4}%
+  }
+  \newcommand{\revaddnofn}[2]{%
+    \reviewbubble{#1}\textcolor{blue!70!black}{\uline{#2}}%
+  }
+  \newcommand{\revreplacenofn}[3]{%
+    \reviewbubble{#1}\textcolor{red!70!black}{\sout{#2}}\ %
+    \textcolor{blue!70!black}{\uline{#3}}%
+  }
+  \newcommand{\revnote}[2]{%
+    \reviewbubble{#1}\reviewfootnote{#1}{#2}%
+  }
+\else
+  \newcommand{\revadd}[3]{#2}
+  \newcommand{\revdel}[3]{}
+  \newcommand{\revreplace}[4]{#3}
+  \newcommand{\revreplaceonly}[4]{}
+  \newcommand{\revaddnofn}[2]{#2}
+  \newcommand{\revreplacenofn}[3]{#3}
+  \newcommand{\revnote}[2]{}
+\fi

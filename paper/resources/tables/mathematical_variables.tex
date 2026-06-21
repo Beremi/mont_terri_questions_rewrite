@@ -122,15 +122,15 @@ Darcy velocity and mass flux &
 Derived hydraulic transport quantities.  They are not pore velocity unless divided
 by an explicitly chosen pore-volume factor.\\
 Strain and stress &
-\(\eps(\uu)\), \(\eps^{\mathrm{th}}(\TT)\), \(\sig\) &
+\(\eps(\uu)\), \(\eps^{\mathrm{th}}(\TT)\), \(\sig\), \(\sig^{\mathrm{sw}}\) &
 --, \(\mathrm{Pa}\) &
-Mechanical fields derived from displacement, orthotropic elasticity, swelling strain,
-thermal strain, and Bishop/Biot pore-pressure coupling.\\
-Swelling strain or stress contribution &
-\(\eps^{\mathrm{sw}}\), \(p_{\mathrm{sw}}\) &
+Mechanical fields derived from displacement, orthotropic elasticity, thermal strain,
+saturation-dependent swelling stress, and Bishop/Biot pore-pressure coupling.\\
+Swelling stress contribution &
+\(\sig^{\mathrm{sw}}\), \(p_{\mathrm{sw}}\) &
 --, \(\mathrm{Pa}\) &
-Saturation-dependent mechanical contribution used inside the active constitutive
-law.\\
+Saturation-dependent stress contribution computed from the active
+swelling-stress-rate law; \(p_{\mathrm{sw}}\) is the configured swelling pressure.\\
 Volumetric water-content proxy &
 \(\theta=\por\Sl\) &
 -- &

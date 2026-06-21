@@ -3,9 +3,6 @@
 \renewcommand{\arraystretch}{1.16}
 \setlength{\tabcolsep}{4pt}
 \definecolor{qaQuestionBg}{gray}{0.93}
-\definecolor{qaEstablished}{HTML}{1B7F3A}
-\definecolor{qaChecked}{HTML}{087F8C}
-\definecolor{qaFixed}{HTML}{1C5FA8}
 \definecolor{qaPolicy}{HTML}{6F42C1}
 \definecolor{qaGate}{HTML}{D97706}
 \definecolor{qaCaveat}{HTML}{B42318}
@@ -13,315 +10,88 @@
 \newcommand{\qaPair}[4]{%
   \rowcolor{qaQuestionBg}%
   \multicolumn{2}{@{}L{0.96\textwidth}@{}}{\textbf{Question.} #3}\\*%
-  \qaStatus{#1}{#2} & #4\\%
+  \textbf{Answer.} & #4\\%
   \addlinespace[0.42em]%
 }
 \newcommand{\qaSubtable}[1]{%
   \par\Needspace{8\baselineskip}\medskip\noindent\textbf{#1}\par\smallskip%
 }
 
-\captionof{table}{Granular model-facing questions and proposed answers from the
-checked OGS project files and cited sources.  Questions are shaded light grey; answers are
-unshaded and carry a coloured status label.}
+\captionof{table}{Live model-facing questions after resolved setup facts have been
+moved into the model text and mapping tables.  Questions are shaded light grey and
+answers are unshaded.}
 \label{tab:explicit-question-answers}
 
-\noindent\textbf{Answer-status legend.}\par\smallskip
-\begin{tabular}{@{}L{0.23\textwidth} L{0.70\textwidth}@{}}
-\qaStatus{qaEstablished}{Established} &
-Directly supported by the checked OGS project files, equations, published papers,
-or official OGS documentation.\\
-\qaStatus{qaChecked}{Checked input} &
-Numerically or file-level checked, but not necessarily supported as a full
-measurement provenance statement.\\
-\qaStatus{qaFixed}{Fixed context} &
-Active or inactive context is known and should be treated as fixed in the current
-baseline.\\
-\qaStatus{qaPolicy}{Release policy} &
-Current modelling or inversion-policy decision, not a material fact by itself.\\
-\qaStatus{qaGate}{Gate} &
-Partly answered, but external evidence, source recovery, or collaborator decision
-is required before hard use.\\
-\qaStatus{qaCaveat}{Caveat} &
-Known limitation, inactive entry, or provenance problem that must not be promoted
-to calibrated physics.\\
-\end{tabular}
-
-\qaSubtable{Hydraulic Boundary Conditions}
+\qaSubtable{Hydraulic Boundary-Data Provenance}
 \begin{longtable}{@{}L{0.18\textwidth} L{0.76\textwidth}@{}}
 \toprule
-\qaPair{qaEstablished}{Established}
-{Which mathematical pressure boundary inventory should the model state?}
-{Use \(\pl=p_\square=1.5\,\mathrm{MPa}\) on
-\(\Gamma_\square=\Gamma_A\cup\Gamma_B\cup\Gamma_C\cup\Gamma_D\), and
-\(\pl=p_E(t)\) on the niche boundary \(\Gamma_E\).}
-\qaPair{qaGate}{Gate}
-{Which pressure Dirichlet conditions are attached in the checked OGS XML?}
-{The checked \path{02_process_variables_TRM.xml} attaches pressure Dirichlet data
-to \path{cd-a_top} through \path{bc_top_pressure} and to \path{cd-a_niche4}
-through \path{open_niche_seasonal}.  It does not explicitly attach
-left/right/bottom pressure boundaries in that file, so the implementation remains
-a consistency gate.}
-\qaPair{qaEstablished}{Established}
-{Are the outer-square pressure boundaries time-dependent?}
-{No.  The square-boundary pressure is the constant value
-\(p_\square=1.5\,\mathrm{MPa}\).  The only time-dependent hydraulic boundary in
-the current pressure inventory is the open-niche curve \(p_E(t)\).}
-\qaPair{qaEstablished}{Established}
-{What does the negative niche-pressure curve mean?}
-{The values are OGS liquid-pressure values in the Richards sign convention.
-Because \(\pc=-\pl\), negative \(\pl\) represents positive suction/capillary
-pressure, not a separate pressure variable.}
-\qaPair{qaChecked}{Checked input}
-{What is known about the active niche curve \(p_E(t)\)?}
-{\path{open_niche_seasonal} is a \texttt{CurveScaled} parameter with unit scaling
-factor.  The curve has 845 tabulated values, spans \(0\) to
-\(1.3482\times10^8\,\mathrm{s}\), and ranges from about \(-5.23\) to
-\(-53.24\,\mathrm{MPa}\).}
-\qaPair{qaGate}{Gate}
-{What remains unknown about the active niche curve \(p_E(t)\)?}
-{The checked OGS project gives the active curve values, but the cited source
-boundary does not close the source sensors, source columns, filtering, smoothing,
-interpolation, time origin, and uncertainty for the active curve.}
+\qaPair{qaGate}{Gate}{\qid{Q006} Which timestamp and time-origin convention produced the active niche curve \(p_E(t)\)?}{The active OGS input is clear: the open niche uses
+\path{open_niche_seasonal}, while the square boundary is treated as fixed-pressure
+support.  The open query is the source time axis.  The provider should confirm the
+source timestamps, time zone or date convention, interpolation/smoothing, mapping
+to OGS \(t=0\), and whether the ERT-suggested time shift seen in initial tests also
+applies to the boundary curve.}
 \bottomrule
 \end{longtable}
 
-\qaSubtable{Mechanical Boundary Conditions}
+\qaSubtable{Initial State, Excavation, and Prestress}
 \begin{longtable}{@{}L{0.18\textwidth} L{0.76\textwidth}@{}}
 \toprule
-\qaPair{qaEstablished}{Established}
-{Which displacement constraints are active on the square boundary?}
-{The model fixes \(u_x=0\) on \(\Gamma_A\cup\Gamma_B\) through
-\path{cd-a_left}/\path{cd-a_right}, and fixes \(u_y=0\) on
-\(\Gamma_C\cup\Gamma_D\) through \path{cd-a_top}/\path{cd-a_bottom}.}
-\qaPair{qaEstablished}{Established}
-{What mechanical condition is used on the niche boundary?}
-{No displacement or traction condition is prescribed on \(\Gamma_E\) in the active
-boundary-condition block.  The niche is therefore natural mechanically in the
-current formulation.}
-\qaPair{qaCaveat}{Caveat}
-{Is the top mechanical load active?}
-{No.  The \path{load_top} parameter is defined in the parameter file, but the
-Neumann top-load boundary block is commented out in the process-variable XML.}
-\bottomrule
-\end{longtable}
-
-\qaSubtable{Thermal Boundary And Reduced Temperature Model}
-\begin{longtable}{@{}L{0.18\textwidth} L{0.76\textwidth}@{}}
-\toprule
-\qaPair{qaFixed}{Fixed context}
-{Which temperature boundary and initial value are active?}
-{\(\TT=298.15\,\mathrm{K}\) is prescribed on \path{bulk_all}, and
-\(\TT(\xx,0)=298.15\,\mathrm{K}\).  This constrains temperature to be homogeneous
-and constant in the active model, although the TRM heat equation remains present in
-the project.}
-\bottomrule
-\end{longtable}
-
-\qaSubtable{Initial State And Excavation Interpretation}
-\begin{longtable}{@{}L{0.18\textwidth} L{0.76\textwidth}@{}}
-\toprule
-\qaPair{qaEstablished}{Established}
-{What is the active initial pressure field?}
-{\path{ic_pressure} is a function, but its vertical term is multiplied by zero.
-The active initial liquid pressure is spatially uniform \(1.5\,\mathrm{MPa}\).}
-\qaPair{qaGate}{Gate}
-{Does the initial pressure encode post-excavation drainage near the niche?}
-{No.  The current input has no heterogeneous initial drainage field from
-RH/suction, direct pressure, nearby boreholes, or excavation history.}
-\qaPair{qaCaveat}{Caveat}
-{Does the model simulate staged excavation or gradual unloading?}
-{No.  The computation starts from the already-open 2D geometry, with
-\(\uu(\xx,0)=\bm{0}\), no active initial stress tensor, and no active top load.}
-\qaPair{qaGate}{Gate}
-{What measured in-situ stress is findable before excavation?}
-{Cited CD-A papers give pre-excavation stress evidence, but not an active initial
-condition for the current run.  The water-content modelling paper reports a measured
-in-situ stress state projected to the mesh with compressive total stresses
+\qaPair{qaGate}{Gate}{\qid{Q012} Does the initial pressure encode post-excavation drainage near the niche?}{No.  The current input has no heterogeneous initial drainage field from
+RH/suction, direct pressure, nearby boreholes, or excavation history.  A
+measurement-based initialization needs an accepted source field and date before it
+can replace the uniform value.}
+\qaPair{qaCaveat}{Caveat}{\qid{Q013} Does the model simulate staged excavation or gradual unloading?}{No.  The computation starts from the already-open 2D geometry, with
+\(\uu(\xx,0)=\bm{0}\), no active initial stress tensor, and no active top load.
+The elapsed time from excavation to the model start date is not closed by the
+checked OGS files.}
+\qaPair{qaGate}{Gate}{\qid{Q014} Which prestress magnitude, angle, and excavation reference should be used if prestress is activated?}{Published CD-A modelling sources give stress-magnitude evidence, but no accepted
+active prestress tensor for this run.  The water-content modelling paper reports
 \(\sigma_h=3\,\mathrm{MPa}\) and \(\sigma_v=7\,\mathrm{MPa}\)
-\citep[Sec.~3]{WaterContentEDZ2024}.  The GETE modelling paper lists
-\(\sig_0=-(5,5,7)\times10^6\,\mathrm{Pa}\) and notes that in-situ stress and pore
-pressure measurements are challenging and change with excavation
-\citep[modelling Table~2]{Ziefle2022GETE}.  The current active XML does not apply
-either value: \path{ic_sigma0} and \path{load_top} are defined but inactive, so use
-requires a component/sign convention, a principal-direction or rotation-angle
-decision, and an excavation-reference decision.}
-\qaPair{qaGate}{Gate}
-{Is a prestress angle or principal-stress orientation closed by the cited sources or XML?}
-{No.  The cited papers give stress magnitudes and geological or structural
-orientation context, but not an accepted principal-stress rotation for the current
-2D prestress tensor.  CD-A bedding and niche-orientation evidence from the
-characterization source cannot be substituted for stress orientation without a
-modelling decision \citep[Sec.~4.3]{Ziefle2024Characterization}.  A usable
-prestress definition would need principal directions or a rotation angle, component
-order, sign convention, value choice, and the excavation-reference state; the
-current active XML has no active initial-stress tensor.}
-\qaPair{qaGate}{Gate}
-{How should early pressure or displacement transients be interpreted?}
-{They may mix physical drainage with adjustment from the prescribed numerical
-initial state.  Hard mechanical validation needs a prestress and
-excavation-reference decision first.}
+\citep[Sec.~3]{WaterContentEDZ2024}; the GETE modelling paper lists
+\(\sig_0=-(5,5,7)\times10^6\,\mathrm{Pa}\)
+\citep[modelling Table~2]{Ziefle2022GETE}.  The current XML does not apply either
+value, and a usable 2D prestress still needs principal directions or rotation angle,
+component order, sign convention, value choice, and an excavation-reference state.}
 \bottomrule
 \end{longtable}
 
-\qaSubtable{OGS Inputs}
+\qaSubtable{OGS Inputs and Material-Field Questions}
 \begin{longtable}{@{}L{0.18\textwidth} L{0.76\textwidth}@{}}
 \toprule
-\qaPair{qaEstablished}{Established}
-{Which OGS process and primary variables define the active model?}
-{The active process is \texttt{THERMO\_RICHARDS\_MECHANICS} with primary variables
-\path{displacement}, \path{pressure}, and \path{temperature}.  The finite-element
-orders are 2, 1, and 1, respectively.}
-\qaPair{qaEstablished}{Established}
-{Which source hierarchy defines the equations and active implementation?}
-{The active implementation is the transferred OGS project file and its included XML
-files.  The equation notation follows the OGS TRM documentation and the
-Wang--Kosakowski--Kolditz TRM notation used in the report.  If notation and checked
-XML differ, the XML defines the active CD-A run and the mismatch is recorded as a
-gate.}
-\qaPair{qaChecked}{Checked input}
-{Which numerical time-loop and solver settings are active?}
-{The current run uses Backward Euler, fixed time stepping from \(0\) to
-\(1.4\times10^8\,\mathrm{s}\), \texttt{basic\_newton} with maximum 150 iterations,
-component-wise \(\Delta x\) convergence tolerances \(10^{-10}\) absolute and
-\(10^{-8}\) relative, and the \texttt{PardisoLU} linear solver.}
-\qaPair{qaCaveat}{Caveat}
-{Which governing terms are explicitly inactive?}
-{The current formulation has zero specific body force, no explicit vapor-transport
-phase terms, no active hydraulic source term, no active initial stress, and no
-active top load.}
-\qaPair{qaPolicy}{Release policy}
-{Which parameter family is released in the first workflow?}
-{Only the intrinsic-permeability tensor field supplied through \path{k_i_rd} is
-released as the first material field.  The current modelling policy keeps porosity,
-retention, mechanics, thermal parameters, boundaries, and initialization fixed or
-gated.}
-\qaPair{qaPolicy}{Release policy}
-{How do candidate-run parameter changes enter OGS?}
-{They enter through current-run mesh fields or explicit XML/input replacements, such
-as \path{k_i_rd} in the candidate mesh.  They are not silent edits to the governing
-equations or to the exchanged source-model provenance.}
-\qaPair{qaEstablished}{Established}
-{How are permeability and porosity passed to OGS?}
-{The current OGS project uses \texttt{MeshElement} fields: \path{k_i_rd} for
-intrinsic permeability and \path{n_rd} for porosity.  The current \path{n_rd}
-field is treated as fixed at \(0.105\).}
-\qaPair{qaFixed}{Fixed context}
-{Are retention and relative permeability fitted now?}
-{No.  Saturation uses the fixed van Genuchten law with \(S_{lr}=0.1\),
-\(S_{gr}=0\), \(m=0.45\), and \(p_b=10\,\mathrm{MPa}\).  Relative permeability
-uses the matching fixed van Genuchten/Mualem-type law with minimum \(10^{-25}\).}
-\qaPair{qaGate}{Gate}
-{Are mechanical parameters fitted now?}
-{No.  Orthotropic elasticity, \(\alpha_B=1\), Bishop exponent 1, and
-saturation-dependent swelling are active but fixed.  Elastic-parameter release
-requires hydro-mechanical residuals plus prestress/excavation policy.}
-\qaPair{qaCaveat}{Caveat}
-{Are thermal or liquid properties fitted now?}
-{No.  Density, viscosity, heat capacities, thermal conductivities, and thermal
-expansivity are fixed XML inputs.  The \path{CTE}=1254.74 value remains a
-provenance caveat rather than a calibrated thermal-expansion value.}
-\qaPair{qaPolicy}{Release policy}
-{Should any material parameter be time-dependent in this first pass?}
-{No.  Time-dependent \(\KK(\xx,t)\), porosity, retention, fracture closure, and
-healing/sealing inputs are excluded until repeated same-support evidence separates
-material evolution from boundary forcing, saturation state, and spatial
+\qaPair{qaGate}{Gate}{\qid{Q025} Are mechanical parameters fitted now?}{No.  Orthotropic elasticity, \(\alpha_B=1\), Bishop exponent 1, and
+saturation-dependent swelling are active but fixed.  Elastic-parameter fitting
+requires a later internal modelling decision, hydro-mechanical residuals, and a
+settled prestress/excavation reference state.}
+\qaPair{qaGate}{Gate}{\qid{Q027} Is there expert consensus that material fields should evolve in time during the multi-year experiment?}{The current OGS baseline uses time-independent permeability, porosity, retention,
+and mechanical material fields.  Expert input is needed on whether clay sealing,
+fracture closure/opening, EDZ healing, or other time-dependent material evolution is
+physically expected strongly enough to justify adding fitted time-dependent fields
+rather than explaining the trends by boundary forcing, saturation state, or spatial
 heterogeneity.}
 \bottomrule
 \end{longtable}
 
-\qaSubtable{Model Outputs And Observation Operators}
+\qaSubtable{Model Time and Output Operators}
 \begin{longtable}{@{}L{0.18\textwidth} L{0.76\textwidth}@{}}
 \toprule
-\qaPair{qaEstablished}{Established}
-{Which VTU arrays are requested in the current OGS workflow?}
-{The required output arrays are \path{pressure}, \path{saturation},
-\path{temperature}, \path{displacement}, and \path{porosity}.}
-\qaPair{qaChecked}{Checked input}
-{Which process secondary variables are available but not required outputs here?}
-{\path{velocity}, \path{sigma}, \path{epsilon}, and \path{swelling_stress} are
-process secondary variables.  They can be requested or sampled only with an
-explicit output and interpretation policy.}
-\qaPair{qaEstablished}{Established}
-{Is permeability an OGS state output?}
-{No.  \(\KK\) is an input mesh field, not a dynamic state variable.  Permeability
-comparisons must sample or average the mesh field with the correct support and
-direction operator.}
-\qaPair{qaPolicy}{Release policy}
-{How should OGS water content be formed from outputs?}
-{The model-side mobile water-content proxy is \(\theta=\por\Sl\), using porosity
-and liquid saturation.  This is not automatically the same as total measured water
-content.}
-\qaPair{qaGate}{Gate}
-{How are output times tied to observations or boundary curves?}
-{The run starts at \(t=0\), identified by comments as 18 September 2019, and ends
+\qaPair{qaGate}{Gate}{\qid{Q032} How are output times tied to observations or boundary curves?}{The run starts at \(t=0\), identified by comments as 18 September 2019, and ends
 at \(1.4\times10^8\,\mathrm{s}\).  Measurements require an explicit
-date-to-model-time conversion and interpolation or matching rule.}
-\qaPair{qaGate}{Gate}
-{When does an OGS field become a residual?}
-{Only after an observation operator defines the measured quantity, support, time
-mapping, units, reference convention, and uncertainty.  Otherwise the OGS field is
-only a diagnostic or model state.}
+date-to-model-time conversion, tolerance, and interpolation or matching rule.  This
+gate is now especially important because initial ERT tests suggest a possible
+time-axis shift.}
 \bottomrule
 \end{longtable}
 
-\qaSubtable{Material And Constitutive Fields}
+\qaSubtable{Material and Structural Questions}
 \begin{longtable}{@{}L{0.18\textwidth} L{0.76\textwidth}@{}}
 \toprule
-\qaPair{qaPolicy}{Release policy}
-{What does intrinsic permeability describe materially?}
-{\(\KK(\xx)\) describes effective Darcy mobility of the clay/EDZ continuum before
-relative permeability and viscosity are applied.  It is the base hydraulic
-material field in the current inversion stage.}
-\qaPair{qaPolicy}{Release policy}
-{How does hydraulic conductivity relate to permeability?}
-{Hydraulic conductivity is derived from intrinsic permeability, relative
-permeability, liquid density, viscosity, saturation state, and the chosen
-head/gravity convention.  It is not an independent base field in the current OGS
-input.}
-\qaPair{qaFixed}{Fixed context}
-{What does porosity describe and how does OGS use it?}
-{\(\por(\xx)\) is the effective pore-volume fraction used in storage, thermal
-mixing, and \(\theta=\por\Sl\).  It is represented by \path{n_rd}, but the current
-field is constant and not released.}
-\qaPair{qaFixed}{Fixed context}
-{What do saturation and retention describe?}
-{\(\Sl\) is the liquid occupancy of the OGS pore space.  It is computed from
-\(\pc=-\pl\) through the fixed retention law, and it controls storage,
-relative-permeability mobility, swelling, and water-content post-processing.}
-\qaPair{qaFixed}{Fixed context}
-{What does relative permeability describe?}
-{\(k_{\mathrm{rel}}(\Sl)\) reduces liquid mobility under unsaturated conditions.
-It multiplies \(\KK/\mu_l\) in the Darcy velocity and is fixed by the current
-material law.}
-\qaPair{qaGate}{Gate}
-{Is storativity a separate released field?}
-{No.  Storage behaviour follows from porosity, saturation derivative, liquid
-compressibility/density, and mechanical volumetric coupling.  A separate
-storativity field would be a new modelling choice.}
-\qaPair{qaFixed}{Fixed context}
-{How do Biot and Bishop fields enter the model?}
-{The fixed Biot coefficient is \(\alpha_B=1\), and the Bishop power law with
-exponent 1 gives \(b(\Sl)=\Sl\).  Together they scale the pore-pressure term in the
-mechanical balance.}
-\qaPair{qaFixed}{Fixed context}
-{What is the elastic field description?}
-{The active mechanical model uses fixed orthotropic linear elasticity with
-\(E=(13.8,6.0,13.8)\,\mathrm{GPa}\), \(G=(4.79,2.46,4.79)\,\mathrm{GPa}\), and
-\(\nu=(0.44,0.22,0.44)\).}
-\qaPair{qaGate}{Gate}
-{Does the same bedding angle control mechanics, permeability, and electrical anisotropy?}
-{The cited structural evidence supports bedding orientation as important context for
-permeability candidates, but it does not prove that Darcy, mechanical, and electrical
-anisotropy must share one hard angle in this chapter.}
-\qaPair{qaFixed}{Fixed context}
-{What role do swelling fields have?}
-{The model includes a fixed saturation-dependent swelling law with
-\(1\,\mathrm{MPa}\) swelling pressures in each direction and
-\(0.1\leq \Sl\leq1\) limits.  It is active physics but not a released parameter
-family.}
-\qaPair{qaGate}{Gate}
-{How should faults, cracks, and EDZ features be classified here?}
-{They are not active discrete OGS geometry or separate material classes in this
+\qaPair{qaGate}{Gate}{\qid{Q042} Does the same bedding angle control mechanics, permeability, and electrical anisotropy?}{The cited structural evidence supports bedding orientation as important context for
+permeability candidates, but it does not prove that Darcy, mechanical, electrical,
+and prestress orientations must share one hard angle.  Tensor rotations should
+state their bedding-angle, prestress-angle, and coordinate conventions explicitly
+rather than hiding the choices inside component values.}
+\qaPair{qaGate}{Gate}{\qid{Q044} How should faults, cracks, and EDZ features be classified here?}{They are not active discrete OGS geometry or separate material classes in this
 chapter.  They can become structural priors, masks, equivalent fields, or
 scenarios only after their source geometry, scale, aperture meaning, and
 3D-to-2D projection are defined.}

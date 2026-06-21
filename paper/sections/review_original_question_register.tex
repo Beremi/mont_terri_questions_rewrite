@@ -1,0 +1,474 @@
+\ifreviewchanges
+\clearpage
+\chapter*{Original Question and Comment Register}
+\addcontentsline{toc}{chapter}{Original Question and Comment Register}
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+This review-only appendix gives every original source-inventory question and every reviewer comment a stable address label.  Use \textbf{OQ001}--\textbf{OQ158} for the reorganized source questions from \path{mont_terri_questions_reorganized.md}.  Use \textbf{RC001}--\textbf{RC060} for the original text-note and hand-annotation comments used for the tracked-change responses.  The live paper question rows keep their existing \textbf{Q} labels because those labels are already cross-referenced in the traceability audit.\par\medskip
+\begin{longtable}{@{}L{0.10\textwidth} L{0.23\textwidth} L{0.59\textwidth}@{}}
+\caption{Complete original source-inventory question IDs.}\label{tab:original-source-question-register}\\
+\toprule
+ID & Source group & Full original source question\\
+\midrule
+\endfirsthead
+\caption[]{Complete original source-inventory question IDs (continued).}\\
+\toprule
+ID & Source group & Full original source question\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\textbf{OQ001} & 1. OGS model; 1.1 Equations & Which exact OGS process is active in the exchanged model: Thermo-Richards-Mechanics, with displacement, liquid pressure, and temperature as primary variables?\\
+\addlinespace[0.16em]
+\textbf{OQ002} & 1. OGS model; 1.1 Equations & Which equation source should be treated as authoritative for this project: OGS documentation, OGS source implementation, the report formulation check, Wang/Kosakowski/Kolditz notation, or a specific project paper?\\
+\addlinespace[0.16em]
+\textbf{OQ003} & 1. OGS model; 1.1 Equations & Which simplifications are active in this CD-A run: no vapor transport, gravity/body force off, Backward Euler, Newton solve, linear liquid density, van Genuchten saturation, van Genuchten relative permeability, Bishop b(S\_l)=S\_l, swelling, and orthotropic mechanics?\\
+\addlinespace[0.16em]
+\textbf{OQ004} & 1. OGS model; 1.1 Equations & Which terms are absent or inactive even if they appear in related TRM theory: vapor diffusion, hydrostatic gravity, active top mechanical load, active initial-stress/prestress parameter, and the outside pressure parameter that is defined but not attached?\\
+\addlinespace[0.16em]
+\textbf{OQ005} & 1. OGS model; 1.1 Equations & In Darcy flow, do we compare permeability through intrinsic permeability K, relative permeability k\_rel(S\_l), viscosity, and pressure gradient, rather than confusing this with hydraulic conductivity or saturation itself?\\
+\addlinespace[0.16em]
+\textbf{OQ006} & 1. OGS model; 1.1 Equations & Which secondary variables should be expected from OGS or derived after sampling: saturation S\_l, porosity, water content theta = n*S\_l, pressure, temperature, displacement, strain/stress diagnostics, Darcy velocity/flux, and observation-operator products?\\
+\addlinespace[0.16em]
+\textbf{OQ007} & 1. OGS model; 1.2 Input parameters and parameterisation & What are all real material fields or constitutive fields that could matter: intrinsic permeability, hydraulic conductivity, porosity, saturation, storativity/storage, Biot coefficient, elastic stiffness/moduli, retention/WRC parameters, relative permeability, swelling, density, viscosity, thermal properties, EDZ/fault masks, and boundary/observation parameters?\\
+\addlinespace[0.16em]
+\textbf{OQ008} & 1. OGS model; 1.2 Input parameters and parameterisation & Which of those are explicit OGS XML parameters or mesh fields in the current transferred model, and which exist only as derived quantities, observation operators, or future inversion candidates?\\
+\addlinespace[0.16em]
+\textbf{OQ009} & 1. OGS model; 1.2 Input parameters and parameterisation & Which parameters are base modelling parameters for inversion, and which must be computed from others, for example hydraulic conductivity from intrinsic permeability, viscosity, density, relative permeability, and saturation?\\
+\addlinespace[0.16em]
+\textbf{OQ010} & 1. OGS model; 1.2 Input parameters and parameterisation & Which parameter relationships must be written explicitly so dependent quantities are not calibrated independently, for example Biot relations, storage/storativity definitions, porosity-saturation-water-content relations, and stiffness-tensor versus modulus relations?\\
+\addlinespace[0.16em]
+\textbf{OQ011} & 1. OGS model; 1.2 Input parameters and parameterisation & Which field support is scientifically defensible for each candidate parameter: scalar constant, material-region value, mesh-element field, tensor field, time curve/table, observation-model parameter, or external scenario field?\\
+\addlinespace[0.16em]
+\textbf{OQ012} & 1. OGS model; 1.2 Input parameters and parameterisation & Which parameters are fixed for the current workflow, which are active/released, which are inactive/commented provenance, and which are later-stage candidates gated by measurement semantics?\\
+\addlinespace[0.16em]
+\textbf{OQ013} & 1. OGS model; 1.2 Input parameters and parameterisation & In the current repo state, should the first active field remain intrinsic permeability magnitude in the mesh-cell tensor k\_i\_rd, while porosity n\_rd is fixed support and retention, mechanical, thermal, and boundary parameters remain gated?\\
+\addlinespace[0.16em]
+\textbf{OQ014} & 1. OGS model; 1.2 Input parameters and parameterisation & If a parameter changes between candidate runs, is it an OGS model-input field or XML replacement generated externally, not a silent change to governing equations?\\
+\addlinespace[0.16em]
+\textbf{OQ015} & 1. OGS model; 1.3 Boundary and initial conditions & What are the active boundary and initial conditions for each primary variable: displacement, liquid pressure, and temperature?\\
+\addlinespace[0.16em]
+\textbf{OQ016} & 1. OGS model; 1.3 Boundary and initial conditions & For liquid pressure, which Dirichlet boundaries are active in the XML: top/outside support at 1.5 MPa and open-niche pressure through open\_niche\_seasonal?\\
+\addlinespace[0.16em]
+\textbf{OQ017} & 1. OGS model; 1.3 Boundary and initial conditions & Is the outer/top pressure boundary constant at 1.5 MPa, or time-dependent in any active run variant?\\
+\addlinespace[0.16em]
+\textbf{OQ018} & 1. OGS model; 1.3 Boundary and initial conditions & Is the open-niche pressure boundary time-dependent, and exactly which curve, table, source file, scaling factor, and interpolation/extrapolation rule defines it?\\
+\addlinespace[0.16em]
+\textbf{OQ019} & 1. OGS model; 1.3 Boundary and initial conditions & If bc\_pressure\_outside or other outside pressure parameters exist in XML, are they active boundary conditions, inactive source parameters, reference values, or only visible in support/output files?\\
+\addlinespace[0.16em]
+\textbf{OQ020} & 1. OGS model; 1.3 Boundary and initial conditions & Why do some niche-boundary or output pressures go negative, and are these OGS liquid-pressure values relative to gas/atmospheric reference, equivalent to positive suction/capillary pressure through p\_c = -p\_l, rather than negative absolute water pressure?\\
+\addlinespace[0.16em]
+\textbf{OQ021} & 1. OGS model; 1.3 Boundary and initial conditions & What is the current source of the active niche boundary pressure curve: XML only, provider spreadsheet, RH-derived Kelvin reconstruction, fitted seasonal curve, pressure sensor data, or another processed measurement?\\
+\addlinespace[0.16em]
+\textbf{OQ022} & 1. OGS model; 1.3 Boundary and initial conditions & Which measurements could improve or extend the niche pressure boundary: RH/T, suction/psychrometer, direct pressure or mini-piezometer data, ventilation/open-niche context, open/closed comparison, or Geoscope context?\\
+\addlinespace[0.16em]
+\textbf{OQ023} & 1. OGS model; 1.3 Boundary and initial conditions & What uncertainty or noise should be attached to the boundary values: sensor error, RH/T conversion error, source-selection spread, time interpolation, smoothing/model-form error, active-curve provenance mismatch, and time-range extension error?\\
+\addlinespace[0.16em]
+\textbf{OQ024} & 1. OGS model; 1.3 Boundary and initial conditions & What physical time does model time zero represent: intact rock, excavation instant, monitoring start, or already post-excavation state transferred into the 2D model?\\
+\addlinespace[0.16em]
+\textbf{OQ025} & 1. OGS model; 1.3 Boundary and initial conditions & Is the niche/tunnel excavation represented as a staged process, or does the model start with an already-open geometry and prescribed initial fields?\\
+\addlinespace[0.16em]
+\textbf{OQ026} & 1. OGS model; 1.3 Boundary and initial conditions & How should mechanical prestress and excavation unloading enter the model: in-situ stress tensor, support removal to zero Neumann, gradual unloading, post-excavation initialized state, or only a caveat because current initial-stress/load parameters are inactive?\\
+\addlinespace[0.16em]
+\textbf{OQ027} & 1. OGS model; 1.3 Boundary and initial conditions & For hydraulic initial state, should the initial pressure be uniform 1.5 MPa, a heterogeneous field, or a post-excavation field already drained near the niche by previous excavations and boreholes?\\
+\addlinespace[0.16em]
+\textbf{OQ028} & 1. OGS model; 1.3 Boundary and initial conditions & Do direct pressure, hydraulic-head, mini-piezometer, RH/suction, or older pressure records exist near simulation start that can constrain the initial pressure field?\\
+\addlinespace[0.16em]
+\textbf{OQ029} & 1. OGS model; 1.3 Boundary and initial conditions & If such initial-pressure measurements exist, how are they converted to OGS liquid pressure, including elevation correction, gauge/absolute convention, atmospheric reference, capillary/suction sign, and density/temperature assumptions?\\
+\addlinespace[0.16em]
+\textbf{OQ030} & 1. OGS model; 1.4 Model outputs and observation operators & What model outputs are produced directly by OGS, and which are derived after sampling: pressure, displacement, temperature, saturation, porosity, stress/strain, Darcy velocity or flux, water content theta = n*S\_l, resistivity proxy, crack opening from displacement differences, and residual diagnostics?\\
+\addlinespace[0.16em]
+\textbf{OQ031} & 1. OGS model; 1.4 Model outputs and observation operators & Which outputs are primary variables and which are secondary variables or post-processing products, so measurements are not compared to the wrong field?\\
+\addlinespace[0.16em]
+\textbf{OQ032} & 1. OGS model; 1.4 Model outputs and observation operators & Which output quantity is intended for each measurement stream: intrinsic permeability for pulse tests, theta/free-water theta for NMR and Taupe/TDR, resistivity or log-resistivity for ERT, pressure for mini-piezometers, displacement/strain/opening for HM monitoring, and boundary pressure for RH/suction?\\
+\addlinespace[0.16em]
+\textbf{OQ033} & 1. OGS model; 1.4 Model outputs and observation operators & Which observation operators are required: point sampling, borehole-line/interval averaging, support-cell averaging, mesh-to-geophysics projection, 3D-to-2D projection, band averaging, anomaly/trend operator, or support-mask filtering?\\
+\addlinespace[0.16em]
+\textbf{OQ034} & 1. OGS model; 1.4 Model outputs and observation operators & Which outputs should be used only for diagnostics until transforms and uncertainties are accepted, especially ERT, Taupe/TDR, RH, and other HM monitoring?\\
+\addlinespace[0.16em]
+\textbf{OQ035} & 1. OGS model; 1.4 Model outputs and observation operators & How should model-output comparisons handle time: OGS output timestep, calendar date, measurement timestamp, survey epoch, monthly ERT schedule, seasonal campaign, interpolation, extrapolation, and early numerical adjustment from inconsistent initial states?\\
+\addlinespace[0.16em]
+\textbf{OQ036} & 2. Material fields in OGS or tied to OGS fields; 2.1 Field inventory and dependency map & For every candidate material field, what does it describe materially in Opalinus Clay, and is it a matrix property, pore-fluid property, structural/fault/EDZ property, mechanical property, retention law, or observation-model parameter?\\
+\addlinespace[0.16em]
+\textbf{OQ037} & 2. Material fields in OGS or tied to OGS fields; 2.1 Field inventory and dependency map & For every field, how does it tie to other fields in clay: can it be computed from base parameters, is it an effective property, or is it independent enough to release?\\
+\addlinespace[0.16em]
+\textbf{OQ038} & 2. Material fields in OGS or tied to OGS fields; 2.1 Field inventory and dependency map & For every field, how does it tie to OGS: XML parameter, material property law, phase property, mesh-element field, boundary curve, initial condition, output field, or post-processing diagnostic?\\
+\addlinespace[0.16em]
+\textbf{OQ039} & 2. Material fields in OGS or tied to OGS fields; 2.1 Field inventory and dependency map & Which definitions must stay separate because they are easy to conflate: intrinsic permeability, hydraulic conductivity, relative permeability, effective mobility, porosity, saturation, water content, storativity/storage, elastic modulus, stiffness tensor, Biot coefficient, and Bishop coefficient?\\
+\addlinespace[0.16em]
+\textbf{OQ040} & 2. Material fields in OGS or tied to OGS fields; 2.2 Intrinsic permeability, hydraulic conductivity, and anisotropy & Material meaning: Is permeability a clay matrix/EDZ/fault/fracture property controlling intrinsic Darcy mobility, and does the current model represent it as a tensor field rather than a scalar hydraulic conductivity?\\
+\addlinespace[0.16em]
+\textbf{OQ041} & 2. Material fields in OGS or tied to OGS fields; 2.2 Intrinsic permeability, hydraulic conductivity, and anisotropy & Relation to other fields: How do intrinsic permeability, relative permeability, viscosity, density, saturation, and pressure gradient combine into hydraulic conductivity or Darcy flux?\\
+\addlinespace[0.16em]
+\textbf{OQ042} & 2. Material fields in OGS or tied to OGS fields; 2.2 Intrinsic permeability, hydraulic conductivity, and anisotropy & Relation to OGS: Which OGS input is active now: base k\_i tensor, run-local mesh-element k\_i\_rd, fixed anisotropy ratio/orientation, or later tensor-shape release?\\
+\addlinespace[0.16em]
+\textbf{OQ043} & 2. Material fields in OGS or tied to OGS fields; 2.2 Intrinsic permeability, hydraulic conductivity, and anisotropy & Are pulse-test measurements scalar interval observations of e\textasciicircum{}T K e or a support-averaged permeability response, not direct tensor components and not hydraulic conductivity?\\
+\addlinespace[0.16em]
+\textbf{OQ044} & 2. Material fields in OGS or tied to OGS fields; 2.2 Intrinsic permeability, hydraulic conductivity, and anisotropy & What anisotropy model is defensible: fixed bedding-informed angle, global anisotropy ratio, spatially variable tensor orientation, fracture/fault/EDZ masks, or scalar magnitude field only?\\
+\addlinespace[0.16em]
+\textbf{OQ045} & 2. Material fields in OGS or tied to OGS fields; 2.2 Intrinsic permeability, hydraulic conductivity, and anisotropy & Does the same bedding angle control Darcy permeability anisotropy, ERT electrical anisotropy, and mechanical orthotropy, or are these separate modelling choices?\\
+\addlinespace[0.16em]
+\textbf{OQ046} & 2. Material fields in OGS or tied to OGS fields; 2.2 Intrinsic permeability, hydraulic conductivity, and anisotropy & Can the current repeated and conflicting pulse-test supports justify releasing local tensor shape, or should the first workflow keep tensor shape fixed and fit only magnitude?\\
+\addlinespace[0.16em]
+\textbf{OQ047} & 2. Material fields in OGS or tied to OGS fields; 2.3 Porosity, saturation, water content, and storage & Material meaning: Does porosity describe total pore volume, water-accessible porosity, free-water capacity, or another effective clay porosity relevant to OGS?\\
+\addlinespace[0.16em]
+\textbf{OQ048} & 2. Material fields in OGS or tied to OGS fields; 2.3 Porosity, saturation, water content, and storage & Relation to other fields: How do porosity n, saturation S\_l, and volumetric water content theta = n*S\_l differ, and which measurements see total water versus mobile/free water?\\
+\addlinespace[0.16em]
+\textbf{OQ049} & 2. Material fields in OGS or tied to OGS fields; 2.3 Porosity, saturation, water content, and storage & Relation to OGS: Is porosity an OGS input field n\_rd fixed at 0.105 in current runs, used in storage and thermal mixing, and not an active unknown until NMR/ERT/Taupe semantics are settled?\\
+\addlinespace[0.16em]
+\textbf{OQ050} & 2. Material fields in OGS or tied to OGS fields; 2.3 Porosity, saturation, water content, and storage & How are storage and storativity related to porosity, fluid compressibility, Biot coefficient, saturation derivative, and mechanical coupling; are they explicit inputs or derived/effective terms?\\
+\addlinespace[0.16em]
+\textbf{OQ051} & 2. Material fields in OGS or tied to OGS fields; 2.3 Porosity, saturation, water content, and storage & If observed NMR/Taupe water content exceeds fixed porosity, does that imply bound/interlayer water, calibration offset, porosity mismatch, unit issue, or an invalid comparison to OGS theta?\\
+\addlinespace[0.16em]
+\textbf{OQ052} & 2. Material fields in OGS or tied to OGS fields; 2.3 Porosity, saturation, water content, and storage & Can porosity be released as a scalar or field, or would it be non-identifiable because it trades directly with saturation, NMR bound water, ERT calibration, and Taupe calibration?\\
+\addlinespace[0.16em]
+\textbf{OQ053} & 2. Material fields in OGS or tied to OGS fields; 2.4 Retention curve, relative permeability, and suction & Material meaning: What retention/WRC parameters define S\_l(p\_c) for this clay, and what does p\_c mean relative to OGS liquid pressure and atmospheric/gas reference?\\
+\addlinespace[0.16em]
+\textbf{OQ054} & 2. Material fields in OGS or tied to OGS fields; 2.4 Retention curve, relative permeability, and suction & Relation to other fields: How do retention, relative permeability, porosity, saturation, suction/capillary pressure, and hydraulic mobility couple in the model?\\
+\addlinespace[0.16em]
+\textbf{OQ055} & 2. Material fields in OGS or tied to OGS fields; 2.4 Retention curve, relative permeability, and suction & Relation to OGS: Which van Genuchten parameters are active and fixed now: residual liquid saturation, residual gas saturation, exponent m, air-entry pressure p\_b, and minimum relative permeability?\\
+\addlinespace[0.16em]
+\textbf{OQ056} & 2. Material fields in OGS or tied to OGS fields; 2.4 Retention curve, relative permeability, and suction & Is RH converted through Kelvin equation to suction/capillary pressure or OGS liquid pressure, and what constants/sign convention are used?\\
+\addlinespace[0.16em]
+\textbf{OQ057} & 2. Material fields in OGS or tied to OGS fields; 2.4 Retention curve, relative permeability, and suction & Should retention parameters remain fixed until RH boundary provenance, NMR policy, ERT/Taupe transforms, and state-output residual policies are settled?\\
+\addlinespace[0.16em]
+\textbf{OQ058} & 2. Material fields in OGS or tied to OGS fields; 2.4 Retention curve, relative permeability, and suction & Which parts of saturation dependence are already OGS constitutive laws and should not be double-counted as time-dependent external material change?\\
+\addlinespace[0.16em]
+\textbf{OQ059} & 2. Material fields in OGS or tied to OGS fields; 2.5 Mechanical fields, prestress, Biot coupling, and swelling & Material meaning: Is the elastic part of the model orthotropic, what are the E, G, nu parameters, and how heterogeneous or uncertain are they in Opalinus Clay?\\
+\addlinespace[0.16em]
+\textbf{OQ060} & 2. Material fields in OGS or tied to OGS fields; 2.5 Mechanical fields, prestress, Biot coupling, and swelling & Relation to other fields: How do elastic stiffness, Biot coefficient, Bishop function, pore pressure, saturation, swelling, and prestress couple to displacement and stress?\\
+\addlinespace[0.16em]
+\textbf{OQ061} & 2. Material fields in OGS or tied to OGS fields; 2.5 Mechanical fields, prestress, Biot coupling, and swelling & Relation to OGS: Are orthotropic elasticity, Biot coefficient, Bishop b(S\_l)=S\_l, and saturation-dependent swelling fixed model inputs in the current workflow?\\
+\addlinespace[0.16em]
+\textbf{OQ062} & 2. Material fields in OGS or tied to OGS fields; 2.5 Mechanical fields, prestress, Biot coupling, and swelling & Does the mechanical bedding angle match the permeability bedding angle, or should mechanical orthotropy, permeability anisotropy, and ERT electrical anisotropy be independent choices?\\
+\addlinespace[0.16em]
+\textbf{OQ063} & 2. Material fields in OGS or tied to OGS fields; 2.5 Mechanical fields, prestress, Biot coupling, and swelling & What in-situ stress tensor and stress sign/reference convention should be used for a deep tunnel/niche model, and are initial\_stress, ic\_sigma0, and load\_top active or only inactive provenance?\\
+\addlinespace[0.16em]
+\textbf{OQ064} & 2. Material fields in OGS or tied to OGS fields; 2.5 Mechanical fields, prestress, Biot coupling, and swelling & Should excavation unloading be simulated as staged support removal, gradual zero-Neumann release, or an already post-excavation initialized stress/displacement state?\\
+\addlinespace[0.16em]
+\textbf{OQ065} & 2. Material fields in OGS or tied to OGS fields; 2.5 Mechanical fields, prestress, Biot coupling, and swelling & Is there enough displacement, crack, levelling, extensometer, pressure, or laser-scan data to release mechanical parameters, or should they remain fixed/context until numeric HM residuals exist?\\
+\addlinespace[0.16em]
+\textbf{OQ066} & 2. Material fields in OGS or tied to OGS fields; 2.6 Thermal and fluid-property fields & Material meaning: What do solid density, solid heat capacity, solid thermal conductivity, liquid heat capacity, liquid thermal conductivity, viscosity, and liquid density law represent in this near-isothermal hydraulic workflow?\\
+\addlinespace[0.16em]
+\textbf{OQ067} & 2. Material fields in OGS or tied to OGS fields; 2.6 Thermal and fluid-property fields & Relation to other fields: Which thermal/fluid fields influence hydraulic response through density, viscosity, storage, thermal mixing, or temperature coupling, and which are effectively fixed because no thermal experiment is active?\\
+\addlinespace[0.16em]
+\textbf{OQ068} & 2. Material fields in OGS or tied to OGS fields; 2.6 Thermal and fluid-property fields & Relation to OGS: Which of these are XML constants or phase-property laws, and which are not defensible inversion parameters now?\\
+\addlinespace[0.16em]
+\textbf{OQ069} & 2. Material fields in OGS or tied to OGS fields; 2.6 Thermal and fluid-property fields & Is the active CTE value physically meaningful, inactive, typo/copied heat capacity, or a provenance issue that must be confirmed before interpreting thermal-mechanical coupling?\\
+\addlinespace[0.16em]
+\textbf{OQ070} & 2. Material fields in OGS or tied to OGS fields; 2.7 Faults, fractures, EDZ, cracks, and time-dependent fields & Material meaning: Are large faults, local fractures, visible niche cracks, and EDZ damage separate material/support features, and what properties could they affect: permeability, porosity, hydraulic aperture, retention, storage, anisotropy, or mechanical stiffness?\\
+\addlinespace[0.16em]
+\textbf{OQ071} & 2. Material fields in OGS or tied to OGS fields; 2.7 Faults, fractures, EDZ, cracks, and time-dependent fields & Relation to other fields: If aperture is measured, can it be translated to permeability through hydraulic-aperture/cubic-law style relations, and what scale correction and uncertainty are required for clay/fault/EDZ conditions?\\
+\addlinespace[0.16em]
+\textbf{OQ072} & 2. Material fields in OGS or tied to OGS fields; 2.7 Faults, fractures, EDZ, cracks, and time-dependent fields & Relation to OGS: Should faults/fractures/cracks become hard geometry inputs, structural priors, EDZ/fault material masks, permeability/porosity fields, mechanical caveats, or qualitative diagnostics?\\
+\addlinespace[0.16em]
+\textbf{OQ073} & 2. Material fields in OGS or tied to OGS fields; 2.7 Faults, fractures, EDZ, cracks, and time-dependent fields & Which 3D-to-2D projection is defensible for large fault .dat data: intersection trace, nearest-distance influence band, projected mask, equivalent material class, or no projection if the feature misses the slice?\\
+\addlinespace[0.16em]
+\textbf{OQ074} & 2. Material fields in OGS or tied to OGS fields; 2.7 Faults, fractures, EDZ, cracks, and time-dependent fields & Which material inputs may need time dependence over the multi-year experiment, especially EDZ permeability decreasing through clay healing/sealing, fracture closure/opening, porosity/retention changes, or boundary-curve changes?\\
+\addlinespace[0.16em]
+\textbf{OQ075} & 2. Material fields in OGS or tied to OGS fields; 2.7 Faults, fractures, EDZ, cracks, and time-dependent fields & If OGS does not compute healing/sealing or chemical/crack evolution internally, should it be represented externally as k(x,t), n(x,t), retention(t), EDZ/fault masks by time window, or scenario-only parameter fields?\\
+\addlinespace[0.16em]
+\textbf{OQ076} & 2. Material fields in OGS or tied to OGS fields; 2.7 Faults, fractures, EDZ, cracks, and time-dependent fields & What evidence would justify releasing time-dependent material fields: repeated same-support permeability, NMR/Taupe/ERT trend drift under fixed fields, crack-aperture time series, Geoscope/laser/levelling data, pressure-response changes, or geochemical/mineralogical sealing evidence?\\
+\addlinespace[0.16em]
+\textbf{OQ077} & 3. Measurements; 3.1 Metadata required for every measurement stream & For each measurement, where is it taken: sensor id, coordinates, borehole/support geometry, niche side, depth/elevation, interval/band/surface, and relation to the current 2D OGS slice?\\
+\addlinespace[0.16em]
+\textbf{OQ078} & 3. Measurements; 3.1 Metadata required for every measurement stream & For each measurement, when is it taken: timestamp, survey epoch, campaign date, averaging window, time zone/date convention, and relation to OGS time zero/output timesteps/boundary-curve times?\\
+\addlinespace[0.16em]
+\textbf{OQ079} & 3. Measurements; 3.1 Metadata required for every measurement stream & For each measurement, what exactly does it measure before modelling interpretation, and by what physical or processing method?\\
+\addlinespace[0.16em]
+\textbf{OQ080} & 3. Measurements; 3.1 Metadata required for every measurement stream & For each measurement, what are the units, reference convention, sign convention, calibration state, raw/processed status, source files, and quality flags?\\
+\addlinespace[0.16em]
+\textbf{OQ081} & 3. Measurements; 3.1 Metadata required for every measurement stream & For each measurement, how does it tie to OGS: input/boundary forcing, initial-condition constraint, material-field prior, model-output residual, diagnostic screen, qualitative caveat, or coordinate/support operator?\\
+\addlinespace[0.16em]
+\textbf{OQ082} & 3. Measurements; 3.1 Metadata required for every measurement stream & For each measurement, what preprocessing is required: unit conversion, coordinate transform, 3D-to-2D projection, support averaging, baseline/reference-zero definition, time interpolation, filtering, and uncertainty/correlation model?\\
+\addlinespace[0.16em]
+\textbf{OQ083} & 3. Measurements; 3.2 Permeability pulse tests & Meaning: Are pulse tests interpreted as noisy scalar interval observations of intrinsic permeability/transmissibility, not as direct tensor components, hydraulic conductivity, relative permeability, or saturation?\\
+\addlinespace[0.16em]
+\textbf{OQ084} & 3. Measurements; 3.2 Permeability pulse tests & Position in domain: What are the exact borehole intervals, endpoints, orientations, active mesh cells, and blocked historical endpoint geometries for BCD-A24/25/26/27, BCD-A32/A33, BFM-D19, and related rows?\\
+\addlinespace[0.16em]
+\textbf{OQ085} & 3. Measurements; 3.2 Permeability pulse tests & Time of measurement: Which campaign/workbook date applies to each interpreted row and raw pressure-decay row, and should repeated support rows be treated as independent, duplicates, or time evolution?\\
+\addlinespace[0.16em]
+\textbf{OQ086} & 3. Measurements; 3.2 Permeability pulse tests & What/how measured: What gas, pressure-decay protocol, correction, Klinkenberg/slip treatment, interval length, and interpretation method produced each permeability value?\\
+\addlinespace[0.16em]
+\textbf{OQ087} & 3. Measurements; 3.2 Permeability pulse tests & Units: Are values intrinsic permeability in m2, transmissibility, log10 permeability, hydraulic conductivity, or workbook-specific units, and how are zeros/missing values handled?\\
+\addlinespace[0.16em]
+\textbf{OQ088} & 3. Measurements; 3.2 Permeability pulse tests & OGS tie: Should each row compare to interval/support average of e\textasciicircum{}T K e from the OGS intrinsic permeability tensor field k\_i\_rd, with explicit support weights and uncertainty?\\
+\addlinespace[0.16em]
+\textbf{OQ089} & 3. Measurements; 3.2 Permeability pulse tests & Uncertainty/use: Should the likelihood remain rowwise Gaussian, robust, support-cell aggregated, capped, or duplicate-weighted, given strong same-support conflicts?\\
+\addlinespace[0.16em]
+\textbf{OQ090} & 3. Measurements; 3.3 NMR water-content measurements & Meaning: Does NMR measure total NMR-visible water, mobile/free water, bound/interlayer water, or another hydrogen/water proxy in the supplied CD-A data?\\
+\addlinespace[0.16em]
+\textbf{OQ091} & 3. Measurements; 3.3 NMR water-content measurements & Position in domain: Which NMR labels, profiles, borehole points, wall/profile supports, and current Niche 4 mesh supports are active or outside support?\\
+\addlinespace[0.16em]
+\textbf{OQ092} & 3. Measurements; 3.3 NMR water-content measurements & Time of measurement: Which rows are weekly time series and which are seasonal/campaign profiles, and how do their timestamps map to OGS output times?\\
+\addlinespace[0.16em]
+\textbf{OQ093} & 3. Measurements; 3.3 NMR water-content measurements & What/how measured: What NMR signal, T2 distribution, calibration, detuning caveat, campaign processing, or label/borehole conversion produces the reported water-content value?\\
+\addlinespace[0.16em]
+\textbf{OQ094} & 3. Measurements; 3.3 NMR water-content measurements & Units: Are values volumetric percent, fraction, raw NMR amplitude, calibrated water content, or confidence-interval reported quantity?\\
+\addlinespace[0.16em]
+\textbf{OQ095} & 3. Measurements; 3.3 NMR water-content measurements & OGS tie: Should comparison be to OGS saturation S\_l, theta = n*S\_l, corrected/free-water theta, label-bias corrected theta, or within-label trend/anomaly only?\\
+\addlinespace[0.16em]
+\textbf{OQ096} & 3. Measurements; 3.3 NMR water-content measurements & Bound water: How should bound/interlayer water not active in OGS saturation be filtered, modelled, estimated, held constant, or represented as bias/uncertainty?\\
+\addlinespace[0.16em]
+\textbf{OQ097} & 3. Measurements; 3.3 NMR water-content measurements & Uncertainty/use: What uncertainty floor and confidence-interval conversion should be used, and how should rows above fixed porosity be interpreted?\\
+\addlinespace[0.16em]
+\textbf{OQ098} & 3. Measurements; 3.4 ERT resistivity measurements & Meaning: Is the primary ERT observable resistivity, log resistivity, resistivity change, phase angle, or a derived water-content field?\\
+\addlinespace[0.16em]
+\textbf{OQ099} & 3. Measurements; 3.4 ERT resistivity measurements & Position in domain: What coordinate transform, projection mesh, near-niche support mask, 35 cm depth/support handling, and aggregation should map ERT cells to the OGS 2D slice?\\
+\addlinespace[0.16em]
+\textbf{OQ100} & 3. Measurements; 3.4 ERT resistivity measurements & Time of measurement: Which ERT timesteps, monthly campaigns, folders, and VTK fields correspond to OGS output times?\\
+\addlinespace[0.16em]
+\textbf{OQ101} & 3. Measurements; 3.4 ERT resistivity measurements & What/how measured: Is the ERT field an inversion product from electrode data, local apparent resistivity, processed VTK field, or workbook-derived relation, and what correlation structure does the inversion impose?\\
+\addlinespace[0.16em]
+\textbf{OQ102} & 3. Measurements; 3.4 ERT resistivity measurements & Units: Are values in ohm m, log10 ohm m, relative resistivity, percent change, or converted water content?\\
+\addlinespace[0.16em]
+\textbf{OQ103} & 3. Measurements; 3.4 ERT resistivity measurements & OGS tie: Should OGS saturation or theta = n*S\_l be converted to resistivity through an Archie-type, empirical CD-A-specific, NMR-calibrated, or clay-specific relation?\\
+\addlinespace[0.16em]
+\textbf{OQ104} & 3. Measurements; 3.4 ERT resistivity measurements & Bound water and clay conduction: Does bound/locked water conduct current like free pore water, and how do clay surface conduction, salinity, porosity, pore-water conductivity, cracks/faults, and saturation history affect resistivity?\\
+\addlinespace[0.16em]
+\textbf{OQ105} & 3. Measurements; 3.4 ERT resistivity measurements & Anisotropy: Does electrical anisotropy matter, and should it connect to bedding, fractures/faults, or permeability anisotropy?\\
+\addlinespace[0.16em]
+\textbf{OQ106} & 3. Measurements; 3.4 ERT resistivity measurements & Uncertainty/use: What uncertainty/covariance/aggregation model prevents over-weighting dense correlated ERT cells, and should ERT remain diagnostic until transform/support/uncertainty are approved?\\
+\addlinespace[0.16em]
+\textbf{OQ107} & 3. Measurements; 3.5 Taupe/TDR measurements & Meaning: Does TAUPE mean the Taupe/TDR workbook stream in the repo, and what physical quantity does it represent?\\
+\addlinespace[0.16em]
+\textbf{OQ108} & 3. Measurements; 3.5 Taupe/TDR measurements & Position in domain: Which sensors, boreholes, EDZ bands, A3/A4/A7/A8 sheets, line supports, and 2D mesh supports are inside or outside the current model domain?\\
+\addlinespace[0.16em]
+\textbf{OQ109} & 3. Measurements; 3.5 Taupe/TDR measurements & Time of measurement: What timestamp/date convention and baseline/reference date apply to each Taupe/TDR series and anomaly/trend calculation?\\
+\addlinespace[0.16em]
+\textbf{OQ110} & 3. Measurements; 3.5 Taupe/TDR measurements & What/how measured: Are values calibrated volumetric water content, apparent relative dielectric permittivity, ARDP/TDR proxy, sensor-specific trend, or qualitative moisture signal?\\
+\addlinespace[0.16em]
+\textbf{OQ111} & 3. Measurements; 3.5 Taupe/TDR measurements & Units: What are the workbook units, calibration equations, constants, baseline normalization, and sensor/band-specific scaling rules?\\
+\addlinespace[0.16em]
+\textbf{OQ112} & 3. Measurements; 3.5 Taupe/TDR measurements & OGS tie: Should Taupe/TDR compare to absolute theta = n*S\_l, saturation S\_l, band-averaged theta anomaly, or grouped trend diagnostics only?\\
+\addlinespace[0.16em]
+\textbf{OQ113} & 3. Measurements; 3.5 Taupe/TDR measurements & Uncertainty/use: What uncertainty and weighting should be assigned by sensor, band, time, calibration quality, support projection, and grouping?\\
+\addlinespace[0.16em]
+\textbf{OQ114} & 3. Measurements; 3.6 RH/suction and pressure-boundary provenance & Meaning: What do RH/suction sensors measure physically, and are they measuring relative humidity, suction, capillary pressure, or a proxy for open-niche liquid-pressure boundary forcing?\\
+\addlinespace[0.16em]
+\textbf{OQ115} & 3. Measurements; 3.6 RH/suction and pressure-boundary provenance & Position in domain: Which RH/suction sensors correspond to the open niche or open twin, and which should inform the niche boundary rather than interior cell residuals?\\
+\addlinespace[0.16em]
+\textbf{OQ116} & 3. Measurements; 3.6 RH/suction and pressure-boundary provenance & Time of measurement: What is the RH/T timestamp convention, valid interval, high-RH caution period, low-outlier period, and relation to the active open\_niche\_seasonal curve time axis?\\
+\addlinespace[0.16em]
+\textbf{OQ117} & 3. Measurements; 3.6 RH/suction and pressure-boundary provenance & What/how measured: How is RH converted through Kelvin equation, and what constants are assumed: temperature, density, gas constant, water molar mass/volume, RH percent/fraction convention, and gas/atmospheric reference?\\
+\addlinespace[0.16em]
+\textbf{OQ118} & 3. Measurements; 3.6 RH/suction and pressure-boundary provenance & Units: Are derived quantities RH percent, suction, capillary pressure, gauge liquid pressure, absolute liquid pressure, MPa, or Pa?\\
+\addlinespace[0.16em]
+\textbf{OQ119} & 3. Measurements; 3.6 RH/suction and pressure-boundary provenance & OGS tie: Is RH used to reconstruct or check a pressure boundary input, validate active forcing, inform retention parameters, or provide uncertainty on boundary scenarios?\\
+\addlinespace[0.16em]
+\textbf{OQ120} & 3. Measurements; 3.6 RH/suction and pressure-boundary provenance & Curve provenance: Why does the local RH-derived envelope differ from the active seasonal pressure curve, and what source table/script/sensor-screening policy generated the active curve?\\
+\addlinespace[0.16em]
+\textbf{OQ121} & 3. Measurements; 3.6 RH/suction and pressure-boundary provenance & Uncertainty/use: What uncertainty should be assigned if RH becomes a boundary or retention likelihood, and how do we avoid double-counting the same data as both forcing and validation?\\
+\addlinespace[0.16em]
+\textbf{OQ122} & 3. Measurements; 3.7 Direct pressure or mini-piezometer measurements & Meaning: Do direct pressure, hydraulic-head, pore-pressure, or mini-piezometer measurements exist, including the two more distant sensors remembered from Gesa material?\\
+\addlinespace[0.16em]
+\textbf{OQ123} & 3. Measurements; 3.7 Direct pressure or mini-piezometer measurements & Position in domain: Where are the sensors in coordinates, elevation, borehole/support geometry, distance from the niche, and 2D model frame?\\
+\addlinespace[0.16em]
+\textbf{OQ124} & 3. Measurements; 3.7 Direct pressure or mini-piezometer measurements & Time of measurement: What timestamps, campaigns, maintenance intervals, reference-zero periods, and overlap with simulation outputs exist?\\
+\addlinespace[0.16em]
+\textbf{OQ125} & 3. Measurements; 3.7 Direct pressure or mini-piezometer measurements & What/how measured: What pressure quantity is measured: pore pressure, hydraulic head, gauge pressure, absolute pressure, suction/capillary pressure, or a processed Geoscope value?\\
+\addlinespace[0.16em]
+\textbf{OQ126} & 3. Measurements; 3.7 Direct pressure or mini-piezometer measurements & Units: Are values Pa, MPa, bar, head in m, gauge pressure, absolute pressure, or relative to atmospheric/gas reference?\\
+\addlinespace[0.16em]
+\textbf{OQ127} & 3. Measurements; 3.7 Direct pressure or mini-piezometer measurements & OGS tie: Can these measurements compare directly to OGS liquid pressure p\_l, or do they require head/elevation/gauge/reference conversion?\\
+\addlinespace[0.16em]
+\textbf{OQ128} & 3. Measurements; 3.7 Direct pressure or mini-piezometer measurements & Uncertainty/use: Are they reliable enough for hard residuals, or only qualitative validation because of distance, noise, sensor failures, maintenance, calibration, or 2D-model error?\\
+\addlinespace[0.16em]
+\textbf{OQ129} & 3. Measurements; 3.8 Large fault or fault-surface .dat geometry & Meaning: Does the faulty/.dat source mean large fault/fault-surface/fracture geometry rather than niche-surface crackmeter data?\\
+\addlinespace[0.16em]
+\textbf{OQ130} & 3. Measurements; 3.8 Large fault or fault-surface .dat geometry & Position in domain: Which exact .dat file/source contains the 3D fault geometry, coordinate system, units, axes, trace/surface/polygon/point-cloud representation, and relation to the current Niche 4 2D slice?\\
+\addlinespace[0.16em]
+\textbf{OQ131} & 3. Measurements; 3.8 Large fault or fault-surface .dat geometry & Time of measurement: Is the fault dataset static mapped geometry, excavation-time mapping, repeated survey, or time-dependent aperture/activation information?\\
+\addlinespace[0.16em]
+\textbf{OQ132} & 3. Measurements; 3.8 Large fault or fault-surface .dat geometry & What/how measured: Does the source describe geometry, aperture, hydraulic aperture, mechanical aperture, fracture opening, displacement, fault-zone class, or only visualization geometry?\\
+\addlinespace[0.16em]
+\textbf{OQ133} & 3. Measurements; 3.8 Large fault or fault-surface .dat geometry & Units: What units apply to coordinates and aperture/opening if present?\\
+\addlinespace[0.16em]
+\textbf{OQ134} & 3. Measurements; 3.8 Large fault or fault-surface .dat geometry & OGS tie: Should the projected fault become a geometry input, structural prior, EDZ/fault material class, permeability or porosity mask, retention/storage prior, mechanical caveat, or qualitative context?\\
+\addlinespace[0.16em]
+\textbf{OQ135} & 3. Measurements; 3.8 Large fault or fault-surface .dat geometry & Projection/use: What 3D-to-2D projection is accepted, and how do we avoid overfitting a 2D permeability field to unresolved 3D structures?\\
+\addlinespace[0.16em]
+\textbf{OQ136} & 3. Measurements; 3.9 Niche-surface cracks, Geoscope, crackometer, laser scan, levelling, extensometers & Meaning: What visible or measurable crack/opening/deformation data exist on the niche surface, separate from large 3D fault geometry?\\
+\addlinespace[0.16em]
+\textbf{OQ137} & 3. Measurements; 3.9 Niche-surface cracks, Geoscope, crackometer, laser scan, levelling, extensometers & Position in domain: Where exactly are cracks/openings measured: niche wall location, trace geometry, coordinates, sensor position, open/closed niche side, gauge length, support surface, and 2D slice relation?\\
+\addlinespace[0.16em]
+\textbf{OQ138} & 3. Measurements; 3.9 Niche-surface cracks, Geoscope, crackometer, laser scan, levelling, extensometers & Time of measurement: Are data static maps, campaign surveys, continuous Geoscope/crackometer time series, laser-scan epochs, levelling epochs, extensometer series, or reference-zero differences?\\
+\addlinespace[0.16em]
+\textbf{OQ139} & 3. Measurements; 3.9 Niche-surface cracks, Geoscope, crackometer, laser scan, levelling, extensometers & What/how measured: Are quantities crack width, aperture, crack opening displacement, displacement jump, strain, surface displacement, laser-scan difference, convergence, levelling vertical displacement, pressure response, or qualitative crack class?\\
+\addlinespace[0.16em]
+\textbf{OQ140} & 3. Measurements; 3.9 Niche-surface cracks, Geoscope, crackometer, laser scan, levelling, extensometers & Units: Are values mm, m, strain, Pa response, relative displacement, survey difference, or qualitative class?\\
+\addlinespace[0.16em]
+\textbf{OQ141} & 3. Measurements; 3.9 Niche-surface cracks, Geoscope, crackometer, laser scan, levelling, extensometers & OGS tie: Should comparison use OGS displacement, strain, stress, derived crack opening from displacement difference, pressure response, swelling/deformation pattern, or only mechanical plausibility screening?\\
+\addlinespace[0.16em]
+\textbf{OQ142} & 3. Measurements; 3.9 Niche-surface cracks, Geoscope, crackometer, laser scan, levelling, extensometers & Material-field tie: Can measured cracks/openings justify local permeability anomaly, porosity/damage zone, hydraulic aperture relation, fracture/EDZ mask, mechanical stiffness reduction, or time-dependent permeability/porosity change?\\
+\addlinespace[0.16em]
+\textbf{OQ143} & 3. Measurements; 3.9 Niche-surface cracks, Geoscope, crackometer, laser scan, levelling, extensometers & Uncertainty/use: What numeric exports, support geometry, reference-zero/sign convention, quality flags, registration uncertainty, sensor noise, and 2D projection error are needed before hard residuals?\\
+\addlinespace[0.16em]
+\textbf{OQ144} & 3. Measurements; 3.10 Coordinates, layout, bedding/geology, projection inputs, and other available streams & Meaning: Which non-residual support layers are available and required for model use: coordinates/layout, borehole endpoints, mesh projection inputs, bedding/geology, source-to-OGS transforms, and source-file catalogues?\\
+\addlinespace[0.16em]
+\textbf{OQ145} & 3. Measurements; 3.10 Coordinates, layout, bedding/geology, projection inputs, and other available streams & Position in domain: Which coordinate rows, borehole endpoints, support points, line samples, ERT mesh cells, NMR/Taupe supports, and fault/bedding geometries are inside, outside, or near the current 2D mesh?\\
+\addlinespace[0.16em]
+\textbf{OQ146} & 3. Measurements; 3.10 Coordinates, layout, bedding/geology, projection inputs, and other available streams & Time of measurement: Which support layers are static geometry and which have campaign dates or time-dependent survey states?\\
+\addlinespace[0.16em]
+\textbf{OQ147} & 3. Measurements; 3.10 Coordinates, layout, bedding/geology, projection inputs, and other available streams & What/how measured: Are these direct measurements, digitized geometry, derived projections, source catalogues, layout/support operators, or structural priors?\\
+\addlinespace[0.16em]
+\textbf{OQ148} & 3. Measurements; 3.10 Coordinates, layout, bedding/geology, projection inputs, and other available streams & Units: What coordinate system, length unit, angle convention, bedding-angle convention, and mesh index/support unit apply?\\
+\addlinespace[0.16em]
+\textbf{OQ149} & 3. Measurements; 3.10 Coordinates, layout, bedding/geology, projection inputs, and other available streams & OGS tie: Should these streams be treated as observation-operator support, material-field priors, geometry masks, mesh-parameter inputs, or qualitative caveats rather than residuals?\\
+\addlinespace[0.16em]
+\textbf{OQ150} & 3. Measurements; 3.10 Coordinates, layout, bedding/geology, projection inputs, and other available streams & Other measurements: What additional measurement streams exist in the data beyond those listed here, and for each one what are where, when, units, measured quantity, and OGS input/output/prior/diagnostic status?\\
+\addlinespace[0.16em]
+\textbf{OQ151} & 3. Measurements; 3.10 Coordinates, layout, bedding/geology, projection inputs, and other available streams & Activation/use: Which streams are active likelihood terms now, which are diagnostic, which are boundary/input provenance, which are support/prior only, and which are blocked by missing numeric exports or metadata?\\
+\addlinespace[0.16em]
+\textbf{OQ152} & 3. Measurements; 3.11 Current activation gates to keep visible & Which direct permeability rows are active now, which are blocked by missing endpoint geometry, and which need likelihood/support policy before more same-support OGS spending?\\
+\addlinespace[0.16em]
+\textbf{OQ153} & 3. Measurements; 3.11 Current activation gates to keep visible & Is NMR active only with tracked caveats, and should the final policy be raw absolute theta, bias-corrected theta, corrected free-water theta, within-label trend/anomaly, or exclusion?\\
+\addlinespace[0.16em]
+\textbf{OQ154} & 3. Measurements; 3.11 Current activation gates to keep visible & Should ERT remain diagnostic until transform/support/uncertainty/covariance are accepted?\\
+\addlinespace[0.16em]
+\textbf{OQ155} & 3. Measurements; 3.11 Current activation gates to keep visible & Should Taupe/TDR remain diagnostic until unit/calibration/baseline/uncertainty are confirmed?\\
+\addlinespace[0.16em]
+\textbf{OQ156} & 3. Measurements; 3.11 Current activation gates to keep visible & Should RH remain boundary-check/provenance evidence until active curve generation, sensor screening, Kelvin constants, and extension policy are confirmed?\\
+\addlinespace[0.16em]
+\textbf{OQ157} & 3. Measurements; 3.11 Current activation gates to keep visible & Should other HM pressure/deformation streams remain inactive until Geoscope, laser-scan, levelling, extensometer, crackmeter, and mini-piezometer numeric exports with uncertainty are supplied?\\
+\addlinespace[0.16em]
+\textbf{OQ158} & 3. Measurements; 3.11 Current activation gates to keep visible & Should CTE and prestress remain model-provenance caveats until Gesa/BGR confirms intended values and active/inactive status?\\
+\addlinespace[0.16em]
+\end{longtable}
+\clearpage
+\begin{longtable}{@{}L{0.10\textwidth} L{0.14\textwidth} L{0.31\textwidth} L{0.37\textwidth}@{}}
+\caption{Original reviewer-comment IDs used by the tracked-change response.}\label{tab:original-review-comment-register}\\
+\toprule
+ID & Review mark & Full original comment & Context in the reviewed paper\\
+\midrule
+\endfirsthead
+\caption[]{Original reviewer-comment IDs used by the tracked-change response (continued).}\\
+\toprule
+ID & Review mark & Full original comment & Context in the reviewed paper\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\textbf{RC001} & 1 (Text note audit / Obecnepoznamky.txt) & Co presne jsou zaporne tlaky? "negative liquid pressure means postiive suction relative to the gas/reference pressure". & Chapter 1 retention/sign convention; RH/suction section; boundary questions.\\
+\addlinespace[0.16em]
+\textbf{RC002} & 2 (Text note audit / Obecnepoznamky.txt) & Jake jsou typicke chyby/jejich odhady jednotlivych experimentu a vyslednych velicin? & Chapter 2 purpose table and stream uncertainty paragraphs.\\
+\addlinespace[0.16em]
+\textbf{RC003} & 3 (Text note audit / Obecnepoznamky.txt) & Lehce offotpic, jak funguje modelovani 2d rezu pro elasticitu, ktera ma materialove parametry dane z 3d modelu? & Chapter 1 mechanics and material-field sections.\\
+\addlinespace[0.16em]
+\textbf{RC004} & 4 (Text note audit / Obecnepoznamky.txt) & je mozne uplne vyhodit zavislost na teplote z OGS? lepsi by asi bylo na to nesahat, ale pokud by nam umeli dat jen HM model, tak by to mohlo neco malicko usetrit. & Chapter 1 heat balance and isothermal reduction; thermal question table.\\
+\addlinespace[0.16em]
+\textbf{RC005} & 5 (Text note audit / Obecnepoznamky.txt) & Chceme nejak integrovat data z "crackmeteru" a podobnych? (spise ne?) & Chapter 2 HM monitoring section and grounding questions.\\
+\addlinespace[0.16em]
+\textbf{RC006} & 6 (Text note audit / Obecnepoznamky.txt) & Co znamena S\_lr pro ruzna mereni? S\_e z van Genutchtena, ale permeabilita je skrze S\_l. Projevi se nekdy i S\_gr? & Chapter 1 retention law; mathematical-variable table.\\
+\addlinespace[0.16em]
+\textbf{RC007} & 7 (Text note audit / Obecnepoznamky.txt) & tensor pro permeabiliru by asi mel byt otoceny podle orientace beddingu, mohlo by byt napsane nekde explicitne v uvodni casti. & Chapter 1 material fields; material-field question table.\\
+\addlinespace[0.16em]
+\textbf{RC008} & 8 (Text note audit / Obecnepoznamky.txt) & explicitni formule pro \(\eps^{sw}\)? nebo neni treba a staci OGS implementace? V OGS to je jako zmena delta\_\allowbreak{}sigma\_\allowbreak{}sw = -(lambda\_\allowbreak{}i * pi\_\allowbreak{}i * S\_\allowbreak{}eff\string^{lambda\_\allowbreak{}i - 1}) * delta\_\allowbreak{}S\_\allowbreak{}eff / dt, kde S\_\allowbreak{}eff je efektivni saturace, tlak -> vG -> S\_\allowbreak{}eff; lambda\_\allowbreak{}i a p\_\allowbreak{}i jsou efektivne "materialove parametry", jeden pro kazdy smer, mozno kodovat anizotropii; dt : timestep; prefix delta\_ : prirustky. & Chapter 1 mechanics; mechanical-parameter table; derived-output table.\\
+\addlinespace[0.16em]
+\textbf{RC009} & 9 (Text note audit / Obecnepoznamky.txt) & paragraph "Measured value, units, and OGS tie." a analogicke pozdeji: co znamena "OGS tie"? jakoze chapu v otazce how does (something) tie to OGS, ale "OGS tie" mi zni divne. & Chapter 2 paragraph headings and measurement role table.\\
+\addlinespace[0.16em]
+\textbf{RC010} & 10 (Text note audit / Obecnepoznamky.txt) & Obecne asi chceme smazat vsechno, co zminuje teplotni zavislost. & Chapter 1 thermal language; Chapter 2 stream gates that mention corrections.\\
+\addlinespace[0.16em]
+\textbf{RC011} & 11 (Text note audit / Obecnepoznamky.txt) & "Which pressure Dirichlet conditions are attached in the checked OGS XML?" Trochu divna odpoved & Chapter 1 hydraulic-boundary question table.\\
+\addlinespace[0.16em]
+\textbf{RC012} & 12 (Text note audit / Obecnepoznamky.txt) & "What mechanical condition is used on the niche boundary?" bez explicitni podminky -> nulove plosne sily, ale jestli to funguje stejne jako linearni model, tak okrajova podminka by mela byt na effective stress, tj. brat do uvady i tlakovou okrajovou podminku. je tohle ok v ramci OGS? & Chapter 1 mechanical boundary text and question table.\\
+\addlinespace[0.16em]
+\textbf{RC013} & 13 (Text note audit / Obecnepoznamky.txt) & "Which parameter family is released in the first workflow?" nerozumim tomu, co znamena released. & Chapter 1 material-field section and release-policy table.\\
+\addlinespace[0.16em]
+\textbf{RC014} & 14 (Text note audit / Obecnepoznamky.txt) & "Is permeability an OGS state output?" smazal bych. & Chapter 1 model-output question table.\\
+\addlinespace[0.16em]
+\textbf{RC015} & 15 (Text note audit / Obecnepoznamky.txt) & "When does an OGS field become a residual?" smazal bych nebo zadefinoval pojem "residual". & Chapter 1 model-output prose and question table.\\
+\addlinespace[0.16em]
+\textbf{RC016} & 16 (Text note audit / Obecnepoznamky.txt) & "Can it become an absolute residual?" nerozumim pojmu "absolute residual". & Chapter 2 Taupe/TDR section and grounding table.\\
+\addlinespace[0.16em]
+\textbf{RC017} & 17 (Text note audit / Obecnepoznamky.txt) & then look into the new materials: main.tex, DAMH\_\allowbreak{}ERT20\_\allowbreak{}COMPACT\_\allowbreak{}TECHNICAL\_\allowbreak{}REPORT.tex, domain\_\allowbreak{}kl\_\allowbreak{}100\_\allowbreak{}3h\_\allowbreak{}final\_\allowbreak{}report.tex and carefully make another chapter in the document and add there these results on inversion, so its compact and properly tied to the rest of the text. & New Chapter 3 inversion-results chapter.\\
+\addlinespace[0.16em]
+\textbf{RC018} & 18 (Annotated PDF ann. 1) & Markup only, squiggly on swelling term & Mechanics equation used an old swelling-strain form.\\
+\addlinespace[0.16em]
+\textbf{RC019} & 19 (Annotated PDF ann. 2) & z OGS kodu to vypada, ze se prispevek swellingu pocita rovnou do stressu a ne do deformaci, jistota to neni & Reviewer asks whether swelling enters stress directly.\\
+\addlinespace[0.16em]
+\textbf{RC020} & 20 (Annotated PDF ann. 3) & spise chceme vedet, jestli neni mozne uplne odpojit teplotu a redukovat model & Temperature is constrained and should be read as a reduced HM model.\\
+\addlinespace[0.16em]
+\textbf{RC021} & 21 (Annotated PDF ann. 4) & je to dobre? viz Simciny experimenty & Uniform initial pressure may conflict with drainage evidence.\\
+\addlinespace[0.16em]
+\textbf{RC022} & 22 (Annotated PDF ann. 5) & kolik casu je od exkavace? & Reviewer asks excavation elapsed time relative to model start.\\
+\addlinespace[0.16em]
+\textbf{RC023} & 23 (Annotated PDF ann. 6) & chceme si vyjasnit & Initial pressure does not encode post-excavation drainage.\\
+\addlinespace[0.16em]
+\textbf{RC024} & 24 (Annotated PDF ann. 7) & chceme vyjasnit & What measured in-situ stress exists before excavation?\\
+\addlinespace[0.16em]
+\textbf{RC025} & 25 (Annotated PDF ann. 8) & chceme vyjasnit & Prestress angle or principal-stress orientation.\\
+\addlinespace[0.16em]
+\textbf{RC026} & 26 (Annotated PDF ann. 9) & chceme vyjasnit & Early pressure/displacement transients may be numerical.\\
+\addlinespace[0.16em]
+\textbf{RC027} & 27 (Annotated PDF ann. 10) & asi jasne & Active OGS process and variables.\\
+\addlinespace[0.16em]
+\textbf{RC028} & 28 (Annotated PDF ann. 11) & asi jasne? & Source hierarchy: XML vs equations/docs.\\
+\addlinespace[0.16em]
+\textbf{RC029} & 29 (Annotated PDF ann. 12) & jasne, mozna se zeptat na tolerance? & Time-loop and solver tolerances.\\
+\addlinespace[0.16em]
+\textbf{RC030} & 30 (Annotated PDF ann. 13) & ok, pokud nechceme menit model & Inactive terms are acceptable if model is unchanged.\\
+\addlinespace[0.16em]
+\textbf{RC031} & 31 (Annotated PDF ann. 14) & Obecne je treba vysjasnit, co presne meri ktery experiment. Tohle je k vyjasneni prakticky ke kazde otazce tohoto seznamu. & Global measurement semantics and support question.\\
+\addlinespace[0.16em]
+\textbf{RC032} & 32 (Annotated PDF ann. 15) & spise pro nas & Hydraulic conductivity vs permeability.\\
+\addlinespace[0.16em]
+\textbf{RC033} & 33 (Annotated PDF ann. 16) & spise pro nas & Saturation/retention symbols and roles.\\
+\addlinespace[0.16em]
+\textbf{RC034} & 34 (Annotated PDF ann. 17) & ma smysl heterogenni \$n\$? & Heterogeneous porosity release question.\\
+\addlinespace[0.16em]
+\textbf{RC035} & 35 (Annotated PDF ann. 18) & spsie pro nas? & Storativity as separate field.\\
+\addlinespace[0.16em]
+\textbf{RC036} & 36 (Annotated PDF ann. 19) & je \$\textbackslash{}alpha\_b = 1\$ dobra volba pro nas setup? & Biot/Bishop coefficient appropriateness.\\
+\addlinespace[0.16em]
+\textbf{RC037} & 37 (Annotated PDF ann. 20) & ve skutecnosti jeste parametry pro swelling & Elastic/mechanical parameter list must include swelling.\\
+\addlinespace[0.16em]
+\textbf{RC038} & 38 (Annotated PDF ann. 21) & potrebujeme vedet, plus prestress & Bedding angle and prestress should not be conflated.\\
+\addlinespace[0.16em]
+\textbf{RC039} & 39 (Annotated PDF ann. 22) & Highlight only & Fixed 1 MPa swelling pressure statement.\\
+\addlinespace[0.16em]
+\textbf{RC040} & 40 (Annotated PDF ann. 23) & odkud se vzal 1Mpa? & Provenance of 1 MPa swelling pressure.\\
+\addlinespace[0.16em]
+\textbf{RC041} & 41 (Annotated PDF ann. 24) & pozdejsi faze nebo od zacatku? & Whether faults/cracks/EDZ enter now or later.\\
+\addlinespace[0.16em]
+\textbf{RC042} & 42 (Annotated PDF ann. 25) & v ramci vyjasneni toho, co vlastne experimenty delaji & Direct permeability pulse-test meaning.\\
+\addlinespace[0.16em]
+\textbf{RC043} & 43 (Annotated PDF ann. 26) & uplne nerozumim, jestli to je pro nas nebo dotaz na data & Distinguish modelling policy from provider data request.\\
+\addlinespace[0.16em]
+\textbf{RC044} & 44 (Annotated PDF ann. 27) & !!! & What does supplied NMR value measure?\\
+\addlinespace[0.16em]
+\textbf{RC045} & 45 (Annotated PDF ann. 28) & !!! & NMR link to OGS output.\\
+\addlinespace[0.16em]
+\textbf{RC046} & 46 (Annotated PDF ann. 29) & asi spise pro nas? & Can bound/interlayer water be anchored simply?\\
+\addlinespace[0.16em]
+\textbf{RC047} & 47 (Annotated PDF ann. 30) & asi spise pro nas? & Could bound water be post-processed from OGS saturation?\\
+\addlinespace[0.16em]
+\textbf{RC048} & 48 (Annotated PDF ann. 31) & asi spise pro nas & Full NMR residual grounding.\\
+\addlinespace[0.16em]
+\textbf{RC049} & 49 (Annotated PDF ann. 32) & !!! & Does bound water conduct like free water in ERT?\\
+\addlinespace[0.16em]
+\textbf{RC050} & 50 (Annotated PDF ann. 33) & !!! & Electrical anisotropy.\\
+\addlinespace[0.16em]
+\textbf{RC051} & 51 (Annotated PDF ann. 34) & !!! & What does Taupe workbook value represent?\\
+\addlinespace[0.16em]
+\textbf{RC052} & 52 (Annotated PDF ann. 35) & nerozumim & `Absolute residual` wording unclear.\\
+\addlinespace[0.16em]
+\textbf{RC053} & 53 (Annotated PDF ann. 36) & nerozumim & Band/sensor weighting unclear.\\
+\addlinespace[0.16em]
+\textbf{RC054} & 54 (Annotated PDF ann. 37) & jasne & RH is input/output boundary question.\\
+\addlinespace[0.16em]
+\textbf{RC055} & 55 (Annotated PDF ann. 38) & chceme ujasnit vztah & RH-to-pressure conversion.\\
+\addlinespace[0.16em]
+\textbf{RC056} & 56 (Annotated PDF ann. 39) & chceme ujasnit? & Negative pressure/suction convention.\\
+\addlinespace[0.16em]
+\textbf{RC057} & 57 (Annotated PDF ann. 40) & spise bych se ptal na nejpouzitelnejsi sensor & Which RH sensor should define open-niche boundary?\\
+\addlinespace[0.16em]
+\textbf{RC058} & 58 (Annotated PDF ann. 41) & prakticky chceme vedet, jak interpretovat data(2D/3D)? & Pressure sensor 2D/3D interpretation.\\
+\addlinespace[0.16em]
+\textbf{RC059} & 59 (Annotated PDF ann. 42) & Asi chceme jen navrhnout, ze budeme pracovat s trhlinami jako extra nahodnym polem/domenou a nechat si to schvalit? & How large fractures from 3D geometry enter 2D model.\\
+\addlinespace[0.16em]
+\textbf{RC060} & 60 (Annotated PDF ann. 43) & nemam predstavu, jak tahla data pouzit & Other HM monitoring use.\\
+\addlinespace[0.16em]
+\end{longtable}
+\normalsize
+\fi
